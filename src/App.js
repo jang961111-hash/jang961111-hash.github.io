@@ -93,7 +93,7 @@ const applyPageMetadata = (metadata) => {
   updateLinkTag(
     'link[rel="alternate"][hreflang="en"]',
     { rel: "alternate", hreflang: "en" },
-    `${BASE_URL}/en`
+    `${BASE_URL}/en/`
   );
   updateLinkTag(
     'link[rel="alternate"][hreflang="x-default"]',

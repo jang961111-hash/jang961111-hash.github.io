@@ -22,6 +22,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "node scripts/generate_route_aliases.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate:pdf": "node scripts/generate_pdfs.js"
