@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -12,23 +18,20 @@ import AIStrategy from "./components/AIStrategy";
 import ProblemSolving from "./components/ProblemSolving";
 import Contact from "./components/Contact";
 import ScrollToTop from "./components/ScrollToTop";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import { BASE_URL, pageMetadata } from "./metadata";
+import { getLocalizedProject, getProjectBySlug } from "./content/projects";
+import {
+  getFallbackPath,
+  getLocaleRootPath,
+  getProjectPath,
+} from "./utils/localeRouting";
+import {
+  consumeQueuedScrollTarget,
+  scrollToSectionId,
+} from "./utils/scrollTarget";
 
-const pageMetadata = {
-  ko: {
-    htmlLang: "ko",
-    locale: "ko_KR",
-    title: "장병헌 | Technical Product Manager",
-    description:
-      "장병헌 포트폴리오. 구조적으로 문제를 정의하고, 기술적 맥락을 이해한 상태에서 제품 방향과 서비스 경험을 설계하는 Technical Product Manager입니다.",
-  },
-  en: {
-    htmlLang: "en",
-    locale: "en_US",
-    title: "Byeongheon Jang | Technical Product Manager",
-    description:
-      "Portfolio of Byeongheon Jang, a technical product manager focused on product direction, service structure, and AI-aware decision support.",
-  },
-};
+const THEME_STORAGE_KEY = "portfolio-theme";
 
 const updateMetaTag = (selector, content) => {
   const element = document.querySelector(selector);
@@ -38,7 +41,19 @@ const updateMetaTag = (selector, content) => {
   }
 };
 
-const THEME_STORAGE_KEY = "portfolio-theme";
+const updateLinkTag = (selector, attributes, href) => {
+  let element = document.querySelector(selector);
+
+  if (!element) {
+    element = document.createElement("link");
+    Object.entries(attributes).forEach(([key, value]) => {
+      element.setAttribute(key, value);
+    });
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute("href", href);
+};
 
 const getInitialTheme = () => {
   if (typeof window === "undefined") {
@@ -46,6 +61,7 @@ const getInitialTheme = () => {
   }
 
   const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+
   if (savedTheme === "light" || savedTheme === "dark") {
     return savedTheme;
   }
@@ -53,52 +69,163 @@ const getInitialTheme = () => {
   return "light";
 };
 
-// Layout component handles the shared structure
-const Layout = ({ theme, onToggleTheme, onPrint }) => {
-  return (
-    <div className="layout">
-      <Navbar theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint} />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <ProductStrategy />
-        <TechnicalDepth />
-        <AIStrategy />
-        <ProblemSolving />
-        <Experience />
-      </main>
-      <Contact />
-      <ScrollToTop />
-    </div>
+const applyPageMetadata = (metadata) => {
+  const currentUrl =
+    metadata.path === "/" ? `${BASE_URL}/` : `${BASE_URL}${metadata.path}`;
+
+  document.documentElement.lang = metadata.htmlLang;
+  document.title = metadata.title;
+
+  updateMetaTag('meta[name="description"]', metadata.description);
+  updateMetaTag('meta[property="og:title"]', metadata.title);
+  updateMetaTag('meta[property="og:description"]', metadata.description);
+  updateMetaTag('meta[property="og:locale"]', metadata.locale);
+  updateMetaTag('meta[property="og:url"]', currentUrl);
+  updateMetaTag('meta[name="twitter:title"]', metadata.title);
+  updateMetaTag('meta[name="twitter:description"]', metadata.description);
+
+  updateLinkTag('link[rel="canonical"]', { rel: "canonical" }, currentUrl);
+  updateLinkTag(
+    'link[rel="alternate"][hreflang="ko"]',
+    { rel: "alternate", hreflang: "ko" },
+    `${BASE_URL}/`
+  );
+  updateLinkTag(
+    'link[rel="alternate"][hreflang="en"]',
+    { rel: "alternate", hreflang: "en" },
+    `${BASE_URL}/en`
+  );
+  updateLinkTag(
+    'link[rel="alternate"][hreflang="x-default"]',
+    { rel: "alternate", hreflang: "x-default" },
+    `${BASE_URL}/`
   );
 };
 
-// Route component handles locale sync
-const LocaleRoute = ({ lang, theme, onToggleTheme, onPrint }) => {
+const useLocaleLanguage = (lang) => {
   const { i18n } = useTranslation();
-  
+
   useEffect(() => {
     if (i18n.language !== lang) {
       i18n.changeLanguage(lang);
     }
   }, [lang, i18n]);
+};
+
+const useHomeScrollRestore = () => {
+  const location = useLocation();
 
   useEffect(() => {
-    const metadata = pageMetadata[lang] ?? pageMetadata.ko;
+    const queuedTarget = consumeQueuedScrollTarget();
+    const hashTarget = window.location.hash
+      ? window.location.hash.replace(/^#/, "")
+      : "";
+    const targetId = queuedTarget || hashTarget;
 
-    document.documentElement.lang = metadata.htmlLang;
-    document.title = metadata.title;
+    const timer = window.setTimeout(() => {
+      if (targetId) {
+        scrollToSectionId(targetId);
+        return;
+      }
 
-    updateMetaTag('meta[name="description"]', metadata.description);
-    updateMetaTag('meta[property="og:title"]', metadata.title);
-    updateMetaTag('meta[property="og:description"]', metadata.description);
-    updateMetaTag('meta[property="og:locale"]', metadata.locale);
-    updateMetaTag('meta[name="twitter:title"]', metadata.title);
-    updateMetaTag('meta[name="twitter:description"]', metadata.description);
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }, 120);
+
+    return () => window.clearTimeout(timer);
+  }, [location.pathname]);
+};
+
+const useProjectScrollReset = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
+};
+
+const buildProjectMetadata = (lang, project) => {
+  const baseMetadata = pageMetadata[lang] ?? pageMetadata.ko;
+
+  return {
+    htmlLang: baseMetadata.htmlLang,
+    locale: baseMetadata.locale,
+    path: getProjectPath(lang, project.slug),
+    title:
+      lang === "en"
+        ? `${project.title} | Byeongheon Jang`
+        : `${project.title} | Portfolio`,
+    description: project.summary,
+  };
+};
+
+const Layout = ({ theme, onToggleTheme, onPrint, children }) => (
+  <div className="layout">
+    <Navbar theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint} />
+    <main>{children}</main>
+    <Contact />
+    <ScrollToTop />
+  </div>
+);
+
+const HomeContent = () => (
+  <>
+    <Hero />
+    <About />
+    <Projects />
+    <ProductStrategy />
+    <TechnicalDepth />
+    <AIStrategy />
+    <ProblemSolving />
+    <Experience />
+  </>
+);
+
+const HomeRoute = ({ lang, theme, onToggleTheme, onPrint }) => {
+  useLocaleLanguage(lang);
+  useHomeScrollRestore();
+
+  useEffect(() => {
+    applyPageMetadata(pageMetadata[lang] ?? pageMetadata.ko);
   }, [lang]);
 
-  return <Layout theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint} />;
+  return (
+    <Layout theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint}>
+      <HomeContent />
+    </Layout>
+  );
+};
+
+const ProjectRoute = ({ lang, theme, onToggleTheme, onPrint }) => {
+  const { slug } = useParams();
+  const rawProject = getProjectBySlug(slug);
+  const project = rawProject ? getLocalizedProject(rawProject, lang) : null;
+
+  useLocaleLanguage(lang);
+  useProjectScrollReset();
+
+  useEffect(() => {
+    if (!project) {
+      return;
+    }
+
+    applyPageMetadata(buildProjectMetadata(lang, project));
+  }, [lang, project]);
+
+  if (!project) {
+    return <Navigate to={getLocaleRootPath(lang)} replace />;
+  }
+
+  return (
+    <Layout theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint}>
+      <ProjectDetailPage project={project} lang={lang} />
+    </Layout>
+  );
+};
+
+const FallbackRoute = () => {
+  const location = useLocation();
+
+  return <Navigate to={getFallbackPath(location.pathname)} replace />;
 };
 
 function App() {
@@ -108,8 +235,14 @@ function App() {
     document.documentElement.setAttribute("data-theme", theme);
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
 
-    updateMetaTag('meta[name="theme-color"]', theme === "dark" ? "#050505" : "#ffffff");
-    updateMetaTag('meta[name="color-scheme"]', theme === "dark" ? "dark light" : "light dark");
+    updateMetaTag(
+      'meta[name="theme-color"]',
+      theme === "dark" ? "#101418" : "#fcfaf6"
+    );
+    updateMetaTag(
+      'meta[name="color-scheme"]',
+      theme === "dark" ? "dark light" : "light dark"
+    );
   }, [theme]);
 
   const handleToggleTheme = () => {
@@ -126,7 +259,7 @@ function App() {
         <Route
           path="/"
           element={
-            <LocaleRoute
+            <HomeRoute
               lang="ko"
               theme={theme}
               onToggleTheme={handleToggleTheme}
@@ -137,7 +270,7 @@ function App() {
         <Route
           path="/en"
           element={
-            <LocaleRoute
+            <HomeRoute
               lang="en"
               theme={theme}
               onToggleTheme={handleToggleTheme}
@@ -145,7 +278,29 @@ function App() {
             />
           }
         />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route
+          path="/projects/:slug"
+          element={
+            <ProjectRoute
+              lang="ko"
+              theme={theme}
+              onToggleTheme={handleToggleTheme}
+              onPrint={handlePrint}
+            />
+          }
+        />
+        <Route
+          path="/en/projects/:slug"
+          element={
+            <ProjectRoute
+              lang="en"
+              theme={theme}
+              onToggleTheme={handleToggleTheme}
+              onPrint={handlePrint}
+            />
+          }
+        />
+        <Route path="*" element={<FallbackRoute />} />
       </Routes>
     </div>
   );

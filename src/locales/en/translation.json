@@ -15,17 +15,26 @@
     "print": "Print/PDF",
     "printAria": "Print portfolio as PDF",
     "languageKoreanAria": "Switch language to Korean",
-    "languageEnglishAria": "Switch language to English"
+    "languageEnglishAria": "Switch language to English",
+    "menuOpenAria": "Open navigation menu",
+    "menuCloseAria": "Close navigation menu"
   },
   "hero": {
     "name": "Byeongheon Jang",
     "greeting": "Hello, I am",
     "title": "Technical Product Manager",
-    "subtitle": "I organize user problems into product language with technical context in mind,\nand I care about service direction that can scale without losing clarity.",
-    "mission": "My portfolio is built on structural thinking from philosophy, coursework across AI, data, and business, and hands-on experience connecting planning with implementation.",
-    "viewProjects": "View Core Projects",
-    "getInTouch": "Contact",
-    "downloadResume": "Download Resume (PDF)",
+    "portfolioLabel": "Product strategy · platform systems · AI decision support",
+    "focusLabel": "How I work",
+    "subtitle": "I turn ambiguous user and operational problems into product direction,\nexecution structure, and AI-assisted decision flows.",
+    "mission": "My strength is creating structure before a team reaches for more features: clarifying the product problem, aligning execution, and making technical context usable for better decisions.",
+    "proofItems": {
+      "product": "Product ownership and frontend leadership for a real-time log platform",
+      "ai": "AI interaction design grounded in user-behavior and blank-screen logs",
+      "execution": "Execution alignment across planning, product framing, and implementation"
+    },
+    "viewProjects": "See Flagship Work",
+    "getInTouch": "Start a Conversation",
+    "downloadResume": "Open Resume PDF",
     "downloadResumeAria": "Download resume PDF"
   },
   "identity": {
@@ -43,26 +52,38 @@
   },
   "projects": {
     "title": "Core Projects",
-    "intro": "I chose to focus on one representative project and show how problem framing and design intent came together in practice.",
+    "intro": "Instead of listing every build, I lead with one representative case that shows how I frame the problem, shape the product experience, and align execution.",
     "items": {
       "loggy": {
         "title": "Loggy | Real-Time Log Analysis Collaboration Platform",
-        "summary": "This project was designed to reduce slow debugging cycles by improving real-time log visibility and team collaboration.",
+        "context": "This is the project that best shows how I work when product direction, frontend execution, and technical decision-making have to move together.",
+        "summary": "Loggy was built to shorten slow debugging loops by turning streaming logs into a readable, filterable, and collaborative review flow.",
         "metrics": {
-          "1": "85% reduction in log analysis latency",
-          "2": "Designed with 5,000+ logs per second in mind",
-          "3": "Collaborative team project"
+          "1": "85% shorter log analysis time",
+          "2": "Designed for 5,000+ logs per second",
+          "3": "Product + frontend ownership"
         },
-        "problem": "Developers were spending too much time manually reading large volumes of logs, which slowed root-cause analysis and debugging.",
-        "insight": "The issue was not simply log volume. The deeper problem was the lack of visibility into the right context at the right moment.",
-        "architecture": "I designed the experience around WebSocket-based streaming and a structured log pipeline so that review, filtering, and decision-making could happen in one continuous flow.",
-        "role": "Product Owner & Frontend Lead | Problem definition, user flow design, frontend implementation, and real-time review experience",
-        "learning": "This project strengthened my ability to translate a developer pain point into screen flow, requirements, and implementation discussions with the engineering team."
+        "problem": "Teams were manually scanning large volumes of raw logs across fragmented steps, which kept stretching the time needed to isolate root causes.",
+        "insight": "The bottleneck was not just scale. The harder problem was missing context at the exact moment someone needed to decide which signal mattered next.",
+        "architecture": "I shaped the experience around WebSocket streaming, structured filtering, and one continuous review surface so teams could inspect, narrow, and discuss logs without breaking flow.",
+        "role": "Product Owner & Frontend Lead | Problem framing, user flow design, frontend implementation, and realtime review UX",
+        "learning": "This project sharpened how I translate a technical pain point into product scope, interface structure, and implementation conversations the team can align around.",
+        "proof": {
+          "1": "I reframed a developer tooling issue as a product workflow problem.",
+          "2": "I connected realtime system constraints directly to filtering and interaction decisions.",
+          "3": "I aligned product scope, UI flow, and engineering execution around one review experience."
+        }
       }
     },
     "labels": {
+      "spotlight": "Flagship case",
+      "context": "Why this case matters",
+      "challenge": "Challenge",
+      "insight": "Structural insight",
+      "solution": "Experience + system design",
       "role": "Role",
-      "learning": "Key Takeaway"
+      "learning": "Key takeaway",
+      "proof": "What this project proves"
     }
   },
   "strategy": {
@@ -173,6 +194,8 @@
     "button": "Say Hello",
     "github": "GitHub",
     "email": "Email",
-    "resume": "PDF"
+    "resume": "PDF",
+    "footerBuilt": "Built by Byeongheon Jang.",
+    "footerDesigned": "Designed with React and custom CSS."
   }
 }

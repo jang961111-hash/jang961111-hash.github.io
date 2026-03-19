@@ -58,8 +58,8 @@ const Contact = () => {
           })}
         </div>
         <p className="copyright">
-          Built by Byeongheon Jang. <br/>
-          Designed with React and custom CSS.
+          {t('contact.footerBuilt')} <br />
+          {t('contact.footerDesigned')}
         </p>
       </footer>
     </section>

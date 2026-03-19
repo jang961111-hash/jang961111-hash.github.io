@@ -1,56 +1,167 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import useScrollReveal from '../hooks/useScrollReveal';
-import './Section.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import useScrollReveal from "../hooks/useScrollReveal";
+import {
+  getLocalizedArchiveProjects,
+  getLocalizedFeaturedProject,
+  projectUiCopy,
+} from "../content/projects";
+import "./Section.css";
+
+const storyKeys = [
+  { id: "problem", labelKey: "challenge" },
+  { id: "insight", labelKey: "insight" },
+  { id: "solution", labelKey: "solution" },
+];
+
+const featureLabels = {
+  ko: {
+    challenge: "다룬 문제",
+    insight: "구조적 인사이트",
+    solution: "경험 설계 + 시스템 구조",
+    role: "담당 역할",
+    highlights: "핵심 포인트",
+    proof: "이 프로젝트가 증명하는 것",
+  },
+  en: {
+    challenge: "Challenge",
+    insight: "Structural insight",
+    solution: "Experience + system design",
+    role: "Role",
+    highlights: "Highlights",
+    proof: "What this project proves",
+  },
+};
 
 const Projects = () => {
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+  const lang = i18n.language === "en" ? "en" : "ko";
+  const copy = projectUiCopy[lang];
+  const labels = featureLabels[lang];
+  const featuredProject = getLocalizedFeaturedProject(lang);
+  const archiveProjects = getLocalizedArchiveProjects(lang);
   const { elementRef, isVisible } = useScrollReveal();
-  const projectBaseKey = 'projects.items.loggy';
 
   return (
     <section id="projects" className="section">
-      <div 
-        ref={elementRef} 
-        className={`section-container reveal-base ${isVisible ? 'reveal-visible' : ''}`}
+      <div
+        ref={elementRef}
+        className={`section-container reveal-base ${isVisible ? "reveal-visible" : ""}`}
       >
         <h2 className="section-title">
-          <span className="text-highlight">02.</span> {t('projects.title')}
+          <span className="text-highlight">02.</span> {copy.sectionTitle}
         </h2>
-        <p className="section-subtitle">{t('projects.intro')}</p>
-        
+        <p className="section-subtitle">{copy.sectionIntro}</p>
+
         <div className="project-wrapper structural-card">
-          <div className="project-header">
-            <h3 className="project-title">{t(`${projectBaseKey}.title`)}</h3>
+          <div className="project-top">
+            <div className="project-header">
+              <span className="project-kicker">{copy.featuredKicker}</span>
+              <h3 className="project-title">{featuredProject.title}</h3>
+              <p className="project-summary">{featuredProject.summary}</p>
+            </div>
+
+            <div className="project-context-card">
+              <span className="detail-label">{copy.featuredContext}</span>
+              <p>{featuredProject.context}</p>
+            </div>
           </div>
 
           <div className="project-content">
-            <p className="project-summary">{t(`${projectBaseKey}.summary`)}</p>
             <div className="project-metrics">
-              {['1', '2', '3'].map((metricKey) => (
-                <span key={metricKey} className="metric-badge">
-                  {t(`${projectBaseKey}.metrics.${metricKey}`)}
+              {featuredProject.metrics.map((metric) => (
+                <span key={metric} className="metric-badge">
+                  {metric}
                 </span>
               ))}
             </div>
 
-            <div className="project-description-block">
-              <p className="project-issue text-muted">{t(`${projectBaseKey}.problem`)}</p>
-              <p className="project-insight">{t(`${projectBaseKey}.insight`)}</p>
-              <p className="project-solution text-highlight">{t(`${projectBaseKey}.architecture`)}</p>
+            <div className="project-story-grid">
+              <div className="project-story-stack">
+                {storyKeys.map(({ id, labelKey }) => (
+                  <article key={id} className="project-story-card">
+                    <span className="detail-label">{labels[labelKey]}</span>
+                    <p className="project-story-text">
+                      {featuredProject.story?.[id]}
+                    </p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="project-side-column">
+                <div className="detail-item project-side-card">
+                  <span className="detail-label">{labels.role}</span>
+                  <p>{featuredProject.role}</p>
+                </div>
+                <div className="detail-item project-side-card">
+                  <span className="detail-label">{labels.highlights}</span>
+                  <ul className="project-proof-list">
+                    {featuredProject.highlights.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="detail-item project-side-card">
+                  <span className="detail-label">{labels.proof}</span>
+                  <ul className="project-proof-list">
+                    {featuredProject.proof.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            <div className="project-details project-detail-grid">
-              <div className="detail-item">
-                <span className="detail-label">{t('projects.labels.role')}</span>
-                <p>{t(`${projectBaseKey}.role`)}</p>
-              </div>
-              <div className="detail-item">
-                <span className="detail-label">{t('projects.labels.learning')}</span>
-                <p>{t(`${projectBaseKey}.learning`)}</p>
-              </div>
+            <div className="project-actions">
+              <Link to={featuredProject.path} className="cta-button secondary">
+                {copy.readCaseStudy}
+              </Link>
             </div>
           </div>
+        </div>
+
+        <div className="project-archive-header">
+          <div>
+            <p className="project-archive-kicker mono">{copy.archiveKicker}</p>
+            <h3 className="project-archive-title">{copy.archiveTitle}</h3>
+            <p className="project-archive-intro">{copy.archiveIntro}</p>
+          </div>
+        </div>
+
+        <div className="project-archive-grid">
+          {archiveProjects.map((project) => (
+            <article key={project.slug} className="project-archive-card structural-card">
+              <div className="project-card-top">
+                <span className={`project-status-badge ${project.status}`}>
+                  {project.statusLabel}
+                </span>
+                <span className="project-card-period">{project.period}</span>
+              </div>
+
+              <p className="project-card-category">{project.category}</p>
+              <h4 className="project-card-title">{project.title}</h4>
+              <p className="project-card-summary">{project.summary}</p>
+
+              <div className="project-tag-list">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="project-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="project-card-footer">
+                <div className="project-card-role">
+                  <span className="detail-label">{copy.role}</span>
+                  <p>{project.role}</p>
+                </div>
+                <Link to={project.path} className="project-inline-link">
+                  {copy.viewDetails}
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
