@@ -6,8 +6,8 @@ import {
   getLocaleRootPath,
   getLocalizedPath,
   isLocaleRootPath,
-} from "../utils/localeRouting";
-import { queueScrollTarget, scrollToSectionId } from "../utils/scrollTarget";
+} from "../../utils/localeRouting";
+import { queueScrollTarget, scrollToSectionId } from "../../utils/scrollTarget";
 import "./Navbar.css";
 
 const navItems = [

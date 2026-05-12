@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import profilePhoto from "../assets/images/id-photo.webp";
-import profilePhotoJpg from "../assets/images/id-photo.jpg";
-import resumeKo from "../assets/docs/resume_ko.pdf";
-import resumeEn from "../assets/docs/resume_en.pdf";
+import profilePhoto from "../../assets/images/id-photo.webp";
+import profilePhotoJpg from "../../assets/images/id-photo.jpg";
+import resumeKo from "../../assets/docs/resume_ko.pdf";
+import resumeEn from "../../assets/docs/resume_en.pdf";
 import "./Hero.css";
 
 const Hero = () => {

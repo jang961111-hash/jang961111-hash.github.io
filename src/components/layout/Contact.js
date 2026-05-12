@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import useScrollReveal from '../hooks/useScrollReveal';
-import resumeKo from '../assets/docs/resume_ko.pdf';
-import resumeEn from '../assets/docs/resume_en.pdf';
+import useScrollReveal from '../../hooks/useScrollReveal';
+import resumeKo from '../../assets/docs/resume_ko.pdf';
+import resumeEn from '../../assets/docs/resume_en.pdf';
 import './Contact.css';
 
 const Contact = () => {

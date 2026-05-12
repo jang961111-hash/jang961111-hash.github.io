@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import SectionShell from "./SectionShell";
+import SectionShell from "../layout/SectionShell";
 
 const ProblemSolving = () => {
   const { t } = useTranslation();

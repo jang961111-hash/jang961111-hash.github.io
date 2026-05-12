@@ -5,8 +5,8 @@ import {
   getLocalizedArchiveProjects,
   getLocalizedFeaturedProject,
   projectUiCopy,
-} from "../content/projects";
-import SectionShell from "./SectionShell";
+} from "../../content/projects";
+import SectionShell from "../layout/SectionShell";
 
 const storyKeys = [
   { id: "problem", labelKey: "challenge" },
