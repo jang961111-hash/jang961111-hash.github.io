@@ -13,10 +13,7 @@ import "./Navbar.css";
 const navItems = [
   { id: "about", labelKey: "nav.identity" },
   { id: "projects", labelKey: "nav.projects" },
-  { id: "strategy", labelKey: "nav.strategy" },
-  { id: "depth", labelKey: "nav.depth" },
-  { id: "ai", labelKey: "nav.ai" },
-  { id: "framework", labelKey: "nav.framework" },
+  { id: "competencies", labelKey: "nav.competencies" },
   { id: "experience", labelKey: "nav.experience" },
   { id: "contact", labelKey: "nav.contact" },
 ];

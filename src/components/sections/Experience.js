@@ -8,7 +8,7 @@ const Experience = () => {
   const experiences = ["ssafy", "marines", "jaguar", "restaurant"];
 
   return (
-    <SectionShell id="experience" index="07" title={t("experience.title")}>
+    <SectionShell id="experience" index="04" title={t("experience.title")}>
       <div className="timeline">
         {experiences.map((jobKey) => {
           // Count number of descriptions dynamically if needed,

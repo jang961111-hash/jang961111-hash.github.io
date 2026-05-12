@@ -4,10 +4,7 @@
     "experience": "Experience",
     "projects": "Core Projects",
     "contact": "Contact",
-    "strategy": "Product Strategy",
-    "depth": "Tech Depth",
-    "ai": "AI Strategy",
-    "framework": "Framework",
+    "competencies": "Competencies",
     "themeLight": "Light",
     "themeDark": "Dark",
     "themeToLightAria": "Switch to light theme",
@@ -22,11 +19,11 @@
   "hero": {
     "name": "Byeongheon Jang",
     "greeting": "Hello, I am",
-    "title": "Technical Product Manager",
-    "portfolioLabel": "Product strategy · platform systems · AI decision support",
+    "title": "Product Manager",
+    "portfolioLabel": "Product strategy · System architecture · AI decision support",
     "focusLabel": "How I work",
-    "subtitle": "I turn ambiguous user and operational problems into product direction,\nexecution structure, and AI-assisted decision flows.",
-    "mission": "My strength is creating structure before a team reaches for more features: clarifying the product problem, aligning execution, and making technical context usable for better decisions.",
+    "subtitle": "I structurally define ambiguous user problems and turn them\ninto actionable products grounded in technical context.",
+    "mission": "Rather than just adding features, my strength lies in aligning product direction with execution by communicating in the same language as developers.",
     "proofItems": {
       "product": "Product ownership and frontend leadership for a real-time log platform",
       "ai": "AI interaction design grounded in user-behavior and blank-screen logs",
@@ -85,6 +82,10 @@
       "learning": "Key takeaway",
       "proof": "What this project proves"
     }
+  },
+  "competencies": {
+    "title": "Core Competencies",
+    "subtitle": "Connecting product strategy, technical depth, AI integration, and structural problem solving into a unified approach."
   },
   "strategy": {
     "title": "Product Strategy & Platform Focus",
