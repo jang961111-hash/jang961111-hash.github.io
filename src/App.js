@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Navigate,
   Route,
@@ -6,7 +6,6 @@ import {
   useLocation,
   useParams,
 } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -19,144 +18,24 @@ import ProblemSolving from "./components/ProblemSolving";
 import Contact from "./components/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
-import { BASE_URL, pageMetadata } from "./metadata";
+import { pageMetadata } from "./metadata";
 import { getLocalizedProject, getProjectBySlug } from "./content/projects";
+import { getFallbackPath, getLocaleRootPath } from "./utils/localeRouting";
 import {
-  getFallbackPath,
-  getLocaleRootPath,
-  getProjectPath,
-} from "./utils/localeRouting";
+  useHomeScrollRestore,
+  useLocaleLanguage,
+  useProjectScrollReset,
+} from "./hooks/useRouteEffects";
+import useTheme from "./hooks/useTheme";
 import {
-  consumeQueuedScrollTarget,
-  scrollToSectionId,
-} from "./utils/scrollTarget";
+  applyPageMetadata,
+  buildProjectMetadata,
+} from "./utils/pageMetadata";
 
-const THEME_STORAGE_KEY = "portfolio-theme";
-
-const updateMetaTag = (selector, content) => {
-  const element = document.querySelector(selector);
-
-  if (element) {
-    element.setAttribute("content", content);
-  }
-};
-
-const updateLinkTag = (selector, attributes, href) => {
-  let element = document.querySelector(selector);
-
-  if (!element) {
-    element = document.createElement("link");
-    Object.entries(attributes).forEach(([key, value]) => {
-      element.setAttribute(key, value);
-    });
-    document.head.appendChild(element);
-  }
-
-  element.setAttribute("href", href);
-};
-
-const getInitialTheme = () => {
-  if (typeof window === "undefined") {
-    return "light";
-  }
-
-  const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
-
-  if (savedTheme === "light" || savedTheme === "dark") {
-    return savedTheme;
-  }
-
-  return "light";
-};
-
-const applyPageMetadata = (metadata) => {
-  const currentUrl =
-    metadata.path === "/" ? `${BASE_URL}/` : `${BASE_URL}${metadata.path}`;
-
-  document.documentElement.lang = metadata.htmlLang;
-  document.title = metadata.title;
-
-  updateMetaTag('meta[name="description"]', metadata.description);
-  updateMetaTag('meta[property="og:title"]', metadata.title);
-  updateMetaTag('meta[property="og:description"]', metadata.description);
-  updateMetaTag('meta[property="og:locale"]', metadata.locale);
-  updateMetaTag('meta[property="og:url"]', currentUrl);
-  updateMetaTag('meta[name="twitter:title"]', metadata.title);
-  updateMetaTag('meta[name="twitter:description"]', metadata.description);
-
-  updateLinkTag('link[rel="canonical"]', { rel: "canonical" }, currentUrl);
-  updateLinkTag(
-    'link[rel="alternate"][hreflang="ko"]',
-    { rel: "alternate", hreflang: "ko" },
-    `${BASE_URL}/`
-  );
-  updateLinkTag(
-    'link[rel="alternate"][hreflang="en"]',
-    { rel: "alternate", hreflang: "en" },
-    `${BASE_URL}/en/`
-  );
-  updateLinkTag(
-    'link[rel="alternate"][hreflang="x-default"]',
-    { rel: "alternate", hreflang: "x-default" },
-    `${BASE_URL}/`
-  );
-};
-
-const useLocaleLanguage = (lang) => {
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    if (i18n.language !== lang) {
-      i18n.changeLanguage(lang);
-    }
-  }, [lang, i18n]);
-};
-
-const useHomeScrollRestore = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    const queuedTarget = consumeQueuedScrollTarget();
-    const hashTarget = window.location.hash
-      ? window.location.hash.replace(/^#/, "")
-      : "";
-    const targetId = queuedTarget || hashTarget;
-
-    const timer = window.setTimeout(() => {
-      if (targetId) {
-        scrollToSectionId(targetId);
-        return;
-      }
-
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    }, 120);
-
-    return () => window.clearTimeout(timer);
-  }, [location.pathname]);
-};
-
-const useProjectScrollReset = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [location.pathname]);
-};
-
-const buildProjectMetadata = (lang, project) => {
-  const baseMetadata = pageMetadata[lang] ?? pageMetadata.ko;
-
-  return {
-    htmlLang: baseMetadata.htmlLang,
-    locale: baseMetadata.locale,
-    path: getProjectPath(lang, project.slug),
-    title:
-      lang === "en"
-        ? `${project.title} | Byeongheon Jang`
-        : `${project.title} | Portfolio`,
-    description: project.summary,
-  };
-};
+const localeRouteDefinitions = [
+  { lang: "ko", homePath: "/", projectPath: "/projects/:slug" },
+  { lang: "en", homePath: "/en", projectPath: "/en/projects/:slug" },
+];
 
 const Layout = ({ theme, onToggleTheme, onPrint, children }) => (
   <div className="layout">
@@ -229,25 +108,7 @@ const FallbackRoute = () => {
 };
 
 function App() {
-  const [theme, setTheme] = useState(getInitialTheme);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-
-    updateMetaTag(
-      'meta[name="theme-color"]',
-      theme === "dark" ? "#101418" : "#fcfaf6"
-    );
-    updateMetaTag(
-      'meta[name="color-scheme"]',
-      theme === "dark" ? "dark light" : "light dark"
-    );
-  }, [theme]);
-
-  const handleToggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
-  };
+  const { theme, toggleTheme } = useTheme();
 
   const handlePrint = () => {
     window.print();
@@ -256,50 +117,32 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <HomeRoute
-              lang="ko"
-              theme={theme}
-              onToggleTheme={handleToggleTheme}
-              onPrint={handlePrint}
-            />
-          }
-        />
-        <Route
-          path="/en"
-          element={
-            <HomeRoute
-              lang="en"
-              theme={theme}
-              onToggleTheme={handleToggleTheme}
-              onPrint={handlePrint}
-            />
-          }
-        />
-        <Route
-          path="/projects/:slug"
-          element={
-            <ProjectRoute
-              lang="ko"
-              theme={theme}
-              onToggleTheme={handleToggleTheme}
-              onPrint={handlePrint}
-            />
-          }
-        />
-        <Route
-          path="/en/projects/:slug"
-          element={
-            <ProjectRoute
-              lang="en"
-              theme={theme}
-              onToggleTheme={handleToggleTheme}
-              onPrint={handlePrint}
-            />
-          }
-        />
+        {localeRouteDefinitions.flatMap(({ lang, homePath, projectPath }) => [
+          <Route
+            key={`${lang}-home`}
+            path={homePath}
+            element={
+              <HomeRoute
+                lang={lang}
+                theme={theme}
+                onToggleTheme={toggleTheme}
+                onPrint={handlePrint}
+              />
+            }
+          />,
+          <Route
+            key={`${lang}-project`}
+            path={projectPath}
+            element={
+              <ProjectRoute
+                lang={lang}
+                theme={theme}
+                onToggleTheme={toggleTheme}
+                onPrint={handlePrint}
+              />
+            }
+          />,
+        ])}
         <Route path="*" element={<FallbackRoute />} />
       </Routes>
     </div>

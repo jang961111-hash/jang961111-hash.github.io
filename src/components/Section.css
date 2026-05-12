@@ -51,6 +51,10 @@
   letter-spacing: 0;
 }
 
+.section-subtitle-spacious {
+  margin-bottom: 3rem;
+}
+
 .about-content {
   display: flex;
   flex-direction: column;

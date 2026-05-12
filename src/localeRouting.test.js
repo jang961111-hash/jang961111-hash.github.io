@@ -3,6 +3,7 @@ import {
   getLocaleFromPathname,
   getLocalizedPath,
   getProjectPath,
+  isLocaleRootPath,
 } from "./utils/localeRouting";
 
 describe("locale routing helpers", () => {
@@ -24,5 +25,14 @@ describe("locale routing helpers", () => {
   test("keeps unmatched english routes inside the english root", () => {
     expect(getFallbackPath("/en/unknown")).toBe("/en/");
     expect(getFallbackPath("/unknown")).toBe("/");
+  });
+
+  test("treats only the /en path segment as English", () => {
+    expect(getLocaleFromPathname("/en")).toBe("en");
+    expect(getLocaleFromPathname("/en/")).toBe("en");
+    expect(getLocaleFromPathname("/enigma")).toBe("ko");
+    expect(isLocaleRootPath("/")).toBe(true);
+    expect(isLocaleRootPath("/en/")).toBe(true);
+    expect(isLocaleRootPath("/en/projects/loggy/")).toBe(false);
   });
 });

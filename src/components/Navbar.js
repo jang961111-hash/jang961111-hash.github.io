@@ -5,20 +5,22 @@ import {
   getLocaleFromPathname,
   getLocaleRootPath,
   getLocalizedPath,
+  isLocaleRootPath,
 } from "../utils/localeRouting";
 import { queueScrollTarget, scrollToSectionId } from "../utils/scrollTarget";
 import "./Navbar.css";
 
-const navSectionIds = [
-  "about",
-  "projects",
-  "strategy",
-  "depth",
-  "ai",
-  "framework",
-  "experience",
-  "contact",
+const navItems = [
+  { id: "about", labelKey: "nav.identity" },
+  { id: "projects", labelKey: "nav.projects" },
+  { id: "strategy", labelKey: "nav.strategy" },
+  { id: "depth", labelKey: "nav.depth" },
+  { id: "ai", labelKey: "nav.ai" },
+  { id: "framework", labelKey: "nav.framework" },
+  { id: "experience", labelKey: "nav.experience" },
+  { id: "contact", labelKey: "nav.contact" },
 ];
+const navSectionIds = navItems.map(({ id }) => id);
 
 const DESKTOP_BREAKPOINT = 1280;
 
@@ -33,23 +35,13 @@ const Navbar = ({ theme, onToggleTheme, onPrint }) => {
 
   const currentLang = getLocaleFromPathname(location.pathname);
   const isKorean = currentLang === "ko";
-  const isHomeRoute = location.pathname === "/" || location.pathname === "/en";
+  const isHomeRoute = isLocaleRootPath(location.pathname);
   const nextThemeLabel =
     theme === "dark" ? t("nav.themeLight") : t("nav.themeDark");
   const nextThemeAriaLabel =
     theme === "dark"
       ? t("nav.themeToLightAria")
       : t("nav.themeToDarkAria");
-  const navItems = [
-    { id: "about", label: t("nav.identity") },
-    { id: "projects", label: t("nav.projects") },
-    { id: "strategy", label: t("nav.strategy") },
-    { id: "depth", label: t("nav.depth") },
-    { id: "ai", label: t("nav.ai") },
-    { id: "framework", label: t("nav.framework") },
-    { id: "experience", label: t("nav.experience") },
-    { id: "contact", label: t("nav.contact") },
-  ];
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -96,7 +88,7 @@ const Navbar = ({ theme, onToggleTheme, onPrint }) => {
       setScrollProgress(progress);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -249,14 +241,14 @@ const Navbar = ({ theme, onToggleTheme, onPrint }) => {
 
           <div className="nav-desktop-shell">
             <ul className="nav-links">
-              {navItems.map(({ id, label }) => (
+              {navItems.map(({ id, labelKey }) => (
                 <li key={id}>
                   <a
                     href={`#${id}`}
                     className={activeSection === id ? "active" : ""}
                     onClick={(event) => scrollToSection(event, id)}
                   >
-                    {label}
+                    {t(labelKey)}
                   </a>
                 </li>
               ))}
@@ -322,14 +314,14 @@ const Navbar = ({ theme, onToggleTheme, onPrint }) => {
           </div>
 
           <ul className="nav-drawer-links">
-            {navItems.map(({ id, label }) => (
+            {navItems.map(({ id, labelKey }) => (
               <li key={id}>
                 <a
                   href={`#${id}`}
                   className={activeSection === id ? "active" : ""}
                   onClick={(event) => scrollToSection(event, id)}
                 >
-                  {label}
+                  {t(labelKey)}
                 </a>
               </li>
             ))}

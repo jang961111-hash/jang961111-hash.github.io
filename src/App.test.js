@@ -119,6 +119,30 @@ describe("App routing flows", () => {
     });
   });
 
+  test("keeps smooth section scrolling working on the English home route", async () => {
+    renderAtRoute("/en/");
+
+    await waitFor(() => {
+      expect(document.title).toBe("Byeongheon Jang | Technical Product Manager");
+    });
+    await waitFor(() => {
+      expect(window.scrollTo).toHaveBeenCalled();
+    });
+
+    window.scrollTo.mockClear();
+
+    await userEvent.click(
+      screen.getAllByRole("link", { name: "Core Projects" })[0]
+    );
+
+    await waitFor(() => {
+      expect(window.scrollTo).toHaveBeenCalledWith(
+        expect.objectContaining({ behavior: "smooth" })
+      );
+    });
+    expect(screen.getByTestId("location-probe").textContent).toBe("/en/");
+  });
+
   test("redirects unknown English routes to the English home", async () => {
     renderAtRoute("/en/does-not-exist");
 
