@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.30ccf772.css",
-    "main.js": "/static/js/main.41706677.js",
+    "main.css": "/static/css/main.4694ff4c.css",
+    "main.js": "/static/js/main.6bc46917.js",
     "static/js/453.a7d99afe.chunk.js": "/static/js/453.a7d99afe.chunk.js",
     "static/media/resume_ko.pdf": "/static/media/resume_ko.958b5019aa1ea4a87cc7.pdf",
     "static/media/resume_en.pdf": "/static/media/resume_en.a17237b279adda5a9d43.pdf",
@@ -32,12 +32,12 @@
     "static/media/jetbrains-mono-cyrillic-ext-700-normal.woff": "/static/media/jetbrains-mono-cyrillic-ext-700-normal.7a2e45f316108b48ea72.woff",
     "static/media/jetbrains-mono-cyrillic-ext-400-normal.woff2": "/static/media/jetbrains-mono-cyrillic-ext-400-normal.7347c7bfed47f1ef0b25.woff2",
     "static/media/jetbrains-mono-cyrillic-ext-700-normal.woff2": "/static/media/jetbrains-mono-cyrillic-ext-700-normal.5ec92f9402c68a8c4489.woff2",
-    "main.30ccf772.css.map": "/static/css/main.30ccf772.css.map",
-    "main.41706677.js.map": "/static/js/main.41706677.js.map",
+    "main.4694ff4c.css.map": "/static/css/main.4694ff4c.css.map",
+    "main.6bc46917.js.map": "/static/js/main.6bc46917.js.map",
     "453.a7d99afe.chunk.js.map": "/static/js/453.a7d99afe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30ccf772.css",
-    "static/js/main.41706677.js"
+    "static/css/main.4694ff4c.css",
+    "static/js/main.6bc46917.js"
   ]
 }
