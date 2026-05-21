@@ -24,6 +24,7 @@ yarn-error.log*
 build_log.txt
 /output
 /src/assets/images/profile-source.jpg
+promtree/
 .dev-server.log
 .dev-server.err.log
 .playwright-cli/
