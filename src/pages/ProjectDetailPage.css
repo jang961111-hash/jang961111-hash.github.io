@@ -114,6 +114,132 @@
   line-height: 1.8;
 }
 
+.detail-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.detail-story-item {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+@media (max-width: 768px) {
+  .detail-story-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.case-study-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(147, 95, 49, 0.05),
+    rgba(147, 95, 49, 0.02)
+  );
+  border: 1px solid rgba(147, 95, 49, 0.2) !important;
+}
+
+[data-theme="dark"] .case-study-card {
+  background: linear-gradient(
+    135deg,
+    rgba(194, 150, 92, 0.08),
+    rgba(194, 150, 92, 0.03)
+  );
+  border-color: rgba(194, 150, 92, 0.24) !important;
+}
+
+.case-study-card::before {
+  background: linear-gradient(
+    180deg,
+    var(--accent-primary),
+    rgba(255, 255, 255, 0)
+  ) !important;
+  width: 6px !important;
+}
+
+.case-study-header {
+  margin-bottom: 0.8rem;
+}
+
+.case-study-badge {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: var(--accent-primary);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+[data-theme="dark"] .case-study-badge {
+  background: var(--accent-secondary);
+  color: var(--bg-primary);
+}
+
+.case-study-title {
+  margin-bottom: 0.45rem;
+  color: var(--text-primary);
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.case-study-summary {
+  color: var(--accent-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="dark"] .case-study-summary {
+  color: var(--accent-secondary);
+}
+
+.case-study-content {
+  margin-top: 0.5rem;
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.45);
+  font-style: italic;
+  line-height: 1.85;
+}
+
+[data-theme="dark"] .case-study-content {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.project-media-card {
+  gap: 1rem;
+}
+
+.project-video-frame {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #000;
+}
+
+.project-video-frame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+}
+
+.project-media-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
 @media (max-width: 1080px) {
   .project-detail-header,
   .project-detail-content-grid {

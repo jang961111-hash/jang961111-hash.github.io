@@ -10,6 +10,42 @@ const linkLabelMap = {
   docs: "docs",
 };
 
+const VisualPlaceholder = ({ label, icon = "🖼️" }) => (
+  <div className="placeholder-box">
+    <span className="placeholder-icon">{icon}</span>
+    <p className="placeholder-text">{label}</p>
+  </div>
+);
+
+const ProjectMedia = ({ media }) => (
+  <article className="structural-card project-detail-card project-media-card">
+    <span className="detail-label">{media.title}</span>
+    {media.videoSrc && (
+      <div className="project-video-frame">
+        <video controls preload="metadata">
+          <source src={media.videoSrc} type="video/mp4" />
+        </video>
+      </div>
+    )}
+    <div className="project-media-actions">
+      {media.videoSrc && (
+        <a href={media.videoSrc} className="project-inline-link">
+          {media.videoLabel}
+        </a>
+      )}
+      {media.presentationHref && (
+        <a
+          href={media.presentationHref}
+          className="project-inline-link"
+          download
+        >
+          {media.presentationLabel}
+        </a>
+      )}
+    </div>
+  </article>
+);
+
 const ProjectDetailPage = ({ project, lang }) => {
   const copy = projectUiCopy[lang] ?? projectUiCopy.ko;
   const linkEntries = Object.entries(project.links ?? {}).filter(
@@ -86,10 +122,62 @@ const ProjectDetailPage = ({ project, lang }) => {
               )}
             </div>
           </div>
+
+          {project.heroImage && (
+            <div className="project-detail-visual">
+              {project.heroImage.startsWith("[") ? (
+                <VisualPlaceholder label={project.heroImage} icon="🚀" />
+              ) : (
+                <img
+                  src={project.heroImage}
+                  alt={project.title}
+                  className="section-image"
+                />
+              )}
+            </div>
+          )}
         </div>
 
         <div className="project-detail-content-grid">
           <div className="project-detail-main">
+            {project.story && (
+              <article className="structural-card project-detail-card story-card">
+                <div className="project-story-grid detail-story-grid">
+                  <div className="detail-story-item">
+                    <span className="detail-label">{copy.challenge}</span>
+                    <p className="project-detail-body">{project.story.problem}</p>
+                  </div>
+                  <div className="detail-story-item">
+                    <span className="detail-label">{copy.insight}</span>
+                    <p className="project-detail-body">{project.story.insight}</p>
+                  </div>
+                  <div className="detail-story-item">
+                    <span className="detail-label">{copy.solution}</span>
+                    <p className="project-detail-body">{project.story.solution}</p>
+                  </div>
+                </div>
+              </article>
+            )}
+
+            {project.caseStudy && (
+              <article className="structural-card project-detail-card case-study-card">
+                <div className="case-study-header">
+                  <span className="case-study-badge mono">
+                    Decision Deep Dive
+                  </span>
+                  <h2 className="case-study-title">{project.caseStudy.title}</h2>
+                  <p className="case-study-summary">
+                    {project.caseStudy.summary}
+                  </p>
+                </div>
+                <div className="case-study-content project-detail-body">
+                  {project.caseStudy.content}
+                </div>
+              </article>
+            )}
+
+            {project.media && <ProjectMedia media={project.media} />}
+
             <article className="structural-card project-detail-card">
               <span className="detail-label">{copy.highlights}</span>
               <ul className="project-proof-list">
@@ -105,7 +193,20 @@ const ProjectDetailPage = ({ project, lang }) => {
                 className="structural-card project-detail-card"
               >
                 <span className="detail-label">{section.title}</span>
-                <p className="project-detail-body">{section.body}</p>
+                <div className="project-detail-body">{section.body}</div>
+                {section.image && (
+                  <div className="project-section-visual">
+                    {section.image.startsWith("[") ? (
+                      <VisualPlaceholder label={section.image} />
+                    ) : (
+                      <img
+                        src={section.image}
+                        alt={section.title}
+                        className="section-image"
+                      />
+                    )}
+                  </div>
+                )}
               </article>
             ))}
           </div>

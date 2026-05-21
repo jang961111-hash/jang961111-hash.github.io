@@ -30,6 +30,7 @@ export const applyPageMetadata = (metadata) => {
   document.title = metadata.title;
 
   updateMetaTag('meta[name="description"]', metadata.description);
+  updateMetaTag('meta[name="keywords"]', metadata.keywords ?? "");
   updateMetaTag('meta[property="og:title"]', metadata.title);
   updateMetaTag('meta[property="og:description"]', metadata.description);
   updateMetaTag('meta[property="og:locale"]', metadata.locale);
@@ -63,9 +64,11 @@ export const buildProjectMetadata = (lang, project) => {
     locale: baseMetadata.locale,
     path: getProjectPath(lang, project.slug),
     title:
-      lang === "en"
+      project.seo?.title ??
+      (lang === "en"
         ? `${project.title} | Byeongheon Jang`
-        : `${project.title} | Portfolio`,
-    description: project.summary,
+        : `${project.title} | Portfolio`),
+    description: project.seo?.description ?? project.summary,
+    keywords: project.seo?.keywords ?? baseMetadata.keywords,
   };
 };
