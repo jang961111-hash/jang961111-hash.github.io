@@ -155,36 +155,53 @@
     }
   },
   "experience": {
-    "title": "Leadership & Structural Growth",
+    "title": "Selected Experience",
     "jobs": {
-      "ssafy": {
-        "title": "Cross-Functional Collaboration & Platform Thinking",
-        "company": "SSAFY",
-        "period": "2025 - PRESENT",
-        "desc1": "I have been working through algorithms, web development, and AI service projects while gaining first-hand experience in technical decision-making.",
-        "desc2": "Across several projects, I have handled problem framing, role coordination, screen flow design, and collaboration with developers.",
-        "desc3": "Projects around real-time logs, AI interaction design, and hackathons have helped me connect planning with implementation."
+      "ssafyTraining": {
+        "title": "AI/SW Training & Product Projects",
+        "company": "Samsung SW·AI Academy For Youth, SSAFY",
+        "period": "2025.07 - 2026.06",
+        "desc1": "Learning service development based on Python, SQL, Web, AI, and Data.",
+        "desc2": "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects.",
+        "desc3": "Helped share notices and support communication among trainees as the class representative (CA) at the Gwangju campus."
       },
-      "marines": {
-        "title": "Decision Clarity Under Extreme Pressure",
+      "customerExperience": {
+        "title": "Customer Experience Operation",
+        "company": "Charancha / Jaguar Land Rover Gangdong Service Center",
+        "period": "2022.12 - 2024.01",
+        "desc1": "Handled valet operations and customer service at Jaguar Land Rover Gangdong Service Center.",
+        "desc2": "Managed vehicle movement, customer waiting, and on-site communication while experiencing the flow of a service operation.",
+        "desc3": "Observed firsthand where customers tend to feel friction in the service process."
+      },
+      "salesField": {
+        "title": "Sales & Field Operation",
+        "company": "Yeyoung Design",
+        "period": "2022.08 - 2022.11",
+        "desc1": "Handled interior film sales and customer consultation.",
+        "desc2": "Supported on-site installation work and experienced the gap between customer requests and actual field conditions.",
+        "desc3": "Learned how requirements explained in conversation can change when they meet the real work environment."
+      },
+      "militaryCommunication": {
+        "title": "Military Service",
         "company": "Republic of Korea Marine Corps",
-        "period": "2016 - 2018",
-        "desc1": "I learned to make priorities and responsibility explicit even in high-pressure situations.",
-        "desc2": "During KMEP joint training, I supported communication as an interpreter and learned the value of clear explanation and coordination."
+        "period": "2016.12 - 2018.09",
+        "desc1": "Served as a rifleman in the 2nd Marine Division.",
+        "desc2": "Partly supported interpretation and situation updates during ROK-US joint exercises.",
+        "desc3": "Learned the habit of carrying assigned work through in constrained environments."
       },
-      "jaguar": {
-        "title": "Customer Experience System Operation",
-        "company": "Chunil Automobile (Jaguar Land Rover)",
-        "period": "2016",
-        "desc1": "I managed VIP customer response and vehicle flow with an end-to-end view of the on-site service experience.",
-        "desc2": "By identifying bottlenecks and improving movement and response procedures, I helped raise operational efficiency."
+      "philosophy": {
+        "title": "B.A. in Philosophy",
+        "company": "Chonnam National University",
+        "period": "2016.03 - 2022.02",
+        "desc1": "Studied philosophy and trained by reading texts, organizing questions, and explaining ideas logically.",
+        "desc2": "Later connected SW·AI learning and service planning experience into an interest in problems between people and technology."
       },
-      "restaurant": {
-        "title": "Business Model & Revenue Structure Thinking",
-        "company": "F&B Private Business Operations",
-        "period": "2015",
-        "desc1": "I handled early-stage operations, customer response, and physical flow, which gave me a grounded sense of service operations.",
-        "desc2": "That experience helped me develop a practical instinct for balancing service quality with operational efficiency."
+      "globalLeadership": {
+        "title": "Early Global & Leadership Experience",
+        "company": "Portage High School / Gwangju Goryeo High School",
+        "period": "2012.01 - 2016.02",
+        "desc1": "Lived for one year as an exchange student at Portage High School in Indiana.",
+        "desc2": "Served as student council president in high school, gaining experience speaking in front of others and coordinating opinions."
       }
     }
   },

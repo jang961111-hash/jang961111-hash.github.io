@@ -155,36 +155,53 @@
     }
   },
   "experience": {
-    "title": "Leadership & Structural Growth",
+    "title": "Selected Experience",
     "jobs": {
-      "ssafy": {
-        "title": "Cross-Functional Collaboration & Platform Thinking",
-        "company": "SSAFY",
-        "period": "2025 - PRESENT",
-        "desc1": "알고리즘, 웹 개발, AI 서비스 프로젝트를 수행하며 기술 의사결정 과정을 직접 경험했습니다.",
-        "desc2": "여러 프로젝트에서 문제 정의, 역할 조율, 화면 흐름 설계, 개발 협업을 함께 맡으며 제품 관점을 넓혔습니다.",
-        "desc3": "실시간 로그 분석, AI 서비스 설계, 해커톤 프로젝트를 통해 기획과 구현을 연결하는 경험을 쌓고 있습니다."
+      "ssafyTraining": {
+        "title": "AI/SW Training & Product Projects",
+        "company": "Samsung SW·AI Academy For Youth, SSAFY",
+        "period": "2025.07 - 2026.06",
+        "desc1": "Python, SQL, Web, AI, Data를 기반으로 서비스 개발을 학습하고 있습니다.",
+        "desc2": "팀 프로젝트에서 문제 정의, 기능 우선순위 정리, 화면 흐름 정리, 발표 자료 구성을 맡았습니다.",
+        "desc3": "광주캠퍼스 반대표(CA)로 공지 전달과 교육생 간 커뮤니케이션을 도왔습니다."
       },
-      "marines": {
-        "title": "Decision Clarity Under Extreme Pressure",
-        "company": "대한민국 해병대",
-        "period": "2016 - 2018",
-        "desc1": "극한 상황에서도 우선순위와 책임을 분명히 하는 태도를 익혔습니다.",
-        "desc2": "미 해병대 합동훈련(KMEP) 기간 동안 통역 역할을 수행하며 설명과 조율의 중요성을 배웠습니다."
+      "customerExperience": {
+        "title": "Customer Experience Operation",
+        "company": "Charancha / Jaguar Land Rover Gangdong Service Center",
+        "period": "2022.12 - 2024.01",
+        "desc1": "재규어랜드로버 강동서비스센터에서 발렛 운영과 고객 응대를 담당했습니다.",
+        "desc2": "차량 동선, 고객 대기, 현장 커뮤니케이션을 관리하며 서비스 현장의 흐름을 경험했습니다.",
+        "desc3": "고객이 불편을 느끼는 지점이 어디인지 현장에서 직접 관찰할 수 있었습니다."
       },
-      "jaguar": {
-        "title": "Customer Experience System Operation",
-        "company": "천일 오토모빌 (재규어 랜드로버)",
-        "period": "2016",
-        "desc1": "VIP 고객 응대와 차량 동선을 운영하며 현장 서비스의 전체 흐름을 관리했습니다.",
-        "desc2": "병목 지점을 파악하고 동선과 응대 절차를 개선해 운영 효율을 높였습니다."
+      "salesField": {
+        "title": "Sales & Field Operation",
+        "company": "Yeyoung Design",
+        "period": "2022.08 - 2022.11",
+        "desc1": "인테리어 필름 영업과 고객 상담을 담당했습니다.",
+        "desc2": "현장 시공 보조를 함께 수행하며 고객 요구와 실제 작업 환경 사이의 간극을 이해했습니다.",
+        "desc3": "말로 설명한 요구사항이 실제 현장에서는 어떻게 달라지는지 배웠습니다."
       },
-      "restaurant": {
-        "title": "Business Model & Revenue Structure Thinking",
-        "company": "F&B 개인 사업장 운영 실무",
-        "period": "2015",
-        "desc1": "초기 운영, 고객 응대, 동선 관리 등 현장 전반을 맡으며 서비스 운영의 기본을 익혔습니다.",
-        "desc2": "수요와 운영 흐름을 함께 보며 서비스 품질과 효율을 맞추는 감각을 키웠습니다."
+      "militaryCommunication": {
+        "title": "Military Service",
+        "company": "Republic of Korea Marine Corps",
+        "period": "2016.12 - 2018.09",
+        "desc1": "해병대 제2사단에서 소총수로 복무했습니다.",
+        "desc2": "한미연합훈련 과정에서 통역과 상황 전달을 일부 지원했습니다.",
+        "desc3": "제한된 환경에서 맡은 일을 끝까지 수행하는 태도를 배웠습니다."
+      },
+      "philosophy": {
+        "title": "B.A. in Philosophy",
+        "company": "Chonnam National University",
+        "period": "2016.03 - 2022.02",
+        "desc1": "철학을 전공하며 글을 읽고, 질문을 정리하고, 논리적으로 설명하는 훈련을 했습니다.",
+        "desc2": "이후 SW·AI 학습과 서비스 기획 경험을 연결해 사람과 기술 사이의 문제에 관심을 갖게 되었습니다."
+      },
+      "globalLeadership": {
+        "title": "Early Global & Leadership Experience",
+        "company": "Portage High School / Gwangju Goryeo High School",
+        "period": "2012.01 - 2016.02",
+        "desc1": "미국 인디애나주 Portage High School에서 1년간 교환학생으로 생활했습니다.",
+        "desc2": "고등학교 시절 전교학생회장으로 활동하며 여러 사람 앞에서 말하고 의견을 조율하는 경험을 했습니다."
       }
     }
   },

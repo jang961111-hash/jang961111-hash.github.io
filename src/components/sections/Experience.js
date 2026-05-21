@@ -5,7 +5,14 @@ import SectionShell from "../layout/SectionShell";
 const Experience = () => {
   const { t } = useTranslation();
 
-  const experiences = ["ssafy", "marines", "jaguar", "restaurant"];
+  const experiences = [
+    "ssafyTraining",
+    "customerExperience",
+    "salesField",
+    "militaryCommunication",
+    "philosophy",
+    "globalLeadership",
+  ];
 
   return (
     <SectionShell id="experience" index="04" title={t("experience.title")}>
