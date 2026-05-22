@@ -52,8 +52,8 @@ const Hero = () => {
               rel="noopener noreferrer"
               download={
                 i18n.language === "ko"
-                  ? "Jang-Byeong-Heon_TPM_Resume_KO.pdf"
-                  : "Jang-Byeong-Heon_TPM_Resume_EN.pdf"
+                  ? "Jang-Byeong-Heon_PM_Resume_KO.pdf"
+                  : "Jang-Byeong-Heon_PM_Resume_EN.pdf"
               }
               aria-label={t("hero.downloadResumeAria")}
             >

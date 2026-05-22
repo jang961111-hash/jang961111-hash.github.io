@@ -7,11 +7,12 @@ const Experience = () => {
 
   const experiences = [
     "ssafyTraining",
-    "customerExperience",
-    "salesField",
-    "militaryCommunication",
+    "projectPractice",
     "philosophy",
     "globalLeadership",
+    "militaryCommunication",
+    "customerExperience",
+    "salesField",
   ];
 
   return (

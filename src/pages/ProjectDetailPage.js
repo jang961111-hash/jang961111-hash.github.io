@@ -46,6 +46,65 @@ const ProjectMedia = ({ media }) => (
   </article>
 );
 
+const SubmissionSection = ({ label, children }) => (
+  <article className="submission-detail-item">
+    <span className="detail-label">{label}</span>
+    {children}
+  </article>
+);
+
+const SubmissionFormat = ({ project, copy }) => {
+  if (!project.interviewQuestions?.length) {
+    return null;
+  }
+
+  return (
+    <article className="structural-card project-detail-card submission-detail-card">
+      <span className="detail-label">{copy.submissionFormat}</span>
+      <div className="submission-detail-grid">
+        <SubmissionSection label={copy.overview}>
+          <p>{project.summary}</p>
+        </SubmissionSection>
+        <SubmissionSection label={copy.techStack}>
+          <div className="project-tag-list">
+            {project.tags.map((tag) => (
+              <span key={tag} className="project-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </SubmissionSection>
+        <SubmissionSection label={copy.myRole}>
+          <p>{project.role}</p>
+        </SubmissionSection>
+        <SubmissionSection label={copy.problemDefinition}>
+          <p>{project.story?.problem ?? project.context}</p>
+        </SubmissionSection>
+        <SubmissionSection label={copy.solutionProcess}>
+          <p>{project.story?.solution ?? project.caseStudy?.summary}</p>
+        </SubmissionSection>
+        <SubmissionSection label={copy.coreContribution}>
+          <ul className="project-proof-list">
+            {project.highlights.slice(0, 3).map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </SubmissionSection>
+        <SubmissionSection label={copy.resultLearning}>
+          <p>{project.proof[0] ?? project.caseStudy?.summary}</p>
+        </SubmissionSection>
+        <SubmissionSection label={copy.interviewHooks}>
+          <ul className="project-proof-list">
+            {project.interviewQuestions.map((question) => (
+              <li key={question}>{question}</li>
+            ))}
+          </ul>
+        </SubmissionSection>
+      </div>
+    </article>
+  );
+};
+
 const ProjectDetailPage = ({ project, lang }) => {
   const copy = projectUiCopy[lang] ?? projectUiCopy.ko;
   const linkEntries = Object.entries(project.links ?? {}).filter(
@@ -137,6 +196,8 @@ const ProjectDetailPage = ({ project, lang }) => {
             </div>
           )}
         </div>
+
+        <SubmissionFormat project={project} copy={copy} />
 
         <div className="project-detail-content-grid">
           <div className="project-detail-main">

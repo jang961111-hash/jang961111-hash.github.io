@@ -19,7 +19,7 @@ const SectionShell = ({
     <section id={id} className="section">
       <div
         ref={elementRef}
-        className={`section-container reveal-base ${isVisible ? "reveal-visible" : ""}`}
+        className={`section-container reveal-base stagger-wrap ${isVisible ? "reveal-visible" : ""}`}
       >
         <h2 className="section-title">
           <span className="text-highlight">{index}.</span> {title}

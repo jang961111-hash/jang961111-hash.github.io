@@ -192,6 +192,19 @@
   border-color: transparent;
 }
 
+.nav-action-btn-resume {
+  background: transparent;
+  color: var(--accent-primary);
+  border: 1.5px solid var(--accent-primary);
+  padding: 0.62rem 1.1rem;
+  font-weight: 800;
+}
+
+.nav-action-btn-resume:hover {
+  background: var(--accent-primary);
+  color: #ffffff;
+}
+
 .nav-action-btn-accent:hover {
   color: #f9f5ef;
   background: var(--accent-secondary);

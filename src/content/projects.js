@@ -1,11 +1,25 @@
 import { getProjectPath, getLocaleRootPath } from "../utils/localeRouting";
 
 const localizeValue = (value, lang) => {
-  if (Array.isArray(value) || typeof value === "string" || value == null) {
+  if (Array.isArray(value)) {
+    return value.map((item) => localizeValue(item, lang));
+  }
+
+  if (typeof value === "string" || typeof value === "number" || value == null) {
     return value;
   }
 
-  return value[lang] ?? value.ko ?? value.en ?? "";
+  if (value[lang] || value.ko || value.en) {
+    return value[lang] ?? value.ko ?? value.en ?? "";
+  }
+
+  if (Object.prototype.hasOwnProperty.call(value, "value") || value.label) {
+    return [value.value, localizeValue(value.label, lang)]
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  return value;
 };
 
 export const projectUiCopy = {
@@ -19,6 +33,23 @@ export const projectUiCopy = {
     archiveTitle: "프로젝트 아카이브",
     archiveIntro:
       "진행 중인 항목부터 완료 프로젝트까지, 문제 정의와 서비스 구조화 역량을 보여주는 기록입니다.",
+    coreKicker: "Submission focus",
+    coreTitle: "제출용 핵심 프로젝트 3",
+    coreIntro:
+      "문제정의, 수행 역할, 기술 선택, 해결 과정이 면접 질문으로 이어지도록 DailyLog, Loggy, Promtree를 먼저 정리합니다.",
+    supportingKicker: "Supporting / Hackathon",
+    supportingTitle: "보조 프로젝트 및 해커톤",
+    supportingIntro:
+      "도메인 확장성, 빠른 실행력, 추가 아이디어를 보여주는 프로젝트는 하단 아카이브로 분리합니다.",
+    problemDefinition: "한 줄 문제정의",
+    coreContribution: "핵심 기여",
+    techStack: "사용 기술",
+    resultLearning: "결과 / 배운 점",
+    submissionFormat: "SSAFY 제출 구조",
+    overview: "프로젝트 개요",
+    myRole: "수행 역할",
+    solutionProcess: "해결 과정",
+    interviewHooks: "면접 질문 포인트",
     viewDetails: "상세 보기",
     readCaseStudy: "케이스 스터디 열기",
     backToProjects: "프로젝트 목록으로 돌아가기",
@@ -57,6 +88,23 @@ export const projectUiCopy = {
     archiveTitle: "Project Archive",
     archiveIntro:
       "A record of ongoing and completed projects demonstrating problem framing and service structuring capabilities.",
+    coreKicker: "Submission focus",
+    coreTitle: "Core 3 Projects",
+    coreIntro:
+      "DailyLog, Loggy, and Promtree are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
+    supportingKicker: "Supporting / Hackathon",
+    supportingTitle: "Supporting Projects & Hackathons",
+    supportingIntro:
+      "Additional projects are separated as archive cases that show domain expansion, rapid execution, and supporting ideas.",
+    problemDefinition: "Problem definition",
+    coreContribution: "Key contribution",
+    techStack: "Tech stack",
+    resultLearning: "Result / learning",
+    submissionFormat: "SSAFY Portfolio Format",
+    overview: "Project overview",
+    myRole: "My role",
+    solutionProcess: "Solution process",
+    interviewHooks: "Interview hooks",
     viewDetails: "View details",
     readCaseStudy: "Open case study",
     backToProjects: "Back to project archive",
@@ -339,6 +387,18 @@ export const portfolioProjects = [
       ko: ["와이어프레임", "추천 흐름 설계서", "AI 상호작용 설계", "최종 UI"],
       en: ["Wireframes", "Recommendation logic notes", "AI interaction design", "Final UI"],
     },
+    interviewQuestions: {
+      ko: [
+        "기록 지속 실패를 왜 의지 문제가 아니라 입력 부담과 회고 구조 문제로 정의했나요?",
+        "AI 질문 흐름에서 사용자가 스스로 회고한다고 느끼게 만들기 위해 어떤 기준을 세웠나요?",
+        "SenseVoice, Thompson Sampling, pgvector를 서비스 경험과 어떻게 연결했나요?",
+      ],
+      en: [
+        "Why did you define journaling failure as input friction and reflection-structure issues rather than a willpower problem?",
+        "What criteria did you use to make AI questioning feel like guided self-reflection rather than automation?",
+        "How did you connect SenseVoice, Thompson Sampling, and pgvector to the service experience?",
+      ],
+    },
     links: {},
   },
   {
@@ -457,6 +517,18 @@ export const portfolioProjects = [
         ko: "기존 메신저의 문제는 논의 과정이 투명하지 않고 결정 근거가 휘발된다는 것이었습니다. 저는 이를 해결하기 위해 모든 채팅을 저장하는 대신, Git의 커밋(Commit) 개념을 도입했습니다. 일반 채팅은 회의 종료 시 휘발되지만, 사용자가 INFO, OPINION, TODO 등의 태그를 달아 커밋한 메시지만 영구 보존하도록 설계했습니다. 이 과정에서 '모든 대화의 보존'이라는 기술적 완결성보다, '의사결정 핵심 근거의 가독성'이 더 높은 비즈니스 가치라고 판단했습니다. 결과적으로 AI가 요약해야 할 데이터의 노이즈를 85% 이상 제거하여, 매우 정교한 AI 결정문 자동 생성 엔진을 구축할 수 있었습니다.",
         en: "Traditional messengers lack transparency in logic and suffer from volatile decision trails. To solve this, I introduced Git's 'Commit' concept instead of storing every chat. While general chats expire after a meeting, messages tagged as INFO, OPINION, or TODO are permanently archived. I determined that the 'readability of decision logic' held higher business value than the technical completeness of 'storing everything'. Consequently, I reduced data noise for AI summarization by over 85%, enabling a highly precise automated Decision Record engine.",
       },
+    },
+    interviewQuestions: {
+      ko: [
+        "왜 협업 의사결정 문제를 단순 문서화 문제가 아니라 시스템적 확신의 부재로 보았나요?",
+        "Git의 PR/Merge 구조를 일반 협업 UX로 옮길 때 가장 중요한 판단 기준은 무엇이었나요?",
+        "모든 채팅을 저장하지 않고 커밋된 메시지만 보존하는 구조를 선택한 이유는 무엇인가요?",
+      ],
+      en: [
+        "Why did you define the collaboration issue as a lack of systemic certainty rather than just missing documentation?",
+        "What was the key criterion when translating Git's PR/Merge structure into general collaboration UX?",
+        "Why did you choose to preserve only committed messages instead of storing every chat?",
+      ],
     },
     links: {},
   },
@@ -939,6 +1011,18 @@ export const portfolioProjects = [
       ko: ["최종 발표자료", "시연 영상", "시장/경쟁사 분석", "수익모델 검토", "Q&A 대응 준비"],
       en: ["Final presentation", "Demo video", "Market/competitor analysis", "Revenue model review", "Q&A preparation"],
     },
+    interviewQuestions: {
+      ko: [
+        "Promtree를 단순 프롬프트 마켓이 아니라 실행 가능한 AI 노하우 상품으로 정의한 이유는 무엇인가요?",
+        "프롬프트 원문 비공개와 슬롯 기반 실행 구조가 크리에이터 보호와 사용자 편의성을 어떻게 함께 만족시키나요?",
+        "콜드스타트, 양면시장, 크레딧 모델 같은 사업적 질문을 어떻게 서비스 구조에 반영했나요?",
+      ],
+      en: [
+        "Why did you define Promtree as executable AI know-how rather than a simple prompt marketplace?",
+        "How do hidden prompts and slot-based execution balance creator protection with user convenience?",
+        "How did you reflect business questions such as cold start, two-sided marketplace dynamics, and credit models in the service structure?",
+      ],
+    },
     links: {
       docs: "/projects/promtree/promtree-final-presentation.pptx",
     },
@@ -1076,6 +1160,8 @@ export const portfolioProjects = [
   },
 ];
 
+const coreProjectSlugs = ["dailylog", "loggy", "ssafy-startup-track"];
+
 export const getOrderedProjects = () =>
   [...portfolioProjects].sort((left, right) => {
     if (!left.sortDate && !right.sortDate) {
@@ -1125,6 +1211,7 @@ export const getLocalizedProject = (project, lang = "ko") => {
     tags: localizeValue(project.tags, lang) ?? [],
     highlights: localizeValue(project.highlights, lang) ?? [],
     artifacts: localizeValue(project.artifacts, lang) ?? [],
+    interviewQuestions: localizeValue(project.interviewQuestions, lang) ?? [],
     metrics: (Array.isArray(project.metrics)
       ? project.metrics
       : localizeValue(project.metrics, lang) ?? []
@@ -1179,8 +1266,25 @@ export const getLocalizedProject = (project, lang = "ko") => {
   };
 };
 
+export const getCoreProjects = () =>
+  coreProjectSlugs
+    .map((slug) => getProjectBySlug(slug))
+    .filter(Boolean);
+
+export const getSupportingProjects = () => {
+  const coreSlugSet = new Set(coreProjectSlugs);
+
+  return getOrderedProjects().filter((project) => !coreSlugSet.has(project.slug));
+};
+
 export const getLocalizedFeaturedProject = (lang = "ko") =>
   getLocalizedProject(getFeaturedProject(), lang);
 
 export const getLocalizedArchiveProjects = (lang = "ko") =>
   getArchiveProjects().map((project) => getLocalizedProject(project, lang));
+
+export const getLocalizedCoreProjects = (lang = "ko") =>
+  getCoreProjects().map((project) => getLocalizedProject(project, lang));
+
+export const getLocalizedSupportingProjects = (lang = "ko") =>
+  getSupportingProjects().map((project) => getLocalizedProject(project, lang));

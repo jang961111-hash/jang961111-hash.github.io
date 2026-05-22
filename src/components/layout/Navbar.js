@@ -8,6 +8,8 @@ import {
   isLocaleRootPath,
 } from "../../utils/localeRouting";
 import { queueScrollTarget, scrollToSectionId } from "../../utils/scrollTarget";
+import resumeKo from "../../assets/docs/resume_ko.pdf";
+import resumeEn from "../../assets/docs/resume_en.pdf";
 import "./Navbar.css";
 
 const navItems = [
@@ -21,7 +23,7 @@ const navSectionIds = navItems.map(({ id }) => id);
 
 const DESKTOP_BREAKPOINT = 1280;
 
-const Navbar = ({ theme, onToggleTheme, onPrint }) => {
+const Navbar = ({ theme, onToggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -207,18 +209,20 @@ const Navbar = ({ theme, onToggleTheme, onPrint }) => {
         >
           {nextThemeLabel}
         </button>
-        <button
-          type="button"
-          className="nav-action-btn nav-action-btn-accent"
-          onClick={() => {
-            onPrint();
-            closeMobileMenu();
-          }}
-          aria-label={t("nav.printAria")}
-          title={t("nav.printAria")}
+        <a
+          href={isKorean ? resumeKo : resumeEn}
+          className="nav-action-btn nav-action-btn-resume"
+          target="_blank"
+          rel="noopener noreferrer"
+          download={
+            isKorean
+              ? "Jang-Byeong-Heon_PM_Resume_KO.pdf"
+              : "Jang-Byeong-Heon_PM_Resume_EN.pdf"
+          }
+          aria-label={t("hero.downloadResumeAria")}
         >
-          {t("nav.print")}
-        </button>
+          RESUME PDF
+        </a>
       </div>
     </div>
   );

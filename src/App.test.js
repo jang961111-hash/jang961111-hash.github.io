@@ -72,21 +72,23 @@ describe("App routing flows", () => {
     renderAtRoute("/en/");
 
     await waitFor(() => {
-      expect(document.title).toBe("Byeongheon Jang | Technical Product Manager");
+      expect(document.title).toBe(
+        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+      );
     });
 
     await userEvent.click(
-      screen.getByRole("link", { name: "Open case study" })
+      screen.getAllByRole("link", { name: "View details" })[0]
     );
 
     await waitFor(() => {
       expect(screen.getByTestId("location-probe").textContent).toBe(
-        "/en/projects/loggy/"
+        "/en/projects/dailylog/"
       );
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "Loggy | Real-Time Log Analysis Collaboration Platform | Byeongheon Jang"
+        "DailyLog | AI-Driven Reflection & Decision Support | Jang Byeong Heon"
       );
     });
 
@@ -98,7 +100,9 @@ describe("App routing flows", () => {
       expect(screen.getByTestId("location-probe").textContent).toBe("/en/");
     });
     await waitFor(() => {
-      expect(document.title).toBe("Byeongheon Jang | Technical Product Manager");
+      expect(document.title).toBe(
+        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+      );
     });
   });
 
@@ -106,7 +110,9 @@ describe("App routing flows", () => {
     renderAtRoute("/");
 
     await waitFor(() => {
-      expect(document.title).toBe("장병헌 | Technical Product Manager");
+      expect(document.title).toBe(
+        "장병헌 | AI/SW 기반 문제정의형 서비스 기획자 / PM"
+      );
     });
 
     await userEvent.click(screen.getAllByText("EN")[0]);
@@ -115,7 +121,9 @@ describe("App routing flows", () => {
       expect(screen.getByTestId("location-probe").textContent).toBe("/en/");
     });
     await waitFor(() => {
-      expect(document.title).toBe("Byeongheon Jang | Technical Product Manager");
+      expect(document.title).toBe(
+        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+      );
     });
   });
 
@@ -123,7 +131,9 @@ describe("App routing flows", () => {
     renderAtRoute("/en/");
 
     await waitFor(() => {
-      expect(document.title).toBe("Byeongheon Jang | Technical Product Manager");
+      expect(document.title).toBe(
+        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+      );
     });
     await waitFor(() => {
       expect(window.scrollTo).toHaveBeenCalled();
@@ -150,7 +160,9 @@ describe("App routing flows", () => {
       expect(screen.getByTestId("location-probe").textContent).toBe("/en/");
     });
     await waitFor(() => {
-      expect(document.title).toBe("Byeongheon Jang | Technical Product Manager");
+      expect(document.title).toBe(
+        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+      );
     });
   });
 
@@ -161,7 +173,9 @@ describe("App routing flows", () => {
       expect(screen.getByTestId("location-probe").textContent).toBe("/");
     });
     await waitFor(() => {
-      expect(document.title).toBe("장병헌 | Technical Product Manager");
+      expect(document.title).toBe(
+        "장병헌 | AI/SW 기반 문제정의형 서비스 기획자 / PM"
+      );
     });
   });
 });

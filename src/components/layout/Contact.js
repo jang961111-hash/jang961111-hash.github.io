@@ -14,6 +14,10 @@ const Contact = () => {
       href: 'https://github.com/jang961111-hash',
     },
     {
+      label: t('contact.linkedin'),
+      href: 'https://www.linkedin.com/in/byeongheon-jang-ai-pm/',
+    },
+    {
       label: t('contact.email'),
       href: 'mailto:jang961111@gmail.com',
     },

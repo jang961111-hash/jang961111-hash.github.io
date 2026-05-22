@@ -66,7 +66,7 @@ export const buildProjectMetadata = (lang, project) => {
     title:
       project.seo?.title ??
       (lang === "en"
-        ? `${project.title} | Byeongheon Jang`
+        ? `${project.title} | Jang Byeong Heon`
         : `${project.title} | Portfolio`),
     description: project.seo?.description ?? project.summary,
     keywords: project.seo?.keywords ?? baseMetadata.keywords,

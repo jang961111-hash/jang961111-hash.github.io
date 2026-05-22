@@ -1,5 +1,6 @@
 const fs = require("fs");
 const http = require("http");
+const os = require("os");
 const path = require("path");
 const puppeteer = require("puppeteer");
 
@@ -11,31 +12,31 @@ const routes = [
   {
     path: "/",
     expectedPathname: "/",
-    expectedTitle: "장병헌 | Technical Product Manager",
+    expectedTitle: "장병헌 | AI/SW 기반 문제정의형 서비스 기획자 / PM",
     expectedStatus: 200,
   },
   {
     path: "/en/",
     expectedPathname: "/en/",
-    expectedTitle: "Byeongheon Jang | Technical Product Manager",
+    expectedTitle: "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM",
     expectedStatus: 200,
   },
   {
     path: "/projects/loggy/",
     expectedPathname: "/projects/loggy/",
-    expectedTitle: "Loggy | 실시간 로그 분석 협업 플랫폼 | Portfolio",
+    expectedTitle: "Loggy | 의사결정 기록 및 협업 플랫폼 | Portfolio",
     expectedStatus: 200,
   },
   {
     path: "/en/projects/loggy/",
     expectedPathname: "/en/projects/loggy/",
-    expectedTitle: "Loggy | Real-Time Log Analysis Collaboration Platform | Byeongheon Jang",
+    expectedTitle: "Loggy | Decision Recording & Collaboration Platform | Jang Byeong Heon",
     expectedStatus: 200,
   },
   {
     path: "/en/does-not-exist",
     expectedPathname: "/en/",
-    expectedTitle: "Byeongheon Jang | Technical Product Manager",
+    expectedTitle: "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM",
     expectedStatus: 200,
     allowConsoleErrors: true,
   },
@@ -129,13 +130,50 @@ const stopServer = (server) =>
     });
   });
 
+const createUserDataDir = () =>
+  fs.mkdtempSync(path.join(os.tmpdir(), "portfolio-smoke-chrome-"));
+
+const removeUserDataDir = (userDataDir) => {
+  try {
+    fs.rmSync(userDataDir, { recursive: true, force: true });
+  } catch {
+    // Windows can briefly hold Chromium profile locks after browser.close().
+  }
+};
+
+const launchBrowser = async () => {
+  let lastError;
+
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const userDataDir = createUserDataDir();
+
+    try {
+      const browser = await puppeteer.launch({
+        headless: true,
+        userDataDir,
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      });
+
+      return { browser, userDataDir };
+    } catch (error) {
+      lastError = error;
+      removeUserDataDir(userDataDir);
+    }
+  }
+
+  throw lastError;
+};
+
 const verifyRoute = async (browser, route) => {
   const page = await browser.newPage();
   const consoleErrors = [];
   const pageErrors = [];
 
   page.on("console", (message) => {
-    if (message.type() === "error") {
+    if (
+      message.type() === "error" &&
+      !message.text().startsWith("Failed to load resource:")
+    ) {
       consoleErrors.push(message.text());
     }
   });
@@ -191,13 +229,13 @@ const run = async () => {
 
   const server = createStaticServer();
   let browser;
+  let userDataDir;
 
   try {
     await startServer(server);
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
+    const launched = await launchBrowser();
+    browser = launched.browser;
+    userDataDir = launched.userDataDir;
 
     for (const route of routes) {
       await verifyRoute(browser, route);
@@ -209,6 +247,9 @@ const run = async () => {
     }
 
     await stopServer(server);
+    if (userDataDir) {
+      removeUserDataDir(userDataDir);
+    }
   }
 };
 

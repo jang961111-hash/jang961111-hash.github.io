@@ -5,21 +5,21 @@ export const pageMetadata = {
     htmlLang: "ko",
     locale: "ko_KR",
     path: "/",
-    title: "장병헌 | Technical Product Manager",
+    title: "장병헌 | AI/SW 기반 문제정의형 서비스 기획자 / PM",
     description:
-      "장병헌의 포트폴리오. 구조적 사고를 바탕으로 제품 방향을 정의하고, 플랫폼 확장성과 AI 의사결정 지원을 설계하는 Technical Product Manager입니다.",
+      "장병헌의 포트폴리오. 철학 전공 기반 문제 구조화 역량과 SSAFY 기반 AI/SW 기술 이해를 바탕으로 사용자 경험과 기술 구조를 연결하는 서비스 기획자 / PM입니다.",
     keywords:
-      "장병헌, Byeongheon Jang, Product Manager, PM, Product Strategy, Platform Architecture, Technical PM, Decision Architecture, 제품 기획자, 서비스 기획자, 프로덕트 매니저",
+      "장병헌, Jang Byeong Heon, AI/SW, Product Manager, PM, Problem Framing, Service Planning, Product Strategy, Decision Architecture, 제품 기획자, 서비스 기획자, 프로덕트 매니저",
   },
   en: {
     htmlLang: "en",
     locale: "en_US",
     path: "/en/",
-    title: "Byeongheon Jang | Technical Product Manager",
+    title: "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM",
     description:
-      "Portfolio of Byeongheon Jang, a technical product manager focused on product direction, scalable platform systems, and AI-aware decision support.",
+      "Portfolio of Jang Byeong Heon, an AI/SW problem-framing service planner and PM who connects user experience with technical structures.",
     keywords:
-      "Byeongheon Jang, Product Manager, PM, Product Strategy, Platform Architecture, Technical PM, Decision Architecture",
+      "Jang Byeong Heon, AI/SW, Product Manager, PM, Problem Framing, Service Planning, Product Strategy, Decision Architecture",
   },
 };
 

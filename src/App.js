@@ -18,10 +18,6 @@ const FallbackRoute = () => {
 function App() {
   const { theme, toggleTheme } = useTheme();
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div className="App">
       <Routes>
@@ -34,7 +30,6 @@ function App() {
                 lang={lang}
                 theme={theme}
                 onToggleTheme={toggleTheme}
-                onPrint={handlePrint}
               />
             }
           />,
@@ -46,7 +41,6 @@ function App() {
                 lang={lang}
                 theme={theme}
                 onToggleTheme={toggleTheme}
-                onPrint={handlePrint}
               />
             }
           />,

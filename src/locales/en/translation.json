@@ -17,17 +17,17 @@
     "menuCloseAria": "Close navigation menu"
   },
   "hero": {
-    "name": "Byeongheon Jang",
+    "name": "Jang Byeong Heon",
     "greeting": "Hello, I am",
-    "title": "Product Manager",
-    "portfolioLabel": "Product strategy · System architecture · AI decision support",
-    "focusLabel": "How I work",
-    "subtitle": "I structurally define ambiguous user problems and turn them\ninto actionable products grounded in technical context.",
-    "mission": "Rather than just adding features, my strength lies in aligning product direction with execution by communicating in the same language as developers.",
+    "title": "AI/SW Problem-Framing Service Planner / PM",
+    "portfolioLabel": "AI/SW Problem-Framing Service Planner / PM",
+    "focusLabel": "How I Work",
+    "subtitle": "I connect complex problems to user experiences and technical structures.",
+    "mission": "With a background in Philosophy and SSAFY-based AI/Data/Web training, I shape project-based service planning and PM execution.",
     "proofItems": {
-      "product": "Product ownership and frontend leadership for a real-time log platform",
-      "ai": "AI interaction design grounded in user-behavior and blank-screen logs",
-      "execution": "Execution alignment across planning, product framing, and implementation"
+      "product": "Solved DailyLog's retention problem through AI questioning flows and recommendation structures",
+      "ai": "Reframed fragmented decisions in Loggy into Git-inspired collaboration structures",
+      "execution": "I design technology as a structure for user experience and business value, not just implementation"
     },
     "viewProjects": "See Flagship Work",
     "getInTouch": "Start a Conversation",
@@ -36,9 +36,9 @@
   },
   "identity": {
     "title": "Identity & Product Philosophy",
-    "text1": "My background in Philosophy trained me to define the core structure of a problem before jumping to features. I tend to start from the direction a product should take and the underlying issue it should solve.",
-    "text2": "Coursework across AI, data, and business expanded that mindset into a more practical one. I try to consider service context, data flow, and operational risk together rather than treating them as separate concerns.",
-    "text3": "\"I treat AI as a layer for better decisions, not as a gimmick.\"\nIn practice, I have used user logs to identify where people get stuck and designed AI interactions to support better questions and better decisions rather than relying on automation for its own sake.",
+    "text1": "My background in Philosophy trained me to analyze the conditions of human judgment, choice, and trust. This allows me to look past surface-level requirements to understand 'why' users behave a certain way. I have evolved into a PM who interprets problems deeply and realizes those interpretations as functioning systems.",
+    "text2": "Through SSAFY, I expanded my technical literacy in Python, algorithms, and AI, connecting them to user context. I believe technical depth is leverage that reduces product risk and lowers communication costs across teams during the planning phase.",
+    "text3": "\"I treat AI as a layer for better decisions, not as a gimmick.\"\nI see AI not as a simple automation tool, but as a support layer that helps users think and decide more clearly. In the DailyLog project, I solved the 'blank screen' problem with an AI-driven questioning flow, turning technical elements into real service value.",
     "skills_title": "Core Competencies",
     "skills": {
       "platform": "Platform-Oriented Design",
@@ -49,88 +49,238 @@
   },
   "projects": {
     "title": "Core Projects",
-    "intro": "Instead of listing every build, I lead with one representative case that shows how I frame the problem, shape the product experience, and align execution.",
+    "intro": "Flagship cases that demonstrate how I frame problems and connect them to product experience and execution structure.",
     "items": {
-      "loggy": {
-        "title": "Loggy | Real-Time Log Analysis Collaboration Platform",
-        "context": "This is the project that best shows how I work when product direction, frontend execution, and technical decision-making have to move together.",
-        "summary": "Loggy was built to shorten slow debugging loops by turning streaming logs into a readable, filterable, and collaborative review flow.",
+      "dailylog": {
+        "title": "DailyLog | AI-Driven Reflection & Decision Support",
+        "context": "A project that solved user retention issues by defining the problem as 'input friction' and 'broken reflection flows'.",
+        "summary": "A service where users perform natural reflections through AI-driven questioning and receive personalized action recommendations based on their data.",
         "metrics": {
-          "1": "85% shorter log analysis time",
-          "2": "Designed for 5,000+ logs per second",
-          "3": "Product + frontend ownership"
+          "1": "Reframed failure to record as a structural issue rather than a lack of willpower",
+          "2": "Increased input convenience by structuring the day into Event, Emotion, and Cause slots",
+          "3": "Excellence Award (3rd Place) winner at SSAFY 14th Specialized Project"
         },
-        "problem": "Teams were manually scanning large volumes of raw logs across fragmented steps, which kept stretching the time needed to isolate root causes.",
-        "insight": "The bottleneck was not just scale. The harder problem was missing context at the exact moment someone needed to decide which signal mattered next.",
-        "architecture": "I shaped the experience around WebSocket streaming, structured filtering, and one continuous review surface so teams could inspect, narrow, and discuss logs without breaking flow.",
-        "role": "Product Owner & Frontend Lead | Problem framing, user flow design, frontend implementation, and realtime review UX",
-        "learning": "This project sharpened how I translate a technical pain point into product scope, interface structure, and implementation conversations the team can align around.",
+        "problem": "Traditional journaling presents a daunting blank screen, leading to high psychological friction and failing to turn records into actual behavior change.",
+        "insight": "The bottleneck is the state of 'not knowing what to write'. I realized this could be solved by having AI ask structured questions at the right moment.",
+        "architecture": "Designed a seamless reflection flow combining SenseVoice for voice input, Thompson Sampling for recommendations, and pgvector for vector search.",
+        "role": "Product Manager | Problem framing, user journey design, feature prioritization, frontend support, and presentation",
+        "learning": "Deeply experienced the PM's role in transforming user problems into data-driven service structures.",
         "proof": {
-          "1": "I reframed a developer tooling issue as a product workflow problem.",
-          "2": "I connected realtime system constraints directly to filtering and interaction decisions.",
-          "3": "I aligned product scope, UI flow, and engineering execution around one review experience."
+          "1": "Solved user behavior problems through technical structures (AI questioning flows).",
+          "2": "Achieved high project completeness by focusing on core problem solving over feature bloat.",
+          "3": "Maintained consistent product direction and led the team to a successful launch and award."
+        }
+      },
+      "loggy": {
+        "title": "Loggy | Git-Inspired Collaboration & Decision Support",
+        "context": "Solving fragmented and repetitive decision-making issues by adopting GitHub-style workflows for general collaboration.",
+        "summary": "A platform that maximizes collaboration efficiency by formalizing scattered discussions into Git's Issue-Branch-PR-Merge structures.",
+        "metrics": {
+          "1": "Applied GitHub's Issue, PR, and Merge concepts to general collaboration flows",
+          "2": "Built a decision archive to eliminate the 're-discussing the same thing' problem",
+          "3": "Product Planning + Frontend Implementation"
+        },
+        "problem": "Decisions from meetings and messengers were often lost, leading to repetitive discussions and wasted organizational energy.",
+        "insight": "The problem was not just missing records, but a lack of 'systemic certainty' that a decision had been finalized.",
+        "architecture": "Designed a WebSocket-based real-time review flow and structured filtering to ensure discussion and approval stay within the workflow.",
+        "role": "Product Owner & Frontend | Service planning, decision flow structuring, and frontend implementation",
+        "learning": "Gained the perspective of solving chronic workplace problems by translating developer tool philosophies into general services.",
+        "proof": {
+          "1": "Translated complex collaboration issues into clear systemic structures (PR/Merge).",
+          "2": "Connected technical constraints to UX decisions to optimize real-time collaboration experience.",
+          "3": "Aligned product direction with execution steps to drive team productivity."
+        }
+      },
+      "tamnaai": {
+        "title": "Tamna-AI | Distributed Data Center Location Analysis",
+        "context": "A planning-focused project reframing renewable energy curtailment as a business opportunity with data-driven decision structures.",
+        "summary": "A service that uses data normalization and weighted scoring to analyze optimal locations for distributed data centers that can absorb surplus electricity.",
+        "metrics": {
+          "1": "Reframed curtailment as a grid congestion and supply-demand mismatch issue",
+          "2": "Applied data normalization and weighted scoring models",
+          "3": "Participated in Jeju AWS Global Space Challenge Hackathon"
+        },
+        "problem": "Jeju Island faced frequent renewable energy curtailment due to oversupply, but lacked clear demand sources to absorb the surplus.",
+        "insight": "I determined it was more economical to distribute energy-intensive data centers rather than just focusing on storage, easing grid pressure.",
+        "architecture": "Planned a structure that visualizes expected efficiency for data center sites by linking regional power data with geographic information.",
+        "role": "Planning Lead | Problem reframing, business model design, and location analysis service structuring",
+        "learning": "Experienced the process of materializing macro-social issues into service ideas and creating business value.",
+        "proof": {
+          "1": "Reinterpreted energy domain problems through the lens of product planning.",
+          "2": "Presented an actionable solution (location analysis) based on data.",
+          "3": "Demonstrated converged thinking across technology, energy, and business."
+        }
+      },
+      "campuschronicle": {
+        "title": "Campus Chronicle | Growth Data-Driven Financial Service",
+        "context": "An attempt to transform student growth data into trust data for thin-filers lacking financial history.",
+        "summary": "A platform where students link learning and activity data to financial value, proving trust based on their growth process.",
+        "metrics": {
+          "1": "Defined student financial exclusion as a lack of growth data in existing models",
+          "2": "Proposed a trust design that reflects activity records in financial evaluations",
+          "3": "Participated in Shinhan Bank SSAFY Hackathon"
+        },
+        "problem": "Students face significant financial barriers due to lack of income or assets, as their potential and activity history are ignored by traditional models.",
+        "insight": "Quantifying 'growth data' like academic achievement and extracurriculars could enable a new credit model specifically for students.",
+        "architecture": "Designed UX around data submission flows and a user journey that translates activities into financial value.",
+        "role": "Service Planner & Frontend | Problem framing, core flow design, and frontend support",
+        "learning": "Learned how data-driven trust design impacts user experience in the financial domain.",
+        "proof": {
+          "1": "Strived to solve user problems within a financial business structure.",
+          "2": "Simplified complex evaluation processes into intuitive user flows.",
+          "3": "Validated service feasibility by bridging planning and implementation."
         }
       }
     },
     "labels": {
       "spotlight": "Flagship case",
-      "context": "Why this case matters",
+      "context": "Why this case?",
       "challenge": "Challenge",
-      "insight": "Structural insight",
-      "solution": "Experience + system design",
+      "insight": "Structural Insight",
+      "solution": "Experience + System Design",
       "role": "Role",
-      "learning": "Key takeaway",
-      "proof": "What this project proves"
+      "learning": "Key Takeaway",
+      "proof": "What it proves"
     }
   },
   "competencies": {
     "title": "Core Competencies",
-    "subtitle": "Connecting product strategy, technical depth, AI integration, and structural problem solving into a unified approach."
+    "subtitle": "A project-backed view of the planning, AI/Data, web collaboration, and communication skills used across the Core 3 projects.",
+    "groups": {
+      "productPlanning": {
+        "title": "Product & Planning",
+        "subtitle": "How I reframed problems and translated them into service structures in DailyLog, Loggy, and Promtree.",
+        "items": {
+          "problemFraming": {
+            "title": "Problem Framing",
+            "desc": "Reframed journaling failure, lost collaboration context, and AI know-how exchange as user behavior and service-structure problems."
+          },
+          "userFlow": {
+            "title": "User Flow",
+            "desc": "Designed question flows, commit flows, and slot-based execution flows so users could move from uncertainty to the next action."
+          },
+          "serviceStructure": {
+            "title": "PRD / Policy and Service Structure",
+            "desc": "Organized key features, information structure, roles, and priorities into documents and screen flows so teams could implement against shared criteria."
+          },
+          "marketAnalysis": {
+            "title": "Market / Competitor Analysis",
+            "desc": "In Promtree, reviewed AI know-how commercialization, revenue models, and competitor positioning to test business viability."
+          }
+        }
+      },
+      "aiData": {
+        "title": "AI & Data",
+        "subtitle": "I connect AI to service layers that support user judgment and action, rather than treating it as decoration.",
+        "items": {
+          "llmPrompting": {
+            "title": "LLM / Prompt Engineering",
+            "desc": "Handled prompts as design elements that shape experience and output quality, as in DailyLog's question flow and Promtree's slot execution."
+          },
+          "pythonSql": {
+            "title": "Python / SQL",
+            "desc": "Through SSAFY training in Python, SQL, AI, and Data, I consider data and implementation constraints during planning."
+          },
+          "dataDecision": {
+            "title": "Data-Informed Decisions",
+            "desc": "Reviewed how user behavior data can inform product decisions through recommendation, retention, and collaboration-record structures."
+          },
+          "aiPlanning": {
+            "title": "AI Feature Planning",
+            "desc": "Designed AI features to support reflection, recording, and execution while preserving user control instead of replacing user judgment."
+          }
+        }
+      },
+      "webCollaboration": {
+        "title": "Web & Collaboration",
+        "subtitle": "Execution skills for turning planning intent into screens, data flow, and team workflows.",
+        "items": {
+          "reactLiteracy": {
+            "title": "React Implementation Literacy",
+            "desc": "Participated in frontend implementation and checked how screen flow and state changes affect user experience."
+          },
+          "gitWorkflow": {
+            "title": "Git / GitHub",
+            "desc": "In Loggy, interpreted Git's PR/Merge structure as a collaboration decision UX and adapted it into a service model."
+          },
+          "collaborationTools": {
+            "title": "Notion / Jira / Slack / Mattermost",
+            "desc": "Used collaboration tools to organize schedules, roles, meeting notes, and presentation materials around shared execution criteria."
+          },
+          "documentation": {
+            "title": "Collaborative Documentation",
+            "desc": "Documented feature definitions and decision rationale so teammates could implement and present from the same context."
+          }
+        }
+      },
+      "communicationLeadership": {
+        "title": "Communication & Leadership",
+        "subtitle": "Communication skills built from philosophical reasoning and SSAFY team-project practice.",
+        "items": {
+          "presentation": {
+            "title": "Presentation",
+            "desc": "Focus on explaining project problems, solution structures, and lessons learned in a way interviewers and users can understand."
+          },
+          "teamAlignment": {
+            "title": "Team Alignment",
+            "desc": "Helped synthesize team ideas into one goal and narrow them into implementable priorities."
+          },
+          "userPerspective": {
+            "title": "User-Centered Explanation",
+            "desc": "Use question framing and logical explanation from Philosophy training to explain why users drop off and what they need."
+          },
+          "feedbackLoop": {
+            "title": "Feedback Loop",
+            "desc": "Adjusted project direction by reflecting feedback from presentations, meetings, and implementation into screen flows and documentation."
+          }
+        }
+      }
+    }
   },
   "strategy": {
-    "title": "Product Strategy & Platform Focus",
+    "title": "How I Work",
     "items": {
       "platform": {
-        "title": "Product Direction & Platform > Feature",
-        "desc": "I try not to get trapped in one-off feature expansion. I prefer starting from the structural problem a product should solve and the direction it should grow toward."
+        "title": "1. Re-defining the Problem",
+        "desc": "I start by looking past surface symptoms to find the deeper bottleneck. In DailyLog, I saw recording failure not as lack of will, but as broken flow."
       },
       "alignment": {
-        "title": "Market Insight & Roadmap Mindset",
-        "desc": "I look at user pain, operating context, and stakeholder needs together when setting priorities. My goal is to connect near-term execution with a longer-term roadmap."
+        "title": "2. Prioritizing Based on Criteria",
+        "desc": "I focus on aligning the team by categorizing tasks into essential and optional based on user value and feasibility, rather than just adding features."
       }
     }
   },
   "depth": {
-    "title": "Technical Depth as Leverage",
-    "subtitle": "Technical literacy matters to me not as a way to boast implementation, but as a way to reduce product risk and lower communication cost across teams.",
+    "title": "Execution",
+    "subtitle": "Technical literacy is leverage that reduces product risk and lowers communication costs during the planning phase.",
     "items": {
       "state": {
-        "title": "State Transition & Data Integrity",
-        "desc": "Understanding how state changes and data consistency work between client and server helps me make requirements more concrete and reduces avoidable misalignment during development."
+        "title": "3. Materializing as Service Flow",
+        "desc": "Once the problem is defined, I connect it to screens, data, and AI interactions. I bridge planning and implementation to complete the product."
       },
       "realtime": {
-        "title": "System-level Risk Reduction",
-        "desc": "When I understand real-time data flow and concurrency at a practical level, I can think earlier about the bottlenecks and instability that may appear later in operation."
+        "title": "Communication & Collaboration",
+        "desc": "I manage roles and schedules while collaborating with diverse teams. As a PM, I focus on synthesizing team ideas into a single goal."
       }
     }
   },
   "ai": {
     "title": "AI Strategy & Deployment",
-    "subtitle": "I see AI less as a flashy add-on and more as a design question about how to support better user decisions and better user behavior.",
+    "subtitle": "I see AI as a design question about how to support better user decisions and behavior, not just a flashy add-on.",
     "items": {
       "responsibility": {
         "title": "Decision-Support & Human-in-the-loop",
-        "desc": "I prefer designing AI as a support layer that helps people think and decide more clearly, rather than as a substitute for every piece of judgment."
+        "desc": "I prefer designing AI as a support layer that helps people think and decide more clearly, rather than as a substitute for human judgment."
       },
       "integration": {
-        "title": "Risk Containment Architecture",
-        "desc": "In one AI diary project, I used user logs to identify the blank-screen moment where users stalled and redesigned the experience with follow-up questions, which doubled the average diary length."
+        "title": "Interaction Design & Actionable Output",
+        "desc": "In DailyLog, I designed AI as an active questioning structure. Using Event/Emotion/Cause slots, I enabled users to organize their day more easily."
       }
     }
   },
   "framework": {
-    "title": "Executive-Level Problem Solving Framework",
-    "subtitle": "I try to reframe problems structurally and build execution loops that can be validated early.",
+    "title": "Structured Problem Solving Framework",
+    "subtitle": "I reframe problems structurally and build execution loops that can be validated early.",
     "steps": {
       "1": {
         "name": "Define Structural Problem",
@@ -142,15 +292,11 @@
       },
       "3": {
         "name": "Design Scalable Model",
-        "desc": "I try to think beyond the immediate fix and shape a model that can still hold as features and usage expand."
+        "desc": "I think beyond the immediate fix and shape a model that can still hold as features and usage expand."
       },
       "4": {
         "name": "Validate with Minimal Structure",
         "desc": "I prefer validating the smallest meaningful structure first, then using actual response and data to decide the next step."
-      },
-      "5": {
-        "name": "Expand with Platform Lens",
-        "desc": "Once the logic is validated, I look at how that structure can extend into adjacent user needs and product contexts."
       }
     }
   },
@@ -161,9 +307,17 @@
         "title": "AI/SW Training & Product Projects",
         "company": "Samsung SW·AI Academy For Youth, SSAFY",
         "period": "2025.07 - 2026.06",
-        "desc1": "Learning service development based on Python, SQL, Web, AI, and Data.",
-        "desc2": "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects.",
+        "desc1": "Learning service development and AI/SW technical literacy based on Python, SQL, Web, AI, and Data.",
+        "desc2": "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects including DailyLog, Loggy, and Promtree.",
         "desc3": "Helped share notices and support communication among trainees as the class representative (CA) at the Gwangju campus."
+      },
+      "projectPractice": {
+        "title": "Core Project Practice",
+        "company": "DailyLog / Loggy / Promtree",
+        "period": "2026.01 - 2026.05",
+        "desc1": "In DailyLog, reframed journaling failure as input friction and reflection-flow problems, then connected it to AI questioning and recommendation structures.",
+        "desc2": "In Loggy, organized disappearing collaboration context into a recording flow inspired by Git's PR/Merge structure.",
+        "desc3": "In Promtree, structured AI know-how as an executable workflow product while reviewing market viability, revenue models, and competitor positioning."
       },
       "customerExperience": {
         "title": "Customer Experience Operation",
@@ -205,15 +359,65 @@
       }
     }
   },
+  "awards": {
+    "title": "Awards",
+    "items": [
+      {
+        "title": "SSAFY 14th Specialized Project Excellence Award",
+        "organization": "Samsung Electronics · Multicampus SSAFY",
+        "date": "2026.04",
+        "desc": "Won 3rd place as PM & Service Planner for the AI-driven reflection service 'DailyLog'."
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "title": "Samsung Youth SW & AI Academy (SSAFY)",
+        "period": "2025.07 - 2026.03",
+        "desc": "Completed 1,725 hours of intensive training in Python, software engineering, and advanced AI (sLLM construction, etc.), gaining PM and planning experience through multiple hands-on AI/SW projects."
+      },
+      {
+        "title": "B.A. in Philosophy, Chonnam National University",
+        "period": "2016.03 - 2022.02",
+        "desc": "Trained in structural thinking and problem definition by exploring the nature of human judgment, choice, and trust."
+      },
+      {
+        "title": "Portage High School Exchange Student",
+        "location": "Indiana, USA",
+        "period": "2012.01 - 2013.01",
+        "desc": "Developed cultural adaptability and English communication skills through a one-year exchange program in Indiana, USA."
+      }
+    ]
+  },
+  "skills_detail": {
+    "title": "Skills",
+    "sections": {
+      "product": {
+        "title": "Product / Planning",
+        "items": ["Problem Framing", "Product Planning", "User Journey Design", "Prioritization", "Data-Driven Analysis", "Collaboration Design"]
+      },
+      "technical": {
+        "title": "Programming / AI",
+        "items": ["Python", "JavaScript", "React", "SQL", "LLM Interaction Design", "pgvector", "Thompson Sampling"]
+      },
+      "tools": {
+        "title": "Tools / Collaboration",
+        "items": ["Figma", "Git / GitHub", "Notion", "Slack"]
+      }
+    }
+  },
   "contact": {
-    "title": "Contact",
+    "title": "Let's Shape the Future Together",
     "subtitle": "CONTACT",
-    "description": "I am always open to conversations about new opportunities, product strategy, and AI-enabled service design.",
-    "button": "Say Hello",
-    "github": "GitHub",
-    "email": "Email",
-    "resume": "PDF",
-    "footerBuilt": "Built by Byeongheon Jang.",
-    "footerDesigned": "Designed with React and custom CSS."
+    "description": "I am open to conversations about AI/SW service planning, PM roles, portfolios, and project collaboration.",
+    "button": "Send Email",
+    "github": "Visit GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Send Email",
+    "resume": "View Resume PDF",
+    "footerBuilt": "Built with React and an AI/SW-focused portfolio structure.",
+    "footerDesigned": "Designed to present problem framing, service planning, and AI-enabled project experience."
   }
 }
