@@ -1,4 +1,4 @@
-# Portfolio
+﻿# Portfolio
 
 React 기반 개인 포트폴리오 사이트입니다. 한국어와 영어 라우트를 모두 제공하고, GitHub Pages에 배포되며, 이력서 PDF도 프로젝트 안에서 직접 생성할 수 있습니다.
 
