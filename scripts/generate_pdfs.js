@@ -1,4 +1,5 @@
 const http = require('http');
+const { existsSync } = require('fs');
 const fs = require('fs/promises');
 const path = require('path');
 const { spawn } = require('child_process');
@@ -7,6 +8,12 @@ const puppeteer = require('puppeteer');
 const rootDir = path.join(__dirname, '..');
 const buildDir = path.join(rootDir, 'build');
 const docsDir = path.join(rootDir, 'src', 'assets', 'docs');
+const edgeExecutablePath = [
+  process.env.PROGRAMFILES && path.join(process.env.PROGRAMFILES, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+  process.env['PROGRAMFILES(X86)'] &&
+    path.join(process.env['PROGRAMFILES(X86)'], 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+  process.env.LOCALAPPDATA && path.join(process.env.LOCALAPPDATA, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+].find((candidate) => candidate && existsSync(candidate));
 
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -25,8 +32,8 @@ const mimeTypes = {
 };
 
 const pdfTargets = [
-  { route: '/', output: 'resume_ko.pdf' },
-  { route: '/en', output: 'resume_en.pdf' },
+  { route: '/', output: 'portfolio_ko.pdf' },
+  { route: '/en', output: 'portfolio_en.pdf' },
 ];
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -146,7 +153,11 @@ async function main() {
     server = await createStaticServer();
 
     console.log('Launching browser...');
-    browser = await puppeteer.launch({ headless: true });
+    browser = await puppeteer.launch({
+      headless: true,
+      ...(edgeExecutablePath ? { executablePath: edgeExecutablePath } : {}),
+      args: ['--proxy-server=direct://', '--proxy-bypass-list=*'],
+    });
     const page = await browser.newPage();
     await page.setViewport({ width: 1440, height: 2200, deviceScaleFactor: 1 });
 
@@ -155,7 +166,7 @@ async function main() {
       const outputPath = path.join(docsDir, target.output);
 
       console.log(`Rendering ${target.output} from ${url}...`);
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
       await page.evaluate(() => document.fonts?.ready ?? Promise.resolve());
       await primePageForPdf(page);
       await delay(1500);
@@ -167,7 +178,7 @@ async function main() {
       });
     }
 
-    console.log('Successfully generated both PDF resumes.');
+    console.log('Successfully generated both portfolio PDFs.');
   } catch (error) {
     console.error('Error generating PDFs:', error);
     process.exitCode = 1;

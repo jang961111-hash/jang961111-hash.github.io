@@ -2,8 +2,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import profilePhoto from "../../assets/images/id-photo.webp";
 import profilePhotoJpg from "../../assets/images/id-photo.jpg";
-import resumeKo from "../../assets/docs/resume_ko.pdf";
-import resumeEn from "../../assets/docs/resume_en.pdf";
+import portfolioKo from "../../assets/docs/portfolio_ko.pdf";
+import portfolioEn from "../../assets/docs/portfolio_en.pdf";
 import "./Hero.css";
 
 const Hero = () => {
@@ -46,14 +46,14 @@ const Hero = () => {
               {t("hero.getInTouch")}
             </a>
             <a
-              href={i18n.language === "ko" ? resumeKo : resumeEn}
+              href={i18n.language === "ko" ? portfolioKo : portfolioEn}
               className="cta-button ghost"
               target="_blank"
               rel="noopener noreferrer"
               download={
                 i18n.language === "ko"
-                  ? "Jang-Byeong-Heon_PM_Resume_KO.pdf"
-                  : "Jang-Byeong-Heon_PM_Resume_EN.pdf"
+                  ? "Jang-Byeong-Heon_Portfolio_KO.pdf"
+                  : "Jang-Byeong-Heon_Portfolio_EN.pdf"
               }
               aria-label={t("hero.downloadResumeAria")}
             >

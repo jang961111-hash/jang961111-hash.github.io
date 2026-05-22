@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useScrollReveal from '../../hooks/useScrollReveal';
-import resumeKo from '../../assets/docs/resume_ko.pdf';
-import resumeEn from '../../assets/docs/resume_en.pdf';
+import portfolioKo from '../../assets/docs/portfolio_ko.pdf';
+import portfolioEn from '../../assets/docs/portfolio_en.pdf';
 import './Contact.css';
 
 const Contact = () => {
@@ -23,7 +23,7 @@ const Contact = () => {
     },
     {
       label: t('contact.resume'),
-      href: i18n.language === 'ko' ? resumeKo : resumeEn,
+      href: i18n.language === 'ko' ? portfolioKo : portfolioEn,
     },
   ];
 
