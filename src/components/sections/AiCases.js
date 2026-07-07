@@ -1,11 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SectionShell from "../layout/SectionShell";
+import { projectUiCopy } from "../../content/projects";
 
-const caseKeys = ["questionFlow", "recommendation", "promptProduct", "agentPartner"];
+const cases = [
+  { key: "questionFlow", slug: "dailylog" },
+  { key: "recommendation", slug: "dailylog" },
+  { key: "promptProduct", slug: "ssafy-startup-track" },
+  { key: "agentPartner", slug: "genwing-live" },
+];
 
 const AiCases = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language === "en" ? "en" : "ko";
+  const copy = projectUiCopy[lang];
+  const projectBasePath = lang === "en" ? "/en/projects" : "/projects";
 
   return (
     <SectionShell
@@ -15,7 +25,7 @@ const AiCases = () => {
       subtitle={t("aiCases.subtitle")}
     >
       <div className="project-archive-grid">
-        {caseKeys.map((key) => (
+        {cases.map(({ key, slug }) => (
           <article key={key} className="project-archive-card structural-card">
             <p className="project-card-category">
               {t(`aiCases.items.${key}.project`)}
@@ -38,6 +48,10 @@ const AiCases = () => {
               <span className="detail-label">{t("aiCases.labels.result")}</span>
               <p>{t(`aiCases.items.${key}.result`)}</p>
             </div>
+
+            <Link to={`${projectBasePath}/${slug}`} className="project-inline-link">
+              {copy.viewDetails}
+            </Link>
           </article>
         ))}
       </div>

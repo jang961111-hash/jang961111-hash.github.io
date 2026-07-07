@@ -49,6 +49,18 @@
   color: var(--text-primary);
 }
 
+.competency-keyword {
+  display: block;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.competency-text {
+  display: block;
+  color: var(--text-secondary);
+}
+
 .framework-steps {
   display: flex;
   flex-direction: column;

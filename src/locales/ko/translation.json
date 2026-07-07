@@ -145,7 +145,7 @@
     }
   },
   "aiCases": {
-    "title": "AI in Action | AI 활용 사례",
+    "title": "AI in Action",
     "subtitle": "AI를 기능 장식이 아니라 문제 해결 도구로 쓴 실제 사례입니다. 각 사례를 문제 → AI 활용 방식 → 결과 순서로 정리했습니다.",
     "labels": {
       "problem": "문제",
