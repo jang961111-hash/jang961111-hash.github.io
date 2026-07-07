@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
+import AskPortfolio from "./components/widget/AskPortfolio";
 import { getFallbackPath } from "./utils/localeRouting";
 import useTheme from "./hooks/useTheme";
 
@@ -47,6 +48,7 @@ function App() {
         ])}
         <Route path="*" element={<FallbackRoute />} />
       </Routes>
+      <AskPortfolio />
     </div>
   );
 }

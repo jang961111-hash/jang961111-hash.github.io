@@ -445,15 +445,35 @@
     "sections": {
       "product": {
         "title": "Product / Planning",
-        "items": ["Problem Framing", "Product Planning", "User Journey Design", "Prioritization", "Data-Driven Analysis", "Collaboration Design"]
+        "items": [
+          "Problem Framing",
+          "Product Planning",
+          "User Journey Design",
+          "Prioritization",
+          "Data-Driven Analysis",
+          "Collaboration Design"
+        ]
       },
       "technical": {
         "title": "Programming / AI",
-        "items": ["Python", "JavaScript", "React", "SQL", "LLM Interaction Design", "pgvector", "Thompson Sampling"]
+        "items": [
+          "Python",
+          "JavaScript",
+          "React",
+          "SQL",
+          "LLM Interaction Design",
+          "pgvector",
+          "Thompson Sampling"
+        ]
       },
       "tools": {
         "title": "Tools / Collaboration",
-        "items": ["Figma", "Git / GitHub", "Notion", "Slack"]
+        "items": [
+          "Figma",
+          "Git / GitHub",
+          "Notion",
+          "Slack"
+        ]
       }
     }
   },
@@ -468,5 +488,18 @@
     "resume": "View Portfolio PDF",
     "footerBuilt": "Built with React and an AI/SW-focused portfolio structure.",
     "footerDesigned": "Designed to present problem framing, service planning, and AI-enabled project experience."
+  },
+  "ask": {
+    "title": "Ask my portfolio",
+    "fab": "Ask my portfolio",
+    "greeting": "Hi! Ask me anything about Byeong Heon's projects, roles, and experience.",
+    "placeholder": "e.g. What was his role in DailyLog?",
+    "send": "Send",
+    "close": "Close",
+    "suggestion1": "What was his role in DailyLog?",
+    "suggestion2": "Any awards?",
+    "rateLimited": "Too many requests — please try again in a bit.",
+    "error": "Something went wrong. Please try again later or email jang961111@gmail.com.",
+    "disclaimer": "A Claude API demo. Answers are grounded only in this public portfolio."
   }
 }
