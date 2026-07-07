@@ -1,7 +1,7 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
-**마지막 작업 일시:** 2026년 7월 7일 (화) 심야 (KST)
-**현재 상태:** 디자인 감사 수정 + 메타태그 재포지셔닝 + PDF 재생성 완료 (`worktree-design-audit-fixes` 브랜치, 드래프트 PR). **배포는 아직 안 됨** — PR 머지 후 `npm run deploy` 필요.
+**마지막 작업 일시:** 2026년 7월 8일 (수) 새벽 (KST)
+**현재 상태:** PR #1(디자인 감사)·PR #2(실제 자산 연결) 머지 → `npm run deploy` 완료. **라이브 = main `7672407`.** 신규 자산 6종(스크린샷·수상사진·시연영상·발표자료) 라이브 200 확인, 테스트 11개·스모크 5개 라우트 통과, 새 메타 타이틀/설명 라이브 반영 확인.
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
@@ -14,6 +14,12 @@
 - **작업 방식:** 수정 → 테스트(`CI=true npx react-scripts test --watchAll=false`) → `npm run deploy` → 브라우저 검증을 한 사이클로. 큰 변경은 사용자에게 before/after 제시 후 진행.
 
 ---
+
+## ✅ 2026-07-08 새벽 세션 완료 내역 (머지 + 배포)
+
+1. **PR #1 → PR #2 순서로 squash 머지** (파일 충돌 없음, 리베이스 불필요했음).
+2. **배포:** `npm run deploy` 실행, 라이브 검증 — 새 타이틀/설명 반영, 신규 자산 6종 HTTP 200, 스모크 체크 통과.
+3. PR #2 내용 요약: DailyLog 앱 스크린샷 4장(webp)+3등 수상사진 히어로+발표 PPT, Loggy 시연영상 2:13+발표 PDF, Tamna 제주 해커톤 덱, GenWing 배너, 상세페이지 '서비스 화면' 스크린샷 그리드 컴포넌트 신설, package-lock 동기화.
 
 ## ✅ 2026-07-07 심야 세션 완료 내역 (디자인 감사 + 메타 재포지셔닝 + PDF)
 
@@ -45,15 +51,16 @@
 ## 📋 남은 작업 (우선순위 순)
 
 ### 🔴 사용자 액션 필요
-- [ ] **드래프트 PR 머지 + `npm run deploy`** — 이번 세션 수정분이 브랜치에만 있음. 머지 후 배포해야 라이브에 반영(새 PDF 포함). 배포 후 라이브에서 내비바 배경·링크 미리보기 재확인.
-- [ ] **실측 자료 찾기** (로컬/구글드라이브/다른 컴퓨터): 프로젝트 스크린샷, 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치의 출처 확인, sales-crm 원본 기획서.
+- [ ] **GitHub 저장소 정리:** loggy_private·loggy_1·tamna-eye-project·final-pjt 공개 전환(final-pjt는 db.sqlite3 개인정보 점검 후), `0407`→`promtree` rename.
+- [ ] **수상사진 팀원 얼굴 공개 동의** 확인 (이미 라이브에 올라감 — 동의 못 받으면 즉시 알려주기, 블러 처리로 교체 가능).
+- [ ] **실측 자료 찾기:** 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치 출처, sales-crm 원본 기획서, 전주 ICT·Campus Chronicle 자료.
 
 ### 다음 사이클 (Claude 작업)
-1. [x] ~~아키텍처 다이어그램 SVG 제작~~ — 2026-07-07 밤 배포 완료.
-2. [x] ~~디자인 A to Z 감사~~ — 2026-07-07 심야: CSS 변수 버그 수정, 다크/모바일/인쇄 puppeteer 검증 완료. 라이브 재검증은 배포 후.
-3. [x] ~~PDF 산출물 재생성~~ — 2026-07-07 심야 완료 (배포 대기).
-4. [ ] 자료 도착 시: 실측 수치 반영 + `heroImage` 필드 복원(스크린샷을 `public/projects/<slug>/`에 배치).
-5. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 21MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부, og-image.png(1200×630) 리브랜딩 여부.
+1. [ ] **SUPPORTY/D4D 9번째 프로젝트 추가** — 자산 최다(영상3+PDF+사진13, `C:\Users\SAMSUNG\Desktop\D4D\` + supporty-d4d.github.io repo).
+2. [ ] work_automation_pipeline·KRAFTON AI 해커톤 추가 검토.
+3. [ ] DailyLog figma_export_1 화면 ~30장 큐레이션, Loggy `loggy_fronted_portfolio.md`(본인 기여) 반영 — G:드라이브 필요.
+4. [ ] 디자인 개선: 빈 우측 컬럼, 리빌 애니메이션 축소, Contact CTA 액센트, 'Ask my portfolio' AI 위젯.
+5. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부, og-image.png(1200×630) 리브랜딩 여부.
 
 ---
 
