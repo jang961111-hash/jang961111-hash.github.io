@@ -1,0 +1,16 @@
+# Never apply text/CRLF conversion to binary assets
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp4 binary
+*.webm binary
+*.pptx binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+*.pt binary
+*.pth binary
