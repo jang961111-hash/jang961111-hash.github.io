@@ -65,13 +65,14 @@
 - [ ] **수상사진 팀원 얼굴 공개 동의** 확인 (이미 라이브에 올라감 — 동의 못 받으면 즉시 알려주기, 블러 처리로 교체 가능).
 - [ ] **실측 자료 찾기:** 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치 출처, sales-crm 원본 기획서, 전주 ICT·Campus Chronicle 자료.
 
+### 🔴 사용자 액션 — AI 위젯 활성화 (~10분, workers/ask-portfolio/README.md)
+- [ ] Cloudflare 가입 → `npx wrangler login` → `secret put ANTHROPIC_API_KEY` → `deploy` → 워커 URL을 `.env.production`의 `REACT_APP_ASK_ENDPOINT`에 → `npm run deploy`. (Anthropic Console에서 spend limit 설정 권장)
+
 ### 다음 사이클 (Claude 작업)
-1. [x] ~~SUPPORTY/D4D 9번째 프로젝트 추가~~ — PR #3 머지·배포 완료 (Oregon UAS Accelerator 수상 포함).
-2. [x] ~~Loggy `loggy_fronted_portfolio.md` 반영~~ — PR #4 머지·배포 완료.
-3. [ ] KRAFTON AI 해커톤 추가 — 자산 확인됨: `G:\...\2학기\0328\extracted_handoff\` (MultiplierBoard 리포트 PDF·learning_curve.png·OPUS_HANDOFF.md 먼저 읽기). work_automation_pipeline도 검토.
-4. [ ] DailyLog figma_export_1 화면 ~30장 큐레이션 — G:드라이브.
-5. [ ] 디자인 개선: 빈 우측 컬럼, 리빌 애니메이션 축소, Contact CTA 액센트, 'Ask my portfolio' AI 위젯.
-6. [ ] 검토 항목: SUPPORTY를 AI in Action 카드(자연어 지휘→제어 시퀀스 사례)로 추가 여부, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, og-image.png(1200×630) 리브랜딩 여부. (참고: translation.json `awards` 블록은 어떤 컴포넌트도 렌더하지 않는 레거시 — 수상 노출은 각 프로젝트 metrics/highlights로 처리 중)
+1. [ ] DailyLog figma_export_1 화면 ~30장 큐레이션 — G:드라이브.
+2. [ ] SUPPORTY를 AI in Action 카드(자연어 지휘→제어 시퀀스 사례)로 추가 검토.
+3. [ ] work_automation_pipeline 추가 검토, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, og-image.png(1200×630) 리브랜딩 여부.
+4. [ ] 위젯 활성화 후: 워커 응답 실측 → `workers/ask-portfolio/src/context.js` 컨텍스트 튜닝, 스트리밍 업그레이드 검토.
 
 ---
 
