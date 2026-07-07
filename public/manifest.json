@@ -1,7 +1,7 @@
 {
-  "short_name": "TPM 장병헌",
-  "name": "장병헌 | AI/SW 기반 문제정의형 서비스 기획자 / PM",
-  "description": "Portfolio of Jang Byeong Heon, an AI/SW problem-framing service planner and PM who connects user experience with technical structures.",
+  "short_name": "장병헌 포트폴리오",
+  "name": "장병헌 | AI 서비스 개발 · 기획 포트폴리오",
+  "description": "Portfolio of Jang Byeong Heon — an AI service builder who has shipped LLM, recommendation, and vector-search features as real user experiences, from problem framing to React implementation.",
   "icons": [
     {
       "src": "icon-192.png",

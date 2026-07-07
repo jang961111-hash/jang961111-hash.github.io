@@ -13,9 +13,10 @@
   --border-strong: #dee2e6;
   --border-subtle: #f1f3f5;
   --nav-height: 72px;
-  --nav-blur-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg: rgba(255, 255, 255, 0.85);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.16);
   --border-radius: 20px;
   --portrait-border: #e9ecef;
   --portrait-grad-top: #ffffff;
@@ -38,7 +39,8 @@
   --border-color: #21262d;
   --border-strong: #30363d;
   --border-subtle: #161b22;
-  --nav-blur-bg: rgba(10, 12, 16, 0.85);
+  --nav-bg: rgba(10, 12, 16, 0.85);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.55);
   --portrait-border: #30363d;
   --portrait-grad-top: #1b2029;
   --portrait-grad-bottom: #0a0c10;
