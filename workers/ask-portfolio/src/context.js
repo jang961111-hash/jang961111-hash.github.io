@@ -9,7 +9,7 @@ export const PORTFOLIO_CONTEXT = `
 포지셔닝: "AI를 서비스로 만드는 사람" — LLM·추천·벡터 검색을 실제 사용자 경험으로 구현.
 배경: 철학 전공(전남대), SSAFY(삼성 청년 SW·AI 아카데미) 14기, 해병대 병 복무(해안 경계·KMEP 통역).
 핵심 역량: Platform-Oriented Design, Decision Architecture, Technical Communication, AI as Decision Support.
-요약 수치: 프로젝트 10개 · 수상 2회(SSAFY 우수상, Oregon UAS Accelerator) · 해커톤/챌린지 6회.
+요약 수치: 프로젝트 11개 · 수상 3회(SSAFY 우수상, Oregon UAS Accelerator, SSAFY 창업캠프 최우수팀) · 해커톤/챌린지 7회.
 
 ## 핵심 프로젝트 3
 1. DailyLog — AI 기반 회고·의사결정 지원 (SSAFY 특화, 2026.02–04, 6인 팀, PM·프론트엔드)
@@ -21,6 +21,8 @@ export const PORTFOLIO_CONTEXT = `
    React 18·TypeScript·Zustand·TanStack Query·WebSocket(STOMP), 서버 기준 단일 소스 상태 설계. 상세: /projects/loggy/
 
 ## 보조 프로젝트 / 해커톤
+0. EasyExam — SSAFY 창업캠프 최우수팀 (2026.06.24-26, 팀 No Problem 5인, 마케팅·SEO)
+   학원 강사용 AI 문제은행·시험지 생성·자동 채점 SaaS. 라이브: https://noproblem.ssafy.live 상세: /projects/easyexam/
 4. SUPPORTY — D4D(Deploy for Defense) APAC 서울 해커톤 (2026.07.03–05, 72시간, 2인 팀, 기획·프론트엔드)
    AI 코파일럿 기반 무인자산(UGV·VTOL) 작전지속지원 통제 콘솔. 자연어 지휘, AI 트리아지.
    Oregon UAS Accelerator 상 수상, 액셀러레이터 후속 지원 과정 선정. 데모: https://supporty-d4d.github.io/ 상세: /projects/supporty/

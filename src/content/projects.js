@@ -312,6 +312,151 @@ export const portfolioProjects = [
     links: {},
   },
   {
+    slug: "easyexam",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-06-26",
+    period: {
+      ko: "2026.06.24 - 06.26 (3일)",
+      en: "Jun 24 - 26, 2026 (3 days)",
+    },
+    category: {
+      ko: "SSAFY 창업캠프 / Startup",
+      en: "SSAFY Startup Camp",
+    },
+    title: {
+      ko: "EasyExam | 학원 출제·채점·관리를 하나의 루프로 만드는 AI SaaS",
+      en: "EasyExam | An AI SaaS Turning Academy Exam Work into One Loop",
+    },
+    summary: {
+      ko: "SSAFY 창업캠프(삼성·JA Korea)에서 3일 만에 기획부터 라이브 서비스까지 완성한, 학원 강사용 AI 문제은행·시험지 생성·자동 채점 SaaS입니다. 창업관심팀 최우수팀으로 선정되었습니다.",
+      en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors — built from idea to live service in 3 days at the SSAFY Startup Camp (Samsung · JA Korea). Selected as Best Team.",
+    },
+    context: {
+      ko: "팀 No Problem(5인)으로 참가해 전직 학원 강사의 현장 페인 포인트에서 출발했고, 시연 가능한 라이브 서비스(noproblem.ssafy.live)와 15장 사업 소개 덱으로 최우수팀에 선정된 프로젝트입니다.",
+      en: "Team No Problem (5 members) started from a former academy instructor's field pain points, and won Best Team with a live demo service (noproblem.ssafy.live) and a 15-page business deck.",
+    },
+    story: {
+      problem: {
+        ko: "학원 강사는 가르치는 일에 집중해야 하지만, 실제로는 주 10시간 이상을 출제·채점·관리에 씁니다. 기존 도구는 문제 등록이 불편하고, 시험지 제작이 번거롭고, 수기 채점에 시간이 걸리는 세 지점에서 막힙니다.",
+        en: "Instructors should focus on teaching, yet spend 10+ hours a week on exam creation, grading, and management. Existing tools fail at three points: registering questions, assembling papers, and manual grading.",
+      },
+      insight: {
+        ko: "개별 기능 세 개를 파는 것이 아니라, '등록 → AI 분류 → 시험지 생성 → 자동 채점 → 약점 분석'이 이어지는 하나의 데이터 선순환 루프로 설계해야 쓸수록 똑똑해지고 갈아타기 어려운 제품이 된다고 판단했습니다.",
+        en: "Rather than selling three features, we designed one data flywheel — capture → AI tagging → paper generation → auto-grading → weakness analytics — so the product gets smarter with use.",
+      },
+      solution: {
+        ko: "책상에서 문제를 찍으면 원근 보정·OCR·레이아웃 분리 후 학년·과목·유형이 자동 태깅되어 문제은행에 쌓이고, 자연어 한 문장으로 맞춤 시험지가 조립되며, 답안을 찍으면 OCR·VLM·루브릭 기반으로 즉시 채점되고 오답노트가 자동 생성됩니다. 학원 단위 SaaS 구독(월 9.9/19.9만 원)으로 설계했습니다.",
+        en: "Snap a photo — perspective correction, OCR, and layout segmentation feed an auto-tagged question bank; one natural-language sentence assembles a custom exam; snapping answer sheets triggers OCR/VLM rubric grading with automatic mistake-note generation. Priced as per-academy SaaS (₩99K/199K monthly).",
+      },
+    },
+    team: {
+      ko: "팀 No Problem (5인 — CEO·CTO·전 학원 강사·마케팅·인프라)",
+      en: "Team No Problem (5 — CEO, CTO, ex-instructor, marketing, infra)",
+    },
+    role: {
+      ko: "마케팅 · SEO 담당 | 시장·고객 검증과 서비스 확산 설계 파트",
+      en: "Marketing & SEO | Market-customer validation and growth design",
+    },
+    tags: {
+      ko: ["EdTech SaaS", "AI 파이프라인", "BM 설계", "창업"],
+      en: ["EdTech SaaS", "AI Pipeline", "Business Model", "Startup"],
+    },
+    highlights: {
+      ko: [
+        "SSAFY 창업캠프 창업관심팀 최우수팀으로 선정되었습니다 (삼성·JA Korea 주최).",
+        "3일 안에 아이디어 검증부터 시연 가능한 라이브 서비스(noproblem.ssafy.live)까지 완성했습니다.",
+        "출제·채점·분석을 잇는 데이터 선순환 루프로 제품을 구조화했습니다 — 쓸수록 문제은행이 똑똑해지는 설계.",
+        "전국 학원 8만여 곳 기준 SAM 965억 원 산정 등 시장·수익모델을 공식 통계로 뒷받침했습니다.",
+      ],
+      en: [
+        "Selected as Best Team in the SSAFY Startup Camp (hosted by Samsung · JA Korea).",
+        "Went from idea validation to a live, demoable service (noproblem.ssafy.live) within 3 days.",
+        "Structured the product as a data flywheel connecting creation, grading, and analytics.",
+        "Backed the market and revenue model with official statistics — ₩96.5B SAM across ~80K academies.",
+      ],
+    },
+    proof: {
+      ko: [
+        "현장 전문가(전직 강사)의 페인 포인트를 AI 파이프라인 서비스 구조로 옮겼습니다.",
+        "기능 나열이 아니라 데이터 선순환이라는 제품 전략으로 심사를 설득했습니다.",
+        "짧은 마감(3일) 안에 기획·구현·발표를 완결한 팀 실행력을 보여줬습니다.",
+      ],
+      en: [
+        "Translated a field expert's pain points into an AI-pipeline service structure.",
+        "Won the judges over with a data-flywheel product strategy rather than a feature list.",
+        "Demonstrated team execution — planning, build, and pitch completed in a 3-day deadline.",
+      ],
+    },
+    metrics: [
+      {
+        value: "Best",
+        label: {
+          ko: "창업관심팀 최우수팀 선정",
+          en: "Best Team award",
+        },
+      },
+      {
+        value: "3 days",
+        label: {
+          ko: "아이디어 → 라이브 서비스",
+          en: "Idea to live service",
+        },
+      },
+      {
+        value: "Live",
+        label: {
+          ko: "noproblem.ssafy.live 시연",
+          en: "Demo at noproblem.ssafy.live",
+        },
+      },
+    ],
+    sections: [
+      {
+        id: "ai-pipeline",
+        title: {
+          ko: "기능 뒤에서 도는 AI 파이프라인",
+          en: "The AI Pipeline Behind Each Feature",
+        },
+        body: {
+          ko: "등록(INGEST)은 촬영 → 원근 보정·OCR → 문항 분할 → 임베딩 분류 → 지식그래프 태깅으로, 생성(GENERATE)은 자연어 요청 → 의도 파싱 → 조건 제약 → 문제은행 RAG 검색 → 문항 조합으로, 채점(GRADE)은 답안 촬영 → OCR·손글씨 인식(VLM) → 정답·루브릭 채점 → 신뢰도 분기(낮으면 교사 검수 라우팅) → 기록·약점 분석으로 흐릅니다. 학원별 데이터 격리(멀티테넌트)를 전제로 설계했습니다.",
+          en: "INGEST: capture → deskew/OCR → item segmentation → embedding classification → knowledge-graph tagging. GENERATE: natural-language request → intent parsing → constraints → question-bank RAG retrieval → assembly. GRADE: answer capture → OCR/handwriting VLM → rubric scoring → confidence routing (low-confidence items go to teacher review) → records and weakness analytics. Designed for per-academy data isolation (multi-tenant).",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["사업 소개 덱 (15p)", "라이브 서비스", "수상 사진"],
+      en: ["Business deck (15p)", "Live service", "Award photo"],
+    },
+    interviewQuestions: {
+      ko: [
+        "왜 개별 기능이 아니라 데이터 선순환 루프를 제품 전략으로 삼았나요?",
+        "AI 채점의 신뢰도 문제를 서비스 설계에서 어떻게 다뤘나요?",
+        "3일이라는 제약에서 무엇을 버리고 무엇을 지켰나요?",
+      ],
+      en: [
+        "Why did you make the data flywheel the product strategy instead of individual features?",
+        "How did the service design handle AI grading reliability?",
+        "Under the 3-day constraint, what did you cut and what did you protect?",
+      ],
+    },
+    heroImage: "/projects/easyexam/award-best-team.webp",
+    media: {
+      presentationHref: "/projects/easyexam/easyexam-deck.pdf",
+      title: {
+        ko: "사업 소개 덱",
+        en: "Business Deck",
+      },
+      presentationLabel: {
+        ko: "소개 덱 PDF 보기 (15p)",
+        en: "View business deck (PDF, 15p)",
+      },
+    },
+    links: {
+      demo: "https://noproblem.ssafy.live",
+    },
+  },
+  {
     slug: "supporty",
     featured: false,
     status: "completed",
