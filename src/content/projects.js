@@ -160,8 +160,8 @@ export const portfolioProjects = [
       en: "A contested-logistics control system built in 72 hours at the D4D (Deploy for Defense) APAC Seoul hackathon, where a single operator commands ground (UGV) and aerial (VTOL) unmanned assets alongside an AI copilot.",
     },
     context: {
-      ko: "특전사 출신 하드웨어 리드와 2인 팀으로, 실물 UGV·VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연하고 공개 랜딩 페이지와 기획서까지 완성한 프로젝트입니다.",
-      en: "A two-person team with a special-forces-veteran hardware lead; we demoed a live operator console wired to a real UGV and VTOL, and shipped a public landing page and proposal deck.",
+      ko: "특전사 출신 하드웨어 리드와 2인 팀으로, 실물 UGV·VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연했습니다. Oregon UAS Accelerator 상을 수상해 액셀러레이터 후속 지원 과정에 선정되었고, D4D 공식 쇼케이스에 등재되었습니다.",
+      en: "A two-person team with a special-forces-veteran hardware lead; we demoed a live operator console wired to a real UGV and VTOL. The team won the Oregon UAS Accelerator award — with selection into the accelerator's follow-on startup support program — and is listed in the official D4D showcase.",
     },
     story: {
       problem: {
@@ -195,12 +195,14 @@ export const portfolioProjects = [
         "긴급 요청을 생명 직결도 → 시간 민감도 → 임무 파급효과 순으로 정렬하는 AI 트리아지 큐를 기획했습니다.",
         "\"전진 5초\" 같은 자연어 명령을 실제 제어 시퀀스로 변환하는 지휘 UX를 설계했습니다.",
         "72시간 안에 실물 UGV·VTOL 연동 라이브 콘솔, 공개 랜딩 페이지, 기획서까지 완성해 시연했습니다.",
+        "Oregon UAS Accelerator 상을 수상해 스타트업 액셀러레이터 후속 지원 과정에 선정되었습니다.",
       ],
       en: [
         "Redesigned the one-pilot-per-asset staffing model into a single-operator-plus-AI-copilot control structure.",
         "Planned an AI triage queue ordering urgent requests by life criticality, time sensitivity, and mission impact.",
         "Designed a command UX translating natural-language orders like 'forward 5 seconds' into control sequences.",
         "Shipped a live console wired to a real UGV & VTOL, a public landing page, and a proposal deck within 72 hours.",
+        "Won the Oregon UAS Accelerator award, earning selection into the accelerator's follow-on startup support program.",
       ],
     },
     proof: {
@@ -217,10 +219,10 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: "72 h",
+        value: "Award",
         label: {
-          ko: "D4D 서울 해커톤 완주",
-          en: "D4D Seoul hackathon build",
+          ko: "Oregon UAS Accelerator 선정",
+          en: "Oregon UAS Accelerator award",
         },
       },
       {
