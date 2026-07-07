@@ -811,6 +811,20 @@ export const portfolioProjects = [
           en: "Runtime — from logging to action recommendation",
         },
       },
+      {
+        src: "/projects/dailylog/design-reco-rating.webp",
+        alt: {
+          ko: "Figma 시안 — 어제 추천받은 활동을 별점으로 평가 (추천 피드백 루프 입력)",
+          en: "Figma design — rating yesterday's recommended activity (feedback input for the recommendation loop)",
+        },
+      },
+      {
+        src: "/projects/dailylog/design-diary-result.webp",
+        alt: {
+          ko: "Figma 시안 — 일기 결과 페이지 (다이어리 감성 컨셉)",
+          en: "Figma design — diary result page (journal-inspired visual concept)",
+        },
+      },
     ],
     links: {
       github: "https://github.com/jang961111-hash/daily_log",
