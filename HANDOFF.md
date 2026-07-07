@@ -71,7 +71,12 @@
 ### 다음 사이클 (Claude 작업)
 1. [x] ~~DailyLog Figma 큐레이션~~ — 157장 전수 검토, 완성도 높은 2장만 선별 반영(추천 별점 평가·일기 결과, 'Figma 시안' 라벨). PR #8 배포 완료.
 2. [x] ~~SUPPORTY AI in Action 카드~~ — 자연어 지휘 사례 5번째 카드 추가. PR #9 배포 완료.
-3. [ ] work_automation_pipeline 추가 검토, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, og-image.png(1200×630) 리브랜딩 여부.
+3. [x] ~~og-image 리브랜딩~~ — 기존 640×640 옛 포지셔닝 이미지를 1200×630 크림/브론즈 아이덴티티(히어로 배지+At-a-glance 수치)로 교체. PR #10 배포 완료.
+
+### 검토 항목 결론 (2026-07-08)
+- **work_automation_pipeline: 추가하지 않음** — 저장소가 README 1개뿐인 빈 껍데기(설명된 src/·templates/ 부재, "70% 절감" 검증 불가). 실제 코드가 채워지면 재검토.
+- **Loggy 13MB mp4: 현행 유지** — `preload="metadata"`라 재생 전엔 다운로드 안 됨. 외부 호스팅 이득 없음.
+- **sales-crm: 노출 유지** — 관통 프로젝트·CRM 도메인 폭을 보여주는 항목, 아카이브 하단 위치라 리스크 없음.
 
 ---
 
