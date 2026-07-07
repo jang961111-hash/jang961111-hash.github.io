@@ -7,6 +7,7 @@ import { projectUiCopy } from "../../content/projects";
 const cases = [
   { key: "questionFlow", slug: "dailylog" },
   { key: "recommendation", slug: "dailylog" },
+  { key: "nlCommand", slug: "supporty" },
   { key: "promptProduct", slug: "ssafy-startup-track" },
   { key: "agentPartner", slug: "genwing-live" },
 ];
