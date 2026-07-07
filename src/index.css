@@ -24,6 +24,10 @@
   --portrait-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   --portrait-border-hover: var(--accent-secondary);
   --portrait-shadow-hover: 0 15px 35px -5px rgba(164, 117, 75, 0.15);
+  --cta-bg: #8a5f3a;
+  --cta-bg-hover: #744f2f;
+  --cta-text: #ffffff;
+  --cta-shadow: 0 6px 18px -6px rgba(138, 95, 58, 0.45);
 }
 
 [data-theme="dark"] {
@@ -47,6 +51,10 @@
   --portrait-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
   --portrait-border-hover: var(--accent-primary);
   --portrait-shadow-hover: 0 15px 35px -5px rgba(194, 150, 92, 0.15);
+  --cta-bg: #c2965c;
+  --cta-bg-hover: #e2bc82;
+  --cta-text: #16130f;
+  --cta-shadow: 0 6px 18px -6px rgba(194, 150, 92, 0.35);
 }
 
 * {

@@ -46,6 +46,15 @@
       "decision": "Decision Architecture",
       "tech": "Technical Communication",
       "ai": "AI as Decision Support"
+    },
+    "glance": {
+      "title": "At a glance",
+      "projects": "Projects",
+      "awards": "Awards",
+      "awardsNote": "SSAFY Excellence · Oregon UAS Accelerator",
+      "hackathons": "Hackathons & challenges",
+      "training": "Samsung SW·AI Academy for Youth",
+      "trainingValue": "SSAFY 14th"
     }
   },
   "projects": {

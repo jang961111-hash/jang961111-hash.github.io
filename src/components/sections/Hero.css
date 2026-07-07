@@ -144,13 +144,14 @@
 }
 
 .cta-button.primary {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: var(--cta-bg);
+  color: var(--cta-text);
   border-color: transparent;
+  box-shadow: var(--cta-shadow);
 }
 
 .cta-button.primary:hover {
-  background: var(--accent-primary);
+  background: var(--cta-bg-hover);
 }
 
 .cta-button.secondary {

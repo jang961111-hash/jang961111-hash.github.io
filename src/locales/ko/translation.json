@@ -46,6 +46,15 @@
       "decision": "Decision Architecture",
       "tech": "Technical Communication",
       "ai": "AI as Decision Support"
+    },
+    "glance": {
+      "title": "At a glance",
+      "projects": "프로젝트",
+      "awards": "수상",
+      "awardsNote": "SSAFY 우수상 · Oregon UAS Accelerator",
+      "hackathons": "해커톤 · 챌린지",
+      "training": "삼성 청년 SW·AI 아카데미",
+      "trainingValue": "SSAFY 14기"
     }
   },
   "projects": {
