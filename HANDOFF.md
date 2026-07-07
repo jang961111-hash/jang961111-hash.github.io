@@ -1,7 +1,7 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
-**마지막 작업 일시:** 2026년 7월 8일 (수) 새벽 (KST)
-**현재 상태:** PR #1~#7 전부 머지 + 배포 완료. **라이브 = main `dfaa88c`.** 프로젝트 10개(SUPPORTY 수상 포함 + KRAFTON MultiplierBoard), 디자인 리프레시(At-a-glance 카드·리빌 축소·브론즈 CTA), 'Ask my portfolio' AI 위젯 스캐폴드(비활성 — 워커 배포 대기)까지 반영.
+**마지막 작업 일시:** 2026년 7월 8일 (수) (KST)
+**현재 상태:** PR #1~#13 전부 머지 + 배포 + 라이브 검증 완료. **프로젝트 11개 · 수상 3회.** 폰트(Pretendard·JetBrains Mono) 셀프호스트로 실제 로드됨. 작업트리 클린, 열린 PR 없음.
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
@@ -14,6 +14,14 @@
 - **작업 방식:** 수정 → 테스트(`CI=true npx react-scripts test --watchAll=false`) → `npm run deploy` → 브라우저 검증을 한 사이클로. 큰 변경은 사용자에게 before/after 제시 후 진행.
 
 ---
+
+## ✅ 2026-07-08 3차 세션 완료 내역 (드라이브 발굴 + 타이포)
+
+1. **PR #8** DailyLog Figma 시안 2장 선별 반영(157장 전수 검토). **PR #9** SUPPORTY 자연어 지휘 사례를 AI in Action 5번째 카드로. **PR #10** og-image 리브랜딩(1200×630 크림/브론즈).
+2. **PR #11 — EasyExam 11번째 프로젝트**: SSAFY 창업캠프(6/24–26) 창업관심팀 **최우수팀**. 15p 덱 + 본인 단독 수상사진 히어로 + 라이브 noproblem.ssafy.live. At-a-glance·og-image 11/3/7 동기화.
+3. **PR #12 — Chronicle 전면 보강**: 언더독팀 개발기획서(11p) 발굴 — 역할 공식 명시('UI/UX Designer & Frontend', Figma 디자인 시스템·RN 서브화면). 캠퍼스 크레도·Phaser.js 서사 반영 + PDF 첨부. Tamna 기획서 PDF docs 연결.
+4. **PR #13 — 폰트 버그 수정**: Pretendard·JetBrains Mono가 선언만 되고 로드 안 되던 문제(Windows=맑은고딕) → `public/fonts/` 셀프호스트 woff2 + fonts.css + preload + 헤딩 자간 -0.02em. PDF 재생성.
+5. **드라이브 전수 탐색** → `ASSET_WISHLIST.md` 작성(반영 완료/후보/사용자 확보 요청/공개 금지). work_automation_pipeline은 빈 저장소라 미반영 판정. 검토 항목(Loggy mp4·sales-crm) 현행 유지 결론.
 
 ## ✅ 2026-07-08 새벽 2차 세션 완료 내역 (KRAFTON + 디자인 + AI 위젯)
 
@@ -60,28 +68,24 @@
 
 ## 📋 남은 작업 (우선순위 순)
 
-### 🔴 사용자 액션 필요
-- [ ] **GitHub 저장소 정리:** loggy_private·loggy_1·tamna-eye-project·final-pjt 공개 전환(final-pjt는 db.sqlite3 개인정보 점검 후), `0407`→`promtree` rename.
-- [ ] **수상사진 팀원 얼굴 공개 동의** 확인 (이미 라이브에 올라감 — 동의 못 받으면 즉시 알려주기, 블러 처리로 교체 가능).
-- [ ] **실측 자료 찾기:** 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치 출처, sales-crm 원본 기획서, 전주 ICT·Campus Chronicle 자료.
+### 다음 사이클 (Claude 작업 — 바로 시작 가능)
+1. [ ] **디자인 시안 2건 제작 → 승인분 적용**: ① 상세 페이지 박스 과밀 완화(일부 섹션 카드 제거, 여백 구분) ② 스크린샷 그리드 비율 통일(프레임 고정 + 원본 링크). before/after 스크린샷으로 제시.
+2. [ ] `ASSET_WISHLIST.md`의 사용자 답변 도착분 반영.
 
-### 🟡 AI 위젯 — 보류 (사용자 결정: 추후 GPT API로 직접 연동 예정)
-- 코드 머지됨·비활성. 연동 시 `workers/ask-portfolio/src/index.js`의 Claude 호출부만 교체하면 됨(위젯↔워커 계약은 `{messages}` → `{reply}` JSON). `REACT_APP_ASK_ENDPOINT` 설정 전까지 렌더 안 됨.
-
-### 다음 사이클 (Claude 작업)
-1. [x] ~~DailyLog Figma 큐레이션~~ — 157장 전수 검토, 완성도 높은 2장만 선별 반영(추천 별점 평가·일기 결과, 'Figma 시안' 라벨). PR #8 배포 완료.
-2. [x] ~~SUPPORTY AI in Action 카드~~ — 자연어 지휘 사례 5번째 카드 추가. PR #9 배포 완료.
-3. [x] ~~og-image 리브랜딩~~ — 기존 640×640 옛 포지셔닝 이미지를 1200×630 크림/브론즈 아이덴티티(히어로 배지+At-a-glance 수치)로 교체. PR #10 배포 완료.
-
-### 검토 항목 결론 (2026-07-08)
-- **work_automation_pipeline: 추가하지 않음** — 저장소가 README 1개뿐인 빈 껍데기(설명된 src/·templates/ 부재, "70% 절감" 검증 불가). 실제 코드가 채워지면 재검토.
-- **Loggy 13MB mp4: 현행 유지** — `preload="metadata"`라 재생 전엔 다운로드 안 됨. 외부 호스팅 이득 없음.
-- **sales-crm: 노출 유지** — 관통 프로젝트·CRM 도메인 폭을 보여주는 항목, 아카이브 하단 위치라 리스크 없음.
-
----
+### 🔴 사용자 입력 대기 (`ASSET_WISHLIST.md` 상세)
+- [ ] 시연영상 3건 정체 확인(화면녹화 2026-02-06 2건, 마지막 브금까지.mp4)
+- [ ] SSAFY 졸업반 해커톤 기획서(17.6MB)가 어떤 행사·결과인지
+- [ ] AI 미니프로젝트(MCP 서버·MLOps 스택 등) GitHub repo화 여부 결정
+- [ ] 구글 포토 현장 사진 → `Desktop/포트폴리오_사진/`에 모아두기
+- [ ] 수상 증빙: DailyLog 상장 단독 사진, Oregon UAS 공지 캡처
+- [ ] 저장소 공개 전환 4건(loggy_private·loggy_1·tamna-eye-project·final-pjt), `0407`→`promtree` rename
+- [ ] DailyLog 수상사진 팀원 얼굴 동의 확인(사진 라이브 중 — 미동의 시 블러 교체)
+- [ ] ⚠️ 보안: 드라이브의 신분증·통장사본·증명서 정리, `ai-dev-deployment/.env` API 키 노출 점검
+- [ ] AI 위젯: 추후 GPT API로 직접 연동 예정(코드 머지됨·비활성, `workers/ask-portfolio/README.md`)
 
 ## 🏃‍♂️ 다시 시작하는 법
 
-1. `npm install` (node_modules 없을 때) → `npm start`
-2. 이 파일과 `PROJECT_LOG.md` 최상단을 읽고 맥락 파악.
-3. Claude에게 "포트폴리오 수정 작업 시작하자"라고 하면 메모리에서 이 상태를 불러와 위 "다음 사이클" 1번부터 이어서 진행.
+1. 컴퓨터 켜고 Claude Code를 이 폴더(`jang961111-hash.github.io`)에서 실행.
+2. **"포트폴리오 수정 작업 시작하자"** 라고 입력 — 메모리가 이 파일과 `ASSET_WISHLIST.md`를 기준으로 상태를 복구해 "다음 사이클" 1번부터 이어서 진행.
+3. 전부 맡기고 싶으면: **"포트폴리오 수정 작업 시작하자. 진행할 수 있는 만큼 진행하고 점검받을 부분 체크하고 계속 루프 돌려."**
+4. (선택) 시작 전에 위 "사용자 입력 대기" 항목 중 답할 수 있는 것을 함께 적어주면 그 사이클부터 처리.
