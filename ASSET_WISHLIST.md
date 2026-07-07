@@ -17,12 +17,9 @@
 
 ## 🟢 발굴됨 — 다음 사이클 반영 후보 (추가 확인 필요 항목 표시)
 
-1. **탐나아이 최종발표 PDF(25.4MB) + 해커톤 기획서(5.3MB)** — `내 드라이브`
-   → Tamna 상세페이지에 발표자료로 연결 가능. 25MB는 압축 또는 핵심 페이지 추출 권장. *확인: 없음, 바로 가능.*
-2. **Campus Chronicle — 언더독팀 해커톤 개발기획서 PDF(508KB)** — `내 드라이브`
-   → 자료가 전무했던 프로젝트의 첫 실물. *확인: 이 PDF가 Chronicle 것이 맞는지.*
-3. **프롬트리 최종발표 PPTX(418KB) + 코드(S14P31F107-master.zip)** — `내 노트북/Desktop`
-   → Promtree 상세에 발표자료 연결. *확인: 없음, 바로 가능.*
+1. ~~탐나 기획서(5.3MB)~~ → **반영 완료** (Tamna docs 링크). 최종발표 PDF(25.4MB)는 기존 pptx와 중복 성격 + 용량 문제로 보류.
+2. ~~Chronicle 언더독팀 기획서~~ → **반영 완료** (Chronicle 것 맞음 — 역할 명시 'UI/UX Designer & Frontend'. 역할·팀·서사 보강 + PDF 첨부).
+3. ~~프롬트리 발표자료~~ → **이미 반영되어 있었음** (repo에 6.2MB 최종본 존재).
 4. **SSAFY 졸업반 해커톤 기획서 PDF(17.6MB)** — `내 드라이브`
    → *확인: 어떤 프로젝트/행사인지, 결과.*
 5. **AI 미니프로젝트 코드** (`ai-shopping-assistant`, `ai-story-creator`, `ai-document-archive`, `mcp-server`, MLOps 배포 스택) — `SSAFY/2nd/ai-common-skeleton`
