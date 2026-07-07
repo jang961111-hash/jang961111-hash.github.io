@@ -22,6 +22,34 @@ const About = () => {
             </ul>
           </div>
         </div>
+        <aside className="about-glance" aria-label={t("identity.glance.title")}>
+          <p className="about-glance-title mono">{t("identity.glance.title")}</p>
+          <dl className="about-glance-list">
+            <div className="about-glance-row">
+              <dt>{t("identity.glance.projects")}</dt>
+              <dd>10</dd>
+            </div>
+            <div className="about-glance-row">
+              <dt>
+                {t("identity.glance.awards")}
+                <span className="about-glance-note">
+                  {t("identity.glance.awardsNote")}
+                </span>
+              </dt>
+              <dd>2</dd>
+            </div>
+            <div className="about-glance-row">
+              <dt>{t("identity.glance.hackathons")}</dt>
+              <dd>6</dd>
+            </div>
+            <div className="about-glance-row">
+              <dt>{t("identity.glance.training")}</dt>
+              <dd className="about-glance-text">
+                {t("identity.glance.trainingValue")}
+              </dd>
+            </div>
+          </dl>
+        </aside>
       </div>
     </SectionShell>
   );
