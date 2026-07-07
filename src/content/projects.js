@@ -59,6 +59,7 @@ export const projectUiCopy = {
     status: "상태",
     links: "링크",
     highlights: "핵심 포인트",
+    screens: "서비스 화면",
     themes: "키워드",
     detailSections: "세부 설명",
     challenge: "다룬 문제",
@@ -114,6 +115,7 @@ export const projectUiCopy = {
     status: "Status",
     links: "Links",
     highlights: "Highlights",
+    screens: "Product Screens",
     themes: "Themes",
     detailSections: "Project detail",
     challenge: "Challenge",
@@ -250,6 +252,7 @@ export const portfolioProjects = [
         en: "Participating in the Genspark Meetup & Hackathon, I experimented with AI as an execution partner that performs actual tasks and service creation flows. Inspired by the message 'Everyone is already a developer,' I used Genspark OpenClaw to build a workflow for iteratively improving landing pages, tutorials, beta modes, mobile optimization, and PWA settings in a short time. This case demonstrates the potential of connecting everything from research to deployment into a single workflow using AI agents.",
       },
     },
+    heroImage: "/projects/genwing/og-banner.webp",
     links: {
       github: "https://github.com/jang961111-hash/genwing-live",
     },
@@ -409,7 +412,52 @@ export const portfolioProjects = [
         "How did you connect SenseVoice, Thompson Sampling, and pgvector to the service experience?",
       ],
     },
-    links: {},
+    heroImage: "/projects/dailylog/award-3rd-place.jpg",
+    media: {
+      presentationHref: "/projects/dailylog/dailylog-final-presentation.pptx",
+      title: {
+        ko: "발표 자료",
+        en: "Presentation",
+      },
+      presentationLabel: {
+        ko: "최종 발표자료 다운로드",
+        en: "Download final presentation",
+      },
+    },
+    screenshots: [
+      {
+        src: "/projects/dailylog/app-home.webp",
+        alt: {
+          ko: "홈 화면 — 오늘의 기록과 추천 행동",
+          en: "Home — today's log and recommended action",
+        },
+      },
+      {
+        src: "/projects/dailylog/app-diary-ai.webp",
+        alt: {
+          ko: "AI 질문 흐름 기반 회고 작성 화면",
+          en: "AI-guided reflection writing flow",
+        },
+      },
+      {
+        src: "/projects/dailylog/app-diary-photo.webp",
+        alt: {
+          ko: "사진과 함께 기록하는 다이어리 화면",
+          en: "Diary entry with photo attachments",
+        },
+      },
+      {
+        src: "/projects/dailylog/app-runtime.webp",
+        alt: {
+          ko: "실제 구동 화면 — 기록에서 행동 추천까지",
+          en: "Runtime — from logging to action recommendation",
+        },
+      },
+    ],
+    links: {
+      github: "https://github.com/jang961111-hash/daily_log",
+      docs: "https://github.com/jang961111-hash/dailylog_page",
+    },
   },
   {
     slug: "loggy",
@@ -554,6 +602,22 @@ export const portfolioProjects = [
         "Why did you choose to preserve only committed messages instead of storing every chat?",
       ],
     },
+    media: {
+      videoSrc: "/projects/loggy/loggy-demo.mp4",
+      presentationHref: "/projects/loggy/loggy-presentation.pdf",
+      title: {
+        ko: "발표 자료 / 시연 영상",
+        en: "Presentation / Demo Video",
+      },
+      videoLabel: {
+        ko: "시연 영상 보기",
+        en: "Watch demo video",
+      },
+      presentationLabel: {
+        ko: "최종 발표자료 다운로드 (PDF)",
+        en: "Download final presentation (PDF)",
+      },
+    },
     links: {},
   },
   {
@@ -667,6 +731,17 @@ export const portfolioProjects = [
       content: {
         ko: "당초 제주도의 위험 지역을 분석하던 기술적 자산(지도 기반 분석 엔진)을 바탕으로, 해커톤 현장에서 제주도의 고질적인 문제인 '재생에너지 출력 제한'에 주목했습니다. 단순히 에너지를 버리는 대신, 전력을 대량으로 소비하는 AI 데이터센터를 출력 제한이 잦은 지역에 분산 배치하여 계통 부담을 줄이는 역발상을 제안했습니다. 이 과정에서 기술적 구현(지도 시각화)과 비즈니스 타당성(전력 수급 최적화) 사이의 연결 고리를 설계하여, 단순한 아이디어를 실행 가능한 '데이터 기반 의사결정 지원 서비스'로 구조화했습니다. 직접 작성한 기획서를 통해 프로젝트의 논리적 완결성을 인정받아 결선 진출의 성과를 거두었습니다.",
         en: "Leveraging our existing disaster analysis engine, I identified Jeju's chronic 'energy curtailment' as a key opportunity during the hackathon. I proposed a counter-intuitive approach: distributing power-hungry AI data centers in areas with frequent curtailment to alleviate grid pressure. I bridged technical visualization with business feasibility, structuring the idea into an actionable 'data-driven decision support service'. By leading the documentation and ensuring logical integrity, I successfully drove the project to the hackathon finals.",
+      },
+    },
+    media: {
+      presentationHref: "/projects/tamna/jeju-hackathon-presentation.pptx",
+      title: {
+        ko: "발표 자료",
+        en: "Presentation",
+      },
+      presentationLabel: {
+        ko: "해커톤 발표자료 다운로드",
+        en: "Download hackathon presentation",
       },
     },
     links: {
@@ -1048,6 +1123,7 @@ export const portfolioProjects = [
       ],
     },
     links: {
+      github: "https://github.com/jang961111-hash/0407",
       docs: "/projects/promtree/promtree-final-presentation.pptx",
     },
     seo: {
@@ -1278,6 +1354,10 @@ export const getLocalizedProject = (project, lang = "ko") => {
           presentationLabel: localizeValue(project.media.presentationLabel, lang),
         }
       : null,
+    screenshots: (project.screenshots ?? []).map((shot) => ({
+      ...shot,
+      alt: localizeValue(shot.alt, lang),
+    })),
     seo: project.seo
       ? {
           title: localizeValue(project.seo.title, lang),
