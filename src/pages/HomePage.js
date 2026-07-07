@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
+import AiCases from "../components/sections/AiCases";
 import Competencies from "../components/sections/Competencies";
 import Experience from "../components/sections/Experience";
 import AppLayout from "../components/layout/AppLayout";
@@ -14,6 +15,7 @@ const HomeContent = () => (
     <Hero />
     <About />
     <Projects />
+    <AiCases />
     <Competencies />
     <Experience />
   </>

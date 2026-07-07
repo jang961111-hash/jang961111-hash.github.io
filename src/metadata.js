@@ -5,21 +5,21 @@ export const pageMetadata = {
     htmlLang: "ko",
     locale: "ko_KR",
     path: "/",
-    title: "장병헌 | 서비스 기획 · 프론트엔드 포트폴리오",
+    title: "장병헌 | AI 서비스 개발 · 기획 포트폴리오",
     description:
-      "장병헌의 포트폴리오. 철학 전공의 문제 구조화 사고와 SSAFY 1,725시간 AI/SW 교육을 바탕으로, 문제 정의부터 React 화면 구현까지 이어가는 서비스 기획자입니다.",
+      "LLM·추천·벡터 검색을 실제 사용자 경험으로 구현해본 AI 서비스 개발자 장병헌의 포트폴리오. 문제 정의(기획)부터 React 구현까지 한 사이클을 완주합니다.",
     keywords:
-      "장병헌, Jang Byeong Heon, 서비스 기획, PM, 프론트엔드, React, SSAFY, AI 서비스 기획, Product Manager, Frontend Developer, Problem Framing",
+      "장병헌, Jang Byeong Heon, AI 서비스 개발, LLM, Prompt Engineering, React, SSAFY, 서비스 기획, PM, AI Service Developer, Problem Framing",
   },
   en: {
     htmlLang: "en",
     locale: "en_US",
     path: "/en/",
-    title: "Jang Byeong Heon | Service Planning · Frontend Portfolio",
+    title: "Jang Byeong Heon | AI Service Development · Planning Portfolio",
     description:
-      "Portfolio of Jang Byeong Heon — a service planner who frames problems structurally and implements the answers in React, trained through 1,725 hours of AI/SW education at SSAFY.",
+      "Portfolio of Jang Byeong Heon — an AI service builder who has shipped LLM, recommendation, and vector-search features as real user experiences, from problem framing to React implementation.",
     keywords:
-      "Jang Byeong Heon, Service Planning, PM, Frontend, React, SSAFY, AI Service Planning, Product Manager, Problem Framing",
+      "Jang Byeong Heon, AI Service Development, LLM, Prompt Engineering, React, SSAFY, Service Planning, PM, Problem Framing",
   },
 };
 

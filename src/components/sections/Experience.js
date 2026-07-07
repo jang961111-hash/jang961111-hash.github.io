@@ -16,7 +16,7 @@ const Experience = () => {
   ];
 
   return (
-    <SectionShell id="experience" index="04" title={t("experience.title")}>
+    <SectionShell id="experience" index="05" title={t("experience.title")}>
       <div className="timeline">
         {experiences.map((jobKey) => {
           // Count number of descriptions dynamically if needed,

@@ -30,7 +30,7 @@ const Competencies = () => {
   const { t } = useTranslation();
   
   return (
-    <SectionShell id="competencies" index="03" title={t('competencies.title')}>
+    <SectionShell id="competencies" index="04" title={t('competencies.title')}>
       <p className="competencies-subtitle">{t('competencies.subtitle')}</p>
       
       <div className="competencies-grid">

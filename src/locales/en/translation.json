@@ -5,6 +5,7 @@
     "projects": "Core Projects",
     "contact": "Contact",
     "competencies": "Competencies",
+    "aiCases": "AI in Action",
     "themeLight": "Light",
     "themeDark": "Dark",
     "themeToLightAria": "Switch to light theme",
@@ -19,11 +20,11 @@
   "hero": {
     "name": "Jang Byeong Heon",
     "greeting": "Hello, I am",
-    "title": "Service Planning · Frontend",
-    "portfolioLabel": "Planning that frames problems, frontend that ships them",
+    "title": "AI Service Development · Planning",
+    "portfolioLabel": "I turn AI into services",
     "focusLabel": "How I Work",
-    "subtitle": "A service planner who frames problems structurally and implements the answers on screen.",
-    "mission": "Built on structured thinking from a Philosophy degree and 1,725 hours of AI/SW training at SSAFY, I close the gap between planning and development — going beyond specs to hands-on React implementation.",
+    "subtitle": "An AI service builder who has shipped LLM, recommendation, and vector-search features as real user experiences.",
+    "mission": "With structured thinking from a Philosophy degree and 1,725 hours of AI/SW training at SSAFY, I complete the full cycle from problem framing (planning) to React implementation.",
     "proofItems": {
       "product": "Led DailyLog as PM and won the SSAFY Specialized Project Excellence Award (3rd place)",
       "ai": "Designed one reflection flow combining voice input (SenseVoice), recommendations (Thompson Sampling), and vector search (pgvector)",
@@ -141,6 +142,45 @@
       "role": "Role",
       "learning": "Key Takeaway",
       "proof": "Key contributions"
+    }
+  },
+  "aiCases": {
+    "title": "AI in Action",
+    "subtitle": "Real cases where AI was used as a problem-solving tool, not decoration. Each case follows problem → how AI was used → outcome.",
+    "labels": {
+      "problem": "Problem",
+      "approach": "How I used AI",
+      "result": "Outcome"
+    },
+    "items": {
+      "questionFlow": {
+        "project": "DailyLog",
+        "title": "A reflection flow where AI asks first",
+        "problem": "Users gave up journaling because they faced a blank screen with no idea what to write.",
+        "approach": "Structured each day into Event · Emotion · Cause slots and designed a prompt flow where AI asks context-aware questions first.",
+        "result": "Became the core feature that lowered the barrier to reflection, leading to the SSAFY Specialized Project Excellence Award (3rd place)."
+      },
+      "recommendation": {
+        "project": "DailyLog",
+        "title": "Turning records into action recommendations",
+        "problem": "Accumulated records ended up as read-only data and never drove behavior change.",
+        "approach": "Balanced exploration and exploitation with Thompson Sampling, and used pgvector search to bring past reflections into the current context.",
+        "result": "Built and shipped an AI data flow that connects recording → understanding → recommendation."
+      },
+      "promptProduct": {
+        "project": "Promtree",
+        "title": "Making prompts a sellable product",
+        "problem": "AI know-how (prompts) loses its value the moment it is copy-pasted, so no market could form.",
+        "approach": "Structured prompts into slot-based executable templates and improved the execution flow based on GA4 drop-off data.",
+        "result": "Extended the idea into an 'AI know-how market' business model with market and competitor analysis."
+      },
+      "agentPartner": {
+        "project": "GenWing",
+        "title": "AI agents as execution partners",
+        "problem": "A hackathon deadline demanded a working product, not just an idea.",
+        "approach": "Fed structured UX designs and requirements to the Genspark OpenClaw agent, completing a solo planning-to-development cycle.",
+        "result": "Shipped an AI networking PWA prototype within the event."
+      }
     }
   },
   "competencies": {

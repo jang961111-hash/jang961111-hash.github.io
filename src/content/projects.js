@@ -1158,7 +1158,7 @@ export const portfolioProjects = [
   },
 ];
 
-const coreProjectSlugs = ["dailylog", "loggy", "ssafy-startup-track"];
+const coreProjectSlugs = ["dailylog", "ssafy-startup-track", "loggy"];
 
 export const getOrderedProjects = () =>
   [...portfolioProjects].sort((left, right) => {
