@@ -19,15 +19,15 @@
   "hero": {
     "name": "Jang Byeong Heon",
     "greeting": "Hello, I am",
-    "title": "AI/SW Problem-Framing Service Planner / PM",
-    "portfolioLabel": "AI/SW Problem-Framing Service Planner / PM",
+    "title": "Service Planning · Frontend",
+    "portfolioLabel": "Planning that frames problems, frontend that ships them",
     "focusLabel": "How I Work",
-    "subtitle": "I connect complex problems to user experiences and technical structures.",
-    "mission": "With a background in Philosophy and SSAFY-based AI/Data/Web training, I shape project-based service planning and PM execution.",
+    "subtitle": "A service planner who frames problems structurally and implements the answers on screen.",
+    "mission": "Built on structured thinking from a Philosophy degree and 1,725 hours of AI/SW training at SSAFY, I close the gap between planning and development — going beyond specs to hands-on React implementation.",
     "proofItems": {
-      "product": "Solved DailyLog's retention problem through AI questioning flows and recommendation structures",
-      "ai": "Reframed fragmented decisions in Loggy into Git-inspired collaboration structures",
-      "execution": "I design technology as a structure for user experience and business value, not just implementation"
+      "product": "Led DailyLog as PM and won the SSAFY Specialized Project Excellence Award (3rd place)",
+      "ai": "Designed one reflection flow combining voice input (SenseVoice), recommendations (Thompson Sampling), and vector search (pgvector)",
+      "execution": "Implemented Loggy's real-time WebSocket review screens in React myself"
     },
     "viewProjects": "See Flagship Work",
     "getInTouch": "Start a Conversation",
@@ -56,19 +56,19 @@
         "context": "A project that solved user retention issues by defining the problem as 'input friction' and 'broken reflection flows'.",
         "summary": "A service where users perform natural reflections through AI-driven questioning and receive personalized action recommendations based on their data.",
         "metrics": {
-          "1": "Reframed failure to record as a structural issue rather than a lack of willpower",
-          "2": "Increased input convenience by structuring the day into Event, Emotion, and Cause slots",
-          "3": "Excellence Award (3rd Place) winner at SSAFY 14th Specialized Project"
+          "1": "Excellence Award (3rd place) at the SSAFY 14th Specialized Project",
+          "2": "Designed one reflection flow combining SenseVoice voice input, Thompson Sampling recommendations, and pgvector search",
+          "3": "Structured each day into Event · Emotion · Cause recording slots"
         },
         "problem": "Traditional journaling presents a daunting blank screen, leading to high psychological friction and failing to turn records into actual behavior change.",
         "insight": "The bottleneck is the state of 'not knowing what to write'. I realized this could be solved by having AI ask structured questions at the right moment.",
         "architecture": "Designed a seamless reflection flow combining SenseVoice for voice input, Thompson Sampling for recommendations, and pgvector for vector search.",
-        "role": "Product Manager | Problem framing, user journey design, feature prioritization, frontend support, and presentation",
+        "role": "PM & Frontend | Problem framing, user journey design, feature prioritization, UI implementation, and presentation",
         "learning": "Deeply experienced the PM's role in transforming user problems into data-driven service structures.",
         "proof": {
-          "1": "Solved user behavior problems through technical structures (AI questioning flows).",
-          "2": "Achieved high project completeness by focusing on core problem solving over feature bloat.",
-          "3": "Maintained consistent product direction and led the team to a successful launch and award."
+          "1": "Designed a flow where AI asks the first question, so users never face a blank screen.",
+          "2": "Prioritized fixing the exact point where recording breaks down instead of adding features.",
+          "3": "Kept the product direction consistent through launch and the award."
         }
       },
       "loggy": {
@@ -76,19 +76,19 @@
         "context": "Solving fragmented and repetitive decision-making issues by adopting GitHub-style workflows for general collaboration.",
         "summary": "A platform that maximizes collaboration efficiency by formalizing scattered discussions into Git's Issue-Branch-PR-Merge structures.",
         "metrics": {
-          "1": "Applied GitHub's Issue, PR, and Merge concepts to general collaboration flows",
-          "2": "Built a decision archive to eliminate the 're-discussing the same thing' problem",
-          "3": "Product Planning + Frontend Implementation"
+          "1": "Ported Git's Issue → Branch → PR → Merge flow into everyday team decision-making",
+          "2": "Implemented real-time WebSocket review and approval screens in React",
+          "3": "Designed a searchable decision archive with structured filtering"
         },
         "problem": "Decisions from meetings and messengers were often lost, leading to repetitive discussions and wasted organizational energy.",
         "insight": "The problem was not just missing records, but a lack of 'systemic certainty' that a decision had been finalized.",
         "architecture": "Designed a WebSocket-based real-time review flow and structured filtering to ensure discussion and approval stay within the workflow.",
-        "role": "Product Owner & Frontend | Service planning, decision flow structuring, and frontend implementation",
+        "role": "Planning & Frontend Lead | Service planning, decision flow structuring, and frontend lead",
         "learning": "Gained the perspective of solving chronic workplace problems by translating developer tool philosophies into general services.",
         "proof": {
-          "1": "Translated complex collaboration issues into clear systemic structures (PR/Merge).",
-          "2": "Connected technical constraints to UX decisions to optimize real-time collaboration experience.",
-          "3": "Aligned product direction with execution steps to drive team productivity."
+          "1": "Solved a collaboration-record problem with a structure developers already trust (PR/Merge).",
+          "2": "Turned the real-time constraint into a UX decision: the review flow.",
+          "3": "Ran planning and frontend implementation in parallel, keeping direction and execution aligned."
         }
       },
       "tamnaai": {
@@ -96,19 +96,19 @@
         "context": "A planning-focused project reframing renewable energy curtailment as a business opportunity with data-driven decision structures.",
         "summary": "A service that uses data normalization and weighted scoring to analyze optimal locations for distributed data centers that can absorb surplus electricity.",
         "metrics": {
-          "1": "Reframed curtailment as a grid congestion and supply-demand mismatch issue",
-          "2": "Applied data normalization and weighted scoring models",
-          "3": "Participated in Jeju AWS Global Space Challenge Hackathon"
+          "1": "Finalist at the Jeju AWS Global Space Challenge hackathon (planning role)",
+          "2": "Reframed renewable curtailment as a data-center demand-attraction problem",
+          "3": "Designed normalization and weighted scoring logic over power and geographic data"
         },
         "problem": "Jeju Island faced frequent renewable energy curtailment due to oversupply, but lacked clear demand sources to absorb the surplus.",
         "insight": "I determined it was more economical to distribute energy-intensive data centers rather than just focusing on storage, easing grid pressure.",
         "architecture": "Planned a structure that visualizes expected efficiency for data center sites by linking regional power data with geographic information.",
-        "role": "Planning Lead | Problem reframing, business model design, and location analysis service structuring",
+        "role": "Planning | Problem reframing, business model design, and location analysis service structuring",
         "learning": "Experienced the process of materializing macro-social issues into service ideas and creating business value.",
         "proof": {
-          "1": "Reinterpreted energy domain problems through the lens of product planning.",
-          "2": "Presented an actionable solution (location analysis) based on data.",
-          "3": "Demonstrated converged thinking across technology, energy, and business."
+          "1": "Translated an energy-domain technical problem into product-planning terms.",
+          "2": "Presented an actionable, data-based solution (location scoring).",
+          "3": "Connected technology, energy, and business into one service model."
         }
       },
       "campuschronicle": {
@@ -116,19 +116,19 @@
         "context": "An attempt to transform student growth data into trust data for thin-filers lacking financial history.",
         "summary": "A platform where students link learning and activity data to financial value, proving trust based on their growth process.",
         "metrics": {
-          "1": "Defined student financial exclusion as a lack of growth data in existing models",
-          "2": "Proposed a trust design that reflects activity records in financial evaluations",
-          "3": "Participated in Shinhan Bank SSAFY Hackathon"
+          "1": "Entry for the Shinhan Bank SSAFY hackathon",
+          "2": "Defined student financial exclusion as the absence of provable growth data",
+          "3": "Designed the user journey and screens that convert activity records into financial value"
         },
         "problem": "Students face significant financial barriers due to lack of income or assets, as their potential and activity history are ignored by traditional models.",
         "insight": "Quantifying 'growth data' like academic achievement and extracurriculars could enable a new credit model specifically for students.",
         "architecture": "Designed UX around data submission flows and a user journey that translates activities into financial value.",
-        "role": "Service Planner & Frontend | Problem framing, core flow design, and frontend support",
+        "role": "Planning & Frontend | Problem framing, core flow design, and frontend implementation",
         "learning": "Learned how data-driven trust design impacts user experience in the financial domain.",
         "proof": {
-          "1": "Strived to solve user problems within a financial business structure.",
-          "2": "Simplified complex evaluation processes into intuitive user flows.",
-          "3": "Validated service feasibility by bridging planning and implementation."
+          "1": "Scoped what was actually feasible inside a heavily regulated financial domain.",
+          "2": "Simplified complex evaluation processes into step-by-step user flows.",
+          "3": "Checked the idea's feasibility by pairing planning with UI implementation."
         }
       }
     },
@@ -140,7 +140,7 @@
       "solution": "Experience + System Design",
       "role": "Role",
       "learning": "Key Takeaway",
-      "proof": "What it proves"
+      "proof": "Key contributions"
     }
   },
   "competencies": {

@@ -180,8 +180,8 @@ export const portfolioProjects = [
       en: "Hackathon Solo Project",
     },
     role: {
-      ko: "Full-cycle Prototype Design & Development | 문제 정의, UX 설계, 에이전트 워크플로우 구축, 배포",
-      en: "Full-cycle Prototype Design & Development | Problem framing, UX design, agent workflow, and deployment",
+      ko: "1인 기획·개발 | 문제 정의, UX 설계, 에이전트 워크플로우 구축, 배포",
+      en: "Solo planning & development | Problem framing, UX design, agent workflow, and deployment",
     },
     tags: {
       ko: ["Genspark OpenClaw", "AI Agent", "Prototype", "PWA"],
@@ -298,8 +298,8 @@ export const portfolioProjects = [
       en: "SSAFY specialized-project team (6 members)",
     },
     role: {
-      ko: "Product Manager | 문제 정의, 사용자 여정 설계, 기능 우선순위 조율, 프론트엔드 구현 참여, 발표",
-      en: "Product Manager | Problem framing, user journey design, prioritization, frontend support, and presentation",
+      ko: "PM · 프론트엔드 | 문제 정의, 사용자 여정 설계, 기능 우선순위 조율, 화면 구현, 발표",
+      en: "PM & Frontend | Problem framing, user journey design, prioritization, UI implementation, and presentation",
     },
     tags: {
       ko: ["AI 회고", "추천 시스템", "서비스 기획", "PM"],
@@ -442,8 +442,8 @@ export const portfolioProjects = [
       en: "Team project",
     },
     role: {
-      ko: "Product Owner & Frontend | 서비스 기획, 의사결정 흐름 구조화, 프론트엔드 구현 리드",
-      en: "Product Owner & Frontend | Service planning, decision flow structuring, and frontend lead",
+      ko: "기획 · 프론트엔드 리드 | 서비스 기획, 의사결정 흐름 구조화, 화면 구현 리드",
+      en: "Planning & Frontend Lead | Service planning, decision flow structuring, and frontend lead",
     },
     tags: {
       ko: ["협업 플랫폼", "GitHub 워크플로우", "실시간성", "PM"],
@@ -573,8 +573,8 @@ export const portfolioProjects = [
       en: "Hackathon team project",
     },
     role: {
-      ko: "Planning Lead | 문제 재정의, 비즈니스 모델 기획, 서비스 구조 설계",
-      en: "Planning Lead | Problem reframing, business model design, and service structuring",
+      ko: "기획 담당 | 문제 재정의, 비즈니스 모델 기획, 서비스 구조 설계",
+      en: "Planning | Problem reframing, business model design, and service structuring",
     },
     tags: {
       ko: ["에너지 도메인", "입지 분석", "사업 기획", "PM"],
@@ -691,8 +691,8 @@ export const portfolioProjects = [
       en: "Hackathon team project",
     },
     role: {
-      ko: "Service Planner & Frontend | 문제 정의, 핵심 기능 흐름 설계, 프론트엔드 구현",
-      en: "Service Planner & Frontend | Problem framing, core flow design, and frontend implementation",
+      ko: "기획 · 프론트엔드 | 문제 정의, 핵심 기능 흐름 설계, 화면 구현",
+      en: "Planning & Frontend | Problem framing, core flow design, and frontend implementation",
     },
     tags: {
       ko: ["핀테크", "성장 데이터", "서비스 기획", "금융 UX"],
@@ -1082,8 +1082,8 @@ export const portfolioProjects = [
       en: "SSAFY integrated-project team",
     },
     role: {
-      ko: "Service Architect | 고객 여정 5단계 정의, 파이프라인 UI 설계, 비즈니스 로직 데이터 매핑",
-      en: "Service Architect | Defining 5-stage journey, pipeline UI design, mapping business logic to data models",
+      ko: "기획 담당 | 고객 여정 5단계 정의, 파이프라인 UI 설계, 비즈니스 로직 데이터 매핑",
+      en: "Planning | Defining 5-stage journey, pipeline UI design, mapping business logic to data models",
     },
     tags: {
       ko: ["CRM", "고객 여정", "비즈니스 기획", "PM"],
@@ -1115,10 +1115,10 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: "Pipeline",
+        value: "5-Stage",
         label: {
-          ko: "고객 여정 5단계 정의",
-          en: "5-Stage Journey Defined",
+          ko: "고객 여정 파이프라인 정의",
+          en: "Customer Journey Pipeline",
         },
       },
       {
@@ -1129,7 +1129,7 @@ export const portfolioProjects = [
         },
       },
       {
-        value: "Action",
+        value: "Alert",
         label: {
           ko: "리드 정체 알림 로직 설계",
           en: "Lead Stagnation Alerts",

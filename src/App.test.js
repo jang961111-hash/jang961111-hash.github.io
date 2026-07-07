@@ -73,7 +73,7 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+        "Jang Byeong Heon | Service Planning · Frontend Portfolio"
       );
     });
 
@@ -101,7 +101,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+        "Jang Byeong Heon | Service Planning · Frontend Portfolio"
       );
     });
   });
@@ -111,7 +111,7 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(document.title).toBe(
-        "장병헌 | AI/SW 기반 문제정의형 서비스 기획자 / PM"
+        "장병헌 | 서비스 기획 · 프론트엔드 포트폴리오"
       );
     });
 
@@ -122,7 +122,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+        "Jang Byeong Heon | Service Planning · Frontend Portfolio"
       );
     });
   });
@@ -132,7 +132,7 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+        "Jang Byeong Heon | Service Planning · Frontend Portfolio"
       );
     });
     await waitFor(() => {
@@ -161,7 +161,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI/SW Problem-Framing Service Planner / PM"
+        "Jang Byeong Heon | Service Planning · Frontend Portfolio"
       );
     });
   });
@@ -174,7 +174,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "장병헌 | AI/SW 기반 문제정의형 서비스 기획자 / PM"
+        "장병헌 | 서비스 기획 · 프론트엔드 포트폴리오"
       );
     });
   });
