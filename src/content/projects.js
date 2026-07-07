@@ -502,8 +502,8 @@ export const portfolioProjects = [
       en: "Team project",
     },
     role: {
-      ko: "기획 · 프론트엔드 리드 | 서비스 기획, 의사결정 흐름 구조화, 화면 구현 리드",
-      en: "Planning & Frontend Lead | Service planning, decision flow structuring, and frontend lead",
+      ko: "기획 · 프론트엔드 리드 | 서비스 기획, 의사결정 흐름 구조화, 실시간 UI·상태 관리 구조 설계, 화면 구현 리드",
+      en: "Planning & Frontend Lead | Service planning, decision flow structuring, real-time UI & state architecture, and frontend lead",
     },
     tags: {
       ko: ["협업 플랫폼", "GitHub 워크플로우", "실시간성", "PM"],
@@ -574,6 +574,17 @@ export const portfolioProjects = [
           en: "Live discussion expires when the meeting ends; only messages committed with INFO, OPINION, or TODO tags persist. Preserved commits go through review and approval in a Git-graph Tree View, are finalized via Merge, and an AI engine automatically drafts a Decision Record from the commit history — porting GitHub's Issue → Branch → PR → Merge flow into general collaboration.",
         },
         diagram: "loggy-decision-flow",
+      },
+      {
+        id: "frontend-architecture",
+        title: {
+          ko: "프론트엔드 설계 — 서버 기준 단일 소스",
+          en: "Frontend Design — Server as the Single Source of Truth",
+        },
+        body: {
+          ko: "React 18 + TypeScript에 Zustand·TanStack Query·Tailwind CSS, WebSocket(STOMP)을 조합해 실시간 협업 화면을 구현했습니다. 실시간 이벤트가 동시에 도착하면 클라이언트 간 UI 상태가 어긋나는 문제가 발생했는데, 로컬 상태를 최소화하고 서버 상태를 기준 단일 소스(Single Source of Truth)로 삼아 클라이언트가 구독하는 구조로 재설계해 다중 사용자 환경에서도 일관된 UI를 유지했습니다. '결정이 필요한 순간'에 최소한의 클릭으로 진입하도록 인터랙션을 단순화한 것도 같은 맥락의 설계 판단입니다.",
+          en: "The real-time collaboration UI was built with React 18 + TypeScript, Zustand, TanStack Query, Tailwind CSS, and WebSocket (STOMP). When concurrent real-time events caused UI state to diverge between clients, I minimized local state and redesigned clients to subscribe to server state as the single source of truth, keeping the UI consistent across users. Simplifying interactions so a 'decision moment' is reachable in minimal clicks followed the same design judgment.",
+        },
       },
     ],
     caseStudy: {
