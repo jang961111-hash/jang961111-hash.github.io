@@ -1,0 +1,7 @@
+name = "ask-portfolio"
+main = "src/index.js"
+compatibility_date = "2026-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# 배포 전 필수:
+#   npx wrangler secret put ANTHROPIC_API_KEY
