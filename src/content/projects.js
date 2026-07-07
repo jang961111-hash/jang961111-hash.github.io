@@ -1273,6 +1273,7 @@ export const portfolioProjects = [
       },
     },
     links: {
+      docs: "/projects/tamna/tamna-proposal.pdf",
       youtube: "", // 사용자 추가 예정
       demo: "",    // 사용자 추가 예정
     },
@@ -1311,17 +1312,17 @@ export const portfolioProjects = [
         en: "Quantifying 'growth data' like academic achievement and extracurriculars could enable a new credit model specifically for students.",
       },
       solution: {
-        ko: "데이터 제출 흐름과 이를 금융 가치로 환산하는 사용자 여정을 중심으로 핵심 기능을 설계하고 프론트엔드 구현에 참여했습니다.",
-        en: "Designed core features and user journeys for data submission and financial conversion, and supported frontend implementation.",
+        ko: "출결·도서관 이용·소비 내역 같은 비금융 데이터를 '캠퍼스 크레도' 대안신용점수로 환산하고, 스킬 트리와 2D 픽셀 육성 게임(Phaser.js WebView)으로 성장을 시각화하는 React Native 앱을 설계했습니다.",
+        en: "Designed a React Native app converting non-financial data (attendance, library use, spending) into a 'Campus Credo' alternative credit score, visualized through skill trees and a 2D pixel companion game (Phaser.js in WebView).",
       },
     },
     team: {
-      ko: "해커톤 팀 프로젝트",
-      en: "Hackathon team project",
+      ko: "팀 언더독 (5인)",
+      en: "Team Underdog (5 members)",
     },
     role: {
-      ko: "기획 · 프론트엔드 | 문제 정의, 핵심 기능 흐름 설계, 화면 구현",
-      en: "Planning & Frontend | Problem framing, core flow design, and frontend implementation",
+      ko: "UI/UX 디자인 · 프론트엔드 | Figma로 앱·게임 전체 UI/UX 설계, 디자인 시스템·컴포넌트 관리, React Native 서브 화면(퀘스트·크로니클 피드) 구현",
+      en: "UI/UX Design & Frontend | End-to-end app/game UI/UX in Figma, design system & components, React Native sub-screens (quests, chronicle feed)",
     },
     tags: {
       ko: ["핀테크", "성장 데이터", "서비스 기획", "금융 UX"],
@@ -1329,14 +1330,16 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "대학생의 금융 소외 문제를 성장 데이터 부재로 명확히 정의했습니다.",
-        "활동 기록을 금융 평가에 반영하는 신뢰 설계 및 사용자 여정을 제안했습니다.",
-        "신한은행 SSAFY 해커톤에 참여해 금융 UX와 비즈니스 구조를 학습했습니다.",
+        "대학생의 금융 소외(씬파일러) 문제를 '증명 가능한 성장 데이터의 부재'로 정의했습니다.",
+        "비금융 활동을 '캠퍼스 크레도' 대안신용점수로 환산해 우대금리 등 실질 혜택과 연결하는 구조를 설계했습니다.",
+        "노력의 성장을 스킬 트리와 2D 픽셀 캐릭터 육성으로 시각화하는 게이미피케이션 UX를 디자인했습니다.",
+        "Figma 디자인 시스템과 React Native 컴포넌트 관리를 담당했습니다 (팀 기획서에 역할 명시).",
       ],
       en: [
-        "Defined student financial exclusion as a lack of growth data in models.",
-        "Proposed a trust design and user journey reflecting activity in evaluations.",
-        "Learned financial UX and business structures through the Shinhan Bank hackathon.",
+        "Defined student financial exclusion (thin-filers) as a lack of provable growth data.",
+        "Designed the structure converting non-financial activity into a 'Campus Credo' score tied to real benefits like preferential rates.",
+        "Designed gamification UX visualizing growth via skill trees and a 2D pixel companion.",
+        "Owned the Figma design system and React Native component management (role stated in the team proposal).",
       ],
     },
     proof: {
@@ -1371,8 +1374,19 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["발표 자료", "서비스 흐름도", "사용자 여정 맵"],
-      en: ["Presentation slides", "Service flow diagram", "User journey map"],
+      ko: ["개발 기획서 (11p)", "서비스 흐름도", "ERD·시스템 아키텍처"],
+      en: ["Development proposal (11p)", "Service flow diagram", "ERD & system architecture"],
+    },
+    media: {
+      presentationHref: "/projects/chronicle/chronicle-proposal.pdf",
+      title: {
+        ko: "개발 기획서",
+        en: "Development Proposal",
+      },
+      presentationLabel: {
+        ko: "팀 언더독 개발 기획서 보기 (PDF, 11p)",
+        en: "View team proposal (PDF, 11p)",
+      },
     },
     links: {},
   },
