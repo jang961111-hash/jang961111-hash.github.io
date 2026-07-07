@@ -176,6 +176,13 @@
         "approach": "Balanced exploration and exploitation with Thompson Sampling, and used pgvector search to bring past reflections into the current context.",
         "result": "Built and shipped an AI data flow that connects recording → understanding → recommendation."
       },
+      "nlCommand": {
+        "project": "SUPPORTY",
+        "title": "A command UX that translates natural language into control sequences",
+        "problem": "A single operator had to control ground (UGV) and aerial (VTOL) assets at once — sticks and screen-switching alone caused cognitive overload.",
+        "approach": "Designed a command UX translating orders like 'forward 5 seconds' into control sequences, plus an AI triage queue (life criticality → time sensitivity → mission impact) and a voice copilot.",
+        "result": "Demoed a live console wired to a real UGV & VTOL within 72 hours, leading to the Oregon UAS Accelerator award at D4D Seoul."
+      },
       "promptProduct": {
         "project": "Promtree",
         "title": "Making prompts a sellable product",
