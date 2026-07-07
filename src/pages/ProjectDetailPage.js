@@ -246,6 +246,20 @@ const ProjectDetailPage = ({ project, lang }) => {
 
             {project.media && <ProjectMedia media={project.media} />}
 
+            {project.screenshots?.length > 0 && (
+              <article className="structural-card project-detail-card">
+                <span className="detail-label">{copy.screens}</span>
+                <div className="project-screenshot-grid">
+                  {project.screenshots.map((shot) => (
+                    <figure key={shot.src} className="project-screenshot">
+                      <img src={shot.src} alt={shot.alt} loading="lazy" />
+                      {shot.alt && <figcaption>{shot.alt}</figcaption>}
+                    </figure>
+                  ))}
+                </div>
+              </article>
+            )}
+
             <article className="structural-card project-detail-card">
               <span className="detail-label">{copy.highlights}</span>
               <ul className="project-proof-list">
