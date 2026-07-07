@@ -55,12 +55,17 @@
 - [ ] **수상사진 팀원 얼굴 공개 동의** 확인 (이미 라이브에 올라감 — 동의 못 받으면 즉시 알려주기, 블러 처리로 교체 가능).
 - [ ] **실측 자료 찾기:** 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치 출처, sales-crm 원본 기획서, 전주 ICT·Campus Chronicle 자료.
 
+### 🟡 드래프트 PR 점검 대기 (2026-07-08 새벽 작성)
+- [ ] **PR #3 — SUPPORTY/D4D 9번째 프로젝트**: 수상 여부 확인 필요(수상 주장 미포함), 히어로/스크린샷 콘솔 중복 노출 확인. 머지 시 PDF 재생성분 포함됨.
+- [ ] **PR #4 — Loggy 프론트엔드 설계 섹션**: `loggy_fronted_portfolio.md` 근거. PDF 미재생성 — #3·#4 모두 머지 후 `npm run generate:pdf` 1회 실행 필요.
+
 ### 다음 사이클 (Claude 작업)
-1. [ ] **SUPPORTY/D4D 9번째 프로젝트 추가** — 자산 최다(영상3+PDF+사진13, `C:\Users\SAMSUNG\Desktop\D4D\` + supporty-d4d.github.io repo).
-2. [ ] work_automation_pipeline·KRAFTON AI 해커톤 추가 검토.
-3. [ ] DailyLog figma_export_1 화면 ~30장 큐레이션, Loggy `loggy_fronted_portfolio.md`(본인 기여) 반영 — G:드라이브 필요.
-4. [ ] 디자인 개선: 빈 우측 컬럼, 리빌 애니메이션 축소, Contact CTA 액센트, 'Ask my portfolio' AI 위젯.
-5. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부, og-image.png(1200×630) 리브랜딩 여부.
+1. [x] ~~SUPPORTY/D4D 9번째 프로젝트 추가~~ — PR #3 (점검 대기).
+2. [x] ~~Loggy `loggy_fronted_portfolio.md` 반영~~ — PR #4 (점검 대기).
+3. [ ] KRAFTON AI 해커톤 추가 — 자산 확인됨: `G:\...\2학기\0328\extracted_handoff\` (MultiplierBoard 리포트 PDF·learning_curve.png·OPUS_HANDOFF.md 먼저 읽기). work_automation_pipeline도 검토.
+4. [ ] DailyLog figma_export_1 화면 ~30장 큐레이션 — G:드라이브.
+5. [ ] 디자인 개선: 빈 우측 컬럼, 리빌 애니메이션 축소, Contact CTA 액센트, 'Ask my portfolio' AI 위젯.
+6. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부, og-image.png(1200×630) 리브랜딩 여부.
 
 ---
 
