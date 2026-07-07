@@ -157,7 +157,6 @@ export const portfolioProjects = [
       ko: "Genspark Meetup & Hackathon에서 Genspark OpenClaw를 활용해 제작한 AI 네트워킹 웹앱 프로토타입입니다.",
       en: "An AI networking web app prototype built using Genspark OpenClaw at the Genspark Meetup & Hackathon.",
     },
-    heroImage: "[IMAGE_PLACEHOLDER: GenWing Live Landing & Profile Cards]",
     context: {
       ko: "AI 에이전트를 단순 도구가 아닌 '실행 파트너'로 활용해 아이디어를 고속으로 프로토타입화한 프로젝트입니다.",
       en: "A project that rapidly prototyped an idea by treating AI agents as 'execution partners' rather than mere tools.",
@@ -276,7 +275,6 @@ export const portfolioProjects = [
       ko: "사용자가 매일 기록을 지속하기 어려운 문제를 '입력 부담'과 '회고 흐름 단절'로 정의하고, AI 질문 흐름을 통해 해결한 서비스입니다.",
       en: "A service that solves user retention issues by defining the problem as 'input friction' and 'broken reflection flows', using AI-driven questioning.",
     },
-    heroImage: "[IMAGE_PLACEHOLDER: DailyLog AI 질문 흐름 및 대시보드 화면]",
     context: {
       ko: "사용자 행동 문제를 기술적 구조(AI 질문 흐름)로 해결하고, SSAFY 특화 프로젝트 우수상을 수상하며 성과를 입증한 프로젝트입니다.",
       en: "A project that proved its impact by solving behavioral issues through technical structures (AI flows) and winning the SSAFY Excellence Award.",
