@@ -1,7 +1,7 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
-**마지막 작업 일시:** 2026년 7월 7일 (화) 밤 (KST)
-**현재 상태:** DailyLog·Loggy 아키텍처 다이어그램 배포 완료. 라이브 = 로컬 main (`6ca2810` 이후)
+**마지막 작업 일시:** 2026년 7월 7일 (화) 심야 (KST)
+**현재 상태:** 디자인 감사 수정 + 메타태그 재포지셔닝 + PDF 재생성 완료 (`worktree-design-audit-fixes` 브랜치, 드래프트 PR). **배포는 아직 안 됨** — PR 머지 후 `npm run deploy` 필요.
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
@@ -14,6 +14,14 @@
 - **작업 방식:** 수정 → 테스트(`CI=true npx react-scripts test --watchAll=false`) → `npm run deploy` → 브라우저 검증을 한 사이클로. 큰 변경은 사용자에게 before/after 제시 후 진행.
 
 ---
+
+## ✅ 2026-07-07 심야 세션 완료 내역 (디자인 감사 + 메타 재포지셔닝 + PDF)
+
+1. **CSS 변수 버그 수정:** `--nav-bg`·`--shadow-lg`가 참조만 되고 정의가 없어(정의는 `--nav-blur-bg`로 어긋남) 스크롤 내비바·모바일 메뉴 버튼·맨위로 버튼 배경이 투명으로 떨어지던 버그. `index.css`에서 리네임+정의 추가(라이트/다크).
+2. **정적 메타 재포지셔닝:** `public/index.html`(title/description/keywords/og/twitter), `public/manifest.json`, `scripts/smoke_check.js` 기대 타이틀이 전부 옛 포지셔닝("문제정의형 서비스 기획자/PM")이었음 → `src/metadata.js`의 새 문구와 일치시킴. (링크 미리보기·SEO는 정적 HTML을 봄)
+3. **PDF 재생성:** `npm run generate:pdf`로 `portfolio_ko/en.pdf` 갱신 — 새 포지셔닝 + 다이어그램 포함.
+4. **검증:** 단위 테스트 11개 통과(워크트리에선 `--testMatch "**/src/**/*.{spec,test}.{js,jsx}"` 필요), `npm run smoke:build` 5개 라우트 통과, puppeteer 스크린샷으로 라이트/다크 스크롤 내비바·모바일 드로어·다크 다이어그램 확인.
+5. **배포 미실행:** 백그라운드 세션 권한 정책으로 `npm run deploy` 차단됨 — 사용자가 머지 후 직접 실행.
 
 ## ✅ 2026-07-07 밤 세션 완료 내역 (다이어그램)
 
@@ -37,15 +45,15 @@
 ## 📋 남은 작업 (우선순위 순)
 
 ### 🔴 사용자 액션 필요
-- [ ] **`git push origin main`** — 로컬 main이 origin/main보다 앞섬(다이어그램 커밋 포함). Claude는 main 직접 push가 권한 정책으로 차단되므로 사용자가 프롬프트에 `! git push origin main` 입력해 직접 실행.
+- [ ] **드래프트 PR 머지 + `npm run deploy`** — 이번 세션 수정분이 브랜치에만 있음. 머지 후 배포해야 라이브에 반영(새 PDF 포함). 배포 후 라이브에서 내비바 배경·링크 미리보기 재확인.
 - [ ] **실측 자료 찾기** (로컬/구글드라이브/다른 컴퓨터): 프로젝트 스크린샷, 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치의 출처 확인, sales-crm 원본 기획서.
 
 ### 다음 사이클 (Claude 작업)
 1. [x] ~~아키텍처 다이어그램 SVG 제작~~ — 2026-07-07 밤 배포 완료.
-2. [ ] **디자인 A to Z 감사:** 다크 모드, 모바일 반응형, 인쇄/PDF 레이아웃 전수 점검.
-3. [ ] **PDF 산출물 재생성:** `src/assets/docs/portfolio_ko.pdf`/`_en.pdf`가 재포지셔닝 이전 내용임 — `scripts/generate_pdfs.js`로 갱신 필요. (다이어그램도 인쇄 대응되므로 PDF에 포함됨)
+2. [x] ~~디자인 A to Z 감사~~ — 2026-07-07 심야: CSS 변수 버그 수정, 다크/모바일/인쇄 puppeteer 검증 완료. 라이브 재검증은 배포 후.
+3. [x] ~~PDF 산출물 재생성~~ — 2026-07-07 심야 완료 (배포 대기).
 4. [ ] 자료 도착 시: 실측 수치 반영 + `heroImage` 필드 복원(스크린샷을 `public/projects/<slug>/`에 배치).
-5. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 21MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부.
+5. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 21MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부, og-image.png(1200×630) 리브랜딩 여부.
 
 ---
 
