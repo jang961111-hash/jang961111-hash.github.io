@@ -281,3 +281,25 @@
     padding: 1.4rem;
   }
 }
+
+.project-section-visual {
+  margin-top: 1.4rem;
+  padding: 1.4rem 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  overflow-x: auto;
+}
+
+.project-section-visual .architecture-diagram {
+  display: block;
+  width: 100%;
+  min-width: 660px;
+  height: auto;
+}
+
+.project-section-visual .section-image {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}

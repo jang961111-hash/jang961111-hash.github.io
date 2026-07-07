@@ -370,6 +370,18 @@ export const portfolioProjects = [
     },
     sections: [
       {
+        id: "architecture",
+        title: {
+          ko: "AI 회고 파이프라인 구조",
+          en: "AI Reflection Pipeline",
+        },
+        body: {
+          ko: "음성 입력부터 행동 추천까지의 데이터 흐름입니다. SenseVoice 음성 입력으로 빈 화면의 입력 부담을 낮추고, 슬롯 기반 질문 엔진이 비어 있는 정보만 골라 3~5턴의 가이드형 질문을 던집니다. 완성된 회고는 pgvector에 벡터로 저장되어 유사한 과거 기록을 소환하고, Thompson Sampling이 실행 피드백을 반영해 '내일 실행할 행동 1개'를 추천합니다.",
+          en: "The data flow from voice input to action recommendation. SenseVoice lowers the friction of a blank page, the slot-based query engine asks 3-5 guided questions targeting only missing slots, completed entries are stored as vectors in pgvector to recall similar past reflections, and Thompson Sampling recommends one actionable task for tomorrow, tuned by execution feedback.",
+        },
+        diagram: "dailylog-pipeline",
+      },
+      {
         id: "strategy",
         title: {
           ko: "제품 전략 (Product Strategy)",
@@ -502,6 +514,20 @@ export const portfolioProjects = [
       ko: ["와이어프레임", "시스템 아키텍처", "발표 자료"],
       en: ["Wireframes", "System architecture", "Presentation slides"],
     },
+    sections: [
+      {
+        id: "decision-flow",
+        title: {
+          ko: "의사결정 흐름 구조",
+          en: "Decision Flow Architecture",
+        },
+        body: {
+          ko: "실시간 논의는 회의가 끝나면 휘발되고, INFO · OPINION · TODO 태그를 달아 커밋한 메시지만 영구 보존됩니다. 보존된 커밋은 Git Graph 기반 Tree View에서 검토·승인을 거쳐 Merge로 확정되고, AI가 커밋 내역을 분석해 결정문(Decision Record)을 자동 생성합니다. GitHub의 Issue → Branch → PR → Merge 흐름을 일반 협업의 의사결정 구조로 이식한 설계입니다.",
+          en: "Live discussion expires when the meeting ends; only messages committed with INFO, OPINION, or TODO tags persist. Preserved commits go through review and approval in a Git-graph Tree View, are finalized via Merge, and an AI engine automatically drafts a Decision Record from the commit history — porting GitHub's Issue → Branch → PR → Merge flow into general collaboration.",
+        },
+        diagram: "loggy-decision-flow",
+      },
+    ],
     caseStudy: {
       title: {
         ko: "Decision Deep Dive | '실시간 소음'을 '영구적 자산'으로 바꾸는 필터링 구조 설계",

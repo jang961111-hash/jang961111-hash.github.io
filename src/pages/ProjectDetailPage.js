@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { projectUiCopy } from "../content/projects";
 import { queueScrollTarget } from "../utils/scrollTarget";
+import DailyLogPipelineDiagram from "../components/diagrams/DailyLogPipelineDiagram";
+import LoggyDecisionFlowDiagram from "../components/diagrams/LoggyDecisionFlowDiagram";
 import "./ProjectDetailPage.css";
+
+const diagramRegistry = {
+  "dailylog-pipeline": DailyLogPipelineDiagram,
+  "loggy-decision-flow": LoggyDecisionFlowDiagram,
+};
 
 const linkLabelMap = {
   github: "github",
@@ -248,13 +255,23 @@ const ProjectDetailPage = ({ project, lang }) => {
               </ul>
             </article>
 
-            {project.sections.map((section) => (
+            {project.sections.map((section) => {
+              const Diagram = section.diagram
+                ? diagramRegistry[section.diagram]
+                : null;
+
+              return (
               <article
                 key={section.id}
                 className="structural-card project-detail-card"
               >
                 <span className="detail-label">{section.title}</span>
                 <div className="project-detail-body">{section.body}</div>
+                {Diagram && (
+                  <div className="project-section-visual">
+                    <Diagram lang={lang} />
+                  </div>
+                )}
                 {section.image && (
                   <div className="project-section-visual">
                     {section.image.startsWith("[") ? (
@@ -269,7 +286,8 @@ const ProjectDetailPage = ({ project, lang }) => {
                   </div>
                 )}
               </article>
-            ))}
+              );
+            })}
           </div>
 
           <aside className="project-detail-aside">
