@@ -139,6 +139,179 @@ export const projectUiCopy = {
 
 export const portfolioProjects = [
   {
+    slug: "krafton-multiplierboard",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-03-28",
+    period: {
+      ko: "2026.03.28 (Round 1 · Day 1)",
+      en: "Mar 28, 2026 (Round 1 · Day 1)",
+    },
+    category: {
+      ko: "AI R&D / Hackathon",
+      en: "AI R&D / Hackathon",
+    },
+    title: {
+      ko: "MultiplierBoard | 1-Layer 어텐션으로 이진 곱셈을 푸는 KRAFTON AI R&D 과제",
+      en: "MultiplierBoard | Binary Multiplication with 1-Layer Attention (KRAFTON AI R&D)",
+    },
+    summary: {
+      ko: "KRAFTON AI R&D Hackathon 라운드 1에서, 1-layer causal self-attention 제약 아래 6비트×6비트 이진 곱셈을 푸는 두 가지 해법(수학적 구성 해법 · 학습 모델)을 하루 안에 설계·검증해 제출한 개인 과제입니다.",
+      en: "A solo Round-1 task from the KRAFTON AI R&D Hackathon: designing and verifying two solutions — a constructive-exact model and a learned model — for 6-bit binary multiplication under a 1-layer causal self-attention constraint, within a single day.",
+    },
+    context: {
+      ko: "생성형 AI를 실행·검증 파트너로 쓰는 핸드오프 워크플로우로 코드·체크포인트·리포트·재현 명령까지 완결된 제출 패키지를 만든 프로젝트입니다.",
+      en: "Built a complete submission package — code, checkpoints, report, and reproduction commands — using a hand-off workflow that treats generative AI as an execution-and-verification partner.",
+    },
+    story: {
+      problem: {
+        ko: "트랜스포머의 최소 구성(1-layer causal self-attention)이 곱셈이라는 조합적 연산을 표현하고 학습할 수 있는가를 묻는 과제였습니다. 12개 출력 비트를 자기회귀로 예측해야 하고, 학습 문제(1-2)는 옵티마이저·에폭·배치까지 학습 프로토콜이 고정되어 아키텍처 설계만으로 승부해야 했습니다.",
+        en: "The task asked whether a minimal transformer — one causal self-attention layer — can represent and learn multiplication, predicting 12 output bits autoregressively. For the learned problem the training protocol (optimizer, epochs, batch) was fixed, so architecture design was the only lever.",
+      },
+      insight: {
+        ko: "두 문제의 성격이 다르다고 판단했습니다. 1-1은 '표현 가능성 증명'이므로 학습 대신 수학적 구성이 허용되고, prefix-average 어텐션으로 입력 12비트를 유일한 스칼라 코드로 압축하면 출력 비트 복원이 1차원 스플라인 보간 문제로 환원됩니다. 1-2는 '학습 가능성' 문제이므로, 입력 비트를 명시적으로 라우팅하는 희소 어텐션이 학습을 안정화하는 열쇠였습니다.",
+        en: "The two problems are different in kind. Problem 1-1 is a representability proof — a constructive solution is legitimate: prefix-average attention compresses the 12 input bits into a unique scalar code, reducing bit recovery to 1-D spline interpolation. Problem 1-2 is about learnability, where explicitly routing input bits through sparse attention heads was the key to stable training.",
+      },
+      solution: {
+        ko: "1-1은 구성적 정확 모델(98,328 파라미터)로 4,096쌍 전수 검증 100%를 달성했습니다. 1-2는 fixed-routed 희소 어텐션 + MLP(274,898 파라미터)로 10K 랜덤·4,096쌍 전수 검증 모두 정확도 1.0을 기록했습니다. 구현 → 교차 리뷰 → 최종 검토로 이어지는 생성형 AI 핸드오프 문서 체계로 하루 안에 리포트까지 패키징했습니다.",
+        en: "Problem 1-1: a constructive exact model (98,328 params) verified at 100% over all 4,096 pairs. Problem 1-2: a fixed-routed sparse-attention + MLP model (274,898 params) reaching accuracy 1.0 on both 10K random and exhaustive evaluation. An implement → cross-review → final-review AI hand-off pipeline packaged everything, report included, within the day.",
+      },
+    },
+    team: {
+      ko: "개인 참가",
+      en: "Solo entry",
+    },
+    role: {
+      ko: "개인 참가 | 문제 분석, 해법 방향 설계, 생성형 AI 실행·검증 워크플로우 구성, 결과 검증·리포트 작성",
+      en: "Solo | Problem analysis, solution direction, generative-AI execution & verification workflow, result verification and reporting",
+    },
+    tags: {
+      ko: ["Transformer", "AI 페어 워크플로우", "검증 설계", "AI R&D"],
+      en: ["Transformer", "AI Pair Workflow", "Verification", "AI R&D"],
+    },
+    highlights: {
+      ko: [
+        "1-layer 어텐션 제약에서 곱셈을 '스칼라 코드 + 스플라인 복원' 문제로 환원하는 구성적 해법으로 4,096쌍 전수 검증 100%를 달성했습니다.",
+        "입력 비트를 명시적으로 라우팅하는 희소 어텐션 구조를 설계해 학습 모델(274,898 파라미터)로 정확도 1.0을 재현했습니다.",
+        "구현 → 교차 리뷰 → 최종 검토로 이어지는 생성형 AI 핸드오프 워크플로우를 문서화해 하루 안에 제출 패키지를 완성했습니다.",
+        "고정 프로토콜(200에폭) 대비 실측은 20에폭이라는 한계를 리포트에 그대로 명시했습니다 — 검증 범위와 한계의 정직한 보고.",
+      ],
+      en: [
+        "Reduced multiplication to a 'scalar code + spline recovery' problem under the 1-layer constraint — 100% on exhaustive 4,096-pair verification.",
+        "Designed an explicitly-routed sparse attention architecture; the learned model (274,898 params) reproduced accuracy 1.0.",
+        "Documented an implement → cross-review → final-review generative-AI hand-off workflow, completing the submission package in one day.",
+        "Reported honestly that the measured run used 20 epochs versus the fixed 200-epoch protocol — stating verification scope and limits as they were.",
+      ],
+    },
+    proof: {
+      ko: [
+        "생성형 AI를 파트너로 쓰되, 전수 검증과 정직한 리포팅은 사람이 책임지는 협업 방식을 보여줍니다.",
+        "문제를 환원하는 사고(곱셈 → 스칼라 함수 보간)로 제약 조건을 정면 돌파했습니다.",
+        "하루 마감에서 코드·체크포인트·리포트·재현 명령을 완결된 패키지로 전달하는 실행력을 증명했습니다.",
+      ],
+      en: [
+        "Shows a collaboration model where generative AI executes, but exhaustive verification and honest reporting remain a human responsibility.",
+        "Broke through constraints with reductive thinking — multiplication as scalar-function interpolation.",
+        "Demonstrated delivery under a one-day deadline: code, checkpoints, report, and reproduction commands as one complete package.",
+      ],
+    },
+    metrics: [
+      {
+        value: "100%",
+        label: {
+          ko: "4,096쌍 전수 검증 정확도",
+          en: "Exhaustive 4,096-pair accuracy",
+        },
+      },
+      {
+        value: "275K",
+        label: {
+          ko: "학습 모델 파라미터",
+          en: "Learned model parameters",
+        },
+      },
+      {
+        value: "1-Layer",
+        label: {
+          ko: "Causal self-attention 제약",
+          en: "Causal self-attention constraint",
+        },
+      },
+    ],
+    caseStudy: {
+      title: {
+        ko: "Decision Deep Dive | 검증되지 않은 것은 '검증되지 않았다'고 쓴다",
+        en: "Decision Deep Dive | If It Isn't Verified, Say So",
+      },
+      summary: {
+        ko: "AI가 산출물을 만드는 속도가 빨라질수록, 신뢰의 기준은 사람의 검증과 정직한 보고로 이동한다는 판단",
+        en: "As AI accelerates output, trust shifts to human verification and honest reporting",
+      },
+      content: {
+        ko: "시간 제약으로 고정 프로토콜(200에폭)을 완주하지 못했을 때, 수치를 부풀리거나 모호하게 쓰는 대신 '측정된 것은 20에폭 실행이며 200에폭 재실행은 중단되었다'고 리포트에 명시하고 재현 명령까지 남겼습니다. 대신 신뢰의 근거는 다른 곳에 세웠습니다 — 가능한 전체 입력 4,096쌍에 대한 그리디 디코딩 전수 검증입니다. 생성형 AI가 구현을 빠르게 만들어줄수록 병목은 '검토와 판단'으로 이동합니다. 그래서 다음 검토자가 몇 분 안에 제출 여부를 판단할 수 있도록, 검증된 것과 안 된 것을 구분한 핸드오프 문서를 산출물의 일부로 설계했습니다.",
+        en: "When the fixed 200-epoch protocol couldn't be completed in time, the report said exactly that — 'the measured run is 20 epochs; the 200-epoch rerun was interrupted' — with reproduction commands attached, instead of inflating or blurring the numbers. Trust was grounded elsewhere: exhaustive greedy-decoding verification over all 4,096 possible input pairs. As generative AI speeds up implementation, the bottleneck moves to review and judgment — so the hand-off document separating verified from unverified became part of the deliverable itself, letting the next reviewer decide in minutes.",
+      },
+    },
+    sections: [
+      {
+        id: "ai-workflow",
+        title: {
+          ko: "생성형 AI 핸드오프 워크플로우",
+          en: "Generative-AI Hand-off Workflow",
+        },
+        body: {
+          ko: "구현 세션이 끝날 때마다 다음 검토자(사람이든 모델이든)가 몇 분 안에 판단할 수 있는 핸드오프 문서를 남겼습니다 — 현재 최선의 제출 수치, 검증된 것과 안 된 것의 구분, 재현 명령, 폴더 맵, 최종 의사결정 권고까지. 별도의 리뷰 프롬프트로 다른 모델에게 교차 검토를 시키는 체계도 함께 운영했습니다. AI가 산출물을 만드는 속도가 빨라질수록 병목은 검토와 판단으로 이동한다는 것을 체감했고, '검토가 빠른 산출물 구조' 자체를 설계 대상으로 삼았습니다.",
+          en: "Each implementation session ended with a hand-off document a next reviewer — human or model — could act on in minutes: current best submission numbers, verified vs. unverified items, reproduction commands, a folder map, and a final-decision recommendation. A separate review prompt drove cross-review by another model. As AI accelerates production, the bottleneck moves to review and judgment — so 'artifacts that are fast to review' became a design goal in itself.",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["제출 리포트 PDF", "학습 곡선", "해법 코드·체크포인트", "AI 핸드오프 문서"],
+      en: ["Submission report PDF", "Learning curves", "Solution code & checkpoints", "AI hand-off documents"],
+    },
+    interviewQuestions: {
+      ko: [
+        "왜 1-1을 학습이 아니라 구성적 증명으로 접근했나요?",
+        "생성형 AI와 협업할 때 결과물 검증 체계를 어떻게 설계했나요?",
+        "시간 제약으로 프로토콜을 완주하지 못했을 때 어떻게 보고했나요?",
+      ],
+      en: [
+        "Why did you approach Problem 1-1 as a constructive proof rather than training?",
+        "How did you design the verification loop when collaborating with generative AI?",
+        "How did you report results when the protocol couldn't be completed in time?",
+      ],
+    },
+    heroImage: "/projects/krafton-multiplierboard/learning-curve.webp",
+    media: {
+      presentationHref: "/projects/krafton-multiplierboard/multiplierboard-report.pdf",
+      title: {
+        ko: "제출 리포트",
+        en: "Submission Report",
+      },
+      presentationLabel: {
+        ko: "제출 리포트 PDF 보기",
+        en: "View submission report (PDF)",
+      },
+    },
+    screenshots: [
+      {
+        src: "/projects/krafton-multiplierboard/learning-curve.webp",
+        alt: {
+          ko: "학습 곡선 — 20에폭에서 10K 랜덤 정확도 1.0 도달",
+          en: "Learning curves — 10K random accuracy reaching 1.0 by epoch 20",
+        },
+      },
+      {
+        src: "/projects/krafton-multiplierboard/report-preview.webp",
+        alt: {
+          ko: "제출 리포트 1페이지 — 구성적 정확성 증명과 학습 아키텍처",
+          en: "Submission report page 1 — constructive exactness proof and learned architecture",
+        },
+      },
+    ],
+    links: {},
+  },
+  {
     slug: "supporty",
     featured: false,
     status: "completed",
