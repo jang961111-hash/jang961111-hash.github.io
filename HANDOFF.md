@@ -1,7 +1,7 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
 **마지막 작업 일시:** 2026년 7월 8일 (수) 새벽 (KST)
-**현재 상태:** PR #1(디자인 감사)·PR #2(실제 자산 연결) 머지 → `npm run deploy` 완료. **라이브 = main `7672407`.** 신규 자산 6종(스크린샷·수상사진·시연영상·발표자료) 라이브 200 확인, 테스트 11개·스모크 5개 라우트 통과, 새 메타 타이틀/설명 라이브 반영 확인.
+**현재 상태:** PR #1~#4 전부 머지 + 배포 완료. **라이브 = main `5953d9b`.** 프로젝트 9개(SUPPORTY 추가), Loggy 프론트엔드 섹션, PDF 최신 재생성분까지 라이브 반영·검증 완료.
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
@@ -15,11 +15,13 @@
 
 ---
 
-## ✅ 2026-07-08 새벽 세션 완료 내역 (머지 + 배포)
+## ✅ 2026-07-08 새벽 세션 완료 내역 (PR #1~#4 머지 + 배포 2회)
 
-1. **PR #1 → PR #2 순서로 squash 머지** (파일 충돌 없음, 리베이스 불필요했음).
-2. **배포:** `npm run deploy` 실행, 라이브 검증 — 새 타이틀/설명 반영, 신규 자산 6종 HTTP 200, 스모크 체크 통과.
-3. PR #2 내용 요약: DailyLog 앱 스크린샷 4장(webp)+3등 수상사진 히어로+발표 PPT, Loggy 시연영상 2:13+발표 PDF, Tamna 제주 해커톤 덱, GenWing 배너, 상세페이지 '서비스 화면' 스크린샷 그리드 컴포넌트 신설, package-lock 동기화.
+1. **PR #1 → #2 순서로 squash 머지 → 배포 1차** — 새 타이틀/설명 반영, 신규 자산 6종 HTTP 200, 스모크 통과.
+2. **PR #3: SUPPORTY/D4D 9번째 프로젝트 추가** — D4D APAC 서울 해커톤(2026.07.03–05, 72h, 2인 팀). **Oregon UAS Accelerator 상 수상**(사용자 확인, d4d.tech 쇼케이스 3쪽 1번째 등재) — 액셀러레이터 후속 지원 과정 선정. 콘솔 캡처 히어로 + VTOL/UGV 스크린샷(~540KB, 얼굴 없음), 무거운 자산은 supporty-d4d.github.io 링크. metrics: Award / 1:N / Live.
+3. **PR #4: Loggy 프론트엔드 설계 섹션** — `loggy_fronted_portfolio.md` 근거(React 18·TS·Zustand·TanStack Query·STOMP, 서버 기준 단일 소스 트러블슈팅).
+4. **배포 2차:** PDF 재생성(수상 반영) → deploy → 라이브 검증(supporty 라우트·자산 200, 라이브 PDF가 최신 생성본과 바이트 일치).
+5. PR #2 내용 요약: DailyLog 앱 스크린샷 4장+3등 수상사진 히어로+발표 PPT, Loggy 시연영상+발표 PDF, Tamna 덱, GenWing 배너, '서비스 화면' 그리드 신설, package-lock 동기화.
 
 ## ✅ 2026-07-07 심야 세션 완료 내역 (디자인 감사 + 메타 재포지셔닝 + PDF)
 
@@ -55,17 +57,13 @@
 - [ ] **수상사진 팀원 얼굴 공개 동의** 확인 (이미 라이브에 올라감 — 동의 못 받으면 즉시 알려주기, 블러 처리로 교체 가능).
 - [ ] **실측 자료 찾기:** 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치 출처, sales-crm 원본 기획서, 전주 ICT·Campus Chronicle 자료.
 
-### 🟡 드래프트 PR 점검 대기 (2026-07-08 새벽 작성)
-- [ ] **PR #3 — SUPPORTY/D4D 9번째 프로젝트**: 수상 여부 확인 필요(수상 주장 미포함), 히어로/스크린샷 콘솔 중복 노출 확인. 머지 시 PDF 재생성분 포함됨.
-- [ ] **PR #4 — Loggy 프론트엔드 설계 섹션**: `loggy_fronted_portfolio.md` 근거. PDF 미재생성 — #3·#4 모두 머지 후 `npm run generate:pdf` 1회 실행 필요.
-
 ### 다음 사이클 (Claude 작업)
-1. [x] ~~SUPPORTY/D4D 9번째 프로젝트 추가~~ — PR #3 (점검 대기).
-2. [x] ~~Loggy `loggy_fronted_portfolio.md` 반영~~ — PR #4 (점검 대기).
+1. [x] ~~SUPPORTY/D4D 9번째 프로젝트 추가~~ — PR #3 머지·배포 완료 (Oregon UAS Accelerator 수상 포함).
+2. [x] ~~Loggy `loggy_fronted_portfolio.md` 반영~~ — PR #4 머지·배포 완료.
 3. [ ] KRAFTON AI 해커톤 추가 — 자산 확인됨: `G:\...\2학기\0328\extracted_handoff\` (MultiplierBoard 리포트 PDF·learning_curve.png·OPUS_HANDOFF.md 먼저 읽기). work_automation_pipeline도 검토.
 4. [ ] DailyLog figma_export_1 화면 ~30장 큐레이션 — G:드라이브.
 5. [ ] 디자인 개선: 빈 우측 컬럼, 리빌 애니메이션 축소, Contact CTA 액센트, 'Ask my portfolio' AI 위젯.
-6. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부, og-image.png(1200×630) 리브랜딩 여부.
+6. [ ] 검토 항목: SUPPORTY를 AI in Action 카드(자연어 지휘→제어 시퀀스 사례)로 추가 여부, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, og-image.png(1200×630) 리브랜딩 여부. (참고: translation.json `awards` 블록은 어떤 컴포넌트도 렌더하지 않는 레거시 — 수상 노출은 각 프로젝트 metrics/highlights로 처리 중)
 
 ---
 
