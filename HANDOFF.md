@@ -1,7 +1,7 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
-**마지막 작업 일시:** 2026년 7월 7일 (화) 저녁 (KST)
-**현재 상태:** "AI 서비스 개발자" 재포지셔닝 배포 완료. 라이브 = 로컬 main (`c38c20b`)
+**마지막 작업 일시:** 2026년 7월 7일 (화) 밤 (KST)
+**현재 상태:** DailyLog·Loggy 아키텍처 다이어그램 배포 완료. 라이브 = 로컬 main (`6ca2810` 이후)
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
@@ -15,7 +15,13 @@
 
 ---
 
-## ✅ 2026-07-07 세션 완료 내역
+## ✅ 2026-07-07 밤 세션 완료 내역 (다이어그램)
+
+1. **아키텍처 다이어그램 배포:** DailyLog "AI 회고 파이프라인 구조"(음성입력→슬롯 질문 엔진→pgvector→Thompson Sampling), Loggy "의사결정 흐름 구조"(휘발 논의 레인→태그 커밋 필터→PR/Merge→AI 결정문).
+2. **구현 방식:** 인라인 SVG React 컴포넌트(`src/components/diagrams/`) + CSS 변수 → 다크 모드·인쇄 자동 대응. `ProjectDetailPage.js`의 `section.diagram` 레지스트리로 렌더, 데이터는 `projects.js` sections에 추가.
+3. **검증:** 테스트 11개 통과, 라이트/다크·ko/en·모바일(가로 스크롤) 브라우저 확인, 라이브 배포 후 재검증 완료. 미검증 수치("3 min"/"85%")는 다이어그램에서 제외.
+
+## ✅ 2026-07-07 저녁 세션 완료 내역
 
 1. **브랜치 동기화:** 배포본 소스(`portfolio-week-0522`)를 main에 fast-forward. 로컬=배포본 일치.
 2. **증거 중심 카피 교체:** "~증명했습니다" 자기선언 → 검증 가능한 사실(우수상 3등, SenseVoice/Thompson Sampling/pgvector/WebSocket). "이 프로젝트가 증명하는 것" 라벨 → "핵심 기여".
@@ -31,15 +37,15 @@
 ## 📋 남은 작업 (우선순위 순)
 
 ### 🔴 사용자 액션 필요
-- [ ] **`git push origin main`** — 로컬이 origin/main보다 10커밋 앞섬. Claude는 main 직접 push가 권한 정책으로 차단되므로 사용자가 프롬프트에 `! git push origin main` 입력해 직접 실행.
+- [ ] **`git push origin main`** — 로컬 main이 origin/main보다 앞섬(다이어그램 커밋 포함). Claude는 main 직접 push가 권한 정책으로 차단되므로 사용자가 프롬프트에 `! git push origin main` 입력해 직접 실행.
 - [ ] **실측 자료 찾기** (로컬/구글드라이브/다른 컴퓨터): 프로젝트 스크린샷, 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치의 출처 확인, sales-crm 원본 기획서.
 
 ### 다음 사이클 (Claude 작업)
-1. [ ] **아키텍처 다이어그램 SVG 제작** (사용자 승인 완료된 증거 보강 ②): DailyLog 파이프라인(음성입력→질문흐름→추천), Loggy 의사결정 흐름(Issue→PR→Merge). 완성본 before/after 제시 후 배포.
+1. [x] ~~아키텍처 다이어그램 SVG 제작~~ — 2026-07-07 밤 배포 완료.
 2. [ ] **디자인 A to Z 감사:** 다크 모드, 모바일 반응형, 인쇄/PDF 레이아웃 전수 점검.
-3. [ ] **PDF 산출물 재생성:** `src/assets/docs/portfolio_ko.pdf`/`_en.pdf`가 재포지셔닝 이전 내용임 — `scripts/generate_pdfs.js`로 갱신 필요.
+3. [ ] **PDF 산출물 재생성:** `src/assets/docs/portfolio_ko.pdf`/`_en.pdf`가 재포지셔닝 이전 내용임 — `scripts/generate_pdfs.js`로 갱신 필요. (다이어그램도 인쇄 대응되므로 PDF에 포함됨)
 4. [ ] 자료 도착 시: 실측 수치 반영 + `heroImage` 필드 복원(스크린샷을 `public/projects/<slug>/`에 배치).
-5. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 21MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부.
+5. [ ] 검토 항목: Awards 섹션(항목 1개) 통합 여부, 21MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, AI in Action 카드에 다이어그램 연결 여부.
 
 ---
 
