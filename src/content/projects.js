@@ -139,6 +139,191 @@ export const projectUiCopy = {
 
 export const portfolioProjects = [
   {
+    slug: "supporty",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-07-05",
+    period: {
+      ko: "2026.07.03 - 07.05 (72시간)",
+      en: "Jul 3 - 5, 2026 (72 hours)",
+    },
+    category: {
+      ko: "Defense Tech / Hackathon",
+      en: "Defense Tech / Hackathon",
+    },
+    title: {
+      ko: "SUPPORTY | AI 코파일럿 기반 무인자산 작전지속지원 통제 시스템",
+      en: "SUPPORTY | AI-Copilot Operator Console for Contested Logistics",
+    },
+    summary: {
+      ko: "D4D(Deploy for Defense) APAC 서울 해커톤에서 72시간 동안 구축한, 한 명의 오퍼레이터가 AI 코파일럿과 함께 지상(UGV)·공중(VTOL) 무인자산을 동시에 지휘하는 작전지속지원 통제 시스템입니다.",
+      en: "A contested-logistics control system built in 72 hours at the D4D (Deploy for Defense) APAC Seoul hackathon, where a single operator commands ground (UGV) and aerial (VTOL) unmanned assets alongside an AI copilot.",
+    },
+    context: {
+      ko: "특전사 출신 하드웨어 리드와 2인 팀으로, 실물 UGV·VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연했습니다. Oregon UAS Accelerator 상을 수상해 액셀러레이터 후속 지원 과정에 선정되었고, D4D 공식 쇼케이스에 등재되었습니다.",
+      en: "A two-person team with a special-forces-veteran hardware lead; we demoed a live operator console wired to a real UGV and VTOL. The team won the Oregon UAS Accelerator award — with selection into the accelerator's follow-on startup support program — and is listed in the official D4D showcase.",
+    },
+    story: {
+      problem: {
+        ko: "현행 무인체계 운용은 자산 1대당 조종사 1명이 붙는 선형 인력 구조라, 장비가 늘수록 인력도 똑같이 늘어야 합니다. 병력이 줄어드는 환경에서는 지속 불가능하고, 그 대가는 전장에서 가장 절박한 순간에 청구됩니다 — 우크라이나 의용군 인터뷰에서 '지원을 요청할 수단조차 없어 제때 조치를 받지 못했다'는 증언을 직접 확인했습니다.",
+        en: "Today's unmanned operations follow a linear staffing model — one pilot per asset — which cannot scale as fleets grow and forces shrink. The cost lands at the battlefield's most desperate moments; interviews with Ukrainian volunteers confirmed cases where soldiers had no channel even to request support in time.",
+      },
+      insight: {
+        ko: "전투가 아니라 '작전지속지원(보급·정찰·중계)'을 서비스로 재설계하면, 작전 판단은 군에 남기고 요청 접수 → 우선순위 분류 → 자산 배분·실행만 맡는 As-a-Service 구조가 가능하다고 보았습니다. 1인 다중 통제의 진짜 병목은 오퍼레이터의 인지 과부하이므로, AI가 트리아지와 저위험 구간을 맡는 코파일럿 구조로 풀어야 한다고 판단했습니다.",
+        en: "Reframing the domain from combat to logistics-as-a-service keeps operational judgment with the military while the service handles request intake, triage, and asset dispatch. The real bottleneck of one-to-many control is operator cognitive overload — so an AI copilot should own triage and low-risk flight phases.",
+      },
+      solution: {
+        ko: "자연어 지휘(문장 → 제어 시퀀스 변환), AI 트리아지(생명 직결도 → 시간 민감도 → 임무 파급효과 순 정렬), 듀얼 카메라 병렬 제어, GPS 재밍 대비 비전 항법 전환, 셀룰러↔위성 링크 핫스탠바이를 하나의 오퍼레이터 콘솔로 설계하고 실물 UGV·VTOL로 시연했습니다.",
+        en: "Designed a single operator console combining natural-language command (sentence-to-control-sequence), AI triage (life criticality → time sensitivity → mission impact), parallel dual-camera control, vision-based navigation fallback for GPS jamming, and cellular-satellite link hot-standby — demoed with a real UGV and VTOL.",
+      },
+    },
+    team: {
+      ko: "SUPPORTY 2인 팀 (하드웨어·운용 리드 / 기획·소프트웨어)",
+      en: "SUPPORTY, two-person team (hardware & operations lead / planning & software)",
+    },
+    role: {
+      ko: "기획 · 프론트엔드 | 오퍼레이터 콘솔 기획, 데모 시나리오 설계, 콘솔·랜딩 페이지 프론트엔드 구현",
+      en: "Planning & Frontend | Operator console design, demo scenario design, console & landing page frontend",
+    },
+    tags: {
+      ko: ["Defense Tech", "AI 코파일럿", "자연어 지휘", "무인체계 통제"],
+      en: ["Defense Tech", "AI Copilot", "NL Command", "Unmanned Systems"],
+    },
+    highlights: {
+      ko: [
+        "자산 1대당 조종사 1명이 필요한 선형 인력 구조를 '1인 오퍼레이터 + AI 코파일럿' 통제 구조로 재설계했습니다.",
+        "긴급 요청을 생명 직결도 → 시간 민감도 → 임무 파급효과 순으로 정렬하는 AI 트리아지 큐를 기획했습니다.",
+        "\"전진 5초\" 같은 자연어 명령을 실제 제어 시퀀스로 변환하는 지휘 UX를 설계했습니다.",
+        "72시간 안에 실물 UGV·VTOL 연동 라이브 콘솔, 공개 랜딩 페이지, 기획서까지 완성해 시연했습니다.",
+        "Oregon UAS Accelerator 상을 수상해 스타트업 액셀러레이터 후속 지원 과정에 선정되었습니다.",
+      ],
+      en: [
+        "Redesigned the one-pilot-per-asset staffing model into a single-operator-plus-AI-copilot control structure.",
+        "Planned an AI triage queue ordering urgent requests by life criticality, time sensitivity, and mission impact.",
+        "Designed a command UX translating natural-language orders like 'forward 5 seconds' into control sequences.",
+        "Shipped a live console wired to a real UGV & VTOL, a public landing page, and a proposal deck within 72 hours.",
+        "Won the Oregon UAS Accelerator award, earning selection into the accelerator's follow-on startup support program.",
+      ],
+    },
+    proof: {
+      ko: [
+        "군 도메인의 제약을 서비스 범위 설계로 풀었습니다 — 작전 판단은 군에, 우선순위·배분·실행은 서비스에.",
+        "AI를 기능 장식이 아니라 인지 과부하라는 병목을 푸는 구조(트리아지·코파일럿)로 사용했습니다.",
+        "현장 전문가(특전사 출신 리드)와 협업하며 도메인 지식을 제품 언어로 옮겼습니다.",
+      ],
+      en: [
+        "Resolved military-domain constraints through service-scope design — judgment stays with the military; triage, dispatch, and execution with the service.",
+        "Used AI as the structure that removes the cognitive-overload bottleneck, not as decoration.",
+        "Translated field expertise into product language, working with a special-forces-veteran lead.",
+      ],
+    },
+    metrics: [
+      {
+        value: "Award",
+        label: {
+          ko: "Oregon UAS Accelerator 선정",
+          en: "Oregon UAS Accelerator award",
+        },
+      },
+      {
+        value: "1 : N",
+        label: {
+          ko: "1인 오퍼레이터 다중 자산 통제 설계",
+          en: "Single-operator multi-asset control",
+        },
+      },
+      {
+        value: "Live",
+        label: {
+          ko: "실물 UGV·VTOL 연동 시연",
+          en: "Demo with real UGV & VTOL",
+        },
+      },
+    ],
+    caseStudy: {
+      title: {
+        ko: "Decision Deep Dive | '판단하지 않는 서비스'의 경계 설계",
+        en: "Decision Deep Dive | Drawing the Boundary of a Service That Doesn't Judge",
+      },
+      summary: {
+        ko: "민간 서비스가 전장에 들어갈 때 가장 위험한 것은 기능 부족이 아니라 역할의 월권이라고 판단한 사례",
+        en: "Deciding that the biggest risk of a civilian service on the battlefield is overreach, not missing features",
+      },
+      content: {
+        ko: "민간 서비스가 군 작전 영역에 들어갈 때 가장 위험한 것은 기능 부족이 아니라 '역할의 월권'이라고 판단했습니다. 그래서 작전 판단과 승인은 군(지휘관·FDC)에 남기고, 서비스는 들어온 요청의 우선순위 분류, 자산 배분, 배송·관측 대행까지만 담당하도록 범위를 명확히 그었습니다. 콜센터가 콜 우선순위를 정하는 것과 같은 '서비스 제공자의 정당한 판단 범위'라는 프레임입니다. 이 경계 덕분에 AI 트리아지의 권고 근거를 화면에 한 줄로 노출하는 UX를 설계할 수 있었고, 심사·질의에서 '작전 판단을 민간이 하는 것 아닌가'라는 가장 어려운 질문에 구조로 답할 수 있었습니다.",
+        en: "I judged that the biggest risk of a civilian service entering military operations is role overreach, not missing features. So we drew a hard boundary: operational judgment and approval stay with the military (commander/FDC), while the service handles only request triage, asset allocation, delivery, and observation-by-proxy — the same legitimate scope as a call center prioritizing calls. This boundary enabled a UX that surfaces the AI triage rationale as a single line on screen, and let us answer the hardest judging question — 'isn't a civilian making operational decisions?' — with structure, not rhetoric.",
+      },
+    },
+    sections: [
+      {
+        id: "console",
+        title: {
+          ko: "오퍼레이터 콘솔 설계",
+          en: "Operator Console Design",
+        },
+        body: {
+          ko: "듀얼 카메라(지상 전면 · 공중 노즈)와 전술 지도, P1~P3 자동 우선순위 Mission Queue, 자산 로스터, 음성 AI 패널을 한 화면에 배치했습니다. 오퍼레이터는 한 번에 한 자산에 집중하고, AI가 이륙·순항·대기 같은 저위험 구간을 맡다가 험로·관측·회피처럼 인간이 필요한 순간에만 제어권을 핸드오버합니다.",
+          en: "One screen combines dual camera feeds (ground front / aerial nose), a tactical map, a P1-P3 auto-prioritized mission queue, an asset roster, and a voice-AI panel. The operator focuses on one asset at a time while the AI manages low-risk phases (takeoff, cruise, loiter) and hands control back only when a human is needed — rough terrain, observation, evasion.",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["기획서 PDF", "라이브 오퍼레이터 콘솔", "작전 시나리오 영상", "공개 랜딩 페이지"],
+      en: ["Proposal PDF", "Live operator console", "Operation scenario videos", "Public landing page"],
+    },
+    interviewQuestions: {
+      ko: [
+        "왜 전투 자동화가 아니라 작전지속지원을 서비스 범위로 선택했나요?",
+        "1인 다중 자산 통제에서 오퍼레이터의 인지 과부하를 어떤 설계로 줄였나요?",
+        "민간 서비스가 작전 판단을 하지 않도록 경계를 어떻게 설계했나요?",
+      ],
+      en: [
+        "Why did you scope the service to contested logistics rather than combat automation?",
+        "How did your design reduce operator cognitive overload in one-to-many control?",
+        "How did you draw the boundary so a civilian service never makes operational judgments?",
+      ],
+    },
+    heroImage: "/projects/supporty/console-live.webp",
+    media: {
+      presentationHref: "https://supporty-d4d.github.io/assets/supporty_proposal.pdf",
+      title: {
+        ko: "발표 자료 / 기획서",
+        en: "Proposal Deck",
+      },
+      presentationLabel: {
+        ko: "기획서 PDF 보기",
+        en: "View proposal (PDF)",
+      },
+    },
+    screenshots: [
+      {
+        src: "/projects/supporty/console-live.webp",
+        alt: {
+          ko: "SKYFLEET 오퍼레이터 콘솔 — 듀얼 카메라, 전술 지도, AI 트리아지 Mission Queue, 음성 AI 패널",
+          en: "SKYFLEET operator console — dual cameras, tactical map, AI triage mission queue, voice-AI panel",
+        },
+      },
+      {
+        src: "/projects/supporty/vtol-heewing-t2.webp",
+        alt: {
+          ko: "공중 자산 — Heewing T2 VTOL 수직이착륙기 (ArduPlane)",
+          en: "Aerial asset — Heewing T2 VTOL (ArduPlane)",
+        },
+      },
+      {
+        src: "/projects/supporty/ugv-defender.webp",
+        alt: {
+          ko: "지상 자산 — 전면 카메라·통신 모듈을 탑재한 UGV 보급 차량",
+          en: "Ground asset — UGV resupply vehicle with front camera and comms module",
+        },
+      },
+    ],
+    links: {
+      github: "https://github.com/supporty-d4d/supporty-d4d.github.io",
+      demo: "https://supporty-d4d.github.io/",
+    },
+  },
+  {
     slug: "genwing-live",
     featured: false,
     status: "completed",
