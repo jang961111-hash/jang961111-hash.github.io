@@ -65,14 +65,13 @@
 - [ ] **수상사진 팀원 얼굴 공개 동의** 확인 (이미 라이브에 올라감 — 동의 못 받으면 즉시 알려주기, 블러 처리로 교체 가능).
 - [ ] **실측 자료 찾기:** 팀 규모/기간/사용자 테스트 수치, DailyLog "3 min"·Loggy "85%" 배지 수치 출처, sales-crm 원본 기획서, 전주 ICT·Campus Chronicle 자료.
 
-### 🔴 사용자 액션 — AI 위젯 활성화 (~10분, workers/ask-portfolio/README.md)
-- [ ] Cloudflare 가입 → `npx wrangler login` → `secret put ANTHROPIC_API_KEY` → `deploy` → 워커 URL을 `.env.production`의 `REACT_APP_ASK_ENDPOINT`에 → `npm run deploy`. (Anthropic Console에서 spend limit 설정 권장)
+### 🟡 AI 위젯 — 보류 (사용자 결정: 추후 GPT API로 직접 연동 예정)
+- 코드 머지됨·비활성. 연동 시 `workers/ask-portfolio/src/index.js`의 Claude 호출부만 교체하면 됨(위젯↔워커 계약은 `{messages}` → `{reply}` JSON). `REACT_APP_ASK_ENDPOINT` 설정 전까지 렌더 안 됨.
 
 ### 다음 사이클 (Claude 작업)
-1. [ ] DailyLog figma_export_1 화면 ~30장 큐레이션 — G:드라이브.
-2. [ ] SUPPORTY를 AI in Action 카드(자연어 지휘→제어 시퀀스 사례)로 추가 검토.
+1. [x] ~~DailyLog Figma 큐레이션~~ — 157장 전수 검토, 완성도 높은 2장만 선별 반영(추천 별점 평가·일기 결과, 'Figma 시안' 라벨). PR #8 배포 완료.
+2. [x] ~~SUPPORTY AI in Action 카드~~ — 자연어 지휘 사례 5번째 카드 추가. PR #9 배포 완료.
 3. [ ] work_automation_pipeline 추가 검토, 13MB mp4 외부 호스팅 전환, sales-crm 노출 유지 여부, og-image.png(1200×630) 리브랜딩 여부.
-4. [ ] 위젯 활성화 후: 워커 응답 실측 → `workers/ask-portfolio/src/context.js` 컨텍스트 튜닝, 스트리밍 업그레이드 검토.
 
 ---
 
