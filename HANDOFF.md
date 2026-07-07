@@ -1,7 +1,7 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
 **마지막 작업 일시:** 2026년 7월 8일 (수) 새벽 (KST)
-**현재 상태:** PR #1~#4 전부 머지 + 배포 완료. **라이브 = main `5953d9b`.** 프로젝트 9개(SUPPORTY 추가), Loggy 프론트엔드 섹션, PDF 최신 재생성분까지 라이브 반영·검증 완료.
+**현재 상태:** PR #1~#7 전부 머지 + 배포 완료. **라이브 = main `dfaa88c`.** 프로젝트 10개(SUPPORTY 수상 포함 + KRAFTON MultiplierBoard), 디자인 리프레시(At-a-glance 카드·리빌 축소·브론즈 CTA), 'Ask my portfolio' AI 위젯 스캐폴드(비활성 — 워커 배포 대기)까지 반영.
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
@@ -14,6 +14,14 @@
 - **작업 방식:** 수정 → 테스트(`CI=true npx react-scripts test --watchAll=false`) → `npm run deploy` → 브라우저 검증을 한 사이클로. 큰 변경은 사용자에게 before/after 제시 후 진행.
 
 ---
+
+## ✅ 2026-07-08 새벽 2차 세션 완료 내역 (KRAFTON + 디자인 + AI 위젯)
+
+1. **PR #5 — KRAFTON MultiplierBoard 10번째 프로젝트** (결과 무표기 — 사용자 확인: 이틀 시험 후 탈락. 리포트 PDF 근거, AI 핸드오프 워크플로우 서사). `.gitattributes` 바이너리 보호 추가.
+2. **PR #3 수상 반영**: SUPPORTY — Oregon UAS Accelerator 상 수상·후속 지원 선정(사용자 확인, d4d.tech 쇼케이스 3쪽 1번째). metrics: Award / 1:N / Live.
+3. **PR #6 — 디자인 리프레시 (제안 1–3 승인분)**: ① Identity 우측 'At a glance' 카드(10/2/6/SSAFY 14기, sticky) ② 리빌 28px/700ms→12px/380ms + prefers-reduced-motion ③ CTA 브론즈 액센트(`--cta-*` 토큰, 라이트 #8a5f3a AA 대비, 다크 #c2965c+어두운 텍스트).
+4. **PR #7 — 'Ask my portfolio' AI 위젯 (제안 4-B)**: Cloudflare Worker 프록시(`workers/ask-portfolio/`, 공식 SDK·opus-4-8·프롬프트 캐싱·레이트리밋) + React 플로팅 위젯(ko/en). **`REACT_APP_ASK_ENDPOINT` 미설정 시 렌더 안 됨** — 활성화 절차는 workers/ask-portfolio/README.md.
+5. 배포 3회, 라이브 검증(라우트·번들 문구·PDF 바이트 대조) 각각 완료. 참고: translation.json `awards` 블록은 렌더 안 되는 레거시.
 
 ## ✅ 2026-07-08 새벽 세션 완료 내역 (PR #1~#4 머지 + 배포 2회)
 
