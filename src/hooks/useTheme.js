@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
+import { updateMetaTag } from "../utils/dom";
 
 const THEME_STORAGE_KEY = "portfolio-theme";
-
-const updateMetaTag = (selector, content) => {
-  const element = document.querySelector(selector);
-
-  if (element) {
-    element.setAttribute("content", content);
-  }
-};
 
 const getInitialTheme = () => {
   if (typeof window === "undefined") {

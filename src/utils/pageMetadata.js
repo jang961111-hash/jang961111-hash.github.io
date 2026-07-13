@@ -1,13 +1,6 @@
 import { getPageUrl, pageMetadata } from "../metadata";
 import { getProjectPath } from "./localeRouting";
-
-const updateMetaTag = (selector, content) => {
-  const element = document.querySelector(selector);
-
-  if (element) {
-    element.setAttribute("content", content);
-  }
-};
+import { updateMetaTag } from "./dom";
 
 const updateLinkTag = (selector, attributes, href) => {
   let element = document.querySelector(selector);
