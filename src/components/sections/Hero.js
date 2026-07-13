@@ -2,12 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import profilePhoto from "../../assets/images/id-photo.webp";
 import profilePhotoJpg from "../../assets/images/id-photo.jpg";
-import portfolioKo from "../../assets/docs/portfolio_ko.pdf";
-import portfolioEn from "../../assets/docs/portfolio_en.pdf";
+import { getResumeAsset } from "../../utils/resumeAssets";
 import "./Hero.css";
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
+  const resume = getResumeAsset(i18n.language);
   const proofKeys = ["product", "ai", "execution"];
   const strengthKeys = ["platform", "decision", "tech", "ai"];
   const portraitAlt =
@@ -46,15 +46,11 @@ const Hero = () => {
               {t("hero.getInTouch")}
             </a>
             <a
-              href={i18n.language === "ko" ? portfolioKo : portfolioEn}
+              href={resume.href}
               className="cta-button ghost"
               target="_blank"
               rel="noopener noreferrer"
-              download={
-                i18n.language === "ko"
-                  ? "Jang-Byeong-Heon_Portfolio_KO.pdf"
-                  : "Jang-Byeong-Heon_Portfolio_EN.pdf"
-              }
+              download={resume.downloadName}
               aria-label={t("hero.downloadResumeAria")}
             >
               {t("hero.downloadResume")}

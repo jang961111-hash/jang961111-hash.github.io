@@ -1,13 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useScrollReveal from '../../hooks/useScrollReveal';
-import portfolioKo from '../../assets/docs/portfolio_ko.pdf';
-import portfolioEn from '../../assets/docs/portfolio_en.pdf';
+import { getResumeAsset } from '../../utils/resumeAssets';
 import './Contact.css';
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
   const { elementRef, isVisible } = useScrollReveal();
+  const resume = getResumeAsset(i18n.language);
   const profileLinks = [
     {
       label: t('contact.github'),
@@ -23,7 +23,7 @@ const Contact = () => {
     },
     {
       label: t('contact.resume'),
-      href: i18n.language === 'ko' ? portfolioKo : portfolioEn,
+      href: resume.href,
     },
   ];
 

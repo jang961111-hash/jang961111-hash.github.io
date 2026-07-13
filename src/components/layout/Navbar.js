@@ -8,8 +8,7 @@ import {
   isLocaleRootPath,
 } from "../../utils/localeRouting";
 import { queueScrollTarget, scrollToSectionId } from "../../utils/scrollTarget";
-import portfolioKo from "../../assets/docs/portfolio_ko.pdf";
-import portfolioEn from "../../assets/docs/portfolio_en.pdf";
+import { getResumeAsset } from "../../utils/resumeAssets";
 import "./Navbar.css";
 
 const navItems = [
@@ -36,6 +35,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
   const currentLang = getLocaleFromPathname(location.pathname);
   const isKorean = currentLang === "ko";
   const isHomeRoute = isLocaleRootPath(location.pathname);
+  const resume = getResumeAsset(currentLang);
   const nextThemeLabel =
     theme === "dark" ? t("nav.themeLight") : t("nav.themeDark");
   const nextThemeAriaLabel =
@@ -211,15 +211,11 @@ const Navbar = ({ theme, onToggleTheme }) => {
           {nextThemeLabel}
         </button>
         <a
-          href={isKorean ? portfolioKo : portfolioEn}
+          href={resume.href}
           className="nav-action-btn nav-action-btn-resume"
           target="_blank"
           rel="noopener noreferrer"
-          download={
-            isKorean
-              ? "Jang-Byeong-Heon_Portfolio_KO.pdf"
-              : "Jang-Byeong-Heon_Portfolio_EN.pdf"
-          }
+          download={resume.downloadName}
           aria-label={t("hero.downloadResumeAria")}
         >
           {t("hero.downloadResume")}
