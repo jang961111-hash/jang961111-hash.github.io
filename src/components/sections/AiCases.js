@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import SectionShell from "../layout/SectionShell";
 import { projectUiCopy } from "../../content/projects";
 import { getProjectPath } from "../../utils/localeRouting";
+import useLang from "../../hooks/useLang";
 
 const cases = [
   { key: "questionFlow", slug: "dailylog" },
@@ -14,8 +15,8 @@ const cases = [
 ];
 
 const AiCases = () => {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language === "en" ? "en" : "ko";
+  const { t } = useTranslation();
+  const lang = useLang();
   const copy = projectUiCopy[lang];
 
   return (

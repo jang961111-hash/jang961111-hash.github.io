@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import {
   getLocalizedCoreProjects,
   getLocalizedSupportingProjects,
   projectUiCopy,
 } from "../../content/projects";
 import SectionShell from "../layout/SectionShell";
+import useLang from "../../hooks/useLang";
 
 const featureLabels = {
   ko: {
@@ -28,8 +28,7 @@ const featureLabels = {
 };
 
 const Projects = () => {
-  const { i18n } = useTranslation();
-  const lang = i18n.language === "en" ? "en" : "ko";
+  const lang = useLang();
   const copy = projectUiCopy[lang];
   const labels = featureLabels[lang];
   const coreProjects = getLocalizedCoreProjects(lang);
