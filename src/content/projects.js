@@ -27,12 +27,6 @@ export const projectUiCopy = {
     sectionTitle: "Core Projects",
     sectionIntro:
       "사용자의 반복적인 불편, 기록되지 않는 의사결정, 재생에너지 수요 불일치 등 서로 다른 문제를 서비스 구조로 해결하려 한 경험입니다.",
-    featuredKicker: "Flagship case",
-    featuredContext: "왜 먼저 보여주는가",
-    archiveKicker: "Latest archive",
-    archiveTitle: "프로젝트 아카이브",
-    archiveIntro:
-      "진행 중인 항목부터 완료 프로젝트까지, 문제 정의와 서비스 구조화 역량을 보여주는 기록입니다.",
     coreKicker: "Submission focus",
     coreTitle: "제출용 핵심 프로젝트 3",
     coreIntro:
@@ -51,17 +45,14 @@ export const projectUiCopy = {
     solutionProcess: "해결 과정",
     interviewHooks: "면접 질문 포인트",
     viewDetails: "상세 보기",
-    readCaseStudy: "케이스 스터디 열기",
     backToProjects: "프로젝트 목록으로 돌아가기",
     period: "기간",
     team: "팀 구성",
     role: "역할",
-    status: "상태",
     links: "링크",
     highlights: "핵심 포인트",
     screens: "서비스 화면",
     themes: "키워드",
-    detailSections: "세부 설명",
     challenge: "다룬 문제",
     insight: "구조적 인사이트",
     solution: "경험 설계 + 시스템 구조",
@@ -83,12 +74,6 @@ export const projectUiCopy = {
     sectionTitle: "Core Projects",
     sectionIntro:
       "Experiences in solving various problems—user friction, fragmented decisions, and energy mismatches—through structured service design.",
-    featuredKicker: "Flagship case",
-    featuredContext: "Why this case comes first",
-    archiveKicker: "Latest archive",
-    archiveTitle: "Project Archive",
-    archiveIntro:
-      "A record of ongoing and completed projects demonstrating problem framing and service structuring capabilities.",
     coreKicker: "Submission focus",
     coreTitle: "Core 3 Projects",
     coreIntro:
@@ -107,17 +92,14 @@ export const projectUiCopy = {
     solutionProcess: "Solution process",
     interviewHooks: "Interview hooks",
     viewDetails: "View details",
-    readCaseStudy: "Open case study",
     backToProjects: "Back to project archive",
     period: "Period",
     team: "Team",
     role: "Role",
-    status: "Status",
     links: "Links",
     highlights: "Highlights",
     screens: "Product Screens",
     themes: "Themes",
-    detailSections: "Project detail",
     challenge: "Challenge",
     insight: "Structural Insight",
     solution: "Experience + System Design",
@@ -1821,17 +1803,6 @@ export const getOrderedProjects = () =>
     return right.sortDate.localeCompare(left.sortDate);
   });
 
-export const getFeaturedProject = () =>
-  portfolioProjects.find((project) => project.featured) ?? getOrderedProjects()[0];
-
-export const getArchiveProjects = () => {
-  const featuredProject = getFeaturedProject();
-
-  return getOrderedProjects().filter(
-    (project) => project.slug !== featuredProject.slug
-  );
-};
-
 export const getProjectBySlug = (slug) =>
   portfolioProjects.find((project) => project.slug === slug) ?? null;
 
@@ -1922,12 +1893,6 @@ export const getSupportingProjects = () => {
 
   return getOrderedProjects().filter((project) => !coreSlugSet.has(project.slug));
 };
-
-export const getLocalizedFeaturedProject = (lang = "ko") =>
-  getLocalizedProject(getFeaturedProject(), lang);
-
-export const getLocalizedArchiveProjects = (lang = "ko") =>
-  getArchiveProjects().map((project) => getLocalizedProject(project, lang));
 
 export const getLocalizedCoreProjects = (lang = "ko") =>
   getCoreProjects().map((project) => getLocalizedProject(project, lang));
