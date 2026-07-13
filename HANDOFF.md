@@ -1,7 +1,7 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
-**마지막 작업 일시:** 2026년 7월 8일 (수) (KST)
-**현재 상태:** PR #1~#13 전부 머지 + 배포 + 라이브 검증 완료. **프로젝트 11개 · 수상 3회.** 폰트(Pretendard·JetBrains Mono) 셀프호스트로 실제 로드됨. 작업트리 클린, 열린 PR 없음.
+**마지막 작업 일시:** 2026년 7월 13일 (월) (KST)
+**현재 상태:** 구조 리팩토링 Step 1~7 완료 · 7커밋 `origin/main` push · gh-pages 라이브 배포 성공 확인. **로컬 = origin = 라이브 3자 동기화.** 작업트리 클린, 열린 PR 없음. 콘텐츠/문구 변화 없음(순수 내부 구조 개선). **프로젝트 11개 · 수상 3회** 유지.
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
@@ -12,6 +12,50 @@
 - **포지셔닝:** "AI를 서비스로 만드는 사람" (AI 서비스 개발 · 기획)
 - **근거:** SK AX는 코딩테스트를 AICT(AI 활용 능력 평가)로 대체, "AI 능력자" 채용. SDS는 생성형 AI(Brity/FabriX)+클라우드 중심. 백엔드 전환은 실물 산출물 없이 불가 판정.
 - **작업 방식:** 수정 → 테스트(`CI=true npx react-scripts test --watchAll=false`) → `npm run deploy` → 브라우저 검증을 한 사이클로. 큰 변경은 사용자에게 before/after 제시 후 진행.
+
+---
+
+## ✅ 2026-07-13 세션 완료 내역 (구조 리팩토링 Step 1~7 — 콘텐츠 무변화)
+
+**배경:** 코드 구조 리팩토링 계획(총 12스텝)을 세우고 승인 순서대로 하나씩 진행. 원칙: **산출물/문구 변화 0**(순수 내부 구조 개선). 매 스텝 `CI=true npx react-scripts test --watchAll=false`(11/11) + `npm run build` + `npm run smoke:build`(5라우트) 통과 후 개별 커밋.
+
+**완료된 Step 1~7 (각 1커밋):**
+
+| Step | 커밋 | 내용 |
+|---|---|---|
+| 1 | `a3e3923` | 데드코드 제거 — 미사용 셀렉터 4개(getFeaturedProject·getArchiveProjects·getLocalized{Featured,Archive}Projects) + 미사용 카피 키 8종×ko/en |
+| 2 | `cc4c439` | `updateMetaTag` 중복(useTheme.js·pageMetadata.js) → `src/utils/dom.js`로 추출 |
+| 3 | `935b8f5` | `Contact.js` 오버라인 번호 `08.` → `06.` (섹션 통폐합 후 남은 스테일 버그) |
+| 4 | `9de2367` | `AiCases.js` 수동 경로 조립 → `getProjectPath()` 사용 (+트레일링 슬래시 앱 전체와 통일) |
+| 5 | `16d6663` | 이력서 PDF 로직 3중 복제(Hero·Navbar·Contact) → `src/utils/resumeAssets.js`의 `getResumeAsset(lang)`로 통일 |
+| 6 | `f90d066` | `i18n.language==="en"?...` 반복 → `src/hooks/useLang.js` 훅으로 통일 (Projects·AiCases) |
+| 7 | `a1253b8` | `src/content/projects.js`(1,901줄) → `src/content/projects/` 5개 모듈 분해 |
+
+**Step 7 결과 구조 (반드시 기억):** `src/content/projects/`
+- `data.js` — `portfolioProjects` (원본 rename 92%, 한글 데이터 바이트 무손상 검증됨)
+- `uiCopy.js` — `projectUiCopy`
+- `localize.js` — `localizeValue`(비공개) + `getLocalizedProject`
+- `selectors.js` — `coreProjectSlugs`(비공개) + 셀렉터 6종
+- `index.js` — 배럴(기존 export 1:1 재노출). 소비자 4곳(AiCases·Projects·ProjectDetailPage·ProjectPage) import 경로 `content/projects`는 디렉터리 index로 그대로 resolve → **변경 없음**.
+- ⚠️ **숨은 5번째 소비자 발견·수정**: `scripts/generate_route_aliases.js`가 빌드 타임에 프로젝트 파일을 정규식 파싱해 슬러그 추출 → 경로를 `projects/data.js`로 수정(같은 커밋 포함). **앞으로 프로젝트 데이터 파일 위치를 또 옮기면 이 스크립트도 같이 고쳐야 함.**
+
+**push / 배포:** 7커밋 전부 `git push origin main` 완료(`980b2e6..a1253b8`). push가 `.github/workflows/deploy.yml` 자동 트리거 → build+smoke+gh-pages 배포 **성공 확인**(Actions run 29251531225).
+
+---
+
+## 🔧 리팩토링 로드맵 — 다음 세션은 **Step 8부터** 시작
+
+> 이 파일만 읽고 바로 이어가면 됨. 매 스텝 원칙: 콘텐츠 무변화 · test(11/11)+build+smoke 통과 후 개별 커밋 · 사용자 승인받아 하나씩.
+
+- **Step 8 (다음, 리스크 낮음) — 카피 소스 단일화**: `src/components/sections/Projects.js` 상단의 하드코딩 `featureLabels`(ko/en 객체, 키: challenge·insight·solution·role·highlights·proof)를 `projectUiCopy`(`src/content/projects/uiCopy.js`)로 흡수. 현재 프로젝트 섹션 라벨이 `projectUiCopy` + `Projects.js`의 `featureLabels` + `translation.json` **3곳**에 흩어져 있음. `projectUiCopy`에 이미 유사 키(challenge·insight·solution·role·highlights 등)가 존재하므로 매핑 대조 후 흡수, 중복 제거.
+- **Step 9 (리스크 중) — 섹션 레지스트리**: 섹션 순서/번호/nav가 `HomePage` JSX 나열 + `Navbar.navItems` + 각 섹션 컴포넌트 `index` prop **3곳**에 분산. 단일 배열로 묶어 Step 3에서 고친 `08.`류 스테일 재발 방지.
+- **Step 10 (리스크 중) — `Experience.js` i18n 정리**: 하드코딩 `descKeys=[1,2,3]` + "번역 키가 그대로 반환되면 없는 것" 문자열 비교 폴백 → `translation.json`에서 desc 배열화. **ko/en 동시 수정**(구조 정렬 유지).
+- **Step 11 (리스크 중상) — `Navbar.js`(339줄) 훅 분리**: useScrollSpy / useBodyScrollLock / useMobileMenu로 6개 useEffect 정리. ⚠️ **스크롤 로직은 과거 내비바 배경 버그 이력 있음** → 커밋 후 바로 push 금지, `npm start` 로컬 브라우저 확인 먼저.
+- **Step 12 (리스크 상) — CSS 콜로케이션**: `src/components/layout/Section.css`(833줄 캐치올)를 컴포넌트별 CSS로 분리(Projects/About/Experience는 전용 CSS 없음). AGENTS.md도 "CSS는 마지막". ⚠️ **시각 회귀 위험 큼**.
+
+⚠️ **Step 11·12는 리스크 중상~상**: 커밋 후 바로 push하지 말 것. `npm start`(Windows: `$env:HOST="localhost"`)로 **라이트/다크/모바일 로컬 확인** → 이상 없을 때만 push(= gh-pages 자동 배포됨). Step 1~10은 저리스크라 검증 통과 시 바로 push 가능.
+
+**참고:** push하면 main→gh-pages 자동 배포. 검증 안 된 변경을 push하면 라이브에 바로 반영되니 주의. 세션 중 `PROJECT_LOG.md` "다음 작업" #6에 남긴 Contact 이력서 링크 다운로드 방식 불일치(Contact만 새 탭 열기)도 미해결 상태.
 
 ---
 
@@ -69,6 +113,7 @@
 ## 📋 남은 작업 (우선순위 순)
 
 ### 다음 사이클 (Claude 작업 — 바로 시작 가능)
+0. [ ] **★ 구조 리팩토링 Step 8부터 계속** ← 이번 세션 이어서. 상세는 위 "🔧 리팩토링 로드맵" 섹션. Step 8 = `Projects.js`의 하드코딩 `featureLabels`를 `projectUiCopy`로 흡수(카피 소스 단일화, 리스크 낮음).
 1. [ ] **디자인 시안 2건 제작 → 승인분 적용**: ① 상세 페이지 박스 과밀 완화(일부 섹션 카드 제거, 여백 구분) ② 스크린샷 그리드 비율 통일(프레임 고정 + 원본 링크). before/after 스크린샷으로 제시.
 2. [ ] `ASSET_WISHLIST.md`의 사용자 답변 도착분 반영.
 

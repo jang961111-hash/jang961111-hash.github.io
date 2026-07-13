@@ -1,11 +1,17 @@
 ﻿# 🚀 Project Development Log & Roadmap
 
-**마지막 업데이트:** 2026년 7월 7일 (화) 밤
-**현재 상태:** DailyLog·Loggy 아키텍처 다이어그램 배포 완료 — 상세 재개 정보는 `HANDOFF.md` 참조
+**마지막 업데이트:** 2026년 7월 13일 (월)
+**현재 상태:** 구조 리팩토링 Step 1~7 완료·7커밋 push·gh-pages 라이브 배포 성공 — 다음은 Step 8부터. 상세 재개 정보는 `HANDOFF.md` 참조
 
 ---
 
 ## 📋 1. 지금까지의 작업 현황 (Done)
+
+### 🧹 2026-07-13 세션: 구조 리팩토링 Step 1~7 (콘텐츠 무변화)
+- **12스텝 리팩토링 계획 수립 후 Step 1~7 진행** — 산출물/문구 변화 0을 원칙으로, 매 스텝 test(11/11)+build+smoke 통과 후 개별 커밋.
+- **완료:** ①데드코드 제거(`a3e3923`) ②`updateMetaTag`→`utils/dom.js`(`cc4c439`) ③Contact 섹션번호 08→06 버그(`935b8f5`) ④AiCases 경로→`getProjectPath`(`9de2367`) ⑤이력서 PDF 로직→`utils/resumeAssets.js`(`16d6663`) ⑥`useLang` 훅(`f90d066`) ⑦`content/projects.js`→`content/projects/` 5모듈 분해(`a1253b8`).
+- **Step 7 주의:** `scripts/generate_route_aliases.js`가 빌드 타임에 프로젝트 데이터를 파싱하므로 데이터 파일 경로를 `projects/data.js`로 함께 수정함(숨은 소비자). 데이터 파일 이동 시 이 스크립트도 같이 고칠 것.
+- **push+배포:** 7커밋 `origin/main` push → deploy 워크플로우 성공(run 29251531225), 라이브 반영. **다음 세션은 Step 8(카피 소스 단일화)부터** — 로드맵·리스크 태그는 `HANDOFF.md`.
 
 ### 📐 2026-07-07 밤 세션: 아키텍처 다이어그램
 - **인라인 SVG 다이어그램 2종 배포**: DailyLog "AI 회고 파이프라인 구조", Loggy "의사결정 흐름 구조". CSS 변수 기반이라 다크 모드·인쇄 자동 대응, ko/en 라벨 내장.
