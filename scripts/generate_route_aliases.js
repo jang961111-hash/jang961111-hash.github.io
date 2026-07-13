@@ -8,7 +8,8 @@ const projectsSourcePath = path.join(
   "..",
   "src",
   "content",
-  "projects.js"
+  "projects",
+  "data.js"
 );
 
 const ensureFileExists = (filePath) => {
