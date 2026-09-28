@@ -83,12 +83,12 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(screen.getByTestId("location-probe").textContent).toBe(
-        "/en/projects/argus/"
+        "/en/projects/ops-sentinel/"
       );
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "ARGUS | An On-Premise AI Agent for Semiconductor Fab Part-Replacement Approval | Jang Byeong Heon"
+        "Ops Sentinel | A Spring Boot API That Judges Metric Anomalies with a Rule Engine and Records Incidents, Actions, and Audit Logs | Jang Byeong Heon"
       );
     });
 

@@ -2,11 +2,11 @@ export const projectUiCopy = {
   ko: {
     sectionTitle: "Core Projects",
     sectionIntro:
-      "사용자의 반복적인 불편, 기록되지 않는 의사결정, 재생에너지 수요 불일치 등 서로 다른 문제를 서비스 구조로 해결하려 한 경험입니다.",
-    coreKicker: "Submission focus",
-    coreTitle: "제출용 핵심 프로젝트 3",
+      "AI 코딩 에이전트로 만들고, 재현 테스트·독립 리뷰·전후 실측으로 검증한 개발 프로젝트를 먼저 보여 드립니다. 코드를 AI가 쓴 부분과 제가 지시·검증한 부분을 나눠 적었습니다.",
+    coreKicker: "Development evidence",
+    coreTitle: "대표 프로젝트 3",
     coreIntro:
-      "문제정의, 수행 역할, 기술 선택, 해결 과정이 면접 질문으로 이어지도록 ARGUS, DailyLog, Loggy를 먼저 정리합니다.",
+      "Ops Sentinel, 장보고, RE:RUN — 문제정의, 역할, 기술 선택, 트러블슈팅(재현 → 원인 → 수정 → 전후 실측), 한계 순서로 정리했습니다.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "보조 프로젝트 및 해커톤",
     supportingIntro:
@@ -52,11 +52,11 @@ export const projectUiCopy = {
   en: {
     sectionTitle: "Core Projects",
     sectionIntro:
-      "Experiences in solving various problems—user friction, fragmented decisions, and energy mismatches—through structured service design.",
-    coreKicker: "Submission focus",
+      "Development projects built with AI coding agents and verified with reproduction tests, independent review, and before/after measurements come first. What the AI wrote and what I directed and verified are stated separately.",
+    coreKicker: "Development evidence",
     coreTitle: "Core 3 Projects",
     coreIntro:
-      "ARGUS, DailyLog, and Loggy are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
+      "Ops Sentinel, JangBogo, and RE:RUN — organized as problem, role, technical choices, troubleshooting (reproduce → cause → fix → before/after), and limits.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "Supporting Projects & Hackathons",
     supportingIntro:
