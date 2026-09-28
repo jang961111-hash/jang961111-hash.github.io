@@ -201,8 +201,30 @@
   },
   "competencies": {
     "title": "Core Competencies",
-    "subtitle": "Core 3 프로젝트에서 실제로 적용한 기획, AI/Data, Web 협업, 커뮤니케이션 역량을 근거 중심으로 정리했습니다.",
+    "subtitle": "AI 코딩 에이전트로 만든 대표 프로젝트의 검증 방식과, 이전 팀 프로젝트에서 쌓은 기획·AI/Data·협업·커뮤니케이션 역량을 근거 중심으로 정리했습니다.",
     "groups": {
+      "verification": {
+        "title": "측정·검증 중심 개발",
+        "subtitle": "AI 코딩 에이전트가 쓴 코드를 믿기 전에 확인합니다. 결함은 재현부터, 주장은 측정 조건과 함께.",
+        "items": {
+          "reproTest": {
+            "title": "재현 테스트 먼저",
+            "desc": "결함마다 재현 테스트를 먼저 커밋해 수정 전 실패를 확인한 뒤 고쳤습니다. Ops Sentinel(락 안 AI 호출 10건 1,656~1,670ms → 750ms 미만), 장보고(결제 경합 재현 6건 실패 → 통과)."
+          },
+          "independentReview": {
+            "title": "작성과 분리한 독립 리뷰",
+            "desc": "코드를 쓴 에이전트와 다른 리뷰어가 검토하게 했습니다. 장보고에서는 수정이 만든 결제 퇴행을, RE:RUN에서는 승인 게이트의 2차 우회를, Ops Sentinel에서는 비동기 요약 덮어쓰기를 머지 전에 잡았습니다."
+          },
+          "beforeAfter": {
+            "title": "측정 조건을 적은 전후 실측",
+            "desc": "수치는 조건과 함께 적습니다. Ops Sentinel 풀 10·동시 150건·AI 지연 3초 감사 450/450(수정 전 500 372건), RE:RUN 힌트 제거 시 자가수정 72% → 0%(n=25), 장보고 주문 최대 10 → 1."
+          },
+          "honestClaims": {
+            "title": "반증된 주장 공개",
+            "desc": "재측정에서 틀린 것으로 드러난 주장(Ops Sentinel '감사로그 100%', RE:RUN 힌트를 밝히지 않은 'AI 자가진단')은 지우지 않고 README에 정정했습니다. AI가 쓴 코드와 제가 한 일은 나눠 적습니다."
+          }
+        }
+      },
       "productPlanning": {
         "title": "Product & Planning",
         "subtitle": "DailyLog, Loggy, Promtree에서 문제를 다시 정의하고 서비스 구조로 옮긴 역량입니다.",

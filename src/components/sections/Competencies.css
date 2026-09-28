@@ -18,6 +18,10 @@
   height: 100%;
 }
 
+.competency-card--wide {
+  grid-column: 1 / -1;
+}
+
 .competency-title {
   font-size: 1.25rem;
   color: var(--accent-primary);

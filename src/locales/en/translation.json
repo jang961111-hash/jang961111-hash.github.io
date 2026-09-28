@@ -201,8 +201,30 @@
   },
   "competencies": {
     "title": "Core Competencies",
-    "subtitle": "A project-backed view of the planning, AI/Data, web collaboration, and communication skills used across the Core 3 projects.",
+    "subtitle": "How I verify the core projects built with AI coding agents, plus the planning, AI/Data, collaboration, and communication skills from earlier team projects — each tied to evidence.",
     "groups": {
+      "verification": {
+        "title": "Measurement- and Verification-Driven Development",
+        "subtitle": "I check code written by AI coding agents before trusting it: defects start with a reproduction, claims come with their measurement conditions.",
+        "items": {
+          "reproTest": {
+            "title": "Reproduction Test First",
+            "desc": "For each defect, a reproduction test was committed first and its failure confirmed before the fix. Ops Sentinel (AI call inside the lock: 10 requests at 1,656-1,670 ms → under 750 ms), JangBogo (payment race reproduced as 6 failures → passing)."
+          },
+          "independentReview": {
+            "title": "Review Separated from Authoring",
+            "desc": "A reviewer separate from the authoring agent checked the work. It caught a payment regression introduced by the fix in JangBogo, a second approval-gate bypass in RE:RUN, and async summary overwrites in Ops Sentinel, all before merge."
+          },
+          "beforeAfter": {
+            "title": "Before/After with Conditions",
+            "desc": "Numbers come with their conditions. Ops Sentinel pool 10, 150 concurrent, 3 s AI delay: audit 450/450 (500 ×372 before); RE:RUN self-repair 72% → 0% without the hint (n=25); JangBogo max orders 10 → 1."
+          },
+          "honestClaims": {
+            "title": "Publishing Disproved Claims",
+            "desc": "Claims that re-measurement proved wrong (Ops Sentinel '100% audit', RE:RUN 'AI self-diagnosis' with the prompt hint left unstated) were corrected in the README, not deleted. What AI wrote and what I did are stated separately."
+          }
+        }
+      },
       "productPlanning": {
         "title": "Product & Planning",
         "subtitle": "How I reframed problems and translated them into service structures in DailyLog, Loggy, and Promtree.",
