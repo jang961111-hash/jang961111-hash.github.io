@@ -1,0 +1,21 @@
+{
+  "short_name": "장병헌 포트폴리오",
+  "name": "장병헌 | AI 서비스 개발 · 기획 포트폴리오",
+  "description": "Portfolio of Jang Byeong Heon — an AI service builder who has shipped LLM, recommendation, and vector-search features as real user experiences, from problem framing to React implementation.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#fcfaf6",
+  "background_color": "#fcfaf6"
+}
