@@ -1,5 +1,374 @@
 export const portfolioProjects = [
   {
+    // 사실 원천: repo-revamp/repos/ops-sentinel/{metrics,fix-verification,fixes,readme-factcheck}.md,
+    // 새 README 초안 ~/ops-docs (브랜치 docs/portfolio-readme). 수정 PR #48은 2026-09-28 기준 머지 전.
+    // TODO(사용자 확인): PRD·마스터프롬프트의 작성 주체(readme-factcheck 5장 1번) — 역할 문구에 반영 필요 시 수정.
+    slug: "ops-sentinel",
+    featured: true,
+    status: "completed",
+    sortDate: "2026-08-09",
+    period: {
+      ko: "2026.08.08 - 08.09 (약 8시간 15분) · 사후 재측정·수정 2026.09.28",
+      en: "Aug 8 - 9, 2026 (about 8h 15m) · Re-measured and fixed Sep 28, 2026",
+    },
+    category: {
+      ko: "SKALA 4기 백엔드 최종 실습 (개인 과제)",
+      en: "SKALA Cohort 4 Backend Final Lab (individual)",
+    },
+    title: {
+      ko: "Ops Sentinel | 지표 이상을 규칙엔진으로 판정해 사건·조치·감사로그를 남기는 Spring Boot API",
+      en: "Ops Sentinel | A Spring Boot API That Judges Metric Anomalies with a Rule Engine and Records Incidents, Actions, and Audit Logs",
+    },
+    summary: {
+      ko: "가상 인프라 지표가 임계치를 넘으면 규칙엔진이 심각도와 조치를 정하고, 같은 리소스에 사건이 중복으로 생기지 않게 락으로 막으며, 판단을 AOP 감사로그로 남기는 백엔드입니다. LLM(gpt-4o-mini)은 이미 내려진 판단을 1~2문장으로 요약할 뿐 판단에 관여하지 않습니다.",
+      en: "A backend where a rule engine sets severity and actions when virtual infrastructure metrics cross thresholds, a lock prevents duplicate incidents for the same resource, and decisions are recorded as AOP audit logs. The LLM (gpt-4o-mini) only summarizes decisions already made in one or two sentences.",
+    },
+    context: {
+      ko: "SKALA(SK AI Leader Academy) 4기 백엔드 최종 실습 개인 과제입니다. 코드는 AI 코딩 에이전트(Claude Code)를 Ralph 루프로 돌려 작성했고(이슈 17개·PR 30개), 커밋은 모두 본인 계정입니다. 2026-09에 제출 당시 README의 수치 주장을 전부 다시 쟀고, 반증된 주장을 공개한 뒤 구조를 고쳤습니다.",
+      en: "An individual SKALA (SK AI Leader Academy) Cohort 4 backend final lab. The code was written by an AI coding agent (Claude Code) running in a Ralph loop (17 issues, 30 PRs); all commits are under my account. In September 2026 I had every numeric claim in the original README re-measured, published the claims that turned out false, and then fixed the structure.",
+    },
+    story: {
+      problem: {
+        ko: "제출 README는 '모든 판단을 감사로그에 100% 기록', '커넥션 풀 30→60 증설로 해결'이라고 적었습니다. 2026-09 재측정에서 AI 응답 지연 3초를 넣고 같은 리소스에 동시 150건을 보내자 감사로그는 172/450(38.2%)만 남았고, 409로 끝난 요청은 성공·실패 기록이 모두 없었습니다.",
+        en: "The submitted README claimed '100% of decisions recorded in the audit log' and 'fixed by growing the connection pool from 30 to 60'. In a September 2026 re-measurement with a 3-second injected AI delay and 150 concurrent requests to the same resource, only 172/450 audit records (38.2%) survived, and requests that ended in 409 left neither a success nor a failure record.",
+      },
+      insight: {
+        ko: "풀 증설은 문턱만 옮겼습니다. 원인은 세 가지로 분리됐습니다: ① 비관적 락 안에서 OpenAI를 호출해 같은 리소스 요청 전체가 AI 지연만큼 직렬화 ② 락 안의 REQUIRES_NEW 감사가 커넥션을 하나 더 빌리다 락 대기자가 풀을 다 쥐면 교착 ③ OSIV가 쥔 커넥션이 락 타임아웃 뒤 폐기됐는데 같은 요청의 재시도·감사가 그 닫힌 커넥션을 재사용.",
+        en: "Growing the pool only moved the threshold. The cause split into three: (1) calling OpenAI inside a pessimistic lock serialized every request for that resource by the AI delay; (2) the REQUIRES_NEW audit inside the lock needed a second connection and deadlocked once lock waiters held the whole pool; (3) the connection held by OSIV was discarded after a lock timeout, yet retries and audits in the same request reused that closed connection.",
+      },
+      solution: {
+        ko: "결함마다 재현 테스트를 먼저 커밋해 수정 전 실패를 확인한 뒤 고쳤습니다. AI 요약은 커밋 후 비동기(AFTER_COMMIT + 전용 풀)로 옮기고, OSIV를 끄고, 감사 기록을 트랜잭션 위치에 따라 분기(트랜잭션 안 성공은 같은 트랜잭션, 실패는 롤백 후 기록)했으며, 락 없는 사전 조회(fast path)를 넣었습니다. 그 뒤 풀을 기본값 10으로 되돌려도 버티는지 다시 쟀습니다.",
+        en: "For each defect, a reproduction test was committed first and its failure confirmed before the fix. The AI summary moved to after-commit async (AFTER_COMMIT + a dedicated pool), OSIV was turned off, audit recording was split by transaction position (success inside a transaction joins it; failure is recorded after rollback), and a lock-free pre-check (fast path) was added. Then I re-measured whether it holds with the pool back at the default of 10.",
+      },
+    },
+    team: {
+      ko: "개인 과제 (커밋 작성자 1명)",
+      en: "Individual (single commit author)",
+    },
+    role: {
+      ko: "주제·범위 설정, AI 코딩 에이전트 지시와 검증 구조 설계, 사후 재측정·수정 지시와 검수 (코드 작성은 Claude Code)",
+      en: "Topic and scope, directing the AI coding agent and designing its verification, directing and reviewing the re-measurement and fixes (code written by Claude Code)",
+    },
+    tags: {
+      ko: ["Java 21", "Spring Boot 3.3", "JPA + MyBatis", "동시성", "JaCoCo", "GitHub Actions", "AI 코딩 에이전트"],
+      en: ["Java 21", "Spring Boot 3.3", "JPA + MyBatis", "Concurrency", "JaCoCo", "GitHub Actions", "AI Coding Agent"],
+    },
+    highlights: {
+      ko: [
+        "판단은 결정론 규칙엔진, LLM은 사후 요약만 하도록 경계를 나눴습니다. LLM 결과는 aiSummary 필드에만 들어갑니다.",
+        "풀 10·같은 리소스 동시 150건·AI 지연 3초에서 수정 전 201 24건 / 500 372건(p95 30.19s) → 수정 후 201 450/450, 감사 450/450(p95 0.11s). 2026-09 재측정, H2 인메모리·단일 JVM.",
+        "같은 리소스 20건·AI 지연 3초에서 p95 3.05s·6.6 rps → 0.05s·381.9 rps (풀 30).",
+        "CI(GitHub Actions)를 처음 붙이자 로컬(macOS)에서 안 보이던 버그가 드러났습니다: Linux JVM은 나노초, H2 TIMESTAMP는 마이크로초라 해결 시각 비교가 실패 → 운영 코드에서 마이크로초로 절삭.",
+        "독립 리뷰 에이전트가 비동기 요약 덮어쓰기와 rollback-only 커밋의 500을 지적 → 재현 테스트로 실패 확인 후 @DynamicUpdate·재시도 목록 추가로 반영. 테스트 46 → 56, 라인 커버리지 70.0% → 80.0%.",
+      ],
+      en: [
+        "Split the boundary so a deterministic rule engine decides and the LLM only summarizes afterwards; LLM output only goes into the aiSummary field.",
+        "Pool 10, 150 concurrent requests to one resource, 3 s AI delay: before, 201 ×24 / 500 ×372 (p95 30.19 s) → after, 201 450/450 and audit 450/450 (p95 0.11 s). Re-measured Sep 2026, H2 in-memory, single JVM.",
+        "20 requests to one resource with a 3 s AI delay: p95 3.05 s at 6.6 rps → 0.05 s at 381.9 rps (pool 30).",
+        "Adding CI (GitHub Actions) exposed a bug invisible on macOS: Linux JVMs produce nanoseconds while H2 TIMESTAMP stores microseconds, so a resolved-time comparison failed → truncated to microseconds in production code.",
+        "An independent review agent flagged async-summary overwrites and a 500 from rollback-only commits → confirmed with reproduction tests, then fixed with @DynamicUpdate and an added retry case. Tests 46 → 56, line coverage 70.0% → 80.0%.",
+      ],
+    },
+    proof: {
+      ko: [
+        "제출 당시 주장을 스스로 다시 재고, 틀린 주장(감사 100%, 풀 증설로 해결, 타임아웃 3초)을 README에 공개한 뒤 구조로 고쳤습니다.",
+        "로그 집계(락 타임아웃 87 = 409 수, 감사 실패 174 = 87×2)로 가설을 검증해 원인 세 가지를 분리했습니다.",
+      ],
+      en: [
+        "Re-measured my own submitted claims, published the false ones (100% audit, fixed by pool growth, 3 s timeout) in the README, and then fixed the structure.",
+        "Separated three causes by testing hypotheses against log counts (lock timeouts 87 = number of 409s; audit failures 174 = 87×2).",
+      ],
+    },
+    metrics: [
+      {
+        value: "450/450",
+        label: {
+          ko: "감사 기록, 풀 10·동시 150건·AI 지연 3초 (수정 전 500 372건)",
+          en: "Audit records, pool 10 · 150 concurrent · 3 s AI delay (500 ×372 before)",
+        },
+      },
+      {
+        value: "3.05s → 0.05s",
+        label: {
+          ko: "p95, 같은 리소스 20건·AI 지연 3초",
+          en: "p95, 20 requests to one resource · 3 s AI delay",
+        },
+      },
+      {
+        value: "46 → 56",
+        label: {
+          ko: "테스트 수 (라인 커버리지 70.0% → 80.0%)",
+          en: "Tests (line coverage 70.0% → 80.0%)",
+        },
+      },
+    ],
+    caseStudy: {
+      title: {
+        ko: "Decision Deep Dive | 풀을 늘리지 않고 구조를 고쳤다",
+        en: "Decision Deep Dive | Fixing the Structure Instead of Growing the Pool",
+      },
+      summary: {
+        ko: "커넥션 풀 증설은 붕괴 문턱을 옮길 뿐이라는 것을 수치로 확인하고, 풀을 기본값 10으로 되돌린 채 동시 150건을 버티게 한 결정",
+        en: "Measured that pool growth only moves the collapse threshold, then made 150 concurrent requests hold with the pool back at the default of 10",
+      },
+      content: {
+        ko: "제출 당시에는 동시 요청에서 500이 나자 풀을 30, 60으로 늘렸고 40건 테스트가 통과해 해결됐다고 적었습니다. 재측정해 보니 풀 60도 150건에서 무너졌고(409 91~93건, 감사 38~39%), 키가 없어 AI 지연이 0일 때도 첫 라운드에서 같은 붕괴가 재현됐습니다. 버티는 한계는 대략 '동시 대기 요청 수 < 풀 크기 − 1'이었고, AI 지연은 그 기간을 늘릴 뿐이었습니다. 그래서 락 보유 구간을 조회·생성·조치 기록으로 줄이고 감사가 락 안에서 커넥션을 새로 빌리지 않게 바꾼 뒤, 풀을 10으로 되돌려 다시 쟀습니다. 대가도 적었습니다: 롤백된 트랜잭션의 성공 기록은 남지 않고, 생성 직후 조회하면 폴백 요약이 보이며, 선점 로직은 단일 JVM 기준입니다. PostgreSQL 프로필에서의 부하는 재지 않았습니다.",
+        en: "At submission time, 500s under concurrency led to growing the pool to 30 and then 60; a 40-request test passed and the README called it fixed. Re-measurement showed pool 60 also collapsing at 150 requests (409 ×91-93, audit 38-39%), and the same collapse reproduced in the first round even with zero AI delay. The limit was roughly 'concurrent waiters < pool size − 1', and the AI delay only stretched that window. So I narrowed the lock to lookup, create, and action recording, stopped the audit from borrowing a new connection inside the lock, returned the pool to 10, and measured again. The trade-offs are written down too: success records of rolled-back transactions are not kept, a read right after creation shows the fallback summary, and the logic assumes a single JVM. Load on the PostgreSQL profile was not measured.",
+      },
+    },
+    sections: [
+      {
+        id: "troubleshooting-lock",
+        title: {
+          ko: "트러블슈팅 1 — 락 안의 AI 호출 (재현 → 원인 → 수정 → 실측)",
+          en: "Troubleshooting 1 — AI Call Inside the Lock (reproduce → cause → fix → measure)",
+        },
+        body: {
+          ko: "재현: 가짜 OpenAI(지연 1.5s)로 같은 리소스 10건을 동시에 보내자 10건 전부 1,656~1,670ms가 걸렸습니다. 원인: 조치 결정 메서드 안의 요약 호출이 Resource 비관적 락 보유 구간에 있어, 락을 쥔 1건만 AI를 부르는데도 나머지 대기 요청이 모두 AI 지연만큼 기다렸습니다. 수정: 폴백 문구를 먼저 저장해 커밋하고, 커밋 후 이벤트 리스너가 전용 스레드 풀에서 요약을 만들어 UPDATE합니다. 실측: 테스트 최대 지연 1,670ms → 750ms 미만, 부하(N=20·AI 3초) p95 3.05s → 0.05s, 6.6 → 381.9 rps. 부수 발견: '타임아웃 3초'는 연결·읽기 단계에 각각 걸려 최악 5.86초 동안 락을 쥐었습니다.",
+          en: "Reproduce: with a fake OpenAI (1.5 s delay), 10 concurrent requests to one resource all took 1,656-1,670 ms. Cause: the summary call sat inside the Resource pessimistic lock, so although only the lock holder called the AI, every waiter paid the AI delay. Fix: save and commit a fallback text first, then an after-commit event listener builds the summary on a dedicated pool and UPDATEs it. Measured: max test latency 1,670 ms → under 750 ms; under load (N=20, 3 s AI) p95 3.05 s → 0.05 s, 6.6 → 381.9 rps. Side finding: the '3-second timeout' applied separately to connect and read, holding the lock for up to 5.86 s.",
+        },
+      },
+      {
+        id: "troubleshooting-audit",
+        title: {
+          ko: "트러블슈팅 2 — '감사로그 100%'가 거짓이었다 (OSIV가 숨긴 원인)",
+          en: "Troubleshooting 2 — The '100% Audit' Claim Was False (the Cause OSIV Hid)",
+        },
+        body: {
+          ko: "재현: 409로 끝난 요청의 FAIL 감사가 0건이었습니다. 처음 가설(락 안 REQUIRES_NEW 교착)은 맞았지만 트랜잭션 밖에서 나는 실패 기록까지 사라지는 이유를 설명하지 못했습니다. 원인 확인: 측정 로그를 집계하니 락 타임아웃은 요청당 한 번(87건 = 409 수)뿐이고, 이후 재시도 261건과 감사 174건(= 87×2)이 모두 이미 닫힌 커넥션으로 실패했습니다. Spring Boot 기본값 open-in-view가 요청 동안 커넥션을 쥐고 있었기 때문입니다. 수정: OSIV 끔 + 감사 기록을 트랜잭션 위치에 따라 분기. 기여 분리: OSIV만 끈 상태에서는 20건이 모두 201이지만 2.14초(락 교착 잔존) → 둘 다 고친 뒤 0.076초. 실측: 풀 60·동시 150건·AI 3초 감사 172/450 → 450/450.",
+          en: "Reproduce: requests ending in 409 had zero FAIL audits. The first hypothesis (REQUIRES_NEW deadlock inside the lock) was right but could not explain why failure records written outside the transaction also vanished. Confirming the cause: counting the logs showed one lock timeout per request (87 = number of 409s), after which 261 retries and 174 audits (= 87×2) all failed on an already-closed connection, because Spring Boot's default open-in-view held the connection for the whole request. Fix: turn OSIV off and split audit recording by transaction position. Isolating contributions: with only OSIV off, 20 requests all returned 201 but took 2.14 s (deadlock still present) → 0.076 s after both fixes. Measured: pool 60, 150 concurrent, 3 s AI — audit 172/450 → 450/450.",
+        },
+      },
+      {
+        id: "limits",
+        title: {
+          ko: "AI와 사람의 몫, 그리고 한계",
+          en: "Who Did What, and Limits",
+        },
+        body: {
+          ko: "코드는 처음 제출본부터 사후 수정까지 Claude Code가 작성했습니다. 제 몫은 주제·범위 설정(SK AX×대신증권 에이전틱 AIOps 사례를 개인 과제 규모로 축소, 판단/설명 분리), 에이전트 결과를 별도 리뷰 에이전트와 '콜드스타트 채점'(사전지식 없는 에이전트가 제출 zip을 풀어 서버를 띄움)으로 두 번 검증하게 한 구조, 그리고 2026-09 재측정·수정의 지시와 검수입니다. 수정은 PR #48(2026-09-28 기준 리뷰 대기)에 있고 수치는 그 브랜치 기준입니다. 한계: H2 인메모리·단일 JVM 측정이며 PostgreSQL 프로필 부하는 재지 않았습니다. 재시도 backoff 없음, 스케줄러 on/off 불가는 남은 과제입니다.",
+          en: "Claude Code wrote the code, from the first submission through the later fixes. My part: setting topic and scope (scaling the SK AX × Daishin Securities agentic AIOps case down to an individual lab, separating judgment from explanation), making the agent's output go through two separate checks (a separate review agent and a 'cold-start grading' where an agent with no prior context unzips the submission and boots the server), and directing and reviewing the September 2026 re-measurement and fixes. The fixes are in PR #48 (awaiting review as of Sep 28, 2026) and the numbers are measured on that branch. Limits: measured on H2 in-memory with a single JVM; load on the PostgreSQL profile was not measured. No retry backoff and no scheduler toggle remain open.",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["GitHub 저장소", "수정 PR #48 (재현 테스트·전후 측정)", "트러블슈팅·회고 문서", "측정 스크립트·원본 로그 (레포 밖)"],
+      en: ["GitHub repository", "Fix PR #48 (reproduction tests, before/after)", "Troubleshooting & retrospective docs", "Measurement scripts & raw logs (outside the repo)"],
+    },
+    interviewQuestions: {
+      ko: [
+        "커넥션 풀을 늘렸는데 왜 해결이 아니었나요? 무엇으로 확인했나요?",
+        "OSIV가 감사 기록 유실과 어떻게 연결됐고, 기여도를 어떻게 분리했나요?",
+        "AI 에이전트가 쓴 코드를 어떤 방식으로 검증했나요?",
+      ],
+      en: [
+        "Why was growing the connection pool not a fix, and how did you confirm it?",
+        "How was OSIV linked to the lost audit records, and how did you isolate its contribution?",
+        "How did you verify code written by an AI agent?",
+      ],
+    },
+    heroImage: "/projects/ops-sentinel/concurrency-check.webp",
+    screenshots: [
+      {
+        src: "/projects/ops-sentinel/concurrency-check.webp",
+        alt: {
+          ko: "제출 당시(2026-08) 동시 10건 중복 생성 방지 확인 캡처 — 이 조건에서는 통과했지만 150건 부하에서는 감사 유실이 있었습니다",
+          en: "Capture from submission time (Aug 2026): 10 concurrent requests create exactly one incident — this passed, but audit loss appeared under 150-request load",
+        },
+      },
+    ],
+    links: {
+      github: "https://github.com/jang961111-hash/ops-sentinel",
+      fixPr: "https://github.com/jang961111-hash/ops-sentinel/pull/48",
+    },
+  },
+  {
+    // 사실 원천: repo-revamp/repos/rerun-self-healing-workflow/{metrics,fixes,readme-factcheck}.md,
+    // 새 README 초안 ~/rerun-docs (브랜치 docs/portfolio-readme). 보완 PR #2는 2026-09-28 기준 머지 전.
+    // TODO(사용자 확인): 원티드 AI Championship 2026 실제 제출 여부·결과, 대회 팀 구성 — 확인 전까지 쓰지 않음.
+    slug: "rerun",
+    featured: true,
+    status: "completed",
+    sortDate: "2026-09-15",
+    period: {
+      ko: "2026.09.15 MVP (약 18분) · 사후 실측·보완 2026.09.28",
+      en: "MVP Sep 15, 2026 (about 18 min) · Measured and hardened Sep 28, 2026",
+    },
+    category: {
+      ko: "원티드 AI Championship 2026 출품 목적 데모",
+      en: "Demo built for Wanted AI Championship 2026",
+    },
+    title: {
+      ko: "RE:RUN | 실패하면 AI가 수정안을 내고, 사람이 승인해야 다시 도는 업무 자동화 데모",
+      en: "RE:RUN | When a Workflow Fails, AI Proposes a Fix and It Only Re-runs After a Human Approves",
+    },
+    summary: {
+      ko: "이력서 추출 워크플로우가 데이터 계약(zod) 검증에서 실패하면, 실제 LLM(gpt-4.1-mini)이 원인과 프롬프트 수정안을 내고, 사람이 diff를 보고 승인해야만 실패 단계부터 다시 실행되는 Next.js 데모입니다. 승인 게이트는 서버에서 HMAC 서명으로 강제합니다.",
+      en: "A Next.js demo: when a résumé-extraction workflow fails its data contract (zod), a real LLM (gpt-4.1-mini) proposes a root cause and a prompt fix, and the workflow re-runs from the failed step only after a human reviews the diff and approves. The server enforces the approval gate with HMAC signatures.",
+    },
+    context: {
+      ko: "MVP는 AI 코딩 에이전트(Claude Code) 세션 하나로 약 18분 만에 만들었고, 커밋은 모두 본인 계정입니다. 이후 제 일은 그 MVP를 실측하고, 주장과 다른 부분을 찾아 고치는 것이었습니다.",
+      en: "The MVP was built by a single AI coding agent (Claude Code) session in about 18 minutes; all commits are under my account. My work afterwards was to measure that MVP, find where it differed from its claims, and fix it.",
+    },
+    story: {
+      problem: {
+        ko: "'AI가 스스로 고친다'는 데모는 쉽게 과장됩니다. 실제로 이 데모의 진단 프롬프트에는 '재직 기간으로 현재 시점 기준 연차를 계산하라'는 정답 방향 예시가 들어 있었고, 승인 게이트는 화면에만 있어 서버를 직접 부르면 우회할 수 있었습니다.",
+        en: "'AI fixes itself' demos are easy to overstate. In this one, the diagnosis prompt actually contained the answer's direction ('compute years of experience from employment periods as of now'), and the approval gate lived only in the UI, so calling the server directly bypassed it.",
+      },
+      insight: {
+        ko: "힌트의 효과를 말로 주장하지 않고 실험으로 쟀습니다. 성공 기준을 실행 전에 문서로 등록하고, 수정 방향 예시 3줄만 지운 서버와 원본 서버에 같은 입력을 조건당 25회 넣었습니다. 올바른 자가수정은 18/25(72%) → 0/25(0%), Fisher 양측 p<0.0001이었습니다. 힌트가 없을 때 계약을 통과한 6회는 전부 '4년 경력자를 0년'으로 기록했는데 zod 계약은 이를 잡지 못했습니다.",
+        en: "Instead of arguing about the hint, I measured it. Success criteria were registered in writing before running; a server with only the three fix-direction example lines removed and the original server got the same input 25 times per condition. Correct self-repair went from 18/25 (72%) to 0/25 (0%), two-sided Fisher p < 0.0001. The six runs that passed the contract without the hint all recorded a four-year candidate as '0 years' — and the zod contract did not catch it.",
+      },
+      solution: {
+        ko: "결과를 README 첫 화면에 그대로 싣고, 이 레포를 '단일 시나리오 자가수정 데모'로 다시 정의했습니다. '계약 통과'와 '값이 맞음'이 다르다는 결과를 사람 승인 게이트를 없애면 안 되는 근거로 썼습니다. 보완 PR에서는 승인 게이트를 HMAC 서명 3단계로 서버에서 강제하고, 진단 입력을 서버 값으로 고정했으며, LLM 엔드포인트에 속도 제한을 두고, 테스트 0개 → 42개와 CI를 붙였습니다.",
+        en: "I put the result on the README's first screen and redefined the repo as a 'single-scenario self-repair demo'. The finding that 'passes the contract' and 'the value is right' are different became the argument for keeping the human approval gate. In the hardening PR, the server enforces the gate with three HMAC signature stages, diagnosis inputs are pinned to server-side values, LLM endpoints are rate-limited, and tests went from 0 to 42 with CI added.",
+      },
+    },
+    team: {
+      ko: "커밋 작성자 1명 (본인)",
+      en: "Single commit author (me)",
+    },
+    role: {
+      ko: "기획 원칙·수용 기준 확정, 실측 설계, 결함 보완 지시와 검수 (MVP·보완 코드 작성은 Claude Code)",
+      en: "Product principles and acceptance criteria, measurement design, directing and reviewing fixes (MVP and fix code written by Claude Code)",
+    },
+    tags: {
+      ko: ["Next.js 16", "TypeScript", "OpenAI gpt-4.1-mini", "zod", "Human-in-the-loop", "vitest", "Playwright"],
+      en: ["Next.js 16", "TypeScript", "OpenAI gpt-4.1-mini", "zod", "Human-in-the-loop", "vitest", "Playwright"],
+    },
+    highlights: {
+      ko: [
+        "코드 작성 전에 CONTRACT.md에 수용 기준 A1~A8과 '승인 게이트 우회 경로가 코드에 있으면 결함'이라는 스코프 가드를 먼저 두게 했습니다.",
+        "힌트 제거 실험: 올바른 자가수정 72% → 0% (조건당 n=25, 성공 기준 사전 등록, 2026-09-28 재측정).",
+        "느슨한 판정식(!r.ok)이 서버가 없는 빈 포트에서도 '10/10 결정적 실패'를 냈습니다 → HTTP 200 + 오류 문구 + raw null을 모두 보는 엄격 판정으로 바꿔 빈 포트 0/10, 실제 서버 순차 20/20 + 동시 10/10.",
+        "승인 게이트를 고친 뒤 독립 리뷰에서 진단 입력 위조라는 2차 우회가 나왔습니다 → 재현 테스트(5 failed)로 확인 후 서버 값 고정으로 통과.",
+        "실제 LLM으로 E2E 전체 사이클 5/5 통과, p50 18.4초, 1사이클 약 $0.0045(호출 10회·토큰 약 6.2k, 공개 단가 가정·청구서 미대조).",
+      ],
+      en: [
+        "Before any code, had CONTRACT.md set acceptance criteria A1-A8 and a scope guard: 'any code path that bypasses the approval gate is a defect'.",
+        "Hint-removal experiment: correct self-repair 72% → 0% (n=25 per condition, success criteria pre-registered, re-measured Sep 28, 2026).",
+        "A loose check (!r.ok) reported '10/10 deterministic failures' even against an empty port with no server → a strict check (HTTP 200 + error text + raw null) gives 0/10 on the empty port and 20/20 sequential + 10/10 concurrent on the real server.",
+        "After the approval gate was fixed, an independent review found a second bypass (forged diagnosis input) → confirmed with a reproduction test (5 failed), fixed by pinning server-side values.",
+        "Full E2E cycle with the real LLM passed 5/5, p50 18.4 s; about $0.0045 per cycle (10 calls, ~6.2k tokens, assuming list price; not reconciled with the invoice).",
+      ],
+    },
+    proof: {
+      ko: [
+        "자기 데모에 불리한 결과(72% → 0%)를 사전 등록 실험으로 확인하고 README 첫 화면에 공개했습니다.",
+        "'계약을 통과했다'와 '값이 맞다'를 구분해, 사람 승인 게이트를 서버에서 강제하는 근거로 삼았습니다.",
+      ],
+      en: [
+        "Confirmed a result unfavorable to my own demo (72% → 0%) with a pre-registered experiment and published it on the README's first screen.",
+        "Separated 'passes the contract' from 'the value is correct' and used it as the reason to enforce human approval on the server.",
+      ],
+    },
+    metrics: [
+      {
+        value: "72% → 0%",
+        label: {
+          ko: "힌트 제거 시 올바른 자가수정 (조건당 n=25)",
+          en: "Correct self-repair without the hint (n=25 each)",
+        },
+      },
+      {
+        value: "0 → 42",
+        label: {
+          ko: "테스트 수 (보완 PR, CI 통과)",
+          en: "Tests (hardening PR, CI passing)",
+        },
+      },
+      {
+        value: "5/5",
+        label: {
+          ko: "실제 LLM E2E 전체 사이클, p50 18.4초",
+          en: "Full E2E cycles with a real LLM, p50 18.4 s",
+        },
+      },
+    ],
+    caseStudy: {
+      title: {
+        ko: "Decision Deep Dive | 불리한 실험 결과를 첫 화면에 올린 이유",
+        en: "Decision Deep Dive | Why the Unfavorable Result Went on the First Screen",
+      },
+      summary: {
+        ko: "'자가수정 엔진'이라는 주장을 실험으로 좁혀, 데모가 실제로 증명하는 범위만 말하기로 한 결정",
+        en: "Narrowing the 'self-healing engine' claim through an experiment, and stating only what the demo actually proves",
+      },
+      content: {
+        ko: "MVP는 A1~A7 수용 기준을 18분 만에 통과했습니다. 하지만 진단 프롬프트에 정답 방향이 들어 있다는 것을 알고 나서는, 이 데모를 범용 자가진단이라고 부를 수 없었습니다. 그래서 성공 기준(재추출이 계약 통과 + 연차 4~5년)을 먼저 문서로 등록하고 힌트 있음·없음 두 조건을 25회씩 돌렸습니다. 힌트가 있어도 6/25는 모델이 '현재 시점'의 연도를 바꿔 써서 틀렸고, temperature 0이어도 수정안 문구는 25회 중 22가지로 달랐습니다. 한계도 그대로 적었습니다: 시나리오는 지원자 한 명뿐이고, HMAC 게이트는 '사람이 눌렀다'를 증명하지 못하며, 속도 제한은 서버리스 인스턴스마다 따로 셉니다.",
+        en: "The MVP passed acceptance criteria A1-A7 in 18 minutes. Once I knew the diagnosis prompt contained the answer's direction, I could not call it general self-diagnosis. So I registered the success criterion (re-extraction passes the contract and gives 4-5 years) in writing first and ran both conditions, with and without the hint, 25 times each. Even with the hint, 6/25 were wrong because the model rewrote the 'current' year, and at temperature 0 the fix text still varied 22 ways across 25 runs. The limits are written down too: there is only one scenario candidate, the HMAC gate cannot prove a human clicked, and rate limits are counted per serverless instance.",
+      },
+    },
+    sections: [
+      {
+        id: "troubleshooting-build",
+        title: {
+          ko: "트러블슈팅 — 로컬에선 되던 '키 없는 빌드'가 CI에서 실패",
+          en: "Troubleshooting — 'Build Without a Key' Worked Locally but Failed in CI",
+        },
+        body: {
+          ko: "재현: CI 첫 실행에서 OpenAI 키 없이 next build가 실패했습니다. 원인: OpenAI 클라이언트를 모듈 최상단에서 만들어 import만으로 키를 요구했는데, 로컬 셸에는 키 환경변수가 남아 있어 착시가 생겼습니다. 수정: 클라이언트를 첫 호출 때 생성하고, env -u로 키를 지운 상태에서 빌드를 다시 검증. 결과: CI 실패 → success. 같은 방식으로 자동 진단에 실제 오류 대신 기본 문구가 전달되던 React stale closure도 E2E 5/5 재현 후 오류를 반환값으로 직접 넘겨 UI 테스트 2/2로 고정했습니다.",
+          en: "Reproduce: the first CI run failed next build without an OpenAI key. Cause: the OpenAI client was created at module top level, so importing alone required a key; a leftover key in the local shell hid the problem. Fix: create the client on first call and re-verify the build with the key removed via env -u. Result: CI failure → success. In the same way, a React stale closure that sent a default message instead of the real error to auto-diagnosis was reproduced 5/5 in E2E, then fixed by passing the error as a return value and locked in with UI tests (2/2).",
+        },
+      },
+      {
+        id: "limits",
+        title: {
+          ko: "AI와 사람의 몫, 그리고 한계",
+          en: "Who Did What, and Limits",
+        },
+        body: {
+          ko: "MVP와 보완 코드는 Claude Code가 작성했습니다. 제 몫은 기존 프로젝트 재활용안을 접고 'AI는 제안만, 적용은 사람 승인' 원칙을 확정한 것, 수용 기준과 스코프 가드를 먼저 두게 한 것, 엄격 판정식과 힌트 제거 실험을 설계한 것, 결함마다 재현 테스트를 먼저 쓰게 하고 독립 리뷰 지적을 반영하게 한 것입니다. 보완은 PR #2(2026-09-28 기준 리뷰 대기)에 있습니다. 한계: 배포본이 없고, 시나리오는 1건이며, 측정 스크립트는 아직 레포 밖에 있습니다.",
+          en: "Claude Code wrote the MVP and the fixes. My part: dropping the idea of reusing an older project and fixing the principle 'AI only proposes; applying needs human approval', having acceptance criteria and a scope guard set first, designing the strict check and the hint-removal experiment, and requiring a reproduction test before each fix plus applying the independent review's findings. The fixes are in PR #2 (awaiting review as of Sep 28, 2026). Limits: no deployment, a single scenario, and the measurement scripts still live outside the repo.",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["GitHub 저장소", "보완 PR #2 (재현 테스트·CI)", "힌트 제거 실험 결과표", "E2E 증빙 스크린샷 7장"],
+      en: ["GitHub repository", "Hardening PR #2 (reproduction tests, CI)", "Hint-removal experiment table", "Seven E2E evidence screenshots"],
+    },
+    interviewQuestions: {
+      ko: [
+        "힌트 제거 실험의 성공 기준을 왜 먼저 등록했고, 결과를 어떻게 해석했나요?",
+        "'계약 통과'와 '값이 맞음'이 다르다는 걸 설계에 어떻게 반영했나요?",
+        "승인 게이트를 서버에서 강제한 방식과 그 한계는 무엇인가요?",
+      ],
+      en: [
+        "Why register the success criteria first, and how did you interpret the result?",
+        "How did 'passes the contract' vs. 'is correct' change the design?",
+        "How does the server enforce the approval gate, and what are its limits?",
+      ],
+    },
+    heroImage: "/projects/rerun/failure-diagnosis.webp",
+    screenshots: [
+      {
+        src: "/projects/rerun/failure-diagnosis.webp",
+        alt: {
+          ko: "지원자 4 추출이 계약 검증에서 실패한 뒤 AI 자가진단 결과가 나온 화면 (데모 데이터는 가명)",
+          en: "After candidate 4 fails the contract check, the AI self-diagnosis appears (demo data is fictional)",
+        },
+      },
+      {
+        src: "/projects/rerun/approval-gate.webp",
+        alt: {
+          ko: "사람 승인 게이트 — 현재 프롬프트와 AI 수정안 diff, 승인·반려 버튼",
+          en: "Human approval gate — diff between the current prompt and the AI fix, with approve and reject",
+        },
+      },
+      {
+        src: "/projects/rerun/audit-log.webp",
+        alt: {
+          ko: "재실행 후 리포트와 사람·AI·시스템 행위를 구분한 감사 로그",
+          en: "Report after re-run and an audit log separating human, AI, and system actions",
+        },
+      },
+    ],
+    links: {
+      github: "https://github.com/jang961111-hash/rerun-self-healing-workflow",
+      fixPr: "https://github.com/jang961111-hash/rerun-self-healing-workflow/pull/2",
+    },
+  },
+  {
     slug: "argus",
     featured: true,
     status: "completed",

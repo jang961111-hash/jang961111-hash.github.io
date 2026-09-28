@@ -39,6 +39,8 @@ export const projectUiCopy = {
     demo: "서비스 링크",
     docs: "문서 자료",
     video: "데모 영상",
+    teamGithub: "팀 레포 (내 커밋)",
+    fixPr: "수정 PR",
     linksPending: "링크 정리 중",
     statusLabels: {
       planning: "Planning",
@@ -87,6 +89,8 @@ export const projectUiCopy = {
     demo: "Live link",
     docs: "Docs",
     video: "Demo video",
+    teamGithub: "Team repo (my commits)",
+    fixPr: "Fix PR",
     linksPending: "Links in preparation",
     statusLabels: {
       planning: "Planning",
