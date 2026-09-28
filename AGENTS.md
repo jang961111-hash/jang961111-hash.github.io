@@ -6,7 +6,10 @@ This repository is a React 19 + Create React App portfolio site.
 
 The current portfolio direction is:
 
-> AI/SW 기반 문제정의형 서비스 기획자 / PM
+> AI 서비스 개발자 (AI Service Developer)
+
+(Changed by user decision on 2026-09-28. The previous positioning,
+"AI/SW 기반 문제정의형 서비스 기획자 / PM", is retired. See "Portfolio Direction".)
 
 The goal is to prepare a stable portfolio for SSAFY Portfolio Week, PDF submission, and job interviews.
 
@@ -60,15 +63,26 @@ The goal is to prepare a stable portfolio for SSAFY Portfolio Week, PDF submissi
 
 Use this positioning consistently:
 
-> AI/SW 기반 문제정의형 서비스 기획자 / PM
+> AI 서비스 개발자 / AI Service Developer
+
+Decision record:
+- Decided by the user on 2026-09-28 (repo-revamp `INVENTORY.md` section 6:
+  "포지셔닝: AI 서비스 개발자 (2026-09-28 확정) — 개발 전면, 기획·문제정의는
+  '왜 이렇게 만들었나'를 설명하는 강점으로 녹임").
+- Reason: after July 2026 the strongest evidence is development work
+  (Ops Sentinel, JangBogo, RE:RUN, ARGUS) with reproduction tests,
+  independent review, and before/after measurements. The earlier
+  "문제정의형 서비스 기획자 / PM" label no longer matched that evidence.
+- This replaces the previous fixed wording "AI/SW 기반 문제정의형 서비스 기획자 / PM".
 
 Related themes:
-- Problem structuring
-- User experience design
-- AI/SW technical understanding
-- Product planning
-- Collaboration and documentation
-- SSAFY project-based growth
+- Building AI services end to end (LLM boundaries, backend, frontend)
+- Measurement- and verification-driven development
+  (reproduction tests first, independent review, before/after numbers with conditions)
+- Honest attribution: code written by AI coding agents is stated as such;
+  what the candidate directed and verified is stated separately
+- Problem framing as the explanation of "why it was built this way"
+- SSAFY / SKALA project-based growth
 
 Avoid mixing too many identity labels such as:
 - PM형 개발자
@@ -85,7 +99,7 @@ Main home text:
 - `src/locales/en/translation.json`
 
 Project detail data:
-- `src/content/projects.js`
+- `src/content/projects/data.js` (selectors: `src/content/projects/selectors.js`)
 
 Main layout/components:
 - `src/App.js`
