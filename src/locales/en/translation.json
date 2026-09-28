@@ -24,7 +24,7 @@
     "portfolioLabel": "I turn AI into services",
     "focusLabel": "How I Work",
     "subtitle": "An AI service builder who has shipped LLM, recommendation, and vector-search features as real user experiences.",
-    "mission": "With structured thinking from a Philosophy degree and 1,725 hours of AI/SW training at SSAFY, I complete the full cycle from problem framing (planning) to React implementation.",
+    "mission": "With structured thinking from a Philosophy degree and 1,628 hours of AI/SW training at SSAFY, I complete the full cycle from problem framing (planning) to React implementation.",
     "proofItems": {
       "product": "Led DailyLog as PM and won the SSAFY Specialized Project Excellence Award (3rd place)",
       "ai": "Designed one reflection flow combining voice input (SenseVoice), recommendations (Thompson Sampling), and vector search (pgvector)",
@@ -51,7 +51,7 @@
       "title": "At a glance",
       "projects": "Projects",
       "awards": "Awards",
-      "awardsNote": "SSAFY Excellence · Oregon UAS · Startup Camp Best Team",
+      "awardsNote": "SKT promp.T Top Prize · SSAFY Excellence · Oregon UAS · Startup Camp Best Team",
       "hackathons": "Hackathons & challenges",
       "training": "Samsung SW·AI Academy for Youth",
       "trainingValue": "SSAFY 14th"
@@ -359,6 +359,13 @@
   "experience": {
     "title": "Selected Experience",
     "jobs": {
+      "skalaTraining": {
+        "title": "AI Training & Team Projects",
+        "company": "SKALA (SK AI Leader Academy), Cohort 4",
+        "period": "2026 - Present",
+        "desc1": "Currently enrolled in SKALA (SK AI Leader Academy) Cohort 4, working on team projects including AI web service design.",
+        "desc2": "Led backend design and the final presentation for the ARGUS mini-project (five-person team)."
+      },
       "ssafyTraining": {
         "title": "AI/SW Training & Product Projects",
         "company": "Samsung SW·AI Academy For Youth, SSAFY",
@@ -432,7 +439,7 @@
       {
         "title": "Samsung Youth SW & AI Academy (SSAFY)",
         "period": "2025.07 - 2026.03",
-        "desc": "Completed 1,725 hours of intensive training in Python, software engineering, and advanced AI (sLLM construction, etc.), gaining PM and planning experience through multiple hands-on AI/SW projects."
+        "desc": "Completed 1,628 hours of intensive training in Python, software engineering, and advanced AI (sLLM construction, etc.), gaining PM and planning experience through multiple hands-on AI/SW projects."
       },
       {
         "title": "B.A. in Philosophy, Chonnam National University",

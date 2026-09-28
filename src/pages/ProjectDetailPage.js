@@ -15,6 +15,7 @@ const linkLabelMap = {
   github: "github",
   demo: "demo",
   docs: "docs",
+  youtube: "video",
 };
 
 const VisualPlaceholder = ({ label, icon = "🖼️" }) => (

@@ -1,5 +1,540 @@
 export const portfolioProjects = [
   {
+    slug: "argus",
+    featured: true,
+    status: "completed",
+    sortDate: "2026-09-04",
+    period: {
+      ko: "2026.09.02 - 09.04 (3일)",
+      en: "Sep 2 - 4, 2026 (3 days)",
+    },
+    category: {
+      ko: "SKALA 4기 미니 프로젝트 / AI 웹 서비스 설계",
+      en: "SKALA Cohort 4 Mini-project / AI Web Service Design",
+    },
+    title: {
+      ko: "ARGUS | 반도체 fab 부품 교체 승인을 돕는 온프레미스 AI 에이전트",
+      en: "ARGUS | An On-Premise AI Agent for Semiconductor Fab Part-Replacement Approval",
+    },
+    summary: {
+      ko: "반도체 fab 설비의 부품 교체 요청이 들어오면 AI 에이전트가 규격·호환, 법령·조문, 안전서류를 검토해 근거를 붙이고, 승인 여부는 안전관리자가 결정하는 온프레미스 승인 워크플로우 서비스입니다.",
+      en: "An on-premise approval workflow for semiconductor fab part replacements: AI agents review spec compatibility, applicable regulations, and safety documents and attach the evidence, while the safety manager makes the approval decision.",
+    },
+    context: {
+      ko: "SKALA(SK AI Leader Academy) 4기 AI 웹 서비스 설계 미니 프로젝트로, 5인 팀이 3일 동안 기획·설계·구현·발표까지 진행했습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사 환경을 전제로 설계했습니다.",
+      en: "A SKALA (SK AI Leader Academy) Cohort 4 mini-project in AI web service design: a five-person team went from planning to design, implementation, and presentation in three days, assuming partner-company sites that cannot use external cloud LLMs.",
+    },
+    story: {
+      problem: {
+        ko: "부품의 실제 교체는 2시간이면 끝나는데, 승인이 훨씬 오래 걸렸습니다. 규격 확인·법령 조사·안전 승인에 필요한 정보가 여러 곳에 흩어져 있었고, 대상 협력사는 보안상 외부 클라우드 LLM을 쓸 수 없었습니다.",
+        en: "The physical part swap takes about two hours, but approval takes far longer. The information needed for spec checks, regulatory review, and safety sign-off is scattered across sources, and the target partner companies cannot use external cloud LLMs for security reasons.",
+      },
+      insight: {
+        ko: "SK하이닉스 설비 담당자를 현장 인터뷰한 결과 처음 세운 두 가설이 기각되었고, 그 결과를 반영해 API 설계를 다시 잡았습니다. 설계 원칙은 '증명은 에이전트가, 판단은 사람이'로 정했습니다 — 에이전트는 근거를 모으고, 승인·거절은 안전관리자가 합니다.",
+        en: "A field interview with an SK hynix equipment engineer rejected our first two hypotheses, and we redesigned the API around what we learned. The guiding principle became 'agents prove, people decide' — agents gather evidence; the safety manager approves or rejects.",
+      },
+      solution: {
+        ko: "엔지니어가 교체 요청을 등록하면 역할별 AI 에이전트(규격·호환 / 법령·조문 / 안전서류)가 검토 결과를 만들고, 화면은 서버가 지정한 간격으로 진행 상태를 폴링해 보여줍니다. 안전관리자는 AI 결과물을 읽기 전용으로 확인한 뒤 승인 또는 거절(사유 포함)을 결정합니다. AI 공급자 설정은 기본값이 Mock·외부 전송 차단(egress_allowed=false)이며, 외부 전송이 꺼진 상태에서 외부 AI 공급자를 지정하면 서버가 기동을 거부하도록 했습니다.",
+        en: "An engineer files a replacement request; role-specific AI agents (spec & compatibility / regulations / safety documents) produce review results while the UI polls progress at a server-specified interval. The safety manager reviews the AI output read-only, then approves or rejects with a reason. The AI provider config defaults to Mock with external egress disabled (egress_allowed=false), and the server refuses to start if an external AI provider is configured while egress is off.",
+      },
+    },
+    team: {
+      ko: "5인 팀 (SKALA 4기)",
+      en: "Five-person team (SKALA Cohort 4)",
+    },
+    role: {
+      ko: "백엔드 설계 · 최종 발표",
+      en: "Backend design & final presentation",
+    },
+    tags: {
+      ko: ["AI 에이전트", "온프레미스", "Human-in-the-loop", "FastAPI", "Vue 3"],
+      en: ["AI Agents", "On-Premise", "Human-in-the-loop", "FastAPI", "Vue 3"],
+    },
+    highlights: {
+      ko: [
+        "SK하이닉스 설비 담당자 현장 인터뷰로 두 가설이 기각된 뒤, API 설계를 다시 잡았습니다.",
+        "'증명은 에이전트가, 판단은 사람이' 원칙으로 AI 검토 결과는 근거로만 쓰고 승인·거절은 안전관리자가 하도록 설계했습니다.",
+        "외부 전송 차단을 기본값으로 두고, 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 해 온프레미스 전제를 코드로 강제했습니다.",
+        "OpenAPI 명세, DBML 8개 테이블, 41장 발표자료로 설계부터 발표까지 3일 안에 정리했습니다.",
+        "기각된 가설은 발표자료에서 지우지 않고 의도적으로 남겼고, 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
+      ],
+      en: [
+        "After a field interview with an SK hynix equipment engineer rejected two hypotheses, we redesigned the API.",
+        "Under 'agents prove, people decide', AI review output serves only as evidence; approval and rejection stay with the safety manager.",
+        "Made egress-off the default and required explicit permission before any external AI provider can start — enforcing the on-premise premise in code.",
+        "Delivered an OpenAPI spec, an 8-table DBML schema, and a 41-slide deck within three days.",
+        "Kept the rejected hypotheses in the deck on purpose, and left out effect numbers such as approval-time reduction because they were never measured.",
+      ],
+    },
+    proof: {
+      ko: [
+        "현장 인터뷰로 가설을 검증하고, 틀린 가설을 설계 변경의 근거로 남기는 방식으로 문제를 정의했습니다.",
+        "AI의 역할(근거 수집)과 사람의 역할(판단)을 나누는 경계를 제품 구조와 설정값으로 설계했습니다.",
+        "측정하지 않은 효과는 주장하지 않는다는 원칙으로 결과를 보고했습니다.",
+      ],
+      en: [
+        "Defined the problem by testing hypotheses in the field and keeping the wrong ones as the rationale for design changes.",
+        "Designed the boundary between AI (evidence gathering) and people (judgment) into both the product flow and its configuration.",
+        "Reported results on the principle of never claiming an effect that was not measured.",
+      ],
+    },
+    metrics: [
+      {
+        value: "On-prem",
+        label: {
+          ko: "외부 전송 차단 기본값 (egress_allowed=false)",
+          en: "Egress disabled by default (egress_allowed=false)",
+        },
+      },
+      {
+        value: "72 / 0",
+        label: {
+          ko: "라이브 E2E 통과 / 실패 (실행 로그 기준)",
+          en: "Live E2E passed / failed (from run log)",
+        },
+      },
+      {
+        value: "41",
+        label: {
+          ko: "최종 발표자료 장수",
+          en: "Slides in the final deck",
+        },
+      },
+    ],
+    caseStudy: {
+      title: {
+        ko: "Decision Deep Dive | 증명은 에이전트가, 판단은 사람이",
+        en: "Decision Deep Dive | Agents Prove, People Decide",
+      },
+      summary: {
+        ko: "안전 승인처럼 책임이 따르는 결정에서 AI는 근거를 모으는 역할에 두고, 판단은 사람에게 남긴 설계",
+        en: "For accountable decisions like safety approval, AI gathers evidence and the judgment stays with people",
+      },
+      content: {
+        ko: "부품 교체 승인은 사고가 나면 책임이 따르는 결정입니다. 그래서 AI가 승인까지 대신하는 구조 대신, 규격·법령·안전서류 검토 결과를 근거로 정리해 넘기고 안전관리자가 그 근거를 읽고 승인하거나 사유를 적어 거절하는 구조를 택했습니다. 이 방향은 SK하이닉스 설비 담당자를 현장 인터뷰하며 처음 세운 두 가설이 기각된 뒤에 잡혔고, 기각된 가설은 발표자료에서 지우지 않고 남겼습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사가 대상이었기 때문에, 외부 전송 차단을 기본값으로 두고 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 설정 단계에서 막았습니다. 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
+        en: "Approving a part replacement is a decision someone is accountable for if something goes wrong. Instead of letting AI approve, we had it package spec, regulatory, and safety-document review results as evidence; the safety manager reads that evidence and approves, or rejects with a reason. This direction emerged after a field interview with an SK hynix equipment engineer rejected our first two hypotheses — and we kept those rejected hypotheses in the deck. Because the target partner companies cannot use external cloud LLMs, egress is off by default and any external AI provider must be explicitly allowed before the server will start. We did not report effect numbers such as approval-time reduction, because they were never measured.",
+      },
+    },
+    sections: [
+      {
+        id: "architecture",
+        title: {
+          ko: "시스템 구조",
+          en: "System Architecture",
+        },
+        body: {
+          ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신하고, 데이터는 PostgreSQL(Supabase)을 전제로 로컬에서는 SQLite로 검증했습니다. 에이전트는 공통 인터페이스 뒤에 두어 3일 범위에서는 고정 응답(Mock) 구현으로 흐름을 검증하고, 이후 LLM 구현체로 교체할 수 있게 설계했습니다. 엔지니어와 안전관리자 역할에 따라 화면과 권한을 나눴습니다.",
+          en: "A Vue 3 + Vite frontend talks to a FastAPI (Python) backend over REST JSON; data targets PostgreSQL (Supabase) and was verified locally on SQLite. Agents sit behind a common interface — within the three-day scope, fixed-response (Mock) implementations validated the flow, with LLM implementations swappable later. Screens and permissions are split by role: engineer and safety manager.",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["OpenAPI 명세", "DBML ERD", "아키텍처·시퀀스 다이어그램", "발표자료 41장", "화면 캡처"],
+      en: ["OpenAPI spec", "DBML ERD", "Architecture & sequence diagrams", "41-slide deck", "Screen captures"],
+    },
+    interviewQuestions: {
+      ko: [
+        "현장 인터뷰에서 어떤 가설이 기각되었고, API 설계는 어떻게 바뀌었나요?",
+        "왜 AI가 승인까지 하지 않고 근거 수집에서 멈추도록 설계했나요?",
+        "외부 LLM을 쓸 수 없는 환경이라는 제약을 설계에 어떻게 반영했나요?",
+      ],
+      en: [
+        "Which hypotheses did the field interview reject, and how did the API design change?",
+        "Why did you stop the AI at evidence gathering instead of letting it approve?",
+        "How did the no-external-LLM constraint shape the design?",
+      ],
+    },
+    heroImage: "/projects/argus/agent-run-polling.webp",
+    screenshots: [
+      {
+        src: "/projects/argus/agent-run-polling.webp",
+        alt: {
+          ko: "AI 검증 진행 화면 — 규격·호환, 법령·조문, 안전서류 에이전트의 진행 상태를 폴링으로 표시",
+          en: "AI review progress — polling the status of spec, regulation, and safety-document agents",
+        },
+      },
+      {
+        src: "/projects/argus/approval-panel.webp",
+        alt: {
+          ko: "안전관리자 요청 상세 — AI 결과물(읽기 전용)과 승인·거절 처리 패널",
+          en: "Safety manager request detail — read-only AI output and the approve/reject panel",
+        },
+      },
+      {
+        src: "/projects/argus/request-form.webp",
+        alt: {
+          ko: "엔지니어 교체 요청 등록 화면",
+          en: "Engineer replacement request form",
+        },
+      },
+    ],
+    links: {
+      github: "https://github.com/jang961111-hash/skala-argus",
+    },
+  },
+  {
+    slug: "jangbogo",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-08-04",
+    period: {
+      ko: "2026.08",
+      en: "Aug 2026",
+    },
+    category: {
+      ko: "Google x Solana AI Agentic Hackathon",
+      en: "Google x Solana AI Agentic Hackathon",
+    },
+    title: {
+      ko: "장보고(JangBogo) | AI 에이전트가 견적 검증부터 결제까지 잇는 가맹점용 게이트웨이",
+      en: "JangBogo | A Merchant Gateway Where AI Agents Go from Quote Verification to Payment",
+    },
+    summary: {
+      ko: "구매 에이전트가 가맹점 견적을 비교하고 온체인으로 결제하면, 가맹점 쪽 결정론 정책 엔진이 위임장 서명·유효기간·범위·카트·예산·온체인 지불을 6단계로 검증하는 에이전트 커머스 게이트웨이입니다.",
+      en: "An agent-commerce gateway: a buyer agent compares merchant quotes and pays on-chain, while a deterministic merchant-side policy engine verifies mandate signature, expiry, scope, cart, budget, and on-chain payment in six steps.",
+    },
+    context: {
+      ko: "Google x Solana AI Agentic Hackathon에 2인 팀 사공이(402)로 제출한 프로젝트입니다. AI Agent와 간편결제를 한 프로젝트에서 미리 경험했습니다.",
+      en: "Submitted to the Google x Solana AI Agentic Hackathon as the two-person team Sagong-i (402) — hands-on experience combining AI agents and payments in a single project.",
+    },
+    story: {
+      problem: {
+        ko: "에이전트가 스스로 구매하는 흐름이 열려도, 가맹점 입장에서는 '이 에이전트의 주문을 믿어도 되는가'라는 질문이 남습니다. 카드 결제는 본인인증 단계에 사람이 필요해 에이전트가 끝까지 결제하기 어렵습니다.",
+        en: "Even when agents can buy on their own, merchants are left asking whether they can trust an agent's order. Card payments need a human in the authentication loop, so an agent cannot complete checkout by itself.",
+      },
+      insight: {
+        ko: "경쟁 제출작들이 구매자측 한도 지갑에 집중한다고 분석하고, 비어 있던 판매자측(가맹점 온보딩 + 검증)을 겨냥했습니다. 프롬프트 인젝션은 완전히 막을 수 없다고 보고, 한도 집행은 LLM이 아니라 결정론 정책 엔진이 맡도록 신뢰 경계를 그었습니다.",
+        en: "Our analysis showed competing entries focused on buyer-side spending-limit wallets, so we targeted the empty merchant side (onboarding + verification). Since prompt injection can't be fully prevented, we drew the trust boundary so a deterministic policy engine — not the LLM — enforces limits.",
+      },
+      solution: {
+        ko: "Gemini는 견적 비교와 선택 사유 서술에만 쓰고, 결제 승인은 정책 엔진이 합니다. 가맹점은 코드 없이 온보딩해 엔드포인트를 발급받고, x402 방식(HTTP 402 → USDC 지불 → 재요청)으로 Solana devnet에서 결제한 뒤 주문 nonce를 memo로 묶어 온체인 지불을 대조합니다. 검증 6단계는 UI 스텝퍼로 시각화했습니다.",
+        en: "Gemini only compares quotes and writes the selection rationale; the policy engine approves payment. Merchants onboard without code and get an endpoint; payment follows the x402 pattern (HTTP 402 → USDC payment → retry) on Solana devnet, with the order nonce bound into the memo to match on-chain payment. The six verification steps are visualized as a UI stepper.",
+      },
+    },
+    team: {
+      ko: "사공이(402) 2인 팀",
+      en: "Team Sagong-i (402), two members",
+    },
+    role: {
+      ko: "팀장 · PM/풀스택 | 에이전트 설계, 프론트엔드, GCP 인프라",
+      en: "Team lead · PM/Full-stack | Agent design, frontend, GCP infrastructure",
+    },
+    tags: {
+      ko: ["AI 에이전트", "Gemini", "Solana", "x402", "Next.js", "Cloud Run"],
+      en: ["AI Agents", "Gemini", "Solana", "x402", "Next.js", "Cloud Run"],
+    },
+    highlights: {
+      ko: [
+        "구매자측에 몰린 경쟁 흐름과 달리 판매자측(가맹점 온보딩 + 검증)을 문제로 잡았습니다.",
+        "LLM은 견적 비교·사유 서술에만 쓰고, 예산·범위·만료 집행은 결정론 정책 엔진이 하도록 신뢰 경계를 설계했습니다.",
+        "예산 초과·만료 위임장·범위 밖·과소지불·리플레이 5종을 차단하는 것을 테스트로 확인했습니다 (단위 11 + 통합 20 = 31/31 통과).",
+        "개발 중 에이전트가 원두 조달 지시에 방금 온보딩된 최저가 베이글을 사 온 사고를 계기로 견적 매칭·범위 검증을 재설계했습니다.",
+      ],
+      en: [
+        "Unlike competing entries clustered on the buyer side, framed the problem on the merchant side (onboarding + verification).",
+        "Designed the trust boundary so the LLM only compares quotes and writes rationale, while a deterministic policy engine enforces budget, scope, and expiry.",
+        "Verified by tests that five failure/attack types are blocked — over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31 passing).",
+        "Redesigned quote matching and scope checks after an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead.",
+      ],
+    },
+    proof: {
+      ko: [
+        "AI에게 맡길 일(비교·설명)과 맡기면 안 되는 일(결제 승인)을 구분해 구조로 설계했습니다.",
+        "테스트로 확인된 동작과 데모 범위의 한계(devnet, 고정 환율 시뮬레이션 등)를 README에 구분해 공개했습니다.",
+      ],
+      en: [
+        "Separated what AI should do (comparison, explanation) from what it must not (payment approval), and built that into the architecture.",
+        "Published test-verified behavior separately from demo-scope limits (devnet, fixed-rate simulation, etc.) in the README.",
+      ],
+    },
+    metrics: [
+      {
+        value: "31/31",
+        label: {
+          ko: "단위 11 + 통합 20 테스트 통과",
+          en: "11 unit + 20 integration tests passing",
+        },
+      },
+      {
+        value: "6단계",
+        label: {
+          ko: "판매자측 결정론 검증",
+          en: "Merchant-side deterministic checks",
+        },
+      },
+      {
+        value: "5종",
+        label: {
+          ko: "차단 검증된 공격·오류",
+          en: "Attack/error types verified as blocked",
+        },
+      },
+    ],
+    sections: [
+      {
+        id: "trust-boundary",
+        title: {
+          ko: "신뢰 경계 — LLM 불개입 검증 6단계",
+          en: "Trust Boundary — Six Checks Without the LLM",
+        },
+        body: {
+          ko: "① 위임장·카트 ed25519 서명 → ② 위임 유효기간 → ③ 위임 범위(카테고리) → ④ 카트 정합성(단가·재고) → ⑤ 누적 예산 한도 → ⑥ 온체인 지불 일치(금액·수취인·memo=nonce·리플레이). 1~5단계는 결제가 일어나기 전에 거절되어 자금이 이동하지 않고, 6단계는 온체인 트랜잭션을 조회해 대조합니다.",
+          en: "① ed25519 signatures on mandate and cart → ② mandate expiry → ③ mandate scope (category) → ④ cart consistency (price, stock) → ⑤ cumulative budget limit → ⑥ on-chain payment match (amount, recipient, memo = nonce, replay). Steps 1-5 reject before any payment so no funds move; step 6 checks the on-chain transaction.",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["데모 영상", "GitHub 저장소", "설계·QA 문서", "프로젝트 소개서"],
+      en: ["Demo video", "GitHub repository", "Design & QA docs", "Project brief"],
+    },
+    interviewQuestions: {
+      ko: [
+        "왜 구매자측이 아니라 판매자측을 문제로 잡았나요?",
+        "LLM과 정책 엔진의 역할을 어떻게 나눴고, 그 이유는 무엇인가요?",
+        "베이글 사고 이후 검증 로직을 어떻게 바꿨나요?",
+      ],
+      en: [
+        "Why did you target the merchant side instead of the buyer side?",
+        "How did you split responsibilities between the LLM and the policy engine, and why?",
+        "How did you change the verification logic after the bagel incident?",
+      ],
+    },
+    heroImage: "/projects/jangbogo/agent-run.webp",
+    screenshots: [
+      {
+        src: "/projects/jangbogo/agent-run.webp",
+        alt: {
+          ko: "에이전트 콘솔 — 자율 조달 실행 로그와 판매자측 6단계 검증 결과",
+          en: "Agent console — autonomous procurement log and six-step merchant-side verification",
+        },
+      },
+      {
+        src: "/projects/jangbogo/policy-block.webp",
+        alt: {
+          ko: "네거티브 데모 — 예산 초과 주문을 결제 전에 차단",
+          en: "Negative demo — an over-budget order blocked before payment",
+        },
+      },
+      {
+        src: "/projects/jangbogo/merchants.webp",
+        alt: {
+          ko: "가맹점 온보딩 — 코드 없이 엔드포인트 발급",
+          en: "Merchant onboarding — endpoint issued without code",
+        },
+      },
+    ],
+    links: {
+      github: "https://github.com/jang961111-hash/jangbogo",
+      youtube: "https://youtu.be/ALdVyGhXPT8",
+    },
+  },
+  {
+    slug: "ajob-radar",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-08-24",
+    period: {
+      ko: "2026.08",
+      en: "Aug 2026",
+    },
+    category: {
+      ko: "2026 전남광주 청년 AI 솔버톤",
+      en: "2026 Jeonnam-Gwangju Youth AI Solvathon",
+    },
+    title: {
+      ko: "무등산 A!잡레이더 | 청년에게 닿지 않는 지역 일자리를 잇는 AI 추천 서비스 기획",
+      en: "Mudeungsan A!Job Radar | AI Recommendations Connecting Youth to Local Jobs",
+    },
+    summary: {
+      ko: "있는 일자리가 청년에게 닿지 않는 문제를 구조화 추출 + 한국어 문장 임베딩 + 생성형 AI 파이프라인으로 풀고자 한 서비스 기획으로, 서류 심사를 통과해 본선에 진출했습니다.",
+      en: "A service plan tackling the gap between existing jobs and the youth who never see them, using a structured-extraction + Korean sentence-embedding + generative-AI pipeline; it passed document screening and advanced to the finals.",
+    },
+    context: {
+      ko: "팀장이자 공식 서식상 대표자로 기획·PM과 발표를 총괄했고, 사전역량교육 당일에 팀이 실습 결과물을 실제 서비스로 배포했습니다.",
+      en: "As team lead and official representative, I led planning, PM, and the pitch; on the day of the pre-event training, the team deployed its practice output as a real service.",
+    },
+    story: {
+      problem: {
+        ko: "전체 고용지표는 멀쩡한데 청년만 반대로 무너지고 있습니다. 일자리가 없어서가 아니라, 있는 일자리가 청년에게 닿지 않아서입니다. 출처를 병기한 통계로 청년 실업률 광주 7.0%·전남 10.1%, 광주 청년 순유출률 2.50%(전국 2위), 광주 구인배율 0.24를 근거로 삼았습니다.",
+        en: "Overall employment indicators look fine, yet youth employment is moving the other way — not because jobs don't exist, but because existing jobs don't reach young people. The plan cited sourced statistics: youth unemployment of 7.0% in Gwangju and 10.1% in Jeonnam, Gwangju's youth net outflow of 2.50% (2nd nationwide), and a Gwangju job-openings-to-applicants ratio of 0.24.",
+      },
+      insight: {
+        ko: "심사 관점을 먼저 문항에 매핑하고, 페르소나 2종으로 대상 사용자를 좁혔습니다. 경쟁 서비스 20종을 7개 기능으로 비교한 표(4단계 신뢰 기호)를 직접 조사해 차별점을 정리했습니다.",
+        en: "Mapped the judging criteria onto each application question first, narrowed the target users with two personas, and personally researched a 20-service × 7-feature competitor comparison table (with four-level confidence markers) to pin down differentiation.",
+      },
+      solution: {
+        ko: "'구조화 추출 + 한국어 문장 임베딩 + 생성형 AI' 파이프라인을 설계하고, 제출 규격·출처 검증 체크리스트를 운영해 3쪽·1.70MB 제출본을 SHA256까지 기록해 관리했습니다.",
+        en: "Designed a 'structured extraction + Korean sentence embedding + generative AI' pipeline and ran a submission-spec and source-verification checklist, tracking the 3-page, 1.70 MB submission down to its SHA256 hash.",
+      },
+    },
+    team: {
+      ko: "팀 프로젝트 (팀장 · 공식 대표자)",
+      en: "Team project (team lead · official representative)",
+    },
+    role: {
+      ko: "팀장 · PM · 프론트 리드 | 기획·PM·발표 총괄, React 프론트엔드, LLM·Prompt 추천·벡터검색",
+      en: "Team lead · PM · Frontend lead | Planning, PM & pitch, React frontend, LLM/prompt recommendations & vector search",
+    },
+    tags: {
+      ko: ["문제 정의", "AI 추천", "벡터 검색", "경쟁 분석", "지역 일자리"],
+      en: ["Problem framing", "AI recommendations", "Vector search", "Competitive analysis", "Local jobs"],
+    },
+    highlights: {
+      ko: [
+        "청년 고용 문제를 '일자리 부족'이 아니라 '있는 일자리가 닿지 않는 문제'로 다시 정의했습니다.",
+        "심사 관점 → 문항 매핑, 페르소나 2종, 경쟁 서비스 20종 × 7기능 비교표로 기획서를 설계했습니다.",
+        "제출 규격·출처 검증 체크리스트를 운영하며 서류 심사를 통과해 본선에 진출했습니다.",
+      ],
+      en: [
+        "Reframed youth unemployment from 'not enough jobs' to 'existing jobs never reach young people'.",
+        "Built the proposal from judging-criteria mapping, two personas, and a 20-service × 7-feature competitor table.",
+        "Ran a submission-spec and source-verification checklist, passed document screening, and advanced to the finals.",
+      ],
+    },
+    proof: {
+      ko: [
+        "문제를 통계 근거와 함께 재정의하고, 경쟁 분석으로 차별점을 좁히는 기획 과정을 팀장으로 이끌었습니다.",
+      ],
+      en: [
+        "Led, as team lead, a planning process that reframed the problem with sourced data and narrowed differentiation through competitive analysis.",
+      ],
+    },
+    metrics: [
+      {
+        value: "본선",
+        label: {
+          ko: "서류 심사 통과 · 본선 진출",
+          en: "Passed screening · advanced to finals",
+        },
+      },
+      {
+        value: "20 × 7",
+        label: {
+          ko: "경쟁 서비스 × 기능 비교표",
+          en: "Competitor services × features compared",
+        },
+      },
+    ],
+    sections: [],
+    artifacts: {
+      ko: ["참가신청서 및 AI 개발계획서", "팀 소개", "경쟁·유사 서비스 분석", "제출 체크리스트"],
+      en: ["Application & AI development plan", "Team introduction", "Competitor analysis", "Submission checklist"],
+    },
+    interviewQuestions: {
+      ko: [
+        "왜 청년 고용 문제를 '일자리 부족'이 아니라 '연결의 문제'로 정의했나요?",
+        "경쟁 서비스 20종 비교에서 어떤 차별점을 찾았나요?",
+      ],
+      en: [
+        "Why did you frame youth employment as a connection problem rather than a shortage of jobs?",
+        "What differentiation did you find from comparing 20 competing services?",
+      ],
+    },
+    links: {},
+  },
+  {
+    slug: "skt-prompt-ansimcall",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-08-20",
+    period: {
+      ko: "2026.08 (수상 2026.08.20)",
+      en: "Aug 2026 (awarded Aug 20, 2026)",
+    },
+    category: {
+      ko: "SKT 「모두의 promp.T」 공모전 · Life AX 부문",
+      en: "SKT 'promp.T for Everyone' Contest · Life AX",
+    },
+    title: {
+      ko: "안심콜 | 판별해주지 않는 AI — 어르신 보이스피싱 판별 AI 말벗",
+      en: "Ansim Call | An AI That Doesn't Judge for You — A Voice-Phishing Companion for Seniors",
+    },
+    summary: {
+      ko: "어르신 보이스피싱 판별 AI 말벗 '안심콜'을 기획해 SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상을 받은 개인 출품작입니다.",
+      en: "A solo entry planning 'Ansim Call', an AI companion that helps seniors judge voice-phishing attempts — winner of the top prize (Life AX category) in SKT's 'promp.T for Everyone' contest.",
+    },
+    context: {
+      ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」입니다. 어머니가 경고 문자 앞에서 47분을 망설인 일에서 출발했습니다.",
+      en: "The entry was titled 'My Mother's Judgment Card Contains Nothing I Taught Her.' It started from the 47 minutes my mother spent hesitating over a warning text.",
+    },
+    story: {
+      problem: {
+        ko: "어머니가 경고 문자 사진을 보내며 무시해도 되는지 물으셨고, 제가 답하기까지 47분이 비어 있었습니다. 그동안 어머니는 그 화면을 혼자 보고 계셨습니다. 저는 어머니를 지켜드린 것이 아니라 어머니의 판단을 대신하고 있었고, 대신하는 동안 어머니에게는 아무것도 남지 않았습니다.",
+        en: "My mother sent me a photo of a warning text asking whether she could ignore it; 47 minutes passed before I replied, and she sat with that screen alone. I realized I hadn't been protecting her — I had been making her judgments for her, and doing so left her with nothing.",
+      },
+      insight: {
+        ko: "판별기(도구)가 아니라 판별력(사람의 역량)을 키우는 방향으로 설계를 뒤집었습니다 — '판별해주는 AI가 아니라 판별해주지 않는 AI'.",
+        en: "Flipped the design from a judging tool to building the person's own judgment — 'not an AI that judges for you, but one that doesn't.'",
+      },
+      solution: {
+        ko: "「어머니의 판별 카드」라는 형태로, AI 말벗이 답을 대신 내려주기보다 어르신이 스스로 판단할 수 있도록 돕는 경험을 기획했습니다.",
+        en: "Planned the experience around 'Mother's Judgment Card', where the AI companion helps seniors reach their own judgment instead of handing them the answer.",
+      },
+    },
+    team: {
+      ko: "개인 출품",
+      en: "Solo entry",
+    },
+    role: {
+      ko: "개인 출품 | 문제 정의, 서비스 기획",
+      en: "Solo | Problem framing, service planning",
+    },
+    tags: {
+      ko: ["AI 서비스 기획", "시니어", "보이스피싱", "Life AX"],
+      en: ["AI service planning", "Seniors", "Voice phishing", "Life AX"],
+    },
+    highlights: {
+      ko: [
+        "SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상을 개인 명의로 수상했습니다.",
+        "판별기(도구)가 아니라 판별력(사람의 역량)을 키우는 방향으로 설계를 뒤집었습니다.",
+        "가족의 실제 경험(47분의 공백)에서 문제를 정의했습니다.",
+      ],
+      en: [
+        "Won the top prize in the Life AX category of SKT's 'promp.T for Everyone' contest as an individual.",
+        "Flipped the design from a judging tool to strengthening the person's own judgment.",
+        "Defined the problem from a real family experience — a 47-minute gap.",
+      ],
+    },
+    proof: {
+      ko: [
+        "AI가 사람의 판단을 대신하는 대신, 사람의 판단력을 키우는 방향으로 AI의 역할을 정의했습니다.",
+      ],
+      en: [
+        "Defined AI's role as strengthening human judgment rather than replacing it.",
+      ],
+    },
+    metrics: [
+      {
+        value: "최우수상",
+        label: {
+          ko: "Life AX 부문 (개인 수상)",
+          en: "Top prize, Life AX (individual)",
+        },
+      },
+      {
+        value: "47분",
+        label: {
+          ko: "문제 정의의 출발점",
+          en: "Where the problem definition began",
+        },
+      },
+    ],
+    sections: [],
+    artifacts: {
+      ko: ["공모전 출품작"],
+      en: ["Contest entry"],
+    },
+    interviewQuestions: {
+      ko: [
+        "왜 '판별해주는 AI'가 아니라 '판별해주지 않는 AI'를 택했나요?",
+      ],
+      en: [
+        "Why did you choose an AI that doesn't judge for the user over one that does?",
+      ],
+    },
+    links: {},
+  },
+  {
     slug: "krafton-multiplierboard",
     featured: false,
     status: "completed",

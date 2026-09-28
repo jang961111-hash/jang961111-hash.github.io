@@ -26,7 +26,8 @@
     "smoke:build": "node scripts/smoke_check.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate:pdf": "node scripts/generate_pdfs.js"
+    "generate:pdf": "node scripts/generate_pdfs.js",
+    "generate:submission": "node scripts/generate_submission_pdf.js"
   },
   "eslintConfig": {
     "extends": [

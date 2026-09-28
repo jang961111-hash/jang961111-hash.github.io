@@ -24,7 +24,7 @@
     "portfolioLabel": "AI를 서비스로 만드는 사람",
     "focusLabel": "일하는 방식",
     "subtitle": "LLM · 추천 · 검색을 실제 사용자 경험으로 구현해본 AI 서비스 개발자입니다.",
-    "mission": "철학 전공의 문제 구조화 사고와 SSAFY 1,725시간의 AI/SW 교육을 바탕으로, 문제 정의(기획)부터 React 구현까지 한 사이클을 완주합니다.",
+    "mission": "철학 전공의 문제 구조화 사고와 SSAFY 1,628시간의 AI/SW 교육을 바탕으로, 문제 정의(기획)부터 React 구현까지 한 사이클을 완주합니다.",
     "proofItems": {
       "product": "DailyLog에서 PM을 맡아 AI 회고 서비스를 기획하고, SSAFY 특화 프로젝트 우수상(3등)을 받았습니다",
       "ai": "음성 입력(SenseVoice) · 추천(Thompson Sampling) · 벡터 검색(pgvector)을 하나의 회고 흐름으로 설계했습니다",
@@ -51,7 +51,7 @@
       "title": "At a glance",
       "projects": "프로젝트",
       "awards": "수상",
-      "awardsNote": "SSAFY 우수상 · Oregon UAS · 창업캠프 최우수팀",
+      "awardsNote": "SKT promp.T 최우수상 · SSAFY 우수상 · Oregon UAS · 창업캠프 최우수팀",
       "hackathons": "해커톤 · 챌린지",
       "training": "삼성 청년 SW·AI 아카데미",
       "trainingValue": "SSAFY 14기"
@@ -359,6 +359,13 @@
   "experience": {
     "title": "Selected Experience",
     "jobs": {
+      "skalaTraining": {
+        "title": "AI Training & Team Projects",
+        "company": "SKALA (SK AI Leader Academy) 4기",
+        "period": "2026 - 재학 중",
+        "desc1": "SKALA(SK AI Leader Academy) 4기에 재학하며 AI 웹 서비스 설계 등 팀 프로젝트를 수행하고 있습니다.",
+        "desc2": "ARGUS 미니 프로젝트(5인 팀)에서 백엔드 설계와 최종 발표를 맡았습니다."
+      },
       "ssafyTraining": {
         "title": "AI/SW Training & Product Projects",
         "company": "Samsung SW·AI Academy For Youth, SSAFY",
@@ -432,7 +439,7 @@
       {
         "title": "삼성 청년 SW·AI 아카데미 (SSAFY)",
         "period": "2025.07 - 2026.03",
-        "desc": "1,725시간의 정규 교육 과정을 통해 Python, 알고리즘, 수준별 AI 강의(sLLM 구축 등) 및 다수의 실전형 프로젝트를 수행하며 AI 역량을 갖춘 PM 및 서비스 기획 경험을 쌓았습니다."
+        "desc": "1,628시간의 정규 교육 과정을 통해 Python, 알고리즘, 수준별 AI 강의(sLLM 구축 등) 및 다수의 실전형 프로젝트를 수행하며 AI 역량을 갖춘 PM 및 서비스 기획 경험을 쌓았습니다."
       },
       {
         "title": "전남대학교 철학과 학사",

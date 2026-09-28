@@ -6,7 +6,7 @@ export const projectUiCopy = {
     coreKicker: "Submission focus",
     coreTitle: "제출용 핵심 프로젝트 3",
     coreIntro:
-      "문제정의, 수행 역할, 기술 선택, 해결 과정이 면접 질문으로 이어지도록 DailyLog, Loggy, Promtree를 먼저 정리합니다.",
+      "문제정의, 수행 역할, 기술 선택, 해결 과정이 면접 질문으로 이어지도록 ARGUS, DailyLog, Loggy를 먼저 정리합니다.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "보조 프로젝트 및 해커톤",
     supportingIntro:
@@ -38,6 +38,7 @@ export const projectUiCopy = {
     github: "GitHub",
     demo: "서비스 링크",
     docs: "문서 자료",
+    video: "데모 영상",
     linksPending: "링크 정리 중",
     statusLabels: {
       planning: "Planning",
@@ -53,7 +54,7 @@ export const projectUiCopy = {
     coreKicker: "Submission focus",
     coreTitle: "Core 3 Projects",
     coreIntro:
-      "DailyLog, Loggy, and Promtree are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
+      "ARGUS, DailyLog, and Loggy are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "Supporting Projects & Hackathons",
     supportingIntro:
@@ -85,6 +86,7 @@ export const projectUiCopy = {
     github: "GitHub",
     demo: "Live link",
     docs: "Docs",
+    video: "Demo video",
     linksPending: "Links in preparation",
     statusLabels: {
       planning: "Planning",

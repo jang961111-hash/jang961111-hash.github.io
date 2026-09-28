@@ -6,6 +6,7 @@ const Experience = () => {
   const { t } = useTranslation();
 
   const experiences = [
+    "skalaTraining",
     "ssafyTraining",
     "projectPractice",
     "philosophy",
