@@ -20,15 +20,15 @@
   "hero": {
     "name": "장병헌",
     "greeting": "안녕하세요,",
-    "title": "AI 서비스 개발 · 기획",
-    "portfolioLabel": "AI를 서비스로 만드는 사람",
+    "title": "AI 서비스 개발자",
+    "portfolioLabel": "AI 서비스 개발자",
     "focusLabel": "일하는 방식",
-    "subtitle": "LLM · 추천 · 검색을 실제 사용자 경험으로 구현해본 AI 서비스 개발자입니다.",
-    "mission": "철학 전공의 문제 구조화 사고와 SSAFY 1,628시간의 AI/SW 교육을 바탕으로, 문제 정의(기획)부터 React 구현까지 한 사이클을 완주합니다.",
+    "subtitle": "AI 코딩 에이전트로 빠르게 만들고, 재현 테스트와 실측으로 검증하는 AI 서비스 개발자입니다.",
+    "mission": "LLM이 판단할 일과 코드가 판단할 일을 나누고, 결함마다 재현 테스트를 먼저 쓰고, 측정 조건을 적은 전후 수치로 결과를 말합니다. 코드를 AI가 썼다면 그렇다고 적습니다. 철학 전공의 문제 구조화, SSAFY 1,628시간과 SKALA 4기의 AI/SW 교육이 '왜 이렇게 만들었나'를 설명하는 바탕입니다.",
     "proofItems": {
-      "product": "DailyLog에서 PM을 맡아 AI 회고 서비스를 기획하고, SSAFY 특화 프로젝트 우수상(3등)을 받았습니다",
-      "ai": "음성 입력(SenseVoice) · 추천(Thompson Sampling) · 벡터 검색(pgvector)을 하나의 회고 흐름으로 설계했습니다",
-      "execution": "Loggy에서 WebSocket 기반 실시간 검토 화면을 React로 직접 구현했습니다"
+      "product": "Ops Sentinel — 커넥션 풀 증설로 덮었던 동시성 결함을 재현 테스트로 원인 분리해 구조를 고쳤습니다. 풀 10·같은 리소스 동시 150건·AI 지연 3초에서 500 오류 372건 → 0건, 감사로그 450/450 (2026-09 재측정, H2 인메모리)",
+      "ai": "RE:RUN — 'AI가 스스로 고친다'는 주장을 사전 등록 실험으로 검증했습니다. 진단 프롬프트의 힌트를 빼자 올바른 자가수정이 72% → 0% (조건당 n=25)였고, 이 결과를 README 첫 화면에 공개했습니다",
+      "execution": "장보고 — 결제 승인은 결정론 정책 엔진, LLM은 사유 서술만 맡겼습니다. 사후 점검에서 찾은 결제 경합을 고쳐 같은 증빙 동시 전송 시 주문 최대 10건 → 1건 (검증 지연 650ms 주입, 동시 최대 10건 × 5회)"
     },
     "viewProjects": "대표 프로젝트 보기",
     "getInTouch": "이야기 나누기",
@@ -38,14 +38,14 @@
   "identity": {
     "title": "Identity & Product Philosophy",
     "text1": "철학을 전공하며 사람의 판단, 선택, 신뢰의 조건을 공부했습니다. 이 경험은 서비스 기획에서 사용자의 표면적 요구보다 “왜 이 행동을 하는가”, “어디서 이탈하는가”, “어떤 불안을 줄여야 하는가”를 분석하는 강점으로 이어졌습니다. 문제를 깊이 해석하고, 그 해석을 실제 서비스와 시스템으로 구현하는 방향으로 성장하고 있습니다.",
-    "text2": "SSAFY에서 Python, 알고리즘, 웹, AI 기초를 학습하며 기술과 서비스, 사용자 맥락을 연결하는 시야를 넓혔습니다. 기술적 이해는 구현 자랑이 아니라, 제품 기획 단계에서 리스크를 줄이고 팀 간 소통 비용을 낮추는 레버리지라고 믿습니다.",
+    "text2": "SSAFY에서 Python·알고리즘·웹·AI 기초를, SKALA 4기에서 백엔드·AI 서비스 설계를 배웠습니다. 지금은 AI 코딩 에이전트에게 구현을 맡기되, 수용 기준을 먼저 정하고, 결과를 별도 리뷰와 재현 테스트로 검증하고, 주장한 수치를 다시 재는 방식으로 개발합니다. 기술 이해는 구현 자랑이 아니라 무엇이 사실인지 확인하는 수단이라고 믿습니다.",
     "text3": "\"I treat AI as a layer for better decisions, not as a gimmick.\"\nAI를 단순 자동화 기능이 아니라 사용자가 더 잘 생각하고 결정하도록 돕는 보조 레이어로 봅니다. DailyLog 프로젝트에서는 사용자가 빈 화면 앞에서 멈추는 문제를 AI 질문 흐름으로 해결하고자 했고, 기술 요소를 서비스 가치로 연결하는 경험을 쌓았습니다.",
     "skills_title": "Core Competencies",
     "skills": {
-      "platform": "Platform-Oriented Design",
-      "decision": "Decision Architecture",
-      "tech": "Technical Communication",
-      "ai": "AI as Decision Support"
+      "platform": "LLM Trust Boundary Design",
+      "decision": "Reproduce-First Debugging",
+      "tech": "Before/After Measurement",
+      "ai": "Agent-Built, Human-Verified"
     },
     "glance": {
       "title": "At a glance",

@@ -73,7 +73,7 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI Service Development · Planning Portfolio"
+        "Jang Byeong Heon | AI Service Developer Portfolio"
       );
     });
 
@@ -101,7 +101,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI Service Development · Planning Portfolio"
+        "Jang Byeong Heon | AI Service Developer Portfolio"
       );
     });
   });
@@ -111,7 +111,7 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(document.title).toBe(
-        "장병헌 | AI 서비스 개발 · 기획 포트폴리오"
+        "장병헌 | AI 서비스 개발자 포트폴리오"
       );
     });
 
@@ -122,7 +122,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI Service Development · Planning Portfolio"
+        "Jang Byeong Heon | AI Service Developer Portfolio"
       );
     });
   });
@@ -132,7 +132,7 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI Service Development · Planning Portfolio"
+        "Jang Byeong Heon | AI Service Developer Portfolio"
       );
     });
     await waitFor(() => {
@@ -161,7 +161,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "Jang Byeong Heon | AI Service Development · Planning Portfolio"
+        "Jang Byeong Heon | AI Service Developer Portfolio"
       );
     });
   });
@@ -174,7 +174,7 @@ describe("App routing flows", () => {
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "장병헌 | AI 서비스 개발 · 기획 포트폴리오"
+        "장병헌 | AI 서비스 개발자 포트폴리오"
       );
     });
   });
