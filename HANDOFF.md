@@ -1,19 +1,44 @@
 # 📅 작업 재개 가이드 (Hand-off Note)
 
-**마지막 작업 일시:** 2026년 7월 13일 (월) (KST)
-**현재 상태:** 구조 리팩토링 Step 1~7 완료 · 7커밋 `origin/main` push · gh-pages 라이브 배포 성공 확인. **로컬 = origin = 라이브 3자 동기화.** 작업트리 클린, 열린 PR 없음. 콘텐츠/문구 변화 없음(순수 내부 구조 개선). **프로젝트 11개 · 수상 3회** 유지.
+**마지막 작업 일시:** 2026년 9월 28일 (월) (KST)
+**현재 상태:** 기능 브랜치 `feat/ai-dev-revamp`(worktree `~/portfolio-revamp`)에서 "AI 서비스 개발자" 포지셔닝 개편 PR 생성 — **머지·배포 전**. main 머지 = gh-pages 라이브 배포이므로 사용자 확인 후 머지. 프로젝트 17개 · 수상 4회 · 해커톤 9(해커톤 수는 이번에 재검증하지 않음).
 **배포 주소:** https://jang961111-hash.github.io/
 
 ---
 
 ## 🎯 확정된 전략 (변경 시 반드시 근거와 함께)
 
-- **타깃:** 삼성SDS · SK AX 신입 (1지망 기획/PM, 2지망 SW개발 — "가능성 높은 쪽" 방침)
-- **포지셔닝:** "AI를 서비스로 만드는 사람" (AI 서비스 개발 · 기획)
-- **근거:** SK AX는 코딩테스트를 AICT(AI 활용 능력 평가)로 대체, "AI 능력자" 채용. SDS는 생성형 AI(Brity/FabriX)+클라우드 중심. 백엔드 전환은 실물 산출물 없이 불가 판정.
-- **작업 방식:** 수정 → 테스트(`CI=true npx react-scripts test --watchAll=false`) → `npm run deploy` → 브라우저 검증을 한 사이클로. 큰 변경은 사용자에게 before/after 제시 후 진행.
+- **포지셔닝: "AI 서비스 개발자"** (사용자 결정 2026-09-28, `repo-revamp/INVENTORY.md` 6절). 개발 전면, 기획·문제정의는 '왜 이렇게 만들었나'를 설명하는 강점으로 녹임. `AGENTS.md` Portfolio Direction 절도 이 결정으로 갱신됨.
+- **대표 프로젝트(coreProjectSlugs):** `ops-sentinel` → `jangbogo` → `rerun` (개발 증거 중심). ARGUS·DailyLog·Loggy 등은 날짜순 보조 목록.
+- **서술 원칙:** 코드를 AI 코딩 에이전트가 쓴 경우 그렇게 적고, 본인이 한 지시·검증은 따로 적는다. 수치는 측정 조건·측정일을 병기. 머지 전 PR의 수치는 "수정 PR 기준"으로 표기.
+- **작업 방식:** 수정 → 테스트(`CI=true npx react-scripts test --watchAll=false`) → `npm run build` → `npm run smoke:build` → 기능 브랜치 PR. main push·`npm run deploy`는 사용자 승인 후에만.
 
 ---
+
+## ✅ 2026-09-28 세션 — AI 서비스 개발자 포지셔닝 개편 (PR, 머지 전)
+
+**사실 원천:** `~/Desktop/취업2026/repo-revamp/INVENTORY.md` §7, `repos/<repo>/` metrics·fix-verification·fixes·interview·readme-factcheck, 새 README 초안(`~/ops-docs`, `~/rerun-docs`, `~/jangbogo-docs`, `~/projects/argus-docs`). 대조표: `repo-revamp/hub/site-factcheck.md`.
+
+| 커밋 | 내용 |
+|---|---|
+| docs(agents) | AGENTS.md 포지셔닝 "AI 서비스 개발자"로 교체 + 결정 근거 기록 |
+| feat(projects) | Ops Sentinel·RE:RUN 신규(ko/en), 링크 키 `fixPr`·`teamGithub` 추가, 프로젝트 수 15 → 17 |
+| feat(projects) | ARGUS: 팀 레포(skala-fixguide, 본인 커밋 11)와 개인 재구현 구분·Mock 명시·트러블슈팅. JangBogo: 선택=규칙/Gemini=사유만으로 정정, 결제 경합 전후 실측 |
+| feat(projects) | coreProjectSlugs 교체, 섹션 소개 문구, 라우팅 테스트 기대값 |
+| feat(hero,meta) | 히어로·소개·칩·metadata.js·index.html·manifest·smoke 기대 타이틀·og-image |
+| feat(competencies) | "측정·검증 중심 개발" 그룹(재현 테스트·독립 리뷰·전후 실측·반증 공개) 추가, 전체 폭 카드 |
+| chore(pdf) | `portfolio_ko/en.pdf` 재생성 (커밋에 포함) |
+
+**검증:** 테스트 11/11, `npm run build` 성공(경고 0), 라우트 별칭 17개 생성(ops-sentinel·rerun 포함), `npm run smoke:build` 5라우트 통과, 로컬 정적 서버 + puppeteer로 신규·수정 상세 8라우트(ko/en) 200·타이틀·링크·콘솔 오류 0 확인.
+
+**⚠️ 환경 메모:** 이 worktree의 `npm ci`로 설치된 puppeteer가 요구하는 Chrome 146이 캐시에 없어(캐시는 152) `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`로 smoke·PDF·og-image를 실행했다. package.json·lock은 변경하지 않음.
+
+**남은 확인(사용자):**
+- 각 레포 수정 PR(ops #48, rerun #2, jangbogo #1, argus #1) 머지 후 사이트의 "리뷰 대기" 문구 정리
+- RE:RUN 원티드 AI Championship 실제 제출 여부·결과, 대회 팀 구성 (`data.js` TODO)
+- Ops Sentinel PRD·마스터프롬프트 작성 주체 (`data.js` TODO)
+- 해커톤 수 "9"에 RE:RUN 대회가 포함되는지 (At a glance·og-image)
+- ARGUS 현장 인터뷰·41장·DBML 8테이블은 기존 사이트/필살기 문구를 유지(이번에 원자료 재확인 못 함)
 
 ## ✅ 2026-07-13 세션 완료 내역 (구조 리팩토링 Step 1~7 — 콘텐츠 무변화)
 
