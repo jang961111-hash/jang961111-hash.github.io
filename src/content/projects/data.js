@@ -146,8 +146,8 @@ export const portfolioProjects = [
           en: "Who Did What, and Limits",
         },
         body: {
-          ko: "코드는 처음 제출본부터 사후 수정까지 Claude Code가 작성했습니다. 제 몫은 주제·범위 설정(SK AX×대신증권 에이전틱 AIOps 사례를 개인 과제 규모로 축소, 판단/설명 분리), 에이전트 결과를 별도 리뷰 에이전트와 '콜드스타트 채점'(사전지식 없는 에이전트가 제출 zip을 풀어 서버를 띄움)으로 두 번 검증하게 한 구조, 그리고 2026-09 재측정·수정의 지시와 검수입니다. 수정은 PR #48(2026-09-28 기준 리뷰 대기)에 있고 수치는 그 브랜치 기준입니다. 한계: H2 인메모리·단일 JVM 측정이며 PostgreSQL 프로필 부하는 재지 않았습니다. 재시도 backoff 없음, 스케줄러 on/off 불가는 남은 과제입니다.",
-          en: "Claude Code wrote the code, from the first submission through the later fixes. My part: setting topic and scope (scaling the SK AX × Daishin Securities agentic AIOps case down to an individual lab, separating judgment from explanation), making the agent's output go through two separate checks (a separate review agent and a 'cold-start grading' where an agent with no prior context unzips the submission and boots the server), and directing and reviewing the September 2026 re-measurement and fixes. The fixes are in PR #48 (awaiting review as of Sep 28, 2026) and the numbers are measured on that branch. Limits: measured on H2 in-memory with a single JVM; load on the PostgreSQL profile was not measured. No retry backoff and no scheduler toggle remain open.",
+          ko: "코드는 처음 제출본부터 사후 수정까지 Claude Code가 작성했습니다. 제 몫은 주제·범위 설정(SK AX×대신증권 에이전틱 AIOps 사례를 개인 과제 규모로 축소, 판단/설명 분리), 에이전트 결과를 별도 리뷰 에이전트와 '콜드스타트 채점'(사전지식 없는 에이전트가 제출 zip을 풀어 서버를 띄움)으로 두 번 검증하게 한 구조, 그리고 2026-09 재측정·수정의 지시와 검수입니다. 수정 내용과 수치의 기준 브랜치는 PR #48에서 확인할 수 있습니다. 한계: H2 인메모리·단일 JVM 측정이며 PostgreSQL 프로필 부하는 재지 않았습니다. 재시도 backoff 없음, 스케줄러 on/off 불가는 남은 과제입니다.",
+          en: "Claude Code wrote the code, from the first submission through the later fixes. My part: setting topic and scope (scaling the SK AX × Daishin Securities agentic AIOps case down to an individual lab, separating judgment from explanation), making the agent's output go through two separate checks (a separate review agent and a 'cold-start grading' where an agent with no prior context unzips the submission and boots the server), and directing and reviewing the September 2026 re-measurement and fixes. The fixes, and the branch the numbers were measured on, can be found in PR #48. Limits: measured on H2 in-memory with a single JVM; load on the PostgreSQL profile was not measured. No retry backoff and no scheduler toggle remain open.",
         },
       },
     ],
@@ -318,8 +318,8 @@ export const portfolioProjects = [
           en: "Who Did What, and Limits",
         },
         body: {
-          ko: "MVP와 보완 코드는 Claude Code가 작성했습니다. 제 몫은 기존 프로젝트 재활용안을 접고 'AI는 제안만, 적용은 사람 승인' 원칙을 확정한 것, 수용 기준과 스코프 가드를 먼저 두게 한 것, 엄격 판정식과 힌트 제거 실험을 설계한 것, 결함마다 재현 테스트를 먼저 쓰게 하고 독립 리뷰 지적을 반영하게 한 것입니다. 보완은 PR #2(2026-09-28 기준 리뷰 대기)에 있습니다. 한계: 배포본이 없고, 시나리오는 1건이며, 측정 스크립트는 아직 레포 밖에 있습니다.",
-          en: "Claude Code wrote the MVP and the fixes. My part: dropping the idea of reusing an older project and fixing the principle 'AI only proposes; applying needs human approval', having acceptance criteria and a scope guard set first, designing the strict check and the hint-removal experiment, and requiring a reproduction test before each fix plus applying the independent review's findings. The fixes are in PR #2 (awaiting review as of Sep 28, 2026). Limits: no deployment, a single scenario, and the measurement scripts still live outside the repo.",
+          ko: "MVP와 보완 코드는 Claude Code가 작성했습니다. 제 몫은 기존 프로젝트 재활용안을 접고 'AI는 제안만, 적용은 사람 승인' 원칙을 확정한 것, 수용 기준과 스코프 가드를 먼저 두게 한 것, 엄격 판정식과 힌트 제거 실험을 설계한 것, 결함마다 재현 테스트를 먼저 쓰게 하고 독립 리뷰 지적을 반영하게 한 것입니다. 보완 내용은 PR #2에서 확인할 수 있습니다. 한계: 배포본이 없고, 시나리오는 1건이며, 측정 스크립트는 아직 레포 밖에 있습니다.",
+          en: "Claude Code wrote the MVP and the fixes. My part: dropping the idea of reusing an older project and fixing the principle 'AI only proposes; applying needs human approval', having acceptance criteria and a scope guard set first, designing the strict check and the hint-removal experiment, and requiring a reproduction test before each fix plus applying the independent review's findings. The fixes can be found in PR #2. Limits: no deployment, a single scenario, and the measurement scripts still live outside the repo.",
         },
       },
     ],
@@ -611,8 +611,8 @@ export const portfolioProjects = [
       en: "Team Sagong-i (402), two members",
     },
     role: {
-      ko: "팀장 | 에이전트에 기획→개발→배포→QA 루프 지시, Solana·Gemini·GCP 계정·인프라 설정, 제출, 사후 점검·수정 검수 (코드 작성은 Claude Code)",
-      en: "Team lead | Directed the agent's plan→build→deploy→QA loop, set up Solana, Gemini, and GCP accounts and infrastructure, submitted, and reviewed the post-hoc check and fixes (code written by Claude Code)",
+      ko: "팀 2인 참가(팀 사공이), 구현·커밋은 본인 | 에이전트에 기획→개발→배포→QA 루프 지시, Solana·Gemini·GCP 계정·인프라 설정, 제출, 사후 점검·수정 검수 (코드 작성은 Claude Code)",
+      en: "Two-person entry (team Sagong-i); implementation and commits are mine | Directed the agent's plan→build→deploy→QA loop, set up Solana, Gemini, and GCP accounts and infrastructure, submitted, and reviewed the post-hoc check and fixes (code written by Claude Code)",
     },
     tags: {
       ko: ["AI 에이전트", "Gemini", "Solana", "x402", "Next.js", "Cloud Run"],
@@ -625,7 +625,7 @@ export const portfolioProjects = [
         "해커톤 제출본은 예산 초과·만료 위임장·범위 밖·과소지불·리플레이 5종 차단을 순차 테스트로 확인했습니다(단위 11 + 통합 20 = 31/31). 그러나 동시 요청은 시험하지 않았습니다.",
         "사후 점검(2026-09): 같은 결제 증빙을 동시에 보내면 1회 지불로 주문이 최대 10건 확정됐습니다 → 검증 전 선점 + 기록 직전 재검사로 1건. 예산 100 USDC 위임장의 최대 확정액 327.59 → 65.52 USDC, 지불 후 거절(돈만 이동) 262.07 → 0 USDC (sandbox·검증 지연 650ms 주입, K≤10 × 5회).",
         "작성과 분리한 보안 리뷰가 수정이 만든 퇴행(위조 cart가 정당한 지불을 '미확정'으로 선점해 영구 409)을 머지 전에 잡았고, 그 과정에서 402와 품목만 바꾼 cart가 확정되던 원래 구멍도 막았습니다.",
-        "개발 중 에이전트가 원두 조달 지시에 방금 온보딩된 최저가 베이글을 사 온 사고를 계기로 견적 매칭·범위 검증을 재설계했습니다.",
+        "상품 선택은 LLM이 아니라 목표 문장 키워드 매칭·최저가 규칙이 결정하고, Gemini는 선택 사유만 씁니다. 재측정에서 가맹점 인증이 없으면 상품명에 '카페'가 든 상품으로 이 매칭을 우회할 수 있음을 확인해 한계로 기록했습니다.",
       ],
       en: [
         "Unlike competing entries clustered on the buyer side, framed the problem on the merchant side (onboarding + verification).",
@@ -633,7 +633,7 @@ export const portfolioProjects = [
         "At submission, sequential tests confirmed five failure/attack types are blocked — over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31). Concurrent requests were never tested.",
         "Post-hoc check (Sep 2026): sending the same payment proof concurrently confirmed up to 10 orders for one payment → claim-before-verify plus a re-check before recording brings it to 1. Max confirmed spend on a 100 USDC mandate 327.59 → 65.52 USDC; money moved but order rejected 262.07 → 0 USDC (sandbox, 650 ms injected verification delay, K ≤ 10 × 5 runs).",
         "A security review kept separate from authoring caught a regression the fix introduced (a forged cart could pre-claim a legitimate payment as 'unconfirmed', causing a permanent 409) before merge, and along the way closed an original hole where a cart differing from the 402 only in items was confirmed.",
-        "Redesigned quote matching and scope checks after an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead.",
+        "Product selection is decided by goal-keyword matching and a lowest-price rule, not the LLM — Gemini only writes the rationale. Re-measurement showed that, without merchant authentication, a product whose name contains '카페' (cafe) can bypass this matching; recorded as a known limitation.",
       ],
     },
     proof: {
@@ -699,8 +699,8 @@ export const portfolioProjects = [
           en: "Limits",
         },
         body: {
-          ko: "증빙 선점 잠금과 파일 JSON DB가 프로세스 하나 기준이라 인스턴스가 둘 이상이면 경합 방어가 뚫립니다(라이브는 최대 인스턴스 1). 가맹점 등록에 인증이 없고 견적 매칭은 목표 문장의 토큰 하나만 상품명에 있어도 통과해, '카페 베이글' 가맹점을 등록하면 기본 목표 '카페 블렌드 원두 5kg 조달'에 베이글이 낙찰됩니다(2026-09-28 로컬 재현, 미해결). devnet 조건의 전후 비교는 faucet 제한으로 재지 못했고, 수정은 PR #1(2026-09-28 기준 리뷰 대기)에 있습니다.",
-          en: "The proof-claim lock and the file JSON DB assume a single process, so concurrency protection breaks with more than one instance (the live deployment is capped at one). Merchant sign-up has no authentication, and quote matching passes if a single token of the goal sentence appears in a product name — registering a 'Cafe Bagel' merchant makes a bagel win the default goal 'source 5 kg of cafe blend beans' (reproduced locally on Sep 28, 2026; unresolved). A before/after comparison under devnet conditions could not be run because of faucet limits, and the fixes are in PR #1 (awaiting review as of Sep 28, 2026).",
+          ko: "증빙 선점 잠금과 파일 JSON DB가 프로세스 하나 기준이라 인스턴스가 둘 이상이면 경합 방어가 뚫립니다(라이브는 최대 인스턴스 1). 가맹점 등록에 인증이 없고 견적 매칭은 목표 문장의 토큰 하나만 상품명에 있어도 통과해, '카페 베이글' 가맹점을 등록하면 기본 목표 '카페 블렌드 원두 5kg 조달'에 베이글이 낙찰됩니다(2026-09-28 로컬 재현, 미해결). devnet 조건의 전후 비교는 faucet 제한으로 재지 못했고, 수정 내용은 PR #1에서 확인할 수 있습니다.",
+          en: "The proof-claim lock and the file JSON DB assume a single process, so concurrency protection breaks with more than one instance (the live deployment is capped at one). Merchant sign-up has no authentication, and quote matching passes if a single token of the goal sentence appears in a product name — registering a 'Cafe Bagel' merchant makes a bagel win the default goal 'source 5 kg of cafe blend beans' (reproduced locally on Sep 28, 2026; unresolved). A before/after comparison under devnet conditions could not be run because of faucet limits, and the fixes can be found in PR #1.",
         },
       },
     ],
