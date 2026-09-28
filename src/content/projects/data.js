@@ -390,8 +390,8 @@ export const portfolioProjects = [
       en: "An on-premise approval workflow for semiconductor fab part replacements: AI agents review spec compatibility, applicable regulations, and safety documents and attach the evidence, while the safety manager makes the approval decision.",
     },
     context: {
-      ko: "SKALA(SK AI Leader Academy) 4기 AI 웹 서비스 설계 미니 프로젝트로, 5인 팀이 3일 동안 기획·설계·구현·발표까지 진행했습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사 환경을 전제로 설계했습니다.",
-      en: "A SKALA (SK AI Leader Academy) Cohort 4 mini-project in AI web service design: a five-person team went from planning to design, implementation, and presentation in three days, assuming partner-company sites that cannot use external cloud LLMs.",
+      ko: "SKALA(SK AI Leader Academy) 4기 AI 웹 서비스 설계 미니 프로젝트로, 5인 팀이 3일 동안 기획·설계·구현·발표까지 진행했습니다(공식 순위·수상 없음). 외부 클라우드 LLM을 쓸 수 없는 협력사 환경을 전제로 설계했습니다. 레포는 두 개입니다: 팀 공식 레포(Taeyum/skala-fixguide, Spring Boot)와, 팀 협업과 병렬로 제가 Claude 에이전트 트랙을 돌려 FastAPI + Vue 3로 다시 만든 백업·보완용 개인 재구현(skala-argus)입니다.",
+      en: "A SKALA (SK AI Leader Academy) Cohort 4 mini-project in AI web service design: a five-person team went from planning to design, implementation, and presentation in three days (no official ranking or award), assuming partner-company sites that cannot use external cloud LLMs. There are two repositories: the team's official repo (Taeyum/skala-fixguide, Spring Boot) and my personal re-implementation in FastAPI + Vue 3 (skala-argus), built in parallel with the team by running Claude agent tracks as a backup and complement.",
     },
     story: {
       problem: {
@@ -403,17 +403,17 @@ export const portfolioProjects = [
         en: "A field interview with an SK hynix equipment engineer rejected our first two hypotheses, and we redesigned the API around what we learned. The guiding principle became 'agents prove, people decide' — agents gather evidence; the safety manager approves or rejects.",
       },
       solution: {
-        ko: "엔지니어가 교체 요청을 등록하면 역할별 AI 에이전트(규격·호환 / 법령·조문 / 안전서류)가 검토 결과를 만들고, 화면은 서버가 지정한 간격으로 진행 상태를 폴링해 보여줍니다. 안전관리자는 AI 결과물을 읽기 전용으로 확인한 뒤 승인 또는 거절(사유 포함)을 결정합니다. AI 공급자 설정은 기본값이 Mock·외부 전송 차단(egress_allowed=false)이며, 외부 전송이 꺼진 상태에서 외부 AI 공급자를 지정하면 서버가 기동을 거부하도록 했습니다.",
-        en: "An engineer files a replacement request; role-specific AI agents (spec & compatibility / regulations / safety documents) produce review results while the UI polls progress at a server-specified interval. The safety manager reviews the AI output read-only, then approves or rejects with a reason. The AI provider config defaults to Mock with external egress disabled (egress_allowed=false), and the server refuses to start if an external AI provider is configured while egress is off.",
+        ko: "엔지니어가 교체 요청을 등록하면 역할별 AI 에이전트(규격·호환 / 법령·조문 / 안전서류)가 검토 결과를 만들고, 화면은 서버가 지정한 간격으로 진행 상태를 폴링해 보여줍니다. 안전관리자는 AI 결과물을 읽기 전용으로 확인한 뒤 승인 또는 거절(사유 포함)을 결정합니다. AI 공급자 설정은 기본값이 Mock·외부 전송 차단(egress_allowed=false)이며, 외부 전송이 꺼진 상태에서 외부 AI 공급자를 지정하면 서버가 기동을 거부하도록 했습니다. 개인 재구현(main)의 에이전트 3종은 아직 고정 응답(Mock)이고, 법령 에이전트의 실제 LLM 구현은 별도 브랜치에서 진행 중입니다.",
+        en: "An engineer files a replacement request; role-specific AI agents (spec & compatibility / regulations / safety documents) produce review results while the UI polls progress at a server-specified interval. The safety manager reviews the AI output read-only, then approves or rejects with a reason. The AI provider config defaults to Mock with external egress disabled (egress_allowed=false), and the server refuses to start if an external AI provider is configured while egress is off. In the personal re-implementation (main), all three agents still return fixed responses (Mock); a real LLM for the regulations agent is in progress on a separate branch.",
       },
     },
     team: {
-      ko: "5인 팀 (SKALA 4기)",
-      en: "Five-person team (SKALA Cohort 4)",
+      ko: "5인 팀 (SKALA 4기, 팀장 은태현) · 개인 재구현은 커밋 작성자 1명(본인)",
+      en: "Five-person team (SKALA Cohort 4, with a separate team lead) · personal re-implementation by a single commit author (me)",
     },
     role: {
-      ko: "백엔드 설계 · 최종 발표",
-      en: "Backend design & final presentation",
+      ko: "팀: 백엔드(Spring Boot) · 최종 발표 · 팀장-팀원 가교 | 개인 재구현: 계약 기반 에이전트 트랙 지휘·검수·통합 (코드 작성은 Claude 에이전트)",
+      en: "Team: backend (Spring Boot), final presentation, bridge between lead and members | Personal re-implementation: directing, reviewing, and integrating contract-driven agent tracks (code written by Claude agents)",
     },
     tags: {
       ko: ["AI 에이전트", "온프레미스", "Human-in-the-loop", "FastAPI", "Vue 3"],
@@ -425,6 +425,7 @@ export const portfolioProjects = [
         "'증명은 에이전트가, 판단은 사람이' 원칙으로 AI 검토 결과는 근거로만 쓰고 승인·거절은 안전관리자가 하도록 설계했습니다.",
         "외부 전송 차단을 기본값으로 두고, 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 해 온프레미스 전제를 코드로 강제했습니다.",
         "OpenAPI 명세, DBML 8개 테이블, 41장 발표자료로 설계부터 발표까지 3일 안에 정리했습니다.",
+        "개인 재구현 사후 점검(2026-09)에서 하루 1,001번째 요청부터 등록이 전부 500이 되는 채번 버그를 찾았습니다: 요청번호 최댓값을 문자열로 비교해 '…-999'를 '…-1000'보다 크다고 판단(750건 추가 등록 시 500 ×32). 길이 우선 정렬로 고치고 경계 회귀 테스트를 추가했습니다(수정 PR #1).",
         "기각된 가설은 발표자료에서 지우지 않고 의도적으로 남겼고, 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
       ],
       en: [
@@ -432,6 +433,7 @@ export const portfolioProjects = [
         "Under 'agents prove, people decide', AI review output serves only as evidence; approval and rejection stay with the safety manager.",
         "Made egress-off the default and required explicit permission before any external AI provider can start — enforcing the on-premise premise in code.",
         "Delivered an OpenAPI spec, an 8-table DBML schema, and a 41-slide deck within three days.",
+        "A post-hoc check of the personal re-implementation (Sep 2026) found that every registration failed with 500 from the 1,001st request of a day: the max request number was compared as a string, so '…-999' ranked above '…-1000' (500 ×32 when adding 750 requests). Fixed with length-first ordering plus a boundary regression test (fix PR #1).",
         "Kept the rejected hypotheses in the deck on purpose, and left out effect numbers such as approval-time reduction because they were never measured.",
       ],
     },
@@ -458,15 +460,15 @@ export const portfolioProjects = [
       {
         value: "72 / 0",
         label: {
-          ko: "라이브 E2E 통과 / 실패 (실행 로그 기준)",
-          en: "Live E2E passed / failed (from run log)",
+          ko: "개인 재구현 라이브 E2E 통과 / 실패 (3회 연속, 2026-09 재측정)",
+          en: "Personal re-implementation live E2E passed / failed (3 runs in a row, re-measured Sep 2026)",
         },
       },
       {
-        value: "41",
+        value: "94%",
         label: {
-          ko: "최종 발표자료 장수",
-          en: "Slides in the final deck",
+          ko: "개인 재구현 백엔드 라인 커버리지 (pytest 30개, 2026-09 재측정)",
+          en: "Personal re-implementation backend line coverage (30 pytest tests, re-measured Sep 2026)",
         },
       },
     ],
@@ -496,10 +498,32 @@ export const portfolioProjects = [
           en: "A Vue 3 + Vite frontend talks to a FastAPI (Python) backend over REST JSON; data targets PostgreSQL (Supabase) and was verified locally on SQLite. Agents sit behind a common interface — within the three-day scope, fixed-response (Mock) implementations validated the flow, with LLM implementations swappable later. Screens and permissions are split by role: engineer and safety manager.",
         },
       },
+      {
+        id: "two-repos",
+        title: {
+          ko: "두 개의 레포 — 팀 공식 산출물과 개인 재구현",
+          en: "Two Repositories — Team Deliverable and Personal Re-implementation",
+        },
+        body: {
+          ko: "팀 공식 레포(Taeyum/skala-fixguide)는 Spring Boot 백엔드이고, 저는 그중 프로젝트 골격, JWT 로그인·내 정보 API, 공통 에러 포맷, 역할별 요청 목록·대시보드 API, 시드 데이터, 통합 테스트, 회원가입·Redis 로그아웃 블랙리스트 등 커밋 11개를 남겼습니다. 개인 레포(skala-argus)는 팀 작업과 동시에 단일 계약서(CONTRACT.md v3.0)를 기준으로 기획·API·DB·백엔드·프론트 트랙을 Claude 에이전트에 나눠 맡기고, 제가 지시·검수·통합한 1일 병렬 스프린트의 결과입니다. 문서 속 '은태현 담당' 같은 표기는 팀 R&R을 에이전트 트랙에 매핑한 것이지 실제 팀원이 이 레포를 작성했다는 뜻이 아닙니다.",
+          en: "The team's official repo (Taeyum/skala-fixguide) is a Spring Boot backend; my 11 commits there cover the project scaffold, JWT login and 'me' APIs, the common error format, role-scoped request list and dashboard APIs, seed data, integration tests, and sign-up with a Redis-backed logout blacklist. The personal repo (skala-argus) came from a one-day parallel sprint alongside the team: I split planning, API, DB, backend, and frontend tracks among Claude agents against a single contract (CONTRACT.md v3.0) and directed, reviewed, and integrated them. Teammate names attached to tasks in its docs map team roles onto agent tracks; they do not mean those teammates wrote that repo.",
+        },
+      },
+      {
+        id: "troubleshooting-e2e",
+        title: {
+          ko: "트러블슈팅 — 실패해야 할 E2E가 조용히 PASS",
+          en: "Troubleshooting — E2E Silently Passing When It Should Fail",
+        },
+        body: {
+          ko: "재현: 라이브 E2E 스크립트가 실패해야 할 검사에서도 PASS를 냈습니다. 원인: 여러 줄 명령치환 결과를 인자로 바로 넘겨 단어 분리가 일어났고(인자 수 6), 검사가 의도대로 동작하지 않았습니다. 수정: 결과를 변수에 먼저 대입한 뒤 넘기도록 10곳을 고쳤습니다. 연속 실행 시 준비 대기 루프가 이전 실행의 서버 응답을 보고 통과하던 문제도 포트 해제 대기와 자기 서버 생존 확인으로 고쳐, 27/64 → 연속 3회 64/64가 됐습니다. 현재 72건(사진 검사 8건 추가)이 3회 연속 72/0입니다.",
+          en: "Reproduce: the live E2E script reported PASS on checks that should have failed. Cause: multi-line command substitutions were passed directly as arguments, so word splitting occurred (argc 6) and the checks did not behave as intended. Fix: assign to variables first, in 10 places. A readiness loop that passed by seeing the previous run's server during back-to-back runs was also fixed by waiting for the port to free up and checking its own server is alive, going from 27/64 to 64/64 three times in a row. Today's 72 checks (8 photo checks added) pass 72/0 three times in a row.",
+        },
+      },
     ],
     artifacts: {
-      ko: ["OpenAPI 명세", "DBML ERD", "아키텍처·시퀀스 다이어그램", "발표자료 41장", "화면 캡처"],
-      en: ["OpenAPI spec", "DBML ERD", "Architecture & sequence diagrams", "41-slide deck", "Screen captures"],
+      ko: ["팀 레포 본인 커밋 11개", "개인 재구현 레포·수정 PR #1", "OpenAPI 명세", "DBML ERD", "아키텍처·시퀀스 다이어그램", "발표자료 41장", "화면 캡처"],
+      en: ["My 11 commits in the team repo", "Personal re-implementation repo & fix PR #1", "OpenAPI spec", "DBML ERD", "Architecture & sequence diagrams", "41-slide deck", "Screen captures"],
     },
     interviewQuestions: {
       ko: [
@@ -539,6 +563,8 @@ export const portfolioProjects = [
     ],
     links: {
       github: "https://github.com/jang961111-hash/skala-argus",
+      teamGithub: "https://github.com/Taeyum/skala-fixguide/commits?author=jang961111-hash",
+      fixPr: "https://github.com/jang961111-hash/skala-argus/pull/1",
     },
   },
   {
@@ -563,8 +589,8 @@ export const portfolioProjects = [
       en: "An agent-commerce gateway: a buyer agent compares merchant quotes and pays on-chain, while a deterministic merchant-side policy engine verifies mandate signature, expiry, scope, cart, budget, and on-chain payment in six steps.",
     },
     context: {
-      ko: "Google x Solana AI Agentic Hackathon에 2인 팀 사공이(402)로 제출한 프로젝트입니다. AI Agent와 간편결제를 한 프로젝트에서 미리 경험했습니다.",
-      en: "Submitted to the Google x Solana AI Agentic Hackathon as the two-person team Sagong-i (402) — hands-on experience combining AI agents and payments in a single project.",
+      ko: "Google x Solana AI Agentic Hackathon 트랙 B(Autonomous On-chain Settlement)에 2인 팀 사공이(402)로 제출한 프로젝트입니다(2026-08-03 23:56 제출). 구현은 AI 코딩 에이전트(Claude Code) 세션 하나로 약 4시간에 했고, 레포 커밋은 모두 본인 계정입니다. 2026-09에 사후 점검으로 결제 경합 결함을 재현하고 고쳤습니다.",
+      en: "Submitted to Track B (Autonomous On-chain Settlement) of the Google x Solana AI Agentic Hackathon as the two-person team Sagong-i (402), at 23:56 on Aug 3, 2026. It was built by a single AI coding agent (Claude Code) session in about four hours, and every commit in the repo is under my account. In September 2026 a post-hoc check reproduced and fixed a payment race.",
     },
     story: {
       problem: {
@@ -576,8 +602,8 @@ export const portfolioProjects = [
         en: "Our analysis showed competing entries focused on buyer-side spending-limit wallets, so we targeted the empty merchant side (onboarding + verification). Since prompt injection can't be fully prevented, we drew the trust boundary so a deterministic policy engine — not the LLM — enforces limits.",
       },
       solution: {
-        ko: "Gemini는 견적 비교와 선택 사유 서술에만 쓰고, 결제 승인은 정책 엔진이 합니다. 가맹점은 코드 없이 온보딩해 엔드포인트를 발급받고, x402 방식(HTTP 402 → USDC 지불 → 재요청)으로 Solana devnet에서 결제한 뒤 주문 nonce를 memo로 묶어 온체인 지불을 대조합니다. 검증 6단계는 UI 스텝퍼로 시각화했습니다.",
-        en: "Gemini only compares quotes and writes the selection rationale; the policy engine approves payment. Merchants onboard without code and get an endpoint; payment follows the x402 pattern (HTTP 402 → USDC payment → retry) on Solana devnet, with the order nonce bound into the memo to match on-chain payment. The six verification steps are visualized as a UI stepper.",
+        ko: "상품 선택은 '조건을 만족하는 견적 중 최저 단가' 규칙이 하고, Gemini는 선택 사유 2문장만 씁니다(키가 없거나 실패하면 템플릿 문장으로 폴백). 결제 승인은 정책 엔진이 합니다. 가맹점은 코드 없이 온보딩해 엔드포인트를 발급받고, x402 방식(HTTP 402 → USDC 지불 → 재요청)으로 Solana devnet에서 결제한 뒤 주문 nonce를 memo로 묶어 온체인 지불을 대조합니다. 검증 6단계는 UI 스텝퍼로 시각화했습니다. AP2·x402·A2A는 SDK 없이 JSON 구조만 빌린 자체 축약 구현입니다.",
+        en: "A rule picks the cheapest quote that meets the conditions, and Gemini only writes a two-sentence rationale (falling back to a template if the key is missing or the call fails). The policy engine approves payment. Merchants onboard without code and get an endpoint; payment follows the x402 pattern (HTTP 402 → USDC payment → retry) on Solana devnet, with the order nonce bound into the memo to match on-chain payment. The six verification steps are visualized as a UI stepper. AP2, x402, and A2A are simplified in-house versions that borrow only the JSON shapes, without their SDKs.",
       },
     },
     team: {
@@ -585,8 +611,8 @@ export const portfolioProjects = [
       en: "Team Sagong-i (402), two members",
     },
     role: {
-      ko: "팀장 · PM/풀스택 | 에이전트 설계, 프론트엔드, GCP 인프라",
-      en: "Team lead · PM/Full-stack | Agent design, frontend, GCP infrastructure",
+      ko: "팀장 | 에이전트에 기획→개발→배포→QA 루프 지시, Solana·Gemini·GCP 계정·인프라 설정, 제출, 사후 점검·수정 검수 (코드 작성은 Claude Code)",
+      en: "Team lead | Directed the agent's plan→build→deploy→QA loop, set up Solana, Gemini, and GCP accounts and infrastructure, submitted, and reviewed the post-hoc check and fixes (code written by Claude Code)",
     },
     tags: {
       ko: ["AI 에이전트", "Gemini", "Solana", "x402", "Next.js", "Cloud Run"],
@@ -595,47 +621,51 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "구매자측에 몰린 경쟁 흐름과 달리 판매자측(가맹점 온보딩 + 검증)을 문제로 잡았습니다.",
-        "LLM은 견적 비교·사유 서술에만 쓰고, 예산·범위·만료 집행은 결정론 정책 엔진이 하도록 신뢰 경계를 설계했습니다.",
-        "예산 초과·만료 위임장·범위 밖·과소지불·리플레이 5종을 차단하는 것을 테스트로 확인했습니다 (단위 11 + 통합 20 = 31/31 통과).",
+        "LLM은 선택 사유 서술에만 쓰고, 예산·범위·만료 집행은 결정론 정책 엔진이 하도록 신뢰 경계를 설계했습니다.",
+        "해커톤 제출본은 예산 초과·만료 위임장·범위 밖·과소지불·리플레이 5종 차단을 순차 테스트로 확인했습니다(단위 11 + 통합 20 = 31/31). 그러나 동시 요청은 시험하지 않았습니다.",
+        "사후 점검(2026-09): 같은 결제 증빙을 동시에 보내면 1회 지불로 주문이 최대 10건 확정됐습니다 → 검증 전 선점 + 기록 직전 재검사로 1건. 예산 100 USDC 위임장의 최대 확정액 327.59 → 65.52 USDC, 지불 후 거절(돈만 이동) 262.07 → 0 USDC (sandbox·검증 지연 650ms 주입, K≤10 × 5회).",
+        "작성과 분리한 보안 리뷰가 수정이 만든 퇴행(위조 cart가 정당한 지불을 '미확정'으로 선점해 영구 409)을 머지 전에 잡았고, 그 과정에서 402와 품목만 바꾼 cart가 확정되던 원래 구멍도 막았습니다.",
         "개발 중 에이전트가 원두 조달 지시에 방금 온보딩된 최저가 베이글을 사 온 사고를 계기로 견적 매칭·범위 검증을 재설계했습니다.",
       ],
       en: [
         "Unlike competing entries clustered on the buyer side, framed the problem on the merchant side (onboarding + verification).",
-        "Designed the trust boundary so the LLM only compares quotes and writes rationale, while a deterministic policy engine enforces budget, scope, and expiry.",
-        "Verified by tests that five failure/attack types are blocked — over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31 passing).",
+        "Designed the trust boundary so the LLM only writes the rationale, while a deterministic policy engine enforces budget, scope, and expiry.",
+        "At submission, sequential tests confirmed five failure/attack types are blocked — over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31). Concurrent requests were never tested.",
+        "Post-hoc check (Sep 2026): sending the same payment proof concurrently confirmed up to 10 orders for one payment → claim-before-verify plus a re-check before recording brings it to 1. Max confirmed spend on a 100 USDC mandate 327.59 → 65.52 USDC; money moved but order rejected 262.07 → 0 USDC (sandbox, 650 ms injected verification delay, K ≤ 10 × 5 runs).",
+        "A security review kept separate from authoring caught a regression the fix introduced (a forged cart could pre-claim a legitimate payment as 'unconfirmed', causing a permanent 409) before merge, and along the way closed an original hole where a cart differing from the 402 only in items was confirmed.",
         "Redesigned quote matching and scope checks after an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead.",
       ],
     },
     proof: {
       ko: [
-        "AI에게 맡길 일(비교·설명)과 맡기면 안 되는 일(결제 승인)을 구분해 구조로 설계했습니다.",
+        "AI에게 맡길 일(선택 사유 설명)과 맡기면 안 되는 일(결제 승인)을 구분해 구조로 설계했습니다.",
         "테스트로 확인된 동작과 데모 범위의 한계(devnet, 고정 환율 시뮬레이션 등)를 README에 구분해 공개했습니다.",
       ],
       en: [
-        "Separated what AI should do (comparison, explanation) from what it must not (payment approval), and built that into the architecture.",
+        "Separated what AI should do (explaining the choice) from what it must not (payment approval), and built that into the architecture.",
         "Published test-verified behavior separately from demo-scope limits (devnet, fixed-rate simulation, etc.) in the README.",
       ],
     },
     metrics: [
       {
-        value: "31/31",
+        value: "10 → 1",
         label: {
-          ko: "단위 11 + 통합 20 테스트 통과",
-          en: "11 unit + 20 integration tests passing",
+          ko: "같은 결제 증빙 동시 전송 시 최대 주문 수 (수정 PR #1)",
+          en: "Max orders from one payment proof sent concurrently (fix PR #1)",
         },
       },
       {
-        value: "6단계",
+        value: "262.07 → 0",
         label: {
-          ko: "판매자측 결정론 검증",
-          en: "Merchant-side deterministic checks",
+          ko: "지불 후 거절된 금액 USDC (돈만 이동)",
+          en: "USDC paid but rejected (money moved, no order)",
         },
       },
       {
-        value: "5종",
+        value: "28 + 24",
         label: {
-          ko: "차단 검증된 공격·오류",
-          en: "Attack/error types verified as blocked",
+          ko: "vitest 28 + 서버 통합 24 테스트 통과 (이전 11 + 20)",
+          en: "28 vitest + 24 server integration tests passing (was 11 + 20)",
         },
       },
     ],
@@ -649,6 +679,28 @@ export const portfolioProjects = [
         body: {
           ko: "① 위임장·카트 ed25519 서명 → ② 위임 유효기간 → ③ 위임 범위(카테고리) → ④ 카트 정합성(단가·재고) → ⑤ 누적 예산 한도 → ⑥ 온체인 지불 일치(금액·수취인·memo=nonce·리플레이). 1~5단계는 결제가 일어나기 전에 거절되어 자금이 이동하지 않고, 6단계는 온체인 트랜잭션을 조회해 대조합니다.",
           en: "① ed25519 signatures on mandate and cart → ② mandate expiry → ③ mandate scope (category) → ④ cart consistency (price, stock) → ⑤ cumulative budget limit → ⑥ on-chain payment match (amount, recipient, memo = nonce, replay). Steps 1-5 reject before any payment so no funds move; step 6 checks the on-chain transaction.",
+        },
+      },
+      {
+        id: "troubleshooting-race",
+        title: {
+          ko: "트러블슈팅 — '리플레이 차단'을 내세웠지만 동시 요청은 뚫렸다",
+          en: "Troubleshooting — Replay Protection Was Advertised, but Concurrency Broke It",
+        },
+        body: {
+          ko: "재현: sandbox 모드에서 온체인 검증 지연 650ms(같은 날 잰 devnet 조회 p50 0.66s에 맞춤)를 주입하고 같은 결제 증빙을 동시에 K=1·2·5·10건씩 5회 보내자, 1회 지불로 주문이 최대 10건 확정되고 재고가 5kg 대신 50kg 차감, 원장이 1줄 대신 10줄 생겼습니다. 원인: 리플레이 검사와 기록 사이에 온체인 검증 await가 끼어 있어 두 요청이 모두 '처음 본 증빙'으로 통과했습니다. 예산도 402 발급 때 미결제 금액을 빼지 않아 동시 402들이 한도를 함께 넘었습니다. 수정: 검증 전에 증빙을 선점하고 기록 직전 재검사, 402 발급 시 예산 예약. 재현 테스트를 먼저 올려 6건 실패를 확인한 뒤 고쳤습니다. 실측: 주문 최대 10 → 1(이후 커밋에서 0/20 재확인), 예산 초과 15/15 → 0/15.",
+          en: "Reproduce: in sandbox mode with a 650 ms on-chain verification delay (matched to that day's devnet lookup p50 of 0.66 s), sending the same payment proof concurrently at K = 1, 2, 5, 10 for 5 runs confirmed up to 10 orders from one payment, deducting 50 kg of stock instead of 5 kg and writing 10 ledger lines instead of 1. Cause: an on-chain verification await sat between the replay check and the record, so both requests passed as 'never seen'. The budget also ignored unpaid amounts when issuing 402s, so concurrent 402s jointly exceeded the limit. Fix: claim the proof before verification and re-check right before recording; reserve budget when issuing a 402. A reproduction test went in first (6 failed) before the fix. Measured: max orders 10 → 1 (re-confirmed 0/20 on a later commit), over-budget 15/15 → 0/15.",
+        },
+      },
+      {
+        id: "limits",
+        title: {
+          ko: "한계",
+          en: "Limits",
+        },
+        body: {
+          ko: "증빙 선점 잠금과 파일 JSON DB가 프로세스 하나 기준이라 인스턴스가 둘 이상이면 경합 방어가 뚫립니다(라이브는 최대 인스턴스 1). 가맹점 등록에 인증이 없고 견적 매칭은 목표 문장의 토큰 하나만 상품명에 있어도 통과해, '카페 베이글' 가맹점을 등록하면 기본 목표 '카페 블렌드 원두 5kg 조달'에 베이글이 낙찰됩니다(2026-09-28 로컬 재현, 미해결). devnet 조건의 전후 비교는 faucet 제한으로 재지 못했고, 수정은 PR #1(2026-09-28 기준 리뷰 대기)에 있습니다.",
+          en: "The proof-claim lock and the file JSON DB assume a single process, so concurrency protection breaks with more than one instance (the live deployment is capped at one). Merchant sign-up has no authentication, and quote matching passes if a single token of the goal sentence appears in a product name — registering a 'Cafe Bagel' merchant makes a bagel win the default goal 'source 5 kg of cafe blend beans' (reproduced locally on Sep 28, 2026; unresolved). A before/after comparison under devnet conditions could not be run because of faucet limits, and the fixes are in PR #1 (awaiting review as of Sep 28, 2026).",
         },
       },
     ],
@@ -695,6 +747,7 @@ export const portfolioProjects = [
     links: {
       github: "https://github.com/jang961111-hash/jangbogo",
       youtube: "https://youtu.be/ALdVyGhXPT8",
+      fixPr: "https://github.com/jang961111-hash/jangbogo/pull/1",
     },
   },
   {
