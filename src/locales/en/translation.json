@@ -20,15 +20,15 @@
   "hero": {
     "name": "Jang Byeong Heon",
     "greeting": "Hello, I am",
-    "title": "AI Service Development · Planning",
-    "portfolioLabel": "I turn AI into services",
+    "title": "AI Service Developer",
+    "portfolioLabel": "AI Service Developer",
     "focusLabel": "How I Work",
-    "subtitle": "An AI service builder who has shipped LLM, recommendation, and vector-search features as real user experiences.",
-    "mission": "With structured thinking from a Philosophy degree and 1,628 hours of AI/SW training at SSAFY, I complete the full cycle from problem framing (planning) to React implementation.",
+    "subtitle": "An AI service developer who builds fast with AI coding agents and verifies with reproduction tests and measurements.",
+    "mission": "I separate what the LLM decides from what code decides, write a reproduction test before each fix, and report results as before/after numbers with their measurement conditions. When AI wrote the code, I say so. A Philosophy degree in problem structuring and AI/SW training at SSAFY (1,628 hours) and SKALA Cohort 4 are how I explain why things were built the way they were.",
     "proofItems": {
-      "product": "Led DailyLog as PM and won the SSAFY Specialized Project Excellence Award (3rd place)",
-      "ai": "Designed one reflection flow combining voice input (SenseVoice), recommendations (Thompson Sampling), and vector search (pgvector)",
-      "execution": "Implemented Loggy's real-time WebSocket review screens in React myself"
+      "product": "Ops Sentinel — fixed a concurrency defect that had been masked by growing the connection pool, after isolating its causes with reproduction tests. Pool 10, 150 concurrent requests to one resource, 3 s AI delay: 500 errors 372 → 0, audit logs 450/450 (re-measured Sep 2026, H2 in-memory)",
+      "ai": "RE:RUN — tested the 'AI fixes itself' claim with a pre-registered experiment. Removing the hint from the diagnosis prompt dropped correct self-repair from 72% to 0% (n=25 per condition), and I put that result on the README's first screen",
+      "execution": "JangBogo — a deterministic policy engine approves payments; the LLM only writes the rationale. Fixed a payment race found in a post-hoc check: max orders from one concurrently resent payment proof 10 → 1 (650 ms injected verification delay, up to 10 concurrent × 5 runs)"
     },
     "viewProjects": "See Flagship Work",
     "getInTouch": "Start a Conversation",
@@ -38,14 +38,14 @@
   "identity": {
     "title": "Identity & Product Philosophy",
     "text1": "My background in Philosophy trained me to analyze the conditions of human judgment, choice, and trust. This allows me to look past surface-level requirements to understand 'why' users behave a certain way. I have evolved into a PM who interprets problems deeply and realizes those interpretations as functioning systems.",
-    "text2": "Through SSAFY, I expanded my technical literacy in Python, algorithms, and AI, connecting them to user context. I believe technical depth is leverage that reduces product risk and lowers communication costs across teams during the planning phase.",
+    "text2": "I learned Python, algorithms, web, and AI fundamentals at SSAFY, and backend and AI service design at SKALA Cohort 4. Now I hand implementation to AI coding agents, but I set acceptance criteria first, verify the output with separate review and reproduction tests, and re-measure every number I claim. I see technical understanding not as something to show off but as the way to check what is actually true.",
     "text3": "\"I treat AI as a layer for better decisions, not as a gimmick.\"\nI see AI not as a simple automation tool, but as a support layer that helps users think and decide more clearly. In the DailyLog project, I solved the 'blank screen' problem with an AI-driven questioning flow, turning technical elements into real service value.",
     "skills_title": "Core Competencies",
     "skills": {
-      "platform": "Platform-Oriented Design",
-      "decision": "Decision Architecture",
-      "tech": "Technical Communication",
-      "ai": "AI as Decision Support"
+      "platform": "LLM Trust Boundary Design",
+      "decision": "Reproduce-First Debugging",
+      "tech": "Before/After Measurement",
+      "ai": "Agent-Built, Human-Verified"
     },
     "glance": {
       "title": "At a glance",
@@ -201,8 +201,30 @@
   },
   "competencies": {
     "title": "Core Competencies",
-    "subtitle": "A project-backed view of the planning, AI/Data, web collaboration, and communication skills used across the Core 3 projects.",
+    "subtitle": "How I verify the core projects built with AI coding agents, plus the planning, AI/Data, collaboration, and communication skills from earlier team projects — each tied to evidence.",
     "groups": {
+      "verification": {
+        "title": "Measurement- and Verification-Driven Development",
+        "subtitle": "I check code written by AI coding agents before trusting it: defects start with a reproduction, claims come with their measurement conditions.",
+        "items": {
+          "reproTest": {
+            "title": "Reproduction Test First",
+            "desc": "For each defect, a reproduction test was committed first and its failure confirmed before the fix. Ops Sentinel (AI call inside the lock: 10 requests at 1,656-1,670 ms → under 750 ms), JangBogo (payment race reproduced as 6 failures → passing)."
+          },
+          "independentReview": {
+            "title": "Review Separated from Authoring",
+            "desc": "A reviewer separate from the authoring agent checked the work. It caught a payment regression introduced by the fix in JangBogo, a second approval-gate bypass in RE:RUN, and async summary overwrites in Ops Sentinel, all before merge."
+          },
+          "beforeAfter": {
+            "title": "Before/After with Conditions",
+            "desc": "Numbers come with their conditions. Ops Sentinel pool 10, 150 concurrent, 3 s AI delay: audit 450/450 (500 ×372 before); RE:RUN self-repair 72% → 0% without the hint (n=25); JangBogo max orders 10 → 1."
+          },
+          "honestClaims": {
+            "title": "Publishing Disproved Claims",
+            "desc": "Claims that re-measurement proved wrong (Ops Sentinel '100% audit', RE:RUN 'AI self-diagnosis' with the prompt hint left unstated) were corrected in the README, not deleted. What AI wrote and what I did are stated separately."
+          }
+        }
+      },
       "productPlanning": {
         "title": "Product & Planning",
         "subtitle": "How I reframed problems and translated them into service structures in DailyLog, Loggy, and Promtree.",

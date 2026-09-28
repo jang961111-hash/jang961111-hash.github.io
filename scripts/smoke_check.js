@@ -12,13 +12,13 @@ const routes = [
   {
     path: "/",
     expectedPathname: "/",
-    expectedTitle: "장병헌 | AI 서비스 개발 · 기획 포트폴리오",
+    expectedTitle: "장병헌 | AI 서비스 개발자 포트폴리오",
     expectedStatus: 200,
   },
   {
     path: "/en/",
     expectedPathname: "/en/",
-    expectedTitle: "Jang Byeong Heon | AI Service Development · Planning Portfolio",
+    expectedTitle: "Jang Byeong Heon | AI Service Developer Portfolio",
     expectedStatus: 200,
   },
   {
@@ -36,7 +36,7 @@ const routes = [
   {
     path: "/en/does-not-exist",
     expectedPathname: "/en/",
-    expectedTitle: "Jang Byeong Heon | AI Service Development · Planning Portfolio",
+    expectedTitle: "Jang Byeong Heon | AI Service Developer Portfolio",
     expectedStatus: 200,
     allowConsoleErrors: true,
   },

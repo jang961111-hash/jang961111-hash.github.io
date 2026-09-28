@@ -27,7 +27,7 @@ const About = () => {
           <dl className="about-glance-list">
             <div className="about-glance-row">
               <dt>{t("identity.glance.projects")}</dt>
-              <dd>15</dd>
+              <dd>17</dd>
             </div>
             <div className="about-glance-row">
               <dt>

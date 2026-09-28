@@ -5,23 +5,29 @@ import './Competencies.css';
 
 const competencyGroups = [
   {
-    key: 'productPlanning',
+    key: 'verification',
     icon: '01',
+    wide: true,
+    items: ['reproTest', 'independentReview', 'beforeAfter', 'honestClaims'],
+  },
+  {
+    key: 'productPlanning',
+    icon: '02',
     items: ['problemFraming', 'userFlow', 'serviceStructure', 'marketAnalysis'],
   },
   {
     key: 'aiData',
-    icon: '02',
+    icon: '03',
     items: ['llmPrompting', 'pythonSql', 'dataDecision', 'aiPlanning'],
   },
   {
     key: 'webCollaboration',
-    icon: '03',
+    icon: '04',
     items: ['reactLiteracy', 'gitWorkflow', 'collaborationTools', 'documentation'],
   },
   {
     key: 'communicationLeadership',
-    icon: '04',
+    icon: '05',
     items: ['presentation', 'teamAlignment', 'userPerspective', 'feedbackLoop'],
   },
 ];
@@ -35,7 +41,10 @@ const Competencies = () => {
       
       <div className="competencies-grid">
         {competencyGroups.map((group) => (
-          <div className="competency-card structural-card" key={group.key}>
+          <div
+            className={`competency-card structural-card${group.wide ? ' competency-card--wide' : ''}`}
+            key={group.key}
+          >
             <div className="competency-card-header">
               <span className="competency-icon mono">{group.icon}</span>
               <h3 className="competency-title mono">
