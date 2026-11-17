@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import SectionShell from "../layout/SectionShell";
 import { getSectionIndex } from "../../config/sections";
 
-import { renderEmphasis } from "../../utils/emphasis";
+import { renderLines } from "../../utils/emphasis";
 const Experience = () => {
   const { t } = useTranslation();
 
@@ -36,7 +36,7 @@ const Experience = () => {
                 <span className="date">{t(`experience.jobs.${jobKey}.period`)}</span>
                 <ul className="task-list">
                   {descList.map((text, descIndex) => (
-                    <li key={`${jobKey}-${descIndex}`}>{renderEmphasis(text)}</li>
+                    <li key={`${jobKey}-${descIndex}`}>{renderLines(text)}</li>
                   ))}
                 </ul>
               </div>

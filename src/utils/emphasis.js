@@ -24,3 +24,22 @@ export const renderEmphasis = (text) => {
     )
   );
 };
+
+// Body copy may hold several short lines separated by "\n". Each line is
+// drawn as a bullet line (a block-level span, so it stays valid inside <p>).
+export const renderLines = (text) => {
+  if (typeof text !== "string" || !text.includes("\n")) {
+    return renderEmphasis(text);
+  }
+
+  return text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line, index) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <span className="bullet-line" key={index}>
+        {renderEmphasis(line)}
+      </span>
+    ));
+};

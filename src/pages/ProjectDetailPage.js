@@ -6,7 +6,7 @@ import DailyLogPipelineDiagram from "../components/diagrams/DailyLogPipelineDiag
 import LoggyDecisionFlowDiagram from "../components/diagrams/LoggyDecisionFlowDiagram";
 import "./ProjectDetailPage.css";
 
-import { renderEmphasis } from "../utils/emphasis";
+import { renderLines } from "../utils/emphasis";
 const diagramRegistry = {
   "dailylog-pipeline": DailyLogPipelineDiagram,
   "loggy-decision-flow": LoggyDecisionFlowDiagram,
@@ -72,7 +72,7 @@ const SubmissionFormat = ({ project, copy }) => {
       <span className="detail-label">{copy.submissionFormat}</span>
       <div className="submission-detail-grid">
         <SubmissionSection label={copy.overview}>
-          <p>{renderEmphasis(project.summary)}</p>
+          <p>{renderLines(project.summary)}</p>
         </SubmissionSection>
         <SubmissionSection label={copy.techStack}>
           <div className="project-tag-list">
@@ -87,20 +87,20 @@ const SubmissionFormat = ({ project, copy }) => {
           <p>{project.role}</p>
         </SubmissionSection>
         <SubmissionSection label={copy.problemDefinition}>
-          <p>{renderEmphasis(project.story?.problem ?? project.context)}</p>
+          <p>{renderLines(project.story?.problem ?? project.context)}</p>
         </SubmissionSection>
         <SubmissionSection label={copy.solutionProcess}>
-          <p>{renderEmphasis(project.story?.solution ?? project.caseStudy?.summary)}</p>
+          <p>{renderLines(project.story?.solution ?? project.caseStudy?.summary)}</p>
         </SubmissionSection>
         <SubmissionSection label={copy.coreContribution}>
           <ul className="project-proof-list">
             {project.highlights.slice(0, 3).map((item) => (
-              <li key={item}>{renderEmphasis(item)}</li>
+              <li key={item}>{renderLines(item)}</li>
             ))}
           </ul>
         </SubmissionSection>
         <SubmissionSection label={copy.resultLearning}>
-          <p>{renderEmphasis(project.proof[0] ?? project.caseStudy?.summary)}</p>
+          <p>{renderLines(project.proof[0] ?? project.caseStudy?.summary)}</p>
         </SubmissionSection>
         <SubmissionSection label={copy.interviewHooks}>
           <ul className="project-proof-list">
@@ -145,7 +145,7 @@ const ProjectDetailPage = ({ project, lang }) => {
                 <span className="project-detail-period">{project.period}</span>
               </div>
               <h1 className="project-detail-title">{project.title}</h1>
-              <p className="project-detail-summary">{renderEmphasis(project.summary)}</p>
+              <p className="project-detail-summary">{renderLines(project.summary)}</p>
             </div>
 
             <div className="project-detail-side">
@@ -242,15 +242,15 @@ const ProjectDetailPage = ({ project, lang }) => {
                 <div className="project-story-grid detail-story-grid">
                   <div className="detail-story-item">
                     <span className="detail-label">{copy.challenge}</span>
-                    <p className="project-detail-body">{renderEmphasis(project.story.problem)}</p>
+                    <p className="project-detail-body">{renderLines(project.story.problem)}</p>
                   </div>
                   <div className="detail-story-item">
                     <span className="detail-label">{copy.insight}</span>
-                    <p className="project-detail-body">{renderEmphasis(project.story.insight)}</p>
+                    <p className="project-detail-body">{renderLines(project.story.insight)}</p>
                   </div>
                   <div className="detail-story-item">
                     <span className="detail-label">{copy.solution}</span>
-                    <p className="project-detail-body">{renderEmphasis(project.story.solution)}</p>
+                    <p className="project-detail-body">{renderLines(project.story.solution)}</p>
                   </div>
                 </div>
               </article>
@@ -264,11 +264,11 @@ const ProjectDetailPage = ({ project, lang }) => {
                   </span>
                   <h2 className="case-study-title">{project.caseStudy.title}</h2>
                   <p className="case-study-summary">
-                    {renderEmphasis(project.caseStudy.summary)}
+                    {renderLines(project.caseStudy.summary)}
                   </p>
                 </div>
                 <div className="case-study-content project-detail-body">
-                  {renderEmphasis(project.caseStudy.content)}
+                  {renderLines(project.caseStudy.content)}
                 </div>
               </article>
             )}
@@ -293,7 +293,7 @@ const ProjectDetailPage = ({ project, lang }) => {
               <span className="detail-label">{copy.highlights}</span>
               <ul className="project-proof-list">
                 {project.highlights.map((item) => (
-                  <li key={item}>{renderEmphasis(item)}</li>
+                  <li key={item}>{renderLines(item)}</li>
                 ))}
               </ul>
             </article>
@@ -309,7 +309,7 @@ const ProjectDetailPage = ({ project, lang }) => {
                 className="structural-card project-detail-card"
               >
                 <span className="detail-label">{section.title}</span>
-                <div className="project-detail-body">{renderEmphasis(section.body)}</div>
+                <div className="project-detail-body">{renderLines(section.body)}</div>
                 {Diagram && (
                   <div className="project-section-visual">
                     <Diagram lang={lang} />
@@ -339,7 +339,7 @@ const ProjectDetailPage = ({ project, lang }) => {
               {project.artifacts.length > 0 ? (
                 <ul className="project-proof-list">
                   {project.artifacts.map((item) => (
-                    <li key={item}>{renderEmphasis(item)}</li>
+                    <li key={item}>{renderLines(item)}</li>
                   ))}
                 </ul>
               ) : (

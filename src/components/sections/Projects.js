@@ -9,7 +9,7 @@ import SectionShell from "../layout/SectionShell";
 import useLang from "../../hooks/useLang";
 import { getSectionIndex } from "../../config/sections";
 
-import { renderEmphasis } from "../../utils/emphasis";
+import { renderLines, stripEmphasis } from "../../utils/emphasis";
 const Projects = () => {
   const lang = useLang();
   const copy = projectUiCopy[lang];
@@ -21,13 +21,13 @@ const Projects = () => {
       id="projects"
       index={getSectionIndex("projects")}
       title={copy.sectionTitle}
-      subtitle={renderEmphasis(copy.sectionIntro)}
+      subtitle={renderLines(copy.sectionIntro)}
     >
       <div className="project-archive-header project-core-header">
         <div>
           <p className="project-archive-kicker mono">{copy.coreKicker}</p>
           <h3 className="project-archive-title">{copy.coreTitle}</h3>
-          <p className="project-archive-intro">{renderEmphasis(copy.coreIntro)}</p>
+          <p className="project-archive-intro">{renderLines(copy.coreIntro)}</p>
         </div>
       </div>
 
@@ -46,11 +46,11 @@ const Projects = () => {
 
             <p className="project-card-category">{project.category}</p>
             <h3 className="project-card-title">{project.title}</h3>
-            <p className="project-card-summary">{renderEmphasis(project.summary)}</p>
+            <p className="project-card-summary">{renderLines(project.summary)}</p>
 
             <div className="project-core-block">
               <span className="detail-label">{copy.problemDefinition}</span>
-              <p>{renderEmphasis(project.story?.problem ?? project.context)}</p>
+              <p>{renderLines(stripEmphasis(project.story?.problem ?? project.context))}</p>
             </div>
 
             <div className="project-core-block">
@@ -62,7 +62,7 @@ const Projects = () => {
               <span className="detail-label">{copy.coreContribution}</span>
               <ul className="project-proof-list">
                 {project.highlights.slice(0, 3).map((item) => (
-                  <li key={item}>{renderEmphasis(item)}</li>
+                  <li key={item}>{stripEmphasis(item)}</li>
                 ))}
               </ul>
             </div>
@@ -80,7 +80,7 @@ const Projects = () => {
 
             <div className="project-core-block">
               <span className="detail-label">{copy.resultLearning}</span>
-              <p>{renderEmphasis(project.proof[0] ?? project.caseStudy?.summary)}</p>
+              <p>{renderLines(project.proof[0] ?? project.caseStudy?.summary)}</p>
             </div>
 
             <Link to={project.path} className="project-inline-link">
@@ -115,7 +115,7 @@ const Projects = () => {
 
             <p className="project-card-category">{project.category}</p>
             <h4 className="project-card-title">{project.title}</h4>
-            <p className="project-card-summary">{renderEmphasis(project.summary)}</p>
+            <p className="project-card-summary">{renderLines(project.summary)}</p>
 
             <div className="project-tag-list">
               {(project.stack?.length ? project.stack : project.tags).map((tag) => (

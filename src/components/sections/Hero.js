@@ -5,7 +5,7 @@ import profilePhotoJpg from "../../assets/images/id-photo.jpg";
 import { getResumeAsset } from "../../utils/resumeAssets";
 import "./Hero.css";
 
-import { renderEmphasis } from "../../utils/emphasis";
+import { renderLines } from "../../utils/emphasis";
 const Hero = () => {
   const { t, i18n } = useTranslation();
   const resume = getResumeAsset(i18n.language);
@@ -27,14 +27,14 @@ const Hero = () => {
             <h1 className="hero-title">{t("hero.name")}</h1>
           </div>
 
-          <h2 className="hero-subtitle">{renderEmphasis(t("hero.subtitle"))}</h2>
-          <p className="hero-description">{renderEmphasis(t("hero.mission"))}</p>
+          <h2 className="hero-subtitle">{renderLines(t("hero.subtitle"))}</h2>
+          <p className="hero-description">{renderLines(t("hero.mission"))}</p>
 
           <div className="hero-proof-list">
             {proofKeys.map((key, index) => (
               <div key={key} className="hero-proof-item">
                 <span className="hero-proof-index mono">{`0${index + 1}`}</span>
-                <p>{renderEmphasis(t(`hero.proofItems.${key}`))}</p>
+                <p>{renderLines(t(`hero.proofItems.${key}`))}</p>
               </div>
             ))}
           </div>

@@ -3,8 +3,8 @@ export const projectUiCopy = {
     sectionTitle: "Core Projects",
     sectionIntro:
       "사용자의 반복적인 불편, 기록되지 않는 의사결정, 재생에너지 수요 불일치처럼 서로 다른 문제를 **서비스로 풀어 본** 경험입니다.",
-    coreKicker: "Submission focus",
-    coreTitle: "제출용 핵심 프로젝트 3",
+    coreKicker: "Featured",
+    coreTitle: "핵심 프로젝트 3",
     coreIntro:
       "DailyLog, ARGUS, SKT promp.T 최우수상작을 먼저 소개합니다. 프로젝트마다 문제 정의, 맡은 역할, 기술 선택, 해결 과정을 정리했습니다.",
     supportingKicker: "Supporting / Hackathon",
@@ -16,7 +16,7 @@ export const projectUiCopy = {
     coreContribution: "핵심 기여",
     techStack: "사용 기술",
     resultLearning: "결과 / 배운 점",
-    submissionFormat: "SSAFY 제출 구조",
+    submissionFormat: "프로젝트 요약",
     overview: "프로젝트 개요",
     myRole: "수행 역할",
     solutionProcess: "해결 과정",
@@ -62,7 +62,7 @@ export const projectUiCopy = {
     sectionTitle: "Core Projects",
     sectionIntro:
       "Experiences in solving various problems—user friction, fragmented decisions, and energy mismatches—through structured service design.",
-    coreKicker: "Submission focus",
+    coreKicker: "Featured",
     coreTitle: "Core 3 Projects",
     coreIntro:
       "DailyLog, ARGUS, and the SKT promp.T top-prize entry are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
@@ -75,7 +75,7 @@ export const projectUiCopy = {
     coreContribution: "Key contribution",
     techStack: "Tech stack",
     resultLearning: "Result / learning",
-    submissionFormat: "SSAFY Portfolio Format",
+    submissionFormat: "Project summary",
     overview: "Project overview",
     myRole: "My role",
     solutionProcess: "Solution process",

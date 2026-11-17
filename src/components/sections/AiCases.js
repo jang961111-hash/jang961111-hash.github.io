@@ -7,7 +7,7 @@ import { getProjectPath } from "../../utils/localeRouting";
 import useLang from "../../hooks/useLang";
 import { getSectionIndex } from "../../config/sections";
 
-import { renderEmphasis } from "../../utils/emphasis";
+import { renderLines } from "../../utils/emphasis";
 const cases = [
   { key: "questionFlow", slug: "dailylog" },
   { key: "recommendation", slug: "dailylog" },
@@ -26,7 +26,7 @@ const AiCases = () => {
       id="ai-cases"
       index={getSectionIndex("ai-cases")}
       title={t("aiCases.title")}
-      subtitle={renderEmphasis(t("aiCases.subtitle"))}
+      subtitle={renderLines(t("aiCases.subtitle"))}
     >
       <div className="project-archive-grid">
         {cases.map(({ key, slug }) => (
@@ -40,17 +40,17 @@ const AiCases = () => {
 
             <div className="project-core-block">
               <span className="detail-label">{t("aiCases.labels.problem")}</span>
-              <p>{renderEmphasis(t(`aiCases.items.${key}.problem`))}</p>
+              <p>{renderLines(t(`aiCases.items.${key}.problem`))}</p>
             </div>
 
             <div className="project-core-block">
               <span className="detail-label">{t("aiCases.labels.approach")}</span>
-              <p>{renderEmphasis(t(`aiCases.items.${key}.approach`))}</p>
+              <p>{renderLines(t(`aiCases.items.${key}.approach`))}</p>
             </div>
 
             <div className="project-core-block">
               <span className="detail-label">{t("aiCases.labels.result")}</span>
-              <p>{renderEmphasis(t(`aiCases.items.${key}.result`))}</p>
+              <p>{renderLines(t(`aiCases.items.${key}.result`))}</p>
             </div>
 
             <Link to={getProjectPath(lang, slug)} className="project-inline-link">
