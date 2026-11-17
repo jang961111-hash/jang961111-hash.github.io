@@ -83,12 +83,12 @@ describe("App routing flows", () => {
 
     await waitFor(() => {
       expect(screen.getByTestId("location-probe").textContent).toBe(
-        "/en/projects/argus/"
+        "/en/projects/dailylog/"
       );
     });
     await waitFor(() => {
       expect(document.title).toBe(
-        "ARGUS | An On-Premise AI Agent for Semiconductor Fab Part-Replacement Approval | Jang Byeong Heon"
+        "DailyLog | AI-Driven Reflection & Decision Support | Jang Byeong Heon"
       );
     });
 

@@ -6,7 +6,7 @@ export const projectUiCopy = {
     coreKicker: "Submission focus",
     coreTitle: "제출용 핵심 프로젝트 3",
     coreIntro:
-      "문제정의, 수행 역할, 기술 선택, 해결 과정이 면접 질문으로 이어지도록 ARGUS, DailyLog, Loggy를 먼저 정리합니다.",
+      "문제정의, 수행 역할, 기술 선택, 해결 과정이 면접 질문으로 이어지도록 DailyLog, ARGUS, SKT promp.T 최우수상작을 먼저 정리합니다.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "보조 프로젝트 및 해커톤",
     supportingIntro:
@@ -55,7 +55,7 @@ export const projectUiCopy = {
     coreKicker: "Submission focus",
     coreTitle: "Core 3 Projects",
     coreIntro:
-      "ARGUS, DailyLog, and Loggy are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
+      "DailyLog, ARGUS, and the SKT promp.T top-prize entry are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "Supporting Projects & Hackathons",
     supportingIntro:

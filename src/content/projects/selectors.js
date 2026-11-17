@@ -1,7 +1,7 @@
 import { portfolioProjects } from "./data";
 import { getLocalizedProject } from "./localize";
 
-const coreProjectSlugs = ["argus", "dailylog", "loggy"];
+const coreProjectSlugs = ["dailylog", "argus", "skt-prompt-ansimcall"];
 
 export const getOrderedProjects = () =>
   [...portfolioProjects].sort((left, right) => {
