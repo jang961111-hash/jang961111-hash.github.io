@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
-import AiCases from "../components/sections/AiCases";
-import Competencies from "../components/sections/Competencies";
+import TechStack from "../components/sections/TechStack";
+import SupportingProjects from "../components/sections/SupportingProjects";
 import Experience from "../components/sections/Experience";
 import AppLayout from "../components/layout/AppLayout";
 import { useHomeScrollRestore, useLocaleLanguage } from "../hooks/useRouteEffects";
@@ -12,11 +11,11 @@ import { pageMetadata } from "../metadata";
 import { homeSections } from "../config/sections";
 
 // Contact is rendered by AppLayout, so it has no entry here.
+// About, AiCases and Competencies stay in the codebase but are off the home page.
 const sectionComponents = {
-  about: About,
   projects: Projects,
-  "ai-cases": AiCases,
-  competencies: Competencies,
+  stack: TechStack,
+  "more-projects": SupportingProjects,
   experience: Experience,
 };
 
