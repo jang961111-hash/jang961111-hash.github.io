@@ -5,7 +5,7 @@ const labels = {
     title: "Loggy 의사결정 흐름 다이어그램",
     lane1: {
       name: "실시간 논의",
-      tech: "WebSocket · Issue → Branch",
+      tech: "WebSocket, Issue → Branch",
       desc: "안건별 분기에서 자유롭게 논의",
       volatile: "휘발 — 회의 종료 시 소멸",
     },
@@ -21,8 +21,8 @@ const labels = {
         desc: ["핵심 메시지만 기록", "자산으로 영구 보존"],
       },
       {
-        name: "검토 · 승인",
-        tech: "Pull Request · Tree View",
+        name: "검토, 승인",
+        tech: "Pull Request, Tree View",
         desc: ["논의 흐름을 Git Graph", "뷰로 한눈에 검토"],
       },
       {
@@ -41,7 +41,7 @@ const labels = {
     title: "Loggy decision flow diagram",
     lane1: {
       name: "Live Discussion",
-      tech: "WebSocket · Issue → Branch",
+      tech: "WebSocket, Issue → Branch",
       desc: "Open chat on each topic branch",
       volatile: "volatile — expires after the meeting",
     },
@@ -57,8 +57,8 @@ const labels = {
         desc: ["Only key messages become", "permanent assets"],
       },
       {
-        name: "Review · Approve",
-        tech: "Pull Request · Tree View",
+        name: "Review, Approve",
+        tech: "Pull Request, Tree View",
         desc: ["Discussion reviewed at a", "glance as a Git graph"],
       },
       {

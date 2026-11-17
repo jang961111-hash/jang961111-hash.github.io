@@ -6,7 +6,7 @@ const labels = {
     steps: [
       {
         no: "01",
-        name: "음성 · 텍스트 입력",
+        name: "음성, 텍스트 입력",
         tech: "SenseVoice STT",
         desc: ["막연한 빈 화면 대신", "말로 하루 기록 시작"],
       },
@@ -14,12 +14,12 @@ const labels = {
         no: "02",
         name: "슬롯 기반 질문 엔진",
         tech: "LLM Prompt Flow",
-        desc: ["7개 슬롯(사건·감정·원인…)", "비어 있는 슬롯만 골라 질문"],
+        desc: ["7개 슬롯(사건, 감정, 원인…)", "비어 있는 슬롯만 골라 질문"],
       },
       {
         no: "03",
         name: "구조화 기록 저장",
-        tech: "PostgreSQL · pgvector",
+        tech: "PostgreSQL, pgvector",
         desc: ["회고를 벡터로 저장하고", "유사한 과거 기록 소환"],
       },
       {
@@ -37,7 +37,7 @@ const labels = {
     steps: [
       {
         no: "01",
-        name: "Voice · Text Input",
+        name: "Voice, Text Input",
         tech: "SenseVoice STT",
         desc: ["Start the log by speaking,", "not from a blank page"],
       },
@@ -45,12 +45,12 @@ const labels = {
         no: "02",
         name: "Slot-based Query Engine",
         tech: "LLM Prompt Flow",
-        desc: ["7 slots (Event · Emotion …)", "asks only for missing slots"],
+        desc: ["7 slots (Event, Emotion …)", "asks only for missing slots"],
       },
       {
         no: "03",
         name: "Structured Storage",
-        tech: "PostgreSQL · pgvector",
+        tech: "PostgreSQL, pgvector",
         desc: ["Stores entries as vectors,", "recalls similar past logs"],
       },
       {

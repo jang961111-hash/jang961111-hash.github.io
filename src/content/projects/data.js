@@ -1087,7 +1087,7 @@ export const portfolioProjects = [
       {
         value: { ko: "5종", en: "5 types" },
         label: {
-          ko: "차단 검증된 공격·오류",
+          ko: "차단 검증된 공격, 오류",
           en: "Attack/error types verified as blocked",
         },
       },
@@ -1106,7 +1106,7 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["데모 영상", "GitHub 저장소", "설계·QA 문서", "프로젝트 소개서"],
+      ko: ["데모 영상", "GitHub 저장소", "설계, QA 문서", "프로젝트 소개서"],
       en: ["Demo video", "GitHub repository", "Design & QA docs", "Project brief"],
     },
     interviewQuestions: {
@@ -1194,8 +1194,8 @@ export const portfolioProjects = [
       en: "Three-person team (team lead, official representative)",
     },
     role: {
-      ko: "팀장 · PM · 프론트 리드 | 기획·PM·발표 총괄, React 프론트엔드, LLM·Prompt 추천·벡터검색",
-      en: "Team lead · PM · Frontend lead | Planning, PM & pitch, React frontend, LLM/prompt recommendations & vector search",
+      ko: "팀장, PM, 프론트 리드 | 기획, PM, 발표 총괄, React 프론트엔드, LLM, Prompt 추천, 벡터검색",
+      en: "Team lead, PM, Frontend lead | Planning, PM & pitch, React frontend, LLM/prompt recommendations & vector search",
     },
     tags: {
       ko: ["문제 정의", "AI 추천", "벡터 검색", "경쟁 분석", "지역 일자리"],
@@ -1225,8 +1225,8 @@ export const portfolioProjects = [
       {
         value: { ko: "본선", en: "Finals" },
         label: {
-          ko: "서류 심사 통과 · 본선 진출",
-          en: "Passed screening · advanced to finals",
+          ko: "서류 심사 통과, 본선 진출",
+          en: "Passed screening, advanced to finals",
         },
       },
       {
@@ -1239,7 +1239,7 @@ export const portfolioProjects = [
     ],
     sections: [],
     artifacts: {
-      ko: ["참가신청서 및 AI 개발계획서", "팀 소개", "경쟁·유사 서비스 분석", "제출 체크리스트"],
+      ko: ["참가신청서 및 AI 개발계획서", "팀 소개", "경쟁, 유사 서비스 분석", "제출 체크리스트"],
       en: ["Application & AI development plan", "Team introduction", "Competitor analysis", "Submission checklist"],
     },
     interviewQuestions: {
@@ -1266,7 +1266,7 @@ export const portfolioProjects = [
     },
     category: {
       ko: "SKT 「모두의 promp.T」 공모전 Life AX 부문",
-      en: "SKT 'promp.T for Everyone' Contest · Life AX",
+      en: "SKT 'promp.T for Everyone' Contest, Life AX",
     },
     title: {
       ko: "SKT promp.T 최우수상작 | 부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트",
@@ -1373,8 +1373,8 @@ export const portfolioProjects = [
     status: "completed",
     sortDate: "2026-03-28",
     period: {
-      ko: "2026.03.28 (Round 1 · Day 1)",
-      en: "Mar 28, 2026 (Round 1 · Day 1)",
+      ko: "2026.03.28 (Round 1, Day 1)",
+      en: "Mar 28, 2026 (Round 1, Day 1)",
     },
     category: {
       ko: "AI R&D / Hackathon",
@@ -1496,7 +1496,7 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["제출 리포트 PDF", "학습 곡선", "해법 코드·체크포인트", "AI 핸드오프 문서"],
+      ko: ["제출 리포트 PDF", "학습 곡선", "해법 코드, 체크포인트", "AI 핸드오프 문서"],
       en: ["Submission report PDF", "Learning curves", "Solution code & checkpoints", "AI hand-off documents"],
     },
     interviewQuestions: {
@@ -1555,12 +1555,12 @@ export const portfolioProjects = [
       en: "SSAFY Startup Camp",
     },
     title: {
-      ko: "EasyExam | 학원 출제·채점·관리를 하나의 루프로 만드는 AI SaaS",
+      ko: "EasyExam | 학원 출제, 채점, 관리를 하나의 루프로 만드는 AI SaaS",
       en: "EasyExam | An AI SaaS Turning Academy Exam Work into One Loop",
     },
     summary: {
       ko: "SSAFY 창업캠프(삼성, JA Korea)에 팀 No Problem으로 참가해 피칭한, 학원 강사용 AI 문제은행, 시험지 생성, 자동 채점 SaaS입니다. **창업관심팀 최우수팀**으로 선정되었습니다.",
-      en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors, pitched by Team No Problem at the SSAFY Startup Camp (Samsung · JA Korea). Selected as Best Team.",
+      en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors, pitched by Team No Problem at the SSAFY Startup Camp (Samsung and JA Korea). Selected as Best Team.",
     },
     context: {
       ko: "팀 No Problem(5인)으로 참가, 전직 학원 강사의 현장 페인 포인트에서 출발\n15장 사업 소개 덱 발표로 창업관심팀 최우수팀 선정\n저는 마케팅, SEO 담당",
@@ -1581,7 +1581,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "팀 No Problem (5인 — CEO·CTO·전 학원 강사·마케팅·인프라)",
+      ko: "팀 No Problem (5인 — CEO, CTO, 전 학원 강사, 마케팅, 인프라)",
       en: "Team No Problem (5 — CEO, CTO, ex-instructor, marketing, infra)",
     },
     role: {
@@ -1600,7 +1600,7 @@ export const portfolioProjects = [
         "전국 학원 8만여 곳 기준 **SAM 965억 원** 산정 등 시장과 수익모델을 공식 통계로 뒷받침",
       ],
       en: [
-        "Selected as Best Team in the SSAFY Startup Camp (hosted by Samsung · JA Korea).",
+        "Selected as Best Team in the SSAFY Startup Camp (hosted by Samsung and JA Korea).",
         "Over the 3-day camp the team validated the idea and pitched a 15-page business deck; I owned marketing and SEO.",
         "Structured the product as a data flywheel connecting creation, grading, and analytics.",
         "Backed the market and revenue model with official statistics — ₩96.5B SAM across ~80K academies.",
@@ -1662,7 +1662,7 @@ export const portfolioProjects = [
       ko: [
         "왜 개별 기능이 아니라 데이터 선순환 루프를 제품 전략으로 삼았나요?",
         "AI 채점의 신뢰도 문제를 서비스 설계에서 어떻게 다뤘나요?",
-        "3일 캠프에서 마케팅·SEO 담당으로 무엇에 집중했나요?",
+        "3일 캠프에서 마케팅, SEO 담당으로 무엇에 집중했나요?",
       ],
       en: [
         "Why did you make the data flywheel the product strategy instead of individual features?",
@@ -1726,7 +1726,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "SUPPORTY 2인 팀 (하드웨어·운용 리드 / 기획·소프트웨어)",
+      ko: "SUPPORTY 2인 팀 (하드웨어, 운용 리드 / 기획, 소프트웨어)",
       en: "SUPPORTY, two-person team (hardware & operations lead / planning & software)",
     },
     role: {
@@ -1783,7 +1783,7 @@ export const portfolioProjects = [
       {
         value: "Live",
         label: {
-          ko: "실물 UGV·VTOL 연동 시연",
+          ko: "실물 UGV, VTOL 연동 시연",
           en: "Demo with real UGV & VTOL",
         },
       },
@@ -1861,7 +1861,7 @@ export const portfolioProjects = [
       {
         src: "/projects/supporty/ugv-defender.webp",
         alt: {
-          ko: "지상 자산 — 전면 카메라·통신 모듈을 탑재한 UGV 보급 차량",
+          ko: "지상 자산 — 전면 카메라, 통신 모듈을 탑재한 UGV 보급 차량",
           en: "Ground asset — UGV resupply vehicle with front camera and comms module",
         },
       },
@@ -2601,7 +2601,7 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["개발 기획서 (11p)", "서비스 흐름도", "ERD·시스템 아키텍처"],
+      ko: ["개발 기획서 (11p)", "서비스 흐름도", "ERD, 시스템 아키텍처"],
       en: ["Development proposal (11p)", "Service flow diagram", "ERD & system architecture"],
     },
     media: {

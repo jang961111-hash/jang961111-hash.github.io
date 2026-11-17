@@ -1,44 +1,44 @@
 // 포트폴리오 컨텍스트 — projects.js 내용이 크게 바뀌면 이 파일도 갱신할 것.
-// 공개된 사실만 담는다. 수치·수상은 사이트에 게시된 것만.
+// 공개된 사실만 담는다. 수치, 수상은 사이트에 게시된 것만.
 
 export const PORTFOLIO_CONTEXT = `
-# 장병헌 (Jang Byeong Heon) — AI 서비스 개발 · 기획 포트폴리오
+# 장병헌 (Jang Byeong Heon) — AI 서비스 개발, 기획 포트폴리오
 
 사이트: https://jang961111-hash.github.io/ (영문: /en)
-연락처: jang961111@gmail.com · GitHub: https://github.com/jang961111-hash
-포지셔닝: "AI를 서비스로 만드는 사람" — LLM·추천·벡터 검색을 실제 사용자 경험으로 구현.
-배경: 철학 전공(전남대), SSAFY(삼성 청년 SW·AI 아카데미) 14기(1,628시간), SKALA(SK AI Leader Academy) 4기 재학, 해병대 병 복무(해안 경계·KMEP 통역).
+연락처: jang961111@gmail.com, GitHub: https://github.com/jang961111-hash
+포지셔닝: "AI를 서비스로 만드는 사람" — LLM, 추천, 벡터 검색을 실제 사용자 경험으로 구현.
+배경: 철학 전공(전남대), SSAFY(삼성 청년 SW·AI 아카데미) 14기(1,628시간), SKALA(SK AI Leader Academy) 4기 재학, 해병대 병 복무(해안 경계, KMEP 통역).
 핵심 역량: Platform-Oriented Design, Decision Architecture, Technical Communication, AI as Decision Support.
-요약 수치: 프로젝트 21개 · 수상 3회(SKT promp.T 공모전 Life AX 부문 최우수상, SSAFY 14기 특화프로젝트 발표회 광주1반 3등, SSAFY 창업캠프 최우수팀) · 해커톤/챌린지 9회.
+요약 수치: 프로젝트 21개, 수상 3회(SKT promp.T 공모전 Life AX 부문 최우수상, SSAFY 14기 특화프로젝트 발표회 광주1반 3등, SSAFY 창업캠프 최우수팀), 해커톤/챌린지 9회.
 
 ## 핵심 프로젝트 3
-1. DailyLog — AI 기반 회고·의사결정 지원 (SSAFY 특화, 2026.02–04, 6인 팀, PM·프론트엔드)
+1. DailyLog — AI 기반 회고, 의사결정 지원 (SSAFY 특화, 2026.02–04, 6인 팀, PM, 프론트엔드)
    SenseVoice 음성 입력, 슬롯 기반 동적 질문 엔진(3~5턴 가이드 UX), pgvector 벡터 검색, Thompson Sampling 행동 추천.
    SSAFY 14기 특화프로젝트 발표회 광주1반 3등. 상세: /projects/dailylog/
-2. ARGUS — 반도체 fab 부품 교체 승인 워크플로우 온프레미스 AI 에이전트 (SKALA 4기 미니 프로젝트, 2026.09.02–04, 5인 팀, 백엔드 설계·최종 발표)
-   규격·호환 / 법령·조문 / 안전서류 검토 에이전트가 근거를 만들고 승인·거절은 안전관리자가 결정("증명은 에이전트가, 판단은 사람이").
-   외부 전송 차단 기본값(egress_allowed=false). Vue 3 + Vite · FastAPI · PostgreSQL(Supabase)/SQLite. 승인 시간 단축 효과는 실측 없음.
+2. ARGUS — 반도체 fab 부품 교체 승인 워크플로우 온프레미스 AI 에이전트 (SKALA 4기 미니 프로젝트, 2026.09.02–04, 5인 팀, 백엔드 설계, 최종 발표)
+   규격, 호환 / 법령, 조문 / 안전서류 검토 에이전트가 근거를 만들고 승인, 거절은 안전관리자가 결정("증명은 에이전트가, 판단은 사람이").
+   외부 전송 차단 기본값(egress_allowed=false). Vue 3 + Vite, FastAPI, PostgreSQL(Supabase)/SQLite. 승인 시간 단축 효과는 실측 없음.
    GitHub: https://github.com/jang961111-hash/skala-argus 상세: /projects/argus/
 3. 사기 문자 판별 훈련 코치 프롬프트 — SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상 (2026.08.20, 개인), 판별해주지 않는 AI(판별력을 키우는 설계). 상세: /projects/skt-prompt-ansimcall/
 
 ## 보조 프로젝트 / 해커톤
-- 장보고(JangBogo) — Google x Solana AI Agentic Hackathon (2026.08, 팀 사공이(402) 등록 2인, 팀장·PM)
+- 장보고(JangBogo) — Google x Solana AI Agentic Hackathon (2026.08, 팀 사공이(402) 등록 2인, 팀장, PM)
   AI 에이전트가 견적 비교→x402 온체인 결제, 가맹점측 결정론 정책 엔진 6단계 검증(LLM 불개입). 테스트 31/31.
   GitHub: https://github.com/jang961111-hash/jangbogo 영상: https://youtu.be/ALdVyGhXPT8 상세: /projects/jangbogo/
-- 무등산 A!잡레이더 — 2026 전남광주 청년 AI 솔버톤 (2026.08, 팀장·PM·프론트 리드), 서류 통과·본선 진출. 상세: /projects/ajob-radar/
-- Loggy — Git 구조(Issue→Branch→PR→Merge) 기반 협업 의사결정 기록 (2026.01–02, 기획·프론트엔드 리드)
+- 무등산 A!잡레이더 — 2026 전남광주 청년 AI 솔버톤 (2026.08, 팀장, PM, 프론트 리드), 서류 통과, 본선 진출. 상세: /projects/ajob-radar/
+- Loggy — Git 구조(Issue→Branch→PR→Merge) 기반 협업 의사결정 기록 (2026.01–02, 기획, 프론트엔드 리드)
   INFO/OPINION/TODO 태그 커밋만 영구 보존, Git Graph Tree View, AI 결정문 자동 생성.
-  React 18·TypeScript·Zustand·TanStack Query·WebSocket(STOMP), 서버 기준 단일 소스 상태 설계. 상세: /projects/loggy/
+  React 18, TypeScript, Zustand, TanStack Query, WebSocket(STOMP), 서버 기준 단일 소스 상태 설계. 상세: /projects/loggy/
 - Promtree — AI 노하우를 실행 가능한 워크플로우 상품으로 구조화 (SSAFY 자율 프로젝트, 기획). 상세: /projects/ssafy-startup-track/
-0. EasyExam — SSAFY 창업캠프 최우수팀 (2026.06.24-26, 팀 No Problem 5인, 마케팅·SEO)
-   학원 강사용 AI 문제은행·시험지 생성·자동 채점 SaaS. 라이브: https://noproblem.ssafy.live 상세: /projects/easyexam/
-4. SUPPORTY — D4D(Deploy for Defense) APAC 서울 해커톤 (2026.07.03–05, 24시간 개발, 2인 팀, 기획·프론트엔드)
-   AI 코파일럿 기반 무인자산(UGV·VTOL) 작전지속지원 통제 콘솔. 자연어 지휘, AI 트리아지.
+0. EasyExam — SSAFY 창업캠프 최우수팀 (2026.06.24-26, 팀 No Problem 5인, 마케팅, SEO)
+   학원 강사용 AI 문제은행, 시험지 생성, 자동 채점 SaaS. 라이브: https://noproblem.ssafy.live 상세: /projects/easyexam/
+4. SUPPORTY — D4D(Deploy for Defense) APAC 서울 해커톤 (2026.07.03–05, 24시간 개발, 2인 팀, 기획, 프론트엔드)
+   AI 코파일럿 기반 무인자산(UGV, VTOL) 작전지속지원 통제 콘솔. 자연어 지휘, AI 트리아지.
    Oregon UAS Accelerator 특별 트랙 선정. 데모: https://supporty-d4d.github.io/ 상세: /projects/supporty/
 5. MultiplierBoard — KRAFTON AI R&D Hackathon Round 1 (2026.03.28, 개인)
    1-layer causal self-attention 제약에서 이진 곱셈: 구성적 해법 4,096쌍 전수 검증 100% + 학습 모델(274,898 파라미터) 정확도 1.0.
    생성형 AI 핸드오프 워크플로우(구현→교차 리뷰→최종 검토). 상세: /projects/krafton-multiplierboard/
-6. GenWing Live — Genspark 해커톤, AI 이벤트 네트워킹 앱 프로토타입 (1인 기획·개발). 상세: /projects/genwing-live/
+6. GenWing Live — Genspark 해커톤, AI 이벤트 네트워킹 앱 프로토타입 (1인 기획, 개발). 상세: /projects/genwing-live/
 7. Tamna-AI — 제주 AWS Global Space Challenge 결선, 재생에너지 기반 데이터센터 입지 분석 (기획). 상세: /projects/tamna-ai-eye/
 8. Campus Chronicle — 신한은행×SSAFY 해커톤, 대학생 성장 데이터 금융 서비스 (기획). 상세: /projects/chronicle/
 9. 전주 ICT 코딩 챌린지 — 지역 현안 해결 서비스 기획. 상세: /projects/jeonju-is-coding-challenge/
