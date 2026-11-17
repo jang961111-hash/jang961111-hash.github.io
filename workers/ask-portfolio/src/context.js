@@ -22,7 +22,7 @@ export const PORTFOLIO_CONTEXT = `
 3. 사기 문자 판별 훈련 코치 프롬프트 — SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상 (2026.08.20, 개인), 판별해주지 않는 AI(판별력을 키우는 설계). 상세: /projects/skt-prompt-ansimcall/
 
 ## 보조 프로젝트 / 해커톤
-- 장보고(JangBogo) — Google x Solana AI Agentic Hackathon (2026.08, 2인 팀 사공이(402), 팀장·PM/풀스택)
+- 장보고(JangBogo) — Google x Solana AI Agentic Hackathon (2026.08, 팀 사공이(402) 등록 2인, 팀장·PM)
   AI 에이전트가 견적 비교→x402 온체인 결제, 가맹점측 결정론 정책 엔진 6단계 검증(LLM 불개입). 테스트 31/31.
   GitHub: https://github.com/jang961111-hash/jangbogo 영상: https://youtu.be/ALdVyGhXPT8 상세: /projects/jangbogo/
 - 무등산 A!잡레이더 — 2026 전남광주 청년 AI 솔버톤 (2026.08, 팀장·PM·프론트 리드), 서류 통과·본선 진출. 상세: /projects/ajob-radar/

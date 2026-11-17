@@ -248,8 +248,8 @@ export const portfolioProjects = [
       en: "Individual lab",
     },
     role: {
-      ko: "개인 실습 | 모델 선택 기준 설계, 파생변수 설계, 실험 기록, 랩업 발표",
-      en: "Individual | Model-selection criteria, feature design, experiment log, wrap-up talk",
+      ko: "개인 실습 | 모델 선택 기준 설계, 파생변수 설계, 실험 기록, 발표 자료 작성",
+      en: "Individual | Model-selection criteria, feature design, experiment log, presentation deck",
     },
     tags: {
       ko: ["이탈 예측", "교차검증", "파생변수", "앙상블"],
@@ -271,12 +271,12 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "데이터가 작을수록 검증 설계가 모델 종류보다 중요하다는 것을 직접 측정으로 확인",
-        "Test 점수를 보면서 고르면 점수는 오르지만 실력은 오르지 않는다는 기준 유지",
+        "파생변수 약 +0.10과 튜닝 약 +0.005의 차이를 측정해, 작은 데이터에서는 검증 설계와 변수가 먼저라는 결론",
+        "Test 점수를 보면서 고르면 점수는 오르지만 실력은 오르지 않는다는 기준으로 진행",
       ],
       en: [
-        "Measured for myself that with small data, validation design matters more than the model family",
-        "Held to the rule that choosing while looking at test scores raises the score, not the skill",
+        "Measured the gap between features (about +0.10) and tuning (about +0.005), and concluded that with small data, validation design and features come first",
+        "Worked by the rule that choosing while looking at test scores raises the score, not the skill",
       ],
     },
     metrics: [
@@ -349,8 +349,8 @@ export const portfolioProjects = [
         en: "For 15 of 20 questions, the hallucination check was disabled in code\nThe top-scoring item (total 0.702) was an answer that invented a grade not in the source\nThe reported 0.0 hallucination rate covered only the 5 questions where the check was on",
       },
       solution: {
-        ko: "평가 코드를 문항 유형별로 읽어 검사 범위를 표로 정리\n내 설정 감사: max_length를 512에서 384로 낮춘 탓에 **학습 샘플 582건 중 148건(25.4%)의 정답이 잘림**\n점수와 함께 지표의 한계를 보고서에 명시",
-        en: "Read the evaluation code by question type and tabulated what each check covers\nAudited my own setting: lowering max_length from 512 to 384 **truncated the answers of 148 of 582 training samples (25.4%)**\nReported the metric's limits alongside the score",
+        ko: "평가 코드를 문항 유형별로 읽어 검사 범위를 표로 정리\n내 설정 감사: max_length 384 설정에서 **학습 샘플 582건 중 148건(25.4%)의 정답이 잘림**(기본값 512였다면 18건)\n점수와 함께 지표의 한계를 보고서에 명시",
+        en: "Read the evaluation code by question type and tabulated what each check covers\nAudited my own setting: with max_length at 384, **the answers of 148 of 582 training samples (25.4%) were truncated** (18 would have been at the default 512)\nReported the metric's limits alongside the score",
       },
     },
     team: {
@@ -381,11 +381,11 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "좋게 나온 숫자일수록 측정 방법부터 의심하는 순서 정착",
+        "이후에도 좋게 나온 숫자는 측정 방법부터 확인",
         "가정으로 바꾼 설정이 실측으로 반증되자 바로 되돌리고 기록",
       ],
       en: [
-        "Made it a habit to question the measurement first when a number looks good",
+        "Since then I check the measurement first when a number looks good",
         "When a setting I changed on an assumption was disproved by measurement, I reverted it at once and logged it",
       ],
     },
@@ -414,8 +414,8 @@ export const portfolioProjects = [
     ],
     sections: [],
     artifacts: {
-      ko: ["서브노트 보고서", "평가 코드 점검표"],
-      en: ["Lab report", "Evaluation-code review table"],
+      ko: ["서브노트 보고서"],
+      en: ["Lab report"],
     },
     interviewQuestions: {
       ko: [],
@@ -428,7 +428,7 @@ export const portfolioProjects = [
     featured: false,
     status: "completed",
     sortDate: "2026-08-11",
-    stack: ["Spring Boot", "OAuth2", "JPA", "Mockito", "Vue 3", "Kafka", "Docker Compose"],
+    stack: ["Spring Boot", "OAuth2", "JPA", "Mockito", "Vue 3"],
     period: {
       ko: "2026.08",
       en: "Aug 2026",
@@ -446,8 +446,8 @@ export const portfolioProjects = [
       en: "A six-person team lab building a B2B procurement matching service. Owning the User domain, I **traced the role conflict that blocked the whole team**, proposed fixes, and wrote 14 verification tests.",
     },
     context: {
-      ko: "SKALA 4기 공통 프로젝트, 도메인별 분업(User, Order, Payment, Matching, Delivery 등)\n강사가 제공한 MSA 템플릿을 조달 도메인으로 바꾸는 과제\n인증 서버는 소스가 없는 완제품이라 고칠 수 없는 조건",
-      en: "A SKALA Cohort 4 shared project split by domain (User, Order, Payment, Matching, Delivery, and more)\nThe task was to adapt an instructor-provided MSA template to the procurement domain\nThe auth server was a prebuilt binary without source, so it could not be changed",
+      ko: "SKALA 4기 공통 프로젝트, 도메인별 분업(User, Order, Payment, Matching, Delivery 등)\n강사가 제공한 MSA 템플릿을 조달 도메인으로 바꾸는 과제(팀 인프라는 Kafka, Docker Compose)\n인증 서버는 소스가 없는 완제품이라 고칠 수 없는 조건",
+      en: "A SKALA Cohort 4 shared project split by domain (User, Order, Payment, Matching, Delivery, and more)\nThe task was to adapt an instructor-provided MSA template to the procurement domain (team infrastructure: Kafka, Docker Compose)\nThe auth server was a prebuilt binary without source, so it could not be changed",
     },
     story: {
       problem: {
@@ -455,8 +455,8 @@ export const portfolioProjects = [
         en: "Fetching the user's own profile after login returned a 500 error\nThe auth server and user-service read the same users table with different role values\n**Whatever value went into the database, one side broke**",
       },
       insight: {
-        ko: "계획했던 자체 로그인 방식은 인증 서버가 지원하지 않아 불가능\nOAuth2 Authorization Code Flow로 방향 전환\n충돌은 내 코드가 아니라 두 서비스의 enum 정의 차이에서 발생한다는 것을 재현표로 확인",
-        en: "The planned in-service login was impossible because the auth server did not support it\nSwitched to the OAuth2 Authorization Code Flow\nA reproduction table showed the conflict came from the two services' enum definitions, not from my code",
+        ko: "계획했던 자체 로그인 방식은 인증 서버가 지원하지 않아 불가능\nOAuth2 Authorization Code Flow로 방향 전환\n충돌은 한쪽 코드의 결함이 아니라 두 서비스의 enum 정의 차이에서 발생한다는 것을 재현표로 확인",
+        en: "The planned in-service login was impossible because the auth server did not support it\nSwitched to the OAuth2 Authorization Code Flow\nA reproduction table showed the conflict came from the difference between the two services' enum definitions, not from a defect on one side",
       },
       solution: {
         ko: "원인 규명 → 재현표 작성 → 해결안 A, B, C 제시(A안은 저장 값과 도메인 값을 변환기로 분리)\n변환기 코드는 팀원이 작성, 저는 **검증 테스트 14건** 작성(매핑, 역매핑, 과도기 값, null, 예외, 왕복)\n로그아웃 오류 수정, 401 시 토큰 자동 갱신, OAuth2 state 파라미터 추가\n커밋된 환경 파일을 발견해 무시 규칙 추가와 팀 공유",
@@ -479,14 +479,14 @@ export const portfolioProjects = [
       ko: [
         "고칠 수 없는 인증 서버와의 충돌을 **원인까지 규명해 팀에 문서로 공유**",
         "본인 작성 검증 테스트 14건 통과(UserServiceTest 8건, RoleConverterTest 6건)",
-        "변환기(RoleConverter) 코드 한정 라인과 브랜치 커버리지 100%",
+        "팀원이 작성한 변환기(RoleConverter)에 대한 라인과 브랜치 커버리지 100%(2026-09 재측정)",
         "OAuth2 Authorization Code Flow 로그인, 토큰 자동 갱신, state 파라미터로 위조 콜백 방어",
         "실행 방법과 API 목록(Swagger), 로컬 개발 주의사항을 README로 정리",
       ],
       en: [
         "**Traced a conflict with an unchangeable auth server to its root cause and shared it with the team in writing**",
         "All 14 of my verification tests pass (8 in UserServiceTest, 6 in RoleConverterTest)",
-        "100% line and branch coverage, limited to the RoleConverter code",
+        "100% line and branch coverage on the teammate-written RoleConverter (re-measured Sep 2026)",
         "OAuth2 Authorization Code Flow login, automatic token refresh, and a state parameter against forged callbacks",
         "Documented setup, the API list (Swagger), and local development notes in a README",
       ],
@@ -533,9 +533,7 @@ export const portfolioProjects = [
       ko: [],
       en: [],
     },
-    links: {
-      github: "https://github.com/jang961111-hash/skala-p-match",
-    },
+    links: {},
   },
   {
     slug: "skala-db-sql-lab",
@@ -552,16 +550,16 @@ export const portfolioProjects = [
       en: "SKALA Cohort 4 Capstone Lab / Database & SQL",
     },
     title: {
-      ko: "DB/SQL 종합실습 | 정상처럼 보이던 지표 안에서 상쇄된 오류 두 개를 찾아 정정",
-      en: "DB/SQL Capstone Lab | Finding Two Offsetting Errors Inside a Metric That Looked Correct",
+      ko: "DB/SQL 종합실습 | 외부 리뷰 뒤 다시 검증해, 정상처럼 보이던 지표의 상쇄된 오류 두 개를 정정",
+      en: "DB/SQL Capstone Lab | Re-verifying After a Review and Correcting Two Offsetting Errors in a Metric That Looked Correct",
     },
     summary: {
-      ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 개인 종합실습입니다. 재구매율 지표의 오류 두 개가 서로 상쇄돼 정상처럼 보이던 것을 정정했고, **개별평가 100점(S+등급)**을 받았습니다.",
-      en: "An individual capstone lab covering schema design, advanced SQL, and performance tuning. I corrected a repurchase-rate metric in which two errors had been cancelling each other out, and received **100 points (grade S+)** in the individual evaluation.",
+      ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 개인 종합실습입니다. 재구매율 지표의 오류 두 개가 서로 상쇄돼 정상처럼 보이던 것을 정정했고, 강사 개별 평가 피드백에서 **100점(S+등급)**을 받았습니다.",
+      en: "An individual capstone lab covering schema design, advanced SQL, and performance tuning. I corrected a repurchase-rate metric in which two errors had been cancelling each other out, and received **100 points (grade S+)** in the instructor's individual evaluation feedback.",
     },
     context: {
-      ko: "SKALA 4기 DB/SQL 종합실습(개인), 실습 세 개가 각각 100점(S)\n완성된 SQL을 받아 적지 않고 직접 쓴다는 규칙을 세우고 진행\n주석은 가이드 문구를 옮기지 않고 이해한 내용을 내 표현으로 다시 작성",
-      en: "SKALA Cohort 4 DB/SQL capstone lab (individual); each of the three labs scored 100 (S)\nI set the rule of writing every query myself rather than copying finished SQL\nComments were rewritten in my own words instead of copying the guide",
+      ko: "SKALA 4기 DB/SQL 종합실습(개인), 실습 세 개가 각각 100점(S)\n완성된 SQL을 받아 적지 않고 직접 쓴다는 규칙을 세우고 진행\n주석은 가이드 문구를 옮기지 않고 이해한 내용을 내 표현으로 다시 정리한다는 원칙으로 진행",
+      en: "SKALA Cohort 4 DB/SQL capstone lab (individual); each of the three labs scored 100 (S)\nI set the rule of writing every query myself rather than copying finished SQL\nI worked on the principle of restating comments in my own words instead of copying the guide",
     },
     story: {
       problem: {
@@ -573,8 +571,8 @@ export const portfolioProjects = [
         en: "One error let future orders into the numerator; the other let customers without a full 30-day window into the denominator\nThe lesson: even when a number looks plausible, verify the numerator and denominator definitions separately",
       },
       solution: {
-        ko: "두 오류를 함께 고쳐 10.13%로 정정(분모 1,698명, 분자 172명)\nNULL이 끼어든 삼값 논리 결함을 규명해 **오분류 902건 교정**, EXCEPT로 집합 검증\n순차 스캔을 끈 조건에서 5회 반복 실측, Materialized View 갱신 비용과 잠금 영향 분석\npsql 실행 화면 87장으로 과정 기록",
-        en: "Fixed both errors together and corrected the rate to 10.13% (1,698 customers in the denominator, 172 in the numerator)\nTraced a three-valued-logic flaw involving NULL and **corrected 902 misclassified rows**, verified with EXCEPT\nMeasured 5 repeated runs with sequential scans disabled, and analyzed materialized-view refresh cost and locking\nRecorded the process in 87 psql captures",
+        ko: "두 오류를 함께 고쳐 10.13%로 정정(분모 1,698명, 분자 172명)\nNULL이 끼어든 삼값 논리 결함을 규명해 **오분류 902건 교정**, EXCEPT로 집합 검증\n순차 스캔을 끈 조건에서 5회 반복 실측, Materialized View 갱신 비용과 잠금 영향 분석\n종합실습 2는 psql 실행 화면 87장으로 기록",
+        en: "Fixed both errors together and corrected the rate to 10.13% (1,698 customers in the denominator, 172 in the numerator)\nTraced a three-valued-logic flaw involving NULL and **corrected 902 misclassified rows**, verified with EXCEPT\nMeasured 5 repeated runs with sequential scans disabled, and analyzed materialized-view refresh cost and locking\nRecorded capstone lab 2 in 87 psql captures",
       },
     },
     team: {
@@ -595,32 +593,32 @@ export const portfolioProjects = [
         "SQL 삼값 논리(NULL 처리) 결함을 규명해 오분류 902건 교정",
         "학사관리 DB를 엔티티 5개, 3NF로 설계하고 RESTRICT와 CASCADE 옵션 구분",
         "순차 스캔을 끈 조건에서 5회 반복 실측으로 실행 계획 비교",
-        "개별평가 100점(S+등급), 세부 실습 3개 각 100점(S)",
+        "강사 개별 평가 피드백 기준 100점(S+등급), 세부 실습 3개 각 100점(S)",
       ],
       en: [
         "Corrected the repurchase rate from 10.10% to 10.13%, confirming **two offsetting errors** through my own verification after an outside review",
         "Traced an SQL three-valued-logic (NULL handling) flaw and corrected 902 misclassified rows",
         "Designed an academic database with 5 entities in 3NF, distinguishing RESTRICT from CASCADE",
         "Compared execution plans with 5 repeated runs under sequential scans disabled",
-        "Individual evaluation: 100 points (grade S+), with 100 (S) on each of the three labs",
+        "Instructor's individual evaluation feedback: 100 points (grade S+), with 100 (S) on each of the three labs",
       ],
     },
     proof: {
       ko: [
-        "그럴듯한 숫자도 정의부터 다시 확인하는 검증 순서 정착",
-        "과정 전체를 실행 화면으로 남겨 누구나 같은 결과를 따라갈 수 있게 기록",
+        "이후에도 그럴듯한 숫자는 정의부터 다시 확인",
+        "핵심 실습 과정을 실행 화면으로 남겨 결과를 다시 확인할 수 있게 기록",
       ],
       en: [
-        "Made it a habit to re-check a metric's definition even when the number looks plausible",
-        "Recorded the whole process in execution captures so anyone can follow it to the same result",
+        "Since then I re-check a metric's definition first, even when the number looks plausible",
+        "Recorded the key lab steps in execution captures so the results can be checked again",
       ],
     },
     metrics: [
       {
         value: { ko: "100점", en: "100" },
         label: {
-          ko: "개별평가 종합 (S+등급)",
-          en: "Individual evaluation total (grade S+)",
+          ko: "강사 개별 평가 피드백 종합 (S+등급)",
+          en: "Instructor's individual evaluation feedback (grade S+)",
         },
       },
       {
@@ -640,8 +638,8 @@ export const portfolioProjects = [
     ],
     sections: [],
     artifacts: {
-      ko: ["실습 보고서", "psql 실행 화면 87장"],
-      en: ["Lab report", "87 psql captures"],
+      ko: ["실습 보고서", "종합실습 2의 psql 실행 화면 87장"],
+      en: ["Lab report", "87 psql captures from capstone lab 2"],
     },
     interviewQuestions: {
       ko: [],
