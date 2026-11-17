@@ -15,6 +15,18 @@
 
 ---
 
+## ✅ 2026-11-18 세션 3: sublevel 스타일 확정과 배포
+
+- **디자인 결정(병헌 님):** 세션 2의 밝은 인디고 미니멀 개편은 폐기(브랜치 `feat/ansim-redesign-1117`에 보관). threeui.com의 무료 템플릿 sublevel.studio 스타일을 골라 홈과 상세를 다시 만듦. 원본의 이미지, 인물, 3D 모델은 쓰지 않고 구성과 분위기만 참고.
+- **구성:** 검은 테마 기본(토글 시 종이색 밝은 변형, `localStorage` `portfolio-theme`), 가운데 떠 있는 상단 바와 섹션별 터미널 줄, 세로 격자선, 테두리 칸. 홈은 히어로 → 선언 칸 → 프로젝트(핵심 3 + 13) → 기술 스택 → 이력 → 연락. `About.js`, `AiCases.js`, `Competencies.js`는 홈에서 빠짐.
+- **3D 히어로:** `three`만 추가(동적 import, 별도 청크). `src/components/hero/heroScene.js`, `HeroStage.js`. 화면 폭 720px 이상, CPU 코어 4개 초과, WebGL 가능, 모션 줄이기 꺼짐일 때만 켜지고 그 외는 CSS 정지 구성. 화면 밖에서는 렌더 정지.
+- **내용:** 한국어 본문은 개조식(문자열 안 `\n`이 줄 목록, `**구절**`이 강조). `src/utils/emphasis.js`의 `renderLines`, `renderEmphasis`, `stripEmphasis` 사용. 영어 문구는 서술형 그대로.
+- **검증:** 테스트 11/11, 빌드, 스모크 5라우트. 6개 화면을 폭 320, 360, 390, 768, 844(가로), 1366, 1440, 1920과 두 테마로 띄워 가로 넘침 0, 깨진 이미지 0, 콘솔 오류 0. 3D 움직임은 헤드리스 크롬으로만 확인.
+- **PDF:** `PUPPETEER_EXECUTABLE_PATH`를 시스템 Chrome으로 주고 `npm run generate:pdf`로 재생성(12쪽).
+- **보류:** Stageshow 스킬(benji.org/stageshow)로 프로젝트 시연 애니메이션 만들기, 영어 문구 개조식 정리, `public/og-image` 교체.
+
+---
+
 ## ✅ 2026-11-17~18 세션 2: 사실 정정, 안심이음 추가, 문장 교정, 디자인 개편
 
 **브랜치:** `feat/ansim-redesign-1117` (`refactor/step8-10-1117` → `content/facts-fix-1117` 위에 쌓음. main 미병합, push 안 함. main에 push하면 바로 라이브 배포되므로 병헌 님 지시 뒤에만 올린다.)

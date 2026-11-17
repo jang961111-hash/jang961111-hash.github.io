@@ -413,3 +413,50 @@
   object-fit: contain;
   padding: clamp(12px, 2vw, 28px);
 }
+
+/* Print and PDF export: white pages, no viewport-height blocks, compact tiles */
+@media print {
+  :root,
+  [data-theme="light"],
+  [data-theme="dark"] {
+    color-scheme: light !important;
+  }
+
+  .hero {
+    min-height: 0 !important;
+    padding-top: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .hatch,
+  .card-hatch,
+  .manifesto-hatch {
+    display: none !important;
+  }
+
+  .core-card {
+    break-inside: avoid;
+  }
+
+  .core-card .card-tile {
+    min-height: 0 !important;
+    max-height: 62mm;
+  }
+
+  .core-card .card-tile img {
+    position: static !important;
+    max-height: 62mm;
+    width: 100%;
+    height: auto;
+  }
+
+  .work-card .card-tile img {
+    max-height: 42mm;
+  }
+
+  .work-card,
+  .stack-cell,
+  .history-row {
+    break-inside: avoid;
+  }
+}
