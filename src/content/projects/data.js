@@ -204,6 +204,174 @@ export const portfolioProjects = [
     },
   },
   {
+    slug: "incident-agent-ablation",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-10-22",
+    stack: ["LangGraph", "MCP", "RAG", "LLM-as-a-Judge", "LangSmith", "pytest"],
+    period: {
+      ko: "2026.10.20 - 10.22",
+      en: "Oct 20 - 22, 2026",
+    },
+    category: {
+      ko: "SKALA 4기 개인 과제 / AI 에이전트 평가",
+      en: "SKALA Cohort 4 Individual Assignment / AI Agent Evaluation",
+    },
+    title: {
+      ko: "장애 대응 에이전트 Ablation | 개선을 하나씩 켜고 끄며 무엇이 효과였는지 통계로 가린 평가 설계",
+      en: "Incident-Response Agent Ablation | Switching Each Improvement On and Off to Show Statistically Which One Worked",
+    },
+    summary: {
+      ko: "강사 제공 장애 대응 에이전트에 RAG, Judge, 비용 최적화를 설정 스위치로 붙이고 7개 구성으로 비교했습니다. 처음 보는 시험 문제 36개에서 **필수 매뉴얼 누락이 56%에서 9%로** 줄었고, 채점하는 AI가 후한지도 따로 쟀습니다.",
+      en: "I added RAG, a judge, and cost optimizations to an instructor-provided incident-response agent as config switches and compared seven configurations. On 36 held-out questions, **missed required runbooks fell from 56% to 9%**, and I separately measured how lenient the grading AI was.",
+    },
+    context: {
+      ko: "SKALA 4기 AI Agent Mini-Project 선택과제 1(Base AI Agent 개선), 개인 과제\n원본 에이전트(LangGraph, MCP)는 강사 제공 코드, 원본 노드는 그대로 두고 설정으로 교체\nAI 도구와 함께 진행했고 문서의 수치는 결과 파일과 자동 대조\n모의 모니터링과 직접 만든 합성 질문 60개 기준이며 운영 환경 적용은 아님",
+      en: "SKALA Cohort 4 AI Agent Mini-Project, optional task 1 (improving the base agent), individual assignment\nThe original agent (LangGraph, MCP) was instructor-provided; its nodes were left intact and swapped by config\nI worked with AI tools, and every number in the write-up is checked automatically against the result files\nMeasured on mock monitoring data and 60 synthetic questions I wrote; not a production deployment",
+    },
+    story: {
+      problem: {
+        ko: "원본은 질문이 아니라 경고 문구로 매뉴얼을 선택, DB 다운 질문에 응답 지연 매뉴얼로 답변\n검수 규칙은 형식만 확인(30자 이상, 번호 포함)\n**여러 개선을 한꺼번에 붙이면 무엇이 효과였는지 알 수 없는 구조**",
+        en: "The original picked a runbook from alert text rather than the question, answering a database-down question with the slow-response runbook\nIts validation rule checked format only (30+ characters and a numbered step)\n**Adding several improvements at once would hide which one actually worked**",
+      },
+      insight: {
+        ko: "개선마다 스위치를 두면 같은 질문끼리 켰을 때와 껐을 때를 짝지어 비교 가능\n시험 문제를 구현 전에 커밋으로 고정해야 \"시험 보고 고쳤다\"는 의심 차단\n**채점하는 AI도 검증 대상**",
+        en: "A switch per improvement lets the same question be compared with it on and off\nFixing the test questions in a commit before implementation rules out \"tuned to the test\"\n**The grading AI needs checking too**",
+      },
+      solution: {
+        ko: "7개 구성 x 60문제 x 3회, 실제 API 1,260회 실행(실행 오류 0)\nholdout 36문제는 v2 구현 전에 고정, 기준값은 dev 24문제에서만 조정\n**paired bootstrap 95% 신뢰구간으로 개선별 기여 분리**\n평가 Judge 점수와 별개로 코드로 센 지표 병행, 다른 AI 모델의 블라인드 채점 60건과 대조",
+        en: "Seven configurations x 60 questions x 3 runs: 1,260 real API runs with zero execution errors\nThe 36 holdout questions were fixed before the v2 work; thresholds were tuned on the 24 dev questions only\n**Paired bootstrap 95% confidence intervals separated each improvement's contribution**\nCode-counted metrics ran alongside the evaluation judge's score, cross-checked against 60 blind labels from a different AI model",
+      },
+    },
+    team: {
+      ko: "개인 과제",
+      en: "Individual assignment",
+    },
+    role: {
+      ko: "개인 과제 | 평가 설계, 실험 실행, 결과 분석, 보고서와 발표",
+      en: "Individual | Evaluation design, experiment runs, result analysis, report and presentation",
+    },
+    tags: {
+      ko: ["Ablation study", "RAG 평가", "LLM-as-a-Judge", "재현성"],
+      en: ["Ablation study", "RAG evaluation", "LLM-as-a-Judge", "Reproducibility"],
+    },
+    highlights: {
+      ko: [
+        "RAG 단독 기여: 필수 매뉴얼 누락 **-46%p (95% CI -70 ~ -22)**",
+        "v2 보완(최소 유사도 미만이면 넣지 않음): 무관 매뉴얼 혼입 -24%p (95% CI -41 ~ -10)",
+        "파이프라인 Judge는 품질 향상이 확인되지 않아 그대로 보고(질의당 +1.8 ~ 2.7초)",
+        "평가 Judge는 다른 AI가 불합격으로 본 답 29개 중 17개(59%)를 합격 처리, 결론은 코드로 센 지표로 도출",
+        "같은 부하로 다시 재자 \"캐스케이드가 지연도 줄였다\"는 결론이 사라져 보고서에서 정정",
+        "오프라인 테스트 230개와 CI(테스트, 수치 재생성 일치, 문서 수치 대조)",
+      ],
+      en: [
+        "RAG alone: missed required runbooks **-46 pp (95% CI -70 to -22)**",
+        "v2 fix (skip runbooks below a minimum similarity): irrelevant runbook citations -24 pp (95% CI -41 to -10)",
+        "The pipeline judge showed no confirmed quality gain, and I reported it as such (+1.8 to 2.7 s per query)",
+        "The evaluation judge passed 17 of 29 answers (59%) that a different AI had failed, so conclusions rest on code-counted metrics",
+        "Re-measuring under equal load removed the finding that the cascade also cut latency, and I corrected the report",
+        "230 offline tests and CI (tests, regenerated-number match, document-number check)",
+      ],
+    },
+    proof: {
+      ko: [
+        "기능을 더하기 전에 재는 방법부터 설계",
+        "기대와 다른 결과(Judge 효과 미확인, 로컬 모델에서 누락 미개선)도 수치 그대로 기록",
+      ],
+      en: [
+        "Designed the measurement before adding features",
+        "Recorded results that went against expectations as measured (no judge gain, no miss-rate gain on a local model)",
+      ],
+    },
+    metrics: [
+      {
+        value: "56% → 9%",
+        label: {
+          ko: "필수 매뉴얼 누락률 (holdout 36문제 x 3회 평균)",
+          en: "Missed required runbooks (mean of 3 runs on 36 holdout questions)",
+        },
+      },
+      {
+        value: "-84%",
+        label: {
+          ko: "장애 1건 API 요금 ($0.00343 → $0.00057, 공개 단가 추정)",
+          en: "API cost per incident ($0.00343 → $0.00057, estimated from list prices)",
+        },
+      },
+      {
+        value: "62.8s → 9.2s",
+        label: {
+          ko: "동시 질문 10건 처리 시간",
+          en: "Time to finish 10 concurrent questions",
+        },
+      },
+      {
+        value: "0/19 → 18/18",
+        label: {
+          ko: "조회 30% 고장 주입 시 끝까지 답한 질문 (답 품질은 미측정)",
+          en: "Questions answered to completion with 30% injected tool failures (answer quality not measured)",
+        },
+      },
+    ],
+    caseStudy: {
+      title: {
+        ko: "효과가 있을 거라 믿은 Judge를 재 보니",
+        en: "Measuring the Judge I Expected to Help",
+      },
+      summary: {
+        ko: "품질 향상은 확인되지 않았고, 쓸모는 다른 곳에서 발견",
+        en: "No confirmed quality gain; its use turned up somewhere else.",
+      },
+      content: {
+        ko: "답을 내보내기 전에 검사하는 파이프라인 Judge를 붙이면 품질이 오를 것으로 예상\n같은 질문끼리 짝지어 비교하니 누락, 혼입, 핵심 문구 포함 모두 차이가 신뢰구간 안, 시간과 비용만 증가\n숨기지 않고 조작 테스트로 쓸모를 다시 측정: 답 29개에 일부러 틀린 내용 삽입\n근거에 없는 수치는 코드 검증이 28/28, Judge가 16/28 탐지\n없는 시스템명은 코드 검증이 0/29, Judge가 21/29 탐지(멀쩡한 답 오탐 6/29)\n결론: 수치는 코드로 먼저 거르고, 코드로 세기 어려운 시스템명과 절차에 Judge를 쓰는 **상호 보완 구조**",
+        en: "I expected a pipeline judge that checks answers before release to raise quality. Paired by question, the differences in misses, irrelevant citations, and key-phrase coverage all fell inside the confidence interval; only time and cost rose. Rather than hide it, I measured its use again with a tamper test, inserting wrong content into 29 answers. For numbers absent from the evidence, the code check caught 28/28 and the judge 16/28. For made-up system names, the code check caught 0/29 and the judge 21/29 (with 6/29 false alarms on clean answers). The conclusion was a **complementary setup**: filter numbers with code first, and use the judge for system names and procedures that code cannot count.",
+      },
+    },
+    heroImage: "/projects/incident-agent-ablation/fig6_contrib.webp",
+    screenshots: [
+      {
+        src: "/projects/incident-agent-ablation/fig1_flow.webp",
+        alt: {
+          ko: "에이전트 흐름과 교체한 노드",
+          en: "Agent flow and the nodes that were swapped",
+        },
+      },
+      {
+        src: "/projects/incident-agent-ablation/fig9_judge.webp",
+        alt: {
+          ko: "구성별 평가 Judge 통과율과 코드로 센 지표 비교",
+          en: "Evaluation-judge pass rate versus the code-counted metric by configuration",
+        },
+      },
+      {
+        src: "/projects/incident-agent-ablation/fig10_demo.webp",
+        alt: {
+          ko: "DB 다운 질문에 대한 원본과 최종 구성의 답 비교",
+          en: "Original versus final answers to a database-down question",
+        },
+      },
+      {
+        src: "/projects/incident-agent-ablation/fig8_fault.webp",
+        alt: {
+          ko: "도구 고장 주입 시험 결과",
+          en: "Results of the injected tool-failure test",
+        },
+      },
+    ],
+    sections: [],
+    artifacts: {
+      ko: ["공개 저장소(README, 수치 근거 CLAIMS.md)", "발표 덱", "회고 문서"],
+      en: ["Public repository (README, CLAIMS.md with number sources)", "Presentation deck", "Retrospective"],
+    },
+    interviewQuestions: {
+      ko: [],
+      en: [],
+    },
+    links: {
+      github: "https://github.com/jang961111-hash/incident-agent-ablation",
+    },
+  },
+  {
     slug: "skala-churn-modeling",
     featured: false,
     status: "completed",
