@@ -28,3 +28,6 @@ promtree/
 .dev-server.log
 .dev-server.err.log
 .playwright-cli/
+
+# agent state
+.omc/
