@@ -21,9 +21,10 @@ const Experience = () => {
     <SectionShell id="experience" index={getSectionIndex("experience")} title={t("experience.title")}>
       <div className="timeline">
         {experiences.map((jobKey) => {
-          // Count number of descriptions dynamically if needed,
-          // but for simplicity we rely on the specific keys we know exist.
-          const descKeys = [1, 2, 3];
+          const descriptions = t(`experience.jobs.${jobKey}.desc`, {
+            returnObjects: true,
+          });
+          const descList = Array.isArray(descriptions) ? descriptions : [];
 
           return (
             <div className="timeline-item" key={jobKey}>
@@ -33,14 +34,9 @@ const Experience = () => {
                 <h4 className="company">{t(`experience.jobs.${jobKey}.company`)}</h4>
                 <span className="date">{t(`experience.jobs.${jobKey}.period`)}</span>
                 <ul className="task-list">
-                  {descKeys.map((num) => {
-                    const text = t(`experience.jobs.${jobKey}.desc${num}`);
-
-                    return text &&
-                      text !== `experience.jobs.${jobKey}.desc${num}` ? (
-                      <li key={num}>{text}</li>
-                    ) : null;
-                  })}
+                  {descList.map((text) => (
+                    <li key={text}>{text}</li>
+                  ))}
                 </ul>
               </div>
             </div>

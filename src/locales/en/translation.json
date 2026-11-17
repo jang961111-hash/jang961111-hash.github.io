@@ -363,62 +363,78 @@
         "title": "AI Training & Team Projects",
         "company": "SKALA (SK AI Leader Academy), Cohort 4",
         "period": "2026 - Present",
-        "desc1": "Currently enrolled in SKALA (SK AI Leader Academy) Cohort 4, working on team projects including AI web service design.",
-        "desc2": "Led backend design and the final presentation for the ARGUS mini-project (five-person team)."
+        "desc": [
+          "Currently enrolled in SKALA (SK AI Leader Academy) Cohort 4, working on team projects including AI web service design.",
+          "Led backend design and the final presentation for the ARGUS mini-project (five-person team)."
+        ]
       },
       "ssafyTraining": {
         "title": "AI/SW Training & Product Projects",
         "company": "Samsung SW·AI Academy For Youth, SSAFY",
         "period": "2025.07 - 2026.06",
-        "desc1": "Learning service development and AI/SW technical literacy based on Python, SQL, Web, AI, and Data.",
-        "desc2": "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects including DailyLog, Loggy, and Promtree.",
-        "desc3": "Helped share notices and support communication among trainees as the class representative (CA) at the Gwangju campus."
+        "desc": [
+          "Learning service development and AI/SW technical literacy based on Python, SQL, Web, AI, and Data.",
+          "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects including DailyLog, Loggy, and Promtree.",
+          "Helped share notices and support communication among trainees as the class representative (CA) at the Gwangju campus."
+        ]
       },
       "projectPractice": {
         "title": "Core Project Practice",
         "company": "DailyLog / Loggy / Promtree",
         "period": "2026.01 - 2026.05",
-        "desc1": "In DailyLog, reframed journaling failure as input friction and reflection-flow problems, then connected it to AI questioning and recommendation structures.",
-        "desc2": "In Loggy, organized disappearing collaboration context into a recording flow inspired by Git's PR/Merge structure.",
-        "desc3": "In Promtree, structured AI know-how as an executable workflow product while reviewing market viability, revenue models, and competitor positioning."
+        "desc": [
+          "In DailyLog, reframed journaling failure as input friction and reflection-flow problems, then connected it to AI questioning and recommendation structures.",
+          "In Loggy, organized disappearing collaboration context into a recording flow inspired by Git's PR/Merge structure.",
+          "In Promtree, structured AI know-how as an executable workflow product while reviewing market viability, revenue models, and competitor positioning."
+        ]
       },
       "customerExperience": {
         "title": "Customer Experience Operation",
         "company": "Charancha / Jaguar Land Rover Gangdong Service Center",
         "period": "2022.12 - 2024.01",
-        "desc1": "Handled valet operations and customer service at Jaguar Land Rover Gangdong Service Center.",
-        "desc2": "Managed vehicle movement, customer waiting, and on-site communication while experiencing the flow of a service operation.",
-        "desc3": "Observed firsthand where customers tend to feel friction in the service process."
+        "desc": [
+          "Handled valet operations and customer service at Jaguar Land Rover Gangdong Service Center.",
+          "Managed vehicle movement, customer waiting, and on-site communication while experiencing the flow of a service operation.",
+          "Observed firsthand where customers tend to feel friction in the service process."
+        ]
       },
       "salesField": {
         "title": "Sales & Field Operation",
         "company": "Yeyoung Design",
         "period": "2022.08 - 2022.11",
-        "desc1": "Handled interior film sales and customer consultation.",
-        "desc2": "Supported on-site installation work and experienced the gap between customer requests and actual field conditions.",
-        "desc3": "Learned how requirements explained in conversation can change when they meet the real work environment."
+        "desc": [
+          "Handled interior film sales and customer consultation.",
+          "Supported on-site installation work and experienced the gap between customer requests and actual field conditions.",
+          "Learned how requirements explained in conversation can change when they meet the real work environment."
+        ]
       },
       "militaryCommunication": {
         "title": "Military Service",
         "company": "Republic of Korea Marine Corps",
         "period": "2016.12 - 2018.09",
-        "desc1": "Served as a rifleman in the 2nd Marine Division.",
-        "desc2": "Partly supported interpretation and situation updates during ROK-US joint exercises.",
-        "desc3": "Learned the habit of carrying assigned work through in constrained environments."
+        "desc": [
+          "Served as a rifleman in the 2nd Marine Division.",
+          "Partly supported interpretation and situation updates during ROK-US joint exercises.",
+          "Learned the habit of carrying assigned work through in constrained environments."
+        ]
       },
       "philosophy": {
         "title": "B.A. in Philosophy",
         "company": "Chonnam National University",
         "period": "2016.03 - 2022.02",
-        "desc1": "Studied philosophy and trained by reading texts, organizing questions, and explaining ideas logically.",
-        "desc2": "Later connected SW·AI learning and service planning experience into an interest in problems between people and technology."
+        "desc": [
+          "Studied philosophy and trained by reading texts, organizing questions, and explaining ideas logically.",
+          "Later connected SW·AI learning and service planning experience into an interest in problems between people and technology."
+        ]
       },
       "globalLeadership": {
         "title": "Early Global & Leadership Experience",
         "company": "Portage High School / Gwangju Goryeo High School",
         "period": "2012.01 - 2016.02",
-        "desc1": "Lived for one year as an exchange student at Portage High School in Indiana.",
-        "desc2": "Served as student council president in high school, gaining experience speaking in front of others and coordinating opinions."
+        "desc": [
+          "Lived for one year as an exchange student at Portage High School in Indiana.",
+          "Served as student council president in high school, gaining experience speaking in front of others and coordinating opinions."
+        ]
       }
     }
   },

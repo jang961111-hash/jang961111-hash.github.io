@@ -363,62 +363,78 @@
         "title": "AI Training & Team Projects",
         "company": "SKALA (SK AI Leader Academy) 4기",
         "period": "2026 - 재학 중",
-        "desc1": "SKALA(SK AI Leader Academy) 4기에 재학하며 AI 웹 서비스 설계 등 팀 프로젝트를 수행하고 있습니다.",
-        "desc2": "ARGUS 미니 프로젝트(5인 팀)에서 백엔드 설계와 최종 발표를 맡았습니다."
+        "desc": [
+          "SKALA(SK AI Leader Academy) 4기에 재학하며 AI 웹 서비스 설계 등 팀 프로젝트를 수행하고 있습니다.",
+          "ARGUS 미니 프로젝트(5인 팀)에서 백엔드 설계와 최종 발표를 맡았습니다."
+        ]
       },
       "ssafyTraining": {
         "title": "AI/SW Training & Product Projects",
         "company": "Samsung SW·AI Academy For Youth, SSAFY",
         "period": "2025.07 - 2026.06",
-        "desc1": "Python, SQL, Web, AI, Data를 기반으로 서비스 개발과 AI/SW 기술 이해를 학습하고 있습니다.",
-        "desc2": "DailyLog, Loggy, Promtree 등 팀 프로젝트에서 문제 정의, 기능 우선순위 정리, 화면 흐름 정리, 발표 자료 구성을 맡았습니다.",
-        "desc3": "광주캠퍼스 반대표(CA)로 공지 전달과 교육생 간 커뮤니케이션을 도왔습니다."
+        "desc": [
+          "Python, SQL, Web, AI, Data를 기반으로 서비스 개발과 AI/SW 기술 이해를 학습하고 있습니다.",
+          "DailyLog, Loggy, Promtree 등 팀 프로젝트에서 문제 정의, 기능 우선순위 정리, 화면 흐름 정리, 발표 자료 구성을 맡았습니다.",
+          "광주캠퍼스 반대표(CA)로 공지 전달과 교육생 간 커뮤니케이션을 도왔습니다."
+        ]
       },
       "projectPractice": {
         "title": "Core Project Practice",
         "company": "DailyLog / Loggy / Promtree",
         "period": "2026.01 - 2026.05",
-        "desc1": "DailyLog에서는 기록 지속 실패를 입력 부담과 회고 흐름 문제로 정의하고 AI 질문 흐름과 추천 구조로 연결했습니다.",
-        "desc2": "Loggy에서는 협업 의사결정 맥락이 사라지는 문제를 Git의 PR/Merge 구조를 차용한 기록 흐름으로 정리했습니다.",
-        "desc3": "Promtree에서는 AI 노하우를 실행 가능한 워크플로우 상품으로 구조화하고 시장성, 수익모델, 경쟁 분석을 함께 검토했습니다."
+        "desc": [
+          "DailyLog에서는 기록 지속 실패를 입력 부담과 회고 흐름 문제로 정의하고 AI 질문 흐름과 추천 구조로 연결했습니다.",
+          "Loggy에서는 협업 의사결정 맥락이 사라지는 문제를 Git의 PR/Merge 구조를 차용한 기록 흐름으로 정리했습니다.",
+          "Promtree에서는 AI 노하우를 실행 가능한 워크플로우 상품으로 구조화하고 시장성, 수익모델, 경쟁 분석을 함께 검토했습니다."
+        ]
       },
       "customerExperience": {
         "title": "Customer Experience Operation",
         "company": "Charancha / Jaguar Land Rover Gangdong Service Center",
         "period": "2022.12 - 2024.01",
-        "desc1": "재규어랜드로버 강동서비스센터에서 발렛 운영과 고객 응대를 담당했습니다.",
-        "desc2": "차량 동선, 고객 대기, 현장 커뮤니케이션을 관리하며 서비스 현장의 흐름을 경험했습니다.",
-        "desc3": "고객이 불편을 느끼는 지점이 어디인지 현장에서 직접 관찰할 수 있었습니다."
+        "desc": [
+          "재규어랜드로버 강동서비스센터에서 발렛 운영과 고객 응대를 담당했습니다.",
+          "차량 동선, 고객 대기, 현장 커뮤니케이션을 관리하며 서비스 현장의 흐름을 경험했습니다.",
+          "고객이 불편을 느끼는 지점이 어디인지 현장에서 직접 관찰할 수 있었습니다."
+        ]
       },
       "salesField": {
         "title": "Sales & Field Operation",
         "company": "Yeyoung Design",
         "period": "2022.08 - 2022.11",
-        "desc1": "인테리어 필름 영업과 고객 상담을 담당했습니다.",
-        "desc2": "현장 시공 보조를 함께 수행하며 고객 요구와 실제 작업 환경 사이의 간극을 이해했습니다.",
-        "desc3": "말로 설명한 요구사항이 실제 현장에서는 어떻게 달라지는지 배웠습니다."
+        "desc": [
+          "인테리어 필름 영업과 고객 상담을 담당했습니다.",
+          "현장 시공 보조를 함께 수행하며 고객 요구와 실제 작업 환경 사이의 간극을 이해했습니다.",
+          "말로 설명한 요구사항이 실제 현장에서는 어떻게 달라지는지 배웠습니다."
+        ]
       },
       "militaryCommunication": {
         "title": "Military Service",
         "company": "Republic of Korea Marine Corps",
         "period": "2016.12 - 2018.09",
-        "desc1": "해병대 제2사단에서 소총수로 복무했습니다.",
-        "desc2": "한미연합훈련 과정에서 통역과 상황 전달을 일부 지원했습니다.",
-        "desc3": "제한된 환경에서 맡은 일을 끝까지 수행하는 태도를 배웠습니다."
+        "desc": [
+          "해병대 제2사단에서 소총수로 복무했습니다.",
+          "한미연합훈련 과정에서 통역과 상황 전달을 일부 지원했습니다.",
+          "제한된 환경에서 맡은 일을 끝까지 수행하는 태도를 배웠습니다."
+        ]
       },
       "philosophy": {
         "title": "B.A. in Philosophy",
         "company": "Chonnam National University",
         "period": "2016.03 - 2022.02",
-        "desc1": "철학을 전공하며 글을 읽고, 질문을 정리하고, 논리적으로 설명하는 훈련을 했습니다.",
-        "desc2": "이후 SW·AI 학습과 서비스 기획 경험을 연결해 사람과 기술 사이의 문제에 관심을 갖게 되었습니다."
+        "desc": [
+          "철학을 전공하며 글을 읽고, 질문을 정리하고, 논리적으로 설명하는 훈련을 했습니다.",
+          "이후 SW·AI 학습과 서비스 기획 경험을 연결해 사람과 기술 사이의 문제에 관심을 갖게 되었습니다."
+        ]
       },
       "globalLeadership": {
         "title": "Early Global & Leadership Experience",
         "company": "Portage High School / Gwangju Goryeo High School",
         "period": "2012.01 - 2016.02",
-        "desc1": "미국 인디애나주 Portage High School에서 1년간 교환학생으로 생활했습니다.",
-        "desc2": "고등학교 시절 전교학생회장으로 활동하며 여러 사람 앞에서 말하고 의견을 조율하는 경험을 했습니다."
+        "desc": [
+          "미국 인디애나주 Portage High School에서 1년간 교환학생으로 생활했습니다.",
+          "고등학교 시절 전교학생회장으로 활동하며 여러 사람 앞에서 말하고 의견을 조율하는 경험을 했습니다."
+        ]
       }
     }
   },
