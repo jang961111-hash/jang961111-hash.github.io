@@ -20,6 +20,13 @@ export const portfolioProjects = [
       ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 검증셋 200건(사기 100, 정상 100)에서 규칙과 AI를 함께 썼을 때 **사기 문자 100건을 모두 잡았습니다**(유효 2회 측정, 정답 표시 1인). 그 대신 정상 문자의 8.0%에 '조심' 경고가 붙었습니다.",
       en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set (100 scam, 100 normal), rules plus AI **caught all 100 scam texts** (two valid runs, labels by one person). In exchange, 8.0% of normal texts received a 'caution' warning.",
     },
+    brief: {
+      what: { ko: "어르신이 사기 문자와 전화를 미리 연습하는 예방 교육 웹 서비스, 마이AI랩 선정 개인 과제", en: "Web service where seniors rehearse scam texts and calls beforehand; individual project selected for My AI Lab" },
+      pain: { ko: "낯선 문자와 전화 앞에서 어르신이 혼자 판단해야 하는 시간", en: "Seniors having to judge alone when an unfamiliar text or call arrives" },
+      solution: { ko: "사기 상황을 미리 겪는 3단계 훈련(사례 20개)과 의심 문자 확인 기능", en: "Three-step rehearsal of scam situations (20 cases) plus a suspicious-text check" },
+      how: { ko: "규칙이 먼저 판별하고 AI는 위험 등급 상향만 가능, 3초 안에 답 없으면 규칙 결과로 응답", en: "Rules judge first; AI can only raise the risk level, and the rule result is returned if AI is silent for 3 seconds" },
+      effect: { ko: "검증셋 200건에서 사기 문자 100건을 모두 탐지(유효 2회, 정답 표시 1인), 정상 문자 8.0%에 조심 경고\n어르신 20명 1회 실증, 만족도 미측정", en: "All 100 scam texts caught on a 200-item validation set (two valid runs, labels by one person); 8.0% of normal texts got a caution warning\nOne field session with 20 seniors; satisfaction not measured" },
+    },
     context: {
       ko: "SKT 「모두의 promp.T」 수상작에서 이어진 과제\n국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 개인 응모 선정\n2026년 9월 29일 수행협약 체결\n11월 13일 광주 북구 임동의 한 기관에서 어르신 20명과 실증\n11월 16일 최종결과보고 제출, 성과발표 평가는 11월 25일",
       en: "Task that grew out of my SKT 'promp.T for Everyone' prize entry\nSelected as an individual entry for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project'\nProject agreement signed on September 29, 2026\nField session with 20 seniors at an institution in Im-dong, Buk-gu, Gwangju on November 13\nFinal report submitted on November 16; final presentation review on November 25",
@@ -225,6 +232,13 @@ export const portfolioProjects = [
       ko: "강사 제공 장애 대응 에이전트에 RAG, Judge, 비용 최적화를 설정 스위치로 붙이고 7개 구성으로 비교했습니다. 처음 보는 시험 문제 36개 중 정답 매뉴얼이 있는 질문에서 **필수 매뉴얼 누락이 56%에서 9%로** 줄었고, 채점하는 AI가 후한지도 따로 쟀습니다.",
       en: "I added RAG, a judge, and cost optimizations to an instructor-provided incident-response agent as config switches and compared seven configurations. Among the 36 held-out questions that have a matching runbook, **missed required runbooks fell from 56% to 9%**, and I separately measured how lenient the grading AI was.",
     },
+    brief: {
+      what: { ko: "강사 제공 장애 대응 에이전트에 개선을 스위치로 붙여 효과를 가린 SKALA 4기 개인 평가 과제", en: "SKALA Cohort 4 individual task: added improvements to an instructor-provided incident agent as switches and isolated each effect" },
+      pain: { ko: "원본이 질문과 다른 매뉴얼로 답했고, 개선을 한꺼번에 붙이면 효과를 알 수 없음", en: "The original answered with a runbook unrelated to the question, and stacking fixes together would hide which one worked" },
+      solution: { ko: "RAG(문서 검색 기반 답변), Judge, 비용 최적화를 설정 스위치로 붙인 7개 구성 비교", en: "Comparison of seven configurations adding RAG (document-search answers), a judge, and cost optimization as config switches" },
+      how: { ko: "질문 60개 x 3회, 실제 API 1,260회 실행, holdout 36문제는 구현 전에 고정, 신뢰구간으로 개선별 기여 분리", en: "60 questions x 3 runs, 1,260 real API runs; 36 holdout questions fixed before implementation; confidence intervals separate each gain" },
+      effect: { ko: "정답 매뉴얼이 있는 holdout 질문에서 필수 매뉴얼 누락 56%에서 9%\n한계: 다른 AI가 쓴 외부 문항 15개에서는 누락 58%", en: "Missed required runbooks fell from 56% to 9% on holdout questions with a matching runbook\nLimit: 58% missed on 15 external questions written by another AI" },
+    },
     context: {
       ko: "SKALA 4기 AI Agent Mini-Project 선택과제 1(Base AI Agent 개선), 개인 과제\n원본 에이전트(LangGraph, MCP)는 강사 제공 코드, 원본 노드는 그대로 두고 설정으로 교체\nAI 도구와 함께 진행했고 문서의 수치는 결과 파일과 자동 대조\n모의 모니터링과 직접 만든 합성 질문 60개 기준이며 운영 환경 적용은 아님\n한계: 다른 AI가 쓴 외부 문항 15개에서는 누락이 58%로 더 많았음",
       en: "SKALA Cohort 4 AI Agent Mini-Project, optional task 1 (improving the base agent), individual assignment\nThe original agent (LangGraph, MCP) was instructor-provided; its nodes were left intact and swapped by config\nI worked with AI tools, and every number in the write-up is checked automatically against the result files\nMeasured on mock monitoring data and 60 synthetic questions I wrote; not a production deployment\nLimit: on 15 external questions written by another AI, the miss rate was higher at 58%",
@@ -395,6 +409,13 @@ export const portfolioProjects = [
       ko: "저축은행 고객 이탈을 예측하는 가상 시나리오 실습입니다. Test 점수로는 고르지 않는다는 기준을 세우고 **AUC 0.7722를 0.8646으로** 올렸습니다(Validation과 Test 평균).",
       en: "A capstone lab on predicting customer churn for a fictional savings bank. I set the rule of never selecting on test scores and raised **AUC from 0.7722 to 0.8646** (mean of validation and test).",
     },
+    brief: {
+      what: { ko: "가상 저축은행 고객 이탈을 예측하는 SKALA 4기 개인 종합실습", en: "SKALA Cohort 4 individual capstone lab predicting customer churn for a fictional savings bank" },
+      pain: { ko: "학습 데이터가 1,260건뿐이라 Test 점수로 고르면 실력이 아닌 운을 고르게 되는 조건", en: "With only 1,260 training rows, choosing by test score selects luck rather than skill" },
+      solution: { ko: "Test는 기록만 하고 교차검증으로만 고른 모델, EDA와 SHAP에서 설계한 파생변수", en: "A model chosen by cross-validation only (test set recorded, not used) with features designed from EDA and SHAP" },
+      how: { ko: "5-Fold 3회 반복 CV 점수 15개 평균으로만 선택, 계열이 다른 세 모델을 순위 평균으로 결합", en: "Selected only by the mean of 15 CV scores (5-Fold x 3); three different model families combined by rank averaging" },
+      effect: { ko: "AUC 0.7722에서 0.8646으로 상승(Validation과 Test 평균)", en: "AUC rose from 0.7722 to 0.8646 (mean of validation and test)" },
+    },
     context: {
       ko: "SKALA 4기 모델 개발과 최적화 과목의 개인 종합실습\n과제 배경은 가상의 저축은행 시나리오(실제 고객사 아님)\n제출 노트북을 새 환경에서 다시 돌려 같은 숫자가 나오는 것까지 확인",
       en: "An individual capstone lab in SKALA Cohort 4's model development course\nThe business setting is a fictional savings bank, not a real client\nRe-ran the submitted notebook in a fresh environment and confirmed the same numbers",
@@ -481,6 +502,30 @@ export const portfolioProjects = [
       ko: [],
       en: [],
     },
+    heroImage: "/projects/skala-churn-modeling/baseline_vs_final_auc.webp",
+    screenshots: [
+      {
+        src: "/projects/skala-churn-modeling/feature_engineering_effect.webp",
+        alt: {
+          ko: "파생변수 단계별 CV AUC 변화",
+          en: "CV AUC at each feature-engineering step",
+        },
+      },
+      {
+        src: "/projects/skala-churn-modeling/cv_models_vs_ensemble.webp",
+        alt: {
+          ko: "후보 모델 8개와 앙상블의 CV 점수 비교",
+          en: "CV scores of eight candidate models and the ensemble",
+        },
+      },
+      {
+        src: "/projects/skala-churn-modeling/selection_noise_cv_std.webp",
+        alt: {
+          ko: "상위 조합 간 점수 차이와 fold 표준편차 비교",
+          en: "Score gap between top combinations versus fold standard deviation",
+        },
+      },
+    ],
     links: {},
   },
   {
@@ -504,6 +549,13 @@ export const portfolioProjects = [
     summary: {
       ko: "Qwen2.5-1.5B를 LoRA로 파인튜닝한 뒤 점수가 0.0862에서 0.3852로 올랐습니다. 평가 코드와 제 설정을 점검해 **\"형식은 배웠지만 사실은 못 배웠다\"**는 결론을 냈습니다.",
       en: "After LoRA fine-tuning Qwen2.5-1.5B, the score rose from 0.0862 to 0.3852. Auditing the evaluation code and my own settings led to the conclusion: **\"it learned the format, not the facts.\"**",
+    },
+    brief: {
+      what: { ko: "Qwen2.5-1.5B LoRA 파인튜닝 점수의 평가 코드를 점검한 SKALA 4기 개인 과제", en: "SKALA Cohort 4 individual task auditing the evaluation code behind a Qwen2.5-1.5B LoRA fine-tuning score" },
+      pain: { ko: "점수가 0.0862에서 0.3852로 4.5배 올랐지만 무엇을 재는 점수인지 확인되지 않음", en: "Score rose 4.5x (0.0862 to 0.3852) but what it measured had not been checked" },
+      solution: { ko: "평가 범위와 내 설정의 한계를 밝힌 감사 보고서, 결론은 형식은 배웠지만 사실은 못 배웠다", en: "An audit report on the metric's coverage and my own settings, concluding it learned the format, not the facts" },
+      how: { ko: "평가 코드를 문항 유형별로 읽어 검사 범위를 표로 정리하고, 학습 샘플 잘림을 사후 점검", en: "Read the evaluation code by question type to tabulate check coverage, then audited training-sample truncation after the fact" },
+      effect: { ko: "측정 결과: 환각 검사는 20문항 중 5문항에만 적용, 학습 샘플 582건 중 148건(25.4%)의 정답이 잘림", en: "Measured: hallucination check covered only 5 of 20 questions; answers were truncated in 148 of 582 training samples (25.4%)" },
     },
     context: {
       ko: "SKALA 4기 sLLM 파인튜닝 개인 과제, Base 모델과 SFT 모델 비교 서브노트\nAI 도구와 함께 점검했고 최종 검증은 직접 수행\n점수는 과제 평가 코드 기준이며, 그 코드에 환각 검사 공백이 있다는 점을 함께 기록",
@@ -591,6 +643,23 @@ export const portfolioProjects = [
       ko: [],
       en: [],
     },
+    heroImage: "/projects/skala-lora-eval-audit/base_vs_finetuned_scores.webp",
+    screenshots: [
+      {
+        src: "/projects/skala-lora-eval-audit/eval_weight_structure.webp",
+        alt: {
+          ko: "문항 유형별 채점 구조, 20문항 중 15문항은 환각 검사 미적용",
+          en: "Scoring structure by question type: 15 of 20 questions have no hallucination check",
+        },
+      },
+      {
+        src: "/projects/skala-lora-eval-audit/token_length_audit.webp",
+        alt: {
+          ko: "학습 데이터 토큰 길이 전수 감사 출력, 582건 중 148건 잘림",
+          en: "Full token-length audit of the training data: 148 of 582 samples truncated",
+        },
+      },
+    ],
     links: {},
   },
   {
@@ -614,6 +683,13 @@ export const portfolioProjects = [
     summary: {
       ko: "구매기업과 공급기업을 잇는 B2B 조달 매칭 서비스의 6명 팀 실습입니다. User 도메인을 맡아 **팀 전체를 막던 role 충돌의 원인을 규명**하고, 해결안과 검증 테스트 14건을 만들었습니다.",
       en: "A six-person team lab building a B2B procurement matching service. Owning the User domain, I **traced the role conflict that blocked the whole team**, proposed fixes, and wrote 14 verification tests.",
+    },
+    brief: {
+      what: { ko: "구매기업과 공급기업을 잇는 B2B 조달 매칭 서비스, SKALA 4기 6명 팀 실습(User 도메인 담당)", en: "B2B procurement matching service, SKALA Cohort 4 six-person team lab (User domain owner)" },
+      pain: { ko: "로그인 뒤 내 정보 조회가 500 오류, 인증 서버와 user-service의 role 값 충돌로 팀 전체가 막힘", en: "Profile lookup after login returned 500; a role-value clash between the auth server and user-service blocked the whole team" },
+      solution: { ko: "충돌 원인 규명, 재현표, 해결안 A, B, C 제시와 OAuth2 로그인 흐름", en: "Root-cause analysis, a reproduction table, three fix options, and an OAuth2 login flow" },
+      how: { ko: "변환기 코드는 팀원이 작성하고, 본인은 검증 테스트 14건 작성(인증 서버는 모의 객체로 대체)", en: "A teammate wrote the converter; I wrote 14 verification tests (auth server replaced by a mock)" },
+      effect: { ko: "본인 작성 검증 테스트 14건 통과\n한계: 실제 HTTP 500에서 200으로 바뀌는 과정은 미측정", en: "All 14 of my verification tests pass\nLimit: the real HTTP 500-to-200 change was not measured" },
     },
     context: {
       ko: "SKALA 4기 공통 프로젝트, 도메인별 분업(User, Order, Payment, Matching, Delivery 등)\n강사가 제공한 MSA 템플릿을 조달 도메인으로 바꾸는 과제(팀 인프라는 Kafka, Docker Compose)\n인증 서버는 소스가 없는 완제품이라 고칠 수 없는 조건",
@@ -703,6 +779,23 @@ export const portfolioProjects = [
       ko: [],
       en: [],
     },
+    heroImage: "/projects/skala-p-match/role_enum_troubleshooting.webp",
+    screenshots: [
+      {
+        src: "/projects/skala-p-match/login_screen.webp",
+        alt: {
+          ko: "OAuth2 로그인으로 들어가는 진입 화면",
+          en: "Entry screen that leads into the OAuth2 login",
+        },
+      },
+      {
+        src: "/projects/skala-p-match/service_architecture.webp",
+        alt: {
+          ko: "팀 최종 발표 자료의 서비스 구조 장",
+          en: "Service architecture slide from the team's final deck",
+        },
+      },
+    ],
     links: {},
   },
   {
@@ -726,6 +819,13 @@ export const portfolioProjects = [
     summary: {
       ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 개인 종합실습입니다. 재구매율 지표의 오류 두 개가 서로 상쇄돼 정상처럼 보이던 것을 정정했고, 강사 개별 평가 피드백에서 **100점(S+등급)**을 받았습니다.",
       en: "An individual capstone lab covering schema design, advanced SQL, and performance tuning. I corrected a repurchase-rate metric in which two errors had been cancelling each other out, and received **100 points (grade S+)** in the instructor's individual evaluation feedback.",
+    },
+    brief: {
+      what: { ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 SKALA 4기 개인 종합실습", en: "SKALA Cohort 4 individual capstone lab covering database design, advanced SQL, and performance tuning" },
+      pain: { ko: "재구매율이 오류 두 개가 서로 상쇄돼 정상처럼 보임(초안 10.10%)", en: "The repurchase rate looked normal (draft 10.10%) because two errors offset each other" },
+      solution: { ko: "분자와 분모 정의를 따로 검증해 바로잡은 지표와 SQL", en: "A corrected metric and queries, with numerator and denominator definitions verified separately" },
+      how: { ko: "두 오류를 함께 수정하고 EXCEPT로 집합 검증, 순차 스캔을 끈 조건에서 5회 반복 실측", en: "Fixed both errors together, verified sets with EXCEPT, and measured 5 repeated runs with sequential scans disabled" },
+      effect: { ko: "30일 내 재구매율 10.13%로 정정, 오분류 902건 교정, 강사 개별 평가 100점(S+등급)", en: "30-day repurchase rate corrected to 10.13%, 902 misclassified rows fixed; instructor's individual evaluation 100 points (grade S+)" },
     },
     context: {
       ko: "SKALA 4기 DB/SQL 종합실습(개인), 실습 세 개가 각각 100점(S)\n완성된 SQL을 받아 적지 않고 직접 쓴다는 규칙을 세우고 진행\n주석은 가이드 문구를 옮기지 않고 이해한 내용을 내 표현으로 다시 정리한다는 원칙으로 진행",
@@ -815,6 +915,23 @@ export const portfolioProjects = [
       ko: [],
       en: [],
     },
+    heroImage: "/projects/skala-db-sql-lab/repurchase_rate_decompose.webp",
+    screenshots: [
+      {
+        src: "/projects/skala-db-sql-lab/repurchase_rate_fixed.webp",
+        alt: {
+          ko: "정정한 재구매율 쿼리 결과 10.13%",
+          en: "Corrected repurchase-rate query result: 10.13%",
+        },
+      },
+      {
+        src: "/projects/skala-db-sql-lab/q06_tuning_record_table.webp",
+        alt: {
+          ko: "Q6 튜닝 기록표, 순차 스캔 유지 판단의 근거",
+          en: "Q6 tuning record: the basis for keeping the sequential scan",
+        },
+      },
+    ],
     links: {},
   },
   {
@@ -838,6 +955,13 @@ export const portfolioProjects = [
     summary: {
       ko: "반도체 fab 설비의 부품 교체 요청이 들어오면 AI 에이전트가 규격과 호환, 법령과 조문, 안전서류를 검토해 근거를 붙입니다. **승인 여부는 안전관리자가 결정**하는 온프레미스 승인 워크플로우 서비스입니다.",
       en: "An on-premise approval workflow for semiconductor fab part replacements: AI agents review spec compatibility, applicable regulations, and safety documents and attach the evidence, while the safety manager makes the approval decision.",
+    },
+    brief: {
+      what: { ko: "반도체 fab 부품 교체 승인을 돕는 온프레미스 AI 에이전트, SKALA 4기 5인 팀 3일 미니 프로젝트", en: "On-premise AI agent for semiconductor fab part-replacement approval; SKALA Cohort 4 five-person, three-day mini-project" },
+      pain: { ko: "규격, 법령, 안전 승인 정보가 흩어져 있고 협력사는 외부 클라우드 LLM 사용 불가", en: "Spec, regulation, and safety information is scattered, and partner sites cannot use external cloud LLMs" },
+      solution: { ko: "AI 에이전트가 근거를 모으고 승인과 거절은 안전관리자가 정하는 승인 워크플로우", en: "Approval workflow where AI agents gather evidence and the safety manager approves or rejects" },
+      how: { ko: "외부 전송 차단을 기본값으로 두고 외부 AI 공급자는 명시 허용 시에만 기동하는 백엔드 설계", en: "Backend design with egress blocked by default; an external AI provider starts only when explicitly allowed" },
+      effect: { ko: "기대 효과: 흩어진 근거를 한 흐름에서 검토(승인 시간 단축은 실측이 없어 미기재)", en: "Expected: evidence reviewed in one flow (approval-time reduction not reported, as never measured)" },
     },
     context: {
       ko: "SKALA(SK AI Leader Academy) 4기 AI 웹 서비스 설계 미니 프로젝트\n5인 팀이 3일 동안 기획, 설계, 구현, 발표까지 진행\n**외부 클라우드 LLM을 쓸 수 없는** 협력사 환경을 전제로 설계",
@@ -986,6 +1110,13 @@ export const portfolioProjects = [
           en: "Engineer replacement request form",
         },
       },
+      {
+        src: "/projects/argus/team-system-architecture.webp",
+        alt: {
+          ko: "5인 팀 공식 구조도 (Spring Boot, FastAPI 에이전트, Chroma)",
+          en: "Official five-person team architecture (Spring Boot, FastAPI agents, Chroma)",
+        },
+      },
     ],
     links: {
       github: "https://github.com/jang961111-hash/skala-argus",
@@ -1012,6 +1143,13 @@ export const portfolioProjects = [
     summary: {
       ko: "구매 에이전트가 가맹점 견적을 비교하고 온체인으로 결제하면, 가맹점 쪽 결정론 정책 엔진이 위임장 서명, 유효기간, 범위, 카트, 예산, 온체인 지불을 **6단계로 검증**하는 에이전트 커머스 게이트웨이입니다.",
       en: "An agent-commerce gateway: a buyer agent compares merchant quotes and pays on-chain, while a deterministic merchant-side policy engine verifies mandate signature, expiry, scope, cart, budget, and on-chain payment in six steps.",
+    },
+    brief: {
+      what: { ko: "에이전트 결제를 가맹점 쪽에서 검증하는 커머스 게이트웨이, Google x Solana 해커톤 팀 사공이(등록 2인)", en: "Commerce gateway where the merchant verifies agent payments; Team Sagong-i (two registered members), Google x Solana hackathon" },
+      pain: { ko: "에이전트가 자율 구매해도 가맹점은 이 주문을 믿어도 되는지 알 수 없음", en: "Even when agents buy on their own, merchants cannot tell whether an order can be trusted" },
+      solution: { ko: "LLM 대신 결정론 정책 엔진이 6단계로 검증하는 가맹점 쪽 게이트웨이", en: "Merchant-side gateway where a deterministic policy engine, not the LLM, verifies in six steps" },
+      how: { ko: "위임장 서명, 유효기간, 범위, 카트, 예산, 온체인 지불 순으로 검증, Solana devnet에서 x402 방식 결제", en: "Checks mandate signature, expiry, scope, cart, budget, then on-chain payment; x402-style payment on Solana devnet" },
+      effect: { ko: "단위 11 + 통합 20 테스트 31/31 통과, 예산 초과 등 5종 차단 확인(devnet 데모 범위)", en: "11 unit + 20 integration tests passed (31/31), five attack types blocked (devnet demo scope)" },
     },
     context: {
       ko: "Google x Solana AI Agentic Hackathon에 팀 사공이(402, 등록 2인)로 제출\nAI Agent와 간편결제를 한 프로젝트에서 미리 경험",
@@ -1171,6 +1309,13 @@ export const portfolioProjects = [
       ko: "**있는 일자리가 청년에게 닿지 않는** 문제를 풀고자 한 서비스 기획입니다. 구조화 추출, 한국어 문장 임베딩, 생성형 AI를 잇는 파이프라인으로 설계했고, 서류 심사를 통과해 본선에 진출했습니다.",
       en: "A service plan tackling the gap between existing jobs and the youth who never see them, using a structured-extraction + Korean sentence-embedding + generative-AI pipeline; it passed document screening and advanced to the finals.",
     },
+    brief: {
+      what: { ko: "청년에게 닿지 않는 지역 일자리를 잇는 AI 추천 서비스 기획, 3인 팀 팀장으로 지역 AI 대회 출품", en: "AI recommendation service plan linking local jobs to youth; entered in a regional AI contest as lead of a three-person team" },
+      pain: { ko: "일자리가 없는 게 아니라 있는 일자리가 청년에게 닿지 않음(청년 실업률 광주 7.0%, 전남 10.1%)", en: "Not a lack of jobs but jobs not reaching youth (youth unemployment 7.0% in Gwangju, 10.1% in Jeonnam)" },
+      solution: { ko: "구조화 추출, 한국어 문장 임베딩, 생성형 AI를 잇는 추천 파이프라인 기획", en: "Plan for a pipeline linking structured extraction, Korean sentence embeddings, and generative AI" },
+      how: { ko: "심사 관점을 문항에 매핑하고 페르소나 2종, 국내외 서비스 13곳 x 7기능 비교표로 차별점 정리", en: "Mapped judging criteria to questions, built two personas, and compared 13 services x 7 features to pin down differentiation" },
+      effect: { ko: "서류 심사를 통과해 본선 진출", en: "Passed document screening and advanced to the finals" },
+    },
     context: {
       ko: "팀장이자 공식 서식상 대표자로 기획, PM, 발표 총괄\n사전역량교육 당일 팀이 실습 결과물을 실제 서비스로 배포",
       en: "Team lead and official representative on the form; led planning, PM, and the pitch\nOn the day of the pre-event training, the team deployed its practice output as a real service",
@@ -1275,6 +1420,13 @@ export const portfolioProjects = [
     summary: {
       ko: "부모님이 **사기 문자를 스스로 알아보시도록** 돕는 훈련 코치 프롬프트입니다. SKT 「모두의 promp.T」 공모전 Life AX 부문에서 최우수상을 받은 개인 출품작입니다.",
       en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own, winner of the Top Excellence Award (Life AX category) in SKT's 'promp.T for Everyone' contest.",
+    },
+    brief: {
+      what: { ko: "부모님이 사기 문자를 스스로 알아보게 돕는 훈련 코치 프롬프트, SKT 모두의 promp.T Life AX 부문 개인 출품", en: "Training-coach prompt helping parents spot scam texts themselves; solo entry in SKT 'promp.T for Everyone' (Life AX)" },
+      pain: { ko: "어머니의 질문에 답하기까지 47분간 어머니는 혼자였고, 판단을 대신하면 어머니에게 남는 것이 없음", en: "My mother waited 47 minutes alone for my answer, and judging for her left her with nothing" },
+      solution: { ko: "판별해 주지 않고 질문으로 이끄는 「어머니의 판별 카드」 코치 프롬프트", en: "A 'Mother's Judgment Card' coach prompt that guides with questions instead of judging" },
+      how: { ko: "AI는 답 대신 질문을 던져 이상한 곳을 직접 찾게 하고, 직접 찾은 것만 카드에 축적", en: "AI asks questions so parents find what looks wrong themselves; only self-found items go on the card" },
+      effect: { ko: "Life AX 부문 최우수상 수상(개인)", en: "Won the Top Excellence Award, Life AX category (individual)" },
     },
     context: {
       ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」\n어머니의 질문에 제가 답하기까지 **47분이 비어 있던 일**에서 출발",
@@ -1387,6 +1539,13 @@ export const portfolioProjects = [
     summary: {
       ko: "KRAFTON AI R&D Hackathon 라운드 1의 개인 과제입니다. 1-layer causal self-attention 제약 아래 6비트×6비트 이진 곱셈을 푸는 두 가지 해법(수학적 구성 해법, 학습 모델)을 **하루 안에 설계하고 검증**해 제출했습니다.",
       en: "A solo Round-1 task from the KRAFTON AI R&D Hackathon: designing and verifying two solutions, a constructive-exact model and a learned model, for 6-bit binary multiplication under a 1-layer causal self-attention constraint, within a single day.",
+    },
+    brief: {
+      what: { ko: "1-layer 어텐션으로 6비트 x 6비트 이진 곱셈을 푸는 KRAFTON AI R&D 해커톤 라운드 1 개인 과제", en: "Solo Round 1 task of the KRAFTON AI R&D Hackathon: 6-bit x 6-bit binary multiplication with 1-layer attention" },
+      pain: { ko: "1-layer causal self-attention 제약 안에서 곱셈을 표현하고 학습할 수 있는지가 과제", en: "The task: can multiplication be represented and learned under a 1-layer causal self-attention constraint" },
+      solution: { ko: "수학적 구성 해법(98,328 파라미터)과 학습 모델(274,898 파라미터) 두 가지", en: "Two solutions: a constructive exact model (98,328 parameters) and a learned model (274,898 parameters)" },
+      how: { ko: "입력 12비트를 스칼라 코드로 압축해 스플라인 복원, 학습 모델은 입력 비트를 라우팅하는 희소 어텐션", en: "Compressed the 12 input bits into a scalar code recovered by spline; the learned model uses routed sparse attention" },
+      effect: { ko: "4,096쌍 전수 검증 정확도 100%\n한계: 고정 프로토콜 200에폭이 아닌 20에폭 실측", en: "100% accuracy on exhaustive 4,096-pair check\nLimit: measured at 20 epochs, not the fixed 200-epoch protocol" },
     },
     context: {
       ko: "생성형 AI를 실행, 검증 파트너로 쓰는 핸드오프 워크플로우 프로젝트\n코드, 체크포인트, 리포트, 재현 명령까지 완결된 제출 패키지 제작",
@@ -1562,6 +1721,13 @@ export const portfolioProjects = [
       ko: "SSAFY 창업캠프(삼성, JA Korea)에 팀 No Problem으로 참가해 피칭한, 학원 강사용 AI 문제은행, 시험지 생성, 자동 채점 SaaS입니다. **창업관심팀 최우수팀**으로 선정되었습니다.",
       en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors, pitched by Team No Problem at the SSAFY Startup Camp (Samsung and JA Korea). Selected as Best Team.",
     },
+    brief: {
+      what: { ko: "학원 강사용 AI 문제은행, 시험지 생성, 자동 채점 SaaS, SSAFY 창업캠프 팀 No Problem(5인) 피칭", en: "AI question bank, exam builder, and auto-grading SaaS for academy instructors; pitched by Team No Problem (5) at SSAFY Startup Camp" },
+      pain: { ko: "사업 소개 덱 가정으로 강사가 주 10시간 이상을 출제, 채점, 관리에 씀", en: "By the business deck's assumption, instructors spend 10+ hours a week on exam creation, grading, and management" },
+      solution: { ko: "등록, AI 분류, 시험지 생성, 자동 채점, 약점 분석이 이어지는 데이터 선순환 루프", en: "A data loop of registration, AI classification, exam generation, auto-grading, and weakness analytics" },
+      how: { ko: "팀이 문제 촬영 후 OCR과 자동 태깅, 자연어 시험지 조립, 루브릭 채점으로 설계, 본인은 마케팅과 SEO 담당", en: "The team designed photo-to-OCR tagging, natural-language exam assembly, and rubric grading; I owned marketing and SEO" },
+      effect: { ko: "창업관심팀 최우수팀 선정", en: "Selected as Best Team among startup-interest teams" },
+    },
     context: {
       ko: "팀 No Problem(5인)으로 참가, 학원 강사 팀원의 현장 페인 포인트에서 출발\n15장 사업 소개 덱 발표로 창업관심팀 최우수팀 선정\n저는 마케팅, SEO 담당",
       en: "Joined as Team No Problem (5 members), starting from the field pain points of an academy instructor on the team\nSelected Best Team among the startup-interest teams after pitching a 15-page business deck\nOwned marketing and SEO",
@@ -1682,6 +1848,15 @@ export const portfolioProjects = [
         en: "View business deck (PDF, 15p)",
       },
     },
+    screenshots: [
+      {
+        src: "/projects/easyexam/ai-pipeline.webp",
+        alt: {
+          ko: "팀 발표 덱의 AI 파이프라인 구조 장",
+          en: "AI pipeline slide from the team deck",
+        },
+      },
+    ],
     links: {
       demo: "https://noproblem.ssafy.live",
     },
@@ -1706,6 +1881,13 @@ export const portfolioProjects = [
     summary: {
       ko: "D4D(Deploy for Defense) APAC 서울 해커톤에서 **24시간 동안 개발**한 작전지속지원 통제 시스템입니다. 오퍼레이터 한 명이 AI 코파일럿과 함께 지상(UGV)과 공중(VTOL) 무인자산을 동시에 지휘합니다.",
       en: "A contested-logistics control system built in the 24-hour build window of the D4D (Deploy for Defense) APAC Seoul hackathon, where a single operator commands ground (UGV) and aerial (VTOL) unmanned assets alongside an AI copilot.",
+    },
+    brief: {
+      what: { ko: "무인자산 작전지속지원 통제 시스템, D4D APAC 서울 해커톤 24시간 개발, 2인 팀", en: "Control system for unmanned-asset operational sustainment, built in 24 hours at D4D APAC Seoul hackathon; two-person team" },
+      pain: { ko: "무인체계 운용이 자산 1대당 조종사 1명이 붙는 선형 인력 구조", en: "Unmanned operations need one pilot per asset, so staffing grows with equipment" },
+      solution: { ko: "오퍼레이터 1명이 AI 코파일럿과 지상, 공중 무인자산을 함께 지휘하는 콘솔", en: "A console where one operator commands ground and aerial assets together with an AI copilot" },
+      how: { ko: "자연어 명령을 제어 시퀀스로 바꾸고 AI 트리아지로 요청을 정렬, 본인은 콘솔 기획과 프론트엔드 담당", en: "Natural-language commands become control sequences and AI triage sorts requests; I handled console planning and frontend" },
+      effect: { ko: "실물 UGV와 VTOL 연동 시연, Oregon UAS Accelerator 특별 트랙 선정", en: "Demo wired to a real UGV and VTOL; selected for the Oregon UAS Accelerator special track" },
     },
     context: {
       ko: "하드웨어, 운용 리드와 2인 팀\n실물 UGV, VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연\nOregon UAS Accelerator 특별 트랙 선정\nD4D 공식 쇼케이스 등재",
@@ -1892,6 +2074,13 @@ export const portfolioProjects = [
       ko: "Genspark Meetup & Hackathon에서 Genspark OpenClaw를 활용해 제작한 AI 네트워킹 웹앱 프로토타입입니다.",
       en: "An AI networking web app prototype built using Genspark OpenClaw at the Genspark Meetup & Hackathon.",
     },
+    brief: {
+      what: { ko: "행사 참가자 아이스브레이킹을 돕는 AI 네트워킹 웹앱 프로토타입, Genspark 해커톤 개인 제작", en: "AI networking web app prototype for event icebreaking, built solo at the Genspark hackathon" },
+      pain: { ko: "밋업과 해커톤에서 참가자가 서로를 알아가고 대화를 시작하기 어려움", en: "At meetups and hackathons, participants find it hard to get to know each other and start talking" },
+      solution: { ko: "참가자 카드, Wing Match, AI 아이스브레이커로 이어지는 네트워킹 흐름", en: "A networking flow of participant cards, Wing Match, and an AI icebreaker" },
+      how: { ko: "Genspark OpenClaw로 만들고 PWA와 모바일 최적화까지 반복 개선", en: "Built with Genspark OpenClaw and improved iteratively through PWA and mobile optimization" },
+      effect: { ko: "기대 효과: 대화를 시작하는 부담 완화(측정 결과 없음)\n결과물: 베타 데모 모드를 갖춘 PWA 프로토타입", en: "Expected: easier conversation starts (no measured result)\nOutput: a PWA prototype with a beta demo mode" },
+    },
     context: {
       ko: "AI 에이전트를 도구보다 '실행 파트너'로 활용, 아이디어를 고속으로 프로토타입화한 프로젝트",
       en: "A project that rapidly prototyped an idea by treating AI agents as 'execution partners' rather than mere tools.",
@@ -2011,6 +2200,13 @@ export const portfolioProjects = [
     summary: {
       ko: "매일 기록을 이어가기 어려운 이유를 **'입력 부담'과 '회고 흐름 단절'**로 정의하고, AI 질문 흐름으로 푼 서비스입니다.",
       en: "A service that solves user retention issues by defining the problem as 'input friction' and 'broken reflection flows', using AI-driven questioning.",
+    },
+    brief: {
+      what: { ko: "AI 질문으로 회고와 다음 행동 추천을 돕는 서비스, SSAFY 특화 프로젝트 6인 팀(PM, 프론트엔드)", en: "Service using AI questions for reflection and next-action recommendation; SSAFY specialized project, six-person team (PM, frontend)" },
+      pain: { ko: "빈 화면부터 내미는 회고 방식이라 입력 부담이 크고 기록이 한 번으로 끝남", en: "Journaling starts from a blank screen, so entry is a burden and records end after one use" },
+      solution: { ko: "알맞은 때 AI가 질문하고 내일 실행할 행동 1개를 추천하는 회고 서비스", en: "A reflection service where AI asks at the right moment and recommends one action for tomorrow" },
+      how: { ko: "본인은 사건, 감정, 원인 슬롯 중 빈 것만 묻는 질문 흐름과 사용자 여정 설계\n팀 서비스는 음성 입력, 벡터 검색, 추천을 결합", en: "I designed the slot-based question flow (event, emotion, cause) and user journey\nThe team service combines voice input, vector search, and recommendation" },
+      effect: { ko: "SSAFY 14기 특화프로젝트 발표회 광주1반 3등\n기대 효과: 기록 완료 3분 목표(질문 최대 7번)", en: "3rd place in Gwangju Class 1 at the SSAFY Cohort 14 showcase\nExpected: finishing an entry in a 3-minute target (up to 7 questions)" },
     },
     context: {
       ko: "사용자가 기록을 멈추는 문제를 AI 질문 흐름으로 해결\nSSAFY 14기 특화프로젝트 발표회 **광주1반 3등**",
@@ -2229,6 +2425,13 @@ export const portfolioProjects = [
       ko: "회의와 메신저에 흩어진 논의를 **논의, 승인, 기록의 구조**로 정리해 협업 효율을 높이는 플랫폼입니다.",
       en: "A platform that maximizes collaboration efficiency by formalizing scattered discussions into Discussion, Approval, and Record structures.",
     },
+    brief: {
+      what: { ko: "논의, 승인, 기록 구조의 의사결정 협업 플랫폼, SSAFY 팀 프로젝트(기획, 프론트엔드 리드)", en: "Decision-recording collaboration platform with discussion, approval, and record structure; SSAFY team project (planning, frontend lead)" },
+      pain: { ko: "회의 결정이 기록되지 않거나 메신저 논의가 사라져 같은 논의가 반복됨", en: "Meeting decisions go unrecorded or messenger talk vanishes, so the same discussion repeats" },
+      solution: { ko: "GitHub의 PR과 Merge 개념을 옮긴 커밋 기반 논의, 승인 흐름과 결정문 자동 생성", en: "Commit-based discussion and approval borrowing GitHub's PR and Merge, with automatic decision records" },
+      how: { ko: "태그를 단 커밋 메시지만 영구 보존, 서버 상태를 단일 소스로 구독하는 실시간 화면 설계", en: "Only tagged commit messages are kept; real-time UI designed to subscribe to server state as the single source" },
+      effect: { ko: "기대 효과: 결정 근거를 남겨 같은 논의의 반복 감소(측정 결과 없음)", en: "Expected: fewer repeated discussions by keeping decision rationale (no measured result)" },
+    },
     context: {
       ko: "GitHub의 Issue, PR, Merge 개념을 일반 협업 흐름에 적용\n'의사결정의 확실성'을 제공하려 한 시도",
       en: "Applied GitHub's Issue, PR, and Merge concepts to general collaboration flows\nAn attempt to provide 'decision certainty'",
@@ -2357,7 +2560,6 @@ export const portfolioProjects = [
       ],
     },
     media: {
-      videoSrc: "/projects/loggy/loggy-demo.mp4",
       presentationHref: "/projects/loggy/loggy-presentation.pdf",
       title: {
         ko: "발표 자료 / 시연 영상",
@@ -2372,6 +2574,23 @@ export const portfolioProjects = [
         en: "Download final presentation (PDF)",
       },
     },
+    heroImage: "/projects/loggy/git-structure-mapping.webp",
+    screenshots: [
+      {
+        src: "/projects/loggy/decision-tree-wireframe.webp",
+        alt: {
+          ko: "회의 내용을 안건과 의견 구조로 정리한 와이어프레임 (예시 데이터)",
+          en: "Wireframe organizing a meeting into agenda items and opinions (sample data)",
+        },
+      },
+      {
+        src: "/projects/loggy/meeting-flow-steps.webp",
+        alt: {
+          ko: "Loggy 회의 진행 6단계",
+          en: "The six steps of a Loggy meeting",
+        },
+      },
+    ],
     links: {},
   },
   {
@@ -2393,6 +2612,13 @@ export const portfolioProjects = [
     summary: {
       ko: "제주 재생에너지 출력 제한 문제를 **계통 혼잡과 수요 불일치 문제**로 재정의하고, 잉여 전력을 흡수할 수 있는 데이터센터 입지를 분석하는 서비스입니다.",
       en: "A service that reframes Jeju's energy curtailment as a grid mismatch issue and analyzes optimal locations for data centers to absorb surplus power.",
+    },
+    brief: {
+      what: { ko: "제주 재생에너지 출력 제한을 풀 데이터센터 입지 분석 서비스 기획, 제주 AWS Global Space Challenge 해커톤 팀(기획 담당)", en: "Plan for a data-center siting service on Jeju's renewable curtailment; Jeju AWS Global Space Challenge hackathon team (planning)" },
+      pain: { ko: "제주는 재생에너지 과잉으로 출력 제한이 잦은데 전력을 흡수할 수요처가 부족", en: "Jeju often curtails renewable output from oversupply and lacks demand to absorb it" },
+      solution: { ko: "출력 제한이 잦은 지역에 데이터센터를 분산 배치하는 입지 분석 서비스", en: "A siting-analysis service distributing data centers to areas with frequent curtailment" },
+      how: { ko: "지역별 전력 수급 데이터와 지리 정보를 연동해 입지 효율을 시각화하는 구조 기획", en: "Planned a structure linking regional power data and geographic information to visualize siting efficiency" },
+      effect: { ko: "해커톤 결선 진출(기획서 작성 주도)", en: "Reached the hackathon finals (led the proposal writing)" },
     },
     context: {
       ko: "기술적 난제를 사업 기회로 전환한 기획 중심 프로젝트\n복합적인 의사결정 문제를 풀어 정리한 사례",
@@ -2498,6 +2724,23 @@ export const portfolioProjects = [
         en: "Download hackathon presentation",
       },
     },
+    heroImage: "/projects/tamna/solution-map.webp",
+    screenshots: [
+      {
+        src: "/projects/tamna/architecture-diagram.webp",
+        alt: {
+          ko: "팀 발표 자료의 AWS 구조도",
+          en: "AWS architecture diagram from the team deck",
+        },
+      },
+      {
+        src: "/projects/tamna/site-selection-logic.webp",
+        alt: {
+          ko: "입지 선정 4단계 로직",
+          en: "Four-step site selection logic",
+        },
+      },
+    ],
     links: {
       docs: "/projects/tamna/tamna-proposal.pdf",
       youtube: "", // 사용자 추가 예정
@@ -2524,6 +2767,13 @@ export const portfolioProjects = [
     summary: {
       ko: "대학생의 학습, 활동 데이터를 금융 가치와 연결한 플랫폼입니다. **성장 과정으로 신뢰를 쌓고** 금융 혜택을 받습니다.",
       en: "A platform where students link learning and activity data to financial value, proving trust based on their growth process.",
+    },
+    brief: {
+      what: { ko: "대학생 성장 데이터를 금융 가치와 잇는 앱, 신한은행 X SSAFY 해커톤 팀 언더독(5인), UI/UX 디자인과 프론트엔드", en: "App linking student growth data to financial value; Team Underdog (5), Shinhan Bank X SSAFY hackathon; UI/UX design and frontend" },
+      pain: { ko: "소득과 자산이 없는 대학생은 금융 이용이 어렵고 활동 이력은 평가에 반영되지 않음", en: "Students without income or assets struggle to use finance, and activity history is not reflected in evaluation" },
+      solution: { ko: "출결, 도서관 이용, 소비 같은 비금융 데이터를 대안신용점수로 환산하는 서비스", en: "A service converting non-financial data such as attendance, library use, and spending into an alternative credit score" },
+      how: { ko: "본인은 Figma로 앱과 게임 UI/UX를 설계하고 서브 화면(퀘스트, 크로니클 피드) 구현", en: "I designed the app and game UI/UX in Figma and built sub-screens (quests, chronicle feed)" },
+      effect: { ko: "기대 효과: 우대금리 등 실질 혜택과 연결(팀 기획서의 구조, 측정 결과 없음)", en: "Expected: linkage to real benefits such as preferential rates (structure in the team proposal; no measured result)" },
     },
     context: {
       ko: "금융 이력이 부족한 씬파일러(Thin-filer) 대학생을 위한 서비스 디자인과 프론트엔드 사례\n활동 기록을 신뢰 데이터로 전환하려 한 시도",
@@ -2615,6 +2865,30 @@ export const portfolioProjects = [
         en: "View team proposal (PDF, 11p)",
       },
     },
+    heroImage: "/projects/chronicle/cover-app-mockup.webp",
+    screenshots: [
+      {
+        src: "/projects/chronicle/home-benefit-screens.webp",
+        alt: {
+          ko: "홈 화면과 맞춤형 혜택 화면",
+          en: "Home screen and personalized benefits screen",
+        },
+      },
+      {
+        src: "/projects/chronicle/skilltree-ai-analysis.webp",
+        alt: {
+          ko: "스킬트리 성향 분석과 AI 분석 결과 화면",
+          en: "Skill-tree trait analysis and AI analysis result screens",
+        },
+      },
+      {
+        src: "/projects/chronicle/system-flowchart.webp",
+        alt: {
+          ko: "팀 발표 자료의 시스템 흐름도",
+          en: "System flowchart from the team deck",
+        },
+      },
+    ],
     links: {},
   },
   {
@@ -2636,6 +2910,10 @@ export const portfolioProjects = [
     summary: {
       ko: "지역의 관광, 사회, 환경 현안을 주제로 한 전주 ICT 코딩 챌린지에 팀으로 참여한 기록입니다.",
       en: "A record of taking part as a team in the Jeonju ICT Coding Challenge on regional tourism, social, and environmental issues.",
+    },
+    brief: {
+      what: { ko: "지역의 관광, 사회, 환경 현안을 주제로 한 전주 ICT 코딩 챌린지에 팀으로 참여", en: "Team participation in the Jeonju ICT Coding Challenge on regional tourism, social, and environmental issues" },
+      pain: { ko: "풀어야 했던 문제: 지역 사회의 실질적인 불편을 기술로 해결할 방법", en: "Problem to solve: how to address real inconveniences of a local community with technology" },
     },
     team: {
       ko: "팀 프로젝트",
@@ -2697,6 +2975,13 @@ export const portfolioProjects = [
     summary: {
       ko: "AI를 잘 쓰는 사람의 노하우를 사용자가 바로 실행할 수 있는 워크플로우 상품으로 제공하는 마켓플레이스입니다.",
       en: "A marketplace that packages expert AI know-how as executable workflow products users can run immediately.",
+    },
+    brief: {
+      what: { ko: "AI 노하우를 실행 가능한 워크플로우 상품으로 파는 마켓플레이스, SSAFY 14기 자율 프로젝트 F107 6인 팀", en: "Marketplace selling AI know-how as executable workflow products; SSAFY Cohort 14 autonomous project, six-person team F107" },
+      pain: { ko: "안정적인 AI 결과물에는 노하우가 필요한데 흩어져 있고, 기존 프롬프트 마켓은 원문 노출과 복제 위험이 있음", en: "Stable AI outputs need know-how that is scattered, and existing prompt markets risk exposing and copying raw prompts" },
+      solution: { ko: "템플릿 구매, 슬롯 입력, 결과 생성으로 노하우가 실행되는 워크플로우 마켓", en: "A workflow market where know-how runs through template purchase, slot input, and result generation" },
+      how: { ko: "프롬프트 원문은 비공개, 슬롯 값만 입력하는 실행 구조(팀 설계)\n본인은 AI 모델 관련 구축과 시장, 경쟁사 분석에 기여", en: "Raw prompts kept private and only slot values entered (team design)\nI contributed to AI model integration and market and competitor analysis" },
+      effect: { ko: "기대 효과: 크리에이터 노하우 보호와 사용자 편의 확보(측정 결과 없음)", en: "Expected: protecting creator know-how while keeping users' effort low (no measured result)" },
     },
     context: {
       ko: "F107 유캔두 팀 프로젝트\n프롬프트 단순 판매 대신 프롬프트, 작업 흐름, 수정 노하우를 함께 상품화하는 방향 검토",
@@ -2929,6 +3214,13 @@ export const portfolioProjects = [
       ko: "흩어져 있던 영업 리드 관리를 **'고객 여정 5단계'**와 '칸반 스타일 파이프라인'으로 정리한 CRM 프로젝트입니다.",
       en: "A CRM project that structured fragmented lead management into a '5-stage customer journey' and 'Kanban-style pipeline'.",
     },
+    brief: {
+      what: { ko: "영업 리드를 고객 여정 5단계 칸반 파이프라인으로 정리한 CRM, SSAFY 관통 프로젝트 팀(기획 담당)", en: "CRM organizing sales leads into a 5-stage customer-journey Kanban pipeline; SSAFY integrated project team (planning)" },
+      pain: { ko: "영업 과정이 파편화돼 리드 이탈 지점을 알기 어렵고 영업 사원의 다음 액션 가이드가 없음", en: "A fragmented sales process hides where leads drop off, and reps get no guide for the next action" },
+      solution: { ko: "고객 여정 5단계 칸반 보드와 단계가 정체되면 경고하는 액션 유도형 파이프라인", en: "A 5-stage Kanban board and an action-oriented pipeline that warns when a stage stalls" },
+      how: { ko: "본인은 고객 여정 5단계 정의, 파이프라인 UI 설계, 비즈니스 로직의 데이터 모델 매핑 담당", en: "I defined the 5 stages, designed the pipeline UI, and mapped business logic to data models" },
+      effect: { ko: "기대 효과: 영업 운영 효율 향상(목표, 측정 결과 없음)", en: "Expected: better sales operating efficiency (a goal; no measured result)" },
+    },
     context: {
       ko: "기능 구현을 넘어 영업 담당자와 고객 간의 '운영 흐름'을 시스템으로 연결한 사례",
       en: "Beyond feature building, a business structuring case that seamlessly connected operational flows between sales and customers.",
@@ -3024,6 +3316,51 @@ export const portfolioProjects = [
       ko: ["고객 여정 맵", "파이프라인 와이어프레임", "기능 명세서"],
       en: ["Customer Journey Map", "Pipeline Wireframes", "Feature Specs"],
     },
+    heroImage: "/projects/promtree/template-purchase-screen.webp",
+    screenshots: [
+      {
+        src: "/projects/promtree/slot-input-screen.webp",
+        alt: {
+          ko: "슬롯 입력 화면",
+          en: "Slot input screen",
+        },
+      },
+      {
+        src: "/projects/promtree/result-generation-screen.webp",
+        alt: {
+          ko: "결과 생성 화면",
+          en: "Result generation screen",
+        },
+      },
+      {
+        src: "/projects/promtree/slot-protection-structure.webp",
+        alt: {
+          ko: "프롬프트 원문은 비공개, 입력값만 공개하는 슬롯 구조",
+          en: "Slot structure that keeps the prompt private and exposes only the inputs",
+        },
+      },
+      {
+        src: "/projects/sales-crm/consult-notes-ai-summary.webp",
+        alt: {
+          ko: "상담 내용과 AI 상담 요약 화면",
+          en: "Consultation notes and AI summary screen",
+        },
+      },
+      {
+        src: "/projects/sales-crm/ai-sales-script.webp",
+        alt: {
+          ko: "AI가 정리한 상담 스크립트 화면",
+          en: "AI-drafted consultation script screen",
+        },
+      },
+      {
+        src: "/projects/sales-crm/recommendation-logic-flow.webp",
+        alt: {
+          ko: "추천 로직 흐름",
+          en: "Recommendation logic flow",
+        },
+      },
+    ],
     links: {},
   },
 ];
