@@ -1282,6 +1282,13 @@ export const portfolioProjects = [
           en: "Merchant onboarding: endpoint issued without code",
         },
       },
+      {
+        src: "/projects/jangbogo/ledger-settlement.webp",
+        alt: {
+          ko: "주문과 정산 화면, 주문마다 Solana devnet 거래 연결",
+          en: "Orders and settlement screen with each order linked to a Solana devnet transaction",
+        },
+      },
     ],
     links: {
       github: "https://github.com/jang961111-hash/jangbogo",
@@ -1397,6 +1404,23 @@ export const portfolioProjects = [
         "What differentiation did you find from comparing competing services?",
       ],
     },
+    heroImage: "/projects/ajob-radar/competitor-matrix.webp",
+    screenshots: [
+      {
+        src: "/projects/ajob-radar/problem-definition.webp",
+        alt: {
+          ko: "팀 피치덱의 문제 정의 장",
+          en: "Problem definition slide from the team pitch deck",
+        },
+      },
+      {
+        src: "/projects/ajob-radar/core-feature-card.webp",
+        alt: {
+          ko: "공고 위에 정책과 준비물을 얹은 공고 카드 예시",
+          en: "Sample job card that layers policies and prerequisites on a posting",
+        },
+      },
+    ],
     links: {},
   },
   {
@@ -1501,6 +1525,27 @@ export const portfolioProjects = [
         alt: {
           ko: "수상 발표 포스터 중 Life AX 부문 최우수상 부분 (출처: SKT 뉴스룸)",
           en: "Life AX Top Excellence Award section of the award announcement poster (source: SKT Newsroom)",
+        },
+      },
+      {
+        src: "/projects/skt-prompt/cover-judgment-card.webp",
+        alt: {
+          ko: "제출 자료 표지와 판별 카드 예시",
+          en: "Cover of the submission with a sample judgment card",
+        },
+      },
+      {
+        src: "/projects/skt-prompt/four-step-flow.webp",
+        alt: {
+          ko: "따라 하는 법 4단계",
+          en: "The four steps to follow",
+        },
+      },
+      {
+        src: "/projects/skt-prompt/constraint-rationale.webp",
+        alt: {
+          ko: "프롬프트 제약 6개와 넣은 이유",
+          en: "The six prompt constraints and why each was added",
         },
       },
     ],
@@ -2175,6 +2220,29 @@ export const portfolioProjects = [
       },
     },
     heroImage: "/projects/genwing/og-banner.webp",
+    screenshots: [
+      {
+        src: "/projects/genwing/host-room.webp",
+        alt: {
+          ko: "호스트 방 화면 (저장소를 다시 실행해 찍은 화면, 참가자는 가상 인물)",
+          en: "Host room screen (re-run from the repository; participants are fictional)",
+        },
+      },
+      {
+        src: "/projects/genwing/quiz-reveal.webp",
+        alt: {
+          ko: "이 사람은 누구일까요 정답 공개 화면",
+          en: "Who-is-this answer reveal screen",
+        },
+      },
+      {
+        src: "/projects/genwing/landing.webp",
+        alt: {
+          ko: "랜딩 화면",
+          en: "Landing screen",
+        },
+      },
+    ],
     links: {
       github: "https://github.com/jang961111-hash/genwing-live",
     },
@@ -3175,6 +3243,30 @@ export const portfolioProjects = [
         "How did you reflect business questions such as cold start, two-sided marketplace dynamics, and credit models in the service structure?",
       ],
     },
+    heroImage: "/projects/promtree/template-purchase-screen.webp",
+    screenshots: [
+      {
+        src: "/projects/promtree/slot-input-screen.webp",
+        alt: {
+          ko: "슬롯 입력 화면",
+          en: "Slot input screen",
+        },
+      },
+      {
+        src: "/projects/promtree/result-generation-screen.webp",
+        alt: {
+          ko: "결과 생성 화면",
+          en: "Result generation screen",
+        },
+      },
+      {
+        src: "/projects/promtree/slot-protection-structure.webp",
+        alt: {
+          ko: "프롬프트 원문은 비공개, 입력값만 공개하는 슬롯 구조",
+          en: "Slot structure that keeps the prompt private and exposes only the inputs",
+        },
+      },
+    ],
     links: {
       github: "https://github.com/jang961111-hash/0407",
       docs: "/projects/promtree/promtree-final-presentation.pptx",
@@ -3316,29 +3408,8 @@ export const portfolioProjects = [
       ko: ["고객 여정 맵", "파이프라인 와이어프레임", "기능 명세서"],
       en: ["Customer Journey Map", "Pipeline Wireframes", "Feature Specs"],
     },
-    heroImage: "/projects/promtree/template-purchase-screen.webp",
+    heroImage: "/projects/sales-crm/recommended-products.webp",
     screenshots: [
-      {
-        src: "/projects/promtree/slot-input-screen.webp",
-        alt: {
-          ko: "슬롯 입력 화면",
-          en: "Slot input screen",
-        },
-      },
-      {
-        src: "/projects/promtree/result-generation-screen.webp",
-        alt: {
-          ko: "결과 생성 화면",
-          en: "Result generation screen",
-        },
-      },
-      {
-        src: "/projects/promtree/slot-protection-structure.webp",
-        alt: {
-          ko: "프롬프트 원문은 비공개, 입력값만 공개하는 슬롯 구조",
-          en: "Slot structure that keeps the prompt private and exposes only the inputs",
-        },
-      },
       {
         src: "/projects/sales-crm/consult-notes-ai-summary.webp",
         alt: {
