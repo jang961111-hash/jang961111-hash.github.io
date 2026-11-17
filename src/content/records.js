@@ -29,14 +29,14 @@ export const labNotes = [
     period: "2026.08",
     title: { ko: "SpringAI 회의록 요약 검증기", en: "SpringAI Meeting-Summary Checker" },
     note: {
-      ko: "기능 추가 대신 원문 대조 검증기를 붙이는 방향 결정, 3/3이 나와도 예시를 외운 결과인지 다른 오류 유형으로 재측정",
-      en: "Chose to add a source-comparison checker instead of more features, and re-measured with a different error type to see whether a 3/3 result was just memorized examples",
+      ko: "기능 추가 대신 원문 대조 검증기를 붙이는 방향 결정, 예시를 넣어 좋아진 결과가 예시를 외운 것인지 다른 오류 유형으로 재측정",
+      en: "Chose to add a source-comparison checker instead of more features, and re-measured with a different error type to see whether the improved result was just memorized examples",
     },
     stack: ["Spring AI", "Structured output", "Few-shot"],
   },
   {
     id: "eks-lab",
-    period: "2026.08",
+    period: "2026.08 - 2026.09",
     title: { ko: "쿠버네티스와 EKS 실습", en: "Kubernetes and EKS Lab" },
     note: {
       ko: "실습용 공용 클러스터에서 스케줄 실패 원인을 자원이 아닌 파드 개수 한도로 진단, 무중단 재시작 조건 측정",
@@ -62,7 +62,7 @@ export const labNotes = [
       ko: "\"바뀐 필드만 UPDATE된다\"는 내 주석을 로그로 반증하고 정정, 검증 항목 27개 통과",
       en: "Disproved my own comment (\"only changed fields are updated\") with logs and corrected it; all 27 verification items passed",
     },
-    stack: ["Spring Boot", "JPA", "MyBatis", "Docker"],
+    stack: ["Spring Boot", "JPA", "Docker"],
   },
   {
     id: "data-analysis-team",
@@ -79,10 +79,9 @@ export const labNotes = [
 // `award: true` marks an award or a selection; other rows are participation.
 export const competitions = [
   {
-    period: "2026.11",
+    period: "2026.09 - 2026.11",
     name: { ko: "국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」", en: "Gwangju National Science Museum 2026 My AI Lab 'AI-Ieum Project'" },
-    result: { ko: "개인 응모 선정, 최종결과보고 제출", en: "Selected as an individual entry; final report submitted" },
-    award: true,
+    result: { ko: "개인 응모, 수행협약 체결, 최종결과보고 제출", en: "Individual entry; project agreement signed and final report submitted" },
     slug: "ansim-ieum",
   },
   {
@@ -93,7 +92,7 @@ export const competitions = [
   {
     period: "2026.08",
     name: { ko: "SKT 「모두의 Promp.T」 공모전", en: "SKT 'promp.T for Everyone' Contest" },
-    result: { ko: "Life AX 부문 최우수상 (개인, 총 480건 접수)", en: "Top prize, Life AX category (individual; 480 entries in total)" },
+    result: { ko: "Life AX 부문 최우수상 (개인), 공모전 총 480건 접수", en: "Top prize, Life AX category (individual). The contest received 480 entries in total" },
     award: true,
     slug: "skt-prompt-ansimcall",
   },
