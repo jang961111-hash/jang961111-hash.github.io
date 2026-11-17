@@ -391,3 +391,25 @@
     margin-top: 6px;
   }
 }
+
+/* Project images are shown whole. Grid tiles follow the image's own ratio
+   (tall phone captures are capped and cropped from the top); the three core
+   tiles letterbox the image inside the cell instead of cropping it. */
+.work-card:nth-child(n) .card-tile {
+  aspect-ratio: auto;
+}
+
+.work-card .card-tile img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 26rem;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.core-card .card-tile img {
+  object-fit: contain;
+  padding: clamp(12px, 2vw, 28px);
+}
