@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import SectionShell from "../layout/SectionShell";
 import { getSectionIndex } from "../../config/sections";
 
+import { renderEmphasis } from "../../utils/emphasis";
 const About = () => {
   const { t } = useTranslation();
 
@@ -10,9 +11,9 @@ const About = () => {
     <SectionShell id="about" index={getSectionIndex("about")} title={t("identity.title")}>
       <div className="about-content">
         <div className="about-text">
-          <p>{t("identity.text1")}</p>
-          <p>{t("identity.text2")}</p>
-          <p>{t("identity.text3")}</p>
+          <p>{renderEmphasis(t("identity.text1"))}</p>
+          <p>{renderEmphasis(t("identity.text2"))}</p>
+          <p>{renderEmphasis(t("identity.text3"))}</p>
           <div className="skill-group">
             <p className="skills-subtitle">{t("identity.skills_title")}</p>
             <ul className="skills-list">

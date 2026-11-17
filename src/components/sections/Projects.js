@@ -1,95 +1,142 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getLocalizedCoreProjects, projectUiCopy } from "../../content/projects";
+import {
+  getLocalizedCoreProjects,
+  getLocalizedSupportingProjects,
+  projectUiCopy,
+} from "../../content/projects";
 import SectionShell from "../layout/SectionShell";
 import useLang from "../../hooks/useLang";
-import { renderEmphasis, stripEmphasis } from "../../utils/emphasis";
+import { getSectionIndex } from "../../config/sections";
 
-// "Name | tagline" titles are shown as a name with a smaller tagline.
-export const splitProjectTitle = (title = "") => {
-  const [name, ...rest] = String(title).split(" | ");
-
-  return { name, tagline: rest.join(" | ") };
-};
-
-const getStackNames = (stack) =>
-  (Array.isArray(stack) ? stack : [])
-    .map((item) => (typeof item === "string" ? item : item?.name))
-    .filter(Boolean);
-
-const getCardImage = (project) => {
-  const image = project.cardImage ?? project.heroImage;
-
-  return typeof image === "string" && image && !image.startsWith("[") ? image : null;
-};
-
-const FeaturedCard = ({ project, order }) => {
-  const { name, tagline } = splitProjectTitle(project.title);
-  const image = getCardImage(project);
-  const metrics = (project.metrics ?? []).slice(0, 3).filter((m) => m && typeof m === "object");
-  const stackNames = getStackNames(project.stack).slice(0, 5);
-
-  return (
-    <li className="featured-item" data-reveal="" style={{ "--reveal-order": order }}>
-      <Link to={project.path} className="featured-card">
-        {image && (
-          <div className="featured-media">
-            <img
-              src={image}
-              alt={stripEmphasis(name)}
-              width="1600"
-              height="1000"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        )}
-
-        <div className="featured-body">
-          <p className="featured-period mono">{project.period}</p>
-          <h3 className="featured-title">{stripEmphasis(name)}</h3>
-          {tagline && <p className="featured-tagline">{renderEmphasis(tagline)}</p>}
-
-          {metrics.length > 0 && (
-            <dl className="featured-metrics">
-              {metrics.map((metric) => (
-                <div key={`${metric.value}-${metric.label}`} className="featured-metric">
-                  <dt className="mono">{metric.value}</dt>
-                  <dd>{metric.label}</dd>
-                </div>
-              ))}
-            </dl>
-          )}
-
-          {stackNames.length > 0 && (
-            <ul className="chip-list">
-              {stackNames.map((item) => (
-                <li key={item} className="chip mono">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <p className="featured-role">{renderEmphasis(project.role)}</p>
-        </div>
-      </Link>
-    </li>
-  );
-};
-
+import { renderEmphasis } from "../../utils/emphasis";
 const Projects = () => {
   const lang = useLang();
-  const copy = projectUiCopy[lang] ?? projectUiCopy.ko;
+  const copy = projectUiCopy[lang];
   const coreProjects = getLocalizedCoreProjects(lang);
+  const supportingProjects = getLocalizedSupportingProjects(lang);
 
   return (
-    <SectionShell id="projects" title={copy.featuredTitle}>
-      <ul className="featured-grid">
-        {coreProjects.map((project, index) => (
-          <FeaturedCard key={project.slug} project={project} order={index} />
+    <SectionShell
+      id="projects"
+      index={getSectionIndex("projects")}
+      title={copy.sectionTitle}
+      subtitle={renderEmphasis(copy.sectionIntro)}
+    >
+      <div className="project-archive-header project-core-header">
+        <div>
+          <p className="project-archive-kicker mono">{copy.coreKicker}</p>
+          <h3 className="project-archive-title">{copy.coreTitle}</h3>
+          <p className="project-archive-intro">{renderEmphasis(copy.coreIntro)}</p>
+        </div>
+      </div>
+
+      <div className="project-core-grid">
+        {coreProjects.map((project) => (
+          <article
+            key={project.slug}
+            className="project-core-card structural-card"
+          >
+            <div className="project-card-top">
+              <span className={`project-status-badge ${project.status}`}>
+                {project.statusLabel}
+              </span>
+              <span className="project-card-period">{project.period}</span>
+            </div>
+
+            <p className="project-card-category">{project.category}</p>
+            <h3 className="project-card-title">{project.title}</h3>
+            <p className="project-card-summary">{renderEmphasis(project.summary)}</p>
+
+            <div className="project-core-block">
+              <span className="detail-label">{copy.problemDefinition}</span>
+              <p>{renderEmphasis(project.story?.problem ?? project.context)}</p>
+            </div>
+
+            <div className="project-core-block">
+              <span className="detail-label">{copy.coreRole}</span>
+              <p>{project.role}</p>
+            </div>
+
+            <div className="project-core-block">
+              <span className="detail-label">{copy.coreContribution}</span>
+              <ul className="project-proof-list">
+                {project.highlights.slice(0, 3).map((item) => (
+                  <li key={item}>{renderEmphasis(item)}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="project-core-block">
+              <span className="detail-label">{copy.techStack}</span>
+              <div className="project-tag-list">
+                {(project.stack?.length ? project.stack : project.tags).map((tag) => (
+                  <span key={tag} className="project-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="project-core-block">
+              <span className="detail-label">{copy.resultLearning}</span>
+              <p>{renderEmphasis(project.proof[0] ?? project.caseStudy?.summary)}</p>
+            </div>
+
+            <Link to={project.path} className="project-inline-link">
+              {copy.viewDetails}
+            </Link>
+          </article>
         ))}
-      </ul>
+      </div>
+
+      <div className="project-archive-header">
+        <div>
+          <p className="project-archive-kicker mono">
+            {copy.supportingKicker}
+          </p>
+          <h3 className="project-archive-title">{copy.supportingTitle}</h3>
+          <p className="project-archive-intro">{copy.supportingIntro}</p>
+        </div>
+      </div>
+
+      <div className="project-archive-grid">
+        {supportingProjects.map((project) => (
+          <article
+            key={project.slug}
+            className="project-archive-card structural-card"
+          >
+            <div className="project-card-top">
+              <span className={`project-status-badge ${project.status}`}>
+                {project.statusLabel}
+              </span>
+              <span className="project-card-period">{project.period}</span>
+            </div>
+
+            <p className="project-card-category">{project.category}</p>
+            <h4 className="project-card-title">{project.title}</h4>
+            <p className="project-card-summary">{renderEmphasis(project.summary)}</p>
+
+            <div className="project-tag-list">
+              {(project.stack?.length ? project.stack : project.tags).map((tag) => (
+                <span key={tag} className="project-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="project-card-footer">
+              <div className="project-card-role">
+                <span className="detail-label">{copy.role}</span>
+                <p>{project.role}</p>
+              </div>
+              <Link to={project.path} className="project-inline-link">
+                {copy.viewDetails}
+              </Link>
+            </div>
+          </article>
+        ))}
+      </div>
     </SectionShell>
   );
 };

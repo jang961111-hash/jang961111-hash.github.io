@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
@@ -9,19 +9,19 @@ import {
 } from "../../utils/localeRouting";
 import { queueScrollTarget, scrollToSectionId } from "../../utils/scrollTarget";
 import { getResumeAsset } from "../../utils/resumeAssets";
-import { navSections } from "../../config/sections";
+import { homeSections } from "../../config/sections";
 import "./Navbar.css";
 
-const navItems = navSections;
+const navItems = homeSections.filter((section) => section.nav !== false);
 const navSectionIds = navItems.map(({ id }) => id);
 
-const DESKTOP_BREAKPOINT = 1120;
+const DESKTOP_BREAKPOINT = 1280;
 
 const Navbar = ({ theme, onToggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const progressBarRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
@@ -73,45 +73,19 @@ const Navbar = ({ theme, onToggleTheme }) => {
   };
 
   useEffect(() => {
-    // One rAF per frame: the progress bar is written straight to the DOM and
-    // React state changes only when the scrolled threshold is crossed.
-    let frameId = 0;
-    let wasScrolled = null;
-
-    const update = () => {
-      frameId = 0;
-      const scrollY = window.scrollY;
-      const nextScrolled = scrollY > 24;
-
-      if (nextScrolled !== wasScrolled) {
-        wasScrolled = nextScrolled;
-        setIsScrolled(nextScrolled);
-      }
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
 
       const totalHeight =
         document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = totalHeight > 0 ? Math.min(scrollY / totalHeight, 1) : 0;
-
-      if (progressBarRef.current) {
-        progressBarRef.current.style.transform = `scaleX(${ratio})`;
-      }
-    };
-
-    const handleScroll = () => {
-      if (!frameId) {
-        frameId = window.requestAnimationFrame(update);
-      }
+      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+      setScrollProgress(progress);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    update();
+    handleScroll();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (frameId) {
-        window.cancelAnimationFrame(frameId);
-      }
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -294,7 +268,10 @@ const Navbar = ({ theme, onToggleTheme }) => {
         </div>
 
         <div className="scroll-progress-container">
-          <div ref={progressBarRef} className="scroll-progress-bar"></div>
+          <div
+            className="scroll-progress-bar"
+            style={{ width: `${scrollProgress}%` }}
+          ></div>
         </div>
       </nav>
 

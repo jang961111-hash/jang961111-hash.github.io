@@ -23,7 +23,10 @@ jest.mock(
   { virtual: true }
 );
 
-jest.mock("./hooks/useScrollReveal", () => () => {});
+jest.mock("./hooks/useScrollReveal", () => () => ({
+  elementRef: { current: null },
+  isVisible: true,
+}));
 
 const { MemoryRouter, useLocation } = require("react-router-dom");
 const App = require("./App").default;
@@ -74,13 +77,9 @@ describe("App routing flows", () => {
       );
     });
 
-    // Each featured card is a single link to its project page.
-    const dailyLogCard = screen
-      .getAllByRole("link")
-      .find((link) => /\/en\/projects\/dailylog\/?$/.test(link.getAttribute("href")));
-
-    expect(dailyLogCard).toBeTruthy();
-    await userEvent.click(dailyLogCard);
+    await userEvent.click(
+      screen.getAllByRole("link", { name: "View details" })[0]
+    );
 
     await waitFor(() => {
       expect(screen.getByTestId("location-probe").textContent).toBe(

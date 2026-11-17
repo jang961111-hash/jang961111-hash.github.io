@@ -3,16 +3,14 @@ import { useTranslation } from "react-i18next";
 import profilePhoto from "../../assets/images/id-photo.webp";
 import profilePhotoJpg from "../../assets/images/id-photo.jpg";
 import { getResumeAsset } from "../../utils/resumeAssets";
-import { Link } from "react-router-dom";
-import { renderEmphasis } from "../../utils/emphasis";
-import { getProjectPath } from "../../utils/localeRouting";
 import "./Hero.css";
 
+import { renderEmphasis } from "../../utils/emphasis";
 const Hero = () => {
   const { t, i18n } = useTranslation();
   const resume = getResumeAsset(i18n.language);
-  const evidence = t("hero.evidence", { returnObjects: true });
-  const evidenceItems = Array.isArray(evidence) ? evidence : [];
+  const proofKeys = ["product", "ai", "execution"];
+  const strengthKeys = ["platform", "decision", "tech", "ai"];
   const portraitAlt =
     i18n.language === "ko"
       ? `${t("hero.name")} 프로필 사진`
@@ -20,69 +18,76 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero-section">
-      <div className="hero-inner">
-        <div className="hero-copy">
-        <div className="hero-identity">
-          <picture className="hero-portrait-frame">
-            <source srcSet={profilePhoto} type="image/webp" />
-            <source srcSet={profilePhotoJpg} type="image/jpeg" />
-            <img
-              className="hero-portrait"
-              src={profilePhotoJpg}
-              alt={portraitAlt}
-              width="96"
-              height="96"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
-          </picture>
-          <p className="hero-role">{t("hero.title")}</p>
-        </div>
+      <div className="hero-grid">
+        <div className="hero-content">
+          <p className="hero-overline mono">{t("hero.portfolioLabel")}</p>
 
-        <h1 className="hero-title">{t("hero.name")}</h1>
-        <p className="hero-subtitle">{renderEmphasis(t("hero.subtitle"))}</p>
+          <div className="hero-heading">
+            <p className="hero-greeting">{t("hero.greeting")}</p>
+            <h1 className="hero-title">{t("hero.name")}</h1>
+          </div>
 
-        {evidenceItems.length > 0 && (
-          <ul className="hero-evidence" aria-label={t("hero.evidenceLabel")}>
-            {evidenceItems.map((item) => (
-              <li key={item} className="hero-evidence-item">
-                {item}
-              </li>
+          <h2 className="hero-subtitle">{renderEmphasis(t("hero.subtitle"))}</h2>
+          <p className="hero-description">{renderEmphasis(t("hero.mission"))}</p>
+
+          <div className="hero-proof-list">
+            {proofKeys.map((key, index) => (
+              <div key={key} className="hero-proof-item">
+                <span className="hero-proof-index mono">{`0${index + 1}`}</span>
+                <p>{renderEmphasis(t(`hero.proofItems.${key}`))}</p>
+              </div>
             ))}
-          </ul>
-        )}
+          </div>
 
-        <div className="hero-cta">
-          <a href="#projects" className="cta-button primary">
-            {t("hero.viewProjects")}
-          </a>
-          <a
-            href={resume.href}
-            className="cta-button ghost"
-            target="_blank"
-            rel="noopener noreferrer"
-            download={resume.downloadName}
-            aria-label={t("hero.downloadResumeAria")}
-          >
-            {t("hero.downloadResume")}
-          </a>
-        </div>
+          <div className="hero-cta">
+            <a href="#projects" className="cta-button primary">
+              {t("hero.viewProjects")}
+            </a>
+            <a href="#contact" className="cta-button secondary">
+              {t("hero.getInTouch")}
+            </a>
+            <a
+              href={resume.href}
+              className="cta-button ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              download={resume.downloadName}
+              aria-label={t("hero.downloadResumeAria")}
+            >
+              {t("hero.downloadResume")}
+            </a>
+          </div>
         </div>
 
-        <Link
-          to={getProjectPath(i18n.language === "en" ? "en" : "ko", "ansim-ieum")}
-          className="hero-visual"
-        >
-          <img
-            src="/projects/ansim-ieum/card-screens.webp"
-            alt={t("hero.visualAlt")}
-            width="1600"
-            height="1000"
-            decoding="async"
-          />
-          <span className="hero-visual-caption">{t("hero.visualCaption")}</span>
-        </Link>
+        <aside className="hero-showcase structural-card">
+          <div className="hero-portrait-shell">
+            <div className="hero-portrait-frame">
+              <picture>
+                <source srcSet={profilePhoto} type="image/webp" />
+                <source srcSet={profilePhotoJpg} type="image/jpeg" />
+                <img
+                  className="hero-portrait"
+                  src={profilePhotoJpg}
+                  alt={portraitAlt}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          </div>
+
+          <div className="hero-showcase-copy">
+            <p className="hero-showcase-label">{t("hero.focusLabel")}</p>
+            <div className="hero-strength-list">
+              {strengthKeys.map((key) => (
+                <span key={key} className="hero-strength-chip">
+                  {t(`identity.skills.${key}`)}
+                </span>
+              ))}
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   );

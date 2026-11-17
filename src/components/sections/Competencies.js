@@ -4,6 +4,7 @@ import SectionShell from '../layout/SectionShell';
 import { getSectionIndex } from '../../config/sections';
 import './Competencies.css';
 
+import { renderEmphasis } from '../../utils/emphasis';
 const competencyGroups = [
   {
     key: 'productPlanning',
@@ -32,7 +33,7 @@ const Competencies = () => {
   
   return (
     <SectionShell id="competencies" index={getSectionIndex("competencies")} title={t('competencies.title')}>
-      <p className="competencies-subtitle">{t('competencies.subtitle')}</p>
+      <p className="competencies-subtitle">{renderEmphasis(t('competencies.subtitle'))}</p>
       
       <div className="competencies-grid">
         {competencyGroups.map((group) => (
@@ -44,7 +45,7 @@ const Competencies = () => {
               </h3>
             </div>
             <p className="competency-desc">
-              {t(`competencies.groups.${group.key}.subtitle`)}
+              {renderEmphasis(t(`competencies.groups.${group.key}.subtitle`))}
             </p>
             <ul className="competency-list">
               {group.items.map((itemKey) => (
@@ -53,7 +54,7 @@ const Competencies = () => {
                     {t(`competencies.groups.${group.key}.items.${itemKey}.title`)}
                   </span>
                   <span className="competency-text">
-                    {t(`competencies.groups.${group.key}.items.${itemKey}.desc`)}
+                    {renderEmphasis(t(`competencies.groups.${group.key}.items.${itemKey}.desc`))}
                   </span>
                 </li>
               ))}

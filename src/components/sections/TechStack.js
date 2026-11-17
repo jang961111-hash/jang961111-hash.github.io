@@ -1,26 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { stackGroups } from "../../content/stack";
-import { getLocalizedProject, getProjectBySlug } from "../../content/projects";
 import SectionShell from "../layout/SectionShell";
-import useLang from "../../hooks/useLang";
+import { getSectionIndex } from "../../config/sections";
+import { stackGroups } from "../../content/stack";
+import { getProjectBySlug, getLocalizedProject } from "../../content/projects";
 import { stripEmphasis } from "../../utils/emphasis";
-import { splitProjectTitle } from "./Projects";
-
-const pickLabel = (label, lang) =>
-  typeof label === "string" ? label : label?.[lang] ?? label?.ko ?? "";
+import useLang from "../../hooks/useLang";
+import "./Competencies.css";
+import "./TechStack.css";
 
 const TechStack = () => {
   const { t } = useTranslation();
   const lang = useLang();
-  const groups = Array.isArray(stackGroups) ? stackGroups : [];
 
-  if (groups.length === 0) {
-    return null;
-  }
-
-  const resolveProject = (slug) => {
+  const toProjectLink = (slug) => {
     const project = getProjectBySlug(slug);
 
     if (!project) {
@@ -28,51 +22,47 @@ const TechStack = () => {
     }
 
     const localized = getLocalizedProject(project, lang);
+    const name = stripEmphasis(localized.title).split(" | ")[0];
 
-    return {
-      slug,
-      path: localized.path,
-      name: stripEmphasis(splitProjectTitle(localized.title).name),
-    };
+    return { slug, path: localized.path, name };
   };
 
   return (
-    <SectionShell id="stack" title={t("stack.title")} subtitle={t("stack.caption")}>
-      <div className="stack-groups">
-        {groups.map((group, groupIndex) => (
-          <section
-            key={group.id}
-            className="stack-group"
-            data-reveal=""
-            style={{ "--reveal-order": Math.min(groupIndex, 3) }}
-            aria-labelledby={`stack-${group.id}`}
-          >
-            <h3 className="stack-group-title" id={`stack-${group.id}`}>
-              {pickLabel(group.label, lang)}
-            </h3>
-            <ul className="stack-items">
-              {(group.items ?? []).map((item) => {
-                const projects = (item.projects ?? []).map(resolveProject).filter(Boolean);
+    <SectionShell
+      id="stack"
+      index={getSectionIndex("stack")}
+      title={t("stack.title")}
+    >
+      <p className="competencies-subtitle">{t("stack.caption")}</p>
 
-                return (
-                  <li key={item.name} className="stack-item">
-                    <span className="stack-name mono">{item.name}</span>
-                    {projects.length > 0 && (
-                      <span className="stack-projects">
-                        <span className="visually-hidden">{t("stack.usedIn")}: </span>
-                        {projects.map((project, index) => (
-                          <React.Fragment key={project.slug}>
-                            {index > 0 && ", "}
-                            <Link to={project.path}>{project.name}</Link>
-                          </React.Fragment>
-                        ))}
-                      </span>
-                    )}
-                  </li>
-                );
-              })}
+      <div className="competencies-grid">
+        {stackGroups.map((group, groupIndex) => (
+          <div className="competency-card structural-card" key={group.id}>
+            <div className="competency-card-header">
+              <span className="competency-icon mono">{`0${groupIndex + 1}`}</span>
+              <h3 className="competency-title mono">
+                {group.label[lang] ?? group.label.ko}
+              </h3>
+            </div>
+            <ul className="stack-list">
+              {group.items.map((item) => (
+                <li key={item.name} className="stack-row">
+                  <span className="stack-name mono">{item.name}</span>
+                  <span className="stack-projects">
+                    {item.projects
+                      .map(toProjectLink)
+                      .filter(Boolean)
+                      .map((project, index) => (
+                        <React.Fragment key={project.slug}>
+                          {index > 0 ? ", " : ""}
+                          <Link to={project.path}>{project.name}</Link>
+                        </React.Fragment>
+                      ))}
+                  </span>
+                </li>
+              ))}
             </ul>
-          </section>
+          </div>
         ))}
       </div>
     </SectionShell>

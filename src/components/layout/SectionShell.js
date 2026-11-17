@@ -1,21 +1,30 @@
 import React from "react";
-import { renderEmphasis } from "../../utils/emphasis";
+import useScrollReveal from "../../hooks/useScrollReveal";
 import "./Section.css";
 
-const SectionShell = ({ id, title, subtitle, subtitleClassName = "", children }) => {
+const SectionShell = ({
+  id,
+  index,
+  title,
+  subtitle,
+  subtitleClassName = "",
+  children,
+}) => {
+  const { elementRef, isVisible } = useScrollReveal();
   const subtitleClasses = ["section-subtitle", subtitleClassName]
     .filter(Boolean)
     .join(" ");
 
   return (
     <section id={id} className="section">
-      <div className="section-container">
-        <header className="section-header" data-reveal="">
-          <h2 className="section-title">{title}</h2>
-          {subtitle ? (
-            <p className={subtitleClasses}>{renderEmphasis(subtitle)}</p>
-          ) : null}
-        </header>
+      <div
+        ref={elementRef}
+        className={`section-container reveal-base stagger-wrap ${isVisible ? "reveal-visible" : ""}`}
+      >
+        <h2 className="section-title">
+          <span className="text-highlight">{index}.</span> {title}
+        </h2>
+        {subtitle ? <p className={subtitleClasses}>{subtitle}</p> : null}
         {children}
       </div>
     </section>
