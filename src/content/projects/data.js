@@ -480,8 +480,8 @@ export const portfolioProjects = [
       en: "Solo | Problem framing, service planning",
     },
     tags: {
-      ko: ["AI 서비스 기획", "시니어", "사기 문자 판별", "Life AX"],
-      en: ["AI service planning", "Seniors", "Scam-text detection", "Life AX"],
+      ko: ["AI 서비스 기획", "부모님 세대", "사기 문자 판별", "Life AX"],
+      en: ["AI service planning", "Parents", "Scam-text detection", "Life AX"],
     },
     highlights: {
       ko: [
@@ -729,8 +729,8 @@ export const portfolioProjects = [
       en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors, pitched by Team No Problem at the SSAFY Startup Camp (Samsung · JA Korea). Selected as Best Team.",
     },
     context: {
-      ko: "팀 No Problem(5인)으로 참가해 전직 학원 강사의 현장 페인 포인트에서 출발했고, 시연 가능한 라이브 서비스(noproblem.ssafy.live)와 15장 사업 소개 덱으로 최우수팀에 선정된 프로젝트입니다.",
-      en: "Team No Problem (5 members) started from a former academy instructor's field pain points, and won Best Team with a live demo service (noproblem.ssafy.live) and a 15-page business deck.",
+      ko: "팀 No Problem(5인)으로 참가해 전직 학원 강사의 현장 페인 포인트에서 출발했고, 15장 사업 소개 덱 발표로 창업관심팀 최우수팀에 선정된 프로젝트입니다. 저는 마케팅·SEO를 맡았습니다.",
+      en: "Team No Problem (5 members) started from a former academy instructor's field pain points and was selected as Best Team after pitching a 15-page business deck. I owned marketing and SEO.",
     },
     story: {
       problem: {
@@ -800,10 +800,10 @@ export const portfolioProjects = [
         },
       },
       {
-        value: "Live",
+        value: "Demo",
         label: {
-          ko: "noproblem.ssafy.live 시연",
-          en: "Demo at noproblem.ssafy.live",
+          ko: "팀 시연 서비스 링크 (noproblem.ssafy.live)",
+          en: "Team demo service link (noproblem.ssafy.live)",
         },
       },
     ],
@@ -821,19 +821,19 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["사업 소개 덱 (15p)", "라이브 서비스", "수상 사진"],
-      en: ["Business deck (15p)", "Live service", "Award photo"],
+      ko: ["사업 소개 덱 (15p)", "팀 시연 서비스 링크", "수상 사진"],
+      en: ["Business deck (15p)", "Team demo service link", "Award photo"],
     },
     interviewQuestions: {
       ko: [
         "왜 개별 기능이 아니라 데이터 선순환 루프를 제품 전략으로 삼았나요?",
         "AI 채점의 신뢰도 문제를 서비스 설계에서 어떻게 다뤘나요?",
-        "3일이라는 제약에서 무엇을 버리고 무엇을 지켰나요?",
+        "3일 캠프에서 마케팅·SEO 담당으로 무엇에 집중했나요?",
       ],
       en: [
         "Why did you make the data flywheel the product strategy instead of individual features?",
         "How did the service design handle AI grading reliability?",
-        "Under the 3-day constraint, what did you cut and what did you protect?",
+        "As the marketing and SEO owner in a 3-day camp, what did you focus on?",
       ],
     },
     heroImage: "/projects/easyexam/award-best-team.webp",
@@ -1178,7 +1178,7 @@ export const portfolioProjects = [
       en: "A service that solves user retention issues by defining the problem as 'input friction' and 'broken reflection flows', using AI-driven questioning.",
     },
     context: {
-      ko: "사용자 행동 문제를 기술적 구조(AI 질문 흐름)로 해결하고, SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 한 프로젝트입니다.",
+      ko: "사용자 행동 문제를 기술적 구조(AI 질문 흐름)로 해결하고, SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 기록한 프로젝트입니다.",
       en: "A project that proved its impact by solving behavioral issues through technical structures (AI flows); the team placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase.",
     },
     story: {
