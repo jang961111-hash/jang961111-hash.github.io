@@ -6,9 +6,9 @@ This repository is a React 19 + Create React App portfolio site.
 
 The current portfolio direction is:
 
-> AI/SW 기반 문제정의형 서비스 기획자 / PM
+> AI를 서비스로 만드는 사람 (AI 서비스 개발, 기획)
 
-The goal is to prepare a stable portfolio for SSAFY Portfolio Week, PDF submission, and job interviews.
+Confirmed by the owner on 2026-11-17. The goal is a stable public portfolio for job applications and interviews.
 
 ## Non-Negotiable Rules
 
@@ -29,7 +29,7 @@ The goal is to prepare a stable portfolio for SSAFY Portfolio Week, PDF submissi
    - `PROJECT_LOG.md`
    - `src/locales/ko/translation.json`
    - `src/locales/en/translation.json`
-   - `src/content/projects.js`
+   - `src/content/projects/data.js`
 3. If Korean text appears broken, stop and report before rewriting large sections.
 4. Keep UTF-8 compatibility.
 
@@ -42,7 +42,7 @@ The goal is to prepare a stable portfolio for SSAFY Portfolio Week, PDF submissi
 
 ## Content Rules
 
-1. Project content should be based on facts already present in the repository.
+1. Project content should be based on facts already present in the repository. Numbers, dates, awards, and roles must match the owner's fact ledger (`../00_facts.yaml`, confirmed values only); wording listed there as forbidden must not appear on the site.
 2. Do not invent awards, metrics, roles, dates, links, or technical achievements.
 3. If information is uncertain, mark it as `TODO`.
 4. Project descriptions should follow this logic:
@@ -60,7 +60,7 @@ The goal is to prepare a stable portfolio for SSAFY Portfolio Week, PDF submissi
 
 Use this positioning consistently:
 
-> AI/SW 기반 문제정의형 서비스 기획자 / PM
+> AI를 서비스로 만드는 사람 (AI 서비스 개발, 기획)
 
 Related themes:
 - Problem structuring
@@ -71,6 +71,7 @@ Related themes:
 - SSAFY project-based growth
 
 Avoid mixing too many identity labels such as:
+- 문제정의형 서비스 기획자 / PM (the May 2026 SSAFY submission wording, retired)
 - PM형 개발자
 - Technical Product Manager
 - Product Manager
@@ -85,7 +86,7 @@ Main home text:
 - `src/locales/en/translation.json`
 
 Project detail data:
-- `src/content/projects.js`
+- `src/content/projects/data.js`
 
 Main layout/components:
 - `src/App.js`
