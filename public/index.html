@@ -31,8 +31,8 @@
     <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon-192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fcfaf6" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark light" />
     <meta
       name="description"
       content="LLM·추천·벡터 검색을 실제 사용자 경험으로 구현해본 AI 서비스 개발자 장병헌의 포트폴리오. 문제 정의(기획)부터 React 구현까지 한 사이클을 완주합니다."
@@ -97,6 +97,19 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+    <script>
+      (function (d) {
+        d.classList.add("js");
+        var theme = "dark";
+        try {
+          var saved = window.localStorage.getItem("portfolio-theme");
+          if (saved === "light" || saved === "dark") {
+            theme = saved;
+          }
+        } catch (e) {}
+        d.setAttribute("data-theme", theme);
+      })(document.documentElement);
+    </script>
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/PretendardVariable.woff2"

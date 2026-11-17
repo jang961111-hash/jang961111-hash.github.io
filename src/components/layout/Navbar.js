@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
@@ -13,15 +13,46 @@ import { homeSections } from "../../config/sections";
 import "./Navbar.css";
 
 const navItems = homeSections.filter((section) => section.nav !== false);
-const navSectionIds = navItems.map(({ id }) => id);
+// Every home section drives the terminal line, including ones without a tab.
+const watchedSectionIds = ["hero", ...homeSections.map(({ id }) => id)];
 
-const DESKTOP_BREAKPOINT = 1280;
+const DRAWER_BREAKPOINT = 1120;
+
+const getProjectSlug = (pathname) => {
+  const match = pathname.match(/\/projects\/([^/]+)/);
+
+  return match ? match[1] : "";
+};
+
+const SunIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+    <path
+      d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path
+      d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 const Navbar = ({ theme, onToggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const scrolledRef = useRef(false);
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
@@ -29,21 +60,15 @@ const Navbar = ({ theme, onToggleTheme }) => {
   const currentLang = getLocaleFromPathname(location.pathname);
   const isKorean = currentLang === "ko";
   const isHomeRoute = isLocaleRootPath(location.pathname);
+  const projectSlug = getProjectSlug(location.pathname);
   const resume = getResumeAsset(currentLang);
-  const nextThemeLabel =
-    theme === "dark" ? t("nav.themeLight") : t("nav.themeDark");
-  const nextThemeAriaLabel =
-    theme === "dark"
-      ? t("nav.themeToLightAria")
-      : t("nav.themeToDarkAria");
+  const themeAriaLabel =
+    theme === "dark" ? t("nav.themeToLightAria") : t("nav.themeToDarkAria");
+  const terminalText = isHomeRoute
+    ? t(`terminal.${activeSection}`, { defaultValue: t("terminal.hero") })
+    : t("terminal.detail", { name: projectSlug });
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prevOpen) => !prevOpen);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
 
   const switchLanguage = (lang, event) => {
     event.preventDefault();
@@ -56,12 +81,12 @@ const Navbar = ({ theme, onToggleTheme }) => {
       navigate(getLocalizedPath(location.pathname, lang));
     }
 
-    closeMobileMenu();
+    closeMenu();
   };
 
   const scrollToSection = (event, targetId) => {
     event.preventDefault();
-    closeMobileMenu();
+    closeMenu();
 
     if (!isHomeRoute) {
       queueScrollTarget(targetId);
@@ -69,259 +94,234 @@ const Navbar = ({ theme, onToggleTheme }) => {
       return;
     }
 
+    if (targetId === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     scrollToSectionId(targetId);
   };
 
+  // Scroll: one rAF per frame at most, and setState only when the
+  // 24px threshold is crossed.
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 24);
+    let frame = 0;
 
-      const totalHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
-      setScrollProgress(progress);
+    const update = () => {
+      frame = 0;
+      const next = window.scrollY > 24;
+
+      if (next !== scrolledRef.current) {
+        scrolledRef.current = next;
+        setIsScrolled(next);
+      }
+    };
+
+    const handleScroll = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(update);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    update();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+    };
   }, []);
 
   useEffect(() => {
-    if (!isHomeRoute && location.pathname.includes("/projects/")) {
-      setActiveSection("projects");
+    if (!isHomeRoute || typeof IntersectionObserver === "undefined") {
       return undefined;
     }
 
-    const sections = ["hero", ...navSectionIds];
-    const observers = [];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
 
-    sections.forEach((sectionId) => {
+    watchedSectionIds.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
 
-      if (!element) {
-        return;
+      if (element) {
+        observer.observe(element);
       }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(sectionId);
-            }
-          });
-        },
-        { threshold: 0.35, rootMargin: "-88px 0px -35% 0px" }
-      );
-
-      observer.observe(element);
-      observers.push(observer);
     });
 
-    return () => {
-      observers.forEach((observer) => observer.disconnect());
-    };
+    return () => observer.disconnect();
   }, [isHomeRoute, location.pathname]);
 
   useEffect(() => {
-    closeMobileMenu();
+    closeMenu();
   }, [location.pathname]);
 
   useEffect(() => {
-    if (!isMobileMenuOpen) {
+    if (!isMenuOpen) {
       return undefined;
     }
 
-    const previousBodyOverflow = document.body.style.overflow;
-    const previousHtmlOverflow = document.documentElement.style.overflow;
-
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
 
-    return () => {
-      document.body.style.overflow = previousBodyOverflow;
-      document.documentElement.style.overflow = previousHtmlOverflow;
-    };
-  }, [isMobileMenuOpen]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= DESKTOP_BREAKPOINT && isMobileMenuOpen) {
-        closeMobileMenu();
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
       }
     };
 
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isMobileMenuOpen]);
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        closeMobileMenu();
+    const handleResize = () => {
+      if (window.innerWidth >= DRAWER_BREAKPOINT) {
+        closeMenu();
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMenuOpen]);
 
-  const renderUtilityCluster = (isDrawer = false) => (
-    <div className={`nav-utilities ${isDrawer ? "drawer" : "desktop"}`}>
-      <div className="lang-switcher" role="group" aria-label="Language switcher">
-        <button
-          type="button"
-          className={`lang-option ${isKorean ? "active" : ""}`}
-          onClick={(event) => switchLanguage("ko", event)}
-          aria-label={t("nav.languageKoreanAria")}
-        >
-          KR
-        </button>
-        <span className="lang-divider">|</span>
-        <button
-          type="button"
-          className={`lang-option ${!isKorean ? "active" : ""}`}
-          onClick={(event) => switchLanguage("en", event)}
-          aria-label={t("nav.languageEnglishAria")}
-        >
-          EN
-        </button>
-      </div>
-
-      <div className="nav-action-group">
-        <button
-          type="button"
-          className="nav-action-btn"
-          onClick={() => {
-            onToggleTheme();
-            closeMobileMenu();
-          }}
-          aria-label={nextThemeAriaLabel}
-          title={nextThemeAriaLabel}
-        >
-          {nextThemeLabel}
-        </button>
+  const tabLinks = (className) =>
+    navItems.map(({ id, labelKey }) => (
+      <li key={id}>
         <a
-          href={resume.href}
-          className="nav-action-btn nav-action-btn-resume"
-          target="_blank"
-          rel="noopener noreferrer"
-          download={resume.downloadName}
-          aria-label={t("hero.downloadResumeAria")}
+          href={`#${id}`}
+          className={`${className} ${isHomeRoute && activeSection === id ? "is-active" : ""}`}
+          aria-current={isHomeRoute && activeSection === id ? "true" : undefined}
+          onClick={(event) => scrollToSection(event, id)}
         >
-          {t("hero.downloadResume")}
+          {t(labelKey)}
         </a>
-      </div>
+      </li>
+    ));
+
+  const langSwitch = (
+    <div className="nav-lang" role="group" aria-label="Language">
+      <button
+        type="button"
+        className={`nav-lang-btn mono ${isKorean ? "is-active" : ""}`}
+        onClick={(event) => switchLanguage("ko", event)}
+        aria-label={t("nav.languageKoreanAria")}
+        aria-pressed={isKorean}
+      >
+        KR
+      </button>
+      <button
+        type="button"
+        className={`nav-lang-btn mono ${!isKorean ? "is-active" : ""}`}
+        onClick={(event) => switchLanguage("en", event)}
+        aria-label={t("nav.languageEnglishAria")}
+        aria-pressed={!isKorean}
+      >
+        EN
+      </button>
     </div>
+  );
+
+  const pdfLink = (className) => (
+    <a
+      href={resume.href}
+      className={className}
+      target="_blank"
+      rel="noopener noreferrer"
+      download={resume.downloadName}
+      aria-label={t("hero.downloadResumeAria")}
+    >
+      {t("navExtra.pdf")}
+    </a>
+  );
+
+  const terminal = (className) => (
+    <p className={`nav-terminal mono ${className}`} aria-hidden="true">
+      <span className="nav-terminal-dot" />
+      <span className="nav-terminal-prompt">jang@portfolio ~ $</span>
+      <span className="nav-terminal-text" key={terminalText}>
+        {terminalText}
+      </span>
+      <span className="nav-terminal-cursor" />
+    </p>
   );
 
   return (
     <>
-      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-        <div className="nav-container">
+      <header className={`site-nav ${isScrolled ? "is-scrolled" : ""}`}>
+        <nav className="nav-bar" aria-label="Primary">
           <a
             href="#hero"
             className="nav-brand"
             onClick={(event) => scrollToSection(event, "hero")}
+            aria-label={t("navExtra.homeAria")}
           >
-            <span className="brand-name">{t("hero.name")}</span>
-            <span className="brand-role">{t("hero.title")}</span>
+            <span className="nav-brand-name">{t("hero.name")}</span>
+            <span className="nav-brand-dot" aria-hidden="true" />
           </a>
 
-          <div className="nav-desktop-shell">
-            <ul className="nav-links">
-              {navItems.map(({ id, labelKey }) => (
-                <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    className={activeSection === id ? "active" : ""}
-                    onClick={(event) => scrollToSection(event, id)}
-                  >
-                    {t(labelKey)}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <ul className="nav-tabs">{tabLinks("nav-tab")}</ul>
 
-            {renderUtilityCluster()}
+          {terminal("nav-terminal-bar")}
+
+          <div className="nav-tools">
+            <div className="nav-tools-wide">{langSwitch}</div>
+            <button
+              type="button"
+              className="nav-icon-btn"
+              onClick={onToggleTheme}
+              aria-label={themeAriaLabel}
+              title={themeAriaLabel}
+            >
+              {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+            </button>
+            <div className="nav-tools-wide">{pdfLink("nav-pdf mono")}</div>
+            <button
+              type="button"
+              className={`nav-icon-btn nav-menu-btn ${isMenuOpen ? "is-open" : ""}`}
+              onClick={() => setIsMenuOpen((open) => !open)}
+              aria-label={isMenuOpen ? t("nav.menuCloseAria") : t("nav.menuOpenAria")}
+              aria-controls="nav-drawer"
+              aria-expanded={isMenuOpen}
+            >
+              <span />
+              <span />
+            </button>
           </div>
-
-          <button
-            type="button"
-            className={`mobile-menu-btn ${isMobileMenuOpen ? "open" : ""}`}
-            onClick={toggleMobileMenu}
-            aria-label={
-              isMobileMenuOpen
-                ? t("nav.menuCloseAria")
-                : t("nav.menuOpenAria")
-            }
-            aria-controls="mobile-navigation"
-            aria-expanded={isMobileMenuOpen}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-
-        <div className="scroll-progress-container">
-          <div
-            className="scroll-progress-bar"
-            style={{ width: `${scrollProgress}%` }}
-          ></div>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
       <button
         type="button"
-        className={`nav-backdrop ${isMobileMenuOpen ? "open" : ""}`}
-        onClick={closeMobileMenu}
+        className={`nav-scrim ${isMenuOpen ? "is-open" : ""}`}
+        onClick={closeMenu}
         aria-label={t("nav.menuCloseAria")}
-        tabIndex={isMobileMenuOpen ? 0 : -1}
+        tabIndex={-1}
       />
 
-      <aside
-        id="mobile-navigation"
-        className={`nav-drawer ${isMobileMenuOpen ? "open" : ""}`}
-        aria-hidden={!isMobileMenuOpen}
+      <div
+        id="nav-drawer"
+        className={`nav-drawer ${isMenuOpen ? "is-open" : ""}`}
+        inert={!isMenuOpen}
+        aria-hidden={!isMenuOpen}
       >
-        <div className="nav-drawer-inner">
-          <div className="nav-drawer-head">
-            <div>
-              <p className="nav-drawer-kicker mono">{t("hero.portfolioLabel")}</p>
-              <p className="nav-drawer-name">{t("hero.name")}</p>
-            </div>
-            <button
-              type="button"
-              className="nav-drawer-close"
-              onClick={closeMobileMenu}
-              aria-label={t("nav.menuCloseAria")}
-            >
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-
-          <ul className="nav-drawer-links">
-            {navItems.map(({ id, labelKey }) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  className={activeSection === id ? "active" : ""}
-                  onClick={(event) => scrollToSection(event, id)}
-                >
-                  {t(labelKey)}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {renderUtilityCluster(true)}
+        {terminal("nav-terminal-drawer")}
+        <ul className="nav-drawer-links">{tabLinks("nav-drawer-link")}</ul>
+        <div className="nav-drawer-tools">
+          {langSwitch}
+          {pdfLink("btn mono")}
         </div>
-      </aside>
+      </div>
     </>
   );
 };

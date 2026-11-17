@@ -546,5 +546,20 @@
     "title": "기술 스택",
     "caption": "프로젝트에 쓰인 기술입니다. 제가 맡은 범위는 각 프로젝트 페이지의 역할에 적었습니다.",
     "usedIn": "사용 프로젝트"
+  },
+  "terminal": {
+    "hero": "포트폴리오 불러오는 중",
+    "manifesto": "일하는 방식 읽는 중",
+    "projects": "프로젝트 둘러보는 중",
+    "stack": "기술 스택 확인 중",
+    "experience": "이력 읽는 중",
+    "contact": "연락 기다리는 중",
+    "detail": "{{name}} 살펴보는 중"
+  },
+  "navExtra": {
+    "pdf": "PDF",
+    "menu": "메뉴",
+    "scroll": "아래로 스크롤",
+    "homeAria": "맨 위로 이동"
   }
 }

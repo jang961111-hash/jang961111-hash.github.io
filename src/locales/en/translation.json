@@ -546,5 +546,20 @@
     "title": "Tech stack",
     "caption": "Technologies used in each project. My own scope is stated under the role on each project page.",
     "usedIn": "Used in"
+  },
+  "terminal": {
+    "hero": "loading portfolio",
+    "manifesto": "reading the approach",
+    "projects": "browsing projects",
+    "stack": "checking the stack",
+    "experience": "reading the history",
+    "contact": "waiting for your message",
+    "detail": "viewing {{name}}"
+  },
+  "navExtra": {
+    "pdf": "PDF",
+    "menu": "Menu",
+    "scroll": "Scroll down",
+    "homeAria": "Back to top"
   }
 }
