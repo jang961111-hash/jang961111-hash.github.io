@@ -70,11 +70,11 @@ export const portfolioProjects = [
     proof: {
       ko: [
         "목표였던 어르신 50명, 2회 실증은 20명, 1회에 그쳤고 만족도는 재지 못했습니다. 정확도와 미탐률은 목표 수치를 넘었지만 두 사람 교차 표시는 끝내지 못했습니다. 제출한 발표자료에는 **미달을 미달로 적었고**, 성과발표도 못 한 것부터 말할 계획입니다.",
-        "수치가 좋게 나온 이유를 먼저 의심하고, 규칙을 다듬는 데 쓰지 않은 검증셋으로 다시 쟀습니다. 그 검증셋에도 이미 본 문장이 일부 있다는 점까지 적었습니다.",
+        "수치가 좋게 나온 이유를 먼저 의심하고, 규칙 보강의 직접 근거로 삼지 않은 검증셋 200건으로 다시 쟀습니다. 그 검증셋에도 규칙을 고칠 때 본 문장이 일부 있다는 점까지 적었습니다.",
       ],
       en: [
         "The goal of two sessions with 50 seniors ended at one session with 20, and satisfaction was not measured. Accuracy and miss rate cleared the targets, but two-person cross-labeling was not finished. In the submitted deck I **marked the shortfall as a shortfall**, and I plan to open the final presentation with what I did not achieve.",
-        "I questioned good numbers first and re-measured on a validation set not used for tuning the rules, and I noted that even that set includes some sentences I had already seen.",
+        "I questioned good numbers first and re-measured on a 200-item validation set that was not the direct basis for patching the rules, and I noted that even that set includes some sentences I had seen while editing the rules.",
       ],
     },
     metrics: [
