@@ -368,8 +368,8 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "팀 프로젝트 (팀장 · 공식 대표자)",
-      en: "Team project (team lead · official representative)",
+      ko: "3인 팀 (팀장, 공식 대표자)",
+      en: "Three-person team (team lead, official representative)",
     },
     role: {
       ko: "팀장 · PM · 프론트 리드 | 기획·PM·발표 총괄, React 프론트엔드, LLM·Prompt 추천·벡터검색",
