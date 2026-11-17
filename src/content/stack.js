@@ -22,7 +22,7 @@ export const stackGroups = [
     items: [
       { name: "Python", projects: ["ansim-ieum", "argus", "incident-agent-ablation"] },
       { name: "FastAPI", projects: ["ansim-ieum", "argus", "ssafy-startup-track"] },
-      { name: "PostgreSQL", projects: ["argus", "ssafy-startup-track"] },
+      { name: "PostgreSQL", projects: ["ssafy-startup-track"] },
       { name: "SQLite", projects: ["ansim-ieum"] },
       { name: "pgvector", projects: ["dailylog"] },
       { name: "WebSocket (STOMP)", projects: ["loggy"] },
@@ -36,7 +36,7 @@ export const stackGroups = [
       { name: "Claude API", projects: ["ansim-ieum"] },
       { name: "SenseVoice", projects: ["dailylog"] },
       { name: "Thompson Sampling", projects: ["dailylog"] },
-      { name: "Gemini", projects: ["jangbogo", "ssafy-startup-track"] },
+      { name: "Gemini", projects: ["jangbogo"] },
       { name: "LangGraph", projects: ["incident-agent-ablation"] },
       { name: "MCP", projects: ["incident-agent-ablation"] },
       { name: "RAG", projects: ["incident-agent-ablation"] },

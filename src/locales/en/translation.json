@@ -25,7 +25,7 @@
     "title": "AI Service Development and Planning",
     "portfolioLabel": "I turn AI into services",
     "focusLabel": "How I Work",
-    "subtitle": "An AI service builder who has shipped LLM, recommendation, and vector-search features as real user experiences.",
+    "subtitle": "An AI service builder who has designed and built LLM, recommendation, and search features into services people use, working with teams.",
     "mission": "Learned to break problems into structures through a Philosophy degree\nStudied AI and SW for 1,628 hours at SSAFY\nCarry out **everything from problem definition to React implementation** end to end",
     "proofItems": {
       "product": "Led DailyLog as PM; the team placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase",
@@ -40,7 +40,7 @@
     "visualAlt": "Three screens of the Ansim-Ieum service",
     "evidenceLabel": "Awards and selections",
     "evidence": [
-      "Top prize, Life AX category, SKT promp.T contest",
+      "Top Excellence Award, Life AX category, SKT promp.T contest",
       "3rd place, Gwangju Class 1, SSAFY Cohort 14 Specialized Project showcase",
       "Selected for the Oregon UAS Accelerator special track, D4D Seoul"
     ]
@@ -61,7 +61,7 @@
       "title": "At a glance",
       "projects": "Projects",
       "awards": "Awards",
-      "awardsNote": "SKT promp.T Top Prize, SSAFY Specialized Project 3rd place (Gwangju Class 1), Startup Camp Best Team",
+      "awardsNote": "SKT promp.T Top Excellence Award, SSAFY Specialized Project 3rd place (Gwangju Class 1), Startup Camp Best Team",
       "hackathons": "Hackathons & challenges",
       "training": "Samsung SW·AI Academy for Youth",
       "trainingValue": "SSAFY 14th"
@@ -143,7 +143,7 @@
         "problem": "Students face significant financial barriers due to lack of income or assets, as their potential and activity history are ignored by traditional models.",
         "insight": "Quantifying 'growth data' like academic achievement and extracurriculars could enable a new credit model specifically for students.",
         "architecture": "Designed UX around data submission flows and a user journey that translates activities into financial value.",
-        "role": "Planning & Frontend | Problem framing, core flow design, and frontend implementation",
+        "role": "Design & Frontend | Figma UI/UX design and screen implementation",
         "learning": "Learned how data-driven trust design impacts user experience in the financial domain.",
         "proof": {
           "1": "Scoped what was actually feasible inside a heavily regulated financial domain.",
@@ -375,7 +375,7 @@
         "period": "2026.07 - 2026.12 (expected)",
         "desc": [
           "Currently enrolled in SKALA (SK AI Leader Academy) Cohort 4, working on team projects including AI web service design.",
-          "Led backend design and the final presentation for the ARGUS mini-project (five-person team)."
+          "Handled backend design and the final presentation for the ARGUS mini-project (five-person team)."
         ]
       },
       "ssafyTraining": {
@@ -385,7 +385,7 @@
         "desc": [
           "Studied service development and AI/SW fundamentals across Python, SQL, Web, AI, and Data (1,628 hours, completed June 2026).",
           "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects including DailyLog, Loggy, and Promtree.",
-          "Helped share notices and support communication among trainees as the class representative (CA) at the Gwangju campus."
+          "Class representative (CA) of Gwangju Class 1, Feb - Apr 2026, taking part in student council activities."
         ]
       },
       "projectPractice": {
@@ -472,7 +472,7 @@
     "items": [
       {
         "title": "Samsung Youth SW & AI Academy (SSAFY)",
-        "period": "2025.07 - 2026.03",
+        "period": "2025.07 - 2026.06",
         "desc": "Completed 1,628 hours of intensive training in Python, software engineering, and advanced AI (sLLM construction, etc.), gaining PM and planning experience through multiple hands-on AI/SW projects."
       },
       {

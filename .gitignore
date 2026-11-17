@@ -31,3 +31,9 @@ promtree/
 
 # agent state
 .omc/
+
+# 내부 작업 문서(지원 전략과 개인 메모 포함, 공개 저장소에서 제외 2026-11-18)
+HANDOFF.md
+PROJECT_LOG.md
+PORTFOLIO_PLAN.md
+ASSET_WISHLIST.md

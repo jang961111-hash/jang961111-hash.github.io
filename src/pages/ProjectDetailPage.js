@@ -84,6 +84,16 @@ const ProjectDetailPage = ({ project, lang }) => {
     { label: copy.team, value: project.team },
     { label: copy.role, value: project.role },
   ].filter((fact) => fact.value);
+  const brief = project.brief;
+  const briefRows = brief
+    ? [
+        { label: copy.briefWhat, body: brief.what },
+        { label: copy.briefPain, body: brief.pain },
+        { label: copy.briefSolution, body: brief.solution },
+        { label: copy.briefHow, body: brief.how },
+        { label: copy.briefEffect, body: brief.effect },
+      ].filter((row) => row.body)
+    : [];
   const story = project.story;
   const storyItems = story
     ? [
@@ -137,6 +147,33 @@ const ProjectDetailPage = ({ project, lang }) => {
           </dl>
         )}
 
+        {briefRows.length > 0 && (
+          <Block label={copy.brief} className="detail-brief-block">
+            <dl className="detail-brief">
+              {briefRows.map((row) => (
+                <div className="detail-brief-row" key={row.label}>
+                  <dt className="kicker">{row.label}</dt>
+                  <dd>{renderLines(row.body)}</dd>
+                </div>
+              ))}
+              {techList?.length > 0 && (
+                <div className="detail-brief-row">
+                  <dt className="kicker">{techLabel}</dt>
+                  <dd>
+                    <ul className="chip-list detail-chips">
+                      {techList.map((tech) => (
+                        <li key={tech} className="chip">
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </Block>
+        )}
+
         {keyMetrics.length > 0 && (
           <Block label={copy.keyMetrics}>
             <dl className="detail-metrics">
@@ -170,7 +207,7 @@ const ProjectDetailPage = ({ project, lang }) => {
           </div>
         )}
 
-        {techList?.length > 0 && (
+        {briefRows.length === 0 && techList?.length > 0 && (
           <Block label={techLabel}>
             <ul className="chip-list detail-chips">
               {techList.map((tech) => (

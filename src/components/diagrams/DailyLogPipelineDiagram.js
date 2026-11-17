@@ -14,7 +14,7 @@ const labels = {
         no: "02",
         name: "슬롯 기반 질문 엔진",
         tech: "LLM Prompt Flow",
-        desc: ["7개 슬롯(사건, 감정, 원인…)", "비어 있는 슬롯만 골라 질문"],
+        desc: ["슬롯(사건, 감정, 원인…)", "비어 있는 슬롯만 골라 질문"],
       },
       {
         no: "03",
@@ -29,7 +29,7 @@ const labels = {
         desc: ["내일 실행할 행동 1개 추천", "회고를 실행으로 연결"],
       },
     ],
-    questionLoop: "3~5턴 가이드형 질문",
+    questionLoop: "가이드형 질문",
     feedbackLoop: "실행 피드백으로 탐색–활용 균형 조정",
   },
   en: {
@@ -45,7 +45,7 @@ const labels = {
         no: "02",
         name: "Slot-based Query Engine",
         tech: "LLM Prompt Flow",
-        desc: ["7 slots (Event, Emotion …)", "asks only for missing slots"],
+        desc: ["Slots (Event, Emotion …)", "asks only for missing slots"],
       },
       {
         no: "03",
@@ -60,7 +60,7 @@ const labels = {
         desc: ["One task for tomorrow,", "linking reflection to action"],
       },
     ],
-    questionLoop: "3–5 turn guided questioning",
+    questionLoop: "Guided questioning",
     feedbackLoop: "Tuned by execution feedback (explore–exploit)",
   },
 };

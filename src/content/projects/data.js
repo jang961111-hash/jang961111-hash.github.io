@@ -908,8 +908,8 @@ export const portfolioProjects = [
       {
         value: "72 / 0",
         label: {
-          ko: "라이브 E2E 통과 / 실패 (실행 로그 기준)",
-          en: "Live E2E passed / failed (from run log)",
+          ko: "라이브 E2E 통과 / 실패 (개인 저장소 실행 로그 기준)",
+          en: "Live E2E passed / failed (run log of my personal repository)",
         },
       },
       {
@@ -1056,7 +1056,7 @@ export const portfolioProjects = [
         "Unlike competing entries clustered on the buyer side, framed the problem on the merchant side (onboarding + verification).",
         "Designed the trust boundary so the LLM only compares quotes and writes rationale, while a deterministic policy engine enforces budget, scope, and expiry.",
         "Verified by tests that five failure/attack types are blocked: over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31 passing).",
-        "After an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead, I changed quoting to return an empty quote when nothing matches.",
+        "After an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead, quoting was changed to return an empty quote when nothing matches.",
       ],
     },
     proof: {
@@ -1270,11 +1270,11 @@ export const portfolioProjects = [
     },
     title: {
       ko: "SKT promp.T 최우수상작 | 부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트",
-      en: "SKT promp.T Top Prize Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
+      en: "SKT promp.T Top Excellence Award Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
     },
     summary: {
       ko: "부모님이 **사기 문자를 스스로 알아보시도록** 돕는 훈련 코치 프롬프트입니다. SKT 「모두의 promp.T」 공모전 Life AX 부문에서 최우수상을 받은 개인 출품작입니다.",
-      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own, winner of the top prize (Life AX category) in SKT's 'promp.T for Everyone' contest.",
+      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own, winner of the Top Excellence Award (Life AX category) in SKT's 'promp.T for Everyone' contest.",
     },
     context: {
       ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」\n어머니의 질문에 제가 답하기까지 **47분이 비어 있던 일**에서 출발",
@@ -1313,7 +1313,7 @@ export const portfolioProjects = [
         "가족이 실제로 겪은 일(**47분의 공백**)에서 문제 정의",
       ],
       en: [
-        "Won the top prize in the Life AX category of SKT's 'promp.T for Everyone' contest as an individual.",
+        "Won the Top Excellence Award in the Life AX category of SKT's 'promp.T for Everyone' contest as an individual.",
         "Flipped the design from a judging tool to strengthening the person's own judgment.",
         "Defined the problem from a real family experience: a 47-minute gap.",
       ],
@@ -1328,10 +1328,10 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: { ko: "최우수상", en: "Top prize" },
+        value: { ko: "최우수상", en: "Top Excellence Award" },
         label: {
           ko: "Life AX 부문 (개인 수상)",
-          en: "Top prize, Life AX (individual)",
+          en: "Top Excellence Award, Life AX (individual)",
         },
       },
       {
@@ -1348,7 +1348,7 @@ export const portfolioProjects = [
         src: "/projects/skt-prompt/card-award.webp",
         alt: {
           ko: "수상 발표 포스터 중 Life AX 부문 최우수상 부분 (출처: SKT 뉴스룸)",
-          en: "Life AX top-prize section of the award announcement poster (source: SKT Newsroom)",
+          en: "Life AX Top Excellence Award section of the award announcement poster (source: SKT Newsroom)",
         },
       },
     ],
@@ -1563,8 +1563,8 @@ export const portfolioProjects = [
       en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors, pitched by Team No Problem at the SSAFY Startup Camp (Samsung and JA Korea). Selected as Best Team.",
     },
     context: {
-      ko: "팀 No Problem(5인)으로 참가, 전직 학원 강사의 현장 페인 포인트에서 출발\n15장 사업 소개 덱 발표로 창업관심팀 최우수팀 선정\n저는 마케팅, SEO 담당",
-      en: "Joined as Team No Problem (5 members), starting from a former academy instructor's field pain points\nSelected Best Team among the startup-interest teams after pitching a 15-page business deck\nOwned marketing and SEO",
+      ko: "팀 No Problem(5인)으로 참가, 학원 강사 팀원의 현장 페인 포인트에서 출발\n15장 사업 소개 덱 발표로 창업관심팀 최우수팀 선정\n저는 마케팅, SEO 담당",
+      en: "Joined as Team No Problem (5 members), starting from the field pain points of an academy instructor on the team\nSelected Best Team among the startup-interest teams after pitching a 15-page business deck\nOwned marketing and SEO",
     },
     story: {
       problem: {
@@ -1581,8 +1581,8 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "팀 No Problem (5인: CEO, CTO, 전 학원 강사, 마케팅, 인프라)",
-      en: "Team No Problem (5: CEO, CTO, ex-instructor, marketing, infra)",
+      ko: "팀 No Problem (5인: CEO, CTO, 학원 강사, 마케팅, 인프라)",
+      en: "Team No Problem (5: CEO, CTO, instructor, marketing, infra)",
     },
     role: {
       ko: "마케팅, SEO 담당 | 시장과 고객 검증, 서비스 확산 설계 파트",
@@ -1597,13 +1597,13 @@ export const portfolioProjects = [
         "SSAFY 창업캠프 창업관심팀 최우수팀 선정(삼성, JA Korea 주최)",
         "캠프 3일 동안 팀은 아이디어 검증과 사업 소개 덱(15장) 발표 진행, 저는 **마케팅과 SEO** 담당",
         "출제, 채점, 분석이 이어지는 데이터 선순환 루프로 제품 구성, **쓸수록 문제은행이 똑똑해지는** 설계",
-        "전국 학원 8만여 곳 기준 **SAM 965억 원** 산정 등 시장과 수익모델을 공식 통계로 뒷받침",
+        "전국 학원 8만여 곳 기준 **SAM 965억 원** 산정 등 시장과 수익모델을 덱의 사업 가정치로 제시",
       ],
       en: [
         "Selected as Best Team in the SSAFY Startup Camp (hosted by Samsung and JA Korea).",
         "Over the 3-day camp the team validated the idea and pitched a 15-page business deck; I owned marketing and SEO.",
         "Structured the product as a data flywheel connecting creation, grading, and analytics.",
-        "Backed the market and revenue model with official statistics: ₩96.5B SAM across ~80K academies.",
+        "Presented the market and revenue model as deck assumptions: ₩96.5B SAM across ~80K academies.",
       ],
     },
     proof: {
@@ -1708,13 +1708,13 @@ export const portfolioProjects = [
       en: "A contested-logistics control system built in the 24-hour build window of the D4D (Deploy for Defense) APAC Seoul hackathon, where a single operator commands ground (UGV) and aerial (VTOL) unmanned assets alongside an AI copilot.",
     },
     context: {
-      ko: "특전사 출신 하드웨어 리드와 2인 팀\n실물 UGV, VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연\nOregon UAS Accelerator 특별 트랙 선정\nD4D 공식 쇼케이스 등재",
-      en: "Two-person team with a special-forces-veteran hardware lead\nDemoed a live operator console wired to a real UGV and VTOL\nSelected for the Oregon UAS Accelerator special track\nListed in the official D4D showcase",
+      ko: "하드웨어, 운용 리드와 2인 팀\n실물 UGV, VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연\nOregon UAS Accelerator 특별 트랙 선정\nD4D 공식 쇼케이스 등재",
+      en: "Two-person team with a hardware and operations lead\nDemoed a live operator console wired to a real UGV and VTOL\nSelected for the Oregon UAS Accelerator special track\nListed in the official D4D showcase",
     },
     story: {
       problem: {
-        ko: "현행 무인체계 운용은 자산 1대당 조종사 1명이 붙는 선형 인력 구조\n장비가 늘수록 인력도 똑같이 늘어야 하는 한계\n병력이 줄어드는 환경에서는 지속 불가능, 대가는 전장의 가장 절박한 순간에 청구\n우크라이나 의용군 인터뷰에서 직접 확인한 증언\n'지원을 요청할 수단조차 없어 제때 조치를 받지 못했다'",
-        en: "Current unmanned operations use a linear staffing model: one pilot per asset\nLimit: staff must grow as fast as equipment\nUnsustainable as forces shrink; the cost is billed at the most desperate moments of the battlefield\nTestimony confirmed directly in interviews with Ukrainian volunteer fighters\n'We could not get action in time because we had no means even to request support'",
+        ko: "현행 무인체계 운용은 자산 1대당 조종사 1명이 붙는 선형 인력 구조\n장비가 늘수록 인력도 똑같이 늘어야 하는 한계\n병력이 줄어드는 환경에서는 지속 불가능, 대가는 전장의 가장 절박한 순간에 청구\n우크라이나 의용군 인터뷰에서 나온 증언\n'지원을 요청할 수단조차 없어 제때 조치를 받지 못했다'",
+        en: "Current unmanned operations use a linear staffing model: one pilot per asset\nLimit: staff must grow as fast as equipment\nUnsustainable as forces shrink; the cost is billed at the most desperate moments of the battlefield\nTestimony from interviews with Ukrainian volunteer fighters\n'We could not get action in time because we had no means even to request support'",
       },
       insight: {
         ko: "전투가 아니라 '작전지속지원(보급, 정찰, 중계)'을 서비스로 재설계\n작전 판단은 군, 요청 접수 → 우선순위 분류 → 자산 배분, 실행만 맡는 As-a-Service 구조 구상\n1인 다중 통제의 병목은 오퍼레이터의 인지 과부하\nAI가 트리아지와 저위험 구간을 맡는 코파일럿 구조로 풀어야 한다고 판단",
@@ -1757,12 +1757,12 @@ export const portfolioProjects = [
       ko: [
         "군 도메인 제약은 서비스 범위를 나눠 해결, **작전 판단은 군**, 우선순위, 배분, 실행은 서비스 담당",
         "AI는 **인지 과부하라는 병목**을 푸는 데 사용(트리아지, 코파일럿)",
-        "현장 전문가(특전사 출신 리드)와 협업하며 도메인 지식을 제품 언어로 정리",
+        "현장 전문가(하드웨어, 운용 리드)와 협업하며 도메인 지식을 제품 언어로 정리",
       ],
       en: [
         "Resolved military-domain constraints through service-scope design: judgment stays with the military; triage, dispatch, and execution with the service.",
         "Used AI as the structure that removes the cognitive-overload bottleneck, not as decoration.",
-        "Translated field expertise into product language, working with a special-forces-veteran lead.",
+        "Translated field expertise into product language, working with the hardware and operations lead.",
       ],
     },
     metrics: [
@@ -2045,13 +2045,13 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "기록이 이어지지 않는 원인을 '심리적 입력 부담'과 **'회고 구조의 부재'**로 재정의",
-        "사용자 말을 Event, Emotion, Cause 등 **7가지 슬롯**으로 나눠 받아 기록하기 쉽게 구성",
+        "사용자 말을 Event, Emotion, Cause 등 **슬롯**으로 나눠 받아 기록하기 쉽게 구성",
         "기록을 바탕으로 **'내일 바로 실행 가능한 행동 1개'** 추천, 회고가 실행으로 이어지게 구성",
         "SSAFY 14기 특화프로젝트 발표회 광주1반 3등",
       ],
       en: [
         "Reframed recording failure as 'psychological friction' and 'lack of structure'.",
-        "Increased input convenience by structuring day into 7 slots (Event, Emotion, Cause, etc.).",
+        "Structured each day into slots (Event, Emotion, Cause, etc.) to make logging easier.",
         "Connected reflection to action by recommending 'one immediate task for tomorrow'.",
         "Placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase.",
       ],
@@ -2101,8 +2101,8 @@ export const portfolioProjects = [
         en: "Reducing cognitive load of blank screens through a slot-based query engine",
       },
       content: {
-        ko: "일기를 계속 쓰지 못하는 이유를 의지 부족이 아닌 빈 화면의 인지적 부하로 정의\nAI가 먼저 질문을 던지는 3~5턴의 가이드형 UX 설계\n문제는 LLM이 매번 일관된 질문을 던지지 못한다는 점\n필수 정보(사건, 감정, 원인 등)를 '슬롯'으로 관리, **부족한 정보만 골라 질문**\n'슬롯 기반 동적 질문 엔진' 기획으로 기록 완료율과 데이터의 질을 함께 확보",
-        en: "Defined why people can't keep a diary as the cognitive load of a blank screen, not lack of will\nDesigned a 3-5 turn guided UX in which AI asks the first question\nProblem: an LLM cannot ask consistent questions every time\nManages essential information (event, emotion, cause) as 'slots' and **asks only about what is missing**\nPlanned a 'slot-based dynamic question engine' to secure both completion rate and data quality",
+        ko: "일기를 계속 쓰지 못하는 이유를 의지 부족이 아닌 빈 화면의 인지적 부하로 정의\nAI가 먼저 질문을 던지는 가이드형 UX 설계\n문제는 LLM이 매번 일관된 질문을 던지지 못한다는 점\n필수 정보(사건, 감정, 원인 등)를 '슬롯'으로 관리, **부족한 정보만 골라 질문**\n'슬롯 기반 동적 질문 엔진' 기획으로 기록 완료율과 데이터의 질을 함께 확보",
+        en: "Defined why people can't keep a diary as the cognitive load of a blank screen, not lack of will\nDesigned a guided UX in which AI asks the first question\nProblem: an LLM cannot ask consistent questions every time\nManages essential information (event, emotion, cause) as 'slots' and **asks only about what is missing**\nPlanned a 'slot-based dynamic question engine' to secure both completion rate and data quality",
       },
     },
     sections: [
@@ -2113,8 +2113,8 @@ export const portfolioProjects = [
           en: "AI Reflection Pipeline",
         },
         body: {
-          ko: "음성 입력부터 행동 추천까지의 데이터 흐름\nSenseVoice 음성 입력으로 빈 화면의 입력 부담 완화\n슬롯 기반 질문 엔진이 비어 있는 정보만 골라 3~5턴의 가이드형 질문\npgvector에 완성된 회고를 벡터로 저장, 비슷한 과거 기록 검색\nThompson Sampling이 실행 피드백을 반영해 **'내일 실행할 행동 1개'** 추천",
-          en: "Data flow from voice input to action recommendation\nSenseVoice voice input eases the burden of a blank screen\nSlot-based question engine picks only the empty slots for 3-5 turns of guided questions\nCompleted reflections stored as vectors in pgvector to search similar past entries\nThompson Sampling reflects execution feedback to recommend **'one action to take tomorrow'**",
+          ko: "음성 입력부터 행동 추천까지의 데이터 흐름\nSenseVoice 음성 입력으로 빈 화면의 입력 부담 완화\n슬롯 기반 질문 엔진이 비어 있는 정보만 골라 가이드형 질문\npgvector에 완성된 회고를 벡터로 저장, 비슷한 과거 기록 검색\nThompson Sampling이 실행 피드백을 반영해 **'내일 실행할 행동 1개'** 추천",
+          en: "Data flow from voice input to action recommendation\nSenseVoice voice input eases the burden of a blank screen\nSlot-based question engine picks only the empty slots for guided questions\nCompleted reflections stored as vectors in pgvector to search similar past entries\nThompson Sampling reflects execution feedback to recommend **'one action to take tomorrow'**",
         },
         diagram: "dailylog-pipeline",
       },
@@ -2427,13 +2427,13 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "제주 재생에너지 출력 제한 문제를 '에너지-IT 분산 데이터센터 입지 분석' 모델로 재정의",
-        "기존 재해 분석 기술을 비즈니스 모델 기획에 활용, 해커톤 예선과 본선을 통과해 **결선 진출**",
+        "기존 재해 분석 기술을 비즈니스 모델 기획에 활용, 팀은 **결선 진출**",
         "출력 제한이 잦은 지역에 **데이터센터를 분산 배치**해 계통 부담을 줄이는 구조 기획",
         "지역별 전력 수급 데이터와 지리 정보를 연동한 입지 효율 시각화 모델 제안",
       ],
       en: [
         "Reframed Jeju's energy curtailment as a 'Distributed AI Data Center Siting' business model.",
-        "Led product planning to pass prelims/semis and reach the finals of the Jeju AWS Global Space Challenge.",
+        "Applied existing disaster-analysis tech to business-model planning; the team reached the finals of the Jeju AWS Global Space Challenge.",
         "Proposed an inverse approach of distributing AI data centers in high-curtailment areas to ease grid pressure.",
         "Designed a visualization model for siting efficiency by linking regional power data and GIS.",
       ],
@@ -2483,8 +2483,8 @@ export const portfolioProjects = [
         en: "Reaching hackathon finals by pivoting risk-zone analysis tech into an energy optimization BM",
       },
       content: {
-        ko: "제주도의 위험 지역을 분석하던 기술 자산(지도 기반 분석 엔진)에서 출발\n해커톤 현장에서 제주도의 고질적인 문제인 '재생에너지 출력 제한'에 주목\n전력을 대량 소비하는 AI 데이터센터를 출력 제한이 잦은 지역에 분산 배치해 계통 부담을 줄이는 안 제안\n기술 구현(지도 시각화)과 비즈니스 타당성(전력 수급 최적화) 사이의 연결 고리 설계\n'데이터 기반 의사결정 지원 서비스'로 정리, 직접 작성한 기획서의 논리적 완결성을 인정받아 결선 진출",
-        en: "Started from a technical asset used to analyze Jeju's risk zones (map-based analysis engine)\nAt the hackathon, noticed Jeju's chronic problem of 'renewable energy curtailment'\nProposed distributing power-hungry AI data centers in areas with frequent curtailment to reduce grid burden\nDesigned the link between technical implementation (map visualization) and business feasibility (power supply optimization)\nFramed as a 'data-based decision support service'; advanced to the finals, with the logical completeness of my proposal recognized",
+        ko: "제주도의 위험 지역을 분석하던 기술 자산(지도 기반 분석 엔진)에서 출발\n해커톤 현장에서 제주도의 고질적인 문제인 '재생에너지 출력 제한'에 주목\n전력을 대량 소비하는 AI 데이터센터를 출력 제한이 잦은 지역에 분산 배치해 계통 부담을 줄이는 안 제안\n기술 구현(지도 시각화)과 비즈니스 타당성(전력 수급 최적화) 사이의 연결 고리 설계\n'데이터 기반 의사결정 지원 서비스'로 정리, 직접 작성한 기획서의 팀은 결선 진출",
+        en: "Started from a technical asset used to analyze Jeju's risk zones (map-based analysis engine)\nAt the hackathon, noticed Jeju's chronic problem of 'renewable energy curtailment'\nProposed distributing power-hungry AI data centers in areas with frequent curtailment to reduce grid burden\nDesigned the link between technical implementation (map visualization) and business feasibility (power supply optimization)\nFramed as a 'data-based decision support service'; the team advanced to the finals",
       },
     },
     media: {
@@ -2526,8 +2526,8 @@ export const portfolioProjects = [
       en: "A platform where students link learning and activity data to financial value, proving trust based on their growth process.",
     },
     context: {
-      ko: "금융 이력이 부족한 씬파일러(Thin-filer) 대학생 대상 서비스 기획 사례\n활동 기록을 신뢰 데이터로 전환하려 한 시도",
-      en: "Service planning case for thin-filer university students with little financial history\nAn attempt to turn activity records into trust data",
+      ko: "금융 이력이 부족한 씬파일러(Thin-filer) 대학생을 위한 서비스 디자인과 프론트엔드 사례\n활동 기록을 신뢰 데이터로 전환하려 한 시도",
+      en: "Service design and frontend case for thin-filer university students with little financial history\nAn attempt to turn activity records into trust data",
     },
     story: {
       problem: {
@@ -2552,8 +2552,8 @@ export const portfolioProjects = [
       en: "UI/UX Design & Frontend | End-to-end app/game UI/UX in Figma, design system & components, React Native sub-screens (quests, chronicle feed)",
     },
     tags: {
-      ko: ["핀테크", "성장 데이터", "서비스 기획", "금융 UX"],
-      en: ["Fintech", "Growth data", "Product planning", "Financial UX"],
+      ko: ["핀테크", "성장 데이터", "UI/UX 디자인", "금융 UX"],
+      en: ["Fintech", "Growth data", "UI/UX design", "Financial UX"],
     },
     highlights: {
       ko: [
@@ -2589,14 +2589,14 @@ export const portfolioProjects = [
       },
       {
         label: {
-          ko: "사용자 여정 설계 완료",
-          en: "User journey design complete",
+          ko: "앱과 게임 UI/UX 설계",
+          en: "App and game UI/UX design",
         },
       },
       {
         label: {
-          ko: "금융 API 연동 기획",
-          en: "Financial API integration planning",
+          ko: "팀 기획서에 금융 API 연동 포함 (본인 역할은 디자인)",
+          en: "Financial API integration in the team proposal (my role: design)",
         },
       },
     ],
@@ -2630,33 +2630,31 @@ export const portfolioProjects = [
       en: "Jeonju ICT Coding Challenge",
     },
     title: {
-      ko: "전주 ICT 코딩 챌린지 | 지역 현안 해결 서비스 기획",
-      en: "Jeonju ICT Coding Challenge | Regional Issue-Solving Service",
+      ko: "전주 ICT 코딩 챌린지 | 지역 현안 주제 챌린지 팀 참여",
+      en: "Jeonju ICT Coding Challenge | Team Entry on Regional Issues",
     },
     summary: {
-      ko: "지역의 관광, 사회, 환경 문제를 정의하고, 해결할 서비스 아이디어를 기능으로 구체화해 구현한 프로젝트입니다.",
-      en: "A project defining regional tourism, social, and environmental issues and materializing them into actionable service features and implementation.",
+      ko: "지역의 관광, 사회, 환경 현안을 주제로 한 전주 ICT 코딩 챌린지에 팀으로 참여한 기록입니다.",
+      en: "A record of taking part as a team in the Jeonju ICT Coding Challenge on regional tourism, social, and environmental issues.",
     },
     team: {
       ko: "팀 프로젝트",
       en: "Team project",
     },
     role: {
-      ko: "문제 정의, 서비스 기획, 구현 참여",
-      en: "Problem framing, service planning, and implementation support",
+      ko: "팀 참여",
+      en: "Team participant",
     },
     tags: {
-      ko: ["지역 현안", "공공 서비스", "기획 및 구현"],
-      en: ["Regional issues", "Public service", "Planning & Implementation"],
+      ko: ["지역 현안", "공공 서비스", "팀 참여"],
+      en: ["Regional issues", "Public service", "Team participation"],
     },
     highlights: {
       ko: [
-        "관광 및 사회 현안을 서비스 아이디어로 빠르게 구체화",
-        "제한된 시간 안에 팀과 함께 **핵심 기능을 정하고 구현까지** 완료",
+        "지역 관광과 사회 현안을 서비스 아이디어로 다루는 챌린지에 팀으로 참여",
       ],
       en: [
-        "Rapidly materialized tourism and social issues into service concepts.",
-        "Experienced collaboration to define and build core features within a tight deadline.",
+        "Took part as a team in a challenge that turns regional tourism and social issues into service ideas.",
       ],
     },
     sections: [
@@ -2667,14 +2665,14 @@ export const portfolioProjects = [
           en: "Project significance",
         },
         body: {
-          ko: "지역 사회의 실질적인 불편을 기술로 해결할 방법 고민\n기획과 구현의 관점에서 조율해 본 경험",
-          en: "Thought about how to solve real inconveniences in a local community with technology\nExperience aligning planning and implementation perspectives",
+          ko: "지역 사회의 실질적인 불편을 기술로 해결할 방법 고민",
+          en: "Thought about how to solve real inconveniences in a local community with technology",
         },
       },
     ],
     artifacts: {
-      ko: ["기획 초안", "발표 자료"],
-      en: ["Initial concept draft", "Presentation slides"],
+      ko: [],
+      en: [],
     },
     links: {},
   },
@@ -2735,13 +2733,13 @@ export const portfolioProjects = [
         "AI 노하우를 실행 가능한 워크플로우 상품으로 전환하는 서비스 방향 정리",
         "프롬프트 원문 비공개, 슬롯에 값을 넣어 실행하는 흐름으로 **크리에이터 노하우 보호**와 사용자 편의 확보",
         "템플릿 판매 수수료와 실행 기반 크레딧 모델 중심으로 수익 구조 검토",
-        "GA4로 **사용자 이탈을 분석해** 개선 방향을 찾는 방식을 프로젝트에 반영",
+        "GA4를 연결해 **사용자 이탈을 볼 수 있게** 구성",
       ],
       en: [
         "Defined the service direction of converting AI know-how into executable workflow products.",
         "Balanced creator protection and user convenience through hidden prompts, slot-based execution, and generated outputs.",
         "Reviewed revenue structures around template commission and execution-based credits.",
-        "Reflected a GA4-based view of drop-off analysis and product improvement.",
+        "Connected GA4 so user drop-off could be observed.",
       ],
     },
     metrics: [
@@ -2762,8 +2760,8 @@ export const portfolioProjects = [
       {
         value: "GA4",
         label: {
-          ko: "이탈 분석 기반 개선",
-          en: "Drop-off analysis",
+          ko: "GA4 이탈 분석 연결",
+          en: "GA4 drop-off tracking",
         },
       },
     ],
@@ -2777,8 +2775,8 @@ export const portfolioProjects = [
         en: "A planning case that considered problem framing, market viability, creator protection, and revenue models together",
       },
       content: {
-        ko: "서비스 구현보다 '왜 이 서비스를 만들어야 하는가'를 설득하는 일이 중요하다는 점 체감\n범용 AI 모델이 결과를 만들어도 최종 작업물까지는 경험에서 나온 작업 흐름과 수정 노하우 필요\n제 기여는 문제 정의, 시장성 검토, AI 노하우 실행 구조, 수익모델, 발표자료, 경쟁사 분석\n위 기여는 팀 전체 성과와 별개\n함께 다룬 사업 질문은 콜드스타트, 공급자/소비자 양면시장, 크리에이터 보호, 실행 비용 기반 크레딧 모델",
-        en: "Felt that persuading people 'why this service should be built' matters more than building it\nEven when general-purpose AI models produce results, the final work still needs task flows and refinement know-how from experience\nMy contribution: problem definition, market viability review, AI know-how execution structure, revenue model, presentation materials, competitor analysis\nThese contributions are separate from the team's overall results\nBusiness questions handled together: cold start, supplier/consumer two-sided market, creator protection, execution-cost-based credit model",
+        ko: "서비스 구현보다 '왜 이 서비스를 만들어야 하는가'를 설득하는 일이 중요하다는 점 체감\n범용 AI 모델이 결과를 만들어도 최종 작업물까지는 경험에서 나온 작업 흐름과 수정 노하우 필요\n기획 보조로 문제 정의, 시장성 검토, 수익모델 검토, 발표자료, 경쟁사 분석에 기여\n위 기여는 팀 전체 성과와 별개\n함께 다룬 사업 질문은 콜드스타트, 공급자/소비자 양면시장, 크리에이터 보호, 실행 비용 기반 크레딧 모델",
+        en: "Felt that persuading people 'why this service should be built' matters more than building it\nEven when general-purpose AI models produce results, the final work still needs task flows and refinement know-how from experience\nAs planning support, I contributed to problem definition, market viability review, revenue model review, presentation materials, and competitor analysis\nThese contributions are separate from the team's overall results\nBusiness questions handled together: cold start, supplier/consumer two-sided market, creator protection, execution-cost-based credit model",
       },
     },
     media: {
@@ -2964,12 +2962,12 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "리드부터 계약까지의 영업 과정을 '고객 여정 5단계' 모델로 구분",
-        "영업 사원의 **다음 행동을 제안하는** 칸반 기반 파이프라인 UI 기획으로 운영 효율 향상",
+        "영업 사원의 **다음 행동을 제안하는** 칸반 기반 파이프라인 UI 기획(운영 효율 향상이 목표)",
         "비즈니스 요구사항을 소프트웨어의 **상태 관리와 데이터 모델**에 매핑",
       ],
       en: [
         "Structured the sales process from Lead to Contract into a '5-stage customer journey' model.",
-        "Improved operational efficiency by planning a Kanban-based pipeline UI that suggests the next sales action.",
+        "Planned a Kanban-based pipeline UI that suggests the next sales action (aimed at better operational efficiency).",
         "Precisely mapped business requirements to software state management and data models.",
       ],
     },

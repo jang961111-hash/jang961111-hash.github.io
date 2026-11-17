@@ -106,6 +106,53 @@
   margin-top: clamp(48px, 6vw, 80px);
 }
 
+/* At-a-glance brief: label column and one short line per row */
+.detail-brief-block {
+  margin-top: clamp(28px, 4vw, 44px);
+}
+
+.detail-brief {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--k);
+}
+
+.detail-brief-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 190px) minmax(0, 1fr);
+  gap: 20px;
+  padding: 16px 20px;
+}
+
+.detail-brief-row + .detail-brief-row {
+  border-top: 1px solid var(--line);
+}
+
+.detail-brief-row dt {
+  padding-top: 3px;
+}
+
+.detail-brief-row dd {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--w1);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.detail-brief-row .detail-chips {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .detail-brief-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 16px;
+  }
+}
+
+
 .detail-label {
   margin-bottom: 14px;
 }

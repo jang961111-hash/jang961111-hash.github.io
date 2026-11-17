@@ -39,6 +39,14 @@ export const getLocalizedProject = (project, lang = "ko") => {
     period: localizeValue(project.period, lang),
     heroImage: localizeValue(project.heroImage, lang),
     cardImage: localizeValue(project.cardImage, lang),
+    brief: project.brief
+      ? Object.fromEntries(
+          Object.entries(project.brief).map(([key, value]) => [
+            key,
+            localizeValue(value, lang),
+          ])
+        )
+      : null,
     stack: localizeValue(project.stack, lang) ?? [],
     tags: localizeValue(project.tags, lang) ?? [],
     highlights: localizeValue(project.highlights, lang) ?? [],

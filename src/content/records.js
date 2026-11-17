@@ -92,7 +92,7 @@ export const competitions = [
   {
     period: "2026.08",
     name: { ko: "SKT 「모두의 Promp.T」 공모전", en: "SKT 'promp.T for Everyone' Contest" },
-    result: { ko: "Life AX 부문 최우수상 (개인), 공모전 총 480건 접수", en: "Top prize, Life AX category (individual). The contest received 480 entries in total" },
+    result: { ko: "Life AX 부문 최우수상 (개인), 공모전 총 480건 접수", en: "Top Excellence Award, Life AX category (individual). The contest received 480 entries in total" },
     award: true,
     slug: "skt-prompt-ansimcall",
   },
