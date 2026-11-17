@@ -22,20 +22,20 @@ export const portfolioProjects = [
     },
     context: {
       ko: "SKT 「모두의 promp.T」 수상작에서 이어진 과제\n국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 개인 응모 선정\n2026년 9월 29일 수행협약 체결\n11월 13일 광주 북구 임동의 한 기관에서 어르신 20명과 실증\n11월 16일 최종결과보고 제출, 성과발표 평가는 11월 25일",
-      en: "This project grew out of my SKT 'promp.T for Everyone' prize entry. It was selected as an individual submission for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project', with the project agreement signed on September 29, 2026. I ran a field session with 20 seniors at an institution in Im-dong, Buk-gu, Gwangju on November 13 and submitted the final report on November 16. The final presentation review is on November 25.",
+      en: "Task that grew out of my SKT 'promp.T for Everyone' prize entry\nSelected as an individual entry for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project'\nProject agreement signed on September 29, 2026\nField session with 20 seniors at an institution in Im-dong, Buk-gu, Gwangju on November 13\nFinal report submitted on November 16; final presentation review on November 25",
     },
     story: {
       problem: {
         ko: "어머니가 경고 문자 사진을 보내며 무시해도 되는지 질문\n제가 답하기까지 47분의 공백\n어르신이 낯선 문자와 전화 앞에서 **혼자 판단해야 하는 그 시간**을 줄이는 것이 목표",
-        en: "My mother sent me a photo of a warning text asking whether she could ignore it, and 47 minutes passed before I replied. I wanted to shorten **the time seniors spend deciding alone** in front of an unfamiliar text or call.",
+        en: "My mother sent a photo of a warning text and asked whether she could ignore it\n47 minutes passed before I replied\nGoal: shorten **the time seniors spend deciding alone** in front of an unfamiliar text or call",
       },
       insight: {
         ko: "처음 설계는 의심 문자를 판별해 주는 서비스\n2차 멘토링에서 탐지 제품을 쫓아가며 기획이 커졌다는 진단\n주 기능을 사기 상황을 미리 겪어 보는 **3단계 훈련으로 재설정**\n문자 확인은 보조 기능으로 유지",
-        en: "I first designed it as a service that judges suspicious texts. At the second mentoring session I was told the plan had grown by chasing detection products, so I reset the main feature to **a three-step rehearsal of scam situations** and kept text checking as a secondary feature.",
+        en: "First design: a service that judges suspicious texts\nSecond mentoring session: told the plan had grown by chasing detection products\nReset the main feature to **a three-step rehearsal of scam situations**\nText checking kept as a secondary feature",
       },
       solution: {
         ko: "규칙이 먼저 판별, AI는 마지막에 보태는 순서\n**AI는 위험 등급 상향만 가능**, 3초 안에 답하지 못하면 규칙 결과로 응답\n문자 원문 미저장\n훈련은 사례 20개를 받기, 고르기, 결과 확인의 3단계로 진행\n글이 어려운 분을 위한 그림 연습 20개 별도 구성",
-        en: "Rules judge first and AI adds to the result last. **The AI can only raise the risk level**, and if it does not answer within 3 seconds the service responds with the rule result. Original texts are not stored. Training walks through 20 cases in three steps (receive, choose, review), and 20 picture-based exercises serve people who find reading difficult.",
+        en: "Rules judge first; AI adds to the result last\n**AI can only raise the risk level**; if it does not answer within 3 seconds, the rule result is returned\nOriginal texts not stored\nTraining in three steps (receive, choose, review) over 20 cases\n20 picture-based exercises built separately for people who find reading difficult",
       },
     },
     team: {
@@ -120,7 +120,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "11월 11일, 공식 검증셋에서 규칙만으로 놓친 사기 문자 11건을 유형별로 분석\n선택지 셋은 규칙 유지, AI 실패 때만 쓰는 안전판 추가, 놓친 문장의 낱말로 규칙 보강\n낱말 보강은 이미 두 번 시도, 새 작성자가 쓴 검증셋에서는 효과가 이어지지 않은 방법\n규칙은 고치지 않고 규칙과 AI를 함께 쓴 값을 공식 수치로 결정\n규칙만 썼을 때의 정확도 93.5%, 미탐률 11.0%는 AI가 멈췄을 때의 바닥 성능으로 병기",
-        en: "On November 11, I analyzed by type the 11 scam texts that rules alone missed on the official validation set. There were three options: leave the rules as they were, add a safety net used only when the AI fails, or patch the rules with words from the missed sentences. I had already tried word-level patches twice, and the gains did not carry over to a validation set written by a new author. So I left the rules untouched and made the rules-plus-AI result the official number. The rules-only 93.5% accuracy and 11.0% miss rate are reported alongside it as the floor when the AI is down.",
+        en: "On November 11, analyzed by type the 11 scam texts that rules alone missed on the official validation set\nThree options: keep the rules, add a safety net used only when the AI fails, or patch the rules with words from the missed sentences\nWord-level patches already tried twice; the gains did not carry over to a validation set written by a new author\nRules left untouched; the rules-plus-AI result set as the official number\nRules-only 93.5% accuracy and 11.0% miss rate reported alongside as the floor when the AI is down",
       },
     },
     heroImage: "/projects/ansim-ieum/about-desktop.webp",
@@ -164,7 +164,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "2026년 11월 16일, 검증셋 200건(사기 100건, 정상 100건)으로 측정\n규칙과 AI를 함께 쓴 측정은 세 번 실행, 응답 지연 한 건이 섞인 회차는 무효 처리\n유효 2회 모두 정확도 96.0%, 미탐률 0.0%, 정상 문자의 8.0%는 조심 단계로 상향\n정답 표시는 한 사람이 담당\n일부 문장은 규칙을 고칠 때 본 적이 있어 완전히 처음 보는 데이터는 아니라는 한계",
-          en: "On November 16, 2026, I measured on a 200-item validation set of 100 scam and 100 normal texts. The rules-plus-AI evaluation was run three times; the run that included one delayed response was voided, leaving two valid runs. Both scored 96.0% accuracy and a 0.0% miss rate, and 8.0% of normal texts were raised to the caution level. Labels were assigned by one person, and some sentences had been seen while editing the rules, so the set is not fully unseen.",
+          en: "Measured on November 16, 2026 with a 200-item validation set (100 scam, 100 normal)\nRules-plus-AI measurement run three times; the run containing one delayed response voided\nBoth valid runs: 96.0% accuracy, 0.0% miss rate; 8.0% of normal texts raised to the caution level\nLabels assigned by one person\nLimitation: some sentences were seen while editing the rules, so the set is not fully unseen",
         },
       },
       {
@@ -175,7 +175,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "2026년 11월 13일 오전, 광주 북구 임동의 한 기관 교육장에서 어르신 20명과 진행\n한 분씩 휴대폰 접속을 도운 뒤 각자 연습, 짧은 대화\n끝까지 마친 사람 수와 만족도는 미기록\n다음 회기부터 회기별 QR로 완료 수 집계 예정",
-          en: "On the morning of November 13, 2026, I ran the session with 20 seniors in a training room at an institution in Im-dong, Buk-gu, Gwangju. I helped each person get connected on their phone, then they practiced on their own and we talked briefly. I did not record how many finished or how satisfied they were; from the next session, per-session QR codes will count completions.",
+          en: "On the morning of November 13, 2026, ran the session with 20 seniors in a training room at an institution in Im-dong, Buk-gu, Gwangju\nHelped each person connect on their phone, then each practiced on their own, with a short conversation\nNumber who finished and satisfaction not recorded\nCompletion counts via per-session QR codes planned from the next session",
         },
         image: "/projects/ansim-ieum/field-1113.webp",
       },
@@ -187,7 +187,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "Python, FastAPI 백엔드, 규칙 엔진 뒤에 Anthropic Claude API가 붙는 판별 구조\nHTML, CSS, JavaScript 화면(빌드 도구 없음), 설치 없이 홈 화면에 추가 가능\nSQLite에는 개인을 알아볼 수 없는 통계 값만 저장\nDocker 이미지를 AWS EC2 서버 1대에 배포, Caddy로 HTTPS 처리\nGitHub Actions에서 테스트 실행",
-          en: "The backend is Python and FastAPI; detection runs a rule engine followed by the Anthropic Claude API. The interface is plain HTML, CSS, and JavaScript without a build tool and can be added to the home screen without installation. Only non-identifying values are kept in SQLite for statistics. A Docker image runs on a single AWS EC2 server with Caddy handling HTTPS, and tests run in GitHub Actions.",
+          en: "Python and FastAPI backend; detection runs a rule engine followed by the Anthropic Claude API\nHTML, CSS, and JavaScript interface with no build tool; can be added to the home screen without installation\nSQLite holds only non-identifying statistics\nDocker image deployed to a single AWS EC2 server, HTTPS handled by Caddy\nTests run in GitHub Actions",
         },
       },
     ],
@@ -326,7 +326,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "답을 내보내기 전에 검사하는 파이프라인 Judge를 붙이면 품질이 오를 것으로 예상\n같은 질문끼리 짝지어 비교하니 누락, 혼입, 핵심 문구 포함 모두 신뢰구간이 0을 포함해 차이 미확인, 시간과 비용만 증가\n숨기지 않고 조작 테스트로 쓸모를 다시 측정: 답 29개에 일부러 틀린 내용 삽입\n근거에 없는 수치는 코드 검증이 28/28, Judge가 16/28 탐지\n없는 시스템명은 코드 검증이 0/29, Judge가 21/29 탐지(멀쩡한 답 오탐 6/29)\n결론: 수치는 코드로 먼저 거르고, 코드로 세기 어려운 시스템명과 절차에 Judge를 쓰는 **상호 보완 구조**",
-        en: "I expected a pipeline judge that checks answers before release to raise quality. Paired by question, the confidence intervals for misses, irrelevant citations, and key-phrase coverage all included zero, so no difference was confirmed; only time and cost rose. Rather than hide it, I measured its use again with a tamper test, inserting wrong content into 29 answers. For numbers absent from the evidence, the code check caught 28/28 and the judge 16/28. For made-up system names, the code check caught 0/29 and the judge 21/29 (with 6/29 false alarms on clean answers). The conclusion was a **complementary setup**: filter numbers with code first, and use the judge for system names and procedures that code cannot count.",
+        en: "Expected a pipeline judge, which checks answers before release, to raise quality\nPaired by question, confidence intervals for misses, irrelevant citations, and key-phrase coverage all included zero; no difference confirmed, only time and cost rose\nRe-measured its use with a tamper test instead of hiding it: wrong content inserted into 29 answers\nNumbers absent from the evidence: code check caught 28/28, judge 16/28\nMade-up system names: code check caught 0/29, judge 21/29 (6/29 false alarms on clean answers)\nConclusion: a **complementary setup** that filters numbers with code first and uses the judge for system names and procedures that code cannot count",
       },
     },
     heroImage: "/projects/incident-agent-ablation/fig6_contrib.webp",
@@ -841,20 +841,20 @@ export const portfolioProjects = [
     },
     context: {
       ko: "SKALA(SK AI Leader Academy) 4기 AI 웹 서비스 설계 미니 프로젝트\n5인 팀이 3일 동안 기획, 설계, 구현, 발표까지 진행\n**외부 클라우드 LLM을 쓸 수 없는** 협력사 환경을 전제로 설계",
-      en: "A SKALA (SK AI Leader Academy) Cohort 4 mini-project in AI web service design: a five-person team went from planning to design, implementation, and presentation in three days, assuming partner-company sites that cannot use external cloud LLMs.",
+      en: "SKALA (SK AI Leader Academy) Cohort 4 mini-project in AI web service design\nFive-person team took planning, design, implementation, and presentation through in three days\nDesigned for partner-company sites that **cannot use external cloud LLMs**",
     },
     story: {
       problem: {
         ko: "규격 확인, 법령 조사, 안전 승인에 필요한 정보가 **여러 곳에 분산**\n대상 협력사는 보안상 외부 클라우드 LLM 사용 불가",
-        en: "The information needed for spec checks, regulatory review, and safety sign-off is scattered across sources, and the target partner companies cannot use external cloud LLMs for security reasons.",
+        en: "Information for spec checks, regulatory review, and safety sign-off **scattered across sources**\nTarget partner companies cannot use external cloud LLMs for security reasons",
       },
       insight: {
         ko: "팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 가운데 두 개가 틀린 것으로 확인\n설계 원칙은 **'증명은 에이전트가, 판단은 사람이'**\n에이전트는 근거 수집, 승인과 거절은 안전관리자 담당",
-        en: "A phone interview with a practitioner, conducted by a teammate, showed that two of our initial hypotheses were wrong. The guiding principle became 'agents prove, people decide' — agents gather evidence; the safety manager approves or rejects.",
+        en: "Phone interview with a practitioner, conducted by a teammate, showed two of our initial hypotheses were wrong\nGuiding principle: **'agents prove, people decide'**\nAgents gather evidence; the safety manager approves or rejects",
       },
       solution: {
         ko: "교체 요청 등록 시 역할별 AI 에이전트(규격과 호환, 법령과 조문, 안전서류)가 검토 결과 생성\n화면은 서버가 지정한 간격으로 진행 상태를 폴링해 표시\n안전관리자는 AI 결과물을 읽기 전용으로 확인한 뒤 승인 또는 거절(사유 포함) 결정\nAI 공급자 기본값은 Mock, 외부 전송은 차단(egress_allowed=false)\n외부 전송이 꺼진 상태에서 외부 AI 공급자를 지정하면 **서버가 기동을 거부**하도록 구성",
-        en: "An engineer files a replacement request; role-specific AI agents (spec & compatibility / regulations / safety documents) produce review results while the UI polls progress at a server-specified interval. The safety manager reviews the AI output read-only, then approves or rejects with a reason. The AI provider config defaults to Mock with external egress disabled (egress_allowed=false), and the server refuses to start if an external AI provider is configured while egress is off.",
+        en: "On a replacement request, role-specific AI agents (spec and compatibility, regulations, safety documents) generate review results\nUI polls progress at an interval set by the server\nSafety manager reviews the AI output read-only, then approves or rejects (with a reason)\nAI provider defaults to Mock, external egress blocked (egress_allowed=false)\nIf an external AI provider is set while egress is off, the **server refuses to start**",
       },
     },
     team: {
@@ -880,7 +880,7 @@ export const portfolioProjects = [
       en: [
         "A practitioner phone interview conducted by a teammate showed that two of our initial hypotheses were wrong.",
         "Under 'agents prove, people decide', AI review output serves only as evidence; approval and rejection stay with the safety manager.",
-        "Made egress-off the default and required explicit permission before any external AI provider can start — enforcing the on-premise premise in code.",
+        "Made egress-off the default and required explicit permission before any external AI provider can start, enforcing the on-premise premise in code.",
         "Delivered an OpenAPI spec, an 8-table DBML schema, and a 41-slide deck within three days.",
         "Kept the rejected hypotheses in the deck on purpose, and left out effect numbers such as approval-time reduction because they were never measured.",
       ],
@@ -931,7 +931,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "부품 교체 승인은 사고가 나면 **책임이 따르는 결정**\nAI는 규격, 법령, 안전서류 검토 근거 정리까지, 승인과 거절(사유 기재)은 안전관리자\n현직자 통화 인터뷰(팀원 진행)에서 처음 세운 가설 두 개가 틀린 것으로 확인, 발표자료에 유지\n외부 클라우드 LLM을 못 쓰는 협력사라 외부 전송 차단 기본값, 외부 AI 공급자는 명시 허용 시만 기동\n승인 시간 단축 같은 효과 수치는 실측이 없어 미기재",
-        en: "Approving a part replacement is a decision someone is accountable for if something goes wrong. Instead of letting AI approve, we had it package spec, regulatory, and safety-document review results as evidence; the safety manager reads that evidence and approves, or rejects with a reason. A practitioner phone interview conducted by a teammate showed that two of our initial hypotheses were wrong, and we kept those wrong hypotheses in the deck. Because the target partner companies cannot use external cloud LLMs, egress is off by default and any external AI provider must be explicitly allowed before the server will start. We did not report effect numbers such as approval-time reduction, because they were never measured.",
+        en: "Approving a part replacement is a **decision someone is accountable for** if something goes wrong\nAI packages spec, regulatory, and safety-document review as evidence; the safety manager approves, or rejects with a reason\nPractitioner phone interview (conducted by a teammate) showed two initial hypotheses were wrong; kept in the deck\nPartner companies cannot use external cloud LLMs, so egress is blocked by default and an external AI provider starts only when explicitly allowed\nEffect numbers such as approval-time reduction not reported, since never measured",
       },
     },
     sections: [
@@ -943,7 +943,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신\nPostgreSQL(Supabase) 전제, 로컬에서는 SQLite로 검증\n에이전트는 **공통 인터페이스 뒤에 배치**, 3일 범위에서는 고정 응답(Mock)으로 흐름 검증\n이후 LLM 구현체로 교체할 수 있게 설계\n엔지니어와 안전관리자 역할에 따라 화면과 권한 분리\n여기 적은 구성은 팀 작업과 병행해 만든 개인 저장소 기준, 5인 팀 공식 저장소는 Java와 Spring Boot",
-          en: "A Vue 3 + Vite frontend talks to a FastAPI (Python) backend over REST JSON; data targets PostgreSQL (Supabase) and was verified locally on SQLite. Agents sit behind a common interface — within the three-day scope, fixed-response (Mock) implementations validated the flow, with LLM implementations swappable later. Screens and permissions are split by role: engineer and safety manager. The stack described here is from my personal repository, built alongside the team work; the five-person team's official repository uses Java and Spring Boot.",
+          en: "Vue 3 + Vite frontend and FastAPI (Python) backend communicate over REST JSON\nPostgreSQL (Supabase) assumed, verified locally on SQLite\nAgents placed **behind a common interface**; within the three-day scope, fixed responses (Mock) validated the flow\nDesigned so LLM implementations can replace them later\nScreens and permissions split by role, engineer and safety manager\nStack described here is from my personal repository, built alongside the team work; the five-person team's official repository uses Java and Spring Boot",
         },
       },
     ],
@@ -969,14 +969,14 @@ export const portfolioProjects = [
         src: "/projects/argus/agent-run-polling.webp",
         alt: {
           ko: "AI 검증 진행 화면: 규격과 호환, 법령과 조문, 안전서류 에이전트의 진행 상태를 폴링으로 표시",
-          en: "AI review progress — polling the status of spec, regulation, and safety-document agents",
+          en: "AI review progress: polling the status of spec, regulation, and safety-document agents",
         },
       },
       {
         src: "/projects/argus/approval-panel.webp",
         alt: {
           ko: "안전관리자 요청 상세: AI 결과물(읽기 전용)과 승인, 거절 처리 패널",
-          en: "Safety manager request detail — read-only AI output and the approve/reject panel",
+          en: "Safety manager request detail: read-only AI output and the approve/reject panel",
         },
       },
       {
@@ -1015,20 +1015,20 @@ export const portfolioProjects = [
     },
     context: {
       ko: "Google x Solana AI Agentic Hackathon에 팀 사공이(402, 등록 2인)로 제출\nAI Agent와 간편결제를 한 프로젝트에서 미리 경험",
-      en: "Submitted to the Google x Solana AI Agentic Hackathon as Team Sagong-i (402, two registered members) — hands-on experience combining AI agents and payments in a single project.",
+      en: "Submitted to the Google x Solana AI Agentic Hackathon as Team Sagong-i (402, two registered members)\nEarly hands-on experience with AI agents and easy payments in a single project",
     },
     story: {
       problem: {
         ko: "에이전트 자율 구매가 열려도 가맹점에 남는 질문은 '이 에이전트의 주문을 믿어도 되는가'\n카드 결제는 본인인증 단계에 사람이 필요해 에이전트가 끝까지 결제하기 어려운 구조",
-        en: "Even when agents can buy on their own, merchants are left asking whether they can trust an agent's order. Card payments need a human in the authentication loop, so an agent cannot complete checkout by itself.",
+        en: "Even when agents can buy on their own, merchants are left asking whether an agent's order can be trusted\nCard payments need a human at the authentication step, so an agent can hardly complete checkout alone",
       },
       insight: {
         ko: "경쟁 제출작은 구매자측 한도 지갑에 집중한다고 분석\n비어 있던 판매자측(가맹점 온보딩 + 검증)을 겨냥\n프롬프트 인젝션은 완전히 막을 수 없다고 판단\n한도 집행은 LLM 대신 결정론 정책 엔진이 맡도록 신뢰 경계 설정",
-        en: "Our analysis showed competing entries focused on buyer-side spending-limit wallets, so we targeted the empty merchant side (onboarding + verification). Since prompt injection can't be fully prevented, we drew the trust boundary so a deterministic policy engine — not the LLM — enforces limits.",
+        en: "Analysis: competing entries concentrate on buyer-side spending-limit wallets\nTargeted the empty merchant side (onboarding and verification)\nJudged that prompt injection cannot be fully prevented\nTrust boundary set so a deterministic policy engine, not the LLM, enforces limits",
       },
       solution: {
         ko: "Gemini는 견적 비교와 선택 사유 서술에만 사용, 결제 승인은 정책 엔진\n가맹점은 코드 없이 온보딩해 엔드포인트 발급\nx402 방식(HTTP 402 → USDC 지불 → 재요청)으로 Solana devnet에서 결제\n주문 nonce를 memo로 묶어 온체인 지불 대조\n검증 6단계는 UI 스텝퍼로 시각화",
-        en: "Gemini only compares quotes and writes the selection rationale; the policy engine approves payment. Merchants onboard without code and get an endpoint; payment follows the x402 pattern (HTTP 402 → USDC payment → retry) on Solana devnet, with the order nonce bound into the memo to match on-chain payment. The six verification steps are visualized as a UI stepper.",
+        en: "Gemini only compares quotes and writes the selection rationale; payment approval by the policy engine\nMerchants onboard without code and receive an endpoint\nPayment on Solana devnet via the x402 pattern (HTTP 402 → USDC payment → retry)\nOrder nonce bound into the memo to match on-chain payment\nSix verification steps visualized as a UI stepper",
       },
     },
     team: {
@@ -1055,7 +1055,7 @@ export const portfolioProjects = [
       en: [
         "Unlike competing entries clustered on the buyer side, framed the problem on the merchant side (onboarding + verification).",
         "Designed the trust boundary so the LLM only compares quotes and writes rationale, while a deterministic policy engine enforces budget, scope, and expiry.",
-        "Verified by tests that five failure/attack types are blocked — over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31 passing).",
+        "Verified by tests that five failure/attack types are blocked: over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31 passing).",
         "After an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead, I changed quoting to return an empty quote when nothing matches.",
       ],
     },
@@ -1096,12 +1096,12 @@ export const portfolioProjects = [
       {
         id: "trust-boundary",
         title: {
-          ko: "신뢰 경계 — LLM 불개입 검증 6단계",
-          en: "Trust Boundary — Six Checks Without the LLM",
+          ko: "신뢰 경계: LLM 불개입 검증 6단계",
+          en: "Trust Boundary: Six Checks Without the LLM",
         },
         body: {
           ko: "검증 순서는 ① 위임장, 카트 ed25519 서명 → ② 위임 유효기간 → ③ 위임 범위(카테고리)\n이어서 ④ 카트 정합성(단가, 재고) → ⑤ 누적 예산 한도\n마지막 ⑥ 온체인 지불 일치(금액, 수취인, memo=nonce, 리플레이)\n1~5단계는 결제가 일어나기 전에 거절되어 자금이 이동하지 않는 구간\n6단계는 온체인 트랜잭션을 조회해 대조",
-          en: "① ed25519 signatures on mandate and cart → ② mandate expiry → ③ mandate scope (category) → ④ cart consistency (price, stock) → ⑤ cumulative budget limit → ⑥ on-chain payment match (amount, recipient, memo = nonce, replay). Steps 1-5 reject before any payment so no funds move; step 6 checks the on-chain transaction.",
+          en: "Verification order: ① mandate and cart ed25519 signatures → ② mandate expiry → ③ mandate scope (category)\nThen ④ cart consistency (unit price, stock) → ⑤ cumulative budget limit\nFinally ⑥ on-chain payment match (amount, recipient, memo = nonce, replay)\nSteps 1-5 reject before any payment happens, so no funds move\nStep 6 checks against the on-chain transaction",
         },
       },
     ],
@@ -1126,22 +1126,22 @@ export const portfolioProjects = [
       {
         src: "/projects/jangbogo/agent-run.webp",
         alt: {
-          ko: "에이전트 콘솔 — 자율 조달 실행 로그와 판매자측 6단계 검증 결과",
-          en: "Agent console — autonomous procurement log and six-step merchant-side verification",
+          ko: "에이전트 콘솔: 자율 조달 실행 로그와 판매자측 6단계 검증 결과",
+          en: "Agent console: autonomous procurement log and six-step merchant-side verification",
         },
       },
       {
         src: "/projects/jangbogo/policy-block.webp",
         alt: {
-          ko: "네거티브 데모 — 예산 초과 주문을 결제 전에 차단",
-          en: "Negative demo — an over-budget order blocked before payment",
+          ko: "네거티브 데모: 예산 초과 주문을 결제 전에 차단",
+          en: "Negative demo: an over-budget order blocked before payment",
         },
       },
       {
         src: "/projects/jangbogo/merchants.webp",
         alt: {
-          ko: "가맹점 온보딩 — 코드 없이 엔드포인트 발급",
-          en: "Merchant onboarding — endpoint issued without code",
+          ko: "가맹점 온보딩: 코드 없이 엔드포인트 발급",
+          en: "Merchant onboarding: endpoint issued without code",
         },
       },
     ],
@@ -1173,20 +1173,20 @@ export const portfolioProjects = [
     },
     context: {
       ko: "팀장이자 공식 서식상 대표자로 기획, PM, 발표 총괄\n사전역량교육 당일 팀이 실습 결과물을 실제 서비스로 배포",
-      en: "As team lead and official representative, I led planning, PM, and the pitch; on the day of the pre-event training, the team deployed its practice output as a real service.",
+      en: "Team lead and official representative on the form; led planning, PM, and the pitch\nOn the day of the pre-event training, the team deployed its practice output as a real service",
     },
     story: {
       problem: {
         ko: "전체 고용지표는 멀쩡한데 청년만 반대로 악화\n일자리가 없어서가 아니라 있는 일자리가 청년에게 닿지 않는 문제\n청년 실업률 광주 7.0%, 전남 10.1%\n광주 청년 순유출률 2.50%(전국 2위), 광주 구인배율 0.24\n출처를 병기한 통계를 근거로 사용",
-        en: "Overall employment indicators look fine, yet youth employment is moving the other way — not because jobs don't exist, but because existing jobs don't reach young people. The plan cited sourced statistics: youth unemployment of 7.0% in Gwangju and 10.1% in Jeonnam, Gwangju's youth net outflow of 2.50% (2nd nationwide), and a Gwangju job-openings-to-applicants ratio of 0.24.",
+        en: "Overall employment indicators look fine, yet only youth employment is worsening\nNot a lack of jobs; existing jobs do not reach young people\nYouth unemployment 7.0% in Gwangju, 10.1% in Jeonnam\nGwangju youth net outflow 2.50% (2nd nationwide), job-openings-to-applicants ratio 0.24\nSourced statistics cited as evidence",
       },
       insight: {
         ko: "심사 관점을 먼저 문항에 매핑\n페르소나 2종으로 대상 사용자 범위 축소\n국내외 서비스 13곳을 7개 기능으로 비교한 표(4단계 신뢰 기호)를 직접 조사해 차별점 정리\n계획서 제출 뒤 비교 대상을 19개로 확대",
-        en: "Mapped the judging criteria onto each application question first, narrowed the target users with two personas, and personally researched a comparison of 13 services across 7 features (with four-level confidence markers) to pin down differentiation, later extending it to 19 services after the plan was submitted.",
+        en: "Mapped the judging criteria onto the application questions first\nNarrowed the target users with two personas\nPersonally researched a table comparing 13 domestic and overseas services across 7 features (four-level confidence markers) to pin down differentiation\nExtended the comparison to 19 services after the plan was submitted",
       },
       solution: {
         ko: "'구조화 추출 + 한국어 문장 임베딩 + 생성형 AI' 파이프라인 설계\n제출 규격, 출처 검증 체크리스트 운영\n3쪽, 1.70MB 제출본을 SHA256까지 기록해 관리",
-        en: "Designed a 'structured extraction + Korean sentence embedding + generative AI' pipeline and ran a submission-spec and source-verification checklist, tracking the 3-page, 1.70 MB submission down to its SHA256 hash.",
+        en: "Designed a 'structured extraction + Korean sentence embedding + generative AI' pipeline\nRan a submission-spec and source-verification checklist\nManaged the 3-page, 1.70 MB submission down to its SHA256 hash",
       },
     },
     team: {
@@ -1274,24 +1274,24 @@ export const portfolioProjects = [
     },
     summary: {
       ko: "부모님이 **사기 문자를 스스로 알아보시도록** 돕는 훈련 코치 프롬프트입니다. SKT 「모두의 promp.T」 공모전 Life AX 부문에서 최우수상을 받은 개인 출품작입니다.",
-      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own — winner of the top prize (Life AX category) in SKT's 'promp.T for Everyone' contest.",
+      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own, winner of the top prize (Life AX category) in SKT's 'promp.T for Everyone' contest.",
     },
     context: {
       ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」\n어머니의 질문에 제가 답하기까지 **47분이 비어 있던 일**에서 출발",
-      en: "The entry was titled 'My Mother's Judgment Card Contains Nothing I Taught Her.' It started from the 47 minutes that passed before I answered my mother's question about a warning text.",
+      en: "Entry titled 'My Mother's Judgment Card Contains Nothing I Taught Her'\nStarted from **the 47 minutes that sat empty** before I answered my mother's question",
     },
     story: {
       problem: {
         ko: "어머니가 경고 문자 사진을 보내며 무시해도 되는지 질문\n제가 답하기까지 47분의 공백, 그동안 어머니는 그 화면을 혼자 보고 계셨던 상황\n저는 어머니를 지켜드린 것이 아니라 어머니의 판단을 대신하던 상태\n대신하는 동안 어머니에게는 **아무것도 남지 않은** 결과",
-        en: "My mother sent me a photo of a warning text asking whether she could ignore it; 47 minutes passed before I replied, and she sat with that screen alone. I realized I hadn't been protecting her — I had been making her judgments for her, and doing so left her with nothing.",
+        en: "My mother sent a photo of a warning text and asked whether she could ignore it\n47 minutes passed before I replied; she looked at that screen alone the whole time\nI had not been protecting her; I had been making her judgments for her\nThe result: while I did, **nothing was left** for her",
       },
       insight: {
         ko: "판별기라는 도구를 만드는 대신 사람의 판별력을 키우는 쪽으로 설계 전환\n한 줄로 줄이면 **'판별해주지 않는 AI'**",
-        en: "Flipped the design from a judging tool to building the person's own judgment — 'not an AI that judges for you, but one that doesn't.'",
+        en: "Shifted the design from building a judging tool to building people's own judgment\nIn one line: **'an AI that does not judge for you'**",
       },
       solution: {
         ko: "「어머니의 판별 카드」 형태의 훈련 코치 프롬프트 설계\nAI는 답을 내려주지 않고 부모님이 문자에서 이상한 곳을 찾도록 질문\n**직접 찾은 것만 카드에** 축적",
-        en: "Planned the experience around 'Mother's Judgment Card', a training-coach prompt in which the AI asks parents to find what looks wrong in a text themselves, and only what they found goes onto the card.",
+        en: "Designed a 'Mother's Judgment Card' training-coach prompt\nAI gives no answers; it asks questions so parents find what looks wrong in a text\nOnly **what they found themselves goes on the card**",
       },
     },
     team: {
@@ -1315,7 +1315,7 @@ export const portfolioProjects = [
       en: [
         "Won the top prize in the Life AX category of SKT's 'promp.T for Everyone' contest as an individual.",
         "Flipped the design from a judging tool to strengthening the person's own judgment.",
-        "Defined the problem from a real family experience — a 47-minute gap.",
+        "Defined the problem from a real family experience: a 47-minute gap.",
       ],
     },
     proof: {
@@ -1386,24 +1386,24 @@ export const portfolioProjects = [
     },
     summary: {
       ko: "KRAFTON AI R&D Hackathon 라운드 1의 개인 과제입니다. 1-layer causal self-attention 제약 아래 6비트×6비트 이진 곱셈을 푸는 두 가지 해법(수학적 구성 해법, 학습 모델)을 **하루 안에 설계하고 검증**해 제출했습니다.",
-      en: "A solo Round-1 task from the KRAFTON AI R&D Hackathon: designing and verifying two solutions — a constructive-exact model and a learned model — for 6-bit binary multiplication under a 1-layer causal self-attention constraint, within a single day.",
+      en: "A solo Round-1 task from the KRAFTON AI R&D Hackathon: designing and verifying two solutions, a constructive-exact model and a learned model, for 6-bit binary multiplication under a 1-layer causal self-attention constraint, within a single day.",
     },
     context: {
       ko: "생성형 AI를 실행, 검증 파트너로 쓰는 핸드오프 워크플로우 프로젝트\n코드, 체크포인트, 리포트, 재현 명령까지 완결된 제출 패키지 제작",
-      en: "Built a complete submission package — code, checkpoints, report, and reproduction commands — using a hand-off workflow that treats generative AI as an execution-and-verification partner.",
+      en: "Hand-off workflow project that uses generative AI as an execution and verification partner\nProduced a complete submission package: code, checkpoints, report, and reproduction commands",
     },
     story: {
       problem: {
         ko: "1-layer causal self-attention(트랜스포머의 최소 구성)을 다루는 과제\n곱셈이라는 조합적 연산을 표현하고 학습할 수 있는가가 질문\n12개 출력 비트를 자기회귀로 예측\n학습 문제(1-2)는 옵티마이저, 에폭, 배치까지 학습 프로토콜 고정\n아키텍처 설계만으로 승부해야 하는 조건",
-        en: "The task asked whether a minimal transformer — one causal self-attention layer — can represent and learn multiplication, predicting 12 output bits autoregressively. For the learned problem the training protocol (optimizer, epochs, batch) was fixed, so architecture design was the only lever.",
+        en: "Task on 1-layer causal self-attention (the minimal transformer)\nQuestion: can it represent and learn multiplication, a combinatorial operation\nPredicts 12 output bits autoregressively\nLearned problem (1-2) fixes the training protocol down to optimizer, epochs, and batch\nArchitecture design is the only lever",
       },
       insight: {
         ko: "두 문제의 성격이 다르다고 판단\n1-1은 '표현 가능성 증명'이라 학습 대신 수학적 구성 허용\nprefix-average 어텐션으로 입력 12비트를 유일한 스칼라 코드로 압축\n출력 비트 복원은 1차원 스플라인 보간 문제로 환원\n1-2는 '학습 가능성' 문제, 입력 비트를 명시적으로 라우팅하는 희소 어텐션이 학습 안정화의 열쇠",
-        en: "The two problems are different in kind. Problem 1-1 is a representability proof — a constructive solution is legitimate: prefix-average attention compresses the 12 input bits into a unique scalar code, reducing bit recovery to 1-D spline interpolation. Problem 1-2 is about learnability, where explicitly routing input bits through sparse attention heads was the key to stable training.",
+        en: "Judged the two problems to be different in kind\n1-1 is a 'representability proof', so a mathematical construction is allowed instead of training\nPrefix-average attention compresses the 12 input bits into a unique scalar code\nOutput-bit recovery reduced to a 1-D spline interpolation problem\n1-2 is a 'learnability' problem; sparse attention that explicitly routes input bits was the key to stable training",
       },
       solution: {
         ko: "1-1은 구성적 정확 모델(98,328 파라미터)로 4,096쌍 전수 검증 100% 달성\n1-2는 fixed-routed 희소 어텐션 + MLP(274,898 파라미터)\n10K 랜덤, 4,096쌍 전수 검증 모두 정확도 1.0 기록\n구현 → 교차 리뷰 → 최종 검토로 이어지는 생성형 AI 핸드오프 문서 체계\n하루 안에 리포트까지 패키징",
-        en: "Problem 1-1: a constructive exact model (98,328 params) verified at 100% over all 4,096 pairs. Problem 1-2: a fixed-routed sparse-attention + MLP model (274,898 params) reaching accuracy 1.0 on both 10K random and exhaustive evaluation. An implement → cross-review → final-review AI hand-off pipeline packaged everything, report included, within the day.",
+        en: "1-1: constructive exact model (98,328 parameters), 100% on exhaustive check of all 4,096 pairs\n1-2: fixed-routed sparse attention + MLP (274,898 parameters)\nAccuracy 1.0 on both 10K random and exhaustive 4,096-pair checks\nGenerative-AI hand-off document system: implementation → cross-review → final review\nPackaged through the report within a day",
       },
     },
     team: {
@@ -1427,10 +1427,10 @@ export const portfolioProjects = [
         "고정 프로토콜(200에폭)과 달리 실측은 20에폭이라는 한계를 **리포트에 그대로 기재**",
       ],
       en: [
-        "Reduced multiplication to a 'scalar code + spline recovery' problem under the 1-layer constraint — 100% on exhaustive 4,096-pair verification.",
+        "Reduced multiplication to a 'scalar code + spline recovery' problem under the 1-layer constraint, 100% on exhaustive 4,096-pair verification.",
         "Designed an explicitly-routed sparse attention architecture; the learned model (274,898 params) reproduced accuracy 1.0.",
         "Documented an implement → cross-review → final-review generative-AI hand-off workflow, completing the submission package in one day.",
-        "Reported honestly that the measured run used 20 epochs versus the fixed 200-epoch protocol — stating verification scope and limits as they were.",
+        "Reported honestly that the measured run used 20 epochs versus the fixed 200-epoch protocol, stating verification scope and limits as they were.",
       ],
     },
     proof: {
@@ -1441,7 +1441,7 @@ export const portfolioProjects = [
       ],
       en: [
         "Shows a collaboration model where generative AI executes, but exhaustive verification and honest reporting remain a human responsibility.",
-        "Broke through constraints with reductive thinking — multiplication as scalar-function interpolation.",
+        "Broke through constraints with reductive thinking: multiplication as scalar-function interpolation.",
         "Demonstrated delivery under a one-day deadline: code, checkpoints, report, and reproduction commands as one complete package.",
       ],
     },
@@ -1479,7 +1479,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "시간 제약으로 고정 프로토콜(200에폭) 미완주, 수치 부풀리기나 모호한 표현 배제\n'측정된 것은 20에폭 실행이며 200에폭 재실행은 중단되었다'고 리포트에 명시, 재현 명령 첨부\n신뢰의 근거는 가능한 전체 입력 4,096쌍에 대한 그리디 디코딩 전수 검증\n생성형 AI가 구현을 빠르게 만들수록 병목은 '검토와 판단'으로 이동\n다음 검토자가 몇 분 안에 제출 여부를 판단하도록 검증 여부를 구분한 핸드오프 문서를 산출물로 설계",
-        en: "When the fixed 200-epoch protocol couldn't be completed in time, the report said exactly that — 'the measured run is 20 epochs; the 200-epoch rerun was interrupted' — with reproduction commands attached, instead of inflating or blurring the numbers. Trust was grounded elsewhere: exhaustive greedy-decoding verification over all 4,096 possible input pairs. As generative AI speeds up implementation, the bottleneck moves to review and judgment — so the hand-off document separating verified from unverified became part of the deliverable itself, letting the next reviewer decide in minutes.",
+        en: "Fixed protocol (200 epochs) not completed due to time; no inflated numbers or vague wording\nReport states 'the measured run is 20 epochs; the 200-epoch rerun was interrupted', with reproduction commands attached\nTrust grounded in exhaustive greedy-decoding check over all 4,096 possible input pairs\nThe faster generative AI builds, the more the bottleneck moves to review and judgment\nDesigned the deliverable as a hand-off document separating verified from unverified, so the next reviewer can decide on submission in minutes",
       },
     },
     sections: [
@@ -1491,7 +1491,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "구현 세션이 끝날 때마다 다음 검토자(사람이든 모델이든)가 몇 분 안에 판단할 핸드오프 문서 작성\n담은 내용은 최선의 제출 수치, 검증된 것과 안 된 것의 구분, 재현 명령, 폴더 맵, 최종 의사결정 권고\n별도의 리뷰 프롬프트로 다른 모델에게 교차 검토를 시키는 체계 운영\nAI의 산출 속도가 빨라질수록 병목은 검토와 판단으로 이동한다는 점 체감\n'검토가 빠른 산출물 구조' 자체를 설계 대상으로 설정",
-          en: "Each implementation session ended with a hand-off document a next reviewer — human or model — could act on in minutes: current best submission numbers, verified vs. unverified items, reproduction commands, a folder map, and a final-decision recommendation. A separate review prompt drove cross-review by another model. As AI accelerates production, the bottleneck moves to review and judgment — so 'artifacts that are fast to review' became a design goal in itself.",
+          en: "Wrote a hand-off document at the end of each implementation session so the next reviewer (human or model) could decide in minutes\nContents: best submission numbers, verified vs. unverified items, reproduction commands, folder map, final-decision recommendation\nRan a cross-review setup in which another model reviews through a separate review prompt\nFelt that the faster AI produces, the more the bottleneck moves to review and judgment\nSet 'artifact structure that is fast to review' as a design target itself",
         },
       },
     ],
@@ -1527,15 +1527,15 @@ export const portfolioProjects = [
       {
         src: "/projects/krafton-multiplierboard/learning-curve.webp",
         alt: {
-          ko: "학습 곡선 — 20에폭에서 10K 랜덤 정확도 1.0 도달",
-          en: "Learning curves — 10K random accuracy reaching 1.0 by epoch 20",
+          ko: "학습 곡선: 20에폭에서 10K 랜덤 정확도 1.0 도달",
+          en: "Learning curves: 10K random accuracy reaching 1.0 by epoch 20",
         },
       },
       {
         src: "/projects/krafton-multiplierboard/report-preview.webp",
         alt: {
-          ko: "제출 리포트 1페이지 — 구성적 정확성 증명과 학습 아키텍처",
-          en: "Submission report page 1 — constructive exactness proof and learned architecture",
+          ko: "제출 리포트 1페이지: 구성적 정확성 증명과 학습 아키텍처",
+          en: "Submission report page 1: constructive exactness proof and learned architecture",
         },
       },
     ],
@@ -1564,25 +1564,25 @@ export const portfolioProjects = [
     },
     context: {
       ko: "팀 No Problem(5인)으로 참가, 전직 학원 강사의 현장 페인 포인트에서 출발\n15장 사업 소개 덱 발표로 창업관심팀 최우수팀 선정\n저는 마케팅, SEO 담당",
-      en: "Team No Problem (5 members) started from a former academy instructor's field pain points and was selected as Best Team after pitching a 15-page business deck. I owned marketing and SEO.",
+      en: "Joined as Team No Problem (5 members), starting from a former academy instructor's field pain points\nSelected Best Team among the startup-interest teams after pitching a 15-page business deck\nOwned marketing and SEO",
     },
     story: {
       problem: {
         ko: "학원 강사는 가르치는 일에 집중해야 하지만 사업 소개 덱의 가정으로는 주 10시간 이상을 출제, 채점, 관리에 사용\n기존 도구가 막히는 세 지점은 불편한 문제 등록, 번거로운 시험지 제작, 시간이 걸리는 수기 채점",
-        en: "Instructors should focus on teaching, yet, by the business deck's assumption, spend 10+ hours a week on exam creation, grading, and management. Existing tools fail at three points: registering questions, assembling papers, and manual grading.",
+        en: "Instructors should focus on teaching, but by the business deck's assumption spend 10+ hours a week on exam creation, grading, and management\nExisting tools block at three points: inconvenient question registration, cumbersome paper assembly, time-consuming manual grading",
       },
       insight: {
         ko: "개별 기능 세 개를 파는 대신 하나의 데이터 선순환 루프로 설계해야 한다고 판단\n루프는 '등록 → AI 분류 → 시험지 생성 → 자동 채점 → 약점 분석'\n쓸수록 똑똑해지고 갈아타기 어려운 제품이 되는 조건",
-        en: "Rather than selling three features, we designed one data flywheel — capture → AI tagging → paper generation → auto-grading → weakness analytics — so the product gets smarter with use.",
+        en: "Judged that one data flywheel, not three separate features, should be sold\nLoop: 'registration → AI classification → paper generation → auto-grading → weakness analytics'\nCondition for a product that gets smarter with use and is hard to switch away from",
       },
       solution: {
         ko: "책상에서 문제를 찍으면 원근 보정, OCR, 레이아웃 분리 후 학년, 과목, 유형 자동 태깅\n태깅된 문제는 문제은행에 축적\n자연어 한 문장으로 맞춤 시험지 조립\n답안을 찍으면 OCR, VLM, 루브릭 기반으로 즉시 채점, 오답노트 자동 생성\n학원 단위 SaaS 구독(월 9.9/19.9만 원)으로 설계",
-        en: "Snap a photo — perspective correction, OCR, and layout segmentation feed an auto-tagged question bank; one natural-language sentence assembles a custom exam; snapping answer sheets triggers OCR/VLM rubric grading with automatic mistake-note generation. Priced as per-academy SaaS (₩99K/199K monthly).",
+        en: "Photograph a problem at the desk: perspective correction, OCR, layout separation, then automatic tagging by grade, subject, and type\nTagged problems accumulate in the question bank\nOne natural-language sentence assembles a custom exam\nPhotograph answers: instant grading via OCR, VLM, and rubric; mistake notes generated automatically\nDesigned as per-academy SaaS subscription (₩99K/199K per month)",
       },
     },
     team: {
-      ko: "팀 No Problem (5인 — CEO, CTO, 전 학원 강사, 마케팅, 인프라)",
-      en: "Team No Problem (5 — CEO, CTO, ex-instructor, marketing, infra)",
+      ko: "팀 No Problem (5인: CEO, CTO, 전 학원 강사, 마케팅, 인프라)",
+      en: "Team No Problem (5: CEO, CTO, ex-instructor, marketing, infra)",
     },
     role: {
       ko: "마케팅, SEO 담당 | 시장과 고객 검증, 서비스 확산 설계 파트",
@@ -1603,7 +1603,7 @@ export const portfolioProjects = [
         "Selected as Best Team in the SSAFY Startup Camp (hosted by Samsung and JA Korea).",
         "Over the 3-day camp the team validated the idea and pitched a 15-page business deck; I owned marketing and SEO.",
         "Structured the product as a data flywheel connecting creation, grading, and analytics.",
-        "Backed the market and revenue model with official statistics — ₩96.5B SAM across ~80K academies.",
+        "Backed the market and revenue model with official statistics: ₩96.5B SAM across ~80K academies.",
       ],
     },
     proof: {
@@ -1650,7 +1650,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "등록(INGEST)은 촬영 → 원근 보정, OCR → 문항 분할 → 임베딩 분류 → 지식그래프 태깅\n생성(GENERATE)은 자연어 요청 → 의도 파싱 → 조건 제약 → 문제은행 RAG 검색 → 문항 조합\n채점(GRADE)은 답안 촬영 → OCR, 손글씨 인식(VLM) → 정답, 루브릭 채점\n이어서 신뢰도 분기(낮으면 교사 검수 라우팅) → 기록, 약점 분석\n학원별 데이터 격리(멀티테넌트)를 전제로 설계",
-          en: "INGEST: capture → deskew/OCR → item segmentation → embedding classification → knowledge-graph tagging. GENERATE: natural-language request → intent parsing → constraints → question-bank RAG retrieval → assembly. GRADE: answer capture → OCR/handwriting VLM → rubric scoring → confidence routing (low-confidence items go to teacher review) → records and weakness analytics. Designed for per-academy data isolation (multi-tenant).",
+          en: "INGEST: capture → deskew, OCR → item segmentation → embedding classification → knowledge-graph tagging\nGENERATE: natural-language request → intent parsing → constraints → question-bank RAG retrieval → item assembly\nGRADE: answer capture → OCR, handwriting recognition (VLM) → answer key, rubric scoring\nThen confidence branch (low confidence routes to teacher review) → records, weakness analytics\nDesigned on the premise of per-academy data isolation (multi-tenant)",
         },
       },
     ],
@@ -1709,20 +1709,20 @@ export const portfolioProjects = [
     },
     context: {
       ko: "특전사 출신 하드웨어 리드와 2인 팀\n실물 UGV, VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연\nOregon UAS Accelerator 특별 트랙 선정\nD4D 공식 쇼케이스 등재",
-      en: "A two-person team with a special-forces-veteran hardware lead; we demoed a live operator console wired to a real UGV and VTOL. The team was selected for the Oregon UAS Accelerator special track and is listed in the official D4D showcase.",
+      en: "Two-person team with a special-forces-veteran hardware lead\nDemoed a live operator console wired to a real UGV and VTOL\nSelected for the Oregon UAS Accelerator special track\nListed in the official D4D showcase",
     },
     story: {
       problem: {
         ko: "현행 무인체계 운용은 자산 1대당 조종사 1명이 붙는 선형 인력 구조\n장비가 늘수록 인력도 똑같이 늘어야 하는 한계\n병력이 줄어드는 환경에서는 지속 불가능, 대가는 전장의 가장 절박한 순간에 청구\n우크라이나 의용군 인터뷰에서 직접 확인한 증언\n'지원을 요청할 수단조차 없어 제때 조치를 받지 못했다'",
-        en: "Today's unmanned operations follow a linear staffing model — one pilot per asset — which cannot scale as fleets grow and forces shrink. The cost lands at the battlefield's most desperate moments; interviews with Ukrainian volunteers confirmed cases where soldiers had no channel even to request support in time.",
+        en: "Current unmanned operations use a linear staffing model: one pilot per asset\nLimit: staff must grow as fast as equipment\nUnsustainable as forces shrink; the cost is billed at the most desperate moments of the battlefield\nTestimony confirmed directly in interviews with Ukrainian volunteer fighters\n'We could not get action in time because we had no means even to request support'",
       },
       insight: {
         ko: "전투가 아니라 '작전지속지원(보급, 정찰, 중계)'을 서비스로 재설계\n작전 판단은 군, 요청 접수 → 우선순위 분류 → 자산 배분, 실행만 맡는 As-a-Service 구조 구상\n1인 다중 통제의 병목은 오퍼레이터의 인지 과부하\nAI가 트리아지와 저위험 구간을 맡는 코파일럿 구조로 풀어야 한다고 판단",
-        en: "Reframing the domain from combat to logistics-as-a-service keeps operational judgment with the military while the service handles request intake, triage, and asset dispatch. The real bottleneck of one-to-many control is operator cognitive overload — so an AI copilot should own triage and low-risk flight phases.",
+        en: "Reframed the domain from combat to 'operational sustainment support (supply, reconnaissance, relay)' as a service\nAs-a-Service structure in which the military keeps operational judgment, and the service handles only request intake → priority triage → asset allocation and execution\nBottleneck of one-to-many control is operator cognitive overload\nJudged it should be solved with an AI copilot that handles triage and low-risk phases",
       },
       solution: {
         ko: "자연어 지휘(문장 → 제어 시퀀스 변환)\nAI 트리아지(생명 직결도 → 시간 민감도 → 임무 파급효과 순 정렬)\n듀얼 카메라 병렬 제어, GPS 재밍 대비 비전 항법 전환, 셀룰러↔위성 링크 핫스탠바이\n위 기능을 하나의 오퍼레이터 콘솔로 설계\n실물 UGV, VTOL로 시연",
-        en: "Designed a single operator console combining natural-language command (sentence-to-control-sequence), AI triage (life criticality → time sensitivity → mission impact), parallel dual-camera control, vision-based navigation fallback for GPS jamming, and cellular-satellite link hot-standby — demoed with a real UGV and VTOL.",
+        en: "Natural-language command (sentence → control sequence conversion)\nAI triage (sorted by life criticality → time sensitivity → mission impact)\nParallel dual-camera control, vision-navigation fallback for GPS jamming, cellular/satellite link hot-standby\nAll of the above designed as one operator console\nDemoed with a real UGV and VTOL",
       },
     },
     team: {
@@ -1760,7 +1760,7 @@ export const portfolioProjects = [
         "현장 전문가(특전사 출신 리드)와 협업하며 도메인 지식을 제품 언어로 정리",
       ],
       en: [
-        "Resolved military-domain constraints through service-scope design — judgment stays with the military; triage, dispatch, and execution with the service.",
+        "Resolved military-domain constraints through service-scope design: judgment stays with the military; triage, dispatch, and execution with the service.",
         "Used AI as the structure that removes the cognitive-overload bottleneck, not as decoration.",
         "Translated field expertise into product language, working with a special-forces-veteran lead.",
       ],
@@ -1799,7 +1799,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "민간 서비스가 군 작전 영역에 들어갈 때 가장 위험한 것은 기능 부족보다 '역할의 월권'이라고 판단\n작전 판단과 승인은 군(지휘관, FDC), 서비스는 우선순위 분류, 자산 배분, 배송, 관측 대행까지만 담당\n콜센터가 콜 우선순위를 정하는 것과 같은 '서비스 제공자의 정당한 판단 범위'라는 프레임\n이 경계 덕분에 AI 트리아지의 권고 근거를 화면에 한 줄로 노출하는 UX 설계 가능\n심사, 질의의 '작전 판단을 민간이 하는 것 아닌가'라는 가장 어려운 질문에 구조로 답변",
-        en: "I judged that the biggest risk of a civilian service entering military operations is role overreach, not missing features. So we drew a hard boundary: operational judgment and approval stay with the military (commander/FDC), while the service handles only request triage, asset allocation, delivery, and observation-by-proxy — the same legitimate scope as a call center prioritizing calls. This boundary enabled a UX that surfaces the AI triage rationale as a single line on screen, and let us answer the hardest judging question — 'isn't a civilian making operational decisions?' — with structure, not rhetoric.",
+        en: "Judged that the greatest risk when a civilian service enters military operations is 'role overreach', not missing features\nOperational judgment and approval stay with the military (commander, FDC); the service covers only priority triage, asset allocation, delivery, and observation by proxy\nFramed as the 'legitimate scope of a service provider's judgment', like a call center prioritizing calls\nThis boundary made a UX possible that shows the AI triage rationale on screen in a single line\nAnswered the hardest judging question, 'isn't a civilian making operational decisions?', with structure",
       },
     },
     sections: [
@@ -1811,7 +1811,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "한 화면에 듀얼 카메라(지상 전면, 공중 노즈)와 전술 지도 배치\nP1~P3 자동 우선순위 Mission Queue, 자산 로스터, 음성 AI 패널도 같은 화면\n오퍼레이터는 한 번에 한 자산에 집중\nAI가 이륙, 순항, 대기 같은 저위험 구간 담당\n험로, 관측, 회피처럼 인간이 필요한 순간에만 제어권 핸드오버",
-          en: "One screen combines dual camera feeds (ground front / aerial nose), a tactical map, a P1-P3 auto-prioritized mission queue, an asset roster, and a voice-AI panel. The operator focuses on one asset at a time while the AI manages low-risk phases (takeoff, cruise, loiter) and hands control back only when a human is needed — rough terrain, observation, evasion.",
+          en: "One screen holds dual cameras (ground front, aerial nose) and a tactical map\nP1-P3 auto-prioritized Mission Queue, asset roster, and voice AI panel on the same screen\nOperator focuses on one asset at a time\nAI handles low-risk phases such as takeoff, cruise, and loiter\nControl handed over only at moments that need a human: rough terrain, observation, evasion",
         },
       },
     ],
@@ -1847,22 +1847,22 @@ export const portfolioProjects = [
       {
         src: "/projects/supporty/console-live.webp",
         alt: {
-          ko: "SKYFLEET 오퍼레이터 콘솔 — 듀얼 카메라, 전술 지도, AI 트리아지 Mission Queue, 음성 AI 패널",
-          en: "SKYFLEET operator console — dual cameras, tactical map, AI triage mission queue, voice-AI panel",
+          ko: "SKYFLEET 오퍼레이터 콘솔: 듀얼 카메라, 전술 지도, AI 트리아지 Mission Queue, 음성 AI 패널",
+          en: "SKYFLEET operator console: dual cameras, tactical map, AI triage mission queue, voice-AI panel",
         },
       },
       {
         src: "/projects/supporty/vtol-heewing-t2.webp",
         alt: {
-          ko: "공중 자산 — Heewing T2 VTOL 수직이착륙기 (ArduPlane)",
-          en: "Aerial asset — Heewing T2 VTOL (ArduPlane)",
+          ko: "공중 자산: Heewing T2 VTOL 수직이착륙기 (ArduPlane)",
+          en: "Aerial asset: Heewing T2 VTOL (ArduPlane)",
         },
       },
       {
         src: "/projects/supporty/ugv-defender.webp",
         alt: {
-          ko: "지상 자산 — 전면 카메라, 통신 모듈을 탑재한 UGV 보급 차량",
-          en: "Ground asset — UGV resupply vehicle with front camera and comms module",
+          ko: "지상 자산: 전면 카메라, 통신 모듈을 탑재한 UGV 보급 차량",
+          en: "Ground asset: UGV resupply vehicle with front camera and comms module",
         },
       },
     ],
@@ -1907,7 +1907,7 @@ export const portfolioProjects = [
       },
       solution: {
         ko: "참가자 카드, Wing Match, AI 아이스브레이커 흐름 설계\nGenspark OpenClaw로 PWA, 모바일 최적화까지 반복 개선",
-        en: "Designed participant cards, Wing Match, and AI icebreaker flows, iteratively improving with PWA and mobile optimization via Genspark OpenClaw.",
+        en: "Designed participant cards, Wing Match, and AI icebreaker flows\nIteratively improved through PWA and mobile optimization with Genspark OpenClaw",
       },
     },
     team: {
@@ -1982,7 +1982,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "Genspark Meetup & Hackathon 참여, '모두가 이미 개발자다'라는 메시지에서 영감\nAI가 답변 도구를 넘어 업무와 서비스 제작 흐름을 수행하는 실행 파트너가 될 수 있는지 실험\nGenspark OpenClaw로 랜딩 페이지, 튜토리얼, 베타 데모 모드 제작\n모바일 최적화, PWA 설정까지 반복 개선하는 워크플로우 구축\n리서치부터 배포까지 하나의 워크플로우로 잇는 방식의 가능성 확인",
-        en: "Participating in the Genspark Meetup & Hackathon, I experimented with AI as an execution partner that performs actual tasks and service creation flows. Inspired by the message 'Everyone is already a developer,' I used Genspark OpenClaw to build a workflow for iteratively improving landing pages, tutorials, beta modes, mobile optimization, and PWA settings in a short time. This case demonstrates the potential of connecting everything from research to deployment into a single workflow using AI agents.",
+        en: "Joined the Genspark Meetup & Hackathon, inspired by the message 'Everyone is already a developer'\nExperimented with whether AI can be an execution partner that carries out work and service-building flows, beyond an answer tool\nBuilt a landing page, tutorial, and beta demo mode with Genspark OpenClaw\nSet up a workflow for iterative improvement, including mobile optimization and PWA settings\nConfirmed the possibility of linking research to deployment in a single workflow",
       },
     },
     heroImage: "/projects/genwing/og-banner.webp",
@@ -2014,20 +2014,20 @@ export const portfolioProjects = [
     },
     context: {
       ko: "사용자가 기록을 멈추는 문제를 AI 질문 흐름으로 해결\nSSAFY 14기 특화프로젝트 발표회 **광주1반 3등**",
-      en: "A project that proved its impact by solving behavioral issues through technical structures (AI flows); the team placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase.",
+      en: "Solved the problem of users who stop recording with an AI question flow\nSSAFY Cohort 14 Specialized Project showcase, **3rd place in Gwangju Class 1**",
     },
     story: {
       problem: {
         ko: "기존 회고 방식은 **빈 화면부터 내밀어** 쓰기 전부터 큰 부담\n기록이 한 번으로 끝나 행동 변화로 이어지지 못하는 한계",
-        en: "Traditional journaling presents a daunting blank screen, leading to high psychological friction and failing to turn records into actual behavior change.",
+        en: "Existing journaling methods **hand over a blank screen first**, a heavy burden before writing even starts\nRecords end after one entry, so they do not lead to behavior change",
       },
       insight: {
         ko: "병목은 **'무엇을 써야 할지 모르는 상태'**\nAI가 알맞은 때에 틀이 있는 질문을 던지면 풀 수 있다고 판단",
-        en: "The bottleneck is the state of 'not knowing what to write'. I realized this could be solved by having AI ask structured questions at the right moment.",
+        en: "The bottleneck is **'not knowing what to write'**\nJudged it could be solved if AI asks structured questions at the right moment",
       },
       solution: {
         ko: "SenseVoice 음성 입력, Thompson Sampling 추천, pgvector 벡터 검색 결합\n**회고에서 행동 추천까지** 이어지는 흐름 설계",
-        en: "Designed a seamless reflection and action-recommendation flow combining SenseVoice for voice input, Thompson Sampling for recommendations, and pgvector for search.",
+        en: "Combined SenseVoice voice input, Thompson Sampling recommendation, and pgvector vector search\nDesigned a flow that runs **from reflection to action recommendation**",
       },
     },
     team: {
@@ -2102,7 +2102,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "일기를 계속 쓰지 못하는 이유를 의지 부족이 아닌 빈 화면의 인지적 부하로 정의\nAI가 먼저 질문을 던지는 3~5턴의 가이드형 UX 설계\n문제는 LLM이 매번 일관된 질문을 던지지 못한다는 점\n필수 정보(사건, 감정, 원인 등)를 '슬롯'으로 관리, **부족한 정보만 골라 질문**\n'슬롯 기반 동적 질문 엔진' 기획으로 기록 완료율과 데이터의 질을 함께 확보",
-        en: "I defined the failure of journaling not as a 'lack of will', but as the 'cognitive load' of a blank screen. To solve this, I designed a 3-5 turn guided UX where AI initiates the conversation. To overcome the inconsistency of LLM responses, I devised a 'slot-based dynamic query engine' that manages essential data (Event, Emotion, Cause) as slots and selectively asks for missing information, successfully improving both completion rates and data quality.",
+        en: "Defined why people can't keep a diary as the cognitive load of a blank screen, not lack of will\nDesigned a 3-5 turn guided UX in which AI asks the first question\nProblem: an LLM cannot ask consistent questions every time\nManages essential information (event, emotion, cause) as 'slots' and **asks only about what is missing**\nPlanned a 'slot-based dynamic question engine' to secure both completion rate and data quality",
       },
     },
     sections: [
@@ -2114,7 +2114,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "음성 입력부터 행동 추천까지의 데이터 흐름\nSenseVoice 음성 입력으로 빈 화면의 입력 부담 완화\n슬롯 기반 질문 엔진이 비어 있는 정보만 골라 3~5턴의 가이드형 질문\npgvector에 완성된 회고를 벡터로 저장, 비슷한 과거 기록 검색\nThompson Sampling이 실행 피드백을 반영해 **'내일 실행할 행동 1개'** 추천",
-          en: "The data flow from voice input to action recommendation. SenseVoice lowers the friction of a blank page, the slot-based query engine asks 3-5 guided questions targeting only missing slots, completed entries are stored as vectors in pgvector to recall similar past reflections, and Thompson Sampling recommends one actionable task for tomorrow, tuned by execution feedback.",
+          en: "Data flow from voice input to action recommendation\nSenseVoice voice input eases the burden of a blank screen\nSlot-based question engine picks only the empty slots for 3-5 turns of guided questions\nCompleted reflections stored as vectors in pgvector to search similar past entries\nThompson Sampling reflects execution feedback to recommend **'one action to take tomorrow'**",
         },
         diagram: "dailylog-pipeline",
       },
@@ -2126,7 +2126,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "AI가 글을 대신 써주지 않는 설계\n**사용자가 스스로 생각하고 기록하도록** 질문을 던지는 비서 역할로 한정\n사용자의 자기 효능감과 기록의 질을 함께 높이려는 선택",
-          en: "Instead of having AI just write for the user, I designed it as an assistant that 'asks' questions to help the user reflect. This strategy was key to increasing user efficacy and improving record quality.",
+          en: "Designed so AI does not write for the user\nLimited to an assistant that asks questions so **users think and record on their own**\nA choice to raise the user's self-efficacy and record quality together",
         },
       },
     ],
@@ -2164,7 +2164,7 @@ export const portfolioProjects = [
         src: "/projects/dailylog/app-home.webp",
         alt: {
           ko: "홈 화면: 오늘의 기록과 추천 행동",
-          en: "Home — today's log and recommended action",
+          en: "Home: today's log and recommended action",
         },
       },
       {
@@ -2185,21 +2185,21 @@ export const portfolioProjects = [
         src: "/projects/dailylog/app-runtime.webp",
         alt: {
           ko: "실제 구동 화면: 기록에서 행동 추천까지",
-          en: "Runtime — from logging to action recommendation",
+          en: "Runtime: from logging to action recommendation",
         },
       },
       {
         src: "/projects/dailylog/design-reco-rating.webp",
         alt: {
           ko: "Figma 시안: 어제 추천받은 활동을 별점으로 평가 (추천 피드백 루프 입력)",
-          en: "Figma design — rating yesterday's recommended activity (feedback input for the recommendation loop)",
+          en: "Figma design: rating yesterday's recommended activity (feedback input for the recommendation loop)",
         },
       },
       {
         src: "/projects/dailylog/design-diary-result.webp",
         alt: {
           ko: "Figma 시안: 일기 결과 페이지 (다이어리 감성 컨셉)",
-          en: "Figma design — diary result page (journal-inspired visual concept)",
+          en: "Figma design: diary result page (journal-inspired visual concept)",
         },
       },
     ],
@@ -2231,12 +2231,12 @@ export const portfolioProjects = [
     },
     context: {
       ko: "GitHub의 Issue, PR, Merge 개념을 일반 협업 흐름에 적용\n'의사결정의 확실성'을 제공하려 한 시도",
-      en: "An attempt to provide 'decision certainty' by applying GitHub's Issue/PR/Merge concepts to general collaboration flows.",
+      en: "Applied GitHub's Issue, PR, and Merge concepts to general collaboration flows\nAn attempt to provide 'decision certainty'",
     },
     story: {
       problem: {
         ko: "회의 후 결정사항이 기록되지 않거나 메신저 논의가 휘발\n나중에 같은 논의가 반복되는 비효율 발생",
-        en: "Decisions from meetings and messengers were often lost, leading to repetitive discussions and wasted organizational energy.",
+        en: "Decisions from meetings go unrecorded, or messenger discussions evaporate\nThe same discussion gets repeated later, wasting effort",
       },
       insight: {
         ko: "문제는 기록의 부재보다 '의사결정이 완료되었다는 시스템적 확신'이 없다는 데 있다고 판단",
@@ -2244,7 +2244,7 @@ export const portfolioProjects = [
       },
       solution: {
         ko: "WebSocket 기반 실시간 검토 흐름과 구조화된 필터링 설계\n논의와 승인이 흐름 안에서 이어지게 구성",
-        en: "Designed a WebSocket-based real-time review flow and structured filtering to ensure discussion and approval stay within the workflow.",
+        en: "Designed a WebSocket-based real-time review flow and structured filtering\nSet up so discussion and approval continue within the flow",
       },
     },
     team: {
@@ -2314,19 +2314,19 @@ export const portfolioProjects = [
         },
         body: {
           ko: "실시간 논의는 회의가 끝나면 휘발\nINFO, OPINION, TODO 태그를 달아 커밋한 메시지만 영구 보존\n보존된 커밋은 Git Graph 기반 Tree View에서 검토, 승인을 거쳐 Merge로 확정\nAI가 커밋 내역을 분석해 결정문(Decision Record) 자동 생성\nGitHub의 Issue → Branch → PR → Merge 흐름을 일반 협업의 의사결정 구조로 이식",
-          en: "Live discussion expires when the meeting ends; only messages committed with INFO, OPINION, or TODO tags persist. Preserved commits go through review and approval in a Git-graph Tree View, are finalized via Merge, and an AI engine automatically drafts a Decision Record from the commit history — porting GitHub's Issue → Branch → PR → Merge flow into general collaboration.",
+          en: "Real-time discussion evaporates when the meeting ends\nOnly messages committed with INFO, OPINION, or TODO tags are kept permanently\nKept commits are reviewed in a Git-graph Tree View, approved, and finalized by Merge\nAI analyzes the commit history and automatically drafts a Decision Record\nPorted GitHub's Issue → Branch → PR → Merge flow into the decision structure of general collaboration",
         },
         diagram: "loggy-decision-flow",
       },
       {
         id: "frontend-architecture",
         title: {
-          ko: "프론트엔드 설계 — 서버 기준 단일 소스",
-          en: "Frontend Design — Server as the Single Source of Truth",
+          ko: "프론트엔드 설계: 서버 기준 단일 소스",
+          en: "Frontend Design: Server as the Single Source of Truth",
         },
         body: {
           ko: "React 18 + TypeScript, Zustand, TanStack Query, Tailwind CSS\nWebSocket(STOMP)을 더해 실시간 협업 화면 구현\n실시간 이벤트가 동시에 도착하면 클라이언트 간 UI 상태가 어긋나는 문제 발생\n로컬 상태 최소화, 서버 상태를 단일 소스(Single Source of Truth)로 구독하도록 재설계\n다중 사용자 환경에서도 일관된 UI 유지, '결정이 필요한 순간'에 최소 클릭으로 진입하도록 단순화",
-          en: "The real-time collaboration UI was built with React 18 + TypeScript, Zustand, TanStack Query, Tailwind CSS, and WebSocket (STOMP). When concurrent real-time events caused UI state to diverge between clients, I minimized local state and redesigned clients to subscribe to server state as the single source of truth, keeping the UI consistent across users. Simplifying interactions so a 'decision moment' is reachable in minimal clicks followed the same design judgment.",
+          en: "React 18 + TypeScript, Zustand, TanStack Query, Tailwind CSS\nAdded WebSocket (STOMP) to build the real-time collaboration screen\nProblem: when real-time events arrive at once, UI state diverges between clients\nRedesigned to minimize local state and subscribe to server state as a single source of truth\nKept the UI consistent for multiple users and simplified entry so a 'decision moment' takes minimal clicks",
         },
       },
     ],
@@ -2341,7 +2341,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "기존 메신저의 문제는 논의 과정이 투명하지 않고 결정 근거가 휘발된다는 점\n모든 채팅을 저장하는 대신 Git의 커밋(Commit) 개념 도입\n일반 채팅은 회의 종료 시 휘발, INFO, OPINION, TODO 등 태그로 커밋한 메시지만 영구 보존\n'모든 대화의 보존'보다 '의사결정 핵심 근거의 가독성'이 더 높은 비즈니스 가치라고 판단\n커밋된 메시지만 AI가 요약하게 해 요약 대상의 잡음을 줄이는 설계",
-        en: "Traditional messengers lack transparency in logic and suffer from volatile decision trails. To solve this, I introduced Git's 'Commit' concept instead of storing every chat. While general chats expire after a meeting, messages tagged as INFO, OPINION, or TODO are permanently archived. I determined that the 'readability of decision logic' held higher business value than the technical completeness of 'storing everything'. As a result, only committed messages are passed to AI summarization, which was designed to cut noise in what gets summarized.",
+        en: "Problem with existing messengers: the discussion is not transparent and the basis for decisions evaporates\nIntroduced Git's Commit concept instead of storing every chat\nGeneral chat evaporates when the meeting ends; only messages committed with tags such as INFO, OPINION, TODO are kept\nJudged that 'readability of the core basis for decisions' has more business value than 'keeping every conversation'\nDesigned so AI summarizes only committed messages, cutting noise in what gets summarized",
       },
     },
     interviewQuestions: {
@@ -2396,12 +2396,12 @@ export const portfolioProjects = [
     },
     context: {
       ko: "기술적 난제를 사업 기회로 전환한 기획 중심 프로젝트\n복합적인 의사결정 문제를 풀어 정리한 사례",
-      en: "A planning-focused project that transformed a technical challenge into a business opportunity by structuring complex decision factors.",
+      en: "Planning-centered project that turned a technical challenge into a business opportunity\nA case of solving and organizing a complex decision problem",
     },
     story: {
       problem: {
         ko: "제주도는 재생에너지 발전량 과잉으로 출력 제한이 빈번\n이를 해결할 뚜렷한 수요처 부족",
-        en: "Jeju Island faced frequent renewable energy curtailment due to oversupply, but lacked clear demand sources to absorb the surplus.",
+        en: "Jeju has frequent output curtailment from renewable generation oversupply\nLacks a clear demand source to absorb it",
       },
       insight: {
         ko: "에너지 저장보다 대량 소비처인 데이터센터를 분산 배치해 계통 부담을 더는 방식이 경제적이라고 판단",
@@ -2409,7 +2409,7 @@ export const portfolioProjects = [
       },
       solution: {
         ko: "지역별 전력 수급 데이터와 지리 정보 연동\n데이터센터 건립 시의 기대 효율을 시각화하는 입지 분석 서비스 구조 기획",
-        en: "Planned a structure that visualizes expected efficiency for data center sites by linking regional power data with geographic information.",
+        en: "Linked regional power supply-demand data with geographic information\nPlanned a siting-analysis service structure that visualizes the expected efficiency of building a data center",
       },
     },
     team: {
@@ -2480,11 +2480,11 @@ export const portfolioProjects = [
       },
       summary: {
         ko: "재해 분석 시스템의 기술력을 '에너지 최적화 BM'으로 피벗하여 해커톤 결선에 진출한 사례",
-        en: "Reaching hackathon finals by pivoting disaster analysis tech into an energy optimization BM",
+        en: "Reaching hackathon finals by pivoting risk-zone analysis tech into an energy optimization BM",
       },
       content: {
         ko: "제주도의 위험 지역을 분석하던 기술 자산(지도 기반 분석 엔진)에서 출발\n해커톤 현장에서 제주도의 고질적인 문제인 '재생에너지 출력 제한'에 주목\n전력을 대량 소비하는 AI 데이터센터를 출력 제한이 잦은 지역에 분산 배치해 계통 부담을 줄이는 안 제안\n기술 구현(지도 시각화)과 비즈니스 타당성(전력 수급 최적화) 사이의 연결 고리 설계\n'데이터 기반 의사결정 지원 서비스'로 정리, 직접 작성한 기획서의 논리적 완결성을 인정받아 결선 진출",
-        en: "Leveraging our existing disaster analysis engine, I identified Jeju's chronic 'energy curtailment' as a key opportunity during the hackathon. I proposed a counter-intuitive approach: distributing power-hungry AI data centers in areas with frequent curtailment to alleviate grid pressure. I bridged technical visualization with business feasibility, structuring the idea into an actionable 'data-driven decision support service'. By leading the documentation and ensuring logical integrity, I successfully drove the project to the hackathon finals.",
+        en: "Started from a technical asset used to analyze Jeju's risk zones (map-based analysis engine)\nAt the hackathon, noticed Jeju's chronic problem of 'renewable energy curtailment'\nProposed distributing power-hungry AI data centers in areas with frequent curtailment to reduce grid burden\nDesigned the link between technical implementation (map visualization) and business feasibility (power supply optimization)\nFramed as a 'data-based decision support service'; advanced to the finals, with the logical completeness of my proposal recognized",
       },
     },
     media: {
@@ -2527,12 +2527,12 @@ export const portfolioProjects = [
     },
     context: {
       ko: "금융 이력이 부족한 씬파일러(Thin-filer) 대학생 대상 서비스 기획 사례\n활동 기록을 신뢰 데이터로 전환하려 한 시도",
-      en: "A product planning case aimed at transforming activity records into trust data for 'thin-filer' students lacking financial history.",
+      en: "Service planning case for thin-filer university students with little financial history\nAn attempt to turn activity records into trust data",
     },
     story: {
       problem: {
         ko: "대학생은 소득이나 자산이 없어 금융 서비스 이용에 큰 제약\n잠재력이나 활동 이력은 기존 금융 평가에 미반영",
-        en: "Students face significant financial barriers due to lack of income or assets, as their potential and activity history are ignored by traditional models.",
+        en: "University students face big limits using financial services because they have no income or assets\nPotential and activity history are not reflected in existing financial evaluation",
       },
       insight: {
         ko: "학업 성취도, 대외 활동 등 '성장 데이터'를 정량화하면 대학생용 신용 평가 모델이 가능하다고 판단",
@@ -2540,7 +2540,7 @@ export const portfolioProjects = [
       },
       solution: {
         ko: "React Native 앱 설계\n출결, 도서관 이용, 소비 내역 같은 비금융 데이터를 '캠퍼스 크레도' 대안신용점수로 환산\n스킬 트리와 2D 픽셀 육성 게임(Phaser.js WebView)으로 성장 시각화",
-        en: "Designed a React Native app converting non-financial data (attendance, library use, spending) into a 'Campus Credo' alternative credit score, visualized through skill trees and a 2D pixel companion game (Phaser.js in WebView).",
+        en: "Designed a React Native app\nConverts non-financial data such as attendance, library use, and spending into a 'Campus Credo' alternative credit score\nVisualizes growth with a skill tree and a 2D pixel companion game (Phaser.js in WebView)",
       },
     },
     team: {
@@ -2668,7 +2668,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "지역 사회의 실질적인 불편을 기술로 해결할 방법 고민\n기획과 구현의 관점에서 조율해 본 경험",
-          en: "An experience in pondering how to solve real community pain points with technology and aligning them through planning and execution.",
+          en: "Thought about how to solve real inconveniences in a local community with technology\nExperience aligning planning and implementation perspectives",
         },
       },
     ],
@@ -2702,20 +2702,20 @@ export const portfolioProjects = [
     },
     context: {
       ko: "F107 유캔두 팀 프로젝트\n프롬프트 단순 판매 대신 프롬프트, 작업 흐름, 수정 노하우를 함께 상품화하는 방향 검토",
-      en: "A team project by F107 YouCanDo, exploring how to productize prompts, task flows, and refinement know-how beyond simple prompt sales.",
+      en: "F107 YouCanDo team project\nReviewed productizing prompts, task flows, and refinement know-how together, instead of simply selling prompts",
     },
     story: {
       problem: {
         ko: "AI 도구는 쉬워졌지만 안정적인 결과물에는 여전히 좋은 프롬프트, 작업 흐름, 수정 노하우 필요\n이런 노하우는 여러 채널과 개인 경험 속에 분산\n기존 프롬프트 마켓의 한계는 원문 노출과 복제 위험, 단순 생성 중심",
-        en: "AI tools became easier to access, but stable outcomes still require strong prompts, task flows, and refinement know-how. That expertise is scattered across channels, while existing prompt markets expose raw prompts and remain limited to simple generation.",
+        en: "AI tools got easier, but stable outputs still need good prompts, task flows, and refinement know-how\nThat know-how is scattered across channels and personal experience\nLimits of existing prompt markets: raw prompt exposure and copying risk, focus on simple generation",
       },
       insight: {
         ko: "AI가 발전할수록 모델보다 사람이 쌓은 실전 노하우와 결과물 설계 능력의 가치가 커질 수 있다고 판단\n핵심은 프롬프트 원문 판매가 아니라 슬롯 값만 입력하면 노하우가 실행되는 구조",
-        en: "As AI improves, the practical know-how and output-design ability accumulated by people can become more valuable. The key was not selling raw prompts, but making know-how executable through slot-based inputs.",
+        en: "Judged that as AI advances, people's accumulated practical know-how and output-design ability may grow more valuable than the model\nThe core is not selling raw prompts but a structure where know-how runs when only slot values are entered",
       },
       solution: {
         ko: "템플릿 구매 → 슬롯 입력 → 결과 생성 흐름이 중심\n프롬프트 원문은 비공개로 보호\n사용자는 필요한 입력값만 채워 이미지와 문서 결과물 생성\n위 흐름의 워크플로우 마켓 구조 설계",
-        en: "Centered on the flow of buying a template, filling slots, and generating outputs, we designed a workflow marketplace that hides raw prompts while producing image and document results from user inputs.",
+        en: "Centered on the flow: buy template → enter slots → generate result\nRaw prompts protected as private\nUsers fill in only the needed inputs to generate image and document outputs\nDesigned a workflow marketplace structure around this flow",
       },
     },
     team: {
@@ -2778,7 +2778,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "서비스 구현보다 '왜 이 서비스를 만들어야 하는가'를 설득하는 일이 중요하다는 점 체감\n범용 AI 모델이 결과를 만들어도 최종 작업물까지는 경험에서 나온 작업 흐름과 수정 노하우 필요\n제 기여는 문제 정의, 시장성 검토, AI 노하우 실행 구조, 수익모델, 발표자료, 경쟁사 분석\n위 기여는 팀 전체 성과와 별개\n함께 다룬 사업 질문은 콜드스타트, 공급자/소비자 양면시장, 크리에이터 보호, 실행 비용 기반 크레딧 모델",
-        en: "While preparing Promtree, I realized that persuading people why a service should exist can be as important as implementing it. General-purpose AI models can generate outputs, but stable final work still depends on task flows and refinement know-how accumulated through experience. Separate from the team's overall work, my contribution focused on problem framing, market viability, executable AI know-how structure, revenue model thinking, presentation materials, and competitor analysis. We also had to consider business questions such as cold start, two-sided marketplace dynamics, creator protection, and a credit model tied to execution cost.",
+        en: "Felt that persuading people 'why this service should be built' matters more than building it\nEven when general-purpose AI models produce results, the final work still needs task flows and refinement know-how from experience\nMy contribution: problem definition, market viability review, AI know-how execution structure, revenue model, presentation materials, competitor analysis\nThese contributions are separate from the team's overall results\nBusiness questions handled together: cold start, supplier/consumer two-sided market, creator protection, execution-cost-based credit model",
       },
     },
     media: {
@@ -2806,7 +2806,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "Promtree는 AI 노하우를 만들고 판매하는 플랫폼\n사용자는 마켓에서 템플릿을 구매하고 필요한 슬롯 값 입력\n숨겨진 프롬프트와 작업 흐름을 기반으로 이미지 또는 문서 결과물 생성",
-          en: "Promtree is a platform for creating and selling AI know-how. Users buy templates from the marketplace, fill in required slots, and generate image or document outputs through hidden prompts and workflow logic.",
+          en: "Promtree is a platform for creating and selling AI know-how\nUsers buy templates from the marketplace and enter the needed slot values\nImage or document outputs generated from hidden prompts and workflows",
         },
       },
       {
@@ -2817,7 +2817,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "AI 노하우/템플릿 마켓플레이스\n슬롯 기반 템플릿 실행, 프롬프트 원문 비공개\n이미지 및 문서 결과물 생성, AI 문서 편집과 객체별 지침 부여\n커뮤니티/협업 기반 공유와 피드백\nGA4 기반 사용자 이탈 분석",
-          en: "Core features included an AI know-how/template marketplace, slot-based template execution, hidden raw prompts, image and document generation, AI document editing with object-level instructions, community feedback, and GA4-based drop-off analysis.",
+          en: "AI know-how and template marketplace\nSlot-based template execution, raw prompts kept private\nImage and document output generation, AI document editing with per-object instructions\nCommunity and collaboration-based sharing and feedback\nGA4-based user drop-off analysis",
         },
       },
       {
@@ -2828,7 +2828,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "Frontend는 Next.js, TypeScript, Tailwind CSS 사용\nFrontend에 Zustand, TanStack Query도 함께 사용\nBackend는 FastAPI와 PostgreSQL 기반\nAI 영역은 OpenAI, Claude, Gemini 등 멀티모델 연동 구조 고려\nCanvas/Editor 경험에는 Fabric.js 활용",
-          en: "The frontend used Next.js, TypeScript, Tailwind CSS, Zustand, and TanStack Query, while the backend was based on FastAPI and PostgreSQL. The AI layer considered multi-model integration with OpenAI, Claude, and Gemini, and the canvas/editor experience used Fabric.js.",
+          en: "Frontend: Next.js, TypeScript, Tailwind CSS\nFrontend also uses Zustand and TanStack Query\nBackend based on FastAPI and PostgreSQL\nAI layer considered a multi-model integration structure (OpenAI, Claude, Gemini, etc.)\nFabric.js used for the canvas and editor experience",
         },
       },
       {
@@ -2839,7 +2839,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "기술 과제는 멀티모델 API 연동, 슬롯 기반 실행 구조, 문서 편집 경험, 사용자 이탈 분석\n사업 과제는 고품질 템플릿 확보, 공급자와 소비자 양면시장 형성\n크리에이터 노하우 보호와 실행 기반 수익모델 설계도 사업 과제",
-          en: "Technically, the service required multi-model API integration, slot-based execution, document editing experience, and user drop-off analysis. From a business perspective, high-quality templates, two-sided marketplace formation, creator protection, and execution-based monetization were critical.",
+          en: "Technical challenges: multi-model API integration, slot-based execution, document editing experience, user drop-off analysis\nBusiness challenges: securing high-quality templates, forming a two-sided market of suppliers and consumers\nProtecting creator know-how and designing an execution-based revenue model are also business challenges",
         },
       },
       {
@@ -2850,7 +2850,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "최종발표를 마치며 구현보다 '왜 이 서비스를 만들어야 하는가'를 설득하는 일이 중요하다고 체감\nPromtree는 AI를 잘 쓰는 사람의 노하우를 실행 가능한 상품으로 바꾸려는 시도\n단순 프롬프트 마켓과는 다른 방향",
-          en: "After the final presentation, I felt that explaining why the service should exist was as important as building it. Promtree was not just a prompt marketplace, but an attempt to turn expert AI usage know-how into executable products.",
+          en: "After the final presentation, felt that persuading people 'why this service should be built' matters more than implementation\nPromtree is an attempt to turn the know-how of people who use AI well into executable products\nA different direction from a simple prompt marketplace",
         },
       },
       {
@@ -2861,7 +2861,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "개발자에게도 문제 정의와 설득력이 중요하다는 점 학습\nAI 서비스는 모델 호출만으로 완성되지 않고 사용자 흐름과 결과물 품질 관리까지 설계 대상\n팀 프로젝트에서는 기능 구현뿐 아니라 발표, 문서화, 시장 분석도 중요한 산출물이라는 점 체감",
-          en: "I learned that problem framing and persuasion matter for developers as well. AI services are not completed by model calls alone; user flows and output quality control must be designed together. In a team project, presentation, documentation, and market analysis are also important deliverables.",
+          en: "Learned that problem definition and persuasiveness matter for developers too\nAn AI service is not complete with model calls alone; user flow and output quality control are also design targets\nFelt that in team projects, presentation, documentation, and market analysis matter as deliverables as much as feature implementation",
         },
       },
       {
@@ -2872,7 +2872,7 @@ export const portfolioProjects = [
         },
         body: {
           ko: "다음 개선 방향은 고품질 Seed 템플릿 확보, 크리에이터 온보딩 개선\n검색/추천 기능 고도화, 실행 결과 품질 평가\n영상/음악 등 생성 영역 확장, B2B 맞춤형 워크플로우 확장",
-          en: "Next improvements include securing high-quality seed templates, improving creator onboarding, advancing search and recommendation, evaluating output quality, expanding into video/music generation, and building B2B custom workflows.",
+          en: "Next improvements: securing high-quality seed templates, improving creator onboarding\nAdvancing search and recommendation, evaluating output quality\nExpanding into video and music generation, expanding B2B custom workflows",
         },
       },
     ],
@@ -2938,15 +2938,15 @@ export const portfolioProjects = [
     story: {
       problem: {
         ko: "영업 과정이 파편화되어 리드(Lead) 이탈 지점 파악이 어려운 상태\n영업 사원의 '다음 액션'에 대한 가이드 부재",
-        en: "Fragmented sales processes made it hard to identify lead drop-off points, and there was no clear guide for the 'next action' for sales reps.",
+        en: "Fragmented sales process made it hard to find where leads drop off\nNo guide for sales reps' 'next action'",
       },
       insight: {
         ko: "CRM의 본질을 데이터 축적이 아닌 '영업 사원의 행동 유도'로 정의\n직관적인 시각화가 핵심이라고 판단",
-        en: "I defined the essence of CRM as 'driving sales action', not just data accumulation, and prioritized intuitive visualization.",
+        en: "Defined the essence of CRM as 'driving sales reps' actions', not accumulating data\nJudged intuitive visualization to be the key",
       },
       solution: {
         ko: "고객 여정을 5단계로 구분한 칸반 보드 도입\n특정 단계 정체 시 시각적 경고를 주는 '액션 유도형 파이프라인' 설계",
-        en: "Introduced a 5-stage Kanban board and designed an 'action-oriented pipeline' that provides visual alerts for stalled leads.",
+        en: "Introduced a Kanban board that splits the customer journey into 5 stages\nDesigned an 'action-oriented pipeline' that gives a visual warning when a stage stalls",
       },
     },
     team: {
@@ -3019,7 +3019,7 @@ export const portfolioProjects = [
       },
       content: {
         ko: "기존 CRM이 데이터 입력의 번거로움 때문에 현장에서 외면받는 점에 주목\nCRM의 본질을 '관리'가 아닌 영업 사원의 '다음 행동 유도'로 정의\n텍스트 리스트 나열 대신 영업 단계를 시각화한 칸반 보드 도입\n리드가 특정 단계에서 정체되면 시각적 피드백을 주는 로직 기획\nPM으로서 비즈니스 요구사항을 사용자 과업 중심으로 정리",
-        en: "I noted that traditional CRM systems are often ignored due to cumbersome data entry. I defined the essence of CRM not as 'management', but as 'driving the sales rep's next action'. Instead of listing rows of text, I introduced a Kanban board to visualize sales stages. By planning logic that provides visual feedback for stalled leads, I demonstrated my ability to resolve business requirements through user-task-oriented design.",
+        en: "Noted that existing CRMs are ignored in the field because data entry is cumbersome\nDefined the essence of CRM not as 'management' but as 'driving the sales rep's next action'\nIntroduced a Kanban board that visualizes sales stages instead of listing text rows\nPlanned logic that gives visual feedback when a lead stalls at a stage\nAs PM, organized business requirements around user tasks",
       },
     },
     artifacts: {
