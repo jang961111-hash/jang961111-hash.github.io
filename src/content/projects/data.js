@@ -381,11 +381,11 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "이후에도 좋게 나온 숫자는 측정 방법부터 확인",
+        "이 과제에서는 좋게 나온 숫자를 측정 방법부터 다시 확인",
         "가정으로 바꾼 설정이 실측으로 반증되자 바로 되돌리고 기록",
       ],
       en: [
-        "Since then I check the measurement first when a number looks good",
+        "In this assignment I re-checked the measurement first because the number looked good",
         "When a setting I changed on an assumption was disproved by measurement, I reverted it at once and logged it",
       ],
     },
@@ -605,11 +605,11 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "이후에도 그럴듯한 숫자는 정의부터 다시 확인",
+        "이 실습에서는 그럴듯한 숫자를 정의부터 다시 확인",
         "핵심 실습 과정을 실행 화면으로 남겨 결과를 다시 확인할 수 있게 기록",
       ],
       en: [
-        "Since then I re-check a metric's definition first, even when the number looks plausible",
+        "In this lab I re-checked the metric's definition first, even though the number looked plausible",
         "Recorded the key lab steps in execution captures so the results can be checked again",
       ],
     },
