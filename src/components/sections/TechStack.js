@@ -37,7 +37,7 @@ const TechStack = () => {
   };
 
   return (
-    <SectionShell id="stack" title={t("stack.title")}>
+    <SectionShell id="stack" title={t("stack.title")} subtitle={t("stack.caption")}>
       <div className="stack-groups">
         {groups.map((group, groupIndex) => (
           <section

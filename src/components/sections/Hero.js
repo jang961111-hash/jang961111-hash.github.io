@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 import profilePhoto from "../../assets/images/id-photo.webp";
 import profilePhotoJpg from "../../assets/images/id-photo.jpg";
 import { getResumeAsset } from "../../utils/resumeAssets";
+import { Link } from "react-router-dom";
 import { renderEmphasis } from "../../utils/emphasis";
+import { getProjectPath } from "../../utils/localeRouting";
 import "./Hero.css";
 
 const Hero = () => {
@@ -19,6 +21,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-inner">
+        <div className="hero-copy">
         <div className="hero-identity">
           <picture className="hero-portrait-frame">
             <source srcSet={profilePhoto} type="image/webp" />
@@ -65,6 +68,21 @@ const Hero = () => {
             {t("hero.downloadResume")}
           </a>
         </div>
+        </div>
+
+        <Link
+          to={getProjectPath(i18n.language === "en" ? "en" : "ko", "ansim-ieum")}
+          className="hero-visual"
+        >
+          <img
+            src="/projects/ansim-ieum/card-screens.webp"
+            alt={t("hero.visualAlt")}
+            width="1600"
+            height="1000"
+            decoding="async"
+          />
+          <span className="hero-visual-caption">{t("hero.visualCaption")}</span>
+        </Link>
       </div>
     </section>
   );

@@ -36,6 +36,8 @@
     "getInTouch": "이야기 나누기",
     "downloadResume": "PORTFOLIO PDF",
     "downloadResumeAria": "포트폴리오 PDF 다운로드",
+    "visualCaption": "운영 중인 서비스, 안심이음",
+    "visualAlt": "안심이음 서비스 화면 세 장",
     "evidenceLabel": "수상과 선정",
     "evidence": [
       "SKT 모두의 promp.T Life AX 부문 최우수상",
@@ -437,8 +439,8 @@
       },
       "globalLeadership": {
         "title": "미국 교환학생",
-        "company": "Portage High School(미국 인디애나), 고려고등학교",
-        "period": "2012.01 - 2016.02",
+        "company": "Portage High School(미국 인디애나)",
+        "period": "2012.01 - 2013.01",
         "desc": [
           "미국 인디애나주 Portage High School에서 1년간 교환학생으로 생활했습니다.",
           "고등학교 시절 전교학생회장으로 활동하며 여러 사람 앞에서 말하고 의견을 조율하는 경험을 했습니다."
@@ -543,6 +545,7 @@
   },
   "stack": {
     "title": "기술 스택",
+    "caption": "프로젝트에 쓰인 기술입니다. 제가 맡은 범위는 각 프로젝트 페이지의 역할에 적었습니다.",
     "usedIn": "사용 프로젝트"
   }
 }

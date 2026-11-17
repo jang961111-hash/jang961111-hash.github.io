@@ -36,6 +36,8 @@
     "getInTouch": "Start a Conversation",
     "downloadResume": "PORTFOLIO PDF",
     "downloadResumeAria": "Download portfolio PDF",
+    "visualCaption": "A live service: Ansim-Ieum",
+    "visualAlt": "Three screens of the Ansim-Ieum service",
     "evidenceLabel": "Awards and selections",
     "evidence": [
       "Top prize, Life AX category, SKT promp.T contest",
@@ -436,9 +438,9 @@
         ]
       },
       "globalLeadership": {
-        "title": "Early Global & Leadership Experience",
-        "company": "Portage High School / Gwangju Goryeo High School",
-        "period": "2012.01 - 2016.02",
+        "title": "Exchange Student in the U.S.",
+        "company": "Portage High School (Indiana)",
+        "period": "2012.01 - 2013.01",
         "desc": [
           "Lived for one year as an exchange student at Portage High School in Indiana.",
           "Served as student council president in high school, gaining experience speaking in front of others and coordinating opinions."
@@ -543,6 +545,7 @@
   },
   "stack": {
     "title": "Tech stack",
+    "caption": "Technologies used in each project. My own scope is stated under the role on each project page.",
     "usedIn": "Used in"
   }
 }

@@ -17,8 +17,8 @@ export const portfolioProjects = [
       en: "Ansim-Ieum | A Scam-Prevention Training Service Where Seniors Rehearse Scam Texts and Calls",
     },
     summary: {
-      ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 검증셋 200건에서 규칙과 AI를 함께 썼을 때 **사기 문자를 한 건도 놓치지 않았습니다**.",
-      en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set, rules plus AI **missed none of the scam texts**.",
+      ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 검증셋 200건(사기 100, 정상 100)에서 규칙과 AI를 함께 썼을 때 **사기 문자 100건을 모두 잡았습니다**(유효 2회 측정, 정답 표시 1인). 그 대신 정상 문자의 8.0%에 '조심' 경고가 붙었습니다.",
+      en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set (100 scam, 100 normal), rules plus AI **caught all 100 scam texts** (two valid runs, labels by one person). In exchange, 8.0% of normal texts received a 'caution' warning.",
     },
     context: {
       ko: "SKT 「모두의 promp.T」 수상작에서 이어진 과제입니다. 국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」에 개인 응모로 선정되어 2026년 9월 29일 수행협약을 맺었습니다. 11월 13일 광주 북구 임동의 한 기관에서 어르신 20명과 실증을 했고, 11월 16일 최종결과보고를 냈습니다. 성과발표 평가는 11월 25일에 있습니다.",
@@ -54,27 +54,27 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "규칙을 다듬는 데 쓴 데이터로 잰 정확도 99.0%는 **공식 수치에서 뺐습니다**. 공식 수치는 따로 만든 검증셋 200건으로만 냈습니다.",
-        "검증셋에서 규칙이 놓친 11건을 유형별로 분석한 뒤, 검증셋에 맞춰 규칙을 고치지 않기로 결정했습니다. 그 대신 AI가 꺼졌을 때의 성능(정확도 93.5%, 미탐률 11.0%)을 함께 공개했습니다.",
+        "놓치는 쪽이 잘못 경고하는 쪽보다 위험하다고 보고 판정 기준을 잡았습니다. 그래서 미탐은 0건이지만 정상 문자의 8.0%에 '조심' 경고가 붙습니다.",
         "AI는 위험 등급을 올리기만 하고, 응답이 3초를 넘기거나 실패하면 규칙 결과로 답하도록 기준을 정했습니다.",
-        "실사용 규모에 맞춰 서버 1대에서 블루그린 방식으로 중단 없이 배포하기로 결정하고, 버린 대안과 한계를 결정 기록으로 남겼습니다.",
-        "어르신 20명과 한 실증에서 QR로 처음 접속하는 단계가 가장 어렵다는 것을 확인했습니다. 다음 회기에는 짧은 주소를 소리 내어 불러 주고 보조 진행자를 두기로 했습니다.",
+        "실사용 규모에 맞춰 서버 1대에서 블루그린 방식으로 버전을 바꾸기로 결정했습니다. 리허설에서 전환 중 실패는 0건이었고, 버린 대안과 한계를 결정 기록으로 남겼습니다.",
+        "어르신 20명과 한 실증에서 QR로 처음 접속하는 단계가 가장 어렵다는 현장 의견을 들었습니다. 다음 회기에는 접속을 처음부터 함께 돕고, 짧은 주소 안내와 보조 진행자를 준비하기로 했습니다.",
       ],
       en: [
         "The 99.0% accuracy measured on data used to tune the rules was **left out of the official numbers**. Official numbers come only from a separately written 200-item validation set.",
-        "After analyzing by type the 11 scam texts the rules missed on the validation set, I decided not to tune the rules to that set. Instead I published the rules-only performance (93.5% accuracy, 11.0% miss rate) alongside the main result.",
+        "I set the criteria on the view that a miss is more dangerous than a false warning. As a result there were no misses, but 8.0% of normal texts receive a 'caution' warning.",
         "Set the criteria that the AI may only raise the risk level, and that the service answers with the rule result if the AI takes longer than 3 seconds or fails.",
-        "Chose blue-green deployment on a single server to match the real usage scale, and recorded the rejected alternatives and limits as decision records.",
-        "The field session with 20 seniors showed that the first QR-code access step was the hardest. For the next session I plan to read a short address aloud and add an assistant facilitator.",
+        "Chose blue-green switching on a single server to match the real usage scale. The rehearsal switch had zero failed requests, and the rejected alternatives and limits are recorded as decision records.",
+        "In the field session with 20 seniors, participants said the first QR-code access step was the hardest. For the next session I plan to help with access from the start and prepare a short address and an assistant facilitator.",
       ],
     },
     proof: {
       ko: [
-        "목표였던 어르신 50명, 2회 실증은 20명, 1회에 그쳤고 만족도는 재지 못했습니다. 정확도와 미탐률은 목표 수치를 넘었지만 두 사람 교차 표시는 끝내지 못했습니다. **못 한 것을 결과보고 첫 줄에 적었습니다.**",
-        "수치가 좋게 나온 이유를 먼저 의심하고, 처음 보는 데이터로 다시 재는 절차를 세웠습니다.",
+        "목표였던 어르신 50명, 2회 실증은 20명, 1회에 그쳤고 만족도는 재지 못했습니다. 정확도와 미탐률은 목표 수치를 넘었지만 두 사람 교차 표시는 끝내지 못했습니다. 제출한 발표자료에는 **미달을 미달로 적었고**, 성과발표도 못 한 것부터 말할 계획입니다.",
+        "수치가 좋게 나온 이유를 먼저 의심하고, 규칙을 다듬는 데 쓰지 않은 검증셋으로 다시 쟀습니다. 그 검증셋에도 이미 본 문장이 일부 있다는 점까지 적었습니다.",
       ],
       en: [
-        "The goal of two sessions with 50 seniors ended at one session with 20, and satisfaction was not measured. Accuracy and miss rate cleared the targets, but two-person cross-labeling was not finished. **I put what I did not achieve in the first line of the final report.**",
-        "I questioned good numbers first and set up a procedure to re-measure on data the system had not seen.",
+        "The goal of two sessions with 50 seniors ended at one session with 20, and satisfaction was not measured. Accuracy and miss rate cleared the targets, but two-person cross-labeling was not finished. In the submitted deck I **marked the shortfall as a shortfall**, and I plan to open the final presentation with what I did not achieve.",
+        "I questioned good numbers first and re-measured on a validation set not used for tuning the rules, and I noted that even that set includes some sentences I had already seen.",
       ],
     },
     metrics: [
@@ -88,8 +88,15 @@ export const portfolioProjects = [
       {
         value: "0.0%",
         label: {
-          ko: "미탐률 (유효 2회 측정 모두)",
-          en: "Miss rate (both valid runs)",
+          ko: "미탐률 (사기 100건 중 놓친 것 0건, 유효 2회)",
+          en: "Miss rate (0 of 100 scam texts missed, two valid runs)",
+        },
+      },
+      {
+        value: "8.0%",
+        label: {
+          ko: "정상 문자에 붙은 '조심' 경고 (미탐을 줄인 대가)",
+          en: "Normal texts flagged 'caution' (the cost of fewer misses)",
         },
       },
       {
@@ -106,8 +113,8 @@ export const portfolioProjects = [
         en: "Why I Left the Rules Alone After Seeing the 11 Misses",
       },
       summary: {
-        ko: "검증셋을 보고 규칙을 고치면, 그 뒤의 수치는 더 이상 처음 보는 데이터로 잰 값이 아닙니다.",
-        en: "Once you tune rules after looking at a validation set, later numbers are no longer measured on unseen data.",
+        ko: "검증셋에 맞춰 규칙을 고칠수록, 그 검증셋으로 잰 수치는 믿기 어려워집니다.",
+        en: "The more you tune rules to a validation set, the less you can trust numbers measured on that same set.",
       },
       content: {
         ko: "11월 11일, 공식 검증셋에서 규칙만으로 놓친 사기 문자 11건을 유형별로 분석했습니다. 선택지는 셋이었습니다. 규칙을 그대로 두는 안, AI가 실패할 때만 쓰는 안전판을 더하는 안, 놓친 문장의 낱말로 규칙을 보강하는 안입니다. 낱말 보강은 이미 두 번 해 봤고, 새 작성자가 쓴 검증셋에서는 효과가 이어지지 않았습니다. 그래서 규칙은 고치지 않고, 규칙과 AI를 함께 쓴 값을 공식 수치로 정했습니다. 규칙만 썼을 때의 정확도 93.5%와 미탐률 11.0%는 AI가 멈췄을 때의 바닥 성능으로 함께 적었습니다.",
@@ -143,13 +150,6 @@ export const portfolioProjects = [
         alt: {
           ko: "시작 화면. 연습과 문자 확인 중에서 고르기",
           en: "Start screen: choose between practice and text check",
-        },
-      },
-      {
-        src: "/projects/ansim-ieum/about-mobile.webp",
-        alt: {
-          ko: "소개 화면 (모바일)",
-          en: "Introduction screen (mobile)",
         },
       },
     ],
@@ -432,13 +432,13 @@ export const portfolioProjects = [
         "구매자 쪽에 몰린 경쟁 흐름과 달리 **판매자 쪽(가맹점 온보딩과 검증)**을 문제로 잡았습니다.",
         "LLM은 견적 비교와 사유 서술에만 쓰고, 예산, 범위, 만료 집행은 **결정론 정책 엔진이 하도록** 신뢰 경계를 설계했습니다.",
         "예산 초과, 만료 위임장, 범위 밖, 과소지불, 리플레이 5종을 차단하는 것을 테스트로 확인했습니다 (단위 11 + 통합 20 = **31/31 통과**).",
-        "개발 중 원두를 조달하라는 지시에 에이전트가 **방금 온보딩된 최저가 베이글**을 사 온 일이 있었습니다. 이 사고를 계기로 견적 매칭과 범위 검증을 다시 설계했습니다.",
+        "개발 중 원두를 조달하라는 지시에 에이전트가 **방금 온보딩된 최저가 베이글**을 사 온 일이 있었습니다. 이 사고를 계기로, 맞는 상품이 없으면 빈 견적을 돌려주도록 고쳤습니다.",
       ],
       en: [
         "Unlike competing entries clustered on the buyer side, framed the problem on the merchant side (onboarding + verification).",
         "Designed the trust boundary so the LLM only compares quotes and writes rationale, while a deterministic policy engine enforces budget, scope, and expiry.",
         "Verified by tests that five failure/attack types are blocked — over-budget, expired mandate, out-of-scope, underpayment, replay (11 unit + 20 integration = 31/31 passing).",
-        "Redesigned quote matching and scope checks after an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead.",
+        "After an incident where the agent, asked to source coffee beans, bought the cheapest newly onboarded bagel instead, I changed quoting to return an empty quote when nothing matches.",
       ],
     },
     proof: {

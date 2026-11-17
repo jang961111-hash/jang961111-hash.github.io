@@ -132,7 +132,52 @@
   }
 }
 
+/* Two columns on wide screens: copy on the left, a live product on the right */
+.hero-visual {
+  display: none;
+}
+
+@media (min-width: 1120px) {
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--sp-7);
+    align-items: center;
+  }
+
+  .hero-visual {
+    display: block;
+    color: var(--text-3);
+    text-decoration: none;
+  }
+
+  .hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    transition: transform var(--t-fast) ease-out;
+  }
+
+  .hero-visual-caption {
+    display: block;
+    margin-top: var(--sp-3);
+    font-size: var(--fs-xs);
+  }
+}
+
+@media (min-width: 1120px) and (hover: hover) {
+  .hero-visual:hover img {
+    transform: translateY(-2px);
+  }
+}
+
 @media print {
+  .hero-visual {
+    display: none !important;
+  }
+
   .hero-section {
     padding: 0 0 5mm !important;
   }
