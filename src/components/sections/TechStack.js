@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SectionShell from "../layout/SectionShell";
-import { getSectionIndex } from "../../config/sections";
 import { stackGroups } from "../../content/stack";
 import { getProjectBySlug, getLocalizedProject } from "../../content/projects";
 import { stripEmphasis } from "../../utils/emphasis";
+import { revealRef } from "../../hooks/useReveal";
 import useLang from "../../hooks/useLang";
-import "./Competencies.css";
 import "./TechStack.css";
 
 const TechStack = () => {
@@ -28,35 +27,29 @@ const TechStack = () => {
   };
 
   return (
-    <SectionShell
-      id="stack"
-      index={getSectionIndex("stack")}
-      title={t("stack.title")}
-    >
-      <p className="competencies-subtitle">{t("stack.caption")}</p>
-
-      <div className="competencies-grid">
+    <SectionShell id="stack" className="stack" caption={t("stack.caption")}>
+      <div className="stack-groups">
         {stackGroups.map((group, groupIndex) => (
-          <div className="competency-card structural-card" key={group.id}>
-            <div className="competency-card-header">
-              <span className="competency-icon mono">{`0${groupIndex + 1}`}</span>
-              <h3 className="competency-title mono">
-                {group.label[lang] ?? group.label.ko}
-              </h3>
+          <div className="stack-group" key={group.id} data-reveal ref={revealRef}>
+            <div className="stack-group-head">
+              <span className="mono stack-group-index">{`0${groupIndex + 1}`}</span>
+              <h3 className="stack-group-title">{group.label[lang] ?? group.label.ko}</h3>
+              <span className="mono stack-group-count">
+                {String(group.items.length).padStart(2, "0")}
+              </span>
             </div>
-            <ul className="stack-list">
+            <ul className="stack-cells">
               {group.items.map((item) => (
-                <li key={item.name} className="stack-row">
+                <li key={item.name} className="stack-cell">
                   <span className="stack-name mono">{item.name}</span>
-                  <span className="stack-projects">
+                  <span className="stack-used">
                     {item.projects
                       .map(toProjectLink)
                       .filter(Boolean)
-                      .map((project, index) => (
-                        <React.Fragment key={project.slug}>
-                          {index > 0 ? ", " : ""}
-                          <Link to={project.path}>{project.name}</Link>
-                        </React.Fragment>
+                      .map((project) => (
+                        <Link key={project.slug} to={project.path} className="stack-link">
+                          {project.name}
+                        </Link>
                       ))}
                   </span>
                 </li>

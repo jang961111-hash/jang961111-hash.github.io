@@ -77,8 +77,9 @@ describe("App routing flows", () => {
       );
     });
 
+    // Each project card's title is its link (stretched over the whole card).
     await userEvent.click(
-      screen.getAllByRole("link", { name: "View details" })[0]
+      screen.getAllByRole("link", { name: /^DailyLog/ })[0]
     );
 
     await waitFor(() => {

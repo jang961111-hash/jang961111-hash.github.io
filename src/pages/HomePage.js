@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
+import Manifesto from "../components/sections/Manifesto";
 import Projects from "../components/sections/Projects";
 import TechStack from "../components/sections/TechStack";
-import AiCases from "../components/sections/AiCases";
-import Competencies from "../components/sections/Competencies";
 import Experience from "../components/sections/Experience";
 import AppLayout from "../components/layout/AppLayout";
 import { useHomeScrollRestore, useLocaleLanguage } from "../hooks/useRouteEffects";
@@ -14,17 +12,15 @@ import { homeSections } from "../config/sections";
 
 // Contact is rendered by AppLayout, so it has no entry here.
 const sectionComponents = {
-  about: About,
+  manifesto: Manifesto,
   projects: Projects,
   stack: TechStack,
-  "ai-cases": AiCases,
-  competencies: Competencies,
   experience: Experience,
 };
 
-const HomeContent = () => (
+const HomeContent = ({ theme }) => (
   <>
-    <Hero />
+    <Hero theme={theme} />
     {homeSections.map(({ id }) => {
       const SectionComponent = sectionComponents[id];
 
@@ -43,7 +39,7 @@ const HomePage = ({ lang, theme, onToggleTheme, onPrint }) => {
 
   return (
     <AppLayout theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint}>
-      <HomeContent />
+      <HomeContent theme={theme} />
     </AppLayout>
   );
 };

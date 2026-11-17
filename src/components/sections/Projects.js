@@ -7,135 +7,142 @@ import {
 } from "../../content/projects";
 import SectionShell from "../layout/SectionShell";
 import useLang from "../../hooks/useLang";
-import { getSectionIndex } from "../../config/sections";
+import { revealRef } from "../../hooks/useReveal";
+import { renderEmphasis, stripEmphasis } from "../../utils/emphasis";
 
-import { renderLines, stripEmphasis } from "../../utils/emphasis";
+const MAX_CHIPS = 4;
+
+export const splitTitle = (title) => {
+  const [main, ...rest] = stripEmphasis(title ?? "").split(" | ");
+
+  return { main, sub: rest.join(" | ") };
+};
+
+const StackChips = ({ stack }) => {
+  if (!stack?.length) {
+    return null;
+  }
+
+  const shown = stack.slice(0, MAX_CHIPS);
+  const extra = stack.length - shown.length;
+
+  return (
+    <ul className="chip-list card-chips">
+      {shown.map((tech) => (
+        <li key={tech} className="chip">
+          {tech}
+        </li>
+      ))}
+      {extra > 0 ? <li className="chip chip-more">{`+${extra}`}</li> : null}
+    </ul>
+  );
+};
+
+// Whole card is clickable: the title link stretches over the card.
+const CardText = ({ project, copy, index, level = "h3" }) => {
+  const { main, sub } = splitTitle(project.title);
+  const Heading = level;
+
+  return (
+    <div className="card-text">
+      <p className="card-meta mono">
+        <span>{project.category}</span>
+        <span className="card-index">{index}</span>
+      </p>
+      <Heading className="card-title">
+        <Link to={project.path} className="card-link">
+          <span className="card-title-main">{main}</span>
+          {sub ? <span className="card-title-sub">{sub}</span> : null}
+        </Link>
+      </Heading>
+      <p className="card-summary">{renderEmphasis(project.summary)}</p>
+      <StackChips stack={project.stack} />
+      <span className="card-cta" aria-hidden="true">
+        {copy.viewProject} <span className="arrow">→</span>
+      </span>
+    </div>
+  );
+};
+
+// The tile fixes its own aspect ratio (CSS), so the image never shifts layout.
+const CardImage = ({ src, eager = false }) => (
+  <div className="card-tile">
+    <img
+      src={src}
+      alt=""
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+    />
+  </div>
+);
+
 const Projects = () => {
   const lang = useLang();
-  const copy = projectUiCopy[lang];
+  const copy = projectUiCopy[lang] ?? projectUiCopy.ko;
   const coreProjects = getLocalizedCoreProjects(lang);
   const supportingProjects = getLocalizedSupportingProjects(lang);
 
   return (
     <SectionShell
       id="projects"
-      index={getSectionIndex("projects")}
-      title={copy.sectionTitle}
-      subtitle={renderLines(copy.sectionIntro)}
+      className="projects"
+      statement={renderEmphasis(copy.sectionIntro)}
     >
-      <div className="project-archive-header project-core-header">
-        <div>
-          <p className="project-archive-kicker mono">{copy.coreKicker}</p>
-          <h3 className="project-archive-title">{copy.coreTitle}</h3>
-          <p className="project-archive-intro">{renderLines(copy.coreIntro)}</p>
-        </div>
+      <div className="sub-head">
+        <p className="kicker">{copy.coreLabel}</p>
+        <p className="kicker">{String(coreProjects.length).padStart(2, "0")}</p>
       </div>
 
-      <div className="project-core-grid">
-        {coreProjects.map((project) => (
-          <article
-            key={project.slug}
-            className="project-core-card structural-card"
-          >
-            <div className="project-card-top">
-              <span className={`project-status-badge ${project.status}`}>
-                {project.statusLabel}
-              </span>
-              <span className="project-card-period">{project.period}</span>
-            </div>
+      <div className="core-list">
+        {coreProjects.map((project, index) => {
+          const image = project.cardImage ?? project.heroImage;
 
-            <p className="project-card-category">{project.category}</p>
-            <h3 className="project-card-title">{project.title}</h3>
-            <p className="project-card-summary">{renderLines(project.summary)}</p>
-
-            <div className="project-core-block">
-              <span className="detail-label">{copy.problemDefinition}</span>
-              <p>{renderLines(stripEmphasis(project.story?.problem ?? project.context))}</p>
-            </div>
-
-            <div className="project-core-block">
-              <span className="detail-label">{copy.coreRole}</span>
-              <p>{project.role}</p>
-            </div>
-
-            <div className="project-core-block">
-              <span className="detail-label">{copy.coreContribution}</span>
-              <ul className="project-proof-list">
-                {project.highlights.slice(0, 3).map((item) => (
-                  <li key={item}>{stripEmphasis(item)}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="project-core-block">
-              <span className="detail-label">{copy.techStack}</span>
-              <div className="project-tag-list">
-                {(project.stack?.length ? project.stack : project.tags).map((tag) => (
-                  <span key={tag} className="project-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="project-core-block">
-              <span className="detail-label">{copy.resultLearning}</span>
-              <p>{renderLines(project.proof[0] ?? project.caseStudy?.summary)}</p>
-            </div>
-
-            <Link to={project.path} className="project-inline-link">
-              {copy.viewDetails}
-            </Link>
-          </article>
-        ))}
+          return (
+            <article
+              key={project.slug}
+              className={`core-card ${image ? "" : "is-text-only"}`}
+              data-reveal
+              ref={revealRef}
+            >
+              {image ? <CardImage src={image} /> : null}
+              <CardText
+                project={project}
+                copy={copy}
+                index={`0${index + 1}`}
+              />
+            </article>
+          );
+        })}
       </div>
 
-      <div className="project-archive-header">
-        <div>
-          <p className="project-archive-kicker mono">
-            {copy.supportingKicker}
-          </p>
-          <h3 className="project-archive-title">{copy.supportingTitle}</h3>
-          <p className="project-archive-intro">{copy.supportingIntro}</p>
-        </div>
+      <div className="sub-head">
+        <p className="kicker">{copy.moreLabel}</p>
+        <p className="kicker">{String(supportingProjects.length).padStart(2, "0")}</p>
       </div>
 
-      <div className="project-archive-grid">
-        {supportingProjects.map((project) => (
-          <article
-            key={project.slug}
-            className="project-archive-card structural-card"
-          >
-            <div className="project-card-top">
-              <span className={`project-status-badge ${project.status}`}>
-                {project.statusLabel}
-              </span>
-              <span className="project-card-period">{project.period}</span>
-            </div>
+      <div className="work-grid">
+        {supportingProjects.map((project, index) => {
+          const image = project.cardImage ?? project.heroImage;
+          const number = String(index + coreProjects.length + 1).padStart(2, "0");
 
-            <p className="project-card-category">{project.category}</p>
-            <h4 className="project-card-title">{project.title}</h4>
-            <p className="project-card-summary">{renderLines(project.summary)}</p>
-
-            <div className="project-tag-list">
-              {(project.stack?.length ? project.stack : project.tags).map((tag) => (
-                <span key={tag} className="project-tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="project-card-footer">
-              <div className="project-card-role">
-                <span className="detail-label">{copy.role}</span>
-                <p>{project.role}</p>
-              </div>
-              <Link to={project.path} className="project-inline-link">
-                {copy.viewDetails}
-              </Link>
-            </div>
-          </article>
-        ))}
+          return (
+            <article
+              key={project.slug}
+              className={`work-card ${image ? "has-image" : "is-text-only"}`}
+              data-reveal
+              ref={revealRef}
+            >
+              {image ? (
+                <CardImage src={image} />
+              ) : (
+                <div className="card-hatch hatch" aria-hidden="true">
+                  <span className="mono">{number}</span>
+                </div>
+              )}
+              <CardText project={project} copy={copy} index={number} />
+            </article>
+          );
+        })}
       </div>
     </SectionShell>
   );

@@ -1,34 +1,42 @@
 import React from "react";
-import useScrollReveal from "../../hooks/useScrollReveal";
+import { useTranslation } from "react-i18next";
+import { getSectionIndex, getSectionLabelKey } from "../../config/sections";
+import { revealRef } from "../../hooks/useReveal";
 import "./Section.css";
 
-const SectionShell = ({
-  id,
-  index,
-  title,
-  subtitle,
-  subtitleClassName = "",
-  children,
-}) => {
-  const { elementRef, isVisible } = useScrollReveal();
-  const subtitleClasses = ["section-subtitle", subtitleClassName]
-    .filter(Boolean)
-    .join(" ");
+// Section frame: small bordered label cell, an optional oversized statement
+// in a thin-bordered cell, an optional caption, then the section content.
+export const SectionLabel = ({ id, label }) => {
+  const { t } = useTranslation();
 
   return (
-    <section id={id} className="section">
-      <div
-        ref={elementRef}
-        className={`section-container reveal-base stagger-wrap ${isVisible ? "reveal-visible" : ""}`}
-      >
-        <h2 className="section-title">
-          <span className="text-highlight">{index}.</span> {title}
-        </h2>
-        {subtitle ? <p className={subtitleClasses}>{subtitle}</p> : null}
-        {children}
-      </div>
-    </section>
+    <p className="label-box section-label">
+      <span className="label-dot" aria-hidden="true" />
+      <span className="label-index">{getSectionIndex(id)}</span>
+      <span>{label ?? t(getSectionLabelKey(id))}</span>
+    </p>
   );
 };
+
+const SectionShell = ({ id, label, statement, caption, className = "", children }) => (
+  <section id={id} className={`section ${className}`.trim()}>
+    <div className="wrap">
+      <div className="section-head">
+        <SectionLabel id={id} label={label} />
+        {statement ? (
+          <div className="frame section-statement" data-reveal ref={revealRef}>
+            <h2 className="display">{statement}</h2>
+          </div>
+        ) : null}
+        {caption ? (
+          <div className="frame section-caption" data-reveal ref={revealRef}>
+            <p>{caption}</p>
+          </div>
+        ) : null}
+      </div>
+      {children}
+    </div>
+  </section>
+);
 
 export default SectionShell;
