@@ -8,29 +8,9 @@ import {
 import SectionShell from "../layout/SectionShell";
 import useLang from "../../hooks/useLang";
 
-const featureLabels = {
-  ko: {
-    challenge: "다룬 문제",
-    insight: "구조적 인사이트",
-    solution: "경험 설계 + 시스템 구조",
-    role: "담당 역할",
-    highlights: "핵심 포인트",
-    proof: "이 프로젝트가 증명하는 것",
-  },
-  en: {
-    challenge: "Challenge",
-    insight: "Structural insight",
-    solution: "Experience + system design",
-    role: "Role",
-    highlights: "Highlights",
-    proof: "What this project proves",
-  },
-};
-
 const Projects = () => {
   const lang = useLang();
   const copy = projectUiCopy[lang];
-  const labels = featureLabels[lang];
   const coreProjects = getLocalizedCoreProjects(lang);
   const supportingProjects = getLocalizedSupportingProjects(lang);
 
@@ -72,7 +52,7 @@ const Projects = () => {
             </div>
 
             <div className="project-core-block">
-              <span className="detail-label">{labels.role}</span>
+              <span className="detail-label">{copy.coreRole}</span>
               <p>{project.role}</p>
             </div>
 

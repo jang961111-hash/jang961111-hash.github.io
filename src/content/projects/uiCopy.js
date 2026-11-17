@@ -12,6 +12,7 @@ export const projectUiCopy = {
     supportingIntro:
       "도메인 확장성, 빠른 실행력, 추가 아이디어를 보여주는 프로젝트는 하단 아카이브로 분리합니다.",
     problemDefinition: "한 줄 문제정의",
+    coreRole: "담당 역할",
     coreContribution: "핵심 기여",
     techStack: "사용 기술",
     resultLearning: "결과 / 배운 점",
@@ -60,6 +61,7 @@ export const projectUiCopy = {
     supportingIntro:
       "Additional projects are separated as archive cases that show domain expansion, rapid execution, and supporting ideas.",
     problemDefinition: "Problem definition",
+    coreRole: "Role",
     coreContribution: "Key contribution",
     techStack: "Tech stack",
     resultLearning: "Result / learning",
