@@ -1283,7 +1283,7 @@ export const portfolioProjects = [
     story: {
       problem: {
         ko: "어머니가 경고 문자 사진을 보내며 무시해도 되는지 질문\n제가 답하기까지 47분의 공백, 그동안 어머니는 그 화면을 혼자 보고 계셨던 상황\n저는 어머니를 지켜드린 것이 아니라 어머니의 판단을 대신하던 상태\n대신하는 동안 어머니에게는 **아무것도 남지 않은** 결과",
-        en: "My mother sent a photo of a warning text and asked whether she could ignore it\n47 minutes passed before I replied; she looked at that screen alone the whole time\nI had not been protecting her; I had been making her judgments for her\nThe result: while I did, **nothing was left** for her",
+        en: "My mother sent a photo of a warning text and asked whether she could ignore it\n47 minutes passed before I replied; she looked at that screen alone the whole time\nI had not been protecting her; I had been making her judgments for her\nAs a result, while I did that, **nothing was left** for her",
       },
       insight: {
         ko: "판별기라는 도구를 만드는 대신 사람의 판별력을 키우는 쪽으로 설계 전환\n한 줄로 줄이면 **'판별해주지 않는 AI'**",
