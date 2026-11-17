@@ -196,12 +196,12 @@ export const principles = [
     sub: "I don't claim what I didn't measure.",
     cases: {
       ko: [
-        "안심이음: 규칙 보강 뒤 나온 99.0%를 \"낙관적 수치\"로 적고, 새 100건 블라인드 재측정 86.0%를 공식 수치로 기록",
+        "안심이음: 규칙 보강 뒤 나온 99.0%를 \"낙관적 수치\"로 적고, 2026.10 당시 새 100건 블라인드 재측정 86.0%(규칙 전용, 내부 측정)를 공식 수치로 기록",
         "안심이음: 놓친 사기 문자 11건을 보고도 규칙을 고치지 않기로 결정, 검증 문장을 보고 고치면 그 뒤 수치는 \"튜닝 후\"가 되기 때문",
         "LoRA 과제: 점수가 0.0862에서 0.3852로 올랐지만 평가 코드가 20문항 중 15문항의 환각 검사를 하지 않는다는 점을 보고서에 기록",
       ],
       en: [
-        "Ansim-Ieum: logged a 99.0% result after a rule update as \"optimistic\" and recorded the 86.0% blind re-test on 100 new cases as the official number",
+        "Ansim-Ieum: logged a 99.0% result after a rule update as \"optimistic\" and recorded the 86.0% blind re-test on 100 new cases (rules only, internal measurement, Oct 2026) as the official number at the time",
         "Ansim-Ieum: left the rules alone after seeing 11 missed scam texts, because tuning on validation sentences would make every later number \"post-tuning\"",
         "LoRA assignment: the score rose from 0.0862 to 0.3852, and I reported that the evaluation code skipped the hallucination check on 15 of 20 questions",
       ],
@@ -221,7 +221,7 @@ export const principles = [
       en: [
         "Spring Boot lab: disproved my own comment (\"only changed fields are updated\") with run logs and kept the whole process in my notes",
         "Copyright RAG lab: re-read the source, confirmed my answer key was wrong and the model was right, and corrected it",
-        "Ansim-Ieum final report deck: opened with what I did not achieve (target 50 seniors in 2 sessions, actual 20 in 1, satisfaction not measured)",
+        "Ansim-Ieum final report deck: leads with what I did not achieve (target 50 seniors in 2 sessions, actual 20 in 1, satisfaction not measured)",
         "Incident-response agent ablation: corrected the report when a finding disappeared under equal-load re-measurement",
       ],
     },
@@ -232,12 +232,12 @@ export const principles = [
     sub: "When a team disagrees, I set the criteria first.",
     cases: {
       ko: [
-        "DailyLog(PM): 후보 기능을 표 하나에 올리고 사용자 경험 기여도, 구현 난이도, 일정 영향도로 점수를 매겨 필수, 선택, 보류로 구분",
+        "DailyLog(PM): 후보 기능을 사용자 경험 기여도, 구현 난이도, 일정 영향도 세 기준으로 정리해 필수, 선택, 보류로 나누고 팀을 설득",
         "AIOps 과제: \"로그에 승격\"과 \"서빙이 실제로 바뀜\"을 다른 사실로 구분하고 승격 확인 기준을 실제 응답의 버전 표시로 변경",
         "이탈 예측 실습: 모델 선택 기준을 Train 안 5-Fold 3회 반복 평균으로 고정, Test는 기록만",
       ],
       en: [
-        "DailyLog (PM): put every candidate feature in one table, scored each on UX contribution, build difficulty, and schedule impact, then sorted them into must, optional, and hold",
+        "DailyLog (PM): sorted candidate features into must, optional, and hold against three criteria (UX contribution, build difficulty, schedule impact) and used that to persuade the team",
         "AIOps assignment: separated \"promoted in the log\" from \"serving actually changed\" and moved the promotion check to the version shown in the real response",
         "Churn-prediction lab: fixed model selection to the mean of 3 repeats of 5-fold CV inside Train; Test was record-only",
       ],
@@ -249,12 +249,12 @@ export const principles = [
     sub: "I build AI that helps people judge for themselves.",
     cases: {
       ko: [
-        "SKT 「모두의 Promp.T」: \"판별해줘\"가 아니라 \"판별해주지 마\"로 뒤집은 훈련 코치 프롬프트, 어머니가 사기 의심 문자 앞에서 혼자 망설인 일이 출발점",
+        "SKT 「모두의 Promp.T」: \"판별해줘\"가 아니라 \"판별해주지 마\"로 뒤집은 훈련 코치 프롬프트, 어머니가 사기 의심 문자 앞에서 망설인 일이 출발점",
         "안심이음: 같은 생각을 어르신 대상 사기 예방 연습으로 확장, 어르신 20명과 현장 실증",
         "졸업논문: 마르쿠제 『일차원적 인간』을 읽고 \"자기결정\" 개념을 정리",
       ],
       en: [
-        "SKT 'promp.T for Everyone': a training-coach prompt that flips \"detect it for me\" into \"don't detect it for me\"; it began when my mother hesitated alone over a suspected scam text",
+        "SKT 'promp.T for Everyone': a training-coach prompt that flips \"detect it for me\" into \"don't detect it for me\"; it began when my mother hesitated over a suspected scam text",
         "Ansim-Ieum: took the same idea to scam-prevention practice for seniors, with a field session of 20 seniors",
         "Graduation thesis: read Marcuse's One-Dimensional Man and wrote on the concept of self-determination",
       ],
@@ -291,12 +291,12 @@ export const principles = [
       ko: [
         "고객 응대 현장: 불만의 원인을 지연이 아니라 \"기다리는 이유와 예상 시간을 알 수 없다는 점\"으로 다시 정의, 접수 때 예상 시간 안내와 자주 나오는 문의의 문장 정리를 제안하고 설득",
         "서비스센터 현장(2022.12 - 2024.01): 문제는 응대가 아니라 그 뒤의 시스템이라고 보고 만드는 쪽으로 전환",
-        "안심이음 실증: 어르신 20명의 접속을 도우며 \"QR로 처음 접속하는 단계가 가장 어렵다\"는 관찰을 다음 과제로 기록",
+        "안심이음 실증: 어르신 20명이 참여한 현장에서 일대일로 접속을 도우며 \"QR로 처음 접속하는 단계가 가장 어렵다\"는 관찰을 다음 과제로 기록",
       ],
       en: [
         "Customer-service floor: redefined the complaint from the delay itself to \"not knowing why or how long\", then proposed and argued for giving an expected time at check-in and standard wording for frequent questions",
-        "Service-center floor (Dec 2022 - Jan 2024): saw that the problem was the system behind the desk, not the desk, and moved to the building side",
-        "Ansim-Ieum field session: while helping 20 seniors get connected, logged \"the first QR connection is the hardest step\" as the next task",
+        "Service-center floor (Dec 2022 - Jan 2024): saw that the problem was the system behind the desk, not the desk, and moved to the side that builds the system",
+        "Ansim-Ieum field session: at a session with 20 seniors, helping them connect one-on-one, I logged \"the first QR connection is the hardest step\" as the next task",
       ],
     },
   },
@@ -310,14 +310,14 @@ export const principles = [
     },
     cases: {
       ko: [
-        "SSAFY SW역량테스트: 2025.09 첫 시험 탈락, 재시험 대상, 12월에는 신청해 둔 기업탐방을 취소하고 공부해 마지막 5차까지 응시(수료증 표기: 모의 IM 취득)",
+        "SSAFY SW역량테스트: 2025.09 첫 시험 탈락, 재시험 대상, 12월에는 신청해 둔 기업탐방을 취소하고 공부해 12월 5차(마지막) 시험에 응시(수료증 표기: 모의 IM 취득)",
         "자소서 컨설팅(2026.09): 초안을 미리 가져가 \"철학적이고 비유적\"이라는 지적을 받고, 다음 판본에서 건조한 문장과 10년 목표로 수정",
         "취업특강(2026.05): 동료에게 \"특색이 없다\"는 피드백을 받은 것도 그대로 기록",
       ],
       en: [
-        "SSAFY SW competency test: failed the first sitting in Sep 2025, was put on the re-test list, cancelled a company visit in December to study, and sat every round through the fifth and last (certificate wording: mock IM level)",
+        "SSAFY SW competency test: failed the first sitting in Sep 2025, was put on the re-test list, cancelled a company visit in December to study, and sat the fifth and last attempt in December (certificate wording: 'mock IM achieved')",
         "Cover-letter consulting (Sep 2026): brought a draft in advance, was told it read \"philosophical and figurative\", and rewrote the next version in plain sentences with a ten-year goal",
-        "Career workshop (May 2026): a peer told me my answers had \"no character\", and I kept that on record as well",
+        "Career workshop (May 2026): a peer told me my answers \"lacked anything distinctive\", and I kept that on record as well",
       ],
     },
   },
