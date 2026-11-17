@@ -15,6 +15,29 @@
 
 ---
 
+## ✅ 2026-11-17~18 세션 2: 사실 정정, 안심이음 추가, 문장 교정, 디자인 개편
+
+**브랜치:** `feat/ansim-redesign-1117` (`refactor/step8-10-1117` → `content/facts-fix-1117` 위에 쌓음. main 미병합, push 안 함. main에 push하면 바로 라이브 배포되므로 병헌 님 지시 뒤에만 올린다.)
+
+- **사실 정정:** 사이트 문구를 `../00_facts.yaml`, `../00_필살기.md`와 대조해 어긋난 9건을 고침(D4D 24시간 개발과 특별 트랙 선정, 특화프로젝트 광주1반 3등, Promp.T 정본 정의, ARGUS 인터뷰 서사, 솔버톤 비교 수, EasyExam 표현, 군 표기). 대조표는 `../_log/20261117_포트폴리오_사이트_대조표.md`.
+- **결정(병헌 님):** 포지셔닝은 "AI를 서비스로 만드는 사람" 유지, 솔버톤 프로젝트 공개 유지, 메인 3개는 DailyLog, ARGUS, Promp.T 최우수상작, 안심이음은 보조 프로젝트로 추가.
+- **안심이음 페이지:** `ansim-ieum` 슬러그. 수치는 F-ANS-12~16(2026-11-16 공식 측정 96.0%, 미탐 0.0%, 정상 문자 조심 경고 8.0%, 실증 20명)만 사용. 화면 캡처는 `public/projects/ansim-ieum/`, 현장 사진은 제출 발표자료의 가림 처리본.
+- **문장 교정:** 한국어 문구 175건(자기선언형 맺음, 추상어, 가운뎃점 나열 정리). 문단마다 한 구절을 `**구절**`로 감싸면 `src/utils/emphasis.js`가 형광밑줄로 그린다. 메타 설명과 alt에는 `stripEmphasis`를 쓴다. 영어 문구의 문체 교정은 하지 않았다.
+- **디자인 개편:** 인디고 단일 포인트색, 시스템 다크와 라이트 따름, 홈은 Hero → 대표 프로젝트 3 → 기술 스택 → 보조 프로젝트 → 이력 → 연락. 섹션 순서와 내비는 `src/config/sections.js` 한 곳. 기술 스택 데이터는 `src/content/stack.js`, 프로젝트별 기술 칩은 `data.js`의 `stack`, 카드 이미지는 `cardImage`. 이미지 크기 표 `src/content/projects/imageSizes.js`는 이미지를 추가할 때 함께 갱신한다.
+- **모션과 성능:** 공유 IntersectionObserver 1회 재생(`src/hooks/useScrollReveal.js`), transform과 opacity만 전환, 내비 블러 제거, reduced-motion 처리.
+- **홈에서 뺀 섹션:** `About.js`, `AiCases.js`, `Competencies.js`는 파일만 남아 있고 스타일은 없다. 다시 쓰려면 스타일을 새로 써야 한다.
+
+**검증:** 테스트 11/11, 빌드, 스모크 5라우트. 홈 2개와 상세 4개를 화면 폭 1440, 1366, 768, 390, 360과 라이트, 다크로 띄워 가로 넘침 0, 깨진 이미지 0, 콘솔 오류 0 확인. CPU 4배 감속 스크롤에서 프레임 평균 16.7ms, CLS 0(헤드리스 크롬 기준이며 실기기 측정은 아님). 등장 효과는 현실적인 스크롤 속도에서 전부 재생됨.
+
+**올리기 전에 남은 일:**
+1. `npm run generate:pdf`로 포트폴리오 PDF 2종 재생성(지금 PDF는 9월 문구). 이 맥에서는 `PUPPETEER_EXECUTABLE_PATH`를 시스템 Chrome으로 지정.
+2. `public/og-image`가 옛 크림과 브론즈 톤, 옛 숫자라 새 디자인과 맞지 않음.
+3. 영어 문구 문체 교정, `workers/ask-portfolio/src/context.js`의 프로젝트 목록 재정리(위젯은 비활성).
+4. 병헌 님 확인이 필요한 사실: DailyLog 슬롯이 7가지인지 3요소인지, Loggy "결정문 자동 생성 엔진을 구축"의 주어, ARGUS에서 본인이 맡은 기술 범위, 장보고 "팀장" 표기, 예영디자인 재직, DailyLog 앱 캡처 2장의 깨진 한글(`app-diary-ai.webp`, `app-diary-photo.webp`).
+5. 구조 리팩토링 Step 11은 이번 개편에서 Navbar 스크롤 처리가 바뀌며 일부 해소, Step 12(CSS 분리)는 `Section.css`를 새 구조로 다시 쓰면서 범위가 달라짐. `data.js`(2,400줄대) 프로젝트별 파일 분리와 `public/` 대용량 자산 정리는 그대로 남음.
+
+---
+
 ## ✅ 2026-11-17 세션 완료 내역 (구조 리팩토링 Step 8~10, 콘텐츠 무변화)
 
 **브랜치:** `refactor/step8-10-1117` (main에 미병합, push 안 함. main에 push하면 바로 라이브 배포되므로 병헌 님 지시 후에만 올린다.)
