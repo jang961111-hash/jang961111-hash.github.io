@@ -7,6 +7,7 @@
 export const homeSections = [
   { id: "manifesto", labelKey: "hero.focusLabel", nav: false },
   { id: "projects", labelKey: "nav.projects" },
+  { id: "principles", labelKey: "records.principles", nav: false },
   { id: "labs", labelKey: "records.labs", nav: false },
   { id: "stack", labelKey: "nav.stack" },
   { id: "awards", labelKey: "records.awards", nav: false },

@@ -398,6 +398,14 @@
           "In Promtree, structured AI know-how as an executable workflow product while reviewing market viability, revenue models, and competitor positioning."
         ]
       },
+      "restaurantOps": {
+        "period": "2024.02 - 2024.06",
+        "title": "Restaurant operations lead",
+        "company": "My mother's restaurant (Buk-gu, Gwangju)",
+        "desc": [
+          "Ran day-to-day operations, working with my mother, the kitchen staff, and part-time floor staff"
+        ]
+      },
       "customerExperience": {
         "title": "Customer Experience Operation",
         "company": "Charancha / Jaguar Land Rover Gangdong Service Center",
@@ -557,7 +565,8 @@
     "stack": "checking the stack",
     "experience": "reading the history",
     "contact": "waiting for your message",
-    "detail": "viewing {{name}}"
+    "detail": "viewing {{name}}",
+    "principles": "reading working principles"
   },
   "navExtra": {
     "pdf": "PDF",
@@ -566,8 +575,9 @@
     "homeAria": "Back to top"
   },
   "records": {
-      "labs": "Lab notes",
-      "awards": "Awards, selections, competitions",
-      "training": "Training and credentials"
+    "labs": "Lab notes",
+    "awards": "Awards, selections, competitions",
+    "training": "Training and credentials",
+    "principles": "Working principles"
   }
 }

@@ -186,3 +186,139 @@ export const credentials = [
     date: "2015.06",
   },
 ];
+
+// Working principles. Every case line comes from the owner's fact ledger;
+// `quote` is used only for sentences the owner wrote by hand.
+export const principles = [
+  {
+    id: "measure",
+    title: { ko: "재지 않은 것은 말하지 않는다", en: "I don't claim what I didn't measure" },
+    sub: "I don't claim what I didn't measure.",
+    cases: {
+      ko: [
+        "안심이음: 규칙 보강 뒤 나온 99.0%를 \"낙관적 수치\"로 적고, 새 100건 블라인드 재측정 86.0%를 공식 수치로 기록",
+        "안심이음: 놓친 사기 문자 11건을 보고도 규칙을 고치지 않기로 결정, 검증 문장을 보고 고치면 그 뒤 수치는 \"튜닝 후\"가 되기 때문",
+        "LoRA 과제: 점수가 0.0862에서 0.3852로 올랐지만 평가 코드가 20문항 중 15문항의 환각 검사를 하지 않는다는 점을 보고서에 기록",
+      ],
+      en: [
+        "Ansim-Ieum: logged a 99.0% result after a rule update as \"optimistic\" and recorded the 86.0% blind re-test on 100 new cases as the official number",
+        "Ansim-Ieum: left the rules alone after seeing 11 missed scam texts, because tuning on validation sentences would make every later number \"post-tuning\"",
+        "LoRA assignment: the score rose from 0.0862 to 0.3852, and I reported that the evaluation code skipped the hallucination check on 15 of 20 questions",
+      ],
+    },
+  },
+  {
+    id: "correct",
+    title: { ko: "틀린 것은 지우지 않고 고쳐 적는다", en: "When I'm wrong, I correct it in writing" },
+    sub: "When I'm wrong, I correct it in writing.",
+    cases: {
+      ko: [
+        "Spring Boot 실습: \"바뀐 필드만 UPDATE된다\"는 내 주석을 실행 로그로 반증하고 회고에 과정을 그대로 기록",
+        "저작권 RAG 실습: 직접 만든 정답지가 틀렸고 모델이 맞았음을 원문을 다시 읽어 확인하고 정정",
+        "안심이음 최종결과보고 발표자료: 못 한 것부터 기재(어르신 50명, 2회 목표에 20명, 1회, 만족도 미측정)",
+        "장애 대응 에이전트 Ablation: 같은 부하로 다시 쟀더니 사라진 결론을 보고서에서 정정",
+      ],
+      en: [
+        "Spring Boot lab: disproved my own comment (\"only changed fields are updated\") with run logs and kept the whole process in my notes",
+        "Copyright RAG lab: re-read the source, confirmed my answer key was wrong and the model was right, and corrected it",
+        "Ansim-Ieum final report deck: opened with what I did not achieve (target 50 seniors in 2 sessions, actual 20 in 1, satisfaction not measured)",
+        "Incident-response agent ablation: corrected the report when a finding disappeared under equal-load re-measurement",
+      ],
+    },
+  },
+  {
+    id: "criteria",
+    title: { ko: "의견이 갈리면 기준부터 세운다", en: "When a team disagrees, I set the criteria first" },
+    sub: "When a team disagrees, I set the criteria first.",
+    cases: {
+      ko: [
+        "DailyLog(PM): 후보 기능을 표 하나에 올리고 사용자 경험 기여도, 구현 난이도, 일정 영향도로 점수를 매겨 필수, 선택, 보류로 구분",
+        "AIOps 과제: \"로그에 승격\"과 \"서빙이 실제로 바뀜\"을 다른 사실로 구분하고 승격 확인 기준을 실제 응답의 버전 표시로 변경",
+        "이탈 예측 실습: 모델 선택 기준을 Train 안 5-Fold 3회 반복 평균으로 고정, Test는 기록만",
+      ],
+      en: [
+        "DailyLog (PM): put every candidate feature in one table, scored each on UX contribution, build difficulty, and schedule impact, then sorted them into must, optional, and hold",
+        "AIOps assignment: separated \"promoted in the log\" from \"serving actually changed\" and moved the promotion check to the version shown in the real response",
+        "Churn-prediction lab: fixed model selection to the mean of 3 repeats of 5-fold CV inside Train; Test was record-only",
+      ],
+    },
+  },
+  {
+    id: "judge",
+    title: { ko: "답을 주기보다 스스로 판단하게 만든다", en: "I build AI that helps people judge for themselves" },
+    sub: "I build AI that helps people judge for themselves.",
+    cases: {
+      ko: [
+        "SKT 「모두의 Promp.T」: \"판별해줘\"가 아니라 \"판별해주지 마\"로 뒤집은 훈련 코치 프롬프트, 어머니가 사기 의심 문자 앞에서 혼자 망설인 일이 출발점",
+        "안심이음: 같은 생각을 어르신 대상 사기 예방 연습으로 확장, 어르신 20명과 현장 실증",
+        "졸업논문: 마르쿠제 『일차원적 인간』을 읽고 \"자기결정\" 개념을 정리",
+      ],
+      en: [
+        "SKT 'promp.T for Everyone': a training-coach prompt that flips \"detect it for me\" into \"don't detect it for me\"; it began when my mother hesitated alone over a suspected scam text",
+        "Ansim-Ieum: took the same idea to scam-prevention practice for seniors, with a field session of 20 seniors",
+        "Graduation thesis: read Marcuse's One-Dimensional Man and wrote on the concept of self-determination",
+      ],
+    },
+  },
+  {
+    id: "record",
+    title: { ko: "전부 기록한다", en: "I keep records" },
+    sub: "I keep records.",
+    quote: {
+      text: "전부다 기록하고 전부다 기억해나가자.",
+      source: { ko: "2021.10 메모", en: "Personal note, Oct 2021 (\"Record everything, remember everything.\")" },
+    },
+    cases: {
+      ko: [
+        "DB/SQL 종합실습: 실행 화면 캡처 87장으로 과정 기록",
+        "SKALA: 수업과 특강을 다시 보며 정리하고 정리본을 동기와 공유",
+        "안심이음: 날짜별 측정 수치와 실행 명령을 한 보드에 누적, 설계 결정은 ADR로 기록",
+        "군 복무 중 버킷리스트를 적고 실천한 과정이 국방일보에 게재",
+      ],
+      en: [
+        "DB/SQL capstone lab: documented the process with 87 execution screenshots",
+        "SKALA: went back over lectures and talks, wrote them up, and shared the notes with classmates",
+        "Ansim-Ieum: accumulated dated measurements and the commands that produced them on one board, with design decisions kept as ADRs",
+        "During military service, my account of writing and working through a bucket list ran in the Defense Daily (Kookbang Ilbo)",
+      ],
+    },
+  },
+  {
+    id: "field",
+    title: { ko: "현장에서 본 불편을 문제로 정의한다", en: "I start from a problem I saw on site" },
+    sub: "I start from a problem I saw on site.",
+    cases: {
+      ko: [
+        "고객 응대 현장: 불만의 원인을 지연이 아니라 \"기다리는 이유와 예상 시간을 알 수 없다는 점\"으로 다시 정의, 접수 때 예상 시간 안내와 자주 나오는 문의의 문장 정리를 제안하고 설득",
+        "서비스센터 현장(2022.12 - 2024.01): 문제는 응대가 아니라 그 뒤의 시스템이라고 보고 만드는 쪽으로 전환",
+        "안심이음 실증: 어르신 20명의 접속을 도우며 \"QR로 처음 접속하는 단계가 가장 어렵다\"는 관찰을 다음 과제로 기록",
+      ],
+      en: [
+        "Customer-service floor: redefined the complaint from the delay itself to \"not knowing why or how long\", then proposed and argued for giving an expected time at check-in and standard wording for frequent questions",
+        "Service-center floor (Dec 2022 - Jan 2024): saw that the problem was the system behind the desk, not the desk, and moved to the building side",
+        "Ansim-Ieum field session: while helping 20 seniors get connected, logged \"the first QR connection is the hardest step\" as the next task",
+      ],
+    },
+  },
+  {
+    id: "again",
+    title: { ko: "떨어지면 다시 준비해서 간다", en: "When I fail, I prepare again and go back" },
+    sub: "When I fail, I prepare again and go back.",
+    quote: {
+      text: "IM의 왕관을 쓰지못했다.",
+      source: { ko: "2025.09.03 첫 시험 탈락 날 교육 채널에 쓴 글", en: "Written on the day I failed the first test, Sep 3, 2025 (\"I did not get the IM crown.\")" },
+    },
+    cases: {
+      ko: [
+        "SSAFY SW역량테스트: 2025.09 첫 시험 탈락, 재시험 대상, 12월에는 신청해 둔 기업탐방을 취소하고 공부해 마지막 5차까지 응시(수료증 표기: 모의 IM 취득)",
+        "자소서 컨설팅(2026.09): 초안을 미리 가져가 \"철학적이고 비유적\"이라는 지적을 받고, 다음 판본에서 건조한 문장과 10년 목표로 수정",
+        "취업특강(2026.05): 동료에게 \"특색이 없다\"는 피드백을 받은 것도 그대로 기록",
+      ],
+      en: [
+        "SSAFY SW competency test: failed the first sitting in Sep 2025, was put on the re-test list, cancelled a company visit in December to study, and sat every round through the fifth and last (certificate wording: mock IM level)",
+        "Cover-letter consulting (Sep 2026): brought a draft in advance, was told it read \"philosophical and figurative\", and rewrote the next version in plain sentences with a ten-year goal",
+        "Career workshop (May 2026): a peer told me my answers had \"no character\", and I kept that on record as well",
+      ],
+    },
+  },
+];

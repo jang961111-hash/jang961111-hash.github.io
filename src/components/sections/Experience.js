@@ -8,6 +8,7 @@ const experiences = [
   "skalaTraining",
   "ssafyTraining",
   "projectPractice",
+  "restaurantOps",
   "customerExperience",
   "salesField",
   "philosophy",

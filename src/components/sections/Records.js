@@ -8,6 +8,7 @@ import {
   competitions,
   credentials,
   labNotes,
+  principles,
   training,
 } from "../../content/records";
 
@@ -113,6 +114,40 @@ export const Training = () => {
             </li>
           );
         })}
+      </ol>
+    </SectionShell>
+  );
+};
+
+// Working principles: number, principle, and the cases behind it.
+export const Principles = () => {
+  const lang = useLang();
+
+  return (
+    <SectionShell id="principles" className="history records principles">
+      <ol className="history-list">
+        {principles.map((item, index) => (
+          <li className="history-row" key={item.id} data-reveal ref={revealRef}>
+            <span className="history-period mono">{String(index + 1).padStart(2, "0")}</span>
+            <div className="history-role">
+              <h3>{pick(item.title, lang)}</h3>
+              {lang === "ko" ? <p className="principle-sub mono">{item.sub}</p> : null}
+            </div>
+            <div className="history-desc">
+              {item.quote ? (
+                <blockquote className="principle-quote">
+                  <p lang="ko">{item.quote.text}</p>
+                  <cite>{pick(item.quote.source, lang)}</cite>
+                </blockquote>
+              ) : null}
+              <ul className="record-lines principle-cases">
+                {pick(item.cases, lang).map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))}
       </ol>
     </SectionShell>
   );

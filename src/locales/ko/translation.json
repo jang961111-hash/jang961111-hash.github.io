@@ -398,6 +398,14 @@
           "Promtree: AI 노하우의 **실행 가능한 워크플로우 상품**화, 시장성, 수익모델, 경쟁 분석 검토"
         ]
       },
+      "restaurantOps": {
+        "period": "2024.02 - 2024.06",
+        "title": "식당 운영 총괄",
+        "company": "어머니 식당 (광주 북구)",
+        "desc": [
+          "어머니, 주방 직원, 매장 아르바이트와 함께 일하며 매장 운영 총괄"
+        ]
+      },
       "customerExperience": {
         "title": "서비스센터 현장 운영",
         "company": "차란차, 재규어랜드로버 강동서비스센터",
@@ -557,7 +565,8 @@
     "stack": "기술 스택 확인 중",
     "experience": "이력 읽는 중",
     "contact": "연락 기다리는 중",
-    "detail": "{{name}} 살펴보는 중"
+    "detail": "{{name}} 살펴보는 중",
+    "principles": "일하는 원칙 읽는 중"
   },
   "navExtra": {
     "pdf": "PDF",
@@ -566,8 +575,9 @@
     "homeAria": "맨 위로 이동"
   },
   "records": {
-      "labs": "실습 노트",
-      "awards": "수상, 선정, 대회",
-      "training": "교육과 자격"
+    "labs": "실습 노트",
+    "awards": "수상, 선정, 대회",
+    "training": "교육과 자격",
+    "principles": "일하는 원칙"
   }
 }
