@@ -1,3 +1,4 @@
+import { stripEmphasis } from "./emphasis";
 import { getPageUrl, pageMetadata } from "../metadata";
 import { getProjectPath } from "./localeRouting";
 import { updateMetaTag } from "./dom";
@@ -61,7 +62,7 @@ export const buildProjectMetadata = (lang, project) => {
       (lang === "en"
         ? `${project.title} | Jang Byeong Heon`
         : `${project.title} | Portfolio`),
-    description: project.seo?.description ?? project.summary,
+    description: project.seo?.description ?? stripEmphasis(project.summary),
     keywords: project.seo?.keywords ?? baseMetadata.keywords,
   };
 };

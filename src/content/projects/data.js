@@ -1,6 +1,209 @@
 export const portfolioProjects = [
   {
+    slug: "ansim-ieum",
+    featured: false,
+    status: "in_progress",
+    sortDate: "2026-11-16",
+    period: {
+      ko: "2026.09 - 진행 중 (최종결과보고 2026.11.16 제출)",
+      en: "Sep 2026 - ongoing (final report submitted Nov 16, 2026)",
+    },
+    category: {
+      ko: "국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 선정 과제",
+      en: "Selected project, Gwangju National Science Museum 2026 My AI Lab 'AI-Ieum Project'",
+    },
+    title: {
+      ko: "안심이음 | 어르신이 사기 문자와 전화를 미리 겪어 보는 예방 교육 서비스",
+      en: "Ansim-Ieum | A Scam-Prevention Training Service Where Seniors Rehearse Scam Texts and Calls",
+    },
+    summary: {
+      ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 검증셋 200건에서 규칙과 AI를 함께 썼을 때 **사기 문자를 한 건도 놓치지 않았습니다**.",
+      en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set, rules plus AI **missed none of the scam texts**.",
+    },
+    context: {
+      ko: "SKT 「모두의 promp.T」 수상작에서 이어진 과제입니다. 국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」에 개인 응모로 선정되어 2026년 9월 29일 수행협약을 맺었습니다. 11월 13일 광주 북구 임동의 한 기관에서 어르신 20명과 실증을 했고, 11월 16일 최종결과보고를 냈습니다. 성과발표 평가는 11월 25일에 있습니다.",
+      en: "This project grew out of my SKT 'promp.T for Everyone' prize entry. It was selected as an individual submission for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project', with the project agreement signed on September 29, 2026. I ran a field session with 20 seniors at an institution in Im-dong, Buk-gu, Gwangju on November 13 and submitted the final report on November 16. The final presentation review is on November 25.",
+    },
+    story: {
+      problem: {
+        ko: "어머니가 경고 문자 사진을 보내며 무시해도 되는지 물으셨고, 제가 답하기까지 47분이 비어 있었습니다. 어르신이 낯선 문자와 전화 앞에서 **혼자 판단해야 하는 그 시간**을 줄이고 싶었습니다.",
+        en: "My mother sent me a photo of a warning text asking whether she could ignore it, and 47 minutes passed before I replied. I wanted to shorten **the time seniors spend deciding alone** in front of an unfamiliar text or call.",
+      },
+      insight: {
+        ko: "처음에는 의심 문자를 판별해 주는 서비스로 설계했습니다. 2차 멘토링에서 탐지 제품을 쫓아가며 기획이 커졌다는 진단을 받았고, 그 뒤 주 기능을 **사기 상황을 미리 겪어 보는 3단계 훈련**으로 다시 잡았습니다. 문자 확인은 보조 기능으로 남겼습니다.",
+        en: "I first designed it as a service that judges suspicious texts. At the second mentoring session I was told the plan had grown by chasing detection products, so I reset the main feature to **a three-step rehearsal of scam situations** and kept text checking as a secondary feature.",
+      },
+      solution: {
+        ko: "판별은 규칙이 먼저 하고 AI는 마지막에 보탭니다. **AI는 위험 등급을 올릴 수만 있고**, 3초 안에 답하지 못하면 규칙 결과로 응답합니다. 문자 원문은 저장하지 않습니다. 훈련은 사례 20개를 받기, 고르기, 결과 확인의 3단계로 진행하고, 글이 어려운 분을 위한 그림 연습 20개를 따로 뒀습니다.",
+        en: "Rules judge first and AI adds to the result last. **The AI can only raise the risk level**, and if it does not answer within 3 seconds the service responds with the rule result. Original texts are not stored. Training walks through 20 cases in three steps (receive, choose, review), and 20 picture-based exercises serve people who find reading difficult.",
+      },
+    },
+    team: {
+      ko: "개인 과제",
+      en: "Individual project",
+    },
+    role: {
+      ko: "개인 과제 | 기획, 판별 기준과 검증 절차 설계, 배포 구조 결정, 실증 진행",
+      en: "Individual | Planning, detection criteria and evaluation procedure design, deployment decisions, field session",
+    },
+    tags: {
+      ko: ["사기 예방 교육", "시니어", "규칙과 LLM 결합", "현장 실증"],
+      en: ["Scam-prevention training", "Seniors", "Rules plus LLM", "Field session"],
+    },
+    stack: ["Python", "FastAPI", "Claude API", "SQLite", "Docker", "AWS EC2", "GitHub Actions"],
+    highlights: {
+      ko: [
+        "규칙을 다듬는 데 쓴 데이터로 잰 정확도 99.0%는 **공식 수치에서 뺐습니다**. 공식 수치는 따로 만든 검증셋 200건으로만 냈습니다.",
+        "검증셋에서 규칙이 놓친 11건을 유형별로 분석한 뒤, 검증셋에 맞춰 규칙을 고치지 않기로 결정했습니다. 그 대신 AI가 꺼졌을 때의 성능(정확도 93.5%, 미탐률 11.0%)을 함께 공개했습니다.",
+        "AI는 위험 등급을 올리기만 하고, 응답이 3초를 넘기거나 실패하면 규칙 결과로 답하도록 기준을 정했습니다.",
+        "실사용 규모에 맞춰 서버 1대에서 블루그린 방식으로 중단 없이 배포하기로 결정하고, 버린 대안과 한계를 결정 기록으로 남겼습니다.",
+        "어르신 20명과 한 실증에서 QR로 처음 접속하는 단계가 가장 어렵다는 것을 확인했습니다. 다음 회기에는 짧은 주소를 소리 내어 불러 주고 보조 진행자를 두기로 했습니다.",
+      ],
+      en: [
+        "The 99.0% accuracy measured on data used to tune the rules was **left out of the official numbers**. Official numbers come only from a separately written 200-item validation set.",
+        "After analyzing by type the 11 scam texts the rules missed on the validation set, I decided not to tune the rules to that set. Instead I published the rules-only performance (93.5% accuracy, 11.0% miss rate) alongside the main result.",
+        "Set the criteria that the AI may only raise the risk level, and that the service answers with the rule result if the AI takes longer than 3 seconds or fails.",
+        "Chose blue-green deployment on a single server to match the real usage scale, and recorded the rejected alternatives and limits as decision records.",
+        "The field session with 20 seniors showed that the first QR-code access step was the hardest. For the next session I plan to read a short address aloud and add an assistant facilitator.",
+      ],
+    },
+    proof: {
+      ko: [
+        "목표였던 어르신 50명, 2회 실증은 20명, 1회에 그쳤고 만족도는 재지 못했습니다. 정확도와 미탐률은 목표 수치를 넘었지만 두 사람 교차 표시는 끝내지 못했습니다. **못 한 것을 결과보고 첫 줄에 적었습니다.**",
+        "수치가 좋게 나온 이유를 먼저 의심하고, 처음 보는 데이터로 다시 재는 절차를 세웠습니다.",
+      ],
+      en: [
+        "The goal of two sessions with 50 seniors ended at one session with 20, and satisfaction was not measured. Accuracy and miss rate cleared the targets, but two-person cross-labeling was not finished. **I put what I did not achieve in the first line of the final report.**",
+        "I questioned good numbers first and set up a procedure to re-measure on data the system had not seen.",
+      ],
+    },
+    metrics: [
+      {
+        value: "96.0%",
+        label: {
+          ko: "정확도 (검증셋 200건, 규칙과 AI 결합)",
+          en: "Accuracy (200-item validation set, rules plus AI)",
+        },
+      },
+      {
+        value: "0.0%",
+        label: {
+          ko: "미탐률 (유효 2회 측정 모두)",
+          en: "Miss rate (both valid runs)",
+        },
+      },
+      {
+        value: "20명",
+        label: {
+          ko: "어르신 단체 실증 (2026.11.13)",
+          en: "Seniors in the field session (Nov 13, 2026)",
+        },
+      },
+    ],
+    caseStudy: {
+      title: {
+        ko: "놓친 11건을 보고도 규칙을 고치지 않은 이유",
+        en: "Why I Left the Rules Alone After Seeing the 11 Misses",
+      },
+      summary: {
+        ko: "검증셋을 보고 규칙을 고치면, 그 뒤의 수치는 더 이상 처음 보는 데이터로 잰 값이 아닙니다.",
+        en: "Once you tune rules after looking at a validation set, later numbers are no longer measured on unseen data.",
+      },
+      content: {
+        ko: "11월 11일, 공식 검증셋에서 규칙만으로 놓친 사기 문자 11건을 유형별로 분석했습니다. 선택지는 셋이었습니다. 규칙을 그대로 두는 안, AI가 실패할 때만 쓰는 안전판을 더하는 안, 놓친 문장의 낱말로 규칙을 보강하는 안입니다. 낱말 보강은 이미 두 번 해 봤고, 새 작성자가 쓴 검증셋에서는 효과가 이어지지 않았습니다. 그래서 규칙은 고치지 않고, 규칙과 AI를 함께 쓴 값을 공식 수치로 정했습니다. 규칙만 썼을 때의 정확도 93.5%와 미탐률 11.0%는 AI가 멈췄을 때의 바닥 성능으로 함께 적었습니다.",
+        en: "On November 11, I analyzed by type the 11 scam texts that rules alone missed on the official validation set. There were three options: leave the rules as they were, add a safety net used only when the AI fails, or patch the rules with words from the missed sentences. I had already tried word-level patches twice, and the gains did not carry over to a validation set written by a new author. So I left the rules untouched and made the rules-plus-AI result the official number. The rules-only 93.5% accuracy and 11.0% miss rate are reported alongside it as the floor when the AI is down.",
+      },
+    },
+    heroImage: "/projects/ansim-ieum/about-desktop.webp",
+    cardImage: "/projects/ansim-ieum/about-desktop.webp",
+    screenshots: [
+      {
+        src: "/projects/ansim-ieum/train-mobile.webp",
+        alt: {
+          ko: "훈련 시작 화면. 문자와 전화 사례 5개를 5분 안팎으로 연습",
+          en: "Training start screen: five text and call cases in about five minutes",
+        },
+      },
+      {
+        src: "/projects/ansim-ieum/play-mobile.webp",
+        alt: {
+          ko: "그림 연습 고르기. 글이 어려운 분을 위한 상황 그림",
+          en: "Picture exercises for people who find reading difficult",
+        },
+      },
+      {
+        src: "/projects/ansim-ieum/demo-mobile.webp",
+        alt: {
+          ko: "의심 문자 확인 화면",
+          en: "Suspicious text check screen",
+        },
+      },
+      {
+        src: "/projects/ansim-ieum/home-mobile.webp",
+        alt: {
+          ko: "시작 화면. 연습과 문자 확인 중에서 고르기",
+          en: "Start screen: choose between practice and text check",
+        },
+      },
+      {
+        src: "/projects/ansim-ieum/about-mobile.webp",
+        alt: {
+          ko: "소개 화면 (모바일)",
+          en: "Introduction screen (mobile)",
+        },
+      },
+    ],
+    sections: [
+      {
+        id: "measurement",
+        title: {
+          ko: "측정 방법과 단서",
+          en: "How It Was Measured, and the Caveats",
+        },
+        body: {
+          ko: "2026년 11월 16일, 사기 100건과 정상 100건으로 된 검증셋 200건으로 측정했습니다. 규칙과 AI를 함께 쓴 측정은 세 번 돌렸고, 응답 지연이 한 건 섞인 회차는 무효로 처리해 유효 2회로 적었습니다. 두 회차 모두 정확도 96.0%, 미탐률 0.0%였고 정상 문자의 8.0%는 조심 단계로 올라갔습니다. 정답 표시는 한 사람이 했고, 일부 문장은 규칙을 고칠 때 본 적이 있어 완전히 처음 보는 데이터는 아닙니다.",
+          en: "On November 16, 2026, I measured on a 200-item validation set of 100 scam and 100 normal texts. The rules-plus-AI evaluation was run three times; the run that included one delayed response was voided, leaving two valid runs. Both scored 96.0% accuracy and a 0.0% miss rate, and 8.0% of normal texts were raised to the caution level. Labels were assigned by one person, and some sentences had been seen while editing the rules, so the set is not fully unseen.",
+        },
+      },
+      {
+        id: "field",
+        title: {
+          ko: "현장 실증",
+          en: "Field Session",
+        },
+        body: {
+          ko: "2026년 11월 13일 오전, 광주 북구 임동의 한 기관 교육장에서 어르신 20명과 진행했습니다. 한 분씩 휴대폰 접속을 도운 뒤 각자 연습하고 짧게 이야기를 나눴습니다. 끝까지 마친 사람 수와 만족도는 기록하지 못했고, 다음 회기부터 회기별 QR로 완료 수를 집계하기로 했습니다.",
+          en: "On the morning of November 13, 2026, I ran the session with 20 seniors in a training room at an institution in Im-dong, Buk-gu, Gwangju. I helped each person get connected on their phone, then they practiced on their own and we talked briefly. I did not record how many finished or how satisfied they were; from the next session, per-session QR codes will count completions.",
+        },
+        image: "/projects/ansim-ieum/field-1113.webp",
+      },
+      {
+        id: "architecture",
+        title: {
+          ko: "구성",
+          en: "Architecture",
+        },
+        body: {
+          ko: "백엔드는 Python과 FastAPI이고, 판별은 규칙 엔진 뒤에 Anthropic Claude API가 붙는 구조입니다. 화면은 빌드 도구 없이 쓴 HTML, CSS, JavaScript이며 설치 없이 홈 화면에 추가할 수 있습니다. 통계는 개인을 알아볼 수 없는 값만 SQLite에 남깁니다. Docker 이미지를 AWS EC2 서버 1대에 올리고 Caddy로 HTTPS를 처리하며, GitHub Actions에서 테스트를 돌립니다.",
+          en: "The backend is Python and FastAPI; detection runs a rule engine followed by the Anthropic Claude API. The interface is plain HTML, CSS, and JavaScript without a build tool and can be added to the home screen without installation. Only non-identifying values are kept in SQLite for statistics. A Docker image runs on a single AWS EC2 server with Caddy handling HTTPS, and tests run in GitHub Actions.",
+        },
+      },
+    ],
+    artifacts: {
+      ko: ["웹 서비스 (ansimieum.kr)", "최종결과보고 발표자료 5쪽", "사용 매뉴얼 2쪽", "시연영상 2분 22초"],
+      en: ["Web service (ansimieum.kr)", "Final report deck (5 pages)", "User manual (2 pages)", "Demo video (2 min 22 s)"],
+    },
+    interviewQuestions: {
+      ko: [],
+      en: [],
+    },
+    links: {
+      demo: "https://ansimieum.kr/",
+    },
+  },
+  {
     slug: "argus",
+    stack: ["FastAPI", "Vue 3", "PostgreSQL", "OpenAPI"],
     featured: true,
     status: "completed",
     sortDate: "2026-09-04",
@@ -174,6 +377,7 @@ export const portfolioProjects = [
   },
   {
     slug: "jangbogo",
+    stack: ["Next.js", "TypeScript", "Gemini", "Solana", "GCP Cloud Run"],
     featured: false,
     status: "completed",
     sortDate: "2026-08-04",
@@ -434,6 +638,7 @@ export const portfolioProjects = [
   },
   {
     slug: "skt-prompt-ansimcall",
+    stack: ["프롬프트 설계", "Claude"],
     featured: false,
     status: "completed",
     sortDate: "2026-08-20",
@@ -1158,6 +1363,7 @@ export const portfolioProjects = [
   },
   {
     slug: "dailylog",
+    stack: ["pgvector", "SenseVoice", "Thompson Sampling", "Figma"],
     featured: true,
     status: "completed",
     sortDate: "2026-04-13",
@@ -1374,6 +1580,7 @@ export const portfolioProjects = [
   },
   {
     slug: "loggy",
+    stack: ["React 18", "TypeScript", "Zustand", "TanStack Query", "WebSocket (STOMP)"],
     status: "completed",
     sortDate: "2026-02-15",
     period: {
@@ -1676,6 +1883,7 @@ export const portfolioProjects = [
   },
   {
     slug: "chronicle",
+    stack: ["React Native", "Figma"],
     status: "completed",
     sortDate: "2025-08-23",
     period: {
@@ -1849,6 +2057,7 @@ export const portfolioProjects = [
   },
   {
     slug: "ssafy-startup-track",
+    stack: ["Next.js", "FastAPI", "PostgreSQL", "GA4"],
     featured: false,
     status: "completed",
     sortDate: "2026-05-21",
