@@ -15,7 +15,7 @@ import "./Navbar.css";
 const navItems = navSections;
 const navSectionIds = navItems.map(({ id }) => id);
 
-const DESKTOP_BREAKPOINT = 960;
+const DESKTOP_BREAKPOINT = 1120;
 
 const Navbar = ({ theme, onToggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);

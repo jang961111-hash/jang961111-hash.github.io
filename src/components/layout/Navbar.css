@@ -53,6 +53,7 @@
 }
 
 .brand-role {
+  white-space: nowrap;
   font-size: var(--fs-xs);
   color: var(--text-3);
 }
@@ -79,6 +80,7 @@
   color: var(--text-2);
   font-size: var(--fs-sm);
   font-weight: 600;
+  white-space: nowrap;
   transition: color var(--t-fast) ease, background-color var(--t-fast) ease;
 }
 
@@ -355,7 +357,13 @@
   transform-origin: left center;
 }
 
-@media (max-width: 959px) {
+@media (max-width: 1279px) {
+  .brand-role {
+    display: none;
+  }
+}
+
+@media (max-width: 1119px) {
   .nav-desktop-shell {
     display: none;
   }
