@@ -34,8 +34,8 @@ const Experience = () => {
                 <h4 className="company">{t(`experience.jobs.${jobKey}.company`)}</h4>
                 <span className="date">{t(`experience.jobs.${jobKey}.period`)}</span>
                 <ul className="task-list">
-                  {descList.map((text) => (
-                    <li key={text}>{text}</li>
+                  {descList.map((text, descIndex) => (
+                    <li key={`${jobKey}-${descIndex}`}>{text}</li>
                   ))}
                 </ul>
               </div>

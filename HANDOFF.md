@@ -15,6 +15,25 @@
 
 ---
 
+## ✅ 2026-11-17 세션 완료 내역 (구조 리팩토링 Step 8~10, 콘텐츠 무변화)
+
+**브랜치:** `refactor/step8-10-1117` (main에 미병합, push 안 함. main에 push하면 바로 라이브 배포되므로 병헌 님 지시 후에만 올린다.)
+
+| Step | 커밋 | 내용 |
+|---|---|---|
+| 준비 | `12dddbd` | `.gitignore`에 `.omc/` 추가 |
+| 8 | `15d3a33` | `Projects.js`의 하드코딩 `featureLabels` 제거, 실제로 쓰던 '담당 역할' 라벨만 `projectUiCopy.coreRole`로 흡수 |
+| 9 | `6442261` | `src/config/sections.js` 신설. 홈 섹션 순서, 번호(01~06), 내비 항목이 `homeSections` 배열 하나에서 나온다 |
+| 10 | `7ddd912` | `translation.json`(ko, en)의 `experience.jobs.*.desc1~3`을 `desc` 배열로 변경, `Experience.js`는 배열 순회 |
+
+**검증:** 테스트 11/11, 빌드, 스모크 5라우트 통과. 홈과 상세 페이지를 ko/en, 데스크톱 라이트/다크, 모바일로 12장 찍어 리팩토링 전후 렌더 HTML이 같음을 확인(스크롤 진행 막대 줄 제외).
+
+**환경 메모:** 이 맥에는 puppeteer용 Chrome이 없다. 스모크와 PDF 스크립트는 `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`를 붙여 실행한다.
+
+**다음 순서(11/17 합의한 전체 계획):** 콘텐츠 최신화(포지셔닝 한 줄 통일, D4D 시간 표기 원자료 대조, 솔버톤 프로젝트 공개 여부, 안심이음 추가, 메인 3개 재선정, 가운뎃점 정리, PDF 재생성) → Step 11 Navbar 훅 분리 → Step 12 CSS 분리 → `data.js` 프로젝트별 파일 분리 → 자산 용량 정리 → 문서 갱신.
+
+---
+
 ## ✅ 2026-07-13 세션 완료 내역 (구조 리팩토링 Step 1~7 — 콘텐츠 무변화)
 
 **배경:** 코드 구조 리팩토링 계획(총 12스텝)을 세우고 승인 순서대로 하나씩 진행. 원칙: **산출물/문구 변화 0**(순수 내부 구조 개선). 매 스텝 `CI=true npx react-scripts test --watchAll=false`(11/11) + `npm run build` + `npm run smoke:build`(5라우트) 통과 후 개별 커밋.
@@ -43,7 +62,7 @@
 
 ---
 
-## 🔧 리팩토링 로드맵 — 다음 세션은 **Step 8부터** 시작
+## 🔧 리팩토링 로드맵 — Step 8~10은 11/17 완료, 남은 것은 **Step 11, 12**
 
 > 이 파일만 읽고 바로 이어가면 됨. 매 스텝 원칙: 콘텐츠 무변화 · test(11/11)+build+smoke 통과 후 개별 커밋 · 사용자 승인받아 하나씩.
 
