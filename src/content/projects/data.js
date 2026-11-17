@@ -480,8 +480,8 @@ export const portfolioProjects = [
       en: "Solo | Problem framing, service planning",
     },
     tags: {
-      ko: ["AI 서비스 기획", "부모님 세대", "사기 문자 판별", "Life AX"],
-      en: ["AI service planning", "Parents", "Scam-text detection", "Life AX"],
+      ko: ["프롬프트 설계", "Claude", "사기 문자 판별", "Life AX"],
+      en: ["Prompt design", "Claude", "Scam-text detection", "Life AX"],
     },
     highlights: {
       ko: [
