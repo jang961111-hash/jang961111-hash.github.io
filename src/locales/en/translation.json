@@ -548,6 +548,9 @@
     "usedIn": "Used in"
   },
   "terminal": {
+    "labs": "reading lab notes",
+    "awards": "checking awards and competitions",
+    "training": "checking training and credentials",
     "hero": "loading portfolio",
     "manifesto": "reading the approach",
     "projects": "browsing projects",
@@ -561,5 +564,10 @@
     "menu": "Menu",
     "scroll": "Scroll down",
     "homeAria": "Back to top"
+  },
+  "records": {
+      "labs": "Lab notes",
+      "awards": "Awards and competitions",
+      "training": "Training and credentials"
   }
 }

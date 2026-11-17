@@ -548,6 +548,9 @@
     "usedIn": "사용 프로젝트"
   },
   "terminal": {
+    "labs": "실습 노트 읽는 중",
+    "awards": "수상과 대회 확인 중",
+    "training": "교육과 자격 확인 중",
     "hero": "포트폴리오 불러오는 중",
     "manifesto": "일하는 방식 읽는 중",
     "projects": "프로젝트 둘러보는 중",
@@ -561,5 +564,10 @@
     "menu": "메뉴",
     "scroll": "아래로 스크롤",
     "homeAria": "맨 위로 이동"
+  },
+  "records": {
+      "labs": "실습 노트",
+      "awards": "수상과 대회",
+      "training": "교육과 자격"
   }
 }

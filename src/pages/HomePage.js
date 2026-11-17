@@ -1,3 +1,4 @@
+import { Competitions, LabNotes, Training } from "../components/sections/Records";
 import React, { useEffect } from "react";
 import Hero from "../components/sections/Hero";
 import Manifesto from "../components/sections/Manifesto";
@@ -14,7 +15,10 @@ import { homeSections } from "../config/sections";
 const sectionComponents = {
   manifesto: Manifesto,
   projects: Projects,
+  labs: LabNotes,
   stack: TechStack,
+  awards: Competitions,
+  training: Training,
   experience: Experience,
 };
 
