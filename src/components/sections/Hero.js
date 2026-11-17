@@ -1,54 +1,60 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import profilePhoto from "../../assets/images/id-photo.webp";
-import profilePhotoJpg from "../../assets/images/id-photo.jpg";
+import HeroStage from "../hero/HeroStage";
 import { getResumeAsset } from "../../utils/resumeAssets";
+import { scrollToSectionId } from "../../utils/scrollTarget";
+import { renderLines } from "../../utils/emphasis";
 import "./Hero.css";
 
-import { renderLines } from "../../utils/emphasis";
-const Hero = () => {
+const Hero = ({ theme }) => {
   const { t, i18n } = useTranslation();
   const resume = getResumeAsset(i18n.language);
-  const proofKeys = ["product", "ai", "execution"];
-  const strengthKeys = ["platform", "decision", "tech", "ai"];
-  const portraitAlt =
-    i18n.language === "ko"
-      ? `${t("hero.name")} 프로필 사진`
-      : `Profile photo of ${t("hero.name")}`;
+  const evidence = t("hero.evidence", { returnObjects: true });
+  const evidenceList = Array.isArray(evidence) ? evidence : [];
+
+  const jumpTo = (event, id) => {
+    event.preventDefault();
+    scrollToSectionId(id);
+  };
 
   return (
-    <section id="hero" className="hero-section">
-      <div className="hero-grid">
-        <div className="hero-content">
-          <p className="hero-overline mono">{t("hero.portfolioLabel")}</p>
+    <section id="hero" className="hero">
+      <HeroStage theme={theme} />
+      <div className="hero-shade" aria-hidden="true" />
 
-          <div className="hero-heading">
-            <p className="hero-greeting">{t("hero.greeting")}</p>
-            <h1 className="hero-title">{t("hero.name")}</h1>
-          </div>
+      <div className="wrap hero-meta mono" aria-hidden="true">
+        <span>{t("hero.portfolioLabel")}</span>
+        <span className="hero-meta-scroll">{t("navExtra.scroll")} ↓</span>
+      </div>
 
-          <h2 className="hero-subtitle">{renderLines(t("hero.subtitle"))}</h2>
-          <p className="hero-description">{renderLines(t("hero.mission"))}</p>
-
-          <div className="hero-proof-list">
-            {proofKeys.map((key, index) => (
-              <div key={key} className="hero-proof-item">
-                <span className="hero-proof-index mono">{`0${index + 1}`}</span>
-                <p>{renderLines(t(`hero.proofItems.${key}`))}</p>
-              </div>
-            ))}
-          </div>
-
+      <div className="wrap hero-inner">
+        <div className="hero-main">
+          <p className="label-box hero-role">
+            <span className="label-dot" aria-hidden="true" />
+            <span>{t("hero.title")}</span>
+          </p>
+          <h1 className={`hero-name ${i18n.language === "en" ? "is-long" : ""}`}>
+            {t("hero.name")}
+          </h1>
+          <p className="frame hero-subtitle">{renderLines(t("hero.subtitle"))}</p>
           <div className="hero-cta">
-            <a href="#projects" className="cta-button primary">
-              {t("hero.viewProjects")}
+            <a
+              href="#projects"
+              className="btn btn-primary"
+              onClick={(event) => jumpTo(event, "projects")}
+            >
+              {t("hero.viewProjects")} <span className="arrow" aria-hidden="true">→</span>
             </a>
-            <a href="#contact" className="cta-button secondary">
+            <a
+              href="#contact"
+              className="btn"
+              onClick={(event) => jumpTo(event, "contact")}
+            >
               {t("hero.getInTouch")}
             </a>
             <a
               href={resume.href}
-              className="cta-button ghost"
+              className="btn mono hero-pdf"
               target="_blank"
               rel="noopener noreferrer"
               download={resume.downloadName}
@@ -59,35 +65,19 @@ const Hero = () => {
           </div>
         </div>
 
-        <aside className="hero-showcase structural-card">
-          <div className="hero-portrait-shell">
-            <div className="hero-portrait-frame">
-              <picture>
-                <source srcSet={profilePhoto} type="image/webp" />
-                <source srcSet={profilePhotoJpg} type="image/jpeg" />
-                <img
-                  className="hero-portrait"
-                  src={profilePhotoJpg}
-                  alt={portraitAlt}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              </picture>
-            </div>
-          </div>
-
-          <div className="hero-showcase-copy">
-            <p className="hero-showcase-label">{t("hero.focusLabel")}</p>
-            <div className="hero-strength-list">
-              {strengthKeys.map((key) => (
-                <span key={key} className="hero-strength-chip">
-                  {t(`identity.skills.${key}`)}
-                </span>
+        {evidenceList.length > 0 && (
+          <aside className="frame hero-evidence">
+            <p className="kicker">{t("hero.evidenceLabel")}</p>
+            <ol>
+              {evidenceList.map((item, index) => (
+                <li key={item}>
+                  <span className="mono hero-evidence-index">{`0${index + 1}`}</span>
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
-          </div>
-        </aside>
+            </ol>
+          </aside>
+        )}
       </div>
     </section>
   );
