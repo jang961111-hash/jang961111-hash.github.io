@@ -222,12 +222,12 @@ export const portfolioProjects = [
       en: "Incident-Response Agent Ablation | Switching Each Improvement On and Off to Show Statistically Which One Worked",
     },
     summary: {
-      ko: "강사 제공 장애 대응 에이전트에 RAG, Judge, 비용 최적화를 설정 스위치로 붙이고 7개 구성으로 비교했습니다. 처음 보는 시험 문제 36개에서 **필수 매뉴얼 누락이 56%에서 9%로** 줄었고, 채점하는 AI가 후한지도 따로 쟀습니다.",
-      en: "I added RAG, a judge, and cost optimizations to an instructor-provided incident-response agent as config switches and compared seven configurations. On 36 held-out questions, **missed required runbooks fell from 56% to 9%**, and I separately measured how lenient the grading AI was.",
+      ko: "강사 제공 장애 대응 에이전트에 RAG, Judge, 비용 최적화를 설정 스위치로 붙이고 7개 구성으로 비교했습니다. 처음 보는 시험 문제 36개 중 정답 매뉴얼이 있는 질문에서 **필수 매뉴얼 누락이 56%에서 9%로** 줄었고, 채점하는 AI가 후한지도 따로 쟀습니다.",
+      en: "I added RAG, a judge, and cost optimizations to an instructor-provided incident-response agent as config switches and compared seven configurations. Among the 36 held-out questions that have a matching runbook, **missed required runbooks fell from 56% to 9%**, and I separately measured how lenient the grading AI was.",
     },
     context: {
-      ko: "SKALA 4기 AI Agent Mini-Project 선택과제 1(Base AI Agent 개선), 개인 과제\n원본 에이전트(LangGraph, MCP)는 강사 제공 코드, 원본 노드는 그대로 두고 설정으로 교체\nAI 도구와 함께 진행했고 문서의 수치는 결과 파일과 자동 대조\n모의 모니터링과 직접 만든 합성 질문 60개 기준이며 운영 환경 적용은 아님",
-      en: "SKALA Cohort 4 AI Agent Mini-Project, optional task 1 (improving the base agent), individual assignment\nThe original agent (LangGraph, MCP) was instructor-provided; its nodes were left intact and swapped by config\nI worked with AI tools, and every number in the write-up is checked automatically against the result files\nMeasured on mock monitoring data and 60 synthetic questions I wrote; not a production deployment",
+      ko: "SKALA 4기 AI Agent Mini-Project 선택과제 1(Base AI Agent 개선), 개인 과제\n원본 에이전트(LangGraph, MCP)는 강사 제공 코드, 원본 노드는 그대로 두고 설정으로 교체\nAI 도구와 함께 진행했고 문서의 수치는 결과 파일과 자동 대조\n모의 모니터링과 직접 만든 합성 질문 60개 기준이며 운영 환경 적용은 아님\n한계: 다른 AI가 쓴 외부 문항 15개에서는 누락이 58%로 더 많았음",
+      en: "SKALA Cohort 4 AI Agent Mini-Project, optional task 1 (improving the base agent), individual assignment\nThe original agent (LangGraph, MCP) was instructor-provided; its nodes were left intact and swapped by config\nI worked with AI tools, and every number in the write-up is checked automatically against the result files\nMeasured on mock monitoring data and 60 synthetic questions I wrote; not a production deployment\nLimit: on 15 external questions written by another AI, the miss rate was higher at 58%",
     },
     story: {
       problem: {
@@ -261,7 +261,8 @@ export const portfolioProjects = [
         "v2 보완(최소 유사도 미만이면 넣지 않음): 무관 매뉴얼 혼입 -24%p (95% CI -41 ~ -10)",
         "파이프라인 Judge는 품질 향상이 확인되지 않아 그대로 보고(질의당 +1.8 ~ 2.7초)",
         "평가 Judge는 다른 AI가 불합격으로 본 답 29개 중 17개(59%)를 합격 처리, 결론은 코드로 센 지표로 도출",
-        "같은 부하로 다시 재자 \"캐스케이드가 지연도 줄였다\"는 결론이 사라져 보고서에서 정정",
+        "같은 부하로 다시 쟀더니 \"캐스케이드가 지연도 줄였다\"는 결론이 사라져 보고서에서 정정",
+        "대가: 최종 구성은 원본보다 질의당 +2.5초(p95 8.6초 → 12.1초)",
         "오프라인 테스트 230개와 CI(테스트, 수치 재생성 일치, 문서 수치 대조)",
       ],
       en: [
@@ -270,6 +271,7 @@ export const portfolioProjects = [
         "The pipeline judge showed no confirmed quality gain, and I reported it as such (+1.8 to 2.7 s per query)",
         "The evaluation judge passed 17 of 29 answers (59%) that a different AI had failed, so conclusions rest on code-counted metrics",
         "Re-measuring under equal load removed the finding that the cascade also cut latency, and I corrected the report",
+        "Trade-off: the final configuration is 2.5 s slower per query than the original (p95 8.6 s → 12.1 s)",
         "230 offline tests and CI (tests, regenerated-number match, document-number check)",
       ],
     },
@@ -287,8 +289,8 @@ export const portfolioProjects = [
       {
         value: "56% → 9%",
         label: {
-          ko: "필수 매뉴얼 누락률 (holdout 36문제 x 3회 평균)",
-          en: "Missed required runbooks (mean of 3 runs on 36 holdout questions)",
+          ko: "필수 매뉴얼 누락률 (holdout, 정답 매뉴얼이 있는 질문 x 3회 평균)",
+          en: "Missed required runbooks (holdout questions that have a matching runbook, mean of 3 runs)",
         },
       },
       {
@@ -323,8 +325,8 @@ export const portfolioProjects = [
         en: "No confirmed quality gain; its use turned up somewhere else.",
       },
       content: {
-        ko: "답을 내보내기 전에 검사하는 파이프라인 Judge를 붙이면 품질이 오를 것으로 예상\n같은 질문끼리 짝지어 비교하니 누락, 혼입, 핵심 문구 포함 모두 차이가 신뢰구간 안, 시간과 비용만 증가\n숨기지 않고 조작 테스트로 쓸모를 다시 측정: 답 29개에 일부러 틀린 내용 삽입\n근거에 없는 수치는 코드 검증이 28/28, Judge가 16/28 탐지\n없는 시스템명은 코드 검증이 0/29, Judge가 21/29 탐지(멀쩡한 답 오탐 6/29)\n결론: 수치는 코드로 먼저 거르고, 코드로 세기 어려운 시스템명과 절차에 Judge를 쓰는 **상호 보완 구조**",
-        en: "I expected a pipeline judge that checks answers before release to raise quality. Paired by question, the differences in misses, irrelevant citations, and key-phrase coverage all fell inside the confidence interval; only time and cost rose. Rather than hide it, I measured its use again with a tamper test, inserting wrong content into 29 answers. For numbers absent from the evidence, the code check caught 28/28 and the judge 16/28. For made-up system names, the code check caught 0/29 and the judge 21/29 (with 6/29 false alarms on clean answers). The conclusion was a **complementary setup**: filter numbers with code first, and use the judge for system names and procedures that code cannot count.",
+        ko: "답을 내보내기 전에 검사하는 파이프라인 Judge를 붙이면 품질이 오를 것으로 예상\n같은 질문끼리 짝지어 비교하니 누락, 혼입, 핵심 문구 포함 모두 신뢰구간이 0을 포함해 차이 미확인, 시간과 비용만 증가\n숨기지 않고 조작 테스트로 쓸모를 다시 측정: 답 29개에 일부러 틀린 내용 삽입\n근거에 없는 수치는 코드 검증이 28/28, Judge가 16/28 탐지\n없는 시스템명은 코드 검증이 0/29, Judge가 21/29 탐지(멀쩡한 답 오탐 6/29)\n결론: 수치는 코드로 먼저 거르고, 코드로 세기 어려운 시스템명과 절차에 Judge를 쓰는 **상호 보완 구조**",
+        en: "I expected a pipeline judge that checks answers before release to raise quality. Paired by question, the confidence intervals for misses, irrelevant citations, and key-phrase coverage all included zero, so no difference was confirmed; only time and cost rose. Rather than hide it, I measured its use again with a tamper test, inserting wrong content into 29 answers. For numbers absent from the evidence, the code check caught 28/28 and the judge 16/28. For made-up system names, the code check caught 0/29 and the judge 21/29 (with 6/29 false alarms on clean answers). The conclusion was a **complementary setup**: filter numbers with code first, and use the judge for system names and procedures that code cannot count.",
       },
     },
     heroImage: "/projects/incident-agent-ablation/fig6_contrib.webp",
