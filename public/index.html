@@ -31,7 +31,7 @@
     <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon-192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fcfaf6" />
+    <meta name="theme-color" content="#fcfcfd" />
     <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
@@ -124,6 +124,18 @@
           );
         }
       })(window.location);
+    </script>
+    <script>
+      (function (root) {
+        // Reveal styles start hidden only when JS runs; a saved theme applies before paint.
+        root.classList.add("js");
+        try {
+          var savedTheme = window.localStorage.getItem("portfolio-theme");
+          if (savedTheme === "light" || savedTheme === "dark") {
+            root.setAttribute("data-theme", savedTheme);
+          }
+        } catch (error) {}
+      })(document.documentElement);
     </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
