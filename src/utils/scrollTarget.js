@@ -35,13 +35,16 @@ export const scrollToSectionId = (targetId) => {
     return false;
   }
 
-  const navHeight = 92;
+  const navHeight = 80;
   const elementPosition = targetElement.getBoundingClientRect().top;
   const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+  const prefersReducedMotion =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   window.scrollTo({
     top: offsetPosition,
-    behavior: "smooth",
+    behavior: prefersReducedMotion ? "auto" : "smooth",
   });
 
   return true;
