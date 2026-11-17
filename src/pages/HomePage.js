@@ -9,15 +9,25 @@ import AppLayout from "../components/layout/AppLayout";
 import { useHomeScrollRestore, useLocaleLanguage } from "../hooks/useRouteEffects";
 import { applyPageMetadata } from "../utils/pageMetadata";
 import { pageMetadata } from "../metadata";
+import { homeSections } from "../config/sections";
+
+// Contact is rendered by AppLayout, so it has no entry here.
+const sectionComponents = {
+  about: About,
+  projects: Projects,
+  "ai-cases": AiCases,
+  competencies: Competencies,
+  experience: Experience,
+};
 
 const HomeContent = () => (
   <>
     <Hero />
-    <About />
-    <Projects />
-    <AiCases />
-    <Competencies />
-    <Experience />
+    {homeSections.map(({ id }) => {
+      const SectionComponent = sectionComponents[id];
+
+      return SectionComponent ? <SectionComponent key={id} /> : null;
+    })}
   </>
 );
 

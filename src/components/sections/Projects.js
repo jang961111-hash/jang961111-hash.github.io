@@ -7,6 +7,7 @@ import {
 } from "../../content/projects";
 import SectionShell from "../layout/SectionShell";
 import useLang from "../../hooks/useLang";
+import { getSectionIndex } from "../../config/sections";
 
 const Projects = () => {
   const lang = useLang();
@@ -17,7 +18,7 @@ const Projects = () => {
   return (
     <SectionShell
       id="projects"
-      index="02"
+      index={getSectionIndex("projects")}
       title={copy.sectionTitle}
       subtitle={copy.sectionIntro}
     >

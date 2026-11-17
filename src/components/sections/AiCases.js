@@ -5,6 +5,7 @@ import SectionShell from "../layout/SectionShell";
 import { projectUiCopy } from "../../content/projects";
 import { getProjectPath } from "../../utils/localeRouting";
 import useLang from "../../hooks/useLang";
+import { getSectionIndex } from "../../config/sections";
 
 const cases = [
   { key: "questionFlow", slug: "dailylog" },
@@ -22,7 +23,7 @@ const AiCases = () => {
   return (
     <SectionShell
       id="ai-cases"
-      index="03"
+      index={getSectionIndex("ai-cases")}
       title={t("aiCases.title")}
       subtitle={t("aiCases.subtitle")}
     >

@@ -1,12 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import SectionShell from "../layout/SectionShell";
+import { getSectionIndex } from "../../config/sections";
 
 const About = () => {
   const { t } = useTranslation();
 
   return (
-    <SectionShell id="about" index="01" title={t("identity.title")}>
+    <SectionShell id="about" index={getSectionIndex("about")} title={t("identity.title")}>
       <div className="about-content">
         <div className="about-text">
           <p>{t("identity.text1")}</p>

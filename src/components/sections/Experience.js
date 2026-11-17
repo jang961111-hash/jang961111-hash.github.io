@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import SectionShell from "../layout/SectionShell";
+import { getSectionIndex } from "../../config/sections";
 
 const Experience = () => {
   const { t } = useTranslation();
@@ -17,7 +18,7 @@ const Experience = () => {
   ];
 
   return (
-    <SectionShell id="experience" index="05" title={t("experience.title")}>
+    <SectionShell id="experience" index={getSectionIndex("experience")} title={t("experience.title")}>
       <div className="timeline">
         {experiences.map((jobKey) => {
           // Count number of descriptions dynamically if needed,

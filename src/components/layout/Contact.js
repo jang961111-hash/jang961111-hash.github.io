@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import { getResumeAsset } from '../../utils/resumeAssets';
+import { getSectionIndex } from '../../config/sections';
 import './Contact.css';
 
 const Contact = () => {
@@ -33,7 +34,7 @@ const Contact = () => {
         ref={elementRef} 
         className={`contact-container reveal-base ${isVisible ? 'reveal-visible' : ''}`}
       >
-        <p className="contact-overline"><span className="text-highlight">06.</span> {t('contact.subtitle')}</p>
+        <p className="contact-overline"><span className="text-highlight">{getSectionIndex("contact")}.</span> {t('contact.subtitle')}</p>
         <h2 className="contact-title">{t('contact.title')}</h2>
         <p className="contact-description">
           {t('contact.description')}

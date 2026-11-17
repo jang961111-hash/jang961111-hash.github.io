@@ -9,16 +9,10 @@ import {
 } from "../../utils/localeRouting";
 import { queueScrollTarget, scrollToSectionId } from "../../utils/scrollTarget";
 import { getResumeAsset } from "../../utils/resumeAssets";
+import { homeSections } from "../../config/sections";
 import "./Navbar.css";
 
-const navItems = [
-  { id: "about", labelKey: "nav.identity" },
-  { id: "projects", labelKey: "nav.projects" },
-  { id: "ai-cases", labelKey: "nav.aiCases" },
-  { id: "competencies", labelKey: "nav.competencies" },
-  { id: "experience", labelKey: "nav.experience" },
-  { id: "contact", labelKey: "nav.contact" },
-];
+const navItems = homeSections;
 const navSectionIds = navItems.map(({ id }) => id);
 
 const DESKTOP_BREAKPOINT = 1280;

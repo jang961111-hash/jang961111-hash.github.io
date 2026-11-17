@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionShell from '../layout/SectionShell';
+import { getSectionIndex } from '../../config/sections';
 import './Competencies.css';
 
 const competencyGroups = [
@@ -30,7 +31,7 @@ const Competencies = () => {
   const { t } = useTranslation();
   
   return (
-    <SectionShell id="competencies" index="04" title={t('competencies.title')}>
+    <SectionShell id="competencies" index={getSectionIndex("competencies")} title={t('competencies.title')}>
       <p className="competencies-subtitle">{t('competencies.subtitle')}</p>
       
       <div className="competencies-grid">
