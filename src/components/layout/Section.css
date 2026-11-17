@@ -235,6 +235,8 @@ main > .section:last-child {
 }
 
 .stack-projects a {
+  display: inline-block;
+  padding-block: 5px;
   color: var(--text-2);
   text-decoration: underline;
   text-decoration-color: var(--line-strong);

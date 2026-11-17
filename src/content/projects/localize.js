@@ -52,6 +52,7 @@ export const getLocalizedProject = (project, lang = "ko") => {
       if (m.label && typeof m.label === "object") {
         return {
           ...m,
+          value: localizeValue(m.value, lang),
           label: localizeValue(m.label, lang),
         };
       }

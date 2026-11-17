@@ -5,8 +5,8 @@ export const portfolioProjects = [
     status: "in_progress",
     sortDate: "2026-11-16",
     period: {
-      ko: "2026.09 - 진행 중 (최종결과보고 2026.11.16 제출)",
-      en: "Sep 2026 - ongoing (final report submitted Nov 16, 2026)",
+      ko: "2026.09 - 진행 중",
+      en: "Sep 2026 - ongoing",
     },
     category: {
       ko: "국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 선정 과제",
@@ -93,7 +93,7 @@ export const portfolioProjects = [
         },
       },
       {
-        value: "20명",
+        value: { ko: "20명", en: "20" },
         label: {
           ko: "어르신 단체 실증 (2026.11.13)",
           en: "Seniors in the field session (Nov 13, 2026)",
@@ -115,7 +115,7 @@ export const portfolioProjects = [
       },
     },
     heroImage: "/projects/ansim-ieum/about-desktop.webp",
-    cardImage: "/projects/ansim-ieum/about-desktop.webp",
+    cardImage: "/projects/ansim-ieum/card-screens.webp",
     screenshots: [
       {
         src: "/projects/ansim-ieum/train-mobile.webp",
@@ -460,14 +460,14 @@ export const portfolioProjects = [
         },
       },
       {
-        value: "6단계",
+        value: { ko: "6단계", en: "6 steps" },
         label: {
           ko: "판매자측 결정론 검증",
           en: "Merchant-side deterministic checks",
         },
       },
       {
-        value: "5종",
+        value: { ko: "5종", en: "5 types" },
         label: {
           ko: "차단 검증된 공격·오류",
           en: "Attack/error types verified as blocked",
@@ -605,7 +605,7 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: "본선",
+        value: { ko: "본선", en: "Finals" },
         label: {
           ko: "서류 심사 통과 · 본선 진출",
           en: "Passed screening · advanced to finals",
@@ -638,7 +638,7 @@ export const portfolioProjects = [
   },
   {
     slug: "skt-prompt-ansimcall",
-    stack: ["프롬프트 설계", "Claude"],
+    stack: ["Claude", "Prompt design"],
     featured: false,
     status: "completed",
     sortDate: "2026-08-20",
@@ -710,17 +710,27 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: "최우수상",
+        value: { ko: "최우수상", en: "Top prize" },
         label: {
           ko: "Life AX 부문 (개인 수상)",
           en: "Top prize, Life AX (individual)",
         },
       },
       {
-        value: "47분",
+        value: { ko: "47분", en: "47 min" },
         label: {
           ko: "문제 정의의 출발점",
           en: "Where the problem definition began",
+        },
+      },
+    ],
+    cardImage: "/projects/skt-prompt/card-award.webp",
+    screenshots: [
+      {
+        src: "/projects/skt-prompt/card-award.webp",
+        alt: {
+          ko: "수상 발표 포스터 중 Life AX 부문 최우수상 부분 (출처: SKT 뉴스룸)",
+          en: "Life AX top-prize section of the award announcement poster (source: SKT Newsroom)",
         },
       },
     ],
@@ -1518,6 +1528,7 @@ export const portfolioProjects = [
       ],
     },
     heroImage: "/projects/dailylog/award-3rd-place.jpg",
+    cardImage: "/projects/dailylog/card-app-screens.webp",
     media: {
       presentationHref: "/projects/dailylog/dailylog-final-presentation.pptx",
       title: {

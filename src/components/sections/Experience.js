@@ -7,11 +7,11 @@ const experienceKeys = [
   "skalaTraining",
   "ssafyTraining",
   "projectPractice",
-  "philosophy",
-  "globalLeadership",
-  "militaryCommunication",
   "customerExperience",
   "salesField",
+  "philosophy",
+  "militaryCommunication",
+  "globalLeadership",
 ];
 
 const Experience = () => {

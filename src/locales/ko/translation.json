@@ -368,7 +368,7 @@
     "title": "Selected Experience",
     "jobs": {
       "skalaTraining": {
-        "title": "AI Training & Team Projects",
+        "title": "AI 교육과 팀 프로젝트",
         "company": "SKALA (SK AI Leader Academy) 4기",
         "period": "2026 - 재학 중",
         "desc": [
@@ -377,8 +377,8 @@
         ]
       },
       "ssafyTraining": {
-        "title": "AI/SW Training & Product Projects",
-        "company": "Samsung SW·AI Academy For Youth, SSAFY",
+        "title": "AI와 SW 교육, 서비스 프로젝트",
+        "company": "삼성청년SW·AI아카데미(SSAFY) 14기",
         "period": "2025.07 - 2026.06",
         "desc": [
           "Python, SQL, Web, AI, Data를 바탕으로 서비스 개발과 AI/SW 기술을 배웠습니다(1,628시간, 2026년 6월 수료).",
@@ -387,7 +387,7 @@
         ]
       },
       "projectPractice": {
-        "title": "Core Project Practice",
+        "title": "주요 프로젝트",
         "company": "DailyLog / Loggy / Promtree",
         "period": "2026.01 - 2026.05",
         "desc": [
@@ -397,8 +397,8 @@
         ]
       },
       "customerExperience": {
-        "title": "Customer Experience Operation",
-        "company": "Charancha / Jaguar Land Rover Gangdong Service Center",
+        "title": "서비스센터 현장 운영",
+        "company": "차란차, 재규어랜드로버 강동서비스센터",
         "period": "2022.12 - 2024.01",
         "desc": [
           "재규어랜드로버 강동서비스센터에서 발렛 운영과 고객 응대를 담당했습니다.",
@@ -407,8 +407,8 @@
         ]
       },
       "salesField": {
-        "title": "Sales & Field Operation",
-        "company": "Yeyoung Design",
+        "title": "영업과 현장 시공 보조",
+        "company": "예영디자인",
         "period": "2022.08 - 2022.11",
         "desc": [
           "인테리어 필름 영업과 고객 상담을 담당했습니다.",
@@ -417,8 +417,8 @@
         ]
       },
       "militaryCommunication": {
-        "title": "Military Service",
-        "company": "Republic of Korea Marine Corps",
+        "title": "군 복무",
+        "company": "대한민국 해병대",
         "period": "2016.12 - 2018.09",
         "desc": [
           "해병대에서 보병으로 복무했습니다.",
@@ -427,8 +427,8 @@
         ]
       },
       "philosophy": {
-        "title": "B.A. in Philosophy",
-        "company": "Chonnam National University",
+        "title": "철학 학사",
+        "company": "전남대학교",
         "period": "2016.03 - 2022.02",
         "desc": [
           "철학을 전공하며 글을 읽고, 질문을 정리하고, 논리적으로 설명하는 훈련을 했습니다.",
@@ -436,8 +436,8 @@
         ]
       },
       "globalLeadership": {
-        "title": "Early Global & Leadership Experience",
-        "company": "Portage High School / Gwangju Goryeo High School",
+        "title": "미국 교환학생",
+        "company": "Portage High School(미국 인디애나), 고려고등학교",
         "period": "2012.01 - 2016.02",
         "desc": [
           "미국 인디애나주 Portage High School에서 1년간 교환학생으로 생활했습니다.",
