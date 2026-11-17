@@ -15,31 +15,39 @@
     "languageKoreanAria": "언어를 한국어로 전환",
     "languageEnglishAria": "언어를 영어로 전환",
     "menuOpenAria": "탐색 메뉴 열기",
-    "menuCloseAria": "탐색 메뉴 닫기"
+    "menuCloseAria": "탐색 메뉴 닫기",
+    "stack": "기술 스택",
+    "history": "이력"
   },
   "hero": {
     "name": "장병헌",
     "greeting": "안녕하세요,",
-    "title": "AI 서비스 개발 · 기획",
+    "title": "AI 서비스 개발과 기획",
     "portfolioLabel": "AI를 서비스로 만드는 사람",
     "focusLabel": "일하는 방식",
-    "subtitle": "LLM · 추천 · 검색을 실제 사용자 경험으로 구현해본 AI 서비스 개발자입니다.",
-    "mission": "철학 전공의 문제 구조화 사고와 SSAFY 1,628시간의 AI/SW 교육을 바탕으로, 문제 정의(기획)부터 React 구현까지 한 사이클을 완주합니다.",
+    "subtitle": "LLM, 추천, 검색을 **사용자가 쓰는 서비스**로 만들어 본 AI 서비스 개발자입니다.",
+    "mission": "철학을 전공하며 문제를 구조로 나눠 보는 법을 익혔고, SSAFY에서 1,628시간 동안 AI와 SW를 배웠습니다. **문제 정의부터 React 구현까지** 이어서 합니다.",
     "proofItems": {
-      "product": "DailyLog에서 PM을 맡아 AI 회고 서비스를 기획했고, SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 했습니다",
-      "ai": "음성 입력(SenseVoice) · 추천(Thompson Sampling) · 벡터 검색(pgvector)을 하나의 회고 흐름으로 설계했습니다",
-      "execution": "Loggy에서 WebSocket 기반 실시간 검토 화면을 React로 직접 구현했습니다"
+      "product": "DailyLog에서 PM을 맡아 AI 회고 서비스를 기획했고, SSAFY 14기 특화프로젝트 발표회에서 **광주1반 3등**을 했습니다",
+      "ai": "음성 입력(SenseVoice), 추천(Thompson Sampling), 벡터 검색(pgvector)을 **하나의 회고 흐름**으로 묶어 설계했습니다",
+      "execution": "Loggy에서 WebSocket 기반 **실시간 검토 화면**을 React로 구현했습니다"
     },
     "viewProjects": "대표 프로젝트 보기",
     "getInTouch": "이야기 나누기",
     "downloadResume": "PORTFOLIO PDF",
-    "downloadResumeAria": "포트폴리오 PDF 다운로드"
+    "downloadResumeAria": "포트폴리오 PDF 다운로드",
+    "evidenceLabel": "수상과 선정",
+    "evidence": [
+      "SKT 모두의 promp.T Life AX 부문 최우수상",
+      "SSAFY 14기 특화프로젝트 발표회 광주1반 3등",
+      "D4D 서울 Oregon UAS Accelerator 특별 트랙 선정"
+    ]
   },
   "identity": {
     "title": "Identity & Product Philosophy",
-    "text1": "철학을 전공하며 사람의 판단, 선택, 신뢰의 조건을 공부했습니다. 이 경험은 서비스 기획에서 사용자의 표면적 요구보다 “왜 이 행동을 하는가”, “어디서 이탈하는가”, “어떤 불안을 줄여야 하는가”를 분석하는 강점으로 이어졌습니다. 문제를 깊이 해석하고, 그 해석을 실제 서비스와 시스템으로 구현하는 방향으로 성장하고 있습니다.",
-    "text2": "SSAFY에서 Python, 알고리즘, 웹, AI 기초를 학습하며 기술과 서비스, 사용자 맥락을 연결하는 시야를 넓혔습니다. 기술적 이해는 구현 자랑이 아니라, 제품 기획 단계에서 리스크를 줄이고 팀 간 소통 비용을 낮추는 레버리지라고 믿습니다.",
-    "text3": "\"I treat AI as a layer for better decisions, not as a gimmick.\"\nAI를 단순 자동화 기능이 아니라 사용자가 더 잘 생각하고 결정하도록 돕는 보조 레이어로 봅니다. DailyLog 프로젝트에서는 사용자가 빈 화면 앞에서 멈추는 문제를 AI 질문 흐름으로 해결하고자 했고, 기술 요소를 서비스 가치로 연결하는 경험을 쌓았습니다.",
+    "text1": "철학을 전공하며 사람이 어떻게 판단하고 선택하는지, 무엇을 믿는지 공부했습니다. 그래서 서비스를 기획할 때도 사용자가 말하는 요구보다 **왜 이 행동을 하는지**, 어디서 이탈하는지를 먼저 봅니다. 어떤 불안을 줄여야 하는지도 같이 따집니다. 그렇게 읽어낸 문제를 서비스와 시스템으로 만드는 경험을 쌓고 있습니다.",
+    "text2": "SSAFY에서 Python, 알고리즘, 웹, AI 기초를 배우면서 기술이 서비스와 사용자에게 어떻게 닿는지 보게 됐습니다. 기술을 알면 기획 단계에서 위험을 미리 줄이고 **팀 간 소통 비용**을 낮출 수 있다고 생각합니다.",
+    "text3": "\"I treat AI as a layer for better decisions, not as a gimmick.\"\n저는 AI를 사용자가 더 잘 생각하고 결정하도록 돕는 보조 수단으로 봅니다. DailyLog에서는 사용자가 **빈 화면 앞에서 멈추는 문제**를 AI 질문 흐름으로 풀고자 했습니다.",
     "skills_title": "Core Competencies",
     "skills": {
       "platform": "Platform-Oriented Design",
@@ -52,7 +60,7 @@
       "projects": "프로젝트",
       "awards": "수상",
       "awardsNote": "SKT promp.T 최우수상, SSAFY 특화프로젝트 광주1반 3등, 창업캠프 최우수팀",
-      "hackathons": "해커톤 · 챌린지",
+      "hackathons": "해커톤과 챌린지",
       "training": "삼성 청년 SW·AI 아카데미",
       "trainingValue": "SSAFY 14기"
     }
@@ -155,7 +163,7 @@
   },
   "aiCases": {
     "title": "AI in Action",
-    "subtitle": "AI를 기능 장식이 아니라 문제 해결 도구로 쓴 실제 사례입니다. 각 사례를 문제 → AI 활용 방식 → 결과 순서로 정리했습니다.",
+    "subtitle": "AI를 **문제를 푸는 도구**로 쓴 사례입니다. 사례마다 문제, AI를 쓴 방식, 결과 순서로 정리했습니다.",
     "labels": {
       "problem": "문제",
       "approach": "AI를 쓴 방식",
@@ -166,42 +174,42 @@
         "project": "DailyLog",
         "title": "AI가 먼저 질문하는 회고 흐름",
         "problem": "사용자는 빈 화면 앞에서 무엇을 써야 할지 몰라 기록을 포기했습니다.",
-        "approach": "하루를 Event · Emotion · Cause 슬롯으로 구조화하고, AI가 사용자의 맥락에 맞춰 먼저 질문을 던지도록 프롬프트 흐름을 설계했습니다.",
-        "result": "회고의 진입 장벽을 낮춘 핵심 기능이 되었고, SSAFY 14기 특화프로젝트 발표회 광주1반 3등으로 이어졌습니다."
+        "approach": "하루를 Event, Emotion, Cause 슬롯으로 나누고, AI가 사용자의 맥락에 맞춰 **먼저 질문을 던지도록** 프롬프트 흐름을 설계했습니다.",
+        "result": "회고를 시작하기 쉽게 만든 핵심 기능이 되었고, SSAFY 14기 특화프로젝트 발표회 **광주1반 3등**으로 이어졌습니다."
       },
       "recommendation": {
         "project": "DailyLog",
         "title": "기록을 행동 추천으로 바꾸는 데이터 흐름",
         "problem": "쌓인 기록이 조회용 데이터로 끝나고, 실제 행동 변화로 이어지지 않았습니다.",
-        "approach": "Thompson Sampling으로 추천의 탐색-활용 균형을 잡고, pgvector 벡터 검색으로 과거 회고를 현재 맥락에 소환하는 구조를 설계했습니다.",
-        "result": "'기록 → 이해 → 추천'으로 이어지는 AI 데이터 흐름을 팀과 함께 구현하고 배포했습니다."
+        "approach": "Thompson Sampling으로 추천의 탐색과 활용 균형을 잡고, pgvector 벡터 검색으로 **과거 회고를 지금 맥락에 불러오는** 구조를 설계했습니다.",
+        "result": "'기록 → 이해 → 추천'으로 이어지는 AI 데이터 흐름을 **팀과 함께 구현하고 배포**했습니다."
       },
       "nlCommand": {
         "project": "SUPPORTY",
         "title": "자연어를 제어 시퀀스로 번역하는 지휘 UX",
-        "problem": "한 명의 오퍼레이터가 지상(UGV)·공중(VTOL) 무인자산을 동시에 통제해야 해서, 조종 스틱과 화면 전환만으로는 인지 과부하가 발생했습니다.",
-        "approach": "\"전진 5초\" 같은 자연어 명령을 실제 제어 시퀀스로 변환하는 지휘 UX를 설계하고, AI가 긴급 요청을 생명 직결도 → 시간 민감도 → 임무 파급효과 순으로 정렬하는 트리아지 큐와 음성 코파일럿을 기획했습니다.",
-        "result": "24시간 개발로 실물 UGV·VTOL 연동 라이브 콘솔을 시연했고, D4D 서울에서 Oregon UAS Accelerator 특별 트랙에 선정되었습니다."
+        "problem": "오퍼레이터 한 명이 지상(UGV)과 공중(VTOL) 무인자산을 동시에 통제해야 했습니다. 조종 스틱과 화면 전환만으로는 인지 과부하가 생겼습니다.",
+        "approach": "\"전진 5초\" 같은 자연어 명령을 **실제 제어 시퀀스로 변환**하는 지휘 UX를 설계했습니다. 긴급 요청은 AI가 생명 직결도, 시간 민감도, 임무 파급효과 순으로 정렬하도록 트리아지 큐를 기획했고, 음성 코파일럿도 함께 기획했습니다.",
+        "result": "24시간 개발로 실물 UGV와 VTOL에 연동한 라이브 콘솔을 시연했고, D4D 서울에서 Oregon UAS Accelerator **특별 트랙에 선정**되었습니다."
       },
       "promptProduct": {
         "project": "Promtree",
         "title": "프롬프트를 실행 가능한 상품으로",
         "problem": "AI 노하우(프롬프트)는 복사-붙여넣기 되는 순간 가치를 잃어 거래가 성립하지 않았습니다.",
-        "approach": "프롬프트를 변수 슬롯 기반 실행 템플릿으로 구조화하고, GA4 이탈 데이터를 근거로 실행 흐름을 개선했습니다.",
-        "result": "'AI 노하우 마켓'이라는 수익모델로 확장해 시장성 · 경쟁 분석까지 연결했습니다."
+        "approach": "프롬프트를 변수 슬롯이 있는 실행 템플릿으로 바꾸고, **GA4 이탈 데이터를 근거로** 실행 흐름을 고쳤습니다.",
+        "result": "'AI 노하우 마켓'이라는 수익모델로 넓혀 시장성과 경쟁 분석까지 진행했습니다."
       },
       "agentPartner": {
         "project": "GenWing",
         "title": "AI 에이전트를 실행 파트너로",
         "problem": "해커톤의 제한 시간 안에 아이디어를 동작하는 실물로 만들어야 했습니다.",
-        "approach": "Genspark OpenClaw 에이전트에 UX 설계와 요구사항을 구조화해 전달하며, 1인 기획·개발 사이클을 완주했습니다.",
-        "result": "AI 네트워킹 PWA 프로토타입을 행사 기간 안에 배포했습니다."
+        "approach": "Genspark OpenClaw 에이전트에 UX 설계와 요구사항을 정리해 넘기면서, **1인 기획과 개발**을 끝까지 진행했습니다.",
+        "result": "AI 네트워킹 PWA 프로토타입을 **행사 기간 안에 배포**했습니다."
       }
     }
   },
   "competencies": {
     "title": "Core Competencies",
-    "subtitle": "Core 3 프로젝트에서 실제로 적용한 기획, AI/Data, Web 협업, 커뮤니케이션 역량을 근거 중심으로 정리했습니다.",
+    "subtitle": "Core 3 프로젝트에서 실제로 쓴 기획, AI/Data, Web 협업, 커뮤니케이션 역량을 프로젝트 근거와 함께 정리했습니다.",
     "groups": {
       "productPlanning": {
         "title": "Product & Planning",
@@ -209,15 +217,15 @@
         "items": {
           "problemFraming": {
             "title": "문제정의",
-            "desc": "기록 실패, 협업 맥락 휘발, AI 노하우 거래 문제를 표면 기능이 아니라 사용자 행동과 서비스 구조의 문제로 재정의했습니다."
+            "desc": "기록 실패, 사라지는 협업 맥락, AI 노하우 거래 문제를 **사용자 행동과 서비스 구조**의 문제로 다시 정의했습니다."
           },
           "userFlow": {
             "title": "User Flow",
-            "desc": "사용자가 빈 화면에서 멈추지 않고 다음 행동으로 이동하도록 질문 흐름, 커밋 흐름, 슬롯 기반 실행 흐름을 설계했습니다."
+            "desc": "사용자가 빈 화면에서 멈추지 않고 **다음 행동으로 넘어가도록** 질문 흐름, 커밋 흐름, 슬롯 기반 실행 흐름을 설계했습니다."
           },
           "serviceStructure": {
             "title": "PRD/정책서와 서비스 구조화",
-            "desc": "핵심 기능, 정보 구조, 역할, 우선순위를 문서와 화면 흐름으로 정리해 팀이 같은 기준으로 구현하도록 도왔습니다."
+            "desc": "핵심 기능, 정보 구조, 역할, 우선순위를 문서와 화면 흐름으로 정리해 **팀이 같은 기준으로 구현**하도록 도왔습니다."
           },
           "marketAnalysis": {
             "title": "시장/경쟁 분석",
@@ -227,15 +235,15 @@
       },
       "aiData": {
         "title": "AI & Data",
-        "subtitle": "AI를 기능 장식이 아니라 사용자의 판단과 행동을 돕는 서비스 레이어로 연결합니다.",
+        "subtitle": "AI가 **사용자의 판단과 행동을 돕도록** 서비스 안에 배치합니다.",
         "items": {
           "llmPrompting": {
             "title": "LLM/Prompt Engineering",
-            "desc": "DailyLog의 질문 흐름과 Promtree의 슬롯 실행 구조처럼, 프롬프트를 사용자 경험과 결과물 품질을 좌우하는 설계 요소로 다뤘습니다."
+            "desc": "DailyLog의 질문 흐름과 Promtree의 슬롯 실행 구조처럼, 프롬프트를 사용자 경험과 **결과물 품질을 좌우하는** 설계 요소로 다뤘습니다."
           },
           "pythonSql": {
             "title": "Python / SQL",
-            "desc": "SSAFY 과정에서 Python, SQL, AI/Data 학습을 이어가며 기획 단계에서 데이터와 구현 제약을 함께 고려하고 있습니다."
+            "desc": "SSAFY 과정에서 Python, SQL, AI/Data를 공부하며 기획 단계에서 **데이터와 구현 제약을 함께** 고려하고 있습니다."
           },
           "dataDecision": {
             "title": "데이터 기반 의사결정",
@@ -243,7 +251,7 @@
           },
           "aiPlanning": {
             "title": "AI 기능 기획",
-            "desc": "AI가 사용자를 대신 판단하기보다 회고, 기록, 실행을 보조하도록 기능 목적과 사용자 통제 지점을 함께 설계했습니다."
+            "desc": "AI가 사용자를 대신 판단하기보다 회고, 기록, 실행을 보조하도록 기능 목적과 **사용자 통제 지점**을 함께 설계했습니다."
           }
         }
       },
@@ -257,21 +265,21 @@
           },
           "gitWorkflow": {
             "title": "Git/GitHub",
-            "desc": "Loggy에서는 Git의 PR/Merge 구조를 협업 의사결정 UX로 차용하며 개발 워크플로우를 서비스 모델로 해석했습니다."
+            "desc": "Loggy에서는 Git의 **PR/Merge 구조를 빌려** 협업 의사결정 UX를 만들었습니다. 개발자의 작업 방식을 일반 협업 서비스에 옮겨 본 경험입니다."
           },
           "collaborationTools": {
             "title": "Notion/Jira/Slack/Mattermost",
-            "desc": "팀 프로젝트에서 일정, 역할, 회의 내용, 발표 자료를 정리하며 협업 도구를 실행 기준을 맞추는 장치로 활용했습니다."
+            "desc": "팀 프로젝트에서 일정, 역할, 회의 내용, 발표 자료를 협업 도구에 정리해 **팀의 실행 기준을 맞췄습니다**."
           },
           "documentation": {
             "title": "협업 문서화",
-            "desc": "기능 정의와 의사결정 근거를 남겨 팀원이 같은 맥락에서 구현하고 발표할 수 있도록 문서화했습니다."
+            "desc": "기능 정의와 **의사결정 근거를 문서로 남겨** 팀원이 같은 맥락에서 구현하고 발표할 수 있게 했습니다."
           }
         }
       },
       "communicationLeadership": {
         "title": "Communication & Leadership",
-        "subtitle": "철학 전공의 논리적 설명력과 SSAFY 팀 프로젝트 경험을 연결한 커뮤니케이션 역량입니다.",
+        "subtitle": "철학을 전공하며 익힌 논리적 설명과 SSAFY 팀 프로젝트 경험에서 나온 커뮤니케이션 역량입니다.",
         "items": {
           "presentation": {
             "title": "발표",
@@ -279,15 +287,15 @@
           },
           "teamAlignment": {
             "title": "팀 조율",
-            "desc": "팀의 아이디어를 하나의 목표와 우선순위로 정리하고, 구현 가능한 범위로 좁히는 역할을 수행했습니다."
+            "desc": "팀의 아이디어를 하나의 목표와 우선순위로 정리하고, **구현 가능한 범위로 좁히는** 일을 맡았습니다."
           },
           "userPerspective": {
             "title": "사용자 관점 설명",
-            "desc": "철학 전공에서 훈련한 질문 정리와 논리적 설명을 바탕으로 사용자가 왜 이탈하고 무엇을 필요로 하는지 설명합니다."
+            "desc": "철학 전공에서 훈련한 질문 정리와 논리적 설명을 바탕으로 사용자가 **왜 이탈하고 무엇을 필요로 하는지** 설명합니다."
           },
           "feedbackLoop": {
             "title": "피드백 반영",
-            "desc": "발표, 회의, 구현 과정에서 나온 피드백을 다음 화면 흐름과 문서 구조에 반영하는 방식으로 프로젝트를 조정했습니다."
+            "desc": "발표, 회의, 구현 과정에서 나온 피드백을 **다음 화면 흐름과 문서**에 반영하며 프로젝트를 조정했습니다."
           }
         }
       }
@@ -373,7 +381,7 @@
         "company": "Samsung SW·AI Academy For Youth, SSAFY",
         "period": "2025.07 - 2026.06",
         "desc": [
-          "Python, SQL, Web, AI, Data를 기반으로 서비스 개발과 AI/SW 기술 이해를 학습하고 있습니다.",
+          "Python, SQL, Web, AI, Data를 바탕으로 서비스 개발과 AI/SW 기술을 배웠습니다(1,628시간, 2026년 6월 수료).",
           "DailyLog, Loggy, Promtree 등 팀 프로젝트에서 문제 정의, 기능 우선순위 정리, 화면 흐름 정리, 발표 자료 구성을 맡았습니다.",
           "광주캠퍼스 반대표(CA)로 공지 전달과 교육생 간 커뮤니케이션을 도왔습니다."
         ]
@@ -383,9 +391,9 @@
         "company": "DailyLog / Loggy / Promtree",
         "period": "2026.01 - 2026.05",
         "desc": [
-          "DailyLog에서는 기록 지속 실패를 입력 부담과 회고 흐름 문제로 정의하고 AI 질문 흐름과 추천 구조로 연결했습니다.",
-          "Loggy에서는 협업 의사결정 맥락이 사라지는 문제를 Git의 PR/Merge 구조를 차용한 기록 흐름으로 정리했습니다.",
-          "Promtree에서는 AI 노하우를 실행 가능한 워크플로우 상품으로 구조화하고 시장성, 수익모델, 경쟁 분석을 함께 검토했습니다."
+          "DailyLog에서는 기록이 이어지지 않는 원인을 **입력 부담과 회고 흐름**에서 찾고, AI 질문 흐름과 추천 구조를 설계했습니다.",
+          "Loggy에서는 협업 의사결정 맥락이 사라지는 문제를 Git의 **PR/Merge 구조를 빌린** 기록 흐름으로 정리했습니다.",
+          "Promtree에서는 AI 노하우를 **실행 가능한 워크플로우 상품**으로 만들고 시장성, 수익모델, 경쟁 분석을 함께 검토했습니다."
         ]
       },
       "customerExperience": {
@@ -395,7 +403,7 @@
         "desc": [
           "재규어랜드로버 강동서비스센터에서 발렛 운영과 고객 응대를 담당했습니다.",
           "차량 동선, 고객 대기, 현장 커뮤니케이션을 관리하며 서비스 현장의 흐름을 경험했습니다.",
-          "고객이 불편을 느끼는 지점이 어디인지 현장에서 직접 관찰할 수 있었습니다."
+          "고객이 **어디서 불편을 느끼는지** 현장에서 지켜봤습니다."
         ]
       },
       "salesField": {
@@ -424,7 +432,7 @@
         "period": "2016.03 - 2022.02",
         "desc": [
           "철학을 전공하며 글을 읽고, 질문을 정리하고, 논리적으로 설명하는 훈련을 했습니다.",
-          "이후 SW·AI 학습과 서비스 기획 경험을 연결해 사람과 기술 사이의 문제에 관심을 갖게 되었습니다."
+          "이후 SW와 AI를 배우고 서비스를 기획하면서 **사람과 기술 사이의 문제**에 관심을 갖게 되었습니다."
         ]
       },
       "globalLeadership": {
@@ -436,7 +444,8 @@
           "고등학교 시절 전교학생회장으로 활동하며 여러 사람 앞에서 말하고 의견을 조율하는 경험을 했습니다."
         ]
       }
-    }
+    },
+    "compactTitle": "이력"
   },
   "awards": {
     "title": "Awards",
@@ -516,8 +525,8 @@
     "linkedin": "LinkedIn",
     "email": "이메일 보내기",
     "resume": "포트폴리오 PDF 보기",
-    "footerBuilt": "React와 AI/SW 포트폴리오 구조를 바탕으로 제작했습니다.",
-    "footerDesigned": "문제정의, 서비스 기획, AI 활용 경험을 보여주기 위해 설계했습니다."
+    "footerBuilt": "React로 만든 AI/SW 포트폴리오입니다.",
+    "footerDesigned": "문제 정의, 서비스 기획, AI 활용 경험을 담았습니다."
   },
   "ask": {
     "title": "Ask my portfolio",
@@ -531,5 +540,9 @@
     "rateLimited": "잠시 후 다시 시도해 주세요 (요청이 너무 많았어요).",
     "error": "일시적인 오류가 발생했어요. 잠시 후 다시 시도하거나 jang961111@gmail.com으로 연락해 주세요.",
     "disclaimer": "Claude API 기반 데모입니다. 답변은 포트폴리오에 공개된 내용만을 근거로 합니다."
+  },
+  "stack": {
+    "title": "기술 스택",
+    "usedIn": "사용 프로젝트"
   }
 }

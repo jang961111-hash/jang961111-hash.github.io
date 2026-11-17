@@ -15,7 +15,9 @@
     "languageKoreanAria": "Switch language to Korean",
     "languageEnglishAria": "Switch language to English",
     "menuOpenAria": "Open navigation menu",
-    "menuCloseAria": "Close navigation menu"
+    "menuCloseAria": "Close navigation menu",
+    "stack": "Tech Stack",
+    "history": "Experience"
   },
   "hero": {
     "name": "Jang Byeong Heon",
@@ -33,7 +35,13 @@
     "viewProjects": "See Flagship Work",
     "getInTouch": "Start a Conversation",
     "downloadResume": "PORTFOLIO PDF",
-    "downloadResumeAria": "Download portfolio PDF"
+    "downloadResumeAria": "Download portfolio PDF",
+    "evidenceLabel": "Awards and selections",
+    "evidence": [
+      "Top prize, Life AX category, SKT promp.T contest",
+      "3rd place, Gwangju Class 1, SSAFY Cohort 14 Specialized Project showcase",
+      "Selected for the Oregon UAS Accelerator special track, D4D Seoul"
+    ]
   },
   "identity": {
     "title": "Identity & Product Philosophy",
@@ -373,7 +381,7 @@
         "company": "Samsung SW·AI Academy For Youth, SSAFY",
         "period": "2025.07 - 2026.06",
         "desc": [
-          "Learning service development and AI/SW technical literacy based on Python, SQL, Web, AI, and Data.",
+          "Studied service development and AI/SW fundamentals across Python, SQL, Web, AI, and Data (1,628 hours, completed June 2026).",
           "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects including DailyLog, Loggy, and Promtree.",
           "Helped share notices and support communication among trainees as the class representative (CA) at the Gwangju campus."
         ]
@@ -436,7 +444,8 @@
           "Served as student council president in high school, gaining experience speaking in front of others and coordinating opinions."
         ]
       }
-    }
+    },
+    "compactTitle": "Experience"
   },
   "awards": {
     "title": "Awards",
@@ -531,5 +540,9 @@
     "rateLimited": "Too many requests — please try again in a bit.",
     "error": "Something went wrong. Please try again later or email jang961111@gmail.com.",
     "disclaimer": "A Claude API demo. Answers are grounded only in this public portfolio."
+  },
+  "stack": {
+    "title": "Tech stack",
+    "usedIn": "Used in"
   }
 }

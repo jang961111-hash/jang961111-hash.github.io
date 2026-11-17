@@ -220,24 +220,24 @@ export const portfolioProjects = [
       en: "ARGUS | An On-Premise AI Agent for Semiconductor Fab Part-Replacement Approval",
     },
     summary: {
-      ko: "반도체 fab 설비의 부품 교체 요청이 들어오면 AI 에이전트가 규격·호환, 법령·조문, 안전서류를 검토해 근거를 붙이고, 승인 여부는 안전관리자가 결정하는 온프레미스 승인 워크플로우 서비스입니다.",
+      ko: "반도체 fab 설비의 부품 교체 요청이 들어오면 AI 에이전트가 규격과 호환, 법령과 조문, 안전서류를 검토해 근거를 붙입니다. **승인 여부는 안전관리자가 결정**하는 온프레미스 승인 워크플로우 서비스입니다.",
       en: "An on-premise approval workflow for semiconductor fab part replacements: AI agents review spec compatibility, applicable regulations, and safety documents and attach the evidence, while the safety manager makes the approval decision.",
     },
     context: {
-      ko: "SKALA(SK AI Leader Academy) 4기 AI 웹 서비스 설계 미니 프로젝트로, 5인 팀이 3일 동안 기획·설계·구현·발표까지 진행했습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사 환경을 전제로 설계했습니다.",
+      ko: "SKALA(SK AI Leader Academy) 4기 AI 웹 서비스 설계 미니 프로젝트로, 5인 팀이 3일 동안 기획, 설계, 구현, 발표까지 진행했습니다. **외부 클라우드 LLM을 쓸 수 없는** 협력사 환경을 전제로 설계했습니다.",
       en: "A SKALA (SK AI Leader Academy) Cohort 4 mini-project in AI web service design: a five-person team went from planning to design, implementation, and presentation in three days, assuming partner-company sites that cannot use external cloud LLMs.",
     },
     story: {
       problem: {
-        ko: "규격 확인·법령 조사·안전 승인에 필요한 정보가 여러 곳에 흩어져 있었고, 대상 협력사는 보안상 외부 클라우드 LLM을 쓸 수 없었습니다.",
+        ko: "규격 확인, 법령 조사, 안전 승인에 필요한 정보가 **여러 곳에 흩어져** 있었고, 대상 협력사는 보안상 외부 클라우드 LLM을 쓸 수 없었습니다.",
         en: "The information needed for spec checks, regulatory review, and safety sign-off is scattered across sources, and the target partner companies cannot use external cloud LLMs for security reasons.",
       },
       insight: {
-        ko: "팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 가운데 두 개가 틀린 것으로 확인되었습니다. 설계 원칙은 '증명은 에이전트가, 판단은 사람이'로 정했습니다 — 에이전트는 근거를 모으고, 승인·거절은 안전관리자가 합니다.",
+        ko: "팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 가운데 두 개가 틀린 것으로 확인되었습니다. 설계 원칙은 **'증명은 에이전트가, 판단은 사람이'**로 정했습니다. 에이전트는 근거를 모으고, 승인과 거절은 안전관리자가 합니다.",
         en: "A phone interview with a practitioner, conducted by a teammate, showed that two of our initial hypotheses were wrong. The guiding principle became 'agents prove, people decide' — agents gather evidence; the safety manager approves or rejects.",
       },
       solution: {
-        ko: "엔지니어가 교체 요청을 등록하면 역할별 AI 에이전트(규격·호환 / 법령·조문 / 안전서류)가 검토 결과를 만들고, 화면은 서버가 지정한 간격으로 진행 상태를 폴링해 보여줍니다. 안전관리자는 AI 결과물을 읽기 전용으로 확인한 뒤 승인 또는 거절(사유 포함)을 결정합니다. AI 공급자 설정은 기본값이 Mock·외부 전송 차단(egress_allowed=false)이며, 외부 전송이 꺼진 상태에서 외부 AI 공급자를 지정하면 서버가 기동을 거부하도록 했습니다.",
+        ko: "엔지니어가 교체 요청을 등록하면 역할별 AI 에이전트(규격과 호환 / 법령과 조문 / 안전서류)가 검토 결과를 만들고, 화면은 서버가 지정한 간격으로 진행 상태를 폴링해 보여줍니다. 안전관리자는 AI 결과물을 읽기 전용으로 확인한 뒤 승인 또는 거절(사유 포함)을 결정합니다. AI 공급자 설정은 기본값이 Mock이고 외부 전송은 차단(egress_allowed=false)되어 있으며, 외부 전송이 꺼진 상태에서 외부 AI 공급자를 지정하면 **서버가 기동을 거부하도록** 했습니다.",
         en: "An engineer files a replacement request; role-specific AI agents (spec & compatibility / regulations / safety documents) produce review results while the UI polls progress at a server-specified interval. The safety manager reviews the AI output read-only, then approves or rejects with a reason. The AI provider config defaults to Mock with external egress disabled (egress_allowed=false), and the server refuses to start if an external AI provider is configured while egress is off.",
       },
     },
@@ -246,7 +246,7 @@ export const portfolioProjects = [
       en: "Five-person team (SKALA Cohort 4)",
     },
     role: {
-      ko: "백엔드 설계 · 최종 발표",
+      ko: "백엔드 설계, 최종 발표",
       en: "Backend design & final presentation",
     },
     tags: {
@@ -255,11 +255,11 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 두 개가 틀린 것으로 확인되었습니다.",
-        "'증명은 에이전트가, 판단은 사람이' 원칙으로 AI 검토 결과는 근거로만 쓰고 승인·거절은 안전관리자가 하도록 설계했습니다.",
-        "외부 전송 차단을 기본값으로 두고, 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 해 온프레미스 전제를 코드로 강제했습니다.",
-        "OpenAPI 명세, DBML 8개 테이블, 41장 발표자료로 설계부터 발표까지 3일 안에 정리했습니다.",
-        "기각된 가설은 발표자료에서 지우지 않고 의도적으로 남겼고, 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
+        "팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 **가설 두 개가 틀린 것**으로 확인되었습니다.",
+        "'증명은 에이전트가, 판단은 사람이' 원칙으로 **AI 검토 결과는 근거로만 쓰고** 승인과 거절은 안전관리자가 하도록 설계했습니다.",
+        "외부 전송 차단을 기본값으로 두고, 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 해 **온프레미스 전제를 코드로 강제**했습니다.",
+        "OpenAPI 명세, DBML 8개 테이블, 41장 발표자료로 **설계부터 발표까지 3일 안에** 정리했습니다.",
+        "기각된 가설은 발표자료에서 지우지 않고 일부러 남겼고, 승인 시간 단축 같은 효과 수치는 **실측이 없어 적지 않았습니다**.",
       ],
       en: [
         "A practitioner phone interview conducted by a teammate showed that two of our initial hypotheses were wrong.",
@@ -271,9 +271,9 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "인터뷰로 가설을 검증하고, 틀린 가설을 지우지 않고 남기는 방식으로 문제를 정의했습니다.",
-        "AI의 역할(근거 수집)과 사람의 역할(판단)을 나누는 경계를 제품 구조와 설정값으로 설계했습니다.",
-        "측정하지 않은 효과는 주장하지 않는다는 원칙으로 결과를 보고했습니다.",
+        "인터뷰로 가설을 검증하고, **틀린 가설을 지우지 않고 남기는** 방식으로 문제를 정의했습니다.",
+        "AI의 역할(근거 수집)과 사람의 역할(판단)을 나누는 경계를 **제품 구조와 설정값**에 넣었습니다.",
+        "**측정하지 않은 효과는 주장하지 않는다**는 원칙으로 결과를 보고했습니다.",
       ],
       en: [
         "Defined the problem by testing hypotheses through an interview and keeping the wrong ones on record instead of erasing them.",
@@ -310,11 +310,11 @@ export const portfolioProjects = [
         en: "Decision Deep Dive | Agents Prove, People Decide",
       },
       summary: {
-        ko: "안전 승인처럼 책임이 따르는 결정에서 AI는 근거를 모으는 역할에 두고, 판단은 사람에게 남긴 설계",
+        ko: "안전 승인처럼 책임이 따르는 결정에서 AI는 근거를 모으는 역할에 두고, **판단은 사람에게 남긴** 설계",
         en: "For accountable decisions like safety approval, AI gathers evidence and the judgment stays with people",
       },
       content: {
-        ko: "부품 교체 승인은 사고가 나면 책임이 따르는 결정입니다. 그래서 AI가 승인까지 대신하는 구조 대신, 규격·법령·안전서류 검토 결과를 근거로 정리해 넘기고 안전관리자가 그 근거를 읽고 승인하거나 사유를 적어 거절하는 구조를 택했습니다. 팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 두 개가 틀린 것으로 확인되었고, 틀린 가설은 발표자료에서 지우지 않고 남겼습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사가 대상이었기 때문에, 외부 전송 차단을 기본값으로 두고 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 설정 단계에서 막았습니다. 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
+        ko: "부품 교체 승인은 사고가 나면 **책임이 따르는 결정**입니다. 그래서 AI가 승인까지 대신하는 구조 대신, 규격, 법령, 안전서류 검토 결과를 근거로 정리해 넘기고 안전관리자가 그 근거를 읽고 승인하거나 사유를 적어 거절하는 구조를 택했습니다. 팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 두 개가 틀린 것으로 확인되었고, 틀린 가설은 발표자료에서 지우지 않고 남겼습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사가 대상이었기 때문에, 외부 전송 차단을 기본값으로 두고 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 설정 단계에서 막았습니다. 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
         en: "Approving a part replacement is a decision someone is accountable for if something goes wrong. Instead of letting AI approve, we had it package spec, regulatory, and safety-document review results as evidence; the safety manager reads that evidence and approves, or rejects with a reason. A practitioner phone interview conducted by a teammate showed that two of our initial hypotheses were wrong, and we kept those wrong hypotheses in the deck. Because the target partner companies cannot use external cloud LLMs, egress is off by default and any external AI provider must be explicitly allowed before the server will start. We did not report effect numbers such as approval-time reduction, because they were never measured.",
       },
     },
@@ -326,13 +326,13 @@ export const portfolioProjects = [
           en: "System Architecture",
         },
         body: {
-          ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신하고, 데이터는 PostgreSQL(Supabase)을 전제로 로컬에서는 SQLite로 검증했습니다. 에이전트는 공통 인터페이스 뒤에 두어 3일 범위에서는 고정 응답(Mock) 구현으로 흐름을 검증하고, 이후 LLM 구현체로 교체할 수 있게 설계했습니다. 엔지니어와 안전관리자 역할에 따라 화면과 권한을 나눴습니다.",
+          ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신하고, 데이터는 PostgreSQL(Supabase)을 전제로 로컬에서는 SQLite로 검증했습니다. 에이전트는 **공통 인터페이스 뒤에 두어** 3일 범위에서는 고정 응답(Mock) 구현으로 흐름을 검증하고, 이후 LLM 구현체로 교체할 수 있게 설계했습니다. 엔지니어와 안전관리자 역할에 따라 화면과 권한을 나눴습니다.",
           en: "A Vue 3 + Vite frontend talks to a FastAPI (Python) backend over REST JSON; data targets PostgreSQL (Supabase) and was verified locally on SQLite. Agents sit behind a common interface — within the three-day scope, fixed-response (Mock) implementations validated the flow, with LLM implementations swappable later. Screens and permissions are split by role: engineer and safety manager.",
         },
       },
     ],
     artifacts: {
-      ko: ["OpenAPI 명세", "DBML ERD", "아키텍처·시퀀스 다이어그램", "발표자료 41장", "화면 캡처"],
+      ko: ["OpenAPI 명세", "DBML ERD", "아키텍처와 시퀀스 다이어그램", "발표자료 41장", "화면 캡처"],
       en: ["OpenAPI spec", "DBML ERD", "Architecture & sequence diagrams", "41-slide deck", "Screen captures"],
     },
     interviewQuestions: {
@@ -352,14 +352,14 @@ export const portfolioProjects = [
       {
         src: "/projects/argus/agent-run-polling.webp",
         alt: {
-          ko: "AI 검증 진행 화면 — 규격·호환, 법령·조문, 안전서류 에이전트의 진행 상태를 폴링으로 표시",
+          ko: "AI 검증 진행 화면: 규격과 호환, 법령과 조문, 안전서류 에이전트의 진행 상태를 폴링으로 표시",
           en: "AI review progress — polling the status of spec, regulation, and safety-document agents",
         },
       },
       {
         src: "/projects/argus/approval-panel.webp",
         alt: {
-          ko: "안전관리자 요청 상세 — AI 결과물(읽기 전용)과 승인·거절 처리 패널",
+          ko: "안전관리자 요청 상세: AI 결과물(읽기 전용)과 승인, 거절 처리 패널",
           en: "Safety manager request detail — read-only AI output and the approve/reject panel",
         },
       },
@@ -394,7 +394,7 @@ export const portfolioProjects = [
       en: "JangBogo | A Merchant Gateway Where AI Agents Go from Quote Verification to Payment",
     },
     summary: {
-      ko: "구매 에이전트가 가맹점 견적을 비교하고 온체인으로 결제하면, 가맹점 쪽 결정론 정책 엔진이 위임장 서명·유효기간·범위·카트·예산·온체인 지불을 6단계로 검증하는 에이전트 커머스 게이트웨이입니다.",
+      ko: "구매 에이전트가 가맹점 견적을 비교하고 온체인으로 결제하면, 가맹점 쪽 결정론 정책 엔진이 위임장 서명, 유효기간, 범위, 카트, 예산, 온체인 지불을 **6단계로 검증**하는 에이전트 커머스 게이트웨이입니다.",
       en: "An agent-commerce gateway: a buyer agent compares merchant quotes and pays on-chain, while a deterministic merchant-side policy engine verifies mandate signature, expiry, scope, cart, budget, and on-chain payment in six steps.",
     },
     context: {
@@ -420,8 +420,8 @@ export const portfolioProjects = [
       en: "Team Sagong-i (402), two members",
     },
     role: {
-      ko: "팀장 · PM/풀스택 | 에이전트 설계, 프론트엔드, GCP 인프라",
-      en: "Team lead · PM/Full-stack | Agent design, frontend, GCP infrastructure",
+      ko: "팀장, PM | 에이전트 설계, 프론트엔드, GCP 인프라",
+      en: "Team lead, PM | Agent design, frontend, GCP infrastructure",
     },
     tags: {
       ko: ["AI 에이전트", "Gemini", "Solana", "x402", "Next.js", "Cloud Run"],
@@ -429,10 +429,10 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "구매자측에 몰린 경쟁 흐름과 달리 판매자측(가맹점 온보딩 + 검증)을 문제로 잡았습니다.",
-        "LLM은 견적 비교·사유 서술에만 쓰고, 예산·범위·만료 집행은 결정론 정책 엔진이 하도록 신뢰 경계를 설계했습니다.",
-        "예산 초과·만료 위임장·범위 밖·과소지불·리플레이 5종을 차단하는 것을 테스트로 확인했습니다 (단위 11 + 통합 20 = 31/31 통과).",
-        "개발 중 에이전트가 원두 조달 지시에 방금 온보딩된 최저가 베이글을 사 온 사고를 계기로 견적 매칭·범위 검증을 재설계했습니다.",
+        "구매자 쪽에 몰린 경쟁 흐름과 달리 **판매자 쪽(가맹점 온보딩과 검증)**을 문제로 잡았습니다.",
+        "LLM은 견적 비교와 사유 서술에만 쓰고, 예산, 범위, 만료 집행은 **결정론 정책 엔진이 하도록** 신뢰 경계를 설계했습니다.",
+        "예산 초과, 만료 위임장, 범위 밖, 과소지불, 리플레이 5종을 차단하는 것을 테스트로 확인했습니다 (단위 11 + 통합 20 = **31/31 통과**).",
+        "개발 중 원두를 조달하라는 지시에 에이전트가 **방금 온보딩된 최저가 베이글**을 사 온 일이 있었습니다. 이 사고를 계기로 견적 매칭과 범위 검증을 다시 설계했습니다.",
       ],
       en: [
         "Unlike competing entries clustered on the buyer side, framed the problem on the merchant side (onboarding + verification).",
@@ -443,8 +443,8 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "AI에게 맡길 일(비교·설명)과 맡기면 안 되는 일(결제 승인)을 구분해 구조로 설계했습니다.",
-        "테스트로 확인된 동작과 데모 범위의 한계(devnet, 고정 환율 시뮬레이션 등)를 README에 구분해 공개했습니다.",
+        "AI에게 맡길 일(비교와 설명)과 **맡기면 안 되는 일(결제 승인)**을 나눠 구조에 반영했습니다.",
+        "테스트로 확인된 동작과 데모 범위의 한계(devnet, 고정 환율 시뮬레이션 등)를 **README에 구분해 공개**했습니다.",
       ],
       en: [
         "Separated what AI should do (comparison, explanation) from what it must not (payment approval), and built that into the architecture.",
@@ -550,7 +550,7 @@ export const portfolioProjects = [
       en: "Mudeungsan A!Job Radar | AI Recommendations Connecting Youth to Local Jobs",
     },
     summary: {
-      ko: "있는 일자리가 청년에게 닿지 않는 문제를 구조화 추출 + 한국어 문장 임베딩 + 생성형 AI 파이프라인으로 풀고자 한 서비스 기획으로, 서류 심사를 통과해 본선에 진출했습니다.",
+      ko: "**있는 일자리가 청년에게 닿지 않는** 문제를 풀고자 한 서비스 기획입니다. 구조화 추출, 한국어 문장 임베딩, 생성형 AI를 잇는 파이프라인으로 설계했고, 서류 심사를 통과해 본선에 진출했습니다.",
       en: "A service plan tackling the gap between existing jobs and the youth who never see them, using a structured-extraction + Korean sentence-embedding + generative-AI pipeline; it passed document screening and advanced to the finals.",
     },
     context: {
@@ -585,9 +585,9 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "청년 고용 문제를 '일자리 부족'이 아니라 '있는 일자리가 닿지 않는 문제'로 다시 정의했습니다.",
-        "심사 관점 → 문항 매핑, 페르소나 2종, 국내외 서비스 13곳 × 7기능 비교표로 기획서를 설계했습니다.",
-        "제출 규격·출처 검증 체크리스트를 운영하며 서류 심사를 통과해 본선에 진출했습니다.",
+        "청년 고용 문제를 '일자리 부족'이 아니라 **'있는 일자리가 닿지 않는 문제'**로 다시 정의했습니다.",
+        "심사 관점을 문항에 매핑하고, 페르소나 2종과 국내외 서비스 **13곳 × 7기능 비교표**를 넣어 기획서를 짰습니다.",
+        "제출 규격과 출처를 검증하는 체크리스트를 운영했고, 서류 심사를 통과해 **본선에 진출**했습니다.",
       ],
       en: [
         "Reframed youth unemployment from 'not enough jobs' to 'existing jobs never reach young people'.",
@@ -597,7 +597,7 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "문제를 통계 근거와 함께 재정의하고, 경쟁 분석으로 차별점을 좁히는 기획 과정을 팀장으로 이끌었습니다.",
+        "문제를 **통계 근거와 함께 재정의**하고, 경쟁 분석으로 차별점을 좁히는 기획 과정을 팀장으로 이끌었습니다.",
       ],
       en: [
         "Led, as team lead, a planning process that reframed the problem with sourced data and narrowed differentiation through competitive analysis.",
@@ -647,7 +647,7 @@ export const portfolioProjects = [
       en: "Aug 2026 (awarded Aug 20, 2026)",
     },
     category: {
-      ko: "SKT 「모두의 promp.T」 공모전 · Life AX 부문",
+      ko: "SKT 「모두의 promp.T」 공모전 Life AX 부문",
       en: "SKT 'promp.T for Everyone' Contest · Life AX",
     },
     title: {
@@ -655,24 +655,24 @@ export const portfolioProjects = [
       en: "SKT promp.T Top Prize Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
     },
     summary: {
-      ko: "부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트로, SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상을 받은 개인 출품작입니다.",
+      ko: "부모님이 **사기 문자를 스스로 알아보시도록** 돕는 훈련 코치 프롬프트입니다. SKT 「모두의 promp.T」 공모전 Life AX 부문에서 최우수상을 받은 개인 출품작입니다.",
       en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own — winner of the top prize (Life AX category) in SKT's 'promp.T for Everyone' contest.",
     },
     context: {
-      ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」입니다. 어머니가 경고 문자 앞에서 47분을 망설인 일에서 출발했습니다.",
-      en: "The entry was titled 'My Mother's Judgment Card Contains Nothing I Taught Her.' It started from the 47 minutes my mother spent hesitating over a warning text.",
+      ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」입니다. 어머니의 질문에 제가 답하기까지 **47분이 비어 있던 일**에서 출발했습니다.",
+      en: "The entry was titled 'My Mother's Judgment Card Contains Nothing I Taught Her.' It started from the 47 minutes that passed before I answered my mother's question about a warning text.",
     },
     story: {
       problem: {
-        ko: "어머니가 경고 문자 사진을 보내며 무시해도 되는지 물으셨고, 제가 답하기까지 47분이 비어 있었습니다. 그동안 어머니는 그 화면을 혼자 보고 계셨습니다. 저는 어머니를 지켜드린 것이 아니라 어머니의 판단을 대신하고 있었고, 대신하는 동안 어머니에게는 아무것도 남지 않았습니다.",
+        ko: "어머니가 경고 문자 사진을 보내며 무시해도 되는지 물으셨고, 제가 답하기까지 47분이 비어 있었습니다. 그동안 어머니는 그 화면을 혼자 보고 계셨습니다. 저는 어머니를 지켜드린 것이 아니라 어머니의 판단을 대신하고 있었고, 대신하는 동안 어머니에게는 **아무것도 남지 않았습니다**.",
         en: "My mother sent me a photo of a warning text asking whether she could ignore it; 47 minutes passed before I replied, and she sat with that screen alone. I realized I hadn't been protecting her — I had been making her judgments for her, and doing so left her with nothing.",
       },
       insight: {
-        ko: "판별기(도구)가 아니라 판별력(사람의 역량)을 키우는 방향으로 설계를 뒤집었습니다 — '판별해주는 AI가 아니라 판별해주지 않는 AI'.",
+        ko: "그래서 설계를 뒤집었습니다. 판별기라는 도구를 만드는 대신 사람의 판별력을 키우기로 했고, 한 줄로 줄이면 **'판별해주지 않는 AI'**입니다.",
         en: "Flipped the design from a judging tool to building the person's own judgment — 'not an AI that judges for you, but one that doesn't.'",
       },
       solution: {
-        ko: "「어머니의 판별 카드」라는 형태로, AI가 답을 대신 내려주기보다 부모님이 문자에서 이상한 곳을 직접 찾도록 묻고, 직접 찾은 것만 카드에 쌓는 훈련 코치 프롬프트를 설계했습니다.",
+        ko: "「어머니의 판별 카드」라는 형태의 훈련 코치 프롬프트를 설계했습니다. AI는 답을 내려주지 않고 부모님이 문자에서 이상한 곳을 찾도록 묻습니다. **직접 찾은 것만 카드에** 쌓입니다.",
         en: "Planned the experience around 'Mother's Judgment Card', a training-coach prompt in which the AI asks parents to find what looks wrong in a text themselves, and only what they found goes onto the card.",
       },
     },
@@ -690,9 +690,9 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상을 개인 명의로 수상했습니다.",
-        "판별기(도구)가 아니라 판별력(사람의 역량)을 키우는 방향으로 설계를 뒤집었습니다.",
-        "가족의 실제 경험(47분의 공백)에서 문제를 정의했습니다.",
+        "개인으로 출품해 SKT 「모두의 promp.T」 공모전 **Life AX 부문 최우수상**을 받았습니다.",
+        "판별기를 만드는 대신 **사람의 판별력을 키우는** 쪽으로 설계를 뒤집었습니다.",
+        "가족이 실제로 겪은 일(**47분의 공백**)에서 문제를 정의했습니다.",
       ],
       en: [
         "Won the top prize in the Life AX category of SKT's 'promp.T for Everyone' contest as an individual.",
@@ -702,7 +702,7 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "AI가 사람의 판단을 대신하는 대신, 사람의 판단력을 키우는 방향으로 AI의 역할을 정의했습니다.",
+        "AI가 사람의 판단을 대신하지 않고 **사람의 판단력을 키우도록** AI의 역할을 정했습니다.",
       ],
       en: [
         "Defined AI's role as strengthening human judgment rather than replacing it.",
@@ -757,7 +757,7 @@ export const portfolioProjects = [
       en: "MultiplierBoard | Binary Multiplication with 1-Layer Attention (KRAFTON AI R&D)",
     },
     summary: {
-      ko: "KRAFTON AI R&D Hackathon 라운드 1에서, 1-layer causal self-attention 제약 아래 6비트×6비트 이진 곱셈을 푸는 두 가지 해법(수학적 구성 해법 · 학습 모델)을 하루 안에 설계·검증해 제출한 개인 과제입니다.",
+      ko: "KRAFTON AI R&D Hackathon 라운드 1의 개인 과제입니다. 1-layer causal self-attention 제약 아래 6비트×6비트 이진 곱셈을 푸는 두 가지 해법(수학적 구성 해법, 학습 모델)을 **하루 안에 설계하고 검증**해 제출했습니다.",
       en: "A solo Round-1 task from the KRAFTON AI R&D Hackathon: designing and verifying two solutions — a constructive-exact model and a learned model — for 6-bit binary multiplication under a 1-layer causal self-attention constraint, within a single day.",
     },
     context: {
@@ -783,7 +783,7 @@ export const portfolioProjects = [
       en: "Solo entry",
     },
     role: {
-      ko: "개인 참가 | 문제 분석, 해법 방향 설계, 생성형 AI 실행·검증 워크플로우 구성, 결과 검증·리포트 작성",
+      ko: "개인 참가 | 문제 분석, 해법 방향 설계, 생성형 AI 실행과 검증 워크플로우 구성, 결과 검증과 리포트 작성",
       en: "Solo | Problem analysis, solution direction, generative-AI execution & verification workflow, result verification and reporting",
     },
     tags: {
@@ -792,10 +792,10 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "1-layer 어텐션 제약에서 곱셈을 '스칼라 코드 + 스플라인 복원' 문제로 환원하는 구성적 해법으로 4,096쌍 전수 검증 100%를 달성했습니다.",
-        "입력 비트를 명시적으로 라우팅하는 희소 어텐션 구조를 설계해 학습 모델(274,898 파라미터)로 정확도 1.0을 재현했습니다.",
-        "구현 → 교차 리뷰 → 최종 검토로 이어지는 생성형 AI 핸드오프 워크플로우를 문서화해 하루 안에 제출 패키지를 완성했습니다.",
-        "고정 프로토콜(200에폭) 대비 실측은 20에폭이라는 한계를 리포트에 그대로 명시했습니다 — 검증 범위와 한계의 정직한 보고.",
+        "1-layer 어텐션 제약에서 곱셈을 '스칼라 코드 + 스플라인 복원' 문제로 환원하는 구성적 해법으로 **4,096쌍 전수 검증 100%**를 달성했습니다.",
+        "입력 비트를 명시적으로 라우팅하는 희소 어텐션 구조를 설계해 학습 모델(274,898 파라미터)로 **정확도 1.0을 재현**했습니다.",
+        "구현 → 교차 리뷰 → 최종 검토로 이어지는 생성형 AI 핸드오프 워크플로우를 문서화해 **하루 안에 제출 패키지를 완성**했습니다.",
+        "고정 프로토콜(200에폭)과 달리 실측은 20에폭이라는 한계를 **리포트에 그대로 적었습니다**.",
       ],
       en: [
         "Reduced multiplication to a 'scalar code + spline recovery' problem under the 1-layer constraint — 100% on exhaustive 4,096-pair verification.",
@@ -806,9 +806,9 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "생성형 AI를 파트너로 쓰되, 전수 검증과 정직한 리포팅은 사람이 책임지는 협업 방식을 보여줍니다.",
-        "문제를 환원하는 사고(곱셈 → 스칼라 함수 보간)로 제약 조건을 정면 돌파했습니다.",
-        "하루 마감에서 코드·체크포인트·리포트·재현 명령을 완결된 패키지로 전달하는 실행력을 증명했습니다.",
+        "생성형 AI와 함께 작업하되, **전수 검증과 결과 보고는 사람이** 책임지는 방식으로 진행했습니다.",
+        "곱셈을 스칼라 함수 보간 문제로 바꿔 보는 방식으로 **제약 조건 안에서 해법**을 찾았습니다.",
+        "하루 마감 안에 코드, 체크포인트, 리포트, 재현 명령을 **하나의 패키지로 묶어** 제출했습니다.",
       ],
       en: [
         "Shows a collaboration model where generative AI executes, but exhaustive verification and honest reporting remain a human responsibility.",
@@ -930,7 +930,7 @@ export const portfolioProjects = [
       en: "EasyExam | An AI SaaS Turning Academy Exam Work into One Loop",
     },
     summary: {
-      ko: "SSAFY 창업캠프(삼성·JA Korea)에 팀 No Problem으로 참가해 피칭한, 학원 강사용 AI 문제은행·시험지 생성·자동 채점 SaaS입니다. 창업관심팀 최우수팀으로 선정되었습니다.",
+      ko: "SSAFY 창업캠프(삼성, JA Korea)에 팀 No Problem으로 참가해 피칭한, 학원 강사용 AI 문제은행, 시험지 생성, 자동 채점 SaaS입니다. **창업관심팀 최우수팀**으로 선정되었습니다.",
       en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors, pitched by Team No Problem at the SSAFY Startup Camp (Samsung · JA Korea). Selected as Best Team.",
     },
     context: {
@@ -956,7 +956,7 @@ export const portfolioProjects = [
       en: "Team No Problem (5 — CEO, CTO, ex-instructor, marketing, infra)",
     },
     role: {
-      ko: "마케팅 · SEO 담당 | 시장·고객 검증과 서비스 확산 설계 파트",
+      ko: "마케팅, SEO 담당 | 시장과 고객 검증, 서비스 확산 설계 파트",
       en: "Marketing & SEO | Market-customer validation and growth design",
     },
     tags: {
@@ -965,10 +965,10 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "SSAFY 창업캠프 창업관심팀 최우수팀으로 선정되었습니다 (삼성·JA Korea 주최).",
-        "캠프 3일 동안 팀은 아이디어 검증과 사업 소개 덱(15장) 발표를 진행했고, 저는 마케팅·SEO를 맡았습니다.",
-        "출제·채점·분석을 잇는 데이터 선순환 루프로 제품을 구조화했습니다 — 쓸수록 문제은행이 똑똑해지는 설계.",
-        "전국 학원 8만여 곳 기준 SAM 965억 원 산정 등 시장·수익모델을 공식 통계로 뒷받침했습니다.",
+        "SSAFY 창업캠프 창업관심팀 최우수팀으로 선정되었습니다 (삼성, JA Korea 주최).",
+        "캠프 3일 동안 팀은 아이디어 검증과 사업 소개 덱(15장) 발표를 진행했고, 저는 **마케팅과 SEO**를 맡았습니다.",
+        "출제, 채점, 분석이 이어지는 데이터 선순환 루프로 제품을 짰습니다. **쓸수록 문제은행이 똑똑해지는** 설계입니다.",
+        "전국 학원 8만여 곳 기준 **SAM 965억 원** 산정 등 시장과 수익모델을 공식 통계로 뒷받침했습니다.",
       ],
       en: [
         "Selected as Best Team in the SSAFY Startup Camp (hosted by Samsung · JA Korea).",
@@ -979,8 +979,8 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "현장 전문가(전직 강사)의 페인 포인트를 AI 파이프라인 서비스 구조로 옮겼습니다.",
-        "기능 나열이 아니라 데이터 선순환이라는 제품 전략으로 심사를 설득했습니다.",
+        "현장 전문가(전직 강사)가 겪은 불편을 AI 파이프라인 서비스 구조로 옮겼습니다.",
+        "**데이터 선순환이라는 제품 전략**을 앞세워 심사를 설득했습니다.",
         "짧은 캠프 일정(3일) 안에 기획과 발표를 마친 팀에 마케팅·SEO 담당으로 참여했습니다.",
       ],
       en: [
@@ -1075,7 +1075,7 @@ export const portfolioProjects = [
       en: "SUPPORTY | AI-Copilot Operator Console for Contested Logistics",
     },
     summary: {
-      ko: "D4D(Deploy for Defense) APAC 서울 해커톤에서 24시간 개발로 구축한, 한 명의 오퍼레이터가 AI 코파일럿과 함께 지상(UGV)·공중(VTOL) 무인자산을 동시에 지휘하는 작전지속지원 통제 시스템입니다.",
+      ko: "D4D(Deploy for Defense) APAC 서울 해커톤에서 **24시간 동안 개발**한 작전지속지원 통제 시스템입니다. 오퍼레이터 한 명이 AI 코파일럿과 함께 지상(UGV)과 공중(VTOL) 무인자산을 동시에 지휘합니다.",
       en: "A contested-logistics control system built in the 24-hour build window of the D4D (Deploy for Defense) APAC Seoul hackathon, where a single operator commands ground (UGV) and aerial (VTOL) unmanned assets alongside an AI copilot.",
     },
     context: {
@@ -1101,7 +1101,7 @@ export const portfolioProjects = [
       en: "SUPPORTY, two-person team (hardware & operations lead / planning & software)",
     },
     role: {
-      ko: "기획 · 프론트엔드 | 오퍼레이터 콘솔 기획, 데모 시나리오 설계, 콘솔·랜딩 페이지 프론트엔드 구현",
+      ko: "기획, 프론트엔드 | 오퍼레이터 콘솔 기획, 데모 시나리오 설계, 콘솔과 랜딩 페이지 프론트엔드 구현",
       en: "Planning & Frontend | Operator console design, demo scenario design, console & landing page frontend",
     },
     tags: {
@@ -1110,10 +1110,10 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "자산 1대당 조종사 1명이 필요한 선형 인력 구조를 '1인 오퍼레이터 + AI 코파일럿' 통제 구조로 재설계했습니다.",
-        "긴급 요청을 생명 직결도 → 시간 민감도 → 임무 파급효과 순으로 정렬하는 AI 트리아지 큐를 기획했습니다.",
-        "\"전진 5초\" 같은 자연어 명령을 실제 제어 시퀀스로 변환하는 지휘 UX를 설계했습니다.",
-        "24시간 개발 안에 실물 UGV·VTOL 연동 라이브 콘솔, 공개 랜딩 페이지, 기획서까지 완성해 시연했습니다.",
+        "자산 1대당 조종사 1명이 필요한 선형 인력 구조를 **'1인 오퍼레이터 + AI 코파일럿'** 통제 구조로 다시 설계했습니다.",
+        "긴급 요청을 생명 직결도 → 시간 민감도 → 임무 파급효과 순으로 정렬하는 **AI 트리아지 큐**를 기획했습니다.",
+        "\"전진 5초\" 같은 자연어 명령을 **실제 제어 시퀀스로 변환**하는 지휘 UX를 설계했습니다.",
+        "24시간 안에 실물 UGV와 VTOL에 연동한 **라이브 콘솔**, 공개 랜딩 페이지, 기획서까지 완성해 시연했습니다.",
         "Oregon UAS Accelerator 특별 트랙에 선정되었습니다.",
       ],
       en: [
@@ -1126,8 +1126,8 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "군 도메인의 제약을 서비스 범위 설계로 풀었습니다 — 작전 판단은 군에, 우선순위·배분·실행은 서비스에.",
-        "AI를 기능 장식이 아니라 인지 과부하라는 병목을 푸는 구조(트리아지·코파일럿)로 사용했습니다.",
+        "군 도메인의 제약은 서비스 범위를 나눠 풀었습니다. **작전 판단은 군이 하고**, 우선순위, 배분, 실행은 서비스가 맡습니다.",
+        "AI는 **인지 과부하라는 병목을 푸는** 데 썼습니다(트리아지, 코파일럿).",
         "현장 전문가(특전사 출신 리드)와 협업하며 도메인 지식을 제품 언어로 옮겼습니다.",
       ],
       en: [
@@ -1286,7 +1286,7 @@ export const portfolioProjects = [
       en: "Hackathon Solo Project",
     },
     role: {
-      ko: "1인 기획·개발 | 문제 정의, UX 설계, 에이전트 워크플로우 구축, 배포",
+      ko: "1인 기획과 개발 | 문제 정의, UX 설계, 에이전트 워크플로우 구축, 배포",
       en: "Solo planning & development | Problem framing, UX design, agent workflow, and deployment",
     },
     tags: {
@@ -1295,10 +1295,10 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "Genspark OpenClaw를 활용해 짧은 시간 안에 아이디어를 실제 작동하는 프로토타입으로 전환했습니다.",
-        "참가자 카드, 퀴즈, Wing Match로 이어지는 매끄러운 이벤트 네트워킹 여정을 설계했습니다.",
-        "랜딩 페이지부터 베타 데모 모드, PWA, 이미지 최적화까지 포함된 완성도 높은 데모를 구축했습니다.",
-        "AI 에이전트를 활용한 고속 프로토타이핑 및 반복 개선 워크플로우의 가능성을 실험했습니다.",
+        "Genspark OpenClaw로 짧은 시간 안에 아이디어를 **작동하는 프로토타입**으로 만들었습니다.",
+        "참가자 카드, 퀴즈, Wing Match로 이어지는 이벤트 네트워킹 여정을 설계했습니다.",
+        "랜딩 페이지, 베타 데모 모드, **PWA, 이미지 최적화까지** 넣은 데모를 만들었습니다.",
+        "AI 에이전트로 빠르게 프로토타입을 만들고 반복해서 고치는 작업 방식을 실험했습니다.",
       ],
       en: [
         "Transformed an idea into a functional prototype in a short time using Genspark OpenClaw.",
@@ -1309,9 +1309,9 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "AI 에이전트를 활용해 문제 정의부터 배포까지의 사이클을 극도로 단축하는 역량을 보여줍니다.",
-        "해커톤 환경에서 데모 흐름과 튜토리얼 UX를 고려한 제품 설계 능력을 증명했습니다.",
-        "모바일 최적화 및 배포 안정성까지 고려한 프로토타이핑 실행력을 입증했습니다.",
+        "AI 에이전트를 활용해 **문제 정의부터 배포까지** 행사 기간 안에 마쳤습니다.",
+        "해커톤 환경에 맞춰 **데모 흐름과 튜토리얼 UX**까지 고려해 제품을 설계했습니다.",
+        "모바일 최적화와 배포 안정성까지 챙겨 프로토타입을 만들었습니다.",
       ],
       en: [
         "Demonstrated the ability to drastically shorten the cycle from problem framing to deployment using AI agents.",
@@ -1380,24 +1380,24 @@ export const portfolioProjects = [
       en: "DailyLog | AI-Driven Reflection & Decision Support",
     },
     summary: {
-      ko: "사용자가 매일 기록을 지속하기 어려운 문제를 '입력 부담'과 '회고 흐름 단절'로 정의하고, AI 질문 흐름을 통해 해결한 서비스입니다.",
+      ko: "매일 기록을 이어가기 어려운 이유를 **'입력 부담'과 '회고 흐름 단절'**로 정의하고, AI 질문 흐름으로 푼 서비스입니다.",
       en: "A service that solves user retention issues by defining the problem as 'input friction' and 'broken reflection flows', using AI-driven questioning.",
     },
     context: {
-      ko: "사용자 행동 문제를 기술적 구조(AI 질문 흐름)로 해결하고, SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 기록한 프로젝트입니다.",
+      ko: "사용자가 기록을 멈추는 문제를 AI 질문 흐름으로 풀었고, SSAFY 14기 특화프로젝트 발표회에서 **광주1반 3등**을 한 프로젝트입니다.",
       en: "A project that proved its impact by solving behavioral issues through technical structures (AI flows); the team placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase.",
     },
     story: {
       problem: {
-        ko: "기존의 회고 방식은 사용자에게 막연한 빈 화면을 제시하여 심리적 입력 부담이 컸고, 기록이 단발성으로 끝나 실질적인 행동 변화로 이어지지 못했습니다.",
+        ko: "기존 회고 방식은 사용자에게 **빈 화면부터 내밀어** 쓰기 전부터 부담이 컸습니다. 기록도 한 번으로 끝나 행동 변화로 이어지지 못했습니다.",
         en: "Traditional journaling presents a daunting blank screen, leading to high psychological friction and failing to turn records into actual behavior change.",
       },
       insight: {
-        ko: "병목은 '무엇을 써야 할지 모르는 상태'에 있으며, AI가 적절한 시점에 구조화된 질문을 던짐으로써 해결할 수 있다고 판단했습니다.",
+        ko: "병목은 **'무엇을 써야 할지 모르는 상태'**라고 봤습니다. AI가 알맞은 때에 틀이 있는 질문을 던지면 풀 수 있다고 판단했습니다.",
         en: "The bottleneck is the state of 'not knowing what to write'. I realized this could be solved by having AI ask structured questions at the right moment.",
       },
       solution: {
-        ko: "SenseVoice를 활용한 음성 입력, Thompson Sampling 기반 추천 로직, pgvector를 이용한 벡터 검색을 조합하여 매끄러운 회고 및 행동 추천 흐름을 설계했습니다.",
+        ko: "SenseVoice 음성 입력, Thompson Sampling 추천, pgvector 벡터 검색을 묶어 **회고에서 행동 추천까지** 이어지는 흐름을 설계했습니다.",
         en: "Designed a seamless reflection and action-recommendation flow combining SenseVoice for voice input, Thompson Sampling for recommendations, and pgvector for search.",
       },
     },
@@ -1406,7 +1406,7 @@ export const portfolioProjects = [
       en: "SSAFY specialized-project team (6 members)",
     },
     role: {
-      ko: "PM · 프론트엔드 | 문제 정의, 사용자 여정 설계, 기능 우선순위 조율, 화면 구현, 발표",
+      ko: "PM, 프론트엔드 | 문제 정의, 사용자 여정 설계, 기능 우선순위 조율, 화면 구현, 발표",
       en: "PM & Frontend | Problem framing, user journey design, prioritization, UI implementation, and presentation",
     },
     tags: {
@@ -1415,9 +1415,9 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "기록 지속 실패의 원인을 '심리적 입력 부담'과 '회고 구조의 부재'로 재정의했습니다.",
-        "사용자의 발화를 Event, Emotion, Cause 등 7가지 슬롯으로 구조화하여 기록 편의성을 높였습니다.",
-        "기록을 바탕으로 '내일 바로 실행 가능한 행동 1개'를 추천하여 회고와 실행을 연결했습니다.",
+        "기록이 이어지지 않는 원인을 '심리적 입력 부담'과 **'회고 구조의 부재'**로 다시 정의했습니다.",
+        "사용자의 말을 Event, Emotion, Cause 등 **7가지 슬롯**으로 나눠 받아 기록하기 쉽게 했습니다.",
+        "기록을 바탕으로 **'내일 바로 실행 가능한 행동 1개'**를 추천해 회고가 실행으로 이어지게 했습니다.",
         "SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 했습니다.",
       ],
       en: [
@@ -1429,9 +1429,9 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "사용자 행동 문제를 기술적 구조(AI 질문 흐름)로 해결했습니다.",
-        "인지적 부하를 줄이는 슬롯 기반 질문 엔진을 설계하여 기획 역량을 증명했습니다.",
-        "팀 내 기획 방향을 일관되게 조율하는 PM 역량을 증명했습니다.",
+        "사용자가 기록을 멈추는 문제를 **AI 질문 흐름**으로 풀었습니다.",
+        "인지적 부하를 줄이는 **슬롯 기반 질문 엔진**을 설계했습니다.",
+        "PM으로서 팀의 **기획 방향이 흔들리지 않게** 조율했습니다.",
       ],
       en: [
         "Solved behavioral problems through technical structures (AI flows).",
@@ -1450,8 +1450,8 @@ export const portfolioProjects = [
       {
         value: "3 min",
         label: {
-          ko: "평균 기록 시간 단축",
-          en: "Avg. Recording Time",
+          ko: "기록 완료 목표 (질문 최대 7번)",
+          en: "Target time to finish an entry (up to 7 questions)",
         },
       },
       {
@@ -1468,11 +1468,11 @@ export const portfolioProjects = [
         en: "Decision Deep Dive | Solving Friction with Structure, Not Will",
       },
       summary: {
-        ko: "막연한 빈 화면이 주는 인지적 부하를 '슬롯 기반 질문 엔진'으로 해결한 사례",
+        ko: "빈 화면이 주는 인지적 부하를 **'슬롯 기반 질문 엔진'**으로 푼 사례",
         en: "Reducing cognitive load of blank screens through a slot-based query engine",
       },
       content: {
-        ko: "일기 지속 실패의 본질을 사용자의 '의지 부족'이 아닌, 막연한 빈 화면이 주는 '인지적 부하(Cognitive Load)'로 정의했습니다. 이를 해결하기 위해 AI가 먼저 질문을 던지는 3~5턴의 가이드형 UX를 설계했습니다. 특히 LLM이 매번 일관된 질문을 던지지 못하는 문제를 해결하기 위해, 필수 정보(사건, 감정, 원인 등)를 '슬롯'으로 관리하고 부족한 정보만 골라 질문하는 '슬롯 기반 동적 질문 엔진'을 기획하여 기록 완료율과 데이터의 질을 동시에 잡았습니다.",
+        ko: "일기를 계속 쓰지 못하는 이유를 사용자의 의지 부족으로 보지 않았습니다. 빈 화면이 주는 인지적 부하가 원인이라고 정의했습니다. 그래서 AI가 먼저 질문을 던지는 3~5턴의 가이드형 UX를 설계했습니다. 문제는 LLM이 매번 일관된 질문을 던지지 못한다는 점이었습니다. 필수 정보(사건, 감정, 원인 등)를 '슬롯'으로 관리하고 **부족한 정보만 골라 질문하는** '슬롯 기반 동적 질문 엔진'을 기획해 기록 완료율과 데이터의 질을 동시에 잡았습니다.",
         en: "I defined the failure of journaling not as a 'lack of will', but as the 'cognitive load' of a blank screen. To solve this, I designed a 3-5 turn guided UX where AI initiates the conversation. To overcome the inconsistency of LLM responses, I devised a 'slot-based dynamic query engine' that manages essential data (Event, Emotion, Cause) as slots and selectively asks for missing information, successfully improving both completion rates and data quality.",
       },
     },
@@ -1484,7 +1484,7 @@ export const portfolioProjects = [
           en: "AI Reflection Pipeline",
         },
         body: {
-          ko: "음성 입력부터 행동 추천까지의 데이터 흐름입니다. SenseVoice 음성 입력으로 빈 화면의 입력 부담을 낮추고, 슬롯 기반 질문 엔진이 비어 있는 정보만 골라 3~5턴의 가이드형 질문을 던집니다. 완성된 회고는 pgvector에 벡터로 저장되어 유사한 과거 기록을 소환하고, Thompson Sampling이 실행 피드백을 반영해 '내일 실행할 행동 1개'를 추천합니다.",
+          ko: "음성 입력부터 행동 추천까지의 데이터 흐름입니다. SenseVoice 음성 입력으로 빈 화면의 입력 부담을 낮추고, 슬롯 기반 질문 엔진이 비어 있는 정보만 골라 3~5턴의 가이드형 질문을 던집니다. 완성된 회고는 pgvector에 벡터로 저장하고, 비슷한 과거 기록을 찾아 불러옵니다. Thompson Sampling은 실행 피드백을 반영해 **'내일 실행할 행동 1개'**를 추천합니다.",
           en: "The data flow from voice input to action recommendation. SenseVoice lowers the friction of a blank page, the slot-based query engine asks 3-5 guided questions targeting only missing slots, completed entries are stored as vectors in pgvector to recall similar past reflections, and Thompson Sampling recommends one actionable task for tomorrow, tuned by execution feedback.",
         },
         diagram: "dailylog-pipeline",
@@ -1492,11 +1492,11 @@ export const portfolioProjects = [
       {
         id: "strategy",
         title: {
-          ko: "제품 전략 (Product Strategy)",
+          ko: "제품 전략",
           en: "Product Strategy",
         },
         body: {
-          ko: "AI가 단순히 글을 대신 써주는 것이 아니라, 사용자가 스스로 생각하고 기록할 수 있도록 '질문'을 던지는 비서 역할을 하도록 설계했습니다. 이는 사용자의 자아 효능감을 높이고 기록의 질을 개선하는 핵심 전략이었습니다.",
+          ko: "AI가 글을 대신 써주지 않습니다. **사용자가 스스로 생각하고 기록하도록** 질문을 던지는 비서 역할만 하게 설계했습니다. 사용자의 자기 효능감과 기록의 질을 함께 높이려는 선택이었습니다.",
           en: "Instead of having AI just write for the user, I designed it as an assistant that 'asks' questions to help the user reflect. This strategy was key to increasing user efficacy and improving record quality.",
         },
       },
@@ -1533,7 +1533,7 @@ export const portfolioProjects = [
       {
         src: "/projects/dailylog/app-home.webp",
         alt: {
-          ko: "홈 화면 — 오늘의 기록과 추천 행동",
+          ko: "홈 화면: 오늘의 기록과 추천 행동",
           en: "Home — today's log and recommended action",
         },
       },
@@ -1554,21 +1554,21 @@ export const portfolioProjects = [
       {
         src: "/projects/dailylog/app-runtime.webp",
         alt: {
-          ko: "실제 구동 화면 — 기록에서 행동 추천까지",
+          ko: "실제 구동 화면: 기록에서 행동 추천까지",
           en: "Runtime — from logging to action recommendation",
         },
       },
       {
         src: "/projects/dailylog/design-reco-rating.webp",
         alt: {
-          ko: "Figma 시안 — 어제 추천받은 활동을 별점으로 평가 (추천 피드백 루프 입력)",
+          ko: "Figma 시안: 어제 추천받은 활동을 별점으로 평가 (추천 피드백 루프 입력)",
           en: "Figma design — rating yesterday's recommended activity (feedback input for the recommendation loop)",
         },
       },
       {
         src: "/projects/dailylog/design-diary-result.webp",
         alt: {
-          ko: "Figma 시안 — 일기 결과 페이지 (다이어리 감성 컨셉)",
+          ko: "Figma 시안: 일기 결과 페이지 (다이어리 감성 컨셉)",
           en: "Figma design — diary result page (journal-inspired visual concept)",
         },
       },
@@ -1596,7 +1596,7 @@ export const portfolioProjects = [
       en: "Loggy | Decision Recording & Collaboration Platform",
     },
     summary: {
-      ko: "회의와 메신저의 파편화된 논의를 논의, 승인, 기록의 구조로 정립하여 협업 효율을 극대화하는 플랫폼입니다.",
+      ko: "회의와 메신저에 흩어진 논의를 **논의, 승인, 기록의 구조**로 정리해 협업 효율을 높이는 플랫폼입니다.",
       en: "A platform that maximizes collaboration efficiency by formalizing scattered discussions into Discussion, Approval, and Record structures.",
     },
     context: {
@@ -1622,7 +1622,7 @@ export const portfolioProjects = [
       en: "Team project",
     },
     role: {
-      ko: "기획 · 프론트엔드 리드 | 서비스 기획, 의사결정 흐름 구조화, 실시간 UI·상태 관리 구조 설계, 화면 구현 리드",
+      ko: "기획, 프론트엔드 리드 | 서비스 기획, 의사결정 흐름 구조화, 실시간 UI와 상태 관리 구조 설계, 화면 구현 리드",
       en: "Planning & Frontend Lead | Service planning, decision flow structuring, real-time UI & state architecture, and frontend lead",
     },
     tags: {
@@ -1631,9 +1631,9 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "GitHub의 PR/Merge 개념을 협업 서비스 UX에 성공적으로 이식하여 의사결정 프로세스를 구조화했습니다.",
-        "일반 채팅(휘발성)과 핵심 커밋(영구성)의 데이터 생명 주기를 분리하여 정보의 밀도를 높였습니다.",
-        "회의의 논의 흐름을 한눈에 파악할 수 있는 Git Graph 기반의 Tree View UI를 기획했습니다.",
+        "GitHub의 **PR/Merge 개념**을 협업 서비스 UX에 옮겨 의사결정 과정을 단계로 정리했습니다.",
+        "일반 채팅(휘발성)과 핵심 커밋(영구성)의 **데이터 생명 주기를 분리**해 남는 정보의 밀도를 높였습니다.",
+        "회의의 논의 흐름을 한눈에 파악할 수 있는 Git Graph 기반의 **Tree View UI**를 기획했습니다.",
         "커밋 내역을 분석하여 Decision Record(결정문)를 자동 생성하는 AI 엔진을 구축했습니다.",
       ],
       en: [
@@ -1645,9 +1645,9 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "복잡한 협업 문제를 명확한 시스템 구조(Git Metaphor)로 치환하는 역량을 증명했습니다.",
-        "데이터의 비즈니스 가치에 따라 보존 전략을 설계하는 데이터 기획력을 보여줍니다.",
-        "사용자 페인 포인트(문서화 비용)를 AI 자동화로 해결하는 솔루션 설계 능력을 증명했습니다.",
+        "복잡한 협업 문제를 **Git의 구조에 빗대어** 시스템으로 풀었습니다.",
+        "데이터의 비즈니스 가치에 따라 **보존 전략을 다르게** 설계했습니다.",
+        "사용자가 부담스러워하던 **문서화 비용을 AI 자동화**로 줄이도록 설계했습니다.",
       ],
       en: [
         "Proven ability to translate complex collaboration issues into clear system structures (Git Metaphor).",
@@ -1661,13 +1661,6 @@ export const portfolioProjects = [
         label: {
           ko: "협업 프로세스 구조화",
           en: "Structured Workflow",
-        },
-      },
-      {
-        value: "85%",
-        label: {
-          ko: "AI 요약 데이터 노이즈 감소",
-          en: "Reduction in Data Noise",
         },
       },
       {
@@ -1768,7 +1761,7 @@ export const portfolioProjects = [
       en: "Tamna-AI | Distributed Data Center Location Analysis",
     },
     summary: {
-      ko: "제주 재생에너지 출력 제한 문제를 계통 혼잡과 수요 불일치 문제로 재정의하고, 잉여 전력을 흡수할 수 있는 데이터센터 입지를 분석하는 서비스입니다.",
+      ko: "제주 재생에너지 출력 제한 문제를 **계통 혼잡과 수요 불일치 문제**로 재정의하고, 잉여 전력을 흡수할 수 있는 데이터센터 입지를 분석하는 서비스입니다.",
       en: "A service that reframes Jeju's energy curtailment as a grid mismatch issue and analyzes optimal locations for data centers to absorb surplus power.",
     },
     context: {
@@ -1804,8 +1797,8 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "제주 재생에너지 출력 제한 문제를 '에너지-IT 분산 데이터센터 입지 분석' 모델로 재정의했습니다.",
-        "기존 재해 분석 기술 자산을 비즈니스 모델 기획으로 연결하여 해커톤 예선/본선을 통과하고 결선에 진출했습니다.",
-        "출력 제한이 빈번한 지역에 데이터센터를 분산 배치하여 계통 부담을 줄이는 역발상 구조를 기획했습니다.",
+        "기존 재해 분석 기술을 비즈니스 모델 기획에 활용해 해커톤 예선과 본선을 통과하고 **결선에 진출**했습니다.",
+        "출력 제한이 잦은 지역에 **데이터센터를 분산 배치**해 계통 부담을 줄이는 구조를 기획했습니다.",
         "지역별 전력 수급 데이터와 지리 정보를 연동한 입지 효율 시각화 모델을 제안했습니다.",
       ],
       en: [
@@ -1817,9 +1810,9 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "기술적 난제를 비즈니스 기회로 전환하는 PM의 전략적 사고력을 증명했습니다.",
-        "복합적인 공공·에너지 도메인의 문제를 실행 가능한 서비스 구조로 치환하는 역량을 보여줍니다.",
-        "기획서 작성을 주도하여 해커톤 전 과정을 통과시키는 기획 리드 역량을 증명했습니다.",
+        "출력 제한이라는 기술 문제를 **비즈니스 기회로 바꿔** 기획했습니다.",
+        "공공과 에너지가 얽힌 도메인의 문제를 **실행 가능한 서비스 구조**로 옮겼습니다.",
+        "**기획서 작성을 주도**했고, 팀은 해커톤 예선과 본선을 통과해 결선에 진출했습니다.",
       ],
       en: [
         "Proven strategic thinking in transforming technical challenges into business opportunities.",
@@ -1899,7 +1892,7 @@ export const portfolioProjects = [
       en: "Campus Chronicle | Growth Data-Driven Financial Service",
     },
     summary: {
-      ko: "대학생의 학습·활동 데이터를 금융 가치와 연결해, 성장 과정을 기반으로 신뢰를 증명하고 금융 혜택을 받는 플랫폼입니다.",
+      ko: "대학생의 학습, 활동 데이터를 금융 가치와 연결한 플랫폼입니다. **성장 과정으로 신뢰를 쌓고** 금융 혜택을 받습니다.",
       en: "A platform where students link learning and activity data to financial value, proving trust based on their growth process.",
     },
     context: {
@@ -1925,7 +1918,7 @@ export const portfolioProjects = [
       en: "Team Underdog (5 members)",
     },
     role: {
-      ko: "UI/UX 디자인 · 프론트엔드 | Figma로 앱·게임 전체 UI/UX 설계, 디자인 시스템·컴포넌트 관리, React Native 서브 화면(퀘스트·크로니클 피드) 구현",
+      ko: "UI/UX 디자인, 프론트엔드 | Figma로 앱과 게임 전체 UI/UX 설계, 디자인 시스템과 컴포넌트 관리, React Native 서브 화면(퀘스트, 크로니클 피드) 구현",
       en: "UI/UX Design & Frontend | End-to-end app/game UI/UX in Figma, design system & components, React Native sub-screens (quests, chronicle feed)",
     },
     tags: {
@@ -1935,8 +1928,8 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "대학생의 금융 소외(씬파일러) 문제를 '증명 가능한 성장 데이터의 부재'로 정의했습니다.",
-        "비금융 활동을 '캠퍼스 크레도' 대안신용점수로 환산해 우대금리 등 실질 혜택과 연결하는 구조를 설계했습니다.",
-        "노력의 성장을 스킬 트리와 2D 픽셀 캐릭터 육성으로 시각화하는 게이미피케이션 UX를 디자인했습니다.",
+        "비금융 활동을 **'캠퍼스 크레도' 대안신용점수**로 환산해 우대금리 등 실질 혜택과 연결하는 구조를 설계했습니다.",
+        "노력이 쌓이는 과정을 **스킬 트리와 2D 픽셀 캐릭터 육성**으로 보여주는 게이미피케이션 UX를 디자인했습니다.",
         "Figma 디자인 시스템과 React Native 컴포넌트 관리를 담당했습니다 (팀 기획서에 역할 명시).",
       ],
       en: [
@@ -1948,8 +1941,8 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "사용자 문제를 금융 비즈니스 구조 내에서 해결하려는 시각을 보여줍니다.",
-        "복잡한 평가 과정을 직관적인 사용자 흐름으로 설계하는 역량을 증명합니다.",
+        "사용자 문제를 **금융 비즈니스 구조 안에서** 풀어 보려 했습니다.",
+        "복잡한 평가 과정을 **따라가기 쉬운 사용자 흐름**으로 설계했습니다.",
       ],
       en: [
         "Shows a perspective of solving user problems within financial business models.",
@@ -2011,7 +2004,7 @@ export const portfolioProjects = [
       en: "Jeonju ICT Coding Challenge | Regional Issue-Solving Service",
     },
     summary: {
-      ko: "지역 관광·사회·환경 문제를 정의하고, 이를 해결할 수 있는 서비스 아이디어를 기능으로 구체화하여 구현한 프로젝트입니다.",
+      ko: "지역의 관광, 사회, 환경 문제를 정의하고, 해결할 서비스 아이디어를 기능으로 구체화해 구현한 프로젝트입니다.",
       en: "A project defining regional tourism, social, and environmental issues and materializing them into actionable service features and implementation.",
     },
     team: {
@@ -2029,7 +2022,7 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "관광 및 사회 현안을 서비스 아이디어로 빠르게 구체화했습니다.",
-        "제한된 시간 내에 핵심 기능을 정의하고 구현까지 완료하는 협업을 경험했습니다.",
+        "제한된 시간 안에 팀과 함께 **핵심 기능을 정하고 구현까지** 마쳤습니다.",
       ],
       en: [
         "Rapidly materialized tourism and social issues into service concepts.",
@@ -2110,9 +2103,9 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "AI 노하우를 실행 가능한 워크플로우 상품으로 전환하는 서비스 방향을 정리했습니다.",
-        "프롬프트 원문 비공개, 슬롯 기반 실행, 결과물 생성 흐름을 통해 크리에이터 노하우 보호와 사용자 편의성을 함께 고려했습니다.",
+        "프롬프트 원문은 공개하지 않고 슬롯에 값을 넣어 실행해 결과물을 받는 흐름으로, **크리에이터 노하우 보호**와 사용자 편의를 함께 챙겼습니다.",
         "템플릿 판매 수수료와 실행 기반 크레딧 모델을 중심으로 수익 구조를 검토했습니다.",
-        "GA4 기반 사용자 이탈 분석을 통해 개선 방향을 도출하는 관점을 프로젝트에 반영했습니다.",
+        "GA4로 **사용자 이탈을 분석해** 개선 방향을 찾는 방식을 프로젝트에 반영했습니다.",
       ],
       en: [
         "Defined the service direction of converting AI know-how into executable workflow products.",
@@ -2305,7 +2298,7 @@ export const portfolioProjects = [
       en: "S.A.L.E.S | Customer-Centered CRM Project",
     },
     summary: {
-      ko: "영업 리드 관리의 파편화 문제를 '고객 여정 5단계'와 '칸반 스타일 파이프라인'으로 구조화하여 해결한 CRM 프로젝트입니다.",
+      ko: "흩어져 있던 영업 리드 관리를 **'고객 여정 5단계'**와 '칸반 스타일 파이프라인'으로 정리한 CRM 프로젝트입니다.",
       en: "A CRM project that structured fragmented lead management into a '5-stage customer journey' and 'Kanban-style pipeline'.",
     },
     context: {
@@ -2340,9 +2333,9 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "리드(Lead)부터 계약까지의 영업 프로세스를 '고객 여정 5단계' 모델로 구조화했습니다.",
-        "영업 사원의 다음 행동을 제안하는 칸반 기반의 파이프라인 UI를 기획하여 운영 효율을 높였습니다.",
-        "비즈니스 요구사항을 실제 소프트웨어의 상태 관리 및 데이터 모델로 정교하게 매핑했습니다.",
+        "리드부터 계약까지의 영업 과정을 '고객 여정 5단계' 모델로 나눴습니다.",
+        "영업 사원의 **다음 행동을 제안하는** 칸반 기반의 파이프라인 UI를 기획하여 운영 효율을 높였습니다.",
+        "비즈니스 요구사항을 소프트웨어의 **상태 관리와 데이터 모델**에 매핑했습니다.",
       ],
       en: [
         "Structured the sales process from Lead to Contract into a '5-stage customer journey' model.",
@@ -2352,9 +2345,9 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "비즈니스 요구사항을 기능 명세로 구체화하는 PM의 구조화 역량을 증명했습니다.",
-        "사용자(영업 사원)의 과업 중심으로 시스템 UI/UX를 설계할 수 있음을 보여줍니다.",
-        "복잡한 운영 흐름을 단순하고 명확한 데이터 모델로 치환하는 능력을 증명했습니다.",
+        "비즈니스 요구사항을 **기능 명세로 구체화**했습니다.",
+        "사용자(영업 사원)가 **해야 할 일을 중심으로** 시스템 UI/UX를 설계했습니다.",
+        "복잡한 운영 흐름을 **단순한 데이터 모델**로 옮겼습니다.",
       ],
       en: [
         "Demonstrated PM's structuring ability to translate business needs into feature specs.",
