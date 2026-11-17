@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { projectUiCopy } from "../content/projects";
+import { getImageSize } from "../content/projects/imageSizes";
 import { queueScrollTarget } from "../utils/scrollTarget";
+import { renderEmphasis, stripEmphasis } from "../utils/emphasis";
+import { splitProjectTitle } from "../components/sections/Projects";
 import DailyLogPipelineDiagram from "../components/diagrams/DailyLogPipelineDiagram";
 import LoggyDecisionFlowDiagram from "../components/diagrams/LoggyDecisionFlowDiagram";
+import "../components/layout/Section.css";
 import "./ProjectDetailPage.css";
 
 const diagramRegistry = {
@@ -18,16 +22,46 @@ const linkLabelMap = {
   youtube: "video",
 };
 
-const VisualPlaceholder = ({ label, icon = "🖼️" }) => (
-  <div className="placeholder-box">
-    <span className="placeholder-icon">{icon}</span>
-    <p className="placeholder-text">{label}</p>
-  </div>
+// Bracketed strings such as "[image pending]" are placeholders, not images.
+const isRealImage = (src) => typeof src === "string" && src !== "" && !src.startsWith("[");
+
+const SizedImage = ({ src, alt, className, priority = false }) => {
+  const size = getImageSize(src);
+
+  return (
+    <img
+      src={src}
+      alt={stripEmphasis(alt ?? "")}
+      className={className}
+      width={size?.[0]}
+      height={size?.[1]}
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
+      decoding="async"
+    />
+  );
+};
+
+const isPortrait = (src) => {
+  const size = getImageSize(src);
+
+  return Boolean(size && size[1] > size[0] * 1.2);
+};
+
+const getStackNames = (stack) =>
+  (Array.isArray(stack) ? stack : [])
+    .map((item) => (typeof item === "string" ? item : item?.name))
+    .filter(Boolean);
+
+const DetailBlock = ({ title, children, className = "" }) => (
+  <section className={`detail-block ${className}`.trim()} data-reveal="">
+    {title && <h2 className="detail-block-title">{title}</h2>}
+    {children}
+  </section>
 );
 
 const ProjectMedia = ({ media }) => (
-  <article className="structural-card project-detail-card project-media-card">
-    <span className="detail-label">{media.title}</span>
+  <DetailBlock title={media.title}>
     {media.videoSrc && (
       <div className="project-video-frame">
         <video controls preload="metadata">
@@ -37,291 +71,212 @@ const ProjectMedia = ({ media }) => (
     )}
     <div className="project-media-actions">
       {media.videoSrc && (
-        <a href={media.videoSrc} className="project-inline-link">
+        <a href={media.videoSrc} className="cta-button ghost">
           {media.videoLabel}
         </a>
       )}
       {media.presentationHref && (
-        <a
-          href={media.presentationHref}
-          className="project-inline-link"
-          download
-        >
+        <a href={media.presentationHref} className="cta-button ghost" download>
           {media.presentationLabel}
         </a>
       )}
     </div>
-  </article>
+  </DetailBlock>
 );
 
-const SubmissionSection = ({ label, children }) => (
-  <article className="submission-detail-item">
-    <span className="detail-label">{label}</span>
-    {children}
-  </article>
-);
-
-const SubmissionFormat = ({ project, copy }) => {
-  if (!project.interviewQuestions?.length) {
-    return null;
-  }
-
-  return (
-    <article className="structural-card project-detail-card submission-detail-card">
-      <span className="detail-label">{copy.submissionFormat}</span>
-      <div className="submission-detail-grid">
-        <SubmissionSection label={copy.overview}>
-          <p>{project.summary}</p>
-        </SubmissionSection>
-        <SubmissionSection label={copy.techStack}>
-          <div className="project-tag-list">
-            {project.tags.map((tag) => (
-              <span key={tag} className="project-tag">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </SubmissionSection>
-        <SubmissionSection label={copy.myRole}>
-          <p>{project.role}</p>
-        </SubmissionSection>
-        <SubmissionSection label={copy.problemDefinition}>
-          <p>{project.story?.problem ?? project.context}</p>
-        </SubmissionSection>
-        <SubmissionSection label={copy.solutionProcess}>
-          <p>{project.story?.solution ?? project.caseStudy?.summary}</p>
-        </SubmissionSection>
-        <SubmissionSection label={copy.coreContribution}>
-          <ul className="project-proof-list">
-            {project.highlights.slice(0, 3).map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </SubmissionSection>
-        <SubmissionSection label={copy.resultLearning}>
-          <p>{project.proof[0] ?? project.caseStudy?.summary}</p>
-        </SubmissionSection>
-        <SubmissionSection label={copy.interviewHooks}>
-          <ul className="project-proof-list">
-            {project.interviewQuestions.map((question) => (
-              <li key={question}>{question}</li>
-            ))}
-          </ul>
-        </SubmissionSection>
-      </div>
-    </article>
-  );
-};
+const DECISION_PREFIX = /^Decision Deep Dive\s*\|\s*/;
 
 const ProjectDetailPage = ({ project, lang }) => {
   const copy = projectUiCopy[lang] ?? projectUiCopy.ko;
-  const linkEntries = Object.entries(project.links ?? {}).filter(
-    ([, href]) => Boolean(href)
+  const { name, tagline } = splitProjectTitle(project.title);
+  const linkEntries = Object.entries(project.links ?? {}).filter(([, href]) =>
+    Boolean(href)
   );
+  const metrics = (project.metrics ?? []).filter((m) => m && typeof m === "object");
+  const stackNames = getStackNames(project.stack);
+  const storyItems = project.story
+    ? [
+        { key: "problem", label: copy.problem, text: project.story.problem },
+        { key: "approach", label: copy.approach, text: project.story.insight },
+        { key: "result", label: copy.result, text: project.story.solution },
+      ].filter((item) => item.text)
+    : [];
+  const screenshots = (project.screenshots ?? []).filter((shot) => isRealImage(shot.src));
+  const portraitShots = screenshots.filter((shot) => isPortrait(shot.src));
+  const landscapeShots = screenshots.filter((shot) => !isPortrait(shot.src));
+  const backToHome = () => queueScrollTarget("projects");
 
   return (
-    <section className="project-detail-section">
+    <article className="project-detail-section">
       <div className="project-detail-shell">
-        <Link
-          to={project.homePath}
-          className="project-back-link"
-          onClick={() => queueScrollTarget("projects")}
-        >
+        <Link to={project.homePath} className="project-back-link" onClick={backToHome}>
           {copy.backToProjects}
         </Link>
 
-        <div className="project-detail-hero structural-card">
-          <div className="project-detail-header">
-            <div className="project-detail-copy">
-              <p className="project-detail-kicker mono">{project.category}</p>
-              <div className="project-detail-meta-line">
-                <span className={`project-status-badge ${project.status}`}>
-                  {project.statusLabel}
-                </span>
-                <span className="project-detail-period">{project.period}</span>
-              </div>
-              <h1 className="project-detail-title">{project.title}</h1>
-              <p className="project-detail-summary">{project.summary}</p>
-            </div>
-
-            <div className="project-detail-side">
-              <div className="detail-item">
-                <span className="detail-label">{copy.team}</span>
-                <p>{project.team}</p>
-              </div>
-              <div className="detail-item">
-                <span className="detail-label">{copy.role}</span>
-                <p>{project.role}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-detail-grid">
-            <div className="detail-item">
-              <span className="detail-label">{copy.themes}</span>
-              <div className="project-tag-list">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="project-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="detail-item">
-              <span className="detail-label">{copy.links}</span>
-              {linkEntries.length > 0 ? (
-                <div className="project-detail-links">
-                  {linkEntries.map(([key, href]) => (
-                    <a
-                      key={key}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-inline-link"
-                    >
-                      {copy[linkLabelMap[key]]}
-                    </a>
-                  ))}
-                </div>
-              ) : (
-                <p>{copy.linksPending}</p>
-              )}
-            </div>
-          </div>
-
-          {project.heroImage && (
-            <div className="project-detail-visual">
-              {project.heroImage.startsWith("[") ? (
-                <VisualPlaceholder label={project.heroImage} icon="🚀" />
-              ) : (
-                <img
-                  src={project.heroImage}
-                  alt={project.title}
-                  className="section-image"
-                />
-              )}
-            </div>
+        <header className="project-detail-header">
+          {project.category && <p className="project-detail-kicker">{project.category}</p>}
+          <h1 className="project-detail-title">{stripEmphasis(name)}</h1>
+          {tagline && <p className="project-detail-tagline">{renderEmphasis(tagline)}</p>}
+          {project.summary && (
+            <p className="project-detail-summary">{renderEmphasis(project.summary)}</p>
           )}
-        </div>
 
-        <SubmissionFormat project={project} copy={copy} />
-
-        <div className="project-detail-content-grid">
-          <div className="project-detail-main">
-            {project.story && (
-              <article className="structural-card project-detail-card story-card">
-                <div className="project-story-grid detail-story-grid">
-                  <div className="detail-story-item">
-                    <span className="detail-label">{copy.challenge}</span>
-                    <p className="project-detail-body">{project.story.problem}</p>
-                  </div>
-                  <div className="detail-story-item">
-                    <span className="detail-label">{copy.insight}</span>
-                    <p className="project-detail-body">{project.story.insight}</p>
-                  </div>
-                  <div className="detail-story-item">
-                    <span className="detail-label">{copy.solution}</span>
-                    <p className="project-detail-body">{project.story.solution}</p>
-                  </div>
-                </div>
-              </article>
+          <dl className="project-detail-meta">
+            {project.period && (
+              <div>
+                <dt>{copy.period}</dt>
+                <dd className="mono">{project.period}</dd>
+              </div>
             )}
-
-            {project.caseStudy && (
-              <article className="structural-card project-detail-card case-study-card">
-                <div className="case-study-header">
-                  <span className="case-study-badge mono">
-                    Decision Deep Dive
-                  </span>
-                  <h2 className="case-study-title">{project.caseStudy.title}</h2>
-                  <p className="case-study-summary">
-                    {project.caseStudy.summary}
-                  </p>
-                </div>
-                <div className="case-study-content project-detail-body">
-                  {project.caseStudy.content}
-                </div>
-              </article>
+            {project.team && (
+              <div>
+                <dt>{copy.team}</dt>
+                <dd>{project.team}</dd>
+              </div>
             )}
+            {project.role && (
+              <div>
+                <dt>{copy.role}</dt>
+                <dd>{renderEmphasis(project.role)}</dd>
+              </div>
+            )}
+          </dl>
 
-            {project.media && <ProjectMedia media={project.media} />}
+          {linkEntries.length > 0 && (
+            <ul className="project-detail-links" aria-label={copy.links}>
+              {linkEntries.map(([key, href]) => (
+                <li key={key}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-button ghost"
+                  >
+                    {copy[linkLabelMap[key]] ?? key}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </header>
 
-            {project.screenshots?.length > 0 && (
-              <article className="structural-card project-detail-card">
-                <span className="detail-label">{copy.screens}</span>
-                <div className="project-screenshot-grid">
-                  {project.screenshots.map((shot) => (
+        {metrics.length > 0 && (
+          <dl className="project-metric-band" aria-label={copy.keyMetrics}>
+            {metrics.slice(0, 3).map((metric) => (
+              <div key={`${metric.value}-${metric.label}`} className="project-metric">
+                <dt className="mono">{metric.value}</dt>
+                <dd>{metric.label}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
+        {isRealImage(project.heroImage) && (
+          <figure className="project-detail-visual">
+            <SizedImage src={project.heroImage} alt={name} priority />
+          </figure>
+        )}
+
+        {storyItems.length > 0 && (
+          <div className="project-story" data-reveal="">
+            {storyItems.map((item) => (
+              <section key={item.key} className="project-story-item">
+                <h2 className="project-story-label">{item.label}</h2>
+                <p className="project-detail-body">{renderEmphasis(item.text)}</p>
+              </section>
+            ))}
+          </div>
+        )}
+
+        {stackNames.length > 0 && (
+          <DetailBlock title={copy.techStack}>
+            <ul className="chip-list">
+              {stackNames.map((item) => (
+                <li key={item} className="chip mono">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
+        {project.highlights.length > 0 && (
+          <DetailBlock title={copy.highlights}>
+            <ul className="project-proof-list">
+              {project.highlights.map((item) => (
+                <li key={stripEmphasis(item)}>{renderEmphasis(item)}</li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
+        {project.caseStudy && (
+          <DetailBlock title={copy.decisionDeepDive} className="case-study">
+            {project.caseStudy.title && (
+              <h3 className="case-study-title">
+                {renderEmphasis(String(project.caseStudy.title).replace(DECISION_PREFIX, ""))}
+              </h3>
+            )}
+            {project.caseStudy.summary && (
+              <p className="case-study-summary">{renderEmphasis(project.caseStudy.summary)}</p>
+            )}
+            {project.caseStudy.content && (
+              <p className="project-detail-body">{renderEmphasis(project.caseStudy.content)}</p>
+            )}
+          </DetailBlock>
+        )}
+
+        {project.sections.map((section) => {
+          const Diagram = section.diagram ? diagramRegistry[section.diagram] : null;
+
+          return (
+            <DetailBlock key={section.id} title={section.title}>
+              {section.body && (
+                <p className="project-detail-body">{renderEmphasis(section.body)}</p>
+              )}
+              {Diagram && (
+                <div className="project-section-visual">
+                  <Diagram lang={lang} />
+                </div>
+              )}
+              {isRealImage(section.image) && (
+                <figure className="project-section-visual">
+                  <SizedImage src={section.image} alt={section.title} />
+                </figure>
+              )}
+            </DetailBlock>
+          );
+        })}
+
+        {screenshots.length > 0 && (
+          <DetailBlock title={copy.screens}>
+            {[
+              { key: "landscape", shots: landscapeShots },
+              { key: "portrait", shots: portraitShots },
+            ]
+              .filter((group) => group.shots.length > 0)
+              .map((group) => (
+                <div key={group.key} className={`project-gallery ${group.key}`}>
+                  {group.shots.map((shot) => (
                     <figure key={shot.src} className="project-screenshot">
-                      <img src={shot.src} alt={shot.alt} loading="lazy" />
-                      {shot.alt && <figcaption>{shot.alt}</figcaption>}
+                      <SizedImage src={shot.src} alt={shot.alt} />
+                      {shot.alt && <figcaption>{renderEmphasis(shot.alt)}</figcaption>}
                     </figure>
                   ))}
                 </div>
-              </article>
-            )}
+              ))}
+          </DetailBlock>
+        )}
 
-            <article className="structural-card project-detail-card">
-              <span className="detail-label">{copy.highlights}</span>
-              <ul className="project-proof-list">
-                {project.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+        {project.media && <ProjectMedia media={project.media} />}
 
-            {project.sections.map((section) => {
-              const Diagram = section.diagram
-                ? diagramRegistry[section.diagram]
-                : null;
-
-              return (
-              <article
-                key={section.id}
-                className="structural-card project-detail-card"
-              >
-                <span className="detail-label">{section.title}</span>
-                <div className="project-detail-body">{section.body}</div>
-                {Diagram && (
-                  <div className="project-section-visual">
-                    <Diagram lang={lang} />
-                  </div>
-                )}
-                {section.image && (
-                  <div className="project-section-visual">
-                    {section.image.startsWith("[") ? (
-                      <VisualPlaceholder label={section.image} />
-                    ) : (
-                      <img
-                        src={section.image}
-                        alt={section.title}
-                        className="section-image"
-                      />
-                    )}
-                  </div>
-                )}
-              </article>
-              );
-            })}
-          </div>
-
-          <aside className="project-detail-aside">
-            <article className="structural-card project-detail-card">
-              <span className="detail-label">{copy.artifacts}</span>
-              {project.artifacts.length > 0 ? (
-                <ul className="project-proof-list">
-                  {project.artifacts.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="project-detail-body">{copy.artifactEmpty}</p>
-              )}
-            </article>
-          </aside>
-        </div>
+        <footer className="project-detail-footer">
+          <Link to={project.homePath} className="cta-button ghost" onClick={backToHome}>
+            {copy.backToList}
+          </Link>
+        </footer>
       </div>
-    </section>
+    </article>
   );
 };
 
