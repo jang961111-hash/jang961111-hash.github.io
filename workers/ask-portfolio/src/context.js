@@ -9,7 +9,7 @@ export const PORTFOLIO_CONTEXT = `
 포지셔닝: "AI를 서비스로 만드는 사람" — LLM·추천·벡터 검색을 실제 사용자 경험으로 구현.
 배경: 철학 전공(전남대), SSAFY(삼성 청년 SW·AI 아카데미) 14기(1,628시간), SKALA(SK AI Leader Academy) 4기 재학, 해병대 병 복무(해안 경계·KMEP 통역).
 핵심 역량: Platform-Oriented Design, Decision Architecture, Technical Communication, AI as Decision Support.
-요약 수치: 프로젝트 16개 · 수상 3회(SKT promp.T 공모전 Life AX 부문 최우수상, SSAFY 14기 특화프로젝트 발표회 광주1반 3등, SSAFY 창업캠프 최우수팀) · 해커톤/챌린지 9회.
+요약 수치: 프로젝트 20개 · 수상 3회(SKT promp.T 공모전 Life AX 부문 최우수상, SSAFY 14기 특화프로젝트 발표회 광주1반 3등, SSAFY 창업캠프 최우수팀) · 해커톤/챌린지 9회.
 
 ## 핵심 프로젝트 3
 1. DailyLog — AI 기반 회고·의사결정 지원 (SSAFY 특화, 2026.02–04, 6인 팀, PM·프론트엔드)

@@ -204,6 +204,452 @@ export const portfolioProjects = [
     },
   },
   {
+    slug: "skala-churn-modeling",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-09-11",
+    stack: ["XGBoost", "ExtraTrees", "SHAP", "Stratified K-Fold"],
+    period: {
+      ko: "2026.09",
+      en: "Sep 2026",
+    },
+    category: {
+      ko: "SKALA 4기 종합실습 / 모델 개발과 최적화",
+      en: "SKALA Cohort 4 Capstone Lab / Model Development & Tuning",
+    },
+    title: {
+      ko: "이탈예측 모델링 | Test는 기록만 하고 선택은 교차검증으로만 한 모델 선택",
+      en: "Churn Modeling | Selecting Models by Cross-Validation Only, Keeping the Test Set as a Record",
+    },
+    summary: {
+      ko: "저축은행 고객 이탈을 예측하는 가상 시나리오 실습입니다. Test 점수로는 고르지 않는다는 기준을 세우고 **AUC 0.7722를 0.8646으로** 올렸습니다(Validation과 Test 평균).",
+      en: "A capstone lab on predicting customer churn for a fictional savings bank. I set the rule of never selecting on test scores and raised **AUC from 0.7722 to 0.8646** (mean of validation and test).",
+    },
+    context: {
+      ko: "SKALA 4기 모델 개발과 최적화 과목의 개인 종합실습\n과제 배경은 가상의 저축은행 시나리오(실제 고객사 아님)\n제출 노트북을 새 환경에서 다시 돌려 같은 숫자가 나오는 것까지 확인",
+      en: "An individual capstone lab in SKALA Cohort 4's model development course\nThe business setting is a fictional savings bank, not a real client\nRe-ran the submitted notebook in a fresh environment and confirmed the same numbers",
+    },
+    story: {
+      problem: {
+        ko: "Train 1,260건의 작은 데이터\nfold별 표준편차 0.025, 상위 앙상블 조합 사이 차이는 0.0005\n**Test 점수로 고르면 실력이 아니라 운을 고르는 조건**",
+        en: "A small dataset of 1,260 training rows\nFold-to-fold standard deviation of 0.025 versus a 0.0005 gap between the top ensembles\n**Selecting on test scores here means selecting luck, not skill**",
+      },
+      insight: {
+        ko: "파생변수의 효과 약 +0.10, 하이퍼파라미터 튜닝의 효과 약 +0.005\n**좋은 변수 하나가 튜닝 여러 번보다 크다**는 것을 숫자로 확인\n파생변수는 EDA와 SHAP에서 본 패턴에서만 설계",
+        en: "Engineered features added about +0.10, hyperparameter tuning about +0.005\nConfirmed in numbers that **one good feature outweighs many rounds of tuning**\nFeatures were designed only from patterns seen in EDA and SHAP",
+      },
+      solution: {
+        ko: "Stratified 5-Fold를 3회 반복한 CV 점수 15개의 평균으로만 모델 선택, Test는 기록만\n단일 모델 1위는 로지스틱 회귀(0.8551), 계열이 다른 세 모델 조합이 0.8593으로 1위\nAUC가 순위 지표라 순위 평균으로 앙상블\n추천받은 설정도 CV 점수가 떨어지면 채택하지 않음",
+        en: "Selected models only by the mean of 15 CV scores (Stratified 5-Fold repeated 3 times); the test set was recorded, not used\nBest single model was logistic regression (0.8551); a mix of three different model families ranked first at 0.8593\nEnsembled by rank averaging because AUC is a ranking metric\nRejected any suggested setting whose CV score dropped",
+      },
+    },
+    team: {
+      ko: "개인 실습",
+      en: "Individual lab",
+    },
+    role: {
+      ko: "개인 실습 | 모델 선택 기준 설계, 파생변수 설계, 실험 기록, 랩업 발표",
+      en: "Individual | Model-selection criteria, feature design, experiment log, wrap-up talk",
+    },
+    tags: {
+      ko: ["이탈 예측", "교차검증", "파생변수", "앙상블"],
+      en: ["Churn prediction", "Cross-validation", "Feature engineering", "Ensemble"],
+    },
+    highlights: {
+      ko: [
+        "**Test는 기록만**, 선택은 Train 안 반복 Cross-validation(5-Fold 3회)으로만",
+        "Baseline(depth 3 의사결정나무) AUC 0.7722 → 최종 앙상블 Validation 0.8716, Test 0.8575",
+        "실험 24번을 기록하고, 방향을 바꾼 지점과 이유를 남김",
+        "로지스틱 회귀, ExtraTrees, XGBoost를 순위 평균으로 결합",
+      ],
+      en: [
+        "**The test set was only recorded**; selection used repeated cross-validation inside the training set (5-Fold, 3 repeats)",
+        "Baseline (depth-3 decision tree) AUC 0.7722 → final ensemble 0.8716 on validation, 0.8575 on test",
+        "Logged 24 experiments, including where and why the direction changed",
+        "Combined logistic regression, ExtraTrees, and XGBoost by rank averaging",
+      ],
+    },
+    proof: {
+      ko: [
+        "데이터가 작을수록 검증 설계가 모델 종류보다 중요하다는 것을 직접 측정으로 확인",
+        "Test 점수를 보면서 고르면 점수는 오르지만 실력은 오르지 않는다는 기준 유지",
+      ],
+      en: [
+        "Measured for myself that with small data, validation design matters more than the model family",
+        "Held to the rule that choosing while looking at test scores raises the score, not the skill",
+      ],
+    },
+    metrics: [
+      {
+        value: "0.8646",
+        label: {
+          ko: "최종 AUC (Validation과 Test 평균, Baseline 0.7722)",
+          en: "Final AUC (mean of validation and test; baseline 0.7722)",
+        },
+      },
+      {
+        value: "15",
+        label: {
+          ko: "모델 선택에 쓴 CV 점수 (5-Fold 3회 반복)",
+          en: "CV scores used for selection (5-Fold × 3 repeats)",
+        },
+      },
+      {
+        value: "24",
+        label: {
+          ko: "기록한 실험 횟수",
+          en: "Experiments logged",
+        },
+      },
+    ],
+    sections: [],
+    artifacts: {
+      ko: ["제출 노트북", "실험 기록"],
+      en: ["Submitted notebook", "Experiment log"],
+    },
+    interviewQuestions: {
+      ko: [],
+      en: [],
+    },
+    links: {},
+  },
+  {
+    slug: "skala-lora-eval-audit",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-08-13",
+    stack: ["Qwen2.5-1.5B", "LoRA", "SFT"],
+    period: {
+      ko: "2026.08.12 - 08.13",
+      en: "Aug 12 - 13, 2026",
+    },
+    category: {
+      ko: "SKALA 4기 개인 과제 / sLLM 파인튜닝",
+      en: "SKALA Cohort 4 Individual Assignment / sLLM Fine-tuning",
+    },
+    title: {
+      ko: "sLLM LoRA 평가 감사 | 4.5배 오른 점수를 그대로 믿지 않고 평가 코드부터 점검",
+      en: "sLLM LoRA Evaluation Audit | Checking the Evaluation Code Before Trusting a 4.5× Score Gain",
+    },
+    summary: {
+      ko: "Qwen2.5-1.5B를 LoRA로 파인튜닝한 뒤 점수가 0.0862에서 0.3852로 올랐습니다. 평가 코드와 제 설정을 점검해 **\"형식은 배웠지만 사실은 못 배웠다\"**는 결론을 냈습니다.",
+      en: "After LoRA fine-tuning Qwen2.5-1.5B, the score rose from 0.0862 to 0.3852. Auditing the evaluation code and my own settings led to the conclusion: **\"it learned the format, not the facts.\"**",
+    },
+    context: {
+      ko: "SKALA 4기 sLLM 파인튜닝 개인 과제, Base 모델과 SFT 모델 비교 서브노트\nAI 도구와 함께 점검했고 최종 검증은 직접 수행\n점수는 과제 평가 코드 기준이며, 그 코드에 환각 검사 공백이 있다는 점을 함께 기록",
+      en: "An individual sLLM fine-tuning assignment comparing the base and SFT models\nI reviewed it with AI tools and did the final verification myself\nThe score follows the assignment's evaluation code, and I recorded that the code has a gap in hallucination checks",
+    },
+    story: {
+      problem: {
+        ko: "평균 Total 0.0862 → 0.3852, 약 4.5배 상승\n**오른 점수가 무엇을 재고 있는지**가 확인되지 않은 상태",
+        en: "Mean total score rose from 0.0862 to 0.3852, about 4.5×\n**What the higher score was actually measuring** had not been checked",
+      },
+      insight: {
+        ko: "20문항 중 15문항은 Hallucination(환각) 검사가 코드에서 꺼져 있음\n최고점 문항(Total 0.702)이 자료에 없는 등급을 지어낸 답\n집계 환각률 0.0의 분모는 검사가 켜진 5문항뿐",
+        en: "For 15 of 20 questions, the hallucination check was disabled in code\nThe top-scoring item (total 0.702) was an answer that invented a grade not in the source\nThe reported 0.0 hallucination rate covered only the 5 questions where the check was on",
+      },
+      solution: {
+        ko: "평가 코드를 문항 유형별로 읽어 검사 범위를 표로 정리\n내 설정 감사: max_length를 512에서 384로 낮춘 탓에 **학습 샘플 582건 중 148건(25.4%)의 정답이 잘림**\n점수와 함께 지표의 한계를 보고서에 명시",
+        en: "Read the evaluation code by question type and tabulated what each check covers\nAudited my own setting: lowering max_length from 512 to 384 **truncated the answers of 148 of 582 training samples (25.4%)**\nReported the metric's limits alongside the score",
+      },
+    },
+    team: {
+      ko: "개인 과제",
+      en: "Individual assignment",
+    },
+    role: {
+      ko: "개인 과제 | 학습 실행, 평가 코드 점검, 설정 감사, 보고서 작성",
+      en: "Individual | Training runs, evaluation-code review, settings audit, report",
+    },
+    tags: {
+      ko: ["LLM 평가", "환각 검증", "파인튜닝", "재현성"],
+      en: ["LLM evaluation", "Hallucination check", "Fine-tuning", "Reproducibility"],
+    },
+    highlights: {
+      ko: [
+        "점수 4.5배 상승을 성과로 적지 않고 **평가 지표의 검사 범위부터 확인**",
+        "Hallucination 검사가 20문항 중 5문항에만 적용된다는 것을 코드에서 확인",
+        "max_length 설정으로 학습 데이터 25.4%가 잘린 것을 사후 감사로 발견",
+        "내 판단 실패 2건을 보고서에 기록(초기 소요 시간 추정을 믿고 중단, 검증 없이 메모리 설정 변경)",
+      ],
+      en: [
+        "Did not report the 4.5× gain as a result before **checking what the metric actually covers**",
+        "Confirmed in code that the hallucination check applied to only 5 of 20 questions",
+        "Found in a post-hoc audit that my max_length setting truncated 25.4% of the training data",
+        "Recorded two of my own judgment failures in the report (stopping a run on an early time estimate, changing a memory setting without checking)",
+      ],
+    },
+    proof: {
+      ko: [
+        "좋게 나온 숫자일수록 측정 방법부터 의심하는 순서 정착",
+        "가정으로 바꾼 설정이 실측으로 반증되자 바로 되돌리고 기록",
+      ],
+      en: [
+        "Made it a habit to question the measurement first when a number looks good",
+        "When a setting I changed on an assumption was disproved by measurement, I reverted it at once and logged it",
+      ],
+    },
+    metrics: [
+      {
+        value: "15 / 20",
+        label: {
+          ko: "환각 검사가 적용되지 않은 평가 문항",
+          en: "Evaluation questions without a hallucination check",
+        },
+      },
+      {
+        value: "25.4%",
+        label: {
+          ko: "내 설정으로 정답이 잘린 학습 샘플 (582건 중 148건)",
+          en: "Training samples truncated by my setting (148 of 582)",
+        },
+      },
+      {
+        value: "4.5×",
+        label: {
+          ko: "점수 상승 (0.0862 → 0.3852, 환각 검사 공백이 있는 지표 기준)",
+          en: "Score gain (0.0862 → 0.3852, on a metric with a hallucination-check gap)",
+        },
+      },
+    ],
+    sections: [],
+    artifacts: {
+      ko: ["서브노트 보고서", "평가 코드 점검표"],
+      en: ["Lab report", "Evaluation-code review table"],
+    },
+    interviewQuestions: {
+      ko: [],
+      en: [],
+    },
+    links: {},
+  },
+  {
+    slug: "skala-p-match",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-08-11",
+    stack: ["Spring Boot", "OAuth2", "JPA", "Mockito", "Vue 3", "Kafka", "Docker Compose"],
+    period: {
+      ko: "2026.08",
+      en: "Aug 2026",
+    },
+    category: {
+      ko: "SKALA 4기 공통 프로젝트 / MSA 팀 실습",
+      en: "SKALA Cohort 4 Shared Project / MSA Team Lab",
+    },
+    title: {
+      ko: "P-Match | 팀 전체를 막던 인증 오류의 원인을 찾아 재현하고 검증한 B2B 조달 매칭 플랫폼",
+      en: "P-Match | Tracing, Reproducing, and Verifying the Auth Error That Blocked a B2B Procurement Platform Team",
+    },
+    summary: {
+      ko: "구매기업과 공급기업을 잇는 B2B 조달 매칭 서비스의 6명 팀 실습입니다. User 도메인을 맡아 **팀 전체를 막던 role 충돌의 원인을 규명**하고, 해결안과 검증 테스트 14건을 만들었습니다.",
+      en: "A six-person team lab building a B2B procurement matching service. Owning the User domain, I **traced the role conflict that blocked the whole team**, proposed fixes, and wrote 14 verification tests.",
+    },
+    context: {
+      ko: "SKALA 4기 공통 프로젝트, 도메인별 분업(User, Order, Payment, Matching, Delivery 등)\n강사가 제공한 MSA 템플릿을 조달 도메인으로 바꾸는 과제\n인증 서버는 소스가 없는 완제품이라 고칠 수 없는 조건",
+      en: "A SKALA Cohort 4 shared project split by domain (User, Order, Payment, Matching, Delivery, and more)\nThe task was to adapt an instructor-provided MSA template to the procurement domain\nThe auth server was a prebuilt binary without source, so it could not be changed",
+    },
+    story: {
+      problem: {
+        ko: "로그인 뒤 내 정보 조회가 500 오류\n인증 서버와 user-service가 같은 users 테이블을 서로 다른 role 값으로 읽는 구조\n**DB에 어떤 값을 넣어도 한쪽이 깨지는 충돌**",
+        en: "Fetching the user's own profile after login returned a 500 error\nThe auth server and user-service read the same users table with different role values\n**Whatever value went into the database, one side broke**",
+      },
+      insight: {
+        ko: "계획했던 자체 로그인 방식은 인증 서버가 지원하지 않아 불가능\nOAuth2 Authorization Code Flow로 방향 전환\n충돌은 내 코드가 아니라 두 서비스의 enum 정의 차이에서 발생한다는 것을 재현표로 확인",
+        en: "The planned in-service login was impossible because the auth server did not support it\nSwitched to the OAuth2 Authorization Code Flow\nA reproduction table showed the conflict came from the two services' enum definitions, not from my code",
+      },
+      solution: {
+        ko: "원인 규명 → 재현표 작성 → 해결안 A, B, C 제시(A안은 저장 값과 도메인 값을 변환기로 분리)\n변환기 코드는 팀원이 작성, 저는 **검증 테스트 14건** 작성(매핑, 역매핑, 과도기 값, null, 예외, 왕복)\n로그아웃 오류 수정, 401 시 토큰 자동 갱신, OAuth2 state 파라미터 추가\n커밋된 환경 파일을 발견해 무시 규칙 추가와 팀 공유",
+        en: "Root cause → reproduction table → three options (option A separates stored values from domain values with a converter)\nA teammate wrote the converter; I wrote **14 verification tests** (mapping, reverse mapping, transitional values, null, exceptions, round trip)\nFixed logout, added automatic token refresh on 401, and added the OAuth2 state parameter\nFound a committed environment file, added an ignore rule, and told the team",
+      },
+    },
+    team: {
+      ko: "6명 팀 (도메인별 분업)",
+      en: "Six-person team (split by domain)",
+    },
+    role: {
+      ko: "User 도메인 담당 | 로그인과 인증 흐름, 오류 원인 규명, 해결안 제시, 검증 테스트, 문서화",
+      en: "User domain | Login and auth flow, root-cause analysis, fix proposals, verification tests, documentation",
+    },
+    tags: {
+      ko: ["MSA", "인증", "원인 분석", "테스트"],
+      en: ["MSA", "Authentication", "Root-cause analysis", "Testing"],
+    },
+    highlights: {
+      ko: [
+        "고칠 수 없는 인증 서버와의 충돌을 **원인까지 규명해 팀에 문서로 공유**",
+        "본인 작성 검증 테스트 14건 통과(UserServiceTest 8건, RoleConverterTest 6건)",
+        "변환기(RoleConverter) 코드 한정 라인과 브랜치 커버리지 100%",
+        "OAuth2 Authorization Code Flow 로그인, 토큰 자동 갱신, state 파라미터로 위조 콜백 방어",
+        "실행 방법과 API 목록(Swagger), 로컬 개발 주의사항을 README로 정리",
+      ],
+      en: [
+        "**Traced a conflict with an unchangeable auth server to its root cause and shared it with the team in writing**",
+        "All 14 of my verification tests pass (8 in UserServiceTest, 6 in RoleConverterTest)",
+        "100% line and branch coverage, limited to the RoleConverter code",
+        "OAuth2 Authorization Code Flow login, automatic token refresh, and a state parameter against forged callbacks",
+        "Documented setup, the API list (Swagger), and local development notes in a README",
+      ],
+    },
+    proof: {
+      ko: [
+        "내 담당 범위 밖에서 생긴 문제도 재현표로 원인을 좁혀 팀이 결정할 수 있게 정리",
+        "한계: 인증 서버는 모의 객체로 대체했고, 실제 HTTP 500에서 200으로 바뀌는 과정은 측정하지 못함",
+      ],
+      en: [
+        "For a problem outside my own scope, I narrowed the cause with a reproduction table so the team could decide",
+        "Limit: the auth server was mocked, and the real HTTP 500-to-200 change was not measured",
+      ],
+    },
+    metrics: [
+      {
+        value: "14 / 14",
+        label: {
+          ko: "본인 작성 검증 테스트 통과",
+          en: "My verification tests passing",
+        },
+      },
+      {
+        value: "100%",
+        label: {
+          ko: "변환기 코드 한정 라인과 브랜치 커버리지",
+          en: "Line and branch coverage, converter code only",
+        },
+      },
+      {
+        value: { ko: "6명", en: "6" },
+        label: {
+          ko: "팀 인원 (도메인별 분업)",
+          en: "Team members (split by domain)",
+        },
+      },
+    ],
+    sections: [],
+    artifacts: {
+      ko: ["user-service README", "재현표와 해결안 문서", "검증 테스트"],
+      en: ["user-service README", "Reproduction table and options", "Verification tests"],
+    },
+    interviewQuestions: {
+      ko: [],
+      en: [],
+    },
+    links: {
+      github: "https://github.com/jang961111-hash/skala-p-match",
+    },
+  },
+  {
+    slug: "skala-db-sql-lab",
+    featured: false,
+    status: "completed",
+    sortDate: "2026-07-24",
+    stack: ["PostgreSQL", "SQL", "Materialized View", "EXPLAIN (BUFFERS)"],
+    period: {
+      ko: "2026.07",
+      en: "Jul 2026",
+    },
+    category: {
+      ko: "SKALA 4기 종합실습 / DB와 SQL",
+      en: "SKALA Cohort 4 Capstone Lab / Database & SQL",
+    },
+    title: {
+      ko: "DB/SQL 종합실습 | 정상처럼 보이던 지표 안에서 상쇄된 오류 두 개를 찾아 정정",
+      en: "DB/SQL Capstone Lab | Finding Two Offsetting Errors Inside a Metric That Looked Correct",
+    },
+    summary: {
+      ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 개인 종합실습입니다. 재구매율 지표의 오류 두 개가 서로 상쇄돼 정상처럼 보이던 것을 정정했고, **개별평가 100점(S+등급)**을 받았습니다.",
+      en: "An individual capstone lab covering schema design, advanced SQL, and performance tuning. I corrected a repurchase-rate metric in which two errors had been cancelling each other out, and received **100 points (grade S+)** in the individual evaluation.",
+    },
+    context: {
+      ko: "SKALA 4기 DB/SQL 종합실습(개인), 실습 세 개가 각각 100점(S)\n완성된 SQL을 받아 적지 않고 직접 쓴다는 규칙을 세우고 진행\n주석은 가이드 문구를 옮기지 않고 이해한 내용을 내 표현으로 다시 작성",
+      en: "SKALA Cohort 4 DB/SQL capstone lab (individual); each of the three labs scored 100 (S)\nI set the rule of writing every query myself rather than copying finished SQL\nComments were rewritten in my own words instead of copying the guide",
+    },
+    story: {
+      problem: {
+        ko: "30일 내 재구매율 초안 값 10.10%, 겉으로는 정상\n외부 리뷰 지적 뒤 다시 검증하니 **오류 두 개가 서로 상쇄**된 값\n하나만 고치면 8.98%로 오히려 더 틀어지는 구조",
+        en: "The first draft of the 30-day repurchase rate was 10.10%, which looked fine\nRe-checking after an outside review showed **two errors cancelling each other out**\nFixing only one of them made it worse, at 8.98%",
+      },
+      insight: {
+        ko: "미래 주문이 분자에 섞인 오류와, 관찰 30일을 채우지 못한 고객이 분모에 섞인 오류\n숫자가 그럴듯해도 분모와 분자의 정의를 따로 검증해야 한다는 교훈",
+        en: "One error let future orders into the numerator; the other let customers without a full 30-day window into the denominator\nThe lesson: even when a number looks plausible, verify the numerator and denominator definitions separately",
+      },
+      solution: {
+        ko: "두 오류를 함께 고쳐 10.13%로 정정(분모 1,698명, 분자 172명)\nNULL이 끼어든 삼값 논리 결함을 규명해 **오분류 902건 교정**, EXCEPT로 집합 검증\n순차 스캔을 끈 조건에서 5회 반복 실측, Materialized View 갱신 비용과 잠금 영향 분석\npsql 실행 화면 87장으로 과정 기록",
+        en: "Fixed both errors together and corrected the rate to 10.13% (1,698 customers in the denominator, 172 in the numerator)\nTraced a three-valued-logic flaw involving NULL and **corrected 902 misclassified rows**, verified with EXCEPT\nMeasured 5 repeated runs with sequential scans disabled, and analyzed materialized-view refresh cost and locking\nRecorded the process in 87 psql captures",
+      },
+    },
+    team: {
+      ko: "개인 실습",
+      en: "Individual lab",
+    },
+    role: {
+      ko: "개인 실습 | 스키마 설계, 쿼리 작성과 검증, 성능 실험, 기록",
+      en: "Individual | Schema design, query writing and verification, performance experiments, records",
+    },
+    tags: {
+      ko: ["데이터 검증", "SQL", "성능 튜닝", "지표 정의"],
+      en: ["Data verification", "SQL", "Performance tuning", "Metric definition"],
+    },
+    highlights: {
+      ko: [
+        "재구매율 10.10%를 10.13%로 정정, **상쇄된 오류 두 개**를 외부 리뷰 뒤 자체 검증으로 확인",
+        "SQL 삼값 논리(NULL 처리) 결함을 규명해 오분류 902건 교정",
+        "학사관리 DB를 엔티티 5개, 3NF로 설계하고 RESTRICT와 CASCADE 옵션 구분",
+        "순차 스캔을 끈 조건에서 5회 반복 실측으로 실행 계획 비교",
+        "개별평가 100점(S+등급), 세부 실습 3개 각 100점(S)",
+      ],
+      en: [
+        "Corrected the repurchase rate from 10.10% to 10.13%, confirming **two offsetting errors** through my own verification after an outside review",
+        "Traced an SQL three-valued-logic (NULL handling) flaw and corrected 902 misclassified rows",
+        "Designed an academic database with 5 entities in 3NF, distinguishing RESTRICT from CASCADE",
+        "Compared execution plans with 5 repeated runs under sequential scans disabled",
+        "Individual evaluation: 100 points (grade S+), with 100 (S) on each of the three labs",
+      ],
+    },
+    proof: {
+      ko: [
+        "그럴듯한 숫자도 정의부터 다시 확인하는 검증 순서 정착",
+        "과정 전체를 실행 화면으로 남겨 누구나 같은 결과를 따라갈 수 있게 기록",
+      ],
+      en: [
+        "Made it a habit to re-check a metric's definition even when the number looks plausible",
+        "Recorded the whole process in execution captures so anyone can follow it to the same result",
+      ],
+    },
+    metrics: [
+      {
+        value: { ko: "100점", en: "100" },
+        label: {
+          ko: "개별평가 종합 (S+등급)",
+          en: "Individual evaluation total (grade S+)",
+        },
+      },
+      {
+        value: { ko: "902건", en: "902" },
+        label: {
+          ko: "삼값 논리 결함으로 생긴 오분류 교정",
+          en: "Misclassified rows corrected (three-valued-logic flaw)",
+        },
+      },
+      {
+        value: "10.13%",
+        label: {
+          ko: "정정한 30일 내 재구매율 (초안 10.10%)",
+          en: "Corrected 30-day repurchase rate (draft 10.10%)",
+        },
+      },
+    ],
+    sections: [],
+    artifacts: {
+      ko: ["실습 보고서", "psql 실행 화면 87장"],
+      en: ["Lab report", "87 psql captures"],
+    },
+    interviewQuestions: {
+      ko: [],
+      en: [],
+    },
+    links: {},
+  },
+  {
     slug: "argus",
     stack: ["FastAPI", "Vue 3", "PostgreSQL", "OpenAPI"],
     featured: true,
@@ -328,8 +774,8 @@ export const portfolioProjects = [
           en: "System Architecture",
         },
         body: {
-          ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신\nPostgreSQL(Supabase) 전제, 로컬에서는 SQLite로 검증\n에이전트는 **공통 인터페이스 뒤에 배치**, 3일 범위에서는 고정 응답(Mock)으로 흐름 검증\n이후 LLM 구현체로 교체할 수 있게 설계\n엔지니어와 안전관리자 역할에 따라 화면과 권한 분리",
-          en: "A Vue 3 + Vite frontend talks to a FastAPI (Python) backend over REST JSON; data targets PostgreSQL (Supabase) and was verified locally on SQLite. Agents sit behind a common interface — within the three-day scope, fixed-response (Mock) implementations validated the flow, with LLM implementations swappable later. Screens and permissions are split by role: engineer and safety manager.",
+          ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신\nPostgreSQL(Supabase) 전제, 로컬에서는 SQLite로 검증\n에이전트는 **공통 인터페이스 뒤에 배치**, 3일 범위에서는 고정 응답(Mock)으로 흐름 검증\n이후 LLM 구현체로 교체할 수 있게 설계\n엔지니어와 안전관리자 역할에 따라 화면과 권한 분리\n여기 적은 구성은 팀 작업과 병행해 만든 개인 저장소 기준, 5인 팀 공식 저장소는 Java와 Spring Boot",
+          en: "A Vue 3 + Vite frontend talks to a FastAPI (Python) backend over REST JSON; data targets PostgreSQL (Supabase) and was verified locally on SQLite. Agents sit behind a common interface — within the three-day scope, fixed-response (Mock) implementations validated the flow, with LLM implementations swappable later. Screens and permissions are split by role: engineer and safety manager. The stack described here is from my personal repository, built alongside the team work; the five-person team's official repository uses Java and Spring Boot.",
         },
       },
     ],
@@ -392,16 +838,16 @@ export const portfolioProjects = [
       en: "Google x Solana AI Agentic Hackathon",
     },
     title: {
-      ko: "장보고(JangBogo) | AI 에이전트가 견적 검증부터 결제까지 잇는 가맹점용 게이트웨이",
-      en: "JangBogo | A Merchant Gateway Where AI Agents Go from Quote Verification to Payment",
+      ko: "장보고(JangBogo) | 에이전트 결제를 가맹점 쪽 정책 엔진이 검증하는 커머스 게이트웨이",
+      en: "JangBogo | A Commerce Gateway Where a Merchant-Side Policy Engine Verifies Agent Payments",
     },
     summary: {
       ko: "구매 에이전트가 가맹점 견적을 비교하고 온체인으로 결제하면, 가맹점 쪽 결정론 정책 엔진이 위임장 서명, 유효기간, 범위, 카트, 예산, 온체인 지불을 **6단계로 검증**하는 에이전트 커머스 게이트웨이입니다.",
       en: "An agent-commerce gateway: a buyer agent compares merchant quotes and pays on-chain, while a deterministic merchant-side policy engine verifies mandate signature, expiry, scope, cart, budget, and on-chain payment in six steps.",
     },
     context: {
-      ko: "Google x Solana AI Agentic Hackathon에 2인 팀 사공이(402)로 제출\nAI Agent와 간편결제를 한 프로젝트에서 미리 경험",
-      en: "Submitted to the Google x Solana AI Agentic Hackathon as the two-person team Sagong-i (402) — hands-on experience combining AI agents and payments in a single project.",
+      ko: "Google x Solana AI Agentic Hackathon에 팀 사공이(402, 등록 2인)로 제출\nAI Agent와 간편결제를 한 프로젝트에서 미리 경험",
+      en: "Submitted to the Google x Solana AI Agentic Hackathon as Team Sagong-i (402, two registered members) — hands-on experience combining AI agents and payments in a single project.",
     },
     story: {
       problem: {
@@ -418,8 +864,8 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "사공이(402) 2인 팀",
-      en: "Team Sagong-i (402), two members",
+      ko: "팀 사공이(402), 등록 2인",
+      en: "Team Sagong-i (402), two registered members",
     },
     role: {
       ko: "팀장, PM | 에이전트 설계, 프론트엔드, GCP 인프라",
@@ -954,8 +1400,8 @@ export const portfolioProjects = [
     },
     story: {
       problem: {
-        ko: "학원 강사는 가르치는 일에 집중해야 하지만 실제로는 주 10시간 이상을 출제, 채점, 관리에 사용\n기존 도구가 막히는 세 지점은 불편한 문제 등록, 번거로운 시험지 제작, 시간이 걸리는 수기 채점",
-        en: "Instructors should focus on teaching, yet spend 10+ hours a week on exam creation, grading, and management. Existing tools fail at three points: registering questions, assembling papers, and manual grading.",
+        ko: "학원 강사는 가르치는 일에 집중해야 하지만 사업 소개 덱의 가정으로는 주 10시간 이상을 출제, 채점, 관리에 사용\n기존 도구가 막히는 세 지점은 불편한 문제 등록, 번거로운 시험지 제작, 시간이 걸리는 수기 채점",
+        en: "Instructors should focus on teaching, yet, by the business deck's assumption, spend 10+ hours a week on exam creation, grading, and management. Existing tools fail at three points: registering questions, assembling papers, and manual grading.",
       },
       insight: {
         ko: "개별 기능 세 개를 파는 대신 하나의 데이터 선순환 루프로 설계해야 한다고 판단\n루프는 '등록 → AI 분류 → 시험지 생성 → 자동 채점 → 약점 분석'\n쓸수록 똑똑해지고 갈아타기 어려운 제품이 되는 조건",
@@ -2071,8 +2517,8 @@ export const portfolioProjects = [
     status: "completed",
     sortDate: "2026-05-21",
     period: {
-      ko: "2026.03 - 2026.05",
-      en: "Mar 2026 - May 2026",
+      ko: "2026.04.02 - 2026.05.21",
+      en: "Apr 2 - May 21, 2026",
     },
     category: {
       ko: "SSAFY 14기 자율 프로젝트 최종발표",
