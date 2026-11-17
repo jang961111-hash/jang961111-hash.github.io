@@ -26,7 +26,7 @@
     "subtitle": "LLM · 추천 · 검색을 실제 사용자 경험으로 구현해본 AI 서비스 개발자입니다.",
     "mission": "철학 전공의 문제 구조화 사고와 SSAFY 1,628시간의 AI/SW 교육을 바탕으로, 문제 정의(기획)부터 React 구현까지 한 사이클을 완주합니다.",
     "proofItems": {
-      "product": "DailyLog에서 PM을 맡아 AI 회고 서비스를 기획하고, SSAFY 특화 프로젝트 우수상(3등)을 받았습니다",
+      "product": "DailyLog에서 PM을 맡아 AI 회고 서비스를 기획했고, SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 했습니다",
       "ai": "음성 입력(SenseVoice) · 추천(Thompson Sampling) · 벡터 검색(pgvector)을 하나의 회고 흐름으로 설계했습니다",
       "execution": "Loggy에서 WebSocket 기반 실시간 검토 화면을 React로 직접 구현했습니다"
     },
@@ -51,7 +51,7 @@
       "title": "At a glance",
       "projects": "프로젝트",
       "awards": "수상",
-      "awardsNote": "SKT promp.T 최우수상 · SSAFY 우수상 · Oregon UAS · 창업캠프 최우수팀",
+      "awardsNote": "SKT promp.T 최우수상, SSAFY 특화프로젝트 광주1반 3등, 창업캠프 최우수팀",
       "hackathons": "해커톤 · 챌린지",
       "training": "삼성 청년 SW·AI 아카데미",
       "trainingValue": "SSAFY 14기"
@@ -66,7 +66,7 @@
         "context": "사용자가 매일 기록을 지속하기 어려운 문제를 '입력 부담'과 '회고 흐름 단절'로 정의하고 해결한 프로젝트입니다.",
         "summary": "AI 질문 흐름을 통해 자연스럽게 회고를 수행하고, 회고 데이터를 바탕으로 맞춤형 행동 추천을 받을 수 있는 서비스입니다.",
         "metrics": {
-          "1": "SSAFY 14기 특화 프로젝트 우수상 (3등) 수상",
+          "1": "SSAFY 14기 특화프로젝트 발표회 광주1반 3등",
           "2": "SenseVoice 음성 입력 · Thompson Sampling 추천 · pgvector 검색을 하나의 회고 흐름으로 설계",
           "3": "하루를 Event · Emotion · Cause 3요소로 구조화한 기록 슬롯 설계"
         },
@@ -78,7 +78,7 @@
         "proof": {
           "1": "빈 화면 앞에서 멈추는 사용자를 위해 AI가 먼저 질문을 던지는 흐름을 설계했습니다.",
           "2": "기능을 늘리는 대신 '기록이 끊기는 지점'을 좁혀 우선순위를 정했습니다.",
-          "3": "기획 방향을 끝까지 유지하며 배포와 우수상 수상까지 마무리했습니다."
+          "3": "기획 방향을 끝까지 유지하며 배포와 광주1반 3등 수상까지 마무리했습니다."
         }
       },
       "loggy": {
@@ -167,7 +167,7 @@
         "title": "AI가 먼저 질문하는 회고 흐름",
         "problem": "사용자는 빈 화면 앞에서 무엇을 써야 할지 몰라 기록을 포기했습니다.",
         "approach": "하루를 Event · Emotion · Cause 슬롯으로 구조화하고, AI가 사용자의 맥락에 맞춰 먼저 질문을 던지도록 프롬프트 흐름을 설계했습니다.",
-        "result": "회고의 진입 장벽을 낮춘 핵심 기능이 되었고, SSAFY 특화 프로젝트 우수상(3등) 수상으로 이어졌습니다."
+        "result": "회고의 진입 장벽을 낮춘 핵심 기능이 되었고, SSAFY 14기 특화프로젝트 발표회 광주1반 3등으로 이어졌습니다."
       },
       "recommendation": {
         "project": "DailyLog",
@@ -181,7 +181,7 @@
         "title": "자연어를 제어 시퀀스로 번역하는 지휘 UX",
         "problem": "한 명의 오퍼레이터가 지상(UGV)·공중(VTOL) 무인자산을 동시에 통제해야 해서, 조종 스틱과 화면 전환만으로는 인지 과부하가 발생했습니다.",
         "approach": "\"전진 5초\" 같은 자연어 명령을 실제 제어 시퀀스로 변환하는 지휘 UX를 설계하고, AI가 긴급 요청을 생명 직결도 → 시간 민감도 → 임무 파급효과 순으로 정렬하는 트리아지 큐와 음성 코파일럿을 기획했습니다.",
-        "result": "72시간 만에 실물 UGV·VTOL 연동 라이브 콘솔로 시연했고, D4D 서울에서 Oregon UAS Accelerator 상 수상으로 이어졌습니다."
+        "result": "24시간 개발로 실물 UGV·VTOL 연동 라이브 콘솔을 시연했고, D4D 서울에서 Oregon UAS Accelerator 특별 트랙에 선정되었습니다."
       },
       "promptProduct": {
         "project": "Promtree",
@@ -413,7 +413,7 @@
         "company": "Republic of Korea Marine Corps",
         "period": "2016.12 - 2018.09",
         "desc": [
-          "해병대 제2사단에서 소총수로 복무했습니다.",
+          "해병대에서 보병으로 복무했습니다.",
           "한미연합훈련 과정에서 통역과 상황 전달을 일부 지원했습니다.",
           "제한된 환경에서 맡은 일을 끝까지 수행하는 태도를 배웠습니다."
         ]
@@ -442,10 +442,10 @@
     "title": "Awards",
     "items": [
       {
-        "title": "SSAFY 14기 특화 프로젝트 우수상",
+        "title": "SSAFY 14기 특화프로젝트 발표회 광주1반 3등",
         "organization": "삼성전자·멀티캠퍼스 SSAFY",
         "date": "2026.04",
-        "desc": "AI 기반 회고 서비스 DailyLog에서 PM 및 서비스 기획 역할을 수행하여 우수상(3등)을 수상했습니다."
+        "desc": "AI 기반 회고 서비스 DailyLog에서 PM 및 서비스 기획 역할을 수행했고, 팀은 광주1반 3등을 했습니다."
       }
     ]
   },

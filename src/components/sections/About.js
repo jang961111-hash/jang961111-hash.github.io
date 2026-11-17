@@ -37,7 +37,7 @@ const About = () => {
                   {t("identity.glance.awardsNote")}
                 </span>
               </dt>
-              <dd>4</dd>
+              <dd>3</dd>
             </div>
             <div className="about-glance-row">
               <dt>{t("identity.glance.hackathons")}</dt>

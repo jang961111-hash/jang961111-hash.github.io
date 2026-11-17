@@ -26,12 +26,12 @@ export const portfolioProjects = [
     },
     story: {
       problem: {
-        ko: "부품의 실제 교체는 2시간이면 끝나는데, 승인이 훨씬 오래 걸렸습니다. 규격 확인·법령 조사·안전 승인에 필요한 정보가 여러 곳에 흩어져 있었고, 대상 협력사는 보안상 외부 클라우드 LLM을 쓸 수 없었습니다.",
-        en: "The physical part swap takes about two hours, but approval takes far longer. The information needed for spec checks, regulatory review, and safety sign-off is scattered across sources, and the target partner companies cannot use external cloud LLMs for security reasons.",
+        ko: "규격 확인·법령 조사·안전 승인에 필요한 정보가 여러 곳에 흩어져 있었고, 대상 협력사는 보안상 외부 클라우드 LLM을 쓸 수 없었습니다.",
+        en: "The information needed for spec checks, regulatory review, and safety sign-off is scattered across sources, and the target partner companies cannot use external cloud LLMs for security reasons.",
       },
       insight: {
-        ko: "SK하이닉스 설비 담당자를 현장 인터뷰한 결과 처음 세운 두 가설이 기각되었고, 그 결과를 반영해 API 설계를 다시 잡았습니다. 설계 원칙은 '증명은 에이전트가, 판단은 사람이'로 정했습니다 — 에이전트는 근거를 모으고, 승인·거절은 안전관리자가 합니다.",
-        en: "A field interview with an SK hynix equipment engineer rejected our first two hypotheses, and we redesigned the API around what we learned. The guiding principle became 'agents prove, people decide' — agents gather evidence; the safety manager approves or rejects.",
+        ko: "팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 가운데 두 개가 틀린 것으로 확인되었습니다. 설계 원칙은 '증명은 에이전트가, 판단은 사람이'로 정했습니다 — 에이전트는 근거를 모으고, 승인·거절은 안전관리자가 합니다.",
+        en: "A phone interview with a practitioner, conducted by a teammate, showed that two of our initial hypotheses were wrong. The guiding principle became 'agents prove, people decide' — agents gather evidence; the safety manager approves or rejects.",
       },
       solution: {
         ko: "엔지니어가 교체 요청을 등록하면 역할별 AI 에이전트(규격·호환 / 법령·조문 / 안전서류)가 검토 결과를 만들고, 화면은 서버가 지정한 간격으로 진행 상태를 폴링해 보여줍니다. 안전관리자는 AI 결과물을 읽기 전용으로 확인한 뒤 승인 또는 거절(사유 포함)을 결정합니다. AI 공급자 설정은 기본값이 Mock·외부 전송 차단(egress_allowed=false)이며, 외부 전송이 꺼진 상태에서 외부 AI 공급자를 지정하면 서버가 기동을 거부하도록 했습니다.",
@@ -52,14 +52,14 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "SK하이닉스 설비 담당자 현장 인터뷰로 두 가설이 기각된 뒤, API 설계를 다시 잡았습니다.",
+        "팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 두 개가 틀린 것으로 확인되었습니다.",
         "'증명은 에이전트가, 판단은 사람이' 원칙으로 AI 검토 결과는 근거로만 쓰고 승인·거절은 안전관리자가 하도록 설계했습니다.",
         "외부 전송 차단을 기본값으로 두고, 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 해 온프레미스 전제를 코드로 강제했습니다.",
         "OpenAPI 명세, DBML 8개 테이블, 41장 발표자료로 설계부터 발표까지 3일 안에 정리했습니다.",
         "기각된 가설은 발표자료에서 지우지 않고 의도적으로 남겼고, 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
       ],
       en: [
-        "After a field interview with an SK hynix equipment engineer rejected two hypotheses, we redesigned the API.",
+        "A practitioner phone interview conducted by a teammate showed that two of our initial hypotheses were wrong.",
         "Under 'agents prove, people decide', AI review output serves only as evidence; approval and rejection stay with the safety manager.",
         "Made egress-off the default and required explicit permission before any external AI provider can start — enforcing the on-premise premise in code.",
         "Delivered an OpenAPI spec, an 8-table DBML schema, and a 41-slide deck within three days.",
@@ -68,12 +68,12 @@ export const portfolioProjects = [
     },
     proof: {
       ko: [
-        "현장 인터뷰로 가설을 검증하고, 틀린 가설을 설계 변경의 근거로 남기는 방식으로 문제를 정의했습니다.",
+        "인터뷰로 가설을 검증하고, 틀린 가설을 지우지 않고 남기는 방식으로 문제를 정의했습니다.",
         "AI의 역할(근거 수집)과 사람의 역할(판단)을 나누는 경계를 제품 구조와 설정값으로 설계했습니다.",
         "측정하지 않은 효과는 주장하지 않는다는 원칙으로 결과를 보고했습니다.",
       ],
       en: [
-        "Defined the problem by testing hypotheses in the field and keeping the wrong ones as the rationale for design changes.",
+        "Defined the problem by testing hypotheses through an interview and keeping the wrong ones on record instead of erasing them.",
         "Designed the boundary between AI (evidence gathering) and people (judgment) into both the product flow and its configuration.",
         "Reported results on the principle of never claiming an effect that was not measured.",
       ],
@@ -111,8 +111,8 @@ export const portfolioProjects = [
         en: "For accountable decisions like safety approval, AI gathers evidence and the judgment stays with people",
       },
       content: {
-        ko: "부품 교체 승인은 사고가 나면 책임이 따르는 결정입니다. 그래서 AI가 승인까지 대신하는 구조 대신, 규격·법령·안전서류 검토 결과를 근거로 정리해 넘기고 안전관리자가 그 근거를 읽고 승인하거나 사유를 적어 거절하는 구조를 택했습니다. 이 방향은 SK하이닉스 설비 담당자를 현장 인터뷰하며 처음 세운 두 가설이 기각된 뒤에 잡혔고, 기각된 가설은 발표자료에서 지우지 않고 남겼습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사가 대상이었기 때문에, 외부 전송 차단을 기본값으로 두고 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 설정 단계에서 막았습니다. 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
-        en: "Approving a part replacement is a decision someone is accountable for if something goes wrong. Instead of letting AI approve, we had it package spec, regulatory, and safety-document review results as evidence; the safety manager reads that evidence and approves, or rejects with a reason. This direction emerged after a field interview with an SK hynix equipment engineer rejected our first two hypotheses — and we kept those rejected hypotheses in the deck. Because the target partner companies cannot use external cloud LLMs, egress is off by default and any external AI provider must be explicitly allowed before the server will start. We did not report effect numbers such as approval-time reduction, because they were never measured.",
+        ko: "부품 교체 승인은 사고가 나면 책임이 따르는 결정입니다. 그래서 AI가 승인까지 대신하는 구조 대신, 규격·법령·안전서류 검토 결과를 근거로 정리해 넘기고 안전관리자가 그 근거를 읽고 승인하거나 사유를 적어 거절하는 구조를 택했습니다. 팀원이 진행한 현직자 통화 인터뷰에서 처음 세운 가설 두 개가 틀린 것으로 확인되었고, 틀린 가설은 발표자료에서 지우지 않고 남겼습니다. 외부 클라우드 LLM을 쓸 수 없는 협력사가 대상이었기 때문에, 외부 전송 차단을 기본값으로 두고 외부 AI 공급자는 명시적으로 허용해야만 기동되도록 설정 단계에서 막았습니다. 승인 시간 단축 같은 효과 수치는 실측이 없어 적지 않았습니다.",
+        en: "Approving a part replacement is a decision someone is accountable for if something goes wrong. Instead of letting AI approve, we had it package spec, regulatory, and safety-document review results as evidence; the safety manager reads that evidence and approves, or rejects with a reason. A practitioner phone interview conducted by a teammate showed that two of our initial hypotheses were wrong, and we kept those wrong hypotheses in the deck. Because the target partner companies cannot use external cloud LLMs, egress is off by default and any external AI provider must be explicitly allowed before the server will start. We did not report effect numbers such as approval-time reduction, because they were never measured.",
       },
     },
     sections: [
@@ -134,12 +134,12 @@ export const portfolioProjects = [
     },
     interviewQuestions: {
       ko: [
-        "현장 인터뷰에서 어떤 가설이 기각되었고, API 설계는 어떻게 바뀌었나요?",
+        "인터뷰에서 어떤 가설이 틀린 것으로 확인되었나요?",
         "왜 AI가 승인까지 하지 않고 근거 수집에서 멈추도록 설계했나요?",
         "외부 LLM을 쓸 수 없는 환경이라는 제약을 설계에 어떻게 반영했나요?",
       ],
       en: [
-        "Which hypotheses did the field interview reject, and how did the API design change?",
+        "Which hypotheses did the interview show to be wrong?",
         "Why did you stop the AI at evidence gathering instead of letting it approve?",
         "How did the no-external-LLM constraint shape the design?",
       ],
@@ -359,8 +359,8 @@ export const portfolioProjects = [
         en: "Overall employment indicators look fine, yet youth employment is moving the other way — not because jobs don't exist, but because existing jobs don't reach young people. The plan cited sourced statistics: youth unemployment of 7.0% in Gwangju and 10.1% in Jeonnam, Gwangju's youth net outflow of 2.50% (2nd nationwide), and a Gwangju job-openings-to-applicants ratio of 0.24.",
       },
       insight: {
-        ko: "심사 관점을 먼저 문항에 매핑하고, 페르소나 2종으로 대상 사용자를 좁혔습니다. 경쟁 서비스 20종을 7개 기능으로 비교한 표(4단계 신뢰 기호)를 직접 조사해 차별점을 정리했습니다.",
-        en: "Mapped the judging criteria onto each application question first, narrowed the target users with two personas, and personally researched a 20-service × 7-feature competitor comparison table (with four-level confidence markers) to pin down differentiation.",
+        ko: "심사 관점을 먼저 문항에 매핑하고, 페르소나 2종으로 대상 사용자를 좁혔습니다. 국내외 서비스 13곳을 7개 기능으로 비교한 표(4단계 신뢰 기호)를 직접 조사해 차별점을 정리했고, 계획서 제출 뒤 19개로 넓혔습니다.",
+        en: "Mapped the judging criteria onto each application question first, narrowed the target users with two personas, and personally researched a comparison of 13 services across 7 features (with four-level confidence markers) to pin down differentiation, later extending it to 19 services after the plan was submitted.",
       },
       solution: {
         ko: "'구조화 추출 + 한국어 문장 임베딩 + 생성형 AI' 파이프라인을 설계하고, 제출 규격·출처 검증 체크리스트를 운영해 3쪽·1.70MB 제출본을 SHA256까지 기록해 관리했습니다.",
@@ -382,12 +382,12 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "청년 고용 문제를 '일자리 부족'이 아니라 '있는 일자리가 닿지 않는 문제'로 다시 정의했습니다.",
-        "심사 관점 → 문항 매핑, 페르소나 2종, 경쟁 서비스 20종 × 7기능 비교표로 기획서를 설계했습니다.",
+        "심사 관점 → 문항 매핑, 페르소나 2종, 국내외 서비스 13곳 × 7기능 비교표로 기획서를 설계했습니다.",
         "제출 규격·출처 검증 체크리스트를 운영하며 서류 심사를 통과해 본선에 진출했습니다.",
       ],
       en: [
         "Reframed youth unemployment from 'not enough jobs' to 'existing jobs never reach young people'.",
-        "Built the proposal from judging-criteria mapping, two personas, and a 20-service × 7-feature competitor table.",
+        "Built the proposal from judging-criteria mapping, two personas, and a 13-service × 7-feature comparison table.",
         "Ran a submission-spec and source-verification checklist, passed document screening, and advanced to the finals.",
       ],
     },
@@ -408,7 +408,7 @@ export const portfolioProjects = [
         },
       },
       {
-        value: "20 × 7",
+        value: "19 × 7",
         label: {
           ko: "경쟁 서비스 × 기능 비교표",
           en: "Competitor services × features compared",
@@ -423,11 +423,11 @@ export const portfolioProjects = [
     interviewQuestions: {
       ko: [
         "왜 청년 고용 문제를 '일자리 부족'이 아니라 '연결의 문제'로 정의했나요?",
-        "경쟁 서비스 20종 비교에서 어떤 차별점을 찾았나요?",
+        "경쟁 서비스 비교에서 어떤 차별점을 찾았나요?",
       ],
       en: [
         "Why did you frame youth employment as a connection problem rather than a shortage of jobs?",
-        "What differentiation did you find from comparing 20 competing services?",
+        "What differentiation did you find from comparing competing services?",
       ],
     },
     links: {},
@@ -446,12 +446,12 @@ export const portfolioProjects = [
       en: "SKT 'promp.T for Everyone' Contest · Life AX",
     },
     title: {
-      ko: "안심콜 | 판별해주지 않는 AI — 어르신 보이스피싱 판별 AI 말벗",
-      en: "Ansim Call | An AI That Doesn't Judge for You — A Voice-Phishing Companion for Seniors",
+      ko: "SKT promp.T 최우수상작 | 부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트",
+      en: "SKT promp.T Top Prize Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
     },
     summary: {
-      ko: "어르신 보이스피싱 판별 AI 말벗 '안심콜'을 기획해 SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상을 받은 개인 출품작입니다.",
-      en: "A solo entry planning 'Ansim Call', an AI companion that helps seniors judge voice-phishing attempts — winner of the top prize (Life AX category) in SKT's 'promp.T for Everyone' contest.",
+      ko: "부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트로, SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상을 받은 개인 출품작입니다.",
+      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own — winner of the top prize (Life AX category) in SKT's 'promp.T for Everyone' contest.",
     },
     context: {
       ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」입니다. 어머니가 경고 문자 앞에서 47분을 망설인 일에서 출발했습니다.",
@@ -467,8 +467,8 @@ export const portfolioProjects = [
         en: "Flipped the design from a judging tool to building the person's own judgment — 'not an AI that judges for you, but one that doesn't.'",
       },
       solution: {
-        ko: "「어머니의 판별 카드」라는 형태로, AI 말벗이 답을 대신 내려주기보다 어르신이 스스로 판단할 수 있도록 돕는 경험을 기획했습니다.",
-        en: "Planned the experience around 'Mother's Judgment Card', where the AI companion helps seniors reach their own judgment instead of handing them the answer.",
+        ko: "「어머니의 판별 카드」라는 형태로, AI가 답을 대신 내려주기보다 부모님이 문자에서 이상한 곳을 직접 찾도록 묻고, 직접 찾은 것만 카드에 쌓는 훈련 코치 프롬프트를 설계했습니다.",
+        en: "Planned the experience around 'Mother's Judgment Card', a training-coach prompt in which the AI asks parents to find what looks wrong in a text themselves, and only what they found goes onto the card.",
       },
     },
     team: {
@@ -480,8 +480,8 @@ export const portfolioProjects = [
       en: "Solo | Problem framing, service planning",
     },
     tags: {
-      ko: ["AI 서비스 기획", "시니어", "보이스피싱", "Life AX"],
-      en: ["AI service planning", "Seniors", "Voice phishing", "Life AX"],
+      ko: ["AI 서비스 기획", "시니어", "사기 문자 판별", "Life AX"],
+      en: ["AI service planning", "Seniors", "Scam-text detection", "Life AX"],
     },
     highlights: {
       ko: [
@@ -725,8 +725,8 @@ export const portfolioProjects = [
       en: "EasyExam | An AI SaaS Turning Academy Exam Work into One Loop",
     },
     summary: {
-      ko: "SSAFY 창업캠프(삼성·JA Korea)에서 3일 만에 기획부터 라이브 서비스까지 완성한, 학원 강사용 AI 문제은행·시험지 생성·자동 채점 SaaS입니다. 창업관심팀 최우수팀으로 선정되었습니다.",
-      en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors — built from idea to live service in 3 days at the SSAFY Startup Camp (Samsung · JA Korea). Selected as Best Team.",
+      ko: "SSAFY 창업캠프(삼성·JA Korea)에 팀 No Problem으로 참가해 피칭한, 학원 강사용 AI 문제은행·시험지 생성·자동 채점 SaaS입니다. 창업관심팀 최우수팀으로 선정되었습니다.",
+      en: "An AI question-bank, exam-builder, and auto-grading SaaS for academy instructors, pitched by Team No Problem at the SSAFY Startup Camp (Samsung · JA Korea). Selected as Best Team.",
     },
     context: {
       ko: "팀 No Problem(5인)으로 참가해 전직 학원 강사의 현장 페인 포인트에서 출발했고, 시연 가능한 라이브 서비스(noproblem.ssafy.live)와 15장 사업 소개 덱으로 최우수팀에 선정된 프로젝트입니다.",
@@ -761,13 +761,13 @@ export const portfolioProjects = [
     highlights: {
       ko: [
         "SSAFY 창업캠프 창업관심팀 최우수팀으로 선정되었습니다 (삼성·JA Korea 주최).",
-        "3일 안에 아이디어 검증부터 시연 가능한 라이브 서비스(noproblem.ssafy.live)까지 완성했습니다.",
+        "캠프 3일 동안 팀은 아이디어 검증과 사업 소개 덱(15장) 발표를 진행했고, 저는 마케팅·SEO를 맡았습니다.",
         "출제·채점·분석을 잇는 데이터 선순환 루프로 제품을 구조화했습니다 — 쓸수록 문제은행이 똑똑해지는 설계.",
         "전국 학원 8만여 곳 기준 SAM 965억 원 산정 등 시장·수익모델을 공식 통계로 뒷받침했습니다.",
       ],
       en: [
         "Selected as Best Team in the SSAFY Startup Camp (hosted by Samsung · JA Korea).",
-        "Went from idea validation to a live, demoable service (noproblem.ssafy.live) within 3 days.",
+        "Over the 3-day camp the team validated the idea and pitched a 15-page business deck; I owned marketing and SEO.",
         "Structured the product as a data flywheel connecting creation, grading, and analytics.",
         "Backed the market and revenue model with official statistics — ₩96.5B SAM across ~80K academies.",
       ],
@@ -776,12 +776,12 @@ export const portfolioProjects = [
       ko: [
         "현장 전문가(전직 강사)의 페인 포인트를 AI 파이프라인 서비스 구조로 옮겼습니다.",
         "기능 나열이 아니라 데이터 선순환이라는 제품 전략으로 심사를 설득했습니다.",
-        "짧은 마감(3일) 안에 기획·구현·발표를 완결한 팀 실행력을 보여줬습니다.",
+        "짧은 캠프 일정(3일) 안에 기획과 발표를 마친 팀에 마케팅·SEO 담당으로 참여했습니다.",
       ],
       en: [
         "Translated a field expert's pain points into an AI-pipeline service structure.",
         "Won the judges over with a data-flywheel product strategy rather than a feature list.",
-        "Demonstrated team execution — planning, build, and pitch completed in a 3-day deadline.",
+        "Took part as the marketing and SEO owner in a team that finished planning and the pitch within a 3-day camp.",
       ],
     },
     metrics: [
@@ -795,8 +795,8 @@ export const portfolioProjects = [
       {
         value: "3 days",
         label: {
-          ko: "아이디어 → 라이브 서비스",
-          en: "Idea to live service",
+          ko: "캠프 기간 (2026.06.24 - 06.26)",
+          en: "Camp duration (Jun 24 - 26, 2026)",
         },
       },
       {
@@ -858,8 +858,8 @@ export const portfolioProjects = [
     status: "completed",
     sortDate: "2026-07-05",
     period: {
-      ko: "2026.07.03 - 07.05 (72시간)",
-      en: "Jul 3 - 5, 2026 (72 hours)",
+      ko: "2026.07.03 - 07.05 (24시간 개발)",
+      en: "Jul 3 - 5, 2026 (24-hour build)",
     },
     category: {
       ko: "Defense Tech / Hackathon",
@@ -870,12 +870,12 @@ export const portfolioProjects = [
       en: "SUPPORTY | AI-Copilot Operator Console for Contested Logistics",
     },
     summary: {
-      ko: "D4D(Deploy for Defense) APAC 서울 해커톤에서 72시간 동안 구축한, 한 명의 오퍼레이터가 AI 코파일럿과 함께 지상(UGV)·공중(VTOL) 무인자산을 동시에 지휘하는 작전지속지원 통제 시스템입니다.",
-      en: "A contested-logistics control system built in 72 hours at the D4D (Deploy for Defense) APAC Seoul hackathon, where a single operator commands ground (UGV) and aerial (VTOL) unmanned assets alongside an AI copilot.",
+      ko: "D4D(Deploy for Defense) APAC 서울 해커톤에서 24시간 개발로 구축한, 한 명의 오퍼레이터가 AI 코파일럿과 함께 지상(UGV)·공중(VTOL) 무인자산을 동시에 지휘하는 작전지속지원 통제 시스템입니다.",
+      en: "A contested-logistics control system built in the 24-hour build window of the D4D (Deploy for Defense) APAC Seoul hackathon, where a single operator commands ground (UGV) and aerial (VTOL) unmanned assets alongside an AI copilot.",
     },
     context: {
-      ko: "특전사 출신 하드웨어 리드와 2인 팀으로, 실물 UGV·VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연했습니다. Oregon UAS Accelerator 상을 수상해 액셀러레이터 후속 지원 과정에 선정되었고, D4D 공식 쇼케이스에 등재되었습니다.",
-      en: "A two-person team with a special-forces-veteran hardware lead; we demoed a live operator console wired to a real UGV and VTOL. The team won the Oregon UAS Accelerator award — with selection into the accelerator's follow-on startup support program — and is listed in the official D4D showcase.",
+      ko: "특전사 출신 하드웨어 리드와 2인 팀으로, 실물 UGV·VTOL과 라이브 오퍼레이터 콘솔을 연동해 시연했습니다. Oregon UAS Accelerator 특별 트랙에 선정되었고, D4D 공식 쇼케이스에 등재되었습니다.",
+      en: "A two-person team with a special-forces-veteran hardware lead; we demoed a live operator console wired to a real UGV and VTOL. The team was selected for the Oregon UAS Accelerator special track and is listed in the official D4D showcase.",
     },
     story: {
       problem: {
@@ -908,15 +908,15 @@ export const portfolioProjects = [
         "자산 1대당 조종사 1명이 필요한 선형 인력 구조를 '1인 오퍼레이터 + AI 코파일럿' 통제 구조로 재설계했습니다.",
         "긴급 요청을 생명 직결도 → 시간 민감도 → 임무 파급효과 순으로 정렬하는 AI 트리아지 큐를 기획했습니다.",
         "\"전진 5초\" 같은 자연어 명령을 실제 제어 시퀀스로 변환하는 지휘 UX를 설계했습니다.",
-        "72시간 안에 실물 UGV·VTOL 연동 라이브 콘솔, 공개 랜딩 페이지, 기획서까지 완성해 시연했습니다.",
-        "Oregon UAS Accelerator 상을 수상해 스타트업 액셀러레이터 후속 지원 과정에 선정되었습니다.",
+        "24시간 개발 안에 실물 UGV·VTOL 연동 라이브 콘솔, 공개 랜딩 페이지, 기획서까지 완성해 시연했습니다.",
+        "Oregon UAS Accelerator 특별 트랙에 선정되었습니다.",
       ],
       en: [
         "Redesigned the one-pilot-per-asset staffing model into a single-operator-plus-AI-copilot control structure.",
         "Planned an AI triage queue ordering urgent requests by life criticality, time sensitivity, and mission impact.",
         "Designed a command UX translating natural-language orders like 'forward 5 seconds' into control sequences.",
-        "Shipped a live console wired to a real UGV & VTOL, a public landing page, and a proposal deck within 72 hours.",
-        "Won the Oregon UAS Accelerator award, earning selection into the accelerator's follow-on startup support program.",
+        "Shipped a live console wired to a real UGV & VTOL, a public landing page, and a proposal deck within the 24-hour build.",
+        "Selected for the Oregon UAS Accelerator special track.",
       ],
     },
     proof: {
@@ -933,10 +933,10 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: "Award",
+        value: "Selected",
         label: {
-          ko: "Oregon UAS Accelerator 선정",
-          en: "Oregon UAS Accelerator award",
+          ko: "Oregon UAS Accelerator 특별 트랙 선정",
+          en: "Oregon UAS Accelerator special track",
         },
       },
       {
@@ -1178,8 +1178,8 @@ export const portfolioProjects = [
       en: "A service that solves user retention issues by defining the problem as 'input friction' and 'broken reflection flows', using AI-driven questioning.",
     },
     context: {
-      ko: "사용자 행동 문제를 기술적 구조(AI 질문 흐름)로 해결하고, SSAFY 특화 프로젝트 우수상을 수상하며 성과를 입증한 프로젝트입니다.",
-      en: "A project that proved its impact by solving behavioral issues through technical structures (AI flows) and winning the SSAFY Excellence Award.",
+      ko: "사용자 행동 문제를 기술적 구조(AI 질문 흐름)로 해결하고, SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 한 프로젝트입니다.",
+      en: "A project that proved its impact by solving behavioral issues through technical structures (AI flows); the team placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase.",
     },
     story: {
       problem: {
@@ -1212,13 +1212,13 @@ export const portfolioProjects = [
         "기록 지속 실패의 원인을 '심리적 입력 부담'과 '회고 구조의 부재'로 재정의했습니다.",
         "사용자의 발화를 Event, Emotion, Cause 등 7가지 슬롯으로 구조화하여 기록 편의성을 높였습니다.",
         "기록을 바탕으로 '내일 바로 실행 가능한 행동 1개'를 추천하여 회고와 실행을 연결했습니다.",
-        "SSAFY 14기 특화 프로젝트 우수상을 수상했습니다.",
+        "SSAFY 14기 특화프로젝트 발표회에서 광주1반 3등을 했습니다.",
       ],
       en: [
         "Reframed recording failure as 'psychological friction' and 'lack of structure'.",
         "Increased input convenience by structuring day into 7 slots (Event, Emotion, Cause, etc.).",
         "Connected reflection to action by recommending 'one immediate task for tomorrow'.",
-        "Won the Excellence Award at SSAFY 14th Specialized Project.",
+        "Placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase.",
       ],
     },
     proof: {
@@ -1235,10 +1235,10 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: "Award",
+        value: "3rd",
         label: {
-          ko: "특화 프로젝트 우수상",
-          en: "SSAFY Excellence Award",
+          ko: "특화프로젝트 발표회 광주1반 3등",
+          en: "Specialized Project showcase, Gwangju Class 1",
         },
       },
       {
