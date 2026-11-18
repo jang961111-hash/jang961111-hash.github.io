@@ -17,7 +17,7 @@
   --k: #000000;
   --surface: #0a0a0a;
   --surface-2: #141414;
-  --bar: rgba(14, 14, 14, 0.94);
+  --bar: #0e0e0e;
   --w1: #e6e6e6;
   --w2: #c4c4c4;
   /* #8a8a8a on #000 = 6.08:1, on #0e0e0e = 5.59:1 */
@@ -66,7 +66,7 @@
   --k: #f1eee6;
   --surface: #ebe7de;
   --surface-2: #e2ddd2;
-  --bar: rgba(250, 248, 243, 0.95);
+  --bar: #faf8f3;
   --w1: #111111;
   --w2: #3a3833;
   /* #5f5b53 on #f1eee6 = 5.83:1 */
@@ -225,6 +225,10 @@ h4 {
 
 /* Small bordered label cell, e.g. "02  프로젝트" */
 .label-box {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-wrap: wrap;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -271,6 +275,7 @@ h4 {
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.035em;
+  text-wrap: balance;
   color: var(--w1);
 }
 

@@ -9,7 +9,7 @@ import {
 } from "../../utils/localeRouting";
 import { queueScrollTarget, scrollToSectionId } from "../../utils/scrollTarget";
 import { getResumeAsset } from "../../utils/resumeAssets";
-import { homeSections } from "../../config/sections";
+import { getNavTabId, homeSections } from "../../config/sections";
 import "./Navbar.css";
 
 const navItems = homeSections.filter((section) => section.nav !== false);
@@ -67,6 +67,8 @@ const Navbar = ({ theme, onToggleTheme }) => {
   const terminalText = isHomeRoute
     ? t(`terminal.${activeSection}`, { defaultValue: t("terminal.hero") })
     : t("terminal.detail", { name: projectSlug });
+
+  const activeTab = getNavTabId(activeSection);
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -196,15 +198,15 @@ const Navbar = ({ theme, onToggleTheme }) => {
   }, [isMenuOpen]);
 
   const tabLinks = (className) =>
-    navItems.map(({ id, labelKey }) => (
+    navItems.map(({ id, labelKey, navKey }) => (
       <li key={id}>
         <a
           href={`#${id}`}
-          className={`${className} ${isHomeRoute && activeSection === id ? "is-active" : ""}`}
-          aria-current={isHomeRoute && activeSection === id ? "true" : undefined}
+          className={`${className} ${isHomeRoute && activeTab === id ? "is-active" : ""}`}
+          aria-current={isHomeRoute && activeTab === id ? "location" : undefined}
           onClick={(event) => scrollToSection(event, id)}
         >
-          {t(labelKey)}
+          {t(navKey ?? labelKey)}
         </a>
       </li>
     ));

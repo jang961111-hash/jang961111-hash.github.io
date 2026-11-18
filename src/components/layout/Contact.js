@@ -38,7 +38,7 @@ const Contact = () => {
 
         <div className="frame contact-statement" data-reveal ref={revealRef}>
           <p className="kicker">{t("contact.subtitle")}</p>
-          <h2 className="display contact-title">{t("contact.title")}</h2>
+          <p className="display contact-title">{t("contact.title")}</p>
           <p className="contact-description">{t("contact.description")}</p>
         </div>
 

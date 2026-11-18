@@ -9,6 +9,7 @@ import SectionShell from "../layout/SectionShell";
 import useLang from "../../hooks/useLang";
 import { revealRef } from "../../hooks/useReveal";
 import { renderEmphasis, stripEmphasis } from "../../utils/emphasis";
+import { getProjectCardId } from "../../utils/scrollTarget";
 
 const MAX_CHIPS = 4;
 
@@ -100,6 +101,7 @@ const Projects = () => {
           return (
             <article
               key={project.slug}
+              id={getProjectCardId(project.slug)}
               className={`core-card ${image ? "" : "is-text-only"}`}
               data-reveal
               ref={revealRef}
@@ -128,6 +130,7 @@ const Projects = () => {
           return (
             <article
               key={project.slug}
+              id={getProjectCardId(project.slug)}
               className={`work-card ${image ? "has-image" : "is-text-only"}`}
               data-reveal
               ref={revealRef}

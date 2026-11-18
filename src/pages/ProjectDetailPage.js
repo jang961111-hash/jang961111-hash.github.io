@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { projectUiCopy } from "../content/projects";
-import { queueScrollTarget } from "../utils/scrollTarget";
 import { revealRef } from "../hooks/useReveal";
 import { renderLines, stripEmphasis } from "../utils/emphasis";
 import DailyLogPipelineDiagram from "../components/diagrams/DailyLogPipelineDiagram";
@@ -25,10 +24,10 @@ const linkLabelMap = {
 const isRealImage = (src) => typeof src === "string" && src && !src.startsWith("[");
 
 const Label = ({ children }) => (
-  <p className="label-box detail-label">
+  <h2 className="label-box detail-label">
     <span className="label-dot" aria-hidden="true" />
     <span>{children}</span>
-  </p>
+  </h2>
 );
 
 // Images sit in a frame that reserves a 16:10 box before loading, then takes
@@ -67,7 +66,7 @@ const Block = ({ label, children, className = "" }) => (
   </section>
 );
 
-const ProjectDetailPage = ({ project, lang }) => {
+const ProjectDetailPage = ({ project, lang, pager }) => {
   const copy = projectUiCopy[lang] ?? projectUiCopy.ko;
   const [mainTitle, ...titleRest] = stripEmphasis(project.title).split(" | ");
   const subTitle = titleRest.join(" | ");
@@ -110,7 +109,6 @@ const ProjectDetailPage = ({ project, lang }) => {
           <Link
             to={project.homePath}
             className="detail-back"
-            onClick={() => queueScrollTarget("projects")}
           >
             <span className="arrow" aria-hidden="true">←</span> {copy.backToProjects}
           </Link>
@@ -237,7 +235,7 @@ const ProjectDetailPage = ({ project, lang }) => {
         {project.caseStudy && (
           <Block label={copy.decisionDeepDive}>
             <div className="frame detail-case" data-reveal ref={revealRef}>
-              <h2 className="detail-case-title">{project.caseStudy.title}</h2>
+              <h3 className="detail-case-title">{project.caseStudy.title}</h3>
               {project.caseStudy.summary ? (
                 <div className="detail-case-summary">
                   {renderLines(project.caseStudy.summary)}
@@ -306,6 +304,37 @@ const ProjectDetailPage = ({ project, lang }) => {
           </Block>
         )}
 
+        {pager && (pager.prev || pager.next) && (
+          <nav className="detail-pager" aria-label={copy.pagerAria}>
+            {pager.prev ? (
+              <Link to={pager.prev.path} className="frame detail-pager-cell">
+                <span className="kicker">
+                  <span className="arrow" aria-hidden="true">←</span> {copy.prevProject}
+                </span>
+                <span className="detail-pager-title">
+                  <span className="mono detail-pager-number" aria-hidden="true">{pager.prev.number}</span>
+                  {pager.prev.title}
+                </span>
+              </Link>
+            ) : (
+              <span className="detail-pager-cell is-empty" aria-hidden="true" />
+            )}
+            {pager.next ? (
+              <Link to={pager.next.path} className="frame detail-pager-cell is-next">
+                <span className="kicker">
+                  {copy.nextProject} <span className="arrow" aria-hidden="true">→</span>
+                </span>
+                <span className="detail-pager-title">
+                  <span className="mono detail-pager-number" aria-hidden="true">{pager.next.number}</span>
+                  {pager.next.title}
+                </span>
+              </Link>
+            ) : (
+              <span className="detail-pager-cell is-empty" aria-hidden="true" />
+            )}
+          </nav>
+        )}
+
         <footer className="detail-foot">
           {linkEntries.length > 0 && (
             <div className="detail-actions">
@@ -326,7 +355,6 @@ const ProjectDetailPage = ({ project, lang }) => {
           <Link
             to={project.homePath}
             className="btn btn-primary"
-            onClick={() => queueScrollTarget("projects")}
           >
             <span className="arrow" aria-hidden="true">←</span> {copy.backToList}
           </Link>

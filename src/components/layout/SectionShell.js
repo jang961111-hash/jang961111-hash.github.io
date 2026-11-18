@@ -10,11 +10,11 @@ export const SectionLabel = ({ id, label }) => {
   const { t } = useTranslation();
 
   return (
-    <p className="label-box section-label">
+    <h2 className="label-box section-label">
       <span className="label-dot" aria-hidden="true" />
-      <span className="label-index">{getSectionIndex(id)}</span>
+      <span className="label-index" aria-hidden="true">{getSectionIndex(id)}</span>
       <span>{label ?? t(getSectionLabelKey(id))}</span>
-    </p>
+    </h2>
   );
 };
 
@@ -25,7 +25,7 @@ const SectionShell = ({ id, label, statement, caption, className = "", children 
         <SectionLabel id={id} label={label} />
         {statement ? (
           <div className="frame section-statement" data-reveal ref={revealRef}>
-            <h2 className="display">{statement}</h2>
+            <p className="display">{statement}</p>
           </div>
         ) : null}
         {caption ? (
