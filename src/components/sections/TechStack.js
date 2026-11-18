@@ -34,6 +34,14 @@ const StackMark = ({ name }) => {
     );
   }
 
+  if (icon.src) {
+    return (
+      <span className="stack-mark is-image" aria-hidden="true">
+        <img src={icon.src} alt="" width="24" height="24" loading="lazy" decoding="async" />
+      </span>
+    );
+  }
+
   return (
     <span
       className="stack-mark"

@@ -66,7 +66,8 @@
   color: var(--w2);
 }
 
-.stack-mark svg {
+.stack-mark svg,
+.stack-mark img {
   display: block;
   width: 24px;
   height: 24px;
@@ -137,7 +138,8 @@
     height: 22px;
   }
 
-  .stack-mark svg {
+  .stack-mark svg,
+  .stack-mark img {
     width: 20px;
     height: 20px;
   }
