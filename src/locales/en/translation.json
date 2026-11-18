@@ -372,35 +372,6 @@
   "experience": {
     "title": "Selected Experience",
     "jobs": {
-      "skalaTraining": {
-        "title": "AI Training & Team Projects",
-        "company": "SKALA (SK AI Leader Academy), Cohort 4",
-        "period": "2026.07 - 2026.12 (expected)",
-        "desc": [
-          "Currently enrolled in SKALA (SK AI Leader Academy) Cohort 4, working on team projects including AI web service design.",
-          "Handled backend design and the final presentation for the ARGUS mini-project (five-person team)."
-        ]
-      },
-      "ssafyTraining": {
-        "title": "AI/SW Training & Product Projects",
-        "company": "Samsung SW·AI Academy For Youth, SSAFY",
-        "period": "2025.07 - 2026.06",
-        "desc": [
-          "Studied service development and AI/SW fundamentals across Python, SQL, Web, AI, and Data (1,628 hours, completed June 2026).",
-          "Worked on problem framing, feature prioritization, screen-flow organization, and presentation materials in team projects including DailyLog, Loggy, and Promtree.",
-          "Class representative (CA) of Gwangju Class 1, Feb - Apr 2026, taking part in student council activities."
-        ]
-      },
-      "projectPractice": {
-        "title": "Core Project Practice",
-        "company": "DailyLog / Loggy / Promtree",
-        "period": "2026.01 - 2026.05",
-        "desc": [
-          "In DailyLog, reframed journaling failure as input friction and reflection-flow problems, then connected it to AI questioning and recommendation structures.",
-          "In Loggy, organized disappearing collaboration context into a recording flow inspired by Git's PR/Merge structure.",
-          "In Promtree, structured AI know-how as an executable workflow product while reviewing market viability, revenue models, and competitor positioning."
-        ]
-      },
       "restaurantOps": {
         "period": "2024.02 - 2024.06",
         "title": "Restaurant operations lead",
@@ -427,33 +398,6 @@
           "Handled interior film sales and customer consultation.",
           "Supported on-site installation work and experienced the gap between customer requests and actual field conditions.",
           "Learned how requirements explained in conversation can change when they meet the real work environment."
-        ]
-      },
-      "militaryCommunication": {
-        "title": "Military Service",
-        "company": "Republic of Korea Marine Corps",
-        "period": "2016.12 - 2018.09",
-        "desc": [
-          "Served as an infantryman in the Republic of Korea Marine Corps.",
-          "Partly supported interpretation and situation updates during ROK-US joint exercises.",
-          "Learned the habit of carrying assigned work through in constrained environments."
-        ]
-      },
-      "philosophy": {
-        "title": "B.A. in Philosophy",
-        "company": "Chonnam National University",
-        "period": "2016.03 - 2022.02",
-        "desc": [
-          "Studied philosophy and trained by reading texts, organizing questions, and explaining ideas logically.",
-          "Later connected SW·AI learning and service planning experience into an interest in problems between people and technology."
-        ]
-      },
-      "globalLeadership": {
-        "title": "Exchange Student in the U.S.",
-        "company": "Portage High School (Indiana)",
-        "period": "2012.01 - 2013.01",
-        "desc": [
-          "Lived for one year as an exchange student at Portage High School in Indiana."
         ]
       }
     },
@@ -580,7 +524,7 @@
   "records": {
     "labs": "Lab notes",
     "awards": "Awards, selections, competitions",
-    "training": "Training and credentials",
+    "training": "Training, education, service and credentials",
     "principles": "Working principles"
   }
 }

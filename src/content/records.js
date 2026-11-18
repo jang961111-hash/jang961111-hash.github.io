@@ -172,6 +172,30 @@ export const training = [
       en: ["1,628 hours (828 in term 1, 800 in term 2)", "Completed with Certificate grade", "Class representative, Gwangju Class 1 (Feb 19 - Apr 1, 2026)"],
     },
   },
+  {
+    period: "2016.03 - 2022.02",
+    name: { ko: "전남대학교 철학 학사", en: "B.A. in Philosophy, Chonnam National University" },
+    lines: {
+      ko: ["철학 전공으로 글을 읽고, 질문을 정리하고, 논리적으로 설명하는 훈련"],
+      en: ["Studied philosophy and trained by reading texts, organizing questions, and explaining ideas logically"],
+    },
+  },
+  {
+    period: "2016.12 - 2018.09",
+    name: { ko: "군 복무 (대한민국 해병대)", en: "Military Service (Republic of Korea Marine Corps)" },
+    lines: {
+      ko: ["해병대 보병 복무", "한미연합훈련 과정에서 통역과 상황 전달 일부 지원"],
+      en: ["Served as an infantryman", "Partly supported interpretation and situation updates during ROK-US joint exercises"],
+    },
+  },
+  {
+    period: "2012.01 - 2013.01",
+    name: { ko: "미국 교환학생 (Portage High School, 인디애나)", en: "Exchange Student in the U.S. (Portage High School, Indiana)" },
+    lines: {
+      ko: ["미국 인디애나주 Portage High School에서 1년간 교환학생 생활"],
+      en: ["One year as an exchange student at Portage High School in Indiana"],
+    },
+  },
 ];
 
 export const credentials = [

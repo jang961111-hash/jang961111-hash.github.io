@@ -87,6 +87,35 @@ export const rememberProject = (slug) => {
   safeStorage.set(LAST_PROJECT_STORAGE_KEY, slug);
 };
 
+// Read without clearing, for components that render before the scroll effect.
+export const peekRememberedProject = () =>
+  typeof window === "undefined" ? null : safeStorage.get(LAST_PROJECT_STORAGE_KEY);
+
+const OPEN_GROUPS_STORAGE_KEY = "portfolio-open-groups";
+
+// Which project groups the reader has expanded, kept for the browser session.
+export const readOpenGroups = () => {
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  try {
+    const parsed = JSON.parse(safeStorage.get(OPEN_GROUPS_STORAGE_KEY) ?? "[]");
+
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    return [];
+  }
+};
+
+export const writeOpenGroups = (groupIds) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  safeStorage.set(OPEN_GROUPS_STORAGE_KEY, JSON.stringify(groupIds));
+};
+
 export const consumeRememberedProject = () => {
   if (typeof window === "undefined") {
     return null;

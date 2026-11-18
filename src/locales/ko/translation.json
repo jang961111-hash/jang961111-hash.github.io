@@ -372,35 +372,6 @@
   "experience": {
     "title": "Selected Experience",
     "jobs": {
-      "skalaTraining": {
-        "title": "AI 교육과 팀 프로젝트",
-        "company": "SKALA (SK AI Leader Academy) 4기",
-        "period": "2026.07 - 2026.12 (예정)",
-        "desc": [
-          "SKALA(SK AI Leader Academy) 4기 재학, AI 웹 서비스 설계 등 팀 프로젝트 수행 중",
-          "ARGUS 미니 프로젝트(5인 팀)에서 백엔드 설계와 최종 발표 담당"
-        ]
-      },
-      "ssafyTraining": {
-        "title": "AI와 SW 교육, 서비스 프로젝트",
-        "company": "삼성청년SW·AI아카데미(SSAFY) 14기",
-        "period": "2025.07 - 2026.06",
-        "desc": [
-          "Python, SQL, Web, AI, Data를 바탕으로 서비스 개발과 AI/SW 기술을 배웠습니다(1,628시간, 2026년 6월 수료).",
-          "DailyLog, Loggy, Promtree 등 문제 정의, 기능 우선순위, 화면 흐름, 발표 자료 담당",
-          "광주 1반 반대표(CA, 2026.02 - 04)로 자치회 활동"
-        ]
-      },
-      "projectPractice": {
-        "title": "주요 프로젝트",
-        "company": "DailyLog / Loggy / Promtree",
-        "period": "2026.01 - 2026.05",
-        "desc": [
-          "DailyLog: 기록 단절 원인을 **입력 부담과 회고 흐름**에서 찾고 AI 질문 흐름, 추천 구조 설계",
-          "Loggy: 협업 의사결정 맥락 소실 문제를 Git **PR/Merge 구조를 빌린** 기록 흐름으로 정리",
-          "Promtree: AI 노하우의 **실행 가능한 워크플로우 상품**화, 시장성, 수익모델, 경쟁 분석 검토"
-        ]
-      },
       "restaurantOps": {
         "period": "2024.02 - 2024.06",
         "title": "식당 운영 총괄",
@@ -427,33 +398,6 @@
           "인테리어 필름 영업과 고객 상담 담당",
           "현장 시공 보조를 함께 수행하며 고객 요구와 실제 작업 환경 사이의 간극 이해",
           "말로 설명한 요구사항이 실제 현장에서 어떻게 달라지는지 학습"
-        ]
-      },
-      "militaryCommunication": {
-        "title": "군 복무",
-        "company": "대한민국 해병대",
-        "period": "2016.12 - 2018.09",
-        "desc": [
-          "해병대 보병 복무",
-          "한미연합훈련 과정에서 통역과 상황 전달 일부 지원",
-          "제한된 환경에서 맡은 일을 끝까지 수행하는 태도 습득"
-        ]
-      },
-      "philosophy": {
-        "title": "철학 학사",
-        "company": "전남대학교",
-        "period": "2016.03 - 2022.02",
-        "desc": [
-          "철학 전공으로 글을 읽고, 질문을 정리하고, 논리적으로 설명하는 훈련",
-          "이후 SW와 AI를 배우고 서비스를 기획하면서 **사람과 기술 사이의 문제**에 관심"
-        ]
-      },
-      "globalLeadership": {
-        "title": "미국 교환학생",
-        "company": "Portage High School(미국 인디애나)",
-        "period": "2012.01 - 2013.01",
-        "desc": [
-          "미국 인디애나주 Portage High School에서 1년간 교환학생 생활"
         ]
       }
     },
@@ -580,7 +524,7 @@
   "records": {
     "labs": "실습 노트",
     "awards": "수상, 선정, 대회",
-    "training": "교육과 자격",
+    "training": "교육, 학력, 병역, 자격",
     "principles": "일하는 원칙"
   }
 }

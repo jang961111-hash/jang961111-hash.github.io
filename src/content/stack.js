@@ -4,16 +4,17 @@
 // project's own records (repo, deck, or write-up) show it.
 export const stackGroups = [
   {
-    id: "frontend",
-    label: { ko: "프런트엔드", en: "Frontend" },
+    id: "ai",
+    label: { ko: "AI", en: "AI" },
     items: [
-      { name: "React", projects: ["loggy", "ajob-radar"] },
-      { name: "TypeScript", projects: ["loggy", "ssafy-startup-track"] },
-      { name: "Next.js", projects: ["jangbogo", "ssafy-startup-track"] },
-      { name: "Vue 3", projects: ["argus"] },
-      { name: "Zustand", projects: ["loggy", "ssafy-startup-track"] },
-      { name: "TanStack Query", projects: ["loggy", "ssafy-startup-track"] },
-      { name: "React Native", projects: ["chronicle"] },
+      { name: "Claude API", projects: ["ansim-ieum"] },
+      { name: "SenseVoice", projects: ["dailylog"] },
+      { name: "Thompson Sampling", projects: ["dailylog"] },
+      { name: "Gemini", projects: ["jangbogo"] },
+      { name: "LangGraph", projects: ["incident-agent-ablation"] },
+      { name: "MCP", projects: ["incident-agent-ablation"] },
+      { name: "RAG", projects: ["incident-agent-ablation"] },
+      { name: "LLM-as-a-Judge", projects: ["incident-agent-ablation"] },
     ],
   },
   {
@@ -30,17 +31,16 @@ export const stackGroups = [
     ],
   },
   {
-    id: "ai",
-    label: { ko: "AI", en: "AI" },
+    id: "frontend",
+    label: { ko: "프런트엔드", en: "Frontend" },
     items: [
-      { name: "Claude API", projects: ["ansim-ieum"] },
-      { name: "SenseVoice", projects: ["dailylog"] },
-      { name: "Thompson Sampling", projects: ["dailylog"] },
-      { name: "Gemini", projects: ["jangbogo"] },
-      { name: "LangGraph", projects: ["incident-agent-ablation"] },
-      { name: "MCP", projects: ["incident-agent-ablation"] },
-      { name: "RAG", projects: ["incident-agent-ablation"] },
-      { name: "LLM-as-a-Judge", projects: ["incident-agent-ablation"] },
+      { name: "React", projects: ["loggy", "ajob-radar"] },
+      { name: "TypeScript", projects: ["loggy", "ssafy-startup-track"] },
+      { name: "Next.js", projects: ["jangbogo", "ssafy-startup-track"] },
+      { name: "Vue 3", projects: ["argus"] },
+      { name: "Zustand", projects: ["loggy", "ssafy-startup-track"] },
+      { name: "TanStack Query", projects: ["loggy", "ssafy-startup-track"] },
+      { name: "React Native", projects: ["chronicle"] },
     ],
   },
   {

@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   getLocalizedCoreProjects,
-  getLocalizedSupportingProjects,
+  getLocalizedSupportingGroups,
   projectUiCopy,
 } from "../../content/projects";
 import SectionShell from "../layout/SectionShell";
 import useLang from "../../hooks/useLang";
 import { revealRef } from "../../hooks/useReveal";
 import { renderEmphasis, stripEmphasis } from "../../utils/emphasis";
-import { getProjectCardId } from "../../utils/scrollTarget";
+import {
+  getProjectCardId,
+  peekRememberedProject,
+  readOpenGroups,
+  writeOpenGroups,
+} from "../../utils/scrollTarget";
 
 const MAX_CHIPS = 4;
+// Cards shown per group before the rest is folded behind a button.
+const GROUP_PREVIEW = 6;
 
 export const splitTitle = (title) => {
   const [main, ...rest] = stripEmphasis(title ?? "").split(" | ");
@@ -100,7 +107,47 @@ const Projects = () => {
   const lang = useLang();
   const copy = projectUiCopy[lang] ?? projectUiCopy.ko;
   const coreProjects = getLocalizedCoreProjects(lang);
-  const supportingProjects = getLocalizedSupportingProjects(lang);
+  const supportingGroups = getLocalizedSupportingGroups(lang);
+  // A group starts open if the reader opened it earlier in this session, or
+  // if the card they are returning to sits in its folded part.
+  const [openGroups, setOpenGroups] = useState(() => {
+    const saved = new Set(readOpenGroups());
+    const returningTo = peekRememberedProject();
+
+    supportingGroups.forEach((group) => {
+      const position = group.projects.findIndex(
+        (project) => project.slug === returningTo
+      );
+
+      if (position >= GROUP_PREVIEW) {
+        saved.add(group.id);
+      }
+    });
+
+    return [...saved];
+  });
+
+  // Remember opened groups for this browser session.
+  useEffect(() => {
+    writeOpenGroups(openGroups);
+  }, [openGroups]);
+
+  const toggleGroup = (groupId, button) => {
+    const closing = openGroups.includes(groupId);
+
+    setOpenGroups((current) =>
+      current.includes(groupId)
+        ? current.filter((id) => id !== groupId)
+        : [...current, groupId]
+    );
+
+    // Folding removes a screenful of cards; keep the button in view.
+    if (closing && button) {
+      window.requestAnimationFrame(() => {
+        button.scrollIntoView({ block: "center" });
+      });
+    }
+  };
 
   return (
     <SectionShell
@@ -137,15 +184,18 @@ const Projects = () => {
         })}
       </div>
 
-      <div className="sub-head">
-        <p className="kicker">{copy.moreLabel}</p>
-        <p className="kicker">{String(supportingProjects.length).padStart(2, "0")}</p>
-      </div>
-
-      <div className="work-grid">
-        {supportingProjects.map((project, index) => {
+      {supportingGroups.map((group, groupIndex) => {
+        const offset =
+          coreProjects.length +
+          supportingGroups
+            .slice(0, groupIndex)
+            .reduce((sum, earlier) => sum + earlier.projects.length, 0);
+        const folded = group.projects.length - GROUP_PREVIEW;
+        const isOpen = openGroups.includes(group.id);
+        const gridId = `work-grid-${group.id}`;
+        const renderCard = (project, index) => {
           const image = project.cardImage ?? project.heroImage;
-          const number = String(index + coreProjects.length + 1).padStart(2, "0");
+          const number = String(offset + index + 1).padStart(2, "0");
 
           return (
             <article
@@ -165,8 +215,50 @@ const Projects = () => {
               <CardText project={project} copy={copy} index={number} />
             </article>
           );
-        })}
-      </div>
+        };
+
+        return (
+          <React.Fragment key={group.id}>
+            <div className="sub-head">
+              <p className="kicker">{copy.groupLabels[group.id]}</p>
+              <p className="kicker">{String(group.projects.length).padStart(2, "0")}</p>
+            </div>
+
+            <div className="work-grid">
+              {group.projects.slice(0, GROUP_PREVIEW).map(renderCard)}
+            </div>
+
+            {/* The rest sits in its own grid so opening it never reshuffles
+                the cards above. */}
+            {folded > 0 ? (
+              <div
+                className={`work-grid work-grid-rest ${isOpen ? "" : "is-folded"}`.trim()}
+                id={gridId}
+              >
+                {group.projects
+                  .slice(GROUP_PREVIEW)
+                  .map((project, index) => renderCard(project, index + GROUP_PREVIEW))}
+              </div>
+            ) : null}
+
+            {folded > 0 ? (
+              <div className="work-more">
+                <button
+                  type="button"
+                  className="btn work-more-btn"
+                  aria-expanded={isOpen}
+                  aria-controls={gridId}
+                  onClick={(event) => toggleGroup(group.id, event.currentTarget)}
+                >
+                  {isOpen
+                    ? copy.foldRest
+                    : copy.showRest.replace("{count}", String(folded))}
+                </button>
+              </div>
+            ) : null}
+          </React.Fragment>
+        );
+      })}
     </SectionShell>
   );
 };

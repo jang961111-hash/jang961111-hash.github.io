@@ -8,4 +8,6 @@ export {
   getSupportingProjects,
   getLocalizedCoreProjects,
   getLocalizedSupportingProjects,
+  getSupportingGroups,
+  getLocalizedSupportingGroups,
 } from "./selectors";

@@ -4,17 +4,9 @@ import SectionShell from "../layout/SectionShell";
 import { revealRef } from "../../hooks/useReveal";
 import { renderLines } from "../../utils/emphasis";
 
-const experiences = [
-  "skalaTraining",
-  "ssafyTraining",
-  "projectPractice",
-  "restaurantOps",
-  "customerExperience",
-  "salesField",
-  "philosophy",
-  "militaryCommunication",
-  "globalLeadership",
-];
+// Work experience only. Education, military service and study abroad are in
+// the training section (src/content/records.js).
+const experiences = ["restaurantOps", "customerExperience", "salesField"];
 
 // Table-like rows: period, role and organisation, first description line.
 const Experience = () => {
