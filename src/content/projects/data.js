@@ -28,8 +28,8 @@ export const portfolioProjects = [
       effect: { ko: "검증셋 200건(2026.11.16 내부 측정)에서 사기 문자 100건 중 놓친 것 0건(유효 2회, 정답 표시 1인, 일부 문장은 규칙 수정 때 본 적 있음), 정상 문자 8.0%에 조심 경고\n어르신 20명 1회 실증(목표 50명 2회에는 미달), 만족도 미측정", en: "0 of 100 scam texts missed on a 200-item validation set (internal measurement, Nov 16, 2026; two valid runs, labels by one person; some sentences seen while editing the rules); 8.0% of normal texts got a caution warning\nOne field session with 20 seniors (below the goal of 50 seniors over 2 sessions); satisfaction not measured" },
     },
     context: {
-      ko: "SKT 「모두의 Promp.T」 수상작에서 이어진 과제\n국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 개인 응모 선정\n2026년 9월 29일 수행협약 체결\n11월 13일 광주 북구 임동의 한 기관에서 어르신 20명과 실증\n11월 16일 최종결과보고 제출, 성과발표 평가는 11월 25일",
-      en: "Task that grew out of my SKT 'Promp.T for Everyone' prize entry\nSelected as an individual entry for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project'\nProject agreement signed on September 29, 2026\nField session with 20 seniors at an institution in Im-dong, Buk-gu, Gwangju on November 13\nFinal report submitted on November 16; final presentation review on November 25",
+      ko: "SKT 「모두의 Promp.T」 수상작에서 이어진 과제\n국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 개인 응모 선정\n2026년 9월 29일 수행협약 체결\n11월 13일 광주 북구 임동의 한 기관에서 현장 실증\n11월 16일 최종결과보고 제출, 성과발표 평가는 11월 25일",
+      en: "Task that grew out of my SKT 'Promp.T for Everyone' prize entry\nSelected as an individual entry for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project'\nProject agreement signed on September 29, 2026\nField session at an institution in Im-dong, Buk-gu, Gwangju on November 13\nFinal report submitted on November 16; final presentation review on November 25",
     },
     story: {
       problem: {
@@ -64,14 +64,14 @@ export const portfolioProjects = [
         "놓치는 쪽이 잘못 경고하는 쪽보다 위험하다는 기준, 미탐 0건, 정상 문자의 8.0%에 '조심' 경고",
         "AI는 위험 등급 상향만, 응답이 3초를 넘기거나 실패하면 규칙 결과로 답하도록 기준 정의",
         "실사용 규모에 맞춘 서버 1대 블루그린 전환 결정, 리허설 전환 실패 0건, 버린 대안과 한계 기록",
-        "어르신 20명 실증 의견은 'QR 첫 접속이 가장 어렵다', 다음 회기 접속 동행, 짧은 주소, 보조 진행자",
+        "실증 참여자 의견은 'QR 첫 접속이 가장 어렵다', 다음 회기 접속 동행, 짧은 주소, 보조 진행자",
       ],
       en: [
         "The 99.0% accuracy measured on data used to tune the rules was **left out of the official numbers**. Official numbers come only from a separately written 200-item validation set.",
         "I set the criteria on the view that a miss is more dangerous than a false warning. As a result there were no misses, but 8.0% of normal texts receive a 'caution' warning.",
         "Set the criteria that the AI may only raise the risk level, and that the service answers with the rule result if the AI takes longer than 3 seconds or fails.",
         "Chose blue-green switching on a single server to match the real usage scale. The rehearsal switch had zero failed requests, and the rejected alternatives and limits are recorded as decision records.",
-        "In the field session with 20 seniors, participants said the first QR-code access step was the hardest. For the next session I plan to help with access from the start and prepare a short address and an assistant facilitator.",
+        "In the field session, participants said the first QR-code access step was the hardest. For the next session I plan to help with access from the start and prepare a short address and an assistant facilitator.",
       ],
     },
     proof: {
@@ -170,8 +170,26 @@ export const portfolioProjects = [
           en: "How It Was Measured, and the Caveats",
         },
         body: {
-          ko: "2026년 11월 16일, 검증셋 200건(사기 100건, 정상 100건)으로 측정\n규칙과 AI를 함께 쓴 측정은 세 번 실행, 응답 지연 한 건이 섞인 회차는 무효 처리\n유효 2회 모두 정확도 96.0%, 미탐률 0.0%, 정상 문자의 8.0%는 조심 단계로 상향\n정답 표시는 한 사람이 담당\n일부 문장은 규칙을 고칠 때 본 적이 있어 완전히 처음 보는 데이터는 아니라는 한계",
-          en: "Measured on November 16, 2026 with a 200-item validation set (100 scam, 100 normal)\nRules-plus-AI measurement run three times; the run containing one delayed response voided\nBoth valid runs: 96.0% accuracy, 0.0% miss rate; 8.0% of normal texts raised to the caution level\nLabels assigned by one person\nLimitation: some sentences were seen while editing the rules, so the set is not fully unseen",
+          ko: "2026년 11월 16일, 검증셋 200건(사기 100건, 정상 100건)으로 측정\n규칙과 AI를 함께 쓴 측정은 세 번 실행, 응답 지연 한 건이 섞인 회차는 무효 처리\n유효 2회의 결과가 같아 공식 수치로 사용, 정상 문자의 8.0%는 조심 단계로 상향\n정답 표시는 한 사람이 담당\n일부 문장은 규칙을 고칠 때 본 적이 있어 완전히 처음 보는 데이터는 아니라는 한계",
+          en: "Measured on November 16, 2026 with a 200-item validation set (100 scam, 100 normal)\nRules-plus-AI measurement run three times; the run containing one delayed response voided\nBoth valid runs gave the same result, used as the official numbers; 8.0% of normal texts raised to the caution level\nLabels assigned by one person\nLimitation: some sentences were seen while editing the rules, so the set is not fully unseen",
+        },
+        table: {
+          ko: {
+            columns: ["조건", "정확도", "미탐률", "쓰임"],
+            rows: [
+              ["규칙과 AI 결합 (검증셋 200건, 유효 2회)", "96.0%", "0.0%", "공식 수치"],
+              ["규칙만 (같은 검증셋)", "93.5%", "11.0%", "AI가 멈췄을 때의 바닥 성능으로 병기"],
+              ["규칙 조정에 쓴 데이터", "99.0%", "미기재", "공식 수치에서 제외"],
+            ],
+          },
+          en: {
+            columns: ["Condition", "Accuracy", "Miss rate", "Use"],
+            rows: [
+              ["Rules plus AI (200-item validation set, two valid runs)", "96.0%", "0.0%", "Official numbers"],
+              ["Rules only (same validation set)", "93.5%", "11.0%", "Reported alongside as the floor when the AI is down"],
+              ["Data used to tune the rules", "99.0%", "Not reported", "Left out of the official numbers"],
+            ],
+          },
         },
       },
       {
@@ -956,6 +974,14 @@ export const portfolioProjects = [
       ko: "반도체 fab 설비의 부품 교체 요청이 들어오면 AI 에이전트가 규격과 호환, 법령과 조문, 안전서류를 검토해 근거를 붙입니다. **승인 여부는 안전관리자가 결정**하는 온프레미스 승인 워크플로우 서비스입니다.",
       en: "An on-premise approval workflow for semiconductor fab part replacements: AI agents review spec compatibility, applicable regulations, and safety documents and attach the evidence, while the safety manager makes the approval decision.",
     },
+    notice: {
+      ko: "아래 화면, 기술 스택, 수치는 팀 작업과 병행해 만든 **개인 저장소 기준**입니다. 5인 팀 공식 저장소는 Java와 Spring Boot로 구현했습니다.",
+      en: "The screens, stack, and numbers below come from **my personal repository**, built alongside the team work. The five-person team's official repository uses Java and Spring Boot.",
+    },
+    cardResult: {
+      ko: "설계부터 발표까지 3일, 개인 저장소 라이브 E2E 72건 통과",
+      en: "Design to presentation in three days; 72 live E2E checks passed in my personal repository",
+    },
     brief: {
       what: { ko: "반도체 fab 부품 교체 승인을 돕는 온프레미스 AI 에이전트, SKALA 4기 5인 팀 3일 미니 프로젝트", en: "On-premise AI agent for semiconductor fab part-replacement approval; SKALA Cohort 4 five-person, three-day mini-project" },
       pain: { ko: "규격, 법령, 안전 승인 정보가 흩어져 있고 협력사는 외부 클라우드 LLM 사용 불가", en: "Spec, regulation, and safety information is scattered, and partner sites cannot use external cloud LLMs" },
@@ -1066,8 +1092,8 @@ export const portfolioProjects = [
           en: "System Architecture",
         },
         body: {
-          ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신\nPostgreSQL(Supabase) 전제, 로컬에서는 SQLite로 검증\n에이전트는 **공통 인터페이스 뒤에 배치**, 3일 범위에서는 고정 응답(Mock)으로 흐름 검증\n이후 LLM 구현체로 교체할 수 있게 설계\n엔지니어와 안전관리자 역할에 따라 화면과 권한 분리\n여기 적은 구성은 팀 작업과 병행해 만든 개인 저장소 기준, 5인 팀 공식 저장소는 Java와 Spring Boot",
-          en: "Vue 3 + Vite frontend and FastAPI (Python) backend communicate over REST JSON\nPostgreSQL (Supabase) assumed, verified locally on SQLite\nAgents placed **behind a common interface**; within the three-day scope, fixed responses (Mock) validated the flow\nDesigned so LLM implementations can replace them later\nScreens and permissions split by role, engineer and safety manager\nStack described here is from my personal repository, built alongside the team work; the five-person team's official repository uses Java and Spring Boot",
+          ko: "Vue 3 + Vite 프론트엔드와 FastAPI(Python) 백엔드가 REST JSON으로 통신\nPostgreSQL(Supabase) 전제, 로컬에서는 SQLite로 검증\n에이전트는 **공통 인터페이스 뒤에 배치**, 3일 범위에서는 고정 응답(Mock)으로 흐름 검증\n이후 LLM 구현체로 교체할 수 있게 설계\n엔지니어와 안전관리자 역할에 따라 화면과 권한 분리",
+          en: "Vue 3 + Vite frontend and FastAPI (Python) backend communicate over REST JSON\nPostgreSQL (Supabase) assumed, verified locally on SQLite\nAgents placed **behind a common interface**; within the three-day scope, fixed responses (Mock) validated the flow\nDesigned so LLM implementations can replace them later\nScreens and permissions split by role, engineer and safety manager",
         },
       },
     ],
@@ -1452,9 +1478,17 @@ export const portfolioProjects = [
       how: { ko: "AI는 답 대신 질문을 던져 이상한 곳을 직접 찾게 하고, 직접 찾은 것만 카드에 축적", en: "AI asks questions so parents find what looks wrong themselves; only self-found items go on the card" },
       effect: { ko: "Life AX 부문 최우수상 수상(개인)", en: "Won the Top Excellence Award, Life AX category (individual)" },
     },
+    cardRole: {
+      ko: "문제 정의, 서비스 기획 (개인 출품)",
+      en: "Problem framing, service planning (solo entry)",
+    },
+    cardResult: {
+      ko: "Life AX 부문 최우수상 (2026.08.20)",
+      en: "Top Excellence Award, Life AX (Aug 20, 2026)",
+    },
     context: {
-      ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」\n어머니의 질문에 제가 답하기까지 **47분이 비어 있던 일**에서 출발",
-      en: "Entry titled 'My Mother's Judgment Card Contains Nothing I Taught Her'\nStarted from **the 47 minutes that sat empty** before I answered my mother's question",
+      ko: "출품작 제목은 「어머니의 판별 카드에는, 제가 알려드린 게 하나도 없습니다」\n어머니의 질문에 제때 답하지 못한 **가족의 실제 경험**에서 출발",
+      en: "Entry titled 'My Mother's Judgment Card Contains Nothing I Taught Her'\nStarted from **a real family experience**: not answering my mother's question in time",
     },
     story: {
       problem: {
@@ -1486,12 +1520,12 @@ export const portfolioProjects = [
       ko: [
         "개인 출품으로 SKT 「모두의 Promp.T」 공모전 **Life AX 부문 최우수상** 수상",
         "판별기를 만드는 대신 **사람의 판별력을 키우는** 쪽으로 설계 전환",
-        "가족이 실제로 겪은 일(**47분의 공백**)에서 문제 정의",
+        "프롬프트에 둔 **제약 6개마다 넣은 이유**를 제출 자료에 기록, 세 가지 상황에서 유지되는지 동작 기록으로 확인",
       ],
       en: [
         "Won the Top Excellence Award in the Life AX category of SKT's 'Promp.T for Everyone' contest as an individual.",
         "Flipped the design from a judging tool to strengthening the person's own judgment.",
-        "Defined the problem from a real family experience: a 47-minute gap.",
+        "Recorded in the submission why each of the six prompt constraints was added, and checked with simulated runs that they held in three situations.",
       ],
     },
     proof: {
@@ -1511,6 +1545,13 @@ export const portfolioProjects = [
         },
       },
       {
+        value: { ko: "제약 6개", en: "6 constraints" },
+        label: {
+          ko: "프롬프트 1,563자, 5단계 진행",
+          en: "In a 1,563-character prompt with five steps",
+        },
+      },
+      {
         value: { ko: "47분", en: "47 min" },
         label: {
           ko: "문제 정의의 출발점",
@@ -1518,6 +1559,44 @@ export const portfolioProjects = [
         },
       },
     ],
+    caseStudy: {
+      title: {
+        ko: "중요한 것은 '하라'가 아니라 '하지 마라'였다",
+        en: "What Mattered Was 'Do Not', Not 'Do'",
+      },
+      summary: {
+        ko: "AI가 답을 대신 내리지 않도록 **제약 6개**를 두고, 제약마다 넣은 이유를 제출 자료에 기록",
+        en: "Set **six constraints** so the AI would not judge for the user, and recorded in the submission why each was added",
+      },
+      table: {
+        ko: {
+          columns: ["제약", "넣은 이유"],
+          rows: [
+            ["결론을 먼저 말하지 마라", "AI가 사기라고 답하면 묻는 상대만 자녀에서 AI로 바뀌고 판단력은 그대로"],
+            ["'그냥 알려줘'에 두 번은 버텨라", "재촉하는 사이에 이미 단서를 보고 있어 답을 늦추는 것이 훈련, 세 번째에는 반드시 안내"],
+            ["가짜 문자를 만들지 마라", "모의 훈련은 부모님을 속여야 하고 자식의 연락까지 의심하게 만드는 대가, 실제로 받은 문자만 사용"],
+            ["확신 못 하면 단정하지 마라", "가장 위험한 것은 AI의 자신 있는 오답, 틀린 '안전합니다'는 필터가 없는 것보다 나쁨"],
+            ["문자 속 번호로 연락하지 마라", "확인 안내가 사기범에게 전화하는 경로가 되지 않도록 직접 찾은 공식 번호만 안내"],
+            ["AI가 알려준 것은 카드에 넣지 마라", "카드가 부모님 것이 되려면 빌려온 줄이 없어야 함"],
+          ],
+        },
+        en: {
+          columns: ["Constraint", "Why it was added"],
+          rows: [
+            ["Do not state the conclusion first", "If the AI says it is a scam, only the person being asked changes, from the child to the AI; the judgment stays the same"],
+            ["Hold out twice against 'just tell me'", "While pressing, the parent is already looking at clues, so delaying is the training; on the third request the answer is always given"],
+            ["Do not make up fake texts", "Mock drills require deceiving parents and make them doubt even their child's messages; only texts actually received are used"],
+            ["Do not assert when unsure", "The most dangerous output is a confident wrong answer; a wrong 'this is safe' is worse than no filter"],
+            ["Do not contact numbers in the text", "So that checking never becomes a call to the scammer, only an official number the user looked up is suggested"],
+            ["Do not add what the AI pointed out to the card", "For the card to be the parent's own, no line on it can be borrowed"],
+          ],
+        },
+      },
+      content: {
+        ko: "제출 자료의 '왜 이렇게 설계했는가' 절에서 제약별 근거를 표로 정리\n세 가지 상황에서 제약이 유지되는지 확인: 일반 훈련 흐름, '그냥 알려줘' 3회 연속 재촉, '이미 눌렀어' 발화\n'이미 눌렀어'에는 훈련을 바로 멈추고 긴급 대응으로 전환\n출품작의 대화는 동작 기록(시뮬레이션)이며 실사용 기록이 아님",
+        en: "The 'Why it was designed this way' section of the submission lays out the rationale for each constraint as a table\nChecked that the constraints held in three situations: the normal training flow, three 'just tell me' requests in a row, and 'I already tapped it'\nOn 'I already tapped it', training stops at once and switches to emergency guidance\nThe dialogues in the entry are simulated runs, not records of real use",
+      },
+    },
     cardImage: "/projects/skt-prompt/card-award.webp",
     screenshots: [
       {
@@ -2290,6 +2369,10 @@ export const portfolioProjects = [
       how: { ko: "본인은 사건, 감정, 원인 슬롯 중 빈 것만 묻는 질문 흐름과 사용자 여정 설계\n팀 서비스는 음성 입력, 벡터 검색, 추천을 결합", en: "I designed the slot-based question flow (event, emotion, cause) and user journey\nThe team service combines voice input, vector search, and recommendation" },
       effect: { ko: "SSAFY 14기 특화프로젝트 발표회 광주1반 3등\n목표: 기록 완료 3분(질문 최대 7번)", en: "3rd place in Gwangju Class 1 at the SSAFY Cohort 14 showcase\nTarget: finishing an entry in 3 minutes (up to 7 questions)" },
     },
+    cardResult: {
+      ko: "SSAFY 14기 특화프로젝트 발표회 광주1반 3등 (8개 팀)",
+      en: "3rd place in Gwangju Class 1 at the SSAFY Cohort 14 showcase (8 teams)",
+    },
     context: {
       ko: "사용자가 기록을 멈추는 문제를 AI 질문 흐름으로 해결\nSSAFY 14기 특화프로젝트 발표회 **광주1반 3등**",
       en: "Solved the problem of users who stop recording with an AI question flow\nSSAFY Cohort 14 Specialized Project showcase, **3rd place in Gwangju Class 1**",
@@ -2424,7 +2507,7 @@ export const portfolioProjects = [
         "How did you connect SenseVoice, Thompson Sampling, and pgvector to the service experience?",
       ],
     },
-    heroImage: "/projects/dailylog/award-3rd-place.jpg",
+    heroImage: "/projects/dailylog/card-app-screens.webp",
     cardImage: "/projects/dailylog/card-app-screens.webp",
     media: {
       presentationHref: "/projects/dailylog/dailylog-final-presentation.pptx",

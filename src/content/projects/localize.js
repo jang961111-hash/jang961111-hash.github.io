@@ -33,6 +33,9 @@ export const getLocalizedProject = (project, lang = "ko") => {
     category: localizeValue(project.category, lang),
     title: localizeValue(project.title, lang),
     summary: localizeValue(project.summary, lang),
+    notice: localizeValue(project.notice, lang),
+    cardRole: localizeValue(project.cardRole, lang),
+    cardResult: localizeValue(project.cardResult, lang),
     context: localizeValue(project.context, lang),
     team: localizeValue(project.team, lang),
     role: localizeValue(project.role, lang),
@@ -72,6 +75,7 @@ export const getLocalizedProject = (project, lang = "ko") => {
           title: localizeValue(project.caseStudy.title, lang),
           summary: localizeValue(project.caseStudy.summary, lang),
           content: localizeValue(project.caseStudy.content, lang),
+          table: localizeValue(project.caseStudy.table, lang),
         }
       : null,
     story: project.story
@@ -86,6 +90,7 @@ export const getLocalizedProject = (project, lang = "ko") => {
       title: localizeValue(section.title, lang),
       body: localizeValue(section.body, lang),
       image: localizeValue(section.image, lang),
+      table: localizeValue(section.table, lang),
     })),
     media: project.media
       ? {

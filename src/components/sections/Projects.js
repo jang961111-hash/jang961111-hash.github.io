@@ -40,9 +40,18 @@ const StackChips = ({ stack }) => {
 };
 
 // Whole card is clickable: the title link stretches over the card.
-const CardText = ({ project, copy, index, level = "h3" }) => {
+const CardText = ({ project, copy, index, level = "h3", showFacts = false }) => {
   const { main, sub } = splitTitle(project.title);
   const Heading = level;
+  // Core cards state the owner's role and the outcome before the tech chips.
+  const roleShort =
+    project.cardRole ?? stripEmphasis(project.role ?? "").split(" | ")[0];
+  const facts = showFacts
+    ? [
+        { label: copy.role, value: roleShort },
+        { label: copy.result, value: stripEmphasis(project.cardResult ?? "") },
+      ].filter((fact) => fact.value)
+    : [];
 
   return (
     <div className="card-text">
@@ -57,6 +66,16 @@ const CardText = ({ project, copy, index, level = "h3" }) => {
         </Link>
       </Heading>
       <p className="card-summary">{renderEmphasis(project.summary)}</p>
+      {facts.length > 0 ? (
+        <dl className="card-facts">
+          {facts.map((fact) => (
+            <div className="card-fact" key={fact.label}>
+              <dt className="mono">{fact.label}</dt>
+              <dd>{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
       <StackChips stack={project.stack} />
       <span className="card-cta" aria-hidden="true">
         {copy.viewProject} <span className="arrow">→</span>
@@ -111,6 +130,7 @@ const Projects = () => {
                 project={project}
                 copy={copy}
                 index={`0${index + 1}`}
+                showFacts
               />
             </article>
           );

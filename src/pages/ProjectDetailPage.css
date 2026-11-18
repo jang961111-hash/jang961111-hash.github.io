@@ -194,7 +194,118 @@
 
 /* Images */
 .detail-hero-image {
+  margin-top: clamp(24px, 4vw, 48px);
+}
+
+/* Tall images would otherwise fill a whole screen before the story starts */
+.detail-hero-image .detail-figure-frame {
+  max-height: 560px;
+  width: 100%;
+}
+
+/* Caveat that applies to the whole page, right under the summary */
+.detail-notice {
+  display: flex;
+  gap: 10px;
   margin-top: 10px;
+  padding: 14px clamp(16px, 2.4vw, 28px);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--o);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--w2);
+}
+
+.detail-notice-mark {
+  flex: 0 0 auto;
+  color: var(--o-text);
+}
+
+/* Comparison table inside a case or section block */
+.detail-table-wrap {
+  margin: 4px 0 22px;
+  max-width: 62rem;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.detail-table thead th {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--g1);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.detail-table tbody th {
+  width: 30%;
+  font-weight: 700;
+  color: var(--w1);
+}
+
+.detail-table td {
+  color: var(--w2);
+}
+
+.detail-section .detail-body + .detail-table-wrap {
+  margin-top: 22px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .detail-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .detail-table,
+  .detail-table tbody,
+  .detail-table tr,
+  .detail-table th,
+  .detail-table td {
+    display: block;
+    width: auto;
+  }
+
+  .detail-table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .detail-table th,
+  .detail-table td {
+    padding: 2px 0;
+    border-bottom: 0;
+  }
+
+  .detail-table tbody th {
+    width: auto;
+    padding-bottom: 6px;
+  }
+
+  .detail-table td::before {
+    content: attr(data-label) " ";
+    font-size: 0.74rem;
+    color: var(--g1);
+    margin-right: 6px;
+  }
 }
 
 .detail-figure {

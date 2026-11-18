@@ -59,6 +59,50 @@ const ImageFrame = ({ src, alt, eager = false, caption }) => {
   );
 };
 
+// Small comparison table; on narrow screens each row becomes a labelled card.
+// Rows and columns are static, so indexes are stable keys. The explicit roles
+// keep table semantics when the narrow layout switches cells to display:block.
+/* eslint-disable react/no-array-index-key, jsx-a11y/no-redundant-roles */
+const DataTable = ({ table }) => {
+  if (!table?.columns?.length || !table?.rows?.length) {
+    return null;
+  }
+
+  return (
+    <div className="detail-table-wrap">
+      <table className="detail-table" role="table">
+        <thead role="rowgroup">
+          <tr role="row">
+            {table.columns.map((column, columnIndex) => (
+              <th key={columnIndex} scope="col" role="columnheader">
+                {column}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          {table.rows.map((row, rowIndex) => (
+            <tr key={rowIndex} role="row">
+              {row.map((cell, index) =>
+                index === 0 ? (
+                  <th key={index} scope="row" role="rowheader">
+                    {cell}
+                  </th>
+                ) : (
+                  <td key={index} role="cell" data-label={table.columns[index]}>
+                    {cell}
+                  </td>
+                )
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+/* eslint-enable react/no-array-index-key, jsx-a11y/no-redundant-roles */
+
 const Block = ({ label, children, className = "" }) => (
   <section className={`detail-block ${className}`.trim()}>
     {label ? <Label>{label}</Label> : null}
@@ -133,6 +177,13 @@ const ProjectDetailPage = ({ project, lang, pager }) => {
         <div className="frame detail-summary">
           <p>{renderLines(project.summary)}</p>
         </div>
+
+        {project.notice ? (
+          <p className="detail-notice">
+            <span className="mono detail-notice-mark" aria-hidden="true">※</span>
+            <span>{renderLines(project.notice)}</span>
+          </p>
+        ) : null}
 
         {facts.length > 0 && (
           <dl className="detail-facts">
@@ -241,6 +292,7 @@ const ProjectDetailPage = ({ project, lang, pager }) => {
                   {renderLines(project.caseStudy.summary)}
                 </div>
               ) : null}
+              <DataTable table={project.caseStudy.table} />
               <div className="detail-body">{renderLines(project.caseStudy.content)}</div>
             </div>
           </Block>
@@ -253,6 +305,7 @@ const ProjectDetailPage = ({ project, lang, pager }) => {
             <Block key={section.id} label={section.title}>
               <div className="frame detail-section" data-reveal ref={revealRef}>
                 <div className="detail-body">{renderLines(section.body)}</div>
+                <DataTable table={section.table} />
                 {Diagram && (
                   <div className="detail-diagram">
                     <Diagram lang={lang} />
