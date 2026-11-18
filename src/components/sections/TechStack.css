@@ -40,16 +40,58 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 18px;
-  min-height: 148px;
-  padding: 18px 18px 10px;
+  gap: 12px;
+  min-height: 104px;
+  padding: 16px 18px 8px;
   border-right: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
   background: var(--k);
 }
 
+.stack-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Brand mark in its official color; marks too dark or too light keep text color */
+.stack-mark {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: var(--w2);
+}
+
+.stack-mark svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.stack-mark.is-initial {
+  border: 1px solid var(--line-hover);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--g1);
+}
+
+.stack-mark:not(.is-initial) {
+  color: var(--brand, var(--w2));
+}
+
+/* Pale brand colors (React, LangGraph) wash out on paper, so deepen them */
+[data-theme="light"] .stack-mark:not(.is-initial) {
+  color: color-mix(in srgb, var(--brand, var(--w2)) 72%, #000);
+}
+
 .stack-name {
-  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  min-width: 0;
+  font-size: clamp(1.05rem, 1.45vw, 1.3rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -86,6 +128,20 @@
 }
 
 @media (max-width: 520px) {
+  .stack-head {
+    gap: 9px;
+  }
+
+  .stack-mark {
+    width: 22px;
+    height: 22px;
+  }
+
+  .stack-mark svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .stack-cells {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
