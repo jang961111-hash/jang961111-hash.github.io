@@ -25,9 +25,9 @@
     "greeting": "안녕하세요,",
     "title": "AI 서비스 개발과 기획",
     "portfolioLabel": "AI를 서비스로 만드는 사람",
-    "focusLabel": "일하는 방식",
-    "subtitle": "LLM, 추천, 검색을 **사용자가 쓰는 서비스**로 만들어 본 AI\u00a0서비스\u00a0개발자입니다.",
-    "mission": "철학 전공으로 문제를 구조로 나눠 보는 법 습득\nSSAFY에서 1,628시간 동안 AI와 SW 학습\n**문제 정의부터 React 구현까지** 이어서 수행",
+    "focusLabel": "소개",
+    "subtitle": "LLM, 추천, 검색을 **사용자가 쓰는 서비스**로 기획하고 만듭니다.",
+    "mission": "철학을 전공하며 문제를 구조로 나눠 보는 법을 익혔습니다\nSSAFY에서 1,628시간 동안 AI와 SW를 배웠습니다\n**문제 정의부터 React 화면 구현까지** 이어서 맡았습니다",
     "proofItems": {
       "product": "DailyLog PM으로 AI 회고 서비스 기획, SSAFY 14기 특화프로젝트 발표회 **광주1반 3등**",
       "ai": "SenseVoice 음성, Thompson Sampling 추천, pgvector 검색을 회고 흐름으로 설계",
@@ -527,16 +527,16 @@
     }
   },
   "contact": {
-    "title": "함께 문제를 정의하고 서비스로 연결하겠습니다",
+    "title": "AI를 서비스로 만드는 일, 같이 이야기하고 싶습니다",
     "subtitle": "CONTACT",
-    "description": "AI/SW 기반 서비스 기획, PM 역할, 포트폴리오와 프로젝트에 대해 이야기 나눌 수 있습니다.",
+    "description": "AI 서비스 기획과 개발 직무, 프로젝트에 대한 질문 모두 메일로 받습니다.",
     "button": "이메일 보내기",
     "github": "GitHub 방문",
     "linkedin": "LinkedIn",
     "email": "이메일 보내기",
     "resume": "포트폴리오 PDF 보기",
-    "footerBuilt": "React로 만든 AI/SW 포트폴리오입니다.",
-    "footerDesigned": "문제 정의, 서비스 기획, AI 활용 경험을 담았습니다."
+    "footerBuilt": "AI 서비스 개발과 기획 포트폴리오",
+    "footerDesigned": "React로 만들었습니다."
   },
   "ask": {
     "title": "Ask my portfolio",
@@ -561,7 +561,7 @@
     "awards": "수상, 선정, 대회 확인 중",
     "training": "교육과 자격 확인 중",
     "hero": "포트폴리오 불러오는 중",
-    "manifesto": "일하는 방식 읽는 중",
+    "manifesto": "소개 읽는 중",
     "projects": "프로젝트 둘러보는 중",
     "stack": "기술 스택 확인 중",
     "experience": "이력 읽는 중",

@@ -2348,24 +2348,24 @@ export const portfolioProjects = [
     },
     metrics: [
       {
-        value: "3rd",
+        value: { ko: "3등", en: "3rd" },
         label: {
-          ko: "특화프로젝트 발표회 광주1반 3등",
-          en: "Specialized Project showcase, Gwangju Class 1",
+          ko: "특화프로젝트 발표회 광주1반 (8개 팀)",
+          en: "Specialized Project showcase, Gwangju Class 1 (8 teams)",
         },
       },
       {
-        value: "3 min",
+        value: "74.8%",
         label: {
-          ko: "기록 완료 목표 (질문 최대 7번)",
+          ko: "SSAFY 교육생 설문에서 \"하루 기록을 시작하는 것이 어렵다\"고 답한 비율",
+          en: "Share of SSAFY trainees surveyed who said starting a daily entry is hard",
+        },
+      },
+      {
+        value: { ko: "목표 3분", en: "3 min target" },
+        label: {
+          ko: "기록 완료 목표 시간 (질문 최대 7번)",
           en: "Target time to finish an entry (up to 7 questions)",
-        },
-      },
-      {
-        value: "Slot",
-        label: {
-          ko: "동적 질문 엔진 설계",
-          en: "Dynamic Query Engine",
         },
       },
     ],

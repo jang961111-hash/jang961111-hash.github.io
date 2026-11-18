@@ -131,7 +131,6 @@ export const Principles = () => {
             <span className="history-period mono">{String(index + 1).padStart(2, "0")}</span>
             <div className="history-role">
               <h3>{pick(item.title, lang)}</h3>
-              {lang === "ko" ? <p className="principle-sub mono">{item.sub}</p> : null}
             </div>
             <div className="history-desc">
               {item.quote ? (

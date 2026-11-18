@@ -25,9 +25,9 @@
     "greeting": "Hello, I am",
     "title": "AI Service Development and Planning",
     "portfolioLabel": "I turn AI into services",
-    "focusLabel": "How I Work",
-    "subtitle": "An AI service builder who has designed and built LLM, recommendation, and search features into services people use, working with teams.",
-    "mission": "Learned to break problems into structures through a Philosophy degree\nStudied AI and SW for 1,628 hours at SSAFY\nCarry out **everything from problem definition to React implementation** end to end",
+    "focusLabel": "About",
+    "subtitle": "I plan and build **services people use**, powered by LLM, recommendation, and search.",
+    "mission": "Learned to break problems into structures while studying Philosophy\nStudied AI and SW for 1,628 hours at SSAFY\nTook on **everything from problem definition to the React screens**",
     "proofItems": {
       "product": "Led DailyLog as PM; the team placed 3rd in Gwangju Class 1 at the SSAFY Cohort 14 Specialized Project showcase",
       "ai": "Designed one reflection flow combining voice input (SenseVoice), recommendations (Thompson Sampling), and vector search (pgvector)",
@@ -527,16 +527,16 @@
     }
   },
   "contact": {
-    "title": "Let's Shape the Future Together",
+    "title": "Let's talk about turning AI into services",
     "subtitle": "CONTACT",
-    "description": "I am open to conversations about AI/SW service planning, PM roles, portfolios, and project collaboration.",
+    "description": "Questions about AI service planning and development roles, or about any project here, are welcome by email.",
     "button": "Send Email",
     "github": "Visit GitHub",
     "linkedin": "LinkedIn",
     "email": "Send Email",
     "resume": "View Portfolio PDF",
-    "footerBuilt": "Built with React and an AI/SW-focused portfolio structure.",
-    "footerDesigned": "Designed to present problem framing, service planning, and AI-enabled project experience."
+    "footerBuilt": "AI service development and planning portfolio",
+    "footerDesigned": "Built with React."
   },
   "ask": {
     "title": "Ask my portfolio",
@@ -561,7 +561,7 @@
     "awards": "checking awards, selections, competitions",
     "training": "checking training and credentials",
     "hero": "loading portfolio",
-    "manifesto": "reading the approach",
+    "manifesto": "reading the intro",
     "projects": "browsing projects",
     "stack": "checking the stack",
     "experience": "reading the history",

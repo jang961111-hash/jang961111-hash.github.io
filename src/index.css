@@ -509,3 +509,15 @@ h4 {
     color: inherit !important;
   }
 }
+
+/* Hangul labels: wide tracking and tiny uppercase sizing suit Latin capitals only */
+:lang(ko) .kicker,
+:lang(ko) .card-meta,
+:lang(ko) .hero-meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+:lang(ko) .hero-meta {
+  color: var(--w2);
+}
