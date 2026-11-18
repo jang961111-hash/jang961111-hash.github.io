@@ -2,11 +2,11 @@ export const projectUiCopy = {
   ko: {
     sectionTitle: "Core Projects",
     sectionIntro:
-      "사용자의 반복적인 불편, 기록되지 않는 의사결정, 재생에너지 수요 불일치처럼 서로 다른 문제를 **서비스로 풀어 본** 경험입니다.",
+      "누가 어디서 막히는지부터 정하고 **서비스로 풀어 본** 프로젝트 21개입니다.",
     coreKicker: "Featured",
     coreTitle: "핵심 프로젝트 3",
     coreIntro:
-      "DailyLog, ARGUS, SKT promp.T 최우수상작을 먼저 소개합니다. 프로젝트마다 문제 정의, 맡은 역할, 기술 선택, 해결 과정을 정리했습니다.",
+      "DailyLog, ARGUS, SKT Promp.T 최우수상작을 먼저 소개합니다. 프로젝트마다 문제 정의, 맡은 역할, 기술 선택, 해결 과정을 정리했습니다.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "보조 프로젝트 및 해커톤",
     supportingIntro:
@@ -64,20 +64,20 @@ export const projectUiCopy = {
     teamLabel: "팀",
     imageAltSuffix: "화면",
     statusLabels: {
-      planning: "Planning",
-      in_progress: "In Progress",
-      completed: "Completed",
-      archive_preparing: "Archive Prep",
+      planning: "기획 중",
+      in_progress: "진행 중",
+      completed: "완료",
+      archive_preparing: "정리 중",
     },
   },
   en: {
     sectionTitle: "Core Projects",
     sectionIntro:
-      "Experiences in solving various problems—user friction, fragmented decisions, and energy mismatches—through structured service design.",
+      "21 projects that start from who gets stuck and where, then **work it out as a service**.",
     coreKicker: "Featured",
     coreTitle: "Core 3 Projects",
     coreIntro:
-      "DailyLog, ARGUS, and the SKT promp.T Top Excellence Award entry are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
+      "DailyLog, ARGUS, and the SKT Promp.T Top Excellence Award entry are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "Supporting Projects & Hackathons",
     supportingIntro:

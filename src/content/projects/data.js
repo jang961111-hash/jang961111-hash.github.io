@@ -28,8 +28,8 @@ export const portfolioProjects = [
       effect: { ko: "검증셋 200건(2026.11.16 내부 측정)에서 사기 문자 100건 중 놓친 것 0건(유효 2회, 정답 표시 1인, 일부 문장은 규칙 수정 때 본 적 있음), 정상 문자 8.0%에 조심 경고\n어르신 20명 1회 실증(목표 50명 2회에는 미달), 만족도 미측정", en: "0 of 100 scam texts missed on a 200-item validation set (internal measurement, Nov 16, 2026; two valid runs, labels by one person; some sentences seen while editing the rules); 8.0% of normal texts got a caution warning\nOne field session with 20 seniors (below the goal of 50 seniors over 2 sessions); satisfaction not measured" },
     },
     context: {
-      ko: "SKT 「모두의 promp.T」 수상작에서 이어진 과제\n국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 개인 응모 선정\n2026년 9월 29일 수행협약 체결\n11월 13일 광주 북구 임동의 한 기관에서 어르신 20명과 실증\n11월 16일 최종결과보고 제출, 성과발표 평가는 11월 25일",
-      en: "Task that grew out of my SKT 'promp.T for Everyone' prize entry\nSelected as an individual entry for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project'\nProject agreement signed on September 29, 2026\nField session with 20 seniors at an institution in Im-dong, Buk-gu, Gwangju on November 13\nFinal report submitted on November 16; final presentation review on November 25",
+      ko: "SKT 「모두의 Promp.T」 수상작에서 이어진 과제\n국립광주과학관 2026 마이AI랩 「AI-이음 프로젝트」 개인 응모 선정\n2026년 9월 29일 수행협약 체결\n11월 13일 광주 북구 임동의 한 기관에서 어르신 20명과 실증\n11월 16일 최종결과보고 제출, 성과발표 평가는 11월 25일",
+      en: "Task that grew out of my SKT 'Promp.T for Everyone' prize entry\nSelected as an individual entry for the Gwangju National Science Museum's 2026 My AI Lab 'AI-Ieum Project'\nProject agreement signed on September 29, 2026\nField session with 20 seniors at an institution in Im-dong, Buk-gu, Gwangju on November 13\nFinal report submitted on November 16; final presentation review on November 25",
     },
     story: {
       problem: {
@@ -1046,8 +1046,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | 증명은 에이전트가, 판단은 사람이",
-        en: "Decision Deep Dive | Agents Prove, People Decide",
+        ko: "증명은 에이전트가, 판단은 사람이",
+        en: "Agents Prove, People Decide",
       },
       summary: {
         ko: "안전 승인처럼 책임이 따르는 결정에서 AI는 근거를 모으는 역할에 두고, **판단은 사람에게 남긴** 설계",
@@ -1434,19 +1434,19 @@ export const portfolioProjects = [
       en: "Aug 2026 (awarded Aug 20, 2026)",
     },
     category: {
-      ko: "SKT 「모두의 promp.T」 공모전 Life AX 부문",
-      en: "SKT 'promp.T for Everyone' Contest, Life AX",
+      ko: "SKT 「모두의 Promp.T」 공모전 Life AX 부문",
+      en: "SKT 'Promp.T for Everyone' Contest, Life AX",
     },
     title: {
-      ko: "SKT promp.T 최우수상작 | 부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트",
-      en: "SKT promp.T Top Excellence Award Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
+      ko: "SKT Promp.T 최우수상작 | 부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트",
+      en: "SKT Promp.T Top Excellence Award Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
     },
     summary: {
-      ko: "부모님이 **사기 문자를 스스로 알아보시도록** 돕는 훈련 코치 프롬프트입니다. SKT 「모두의 promp.T」 공모전 Life AX 부문에서 최우수상을 받은 개인 출품작입니다.",
-      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own, winner of the Top Excellence Award (Life AX category) in SKT's 'promp.T for Everyone' contest.",
+      ko: "부모님이 **사기 문자를 스스로 알아보시도록** 돕는 훈련 코치 프롬프트입니다. SKT 「모두의 Promp.T」 공모전 Life AX 부문에서 최우수상을 받은 개인 출품작입니다.",
+      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own, winner of the Top Excellence Award (Life AX category) in SKT's 'Promp.T for Everyone' contest.",
     },
     brief: {
-      what: { ko: "부모님이 사기 문자를 스스로 알아보게 돕는 훈련 코치 프롬프트, SKT 모두의 promp.T Life AX 부문 개인 출품", en: "Training-coach prompt helping parents spot scam texts themselves; solo entry in SKT 'promp.T for Everyone' (Life AX)" },
+      what: { ko: "부모님이 사기 문자를 스스로 알아보게 돕는 훈련 코치 프롬프트, SKT 모두의 Promp.T Life AX 부문 개인 출품", en: "Training-coach prompt helping parents spot scam texts themselves; solo entry in SKT 'Promp.T for Everyone' (Life AX)" },
       pain: { ko: "어머니의 질문에 답하기까지 47분간 어머니는 혼자였고, 판단을 대신하면 어머니에게 남는 것이 없음", en: "My mother waited 47 minutes alone for my answer, and judging for her left her with nothing" },
       solution: { ko: "판별해 주지 않고 질문으로 이끄는 「어머니의 판별 카드」 코치 프롬프트", en: "A 'Mother's Judgment Card' coach prompt that guides with questions instead of judging" },
       how: { ko: "AI는 답 대신 질문을 던져 이상한 곳을 직접 찾게 하고, 직접 찾은 것만 카드에 축적", en: "AI asks questions so parents find what looks wrong themselves; only self-found items go on the card" },
@@ -1484,12 +1484,12 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "개인 출품으로 SKT 「모두의 promp.T」 공모전 **Life AX 부문 최우수상** 수상",
+        "개인 출품으로 SKT 「모두의 Promp.T」 공모전 **Life AX 부문 최우수상** 수상",
         "판별기를 만드는 대신 **사람의 판별력을 키우는** 쪽으로 설계 전환",
         "가족이 실제로 겪은 일(**47분의 공백**)에서 문제 정의",
       ],
       en: [
-        "Won the Top Excellence Award in the Life AX category of SKT's 'promp.T for Everyone' contest as an individual.",
+        "Won the Top Excellence Award in the Life AX category of SKT's 'Promp.T for Everyone' contest as an individual.",
         "Flipped the design from a judging tool to strengthening the person's own judgment.",
         "Defined the problem from a real family experience: a 47-minute gap.",
       ],
@@ -1674,8 +1674,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | 검증되지 않은 것은 '검증되지 않았다'고 쓴다",
-        en: "Decision Deep Dive | If It Isn't Verified, Say So",
+        ko: "검증되지 않은 것은 '검증되지 않았다'고 쓴다",
+        en: "If It Isn't Verified, Say So",
       },
       summary: {
         ko: "AI가 산출물을 만드는 속도가 빨라질수록, 신뢰의 기준은 사람의 검증과 정직한 보고로 이동한다는 판단",
@@ -2024,8 +2024,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | '판단하지 않는 서비스'의 경계 설계",
-        en: "Decision Deep Dive | Drawing the Boundary of a Service That Doesn't Judge",
+        ko: "'판단하지 않는 서비스'의 경계 설계",
+        en: "Drawing the Boundary of a Service That Doesn't Judge",
       },
       summary: {
         ko: "민간 서비스가 전장에 들어갈 때 가장 위험한 것은 기능 부족이 아니라 역할의 월권이라고 판단한 사례",
@@ -2371,8 +2371,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | 의지가 아닌 '구조'로 해결하는 기록의 병목",
-        en: "Decision Deep Dive | Solving Friction with Structure, Not Will",
+        ko: "의지가 아닌 '구조'로 해결하는 기록의 병목",
+        en: "Solving Friction with Structure, Not Will",
       },
       summary: {
         ko: "빈 화면이 주는 인지적 부하를 **'슬롯 기반 질문 엔진'**으로 푼 사례",
@@ -2441,29 +2441,8 @@ export const portfolioProjects = [
       {
         src: "/projects/dailylog/app-home.webp",
         alt: {
-          ko: "홈 화면: 오늘의 기록과 추천 행동",
-          en: "Home: today's log and recommended action",
-        },
-      },
-      {
-        src: "/projects/dailylog/app-diary-ai.webp",
-        alt: {
-          ko: "AI 질문 흐름 기반 회고 작성 화면",
-          en: "AI-guided reflection writing flow",
-        },
-      },
-      {
-        src: "/projects/dailylog/app-diary-photo.webp",
-        alt: {
-          ko: "사진과 함께 기록하는 다이어리 화면",
-          en: "Diary entry with photo attachments",
-        },
-      },
-      {
-        src: "/projects/dailylog/app-runtime.webp",
-        alt: {
-          ko: "실제 구동 화면: 기록에서 행동 추천까지",
-          en: "Runtime: from logging to action recommendation",
+          ko: "로그인 화면 (실제 앱)",
+          en: "Login screen (actual app)",
         },
       },
       {
@@ -2617,8 +2596,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | '실시간 소음'을 '영구적 자산'으로 바꾸는 필터링 구조 설계",
-        en: "Decision Deep Dive | Filtering 'Real-time Noise' into 'Permanent Assets'",
+        ko: "'실시간 소음'을 '영구적 자산'으로 바꾸는 필터링 구조 설계",
+        en: "Filtering 'Real-time Noise' into 'Permanent Assets'",
       },
       summary: {
         ko: "데이터의 완결성보다 '의사결정 근거의 가독성'을 우선순위에 둔 기획적 트레이드오프 사례",
@@ -2783,8 +2762,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | 기술적 난제를 사업적 기회로 바꾸는 '기획의 관점 전환'",
-        en: "Decision Deep Dive | Pivoting Technical Assets into Business Opportunities",
+        ko: "기술적 난제를 사업적 기회로 바꾸는 '기획의 관점 전환'",
+        en: "Pivoting Technical Assets into Business Opportunities",
       },
       summary: {
         ko: "재해 분석 시스템의 기술력을 '에너지 최적화 BM'으로 피벗하여 해커톤 결선에 진출한 사례",
@@ -3137,8 +3116,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | 프롬프트가 아니라 실행 가능한 AI 노하우를 판매하기",
-        en: "Decision Deep Dive | Selling Executable AI Know-how, Not Raw Prompts",
+        ko: "프롬프트가 아니라 실행 가능한 AI 노하우를 판매하기",
+        en: "Selling Executable AI Know-how, Not Raw Prompts",
       },
       summary: {
         ko: "문제 정의, 시장성 검토, 크리에이터 보호, 수익모델을 함께 고려한 서비스 기획 사례",
@@ -3409,8 +3388,8 @@ export const portfolioProjects = [
     ],
     caseStudy: {
       title: {
-        ko: "Decision Deep Dive | 데이터 축적이 아닌 '행동 유도'를 위한 CRM 설계",
-        en: "Decision Deep Dive | Designing CRM for Action, Not Just Data",
+        ko: "데이터 축적이 아닌 '행동 유도'를 위한 CRM 설계",
+        en: "Designing CRM for Action, Not Just Data",
       },
       summary: {
         ko: "현장에서 외면받는 CRM의 문제를 '시각적 파이프라인'과 '액션 가이드'로 해결한 사례",

@@ -41,7 +41,7 @@
     "visualAlt": "Three screens of the Ansim-Ieum service",
     "evidenceLabel": "Awards and selections",
     "evidence": [
-      "Top Excellence Award, Life AX category, SKT promp.T contest",
+      "Top Excellence Award, Life AX category, SKT Promp.T contest",
       "3rd place, Gwangju Class 1, SSAFY Cohort 14 Specialized Project showcase",
       "Selected for the Oregon UAS Accelerator special track, D4D Seoul"
     ]
@@ -62,7 +62,7 @@
       "title": "At a glance",
       "projects": "Projects",
       "awards": "Awards",
-      "awardsNote": "SKT promp.T Top Excellence Award, SSAFY Specialized Project 3rd place (Gwangju Class 1), Startup Camp Best Team",
+      "awardsNote": "SKT Promp.T Top Excellence Award, SSAFY Specialized Project 3rd place (Gwangju Class 1), Startup Camp Best Team",
       "hackathons": "Hackathons & challenges",
       "training": "Samsung SW·AI Academy for Youth",
       "trainingValue": "SSAFY 14th"
@@ -558,7 +558,7 @@
   },
   "terminal": {
     "labs": "reading lab notes",
-    "awards": "checking awards and competitions",
+    "awards": "checking awards, selections, competitions",
     "training": "checking training and credentials",
     "hero": "loading portfolio",
     "manifesto": "reading the approach",

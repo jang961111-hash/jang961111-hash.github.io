@@ -91,7 +91,7 @@ export const competitions = [
   },
   {
     period: "2026.08",
-    name: { ko: "SKT 「모두의 Promp.T」 공모전", en: "SKT 'promp.T for Everyone' Contest" },
+    name: { ko: "SKT 「모두의 Promp.T」 공모전", en: "SKT 'Promp.T for Everyone' Contest" },
     result: { ko: "Life AX 부문 최우수상 (개인), 공모전 총 480건 접수", en: "Top Excellence Award, Life AX category (individual). The contest received 480 entries in total" },
     award: true,
     slug: "skt-prompt-ansimcall",
@@ -254,7 +254,7 @@ export const principles = [
         "졸업논문: 마르쿠제 『일차원적 인간』을 읽고 \"자기결정\" 개념을 정리",
       ],
       en: [
-        "SKT 'promp.T for Everyone': a training-coach prompt that flips \"detect it for me\" into \"don't detect it for me\"; it began when my mother hesitated over a suspected scam text",
+        "SKT 'Promp.T for Everyone': a training-coach prompt that flips \"detect it for me\" into \"don't detect it for me\"; it began when my mother hesitated over a suspected scam text",
         "Ansim-Ieum: took the same idea to scam-prevention practice for seniors, with a field session of 20 seniors",
         "Graduation thesis: read Marcuse's One-Dimensional Man and wrote on the concept of self-determination",
       ],

@@ -41,7 +41,7 @@
     "visualAlt": "안심이음 서비스 화면 세 장",
     "evidenceLabel": "수상과 선정",
     "evidence": [
-      "SKT 모두의 promp.T Life AX 부문 최우수상",
+      "SKT 「모두의 Promp.T」 Life AX 부문 최우수상",
       "SSAFY 14기 특화프로젝트 발표회 광주1반 3등",
       "D4D 서울 Oregon UAS Accelerator 특별 트랙 선정"
     ]
@@ -62,7 +62,7 @@
       "title": "At a glance",
       "projects": "프로젝트",
       "awards": "수상",
-      "awardsNote": "SKT promp.T 최우수상, SSAFY 특화프로젝트 광주1반 3등, 창업캠프 최우수팀",
+      "awardsNote": "SKT Promp.T 최우수상, SSAFY 특화프로젝트 광주1반 3등, 창업캠프 최우수팀",
       "hackathons": "해커톤과 챌린지",
       "training": "삼성 청년 SW·AI 아카데미",
       "trainingValue": "SSAFY 14기"
@@ -558,7 +558,7 @@
   },
   "terminal": {
     "labs": "실습 노트 읽는 중",
-    "awards": "수상과 대회 확인 중",
+    "awards": "수상, 선정, 대회 확인 중",
     "training": "교육과 자격 확인 중",
     "hero": "포트폴리오 불러오는 중",
     "manifesto": "일하는 방식 읽는 중",

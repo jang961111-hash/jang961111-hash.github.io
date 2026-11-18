@@ -9,7 +9,7 @@ export const PORTFOLIO_CONTEXT = `
 포지셔닝: "AI를 서비스로 만드는 사람" — LLM, 추천, 벡터 검색을 실제 사용자 경험으로 구현.
 배경: 철학 전공(전남대), SSAFY(삼성 청년 SW·AI 아카데미) 14기(1,628시간), SKALA(SK AI Leader Academy) 4기 재학, 해병대 보병 복무(병장 만기제대), 한미연합훈련에서 통역과 상황 전달 일부 지원.
 핵심 역량: Platform-Oriented Design, Decision Architecture, Technical Communication, AI as Decision Support.
-요약 수치: 프로젝트 21개, 수상 3회(SKT promp.T 공모전 Life AX 부문 최우수상, SSAFY 14기 특화프로젝트 발표회 광주1반 3등, SSAFY 창업캠프 최우수팀).
+요약 수치: 프로젝트 21개, 수상 3회(SKT Promp.T 공모전 Life AX 부문 최우수상, SSAFY 14기 특화프로젝트 발표회 광주1반 3등, SSAFY 창업캠프 최우수팀).
 
 ## 핵심 프로젝트 3
 1. DailyLog — AI 기반 회고, 의사결정 지원 (SSAFY 특화, 2026.02–04, 6인 팀, PM, 프론트엔드)
@@ -19,7 +19,7 @@ export const PORTFOLIO_CONTEXT = `
    규격, 호환 / 법령, 조문 / 안전서류 검토 에이전트가 근거를 만들고 승인, 거절은 안전관리자가 결정("증명은 에이전트가, 판단은 사람이").
    외부 전송 차단 기본값(egress_allowed=false). Vue 3 + Vite, FastAPI, PostgreSQL(Supabase)/SQLite. 승인 시간 단축 효과는 실측 없음.
    GitHub: https://github.com/jang961111-hash/skala-argus 상세: /projects/argus/
-3. 사기 문자 판별 훈련 코치 프롬프트 — SKT 「모두의 promp.T」 공모전 Life AX 부문 최우수상 (2026.08.20, 개인), 판별해주지 않는 AI(판별력을 키우는 설계). 상세: /projects/skt-prompt-ansimcall/
+3. 사기 문자 판별 훈련 코치 프롬프트 — SKT 「모두의 Promp.T」 공모전 Life AX 부문 최우수상 (2026.08.20, 개인), 판별해주지 않는 AI(판별력을 키우는 설계). 상세: /projects/skt-prompt-ansimcall/
 
 ## 보조 프로젝트 / 해커톤
 - 장보고(JangBogo) — Google x Solana AI Agentic Hackathon (2026.08, 팀 사공이(402) 등록 2인, 팀장, PM)
