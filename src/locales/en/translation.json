@@ -20,6 +20,7 @@
     "history": "Experience"
   },
   "hero": {
+    "portraitAlt": "Portrait of Jang Byeong Heon",
     "name": "Jang Byeong Heon",
     "greeting": "Hello, I am",
     "title": "AI Service Development and Planning",

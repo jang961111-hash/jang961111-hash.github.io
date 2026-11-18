@@ -20,6 +20,7 @@
     "history": "이력"
   },
   "hero": {
+    "portraitAlt": "장병헌 프로필 사진",
     "name": "장병헌",
     "greeting": "안녕하세요,",
     "title": "AI 서비스 개발과 기획",

@@ -17,6 +17,11 @@ const Hero = ({ theme }) => {
     scrollToSectionId(id);
   };
 
+  // "?blind" hides the portrait for blind-screening applications.
+  const showPortrait =
+    typeof window === "undefined" ||
+    !new URLSearchParams(window.location.search).has("blind");
+
   return (
     <section id="hero" className="hero">
       <HeroStage theme={theme} />
@@ -29,13 +34,29 @@ const Hero = ({ theme }) => {
 
       <div className="wrap hero-inner">
         <div className="hero-main">
-          <p className="label-box hero-role">
-            <span className="label-dot" aria-hidden="true" />
-            <span>{t("hero.title")}</span>
-          </p>
-          <h1 className={`hero-name ${i18n.language === "en" ? "is-long" : ""}`}>
-            {t("hero.name")}
-          </h1>
+          <div className={`hero-identity ${showPortrait ? "has-portrait" : ""}`}>
+            {showPortrait && (
+              <figure className="frame hero-portrait">
+                <img
+                  src="/profile/portrait.webp"
+                  alt={t("hero.portraitAlt")}
+                  width="900"
+                  height="1080"
+                  decoding="async"
+                  fetchPriority="high"
+                />
+              </figure>
+            )}
+            <div className="hero-identity-text">
+              <p className="label-box hero-role">
+                <span className="label-dot" aria-hidden="true" />
+                <span>{t("hero.title")}</span>
+              </p>
+              <h1 className={`hero-name ${i18n.language === "en" ? "is-long" : ""}`}>
+                {t("hero.name")}
+              </h1>
+            </div>
+          </div>
           <p className="frame hero-subtitle">{renderLines(t("hero.subtitle"))}</p>
           <div className="hero-cta">
             <a
