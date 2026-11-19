@@ -4,16 +4,28 @@ import './ScrollToTop.css';
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  // Shown only while the reader scrolls back up, so it does not sit on top of
+  // the right edge of the text while they read downward.
   useEffect(() => {
+    let lastY = window.pageYOffset;
+
     const toggleVisibility = () => {
-      if (window.pageYOffset > 500) {
-        setIsVisible(true);
-      } else {
+      const y = window.pageYOffset;
+      const goingUp = y < lastY - 4;
+      const goingDown = y > lastY + 4;
+
+      if (y <= 500 || goingDown) {
         setIsVisible(false);
+      } else if (goingUp) {
+        setIsVisible(true);
+      }
+
+      if (goingUp || goingDown) {
+        lastY = y;
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -22,6 +34,8 @@ const ScrollToTop = () => {
       top: 0,
       behavior: 'smooth'
     });
+    // The button fades out at the top; keep keyboard focus somewhere real.
+    document.getElementById('main')?.focus({ preventScroll: true });
   };
 
   return (

@@ -14,8 +14,9 @@
   color: var(--text-primary);
   box-shadow: var(--shadow-md);
   cursor: pointer;
+  /* Hidden with opacity, not visibility, so keyboard users can still tab to it */
   opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
   transform: translateY(16px);
   transition:
     opacity 200ms ease,
@@ -26,7 +27,7 @@
 
 .scroll-to-top.visible {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
@@ -46,5 +47,17 @@
     bottom: 1rem;
     width: 2.85rem;
     height: 2.85rem;
+  }
+}
+
+.scroll-to-top:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media print {
+  .scroll-to-top {
+    display: none;
   }
 }

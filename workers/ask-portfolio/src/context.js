@@ -12,7 +12,7 @@ export const PORTFOLIO_CONTEXT = `
 요약 수치: 프로젝트 21개, 수상 3회(SKT Promp.T 공모전 Life AX 부문 최우수상, SSAFY 14기 특화프로젝트 발표회 광주1반 3등, SSAFY 창업캠프 최우수팀).
 
 ## 핵심 프로젝트 3
-1. DailyLog — AI 기반 회고, 의사결정 지원 (SSAFY 특화, 2026.02–04, 6인 팀, PM, 프론트엔드)
+1. DailyLog — AI가 먼저 질문하고 다음 행동을 추천하는 회고 서비스 (SSAFY 특화, 2026.02–04, 6인 팀, PM, 프론트엔드)
    SenseVoice 음성 입력, 슬롯 기반 동적 질문 엔진(3~5턴 가이드 UX), pgvector 벡터 검색, Thompson Sampling 행동 추천.
    SSAFY 14기 특화프로젝트 발표회 광주1반 3등. 상세: /projects/dailylog/
 2. ARGUS — 반도체 fab 부품 교체 승인 워크플로우 온프레미스 AI 에이전트 (SKALA 4기 미니 프로젝트, 2026.09.02–04, 5인 팀, 백엔드 설계, 최종 발표)
@@ -33,7 +33,7 @@ export const PORTFOLIO_CONTEXT = `
 0. EasyExam — SSAFY 창업캠프 최우수팀 (2026.06.24-26, 팀 No Problem 5인, 마케팅, SEO)
    학원 강사용 AI 문제은행, 시험지 생성, 자동 채점 SaaS. 라이브: https://noproblem.ssafy.live 상세: /projects/easyexam/
 4. SUPPORTY — D4D(Deploy for Defense) APAC 서울 해커톤 (2026.07.03–05, 24시간 개발, 2인 팀, 기획, 프론트엔드)
-   AI 코파일럿 기반 무인자산(UGV, VTOL) 작전지속지원 통제 콘솔. 자연어 지휘, AI 트리아지.
+   AI 코파일럿이 돕는 무인자산(UGV, VTOL) 작전지속지원 통제 콘솔. 자연어 지휘, AI 트리아지.
    Oregon UAS Accelerator 특별 트랙 선정. 데모: https://supporty-d4d.github.io/ 상세: /projects/supporty/
 5. MultiplierBoard — KRAFTON AI R&D Hackathon Round 1 (2026.03.28, 개인)
    1-layer causal self-attention 제약에서 이진 곱셈: 구성적 해법 4,096쌍 전수 검증 100% + 학습 모델(274,898 파라미터) 정확도 1.0.
