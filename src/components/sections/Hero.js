@@ -64,6 +64,10 @@ const Hero = ({ theme }) => {
             </div>
           </div>
           <p className="frame hero-subtitle">{renderLines(t("hero.subtitle"))}</p>
+          {/* School and training names are left out of blind-screening pages. */}
+          {showPortrait && (
+            <p className="mono hero-background">{t("hero.background")}</p>
+          )}
           <div className="hero-cta">
             <a
               href="#projects"

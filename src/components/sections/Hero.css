@@ -279,6 +279,15 @@
   color: var(--w1);
 }
 
+.hero-background {
+  max-width: 40rem;
+  margin: -6px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--g1);
+  word-break: keep-all;
+}
+
 .hero-cta {
   display: flex;
   flex-wrap: wrap;

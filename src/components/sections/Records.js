@@ -43,40 +43,62 @@ export const LabNotes = () => {
   );
 };
 
-// Awards, selections, and participation in one dated list.
+// Awards and selections first, then finals, participation, and submissions,
+// so a prize is never read at the same weight as an entry.
+const competitionGroups = [
+  {
+    id: "won",
+    label: { ko: "수상과 선정", en: "Awards and selections" },
+    items: competitions.filter((item) => item.award),
+  },
+  {
+    id: "entered",
+    label: { ko: "본선 진출, 참가, 제출", en: "Finals, participation, and submissions" },
+    items: competitions.filter((item) => !item.award),
+  },
+];
+
 export const Competitions = () => {
   const lang = useLang();
 
   return (
     <SectionShell id="awards" className="history records">
-      <ol className="history-list">
-        {competitions.map((item) => {
-          const name = pick(item.name, lang);
+      {competitionGroups.map((group) => (
+        <React.Fragment key={group.id}>
+          <div className="sub-head">
+            <p className="kicker">{pick(group.label, lang)}</p>
+            <p className="kicker">{String(group.items.length).padStart(2, "0")}</p>
+          </div>
+          <ol className="history-list">
+            {group.items.map((item) => {
+              const name = pick(item.name, lang);
 
-          return (
-            <li
-              className={`history-row${item.award ? " is-award" : ""}`}
-              key={`${item.period}-${name}`}
-              data-reveal
-              ref={revealRef}
-            >
-              <span className="history-period mono">{item.period}</span>
-              <div className="history-role">
-                <h3>
-                  {item.slug ? (
-                    <Link to={getProjectPath(lang, item.slug)} className="record-link">
-                      {name}
-                    </Link>
-                  ) : (
-                    name
-                  )}
-                </h3>
-              </div>
-              <p className="history-desc record-result">{pick(item.result, lang)}</p>
-            </li>
-          );
-        })}
-      </ol>
+              return (
+                <li
+                  className={`history-row${item.award ? " is-award" : ""}`}
+                  key={`${item.period}-${name}`}
+                  data-reveal
+                  ref={revealRef}
+                >
+                  <span className="history-period mono">{item.period}</span>
+                  <div className="history-role">
+                    <h3>
+                      {item.slug ? (
+                        <Link to={getProjectPath(lang, item.slug)} className="record-link">
+                          {name}
+                        </Link>
+                      ) : (
+                        name
+                      )}
+                    </h3>
+                  </div>
+                  <p className="history-desc record-result">{pick(item.result, lang)}</p>
+                </li>
+              );
+            })}
+          </ol>
+        </React.Fragment>
+      ))}
     </SectionShell>
   );
 };
