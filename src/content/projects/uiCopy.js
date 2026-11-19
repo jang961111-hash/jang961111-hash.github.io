@@ -6,7 +6,7 @@ export const projectUiCopy = {
     coreKicker: "Featured",
     coreTitle: "핵심 프로젝트 3",
     coreIntro:
-      "DailyLog, ARGUS, SKT Promp.T 최우수상작을 먼저 소개합니다. 프로젝트마다 문제 정의, 맡은 역할, 기술 선택, 해결 과정을 정리했습니다.",
+      "안심이음, DailyLog, SKT Promp.T 최우수상작을 먼저 소개합니다. 프로젝트마다 문제 정의, 맡은 역할, 기술 선택, 해결 과정을 정리했습니다.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "보조 프로젝트 및 해커톤",
     supportingIntro:
@@ -83,7 +83,7 @@ export const projectUiCopy = {
     coreKicker: "Featured",
     coreTitle: "Core 3 Projects",
     coreIntro:
-      "DailyLog, ARGUS, and the SKT Promp.T Top Excellence Award entry are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
+      "Ansim-Ieum, DailyLog, and the SKT Promp.T Top Excellence Award entry are prioritized to show problem framing, role, technical choices, and solution process as interview-ready cases.",
     supportingKicker: "Supporting / Hackathon",
     supportingTitle: "Supporting Projects & Hackathons",
     supportingIntro:

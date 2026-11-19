@@ -7,8 +7,8 @@ export const portfolioProjects = [
       en: "Planning, detection criteria and evaluation design, field session (individual project)",
     },
     cardResult: {
-      ko: "검증셋 200건에서 사기 문자 100건 중 놓친 것 0건(2026.11.16 내부 측정), 어르신 20명 현장 실증 1회",
-      en: "0 of 100 scam texts missed on a 200-item validation set (internal measurement, Nov 16, 2026); one field session with 20 seniors",
+      ko: "검증셋 200건에서 사기 문자 100건 중 놓친 것 0건, 정상 문자 8.0%에는 조심 경고(2026.11.16 내부 측정). 어르신 20명 현장 실증 1회",
+      en: "0 of 100 scam texts missed on a 200-item validation set, with a caution flag on 8.0% of normal texts (internal measurement, Nov 16, 2026); one field session with 20 seniors",
     },
     status: "in_progress",
     sortDate: "2026-11-16",
@@ -1946,8 +1946,8 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["사업 소개 덱(15p)", "팀 시연 서비스 링크", "수상 사진"],
-      en: ["Business deck (15p)", "Team demo service link", "Award photo"],
+      ko: ["사업 소개 덱(15p)", "수상 사진"],
+      en: ["Business deck (15p)", "Award photo"],
     },
     interviewQuestions: {
       ko: [
