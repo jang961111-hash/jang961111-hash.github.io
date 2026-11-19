@@ -67,7 +67,7 @@ export const labNotes = [
   {
     id: "data-analysis-team",
     period: "2026.07",
-    title: { ko: "데이터분석 종합실습 (팀 리드)", en: "Data Analysis Capstone Lab (Team Lead)" },
+    title: { ko: "데이터분석 종합실습(팀 리드)", en: "Data Analysis Capstone Lab (Team Lead)" },
     note: {
       ko: "세팅 가이드와 브랜치 분업 규칙을 먼저 정하고 통합과 머지 담당, 통합 검증 Accuracy 0.8358, F1 0.6916",
       en: "Set the setup guide and branch rules first and handled integration and merges; integrated validation reached accuracy 0.8358 and F1 0.6916",
@@ -92,7 +92,7 @@ export const competitions = [
   {
     period: "2026.08",
     name: { ko: "SKT 「모두의 Promp.T」 공모전", en: "SKT 'Promp.T for Everyone' Contest" },
-    result: { ko: "Life AX 부문 최우수상 (개인), 공모전 총 480건 접수", en: "Top Excellence Award, Life AX category (individual). The contest received 480 entries in total" },
+    result: { ko: "Life AX 부문 최우수상(개인), 공모전 총 480건 접수", en: "Top Excellence Award, Life AX category (individual). The contest received 480 entries in total" },
     award: true,
     slug: "skt-prompt-ansimcall",
   },
@@ -125,7 +125,7 @@ export const competitions = [
   {
     period: "2026.04",
     name: { ko: "SSAFY 14기 특화프로젝트 발표회", en: "SSAFY Cohort 14 Specialized Project Showcase" },
-    result: { ko: "광주1반 3등 (8개 팀)", en: "3rd place, Gwangju Class 1 (8 teams)" },
+    result: { ko: "광주1반 3등(8개 팀)", en: "3rd place, Gwangju Class 1 (8 teams)" },
     award: true,
     slug: "dailylog",
   },
@@ -158,7 +158,7 @@ export const competitions = [
 export const training = [
   {
     period: "2026.07 - 2026.12",
-    name: { ko: "SKALA (SK AI Leader Academy) 4기", en: "SKALA (SK AI Leader Academy), Cohort 4" },
+    name: { ko: "SKALA(SK AI Leader Academy) 4기", en: "SKALA (SK AI Leader Academy), Cohort 4" },
     lines: {
       ko: ["SK AX 운영, 2026.12 수료 예정", "DB/SQL 종합실습 강사 개별 평가 피드백 100점(S+등급)"],
       en: ["Run by SK AX; completion expected Dec 2026", "DB/SQL capstone lab: 100 points (grade S+) in the instructor's individual evaluation feedback"],
@@ -168,7 +168,7 @@ export const training = [
     period: "2025.07 - 2026.06",
     name: { ko: "삼성청년SW·AI아카데미(SSAFY) 14기", en: "Samsung SW·AI Academy for Youth (SSAFY), Cohort 14" },
     lines: {
-      ko: ["1,628시간 (1학기 828시간, 2학기 800시간)", "Certificate 등급 수료", "광주 1반 반대표 (2026.02.19 - 04.01)"],
+      ko: ["1,628시간(1학기 828시간, 2학기 800시간)", "Certificate 등급 수료", "광주 1반 반대표(2026.02.19 - 2026.04.01)"],
       en: ["1,628 hours (828 in term 1, 800 in term 2)", "Completed with Certificate grade", "Class representative, Gwangju Class 1 (Feb 19 - Apr 1, 2026)"],
     },
   },
@@ -182,7 +182,7 @@ export const training = [
   },
   {
     period: "2016.12 - 2018.09",
-    name: { ko: "군 복무 (대한민국 해병대)", en: "Military Service (Republic of Korea Marine Corps)" },
+    name: { ko: "군 복무(대한민국 해병대)", en: "Military Service (Republic of Korea Marine Corps)" },
     lines: {
       ko: ["해병대 보병 복무", "한미연합훈련 과정에서 통역과 상황 전달 일부 지원"],
       en: ["Served as an infantryman", "Partly supported interpretation and situation updates during ROK-US joint exercises"],
@@ -190,7 +190,7 @@ export const training = [
   },
   {
     period: "2012.01 - 2013.01",
-    name: { ko: "미국 교환학생 (Portage High School, 인디애나)", en: "Exchange Student in the U.S. (Portage High School, Indiana)" },
+    name: { ko: "미국 교환학생(Portage High School, 인디애나)", en: "Exchange Student in the U.S. (Portage High School, Indiana)" },
     lines: {
       ko: ["미국 인디애나주 Portage High School에서 1년간 교환학생 생활"],
       en: ["One year as an exchange student at Portage High School in Indiana"],
@@ -296,7 +296,7 @@ export const principles = [
       ko: [
         "DB/SQL 종합실습: 실행 화면 캡처 87장으로 과정 기록",
         "SKALA: 수업과 특강을 다시 보며 정리하고 정리본을 동기와 공유",
-        "안심이음: 날짜별 측정 수치와 실행 명령을 한 보드에 누적, 설계 결정은 ADR로 기록",
+        "안심이음: 날짜별 측정 수치와 실행 명령을 한 보드에 누적, 설계 결정은 ADR(설계 결정 기록)로 남김",
         "군 복무 중 버킷리스트를 적고 실천한 과정이 국방일보에 게재",
       ],
       en: [

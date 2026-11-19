@@ -24,7 +24,7 @@ const routes = [
   {
     path: "/projects/loggy/",
     expectedPathname: "/projects/loggy/",
-    expectedTitle: "Loggy | 의사결정 기록 및 협업 플랫폼 | Portfolio",
+    expectedTitle: "Loggy | 논의, 승인, 기록으로 의사결정의 맥락을 남기는 협업 플랫폼 | Portfolio",
     expectedStatus: 200,
   },
   {

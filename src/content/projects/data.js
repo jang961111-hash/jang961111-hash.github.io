@@ -90,28 +90,28 @@ export const portfolioProjects = [
       {
         value: "96.0%",
         label: {
-          ko: "정확도 (검증셋 200건, 규칙과 AI 결합)",
+          ko: "정확도(검증셋 200건, 규칙과 AI 결합)",
           en: "Accuracy (200-item validation set, rules plus AI)",
         },
       },
       {
         value: "0.0%",
         label: {
-          ko: "미탐률 (사기 100건 중 놓친 것 0건, 유효 2회)",
+          ko: "미탐률(사기 100건 중 놓친 것 0건, 유효 2회)",
           en: "Miss rate (0 of 100 scam texts missed, two valid runs)",
         },
       },
       {
         value: "8.0%",
         label: {
-          ko: "정상 문자에 붙은 '조심' 경고 (미탐을 줄인 대가)",
+          ko: "정상 문자에 붙은 '조심' 경고(미탐을 줄인 대가)",
           en: "Normal texts flagged 'caution' (the cost of fewer misses)",
         },
       },
       {
         value: { ko: "20명", en: "20" },
         label: {
-          ko: "어르신 단체 실증 (2026.11.13)",
+          ko: "어르신 단체 실증(2026.11.13)",
           en: "Seniors in the field session (Nov 13, 2026)",
         },
       },
@@ -177,8 +177,8 @@ export const portfolioProjects = [
           ko: {
             columns: ["조건", "정확도", "미탐률", "쓰임"],
             rows: [
-              ["규칙과 AI 결합 (검증셋 200건, 유효 2회)", "96.0%", "0.0%", "공식 수치"],
-              ["규칙만 (같은 검증셋)", "93.5%", "11.0%", "AI가 멈췄을 때의 바닥 성능으로 병기"],
+              ["규칙과 AI 결합(검증셋 200건, 유효 2회)", "96.0%", "0.0%", "공식 수치"],
+              ["규칙만(같은 검증셋)", "93.5%", "11.0%", "AI가 멈췄을 때의 바닥 성능으로 병기"],
               ["규칙 조정에 쓴 데이터", "99.0%", "미기재", "공식 수치에서 제외"],
             ],
           },
@@ -217,7 +217,7 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["웹 서비스 (ansimieum.kr)", "최종결과보고 발표자료 5쪽", "사용 매뉴얼 2쪽", "시연영상 2분 22초"],
+      ko: ["웹 서비스(ansimieum.kr)", "최종결과보고 발표자료 5쪽", "사용 매뉴얼 2쪽", "시연영상 2분 22초"],
       en: ["Web service (ansimieum.kr)", "Final report deck (5 pages)", "User manual (2 pages)", "Demo video (2 min 22 s)"],
     },
     interviewQuestions: {
@@ -235,7 +235,7 @@ export const portfolioProjects = [
     sortDate: "2026-10-22",
     stack: ["LangGraph", "MCP", "RAG", "LLM-as-a-Judge", "LangSmith", "pytest"],
     period: {
-      ko: "2026.10.20 - 10.22",
+      ko: "2026.10.20 - 2026.10.22",
       en: "Oct 20 - 22, 2026",
     },
     category: {
@@ -247,14 +247,14 @@ export const portfolioProjects = [
       en: "Incident-Response Agent Ablation | Switching Each Improvement On and Off to Show Statistically Which One Worked",
     },
     summary: {
-      ko: "강사 제공 장애 대응 에이전트에 RAG, Judge, 비용 최적화를 설정 스위치로 붙이고 7개 구성으로 비교했습니다. 처음 보는 시험 문제 36개 중 정답 매뉴얼이 있는 질문에서 **필수 매뉴얼 누락이 56%에서 9%로** 줄었고, 채점하는 AI가 후한지도 따로 쟀습니다.",
+      ko: "강사 제공 장애 대응 에이전트에 RAG(문서 검색), Judge(답을 내보내기 전 AI 검사), 비용 최적화를 설정 스위치로 붙이고 7개 구성으로 비교했습니다. 처음 보는 시험 문제 36개 중 정답 매뉴얼이 있는 질문에서 **필수 매뉴얼 누락이 56%에서 9%로** 줄었고, 채점하는 AI가 후한지도 따로 쟀습니다.",
       en: "I added RAG, a judge, and cost optimizations to an instructor-provided incident-response agent as config switches and compared seven configurations. Among the 36 held-out questions that have a matching runbook, **missed required runbooks fell from 56% to 9%**, and I separately measured how lenient the grading AI was.",
     },
     brief: {
       what: { ko: "강사 제공 장애 대응 에이전트에 개선을 스위치로 붙여 효과를 가린 SKALA 4기 개인 평가 과제", en: "SKALA Cohort 4 individual task: added improvements to an instructor-provided incident agent as switches and isolated each effect" },
       pain: { ko: "원본이 질문과 다른 매뉴얼로 답했고, 개선을 한꺼번에 붙이면 효과를 알 수 없음", en: "The original answered with a runbook unrelated to the question, and stacking fixes together would hide which one worked" },
       solution: { ko: "RAG(문서 검색 기반 답변), Judge, 비용 최적화를 설정 스위치로 붙인 7개 구성 비교", en: "Comparison of seven configurations adding RAG (document-search answers), a judge, and cost optimization as config switches" },
-      how: { ko: "질문 60개 x 3회, 실제 API 1,260회 실행, holdout 36문제는 v2 구현 전에 고정, 신뢰구간으로 개선별 기여 분리", en: "60 questions x 3 runs, 1,260 real API runs; 36 holdout questions fixed before the v2 work; confidence intervals separate each gain" },
+      how: { ko: "질문 60개 x 3회, 실제 API 1,260회 실행, 따로 떼어 둔 시험 문제(holdout) 36개는 v2 구현 전에 고정, 신뢰구간으로 개선별 기여 분리", en: "60 questions x 3 runs, 1,260 real API runs; 36 holdout questions fixed before the v2 work; confidence intervals separate each gain" },
       effect: { ko: "정답 매뉴얼이 있는 holdout 질문에서 필수 매뉴얼 누락 56%에서 9%\n한계: 다른 AI가 쓴 외부 문항 15개에서는 누락 58%", en: "Missed required runbooks fell from 56% to 9% on holdout questions with a matching runbook\nLimit: 58% missed on 15 external questions written by another AI" },
     },
     context: {
@@ -289,8 +289,8 @@ export const portfolioProjects = [
     },
     highlights: {
       ko: [
-        "RAG 단독 기여: 필수 매뉴얼 누락 **-46%p (95% CI -70 ~ -22)**",
-        "v2 보완(최소 유사도 미만이면 넣지 않음): 무관 매뉴얼 혼입 -24%p (95% CI -41 ~ -10)",
+        "RAG 단독 기여: 필수 매뉴얼 누락 **-46%p(95% CI -70 ~ -22)**",
+        "v2 보완(최소 유사도 미만이면 넣지 않음): 무관 매뉴얼 혼입 -24%p(95% CI -41 ~ -10)",
         "파이프라인 Judge는 품질 향상이 확인되지 않아 그대로 보고(질의당 +1.8 ~ 2.7초)",
         "평가 Judge는 다른 AI가 불합격으로 본 답 29개 중 17개(59%)를 합격 처리, 결론은 코드로 센 지표로 도출",
         "같은 부하로 다시 쟀더니 \"캐스케이드가 지연도 줄였다\"는 결론이 사라져 보고서에서 정정",
@@ -321,14 +321,14 @@ export const portfolioProjects = [
       {
         value: "56% → 9%",
         label: {
-          ko: "필수 매뉴얼 누락률 (holdout, 정답 매뉴얼이 있는 질문 x 3회 평균)",
+          ko: "필수 매뉴얼 누락률(holdout, 정답 매뉴얼이 있는 질문 x 3회 평균)",
           en: "Missed required runbooks (holdout questions that have a matching runbook, mean of 3 runs)",
         },
       },
       {
         value: "-84%",
         label: {
-          ko: "장애 1건 API 요금 ($0.00343 → $0.00057, 공개 단가 추정)",
+          ko: "장애 1건 API 요금($0.00343 → $0.00057, 공개 단가 추정)",
           en: "API cost per incident ($0.00343 → $0.00057, estimated from list prices)",
         },
       },
@@ -342,7 +342,7 @@ export const portfolioProjects = [
       {
         value: "0/19 → 18/18",
         label: {
-          ko: "조회 30% 고장 주입 시 끝까지 답한 질문 (답 품질은 미측정)",
+          ko: "조회 30% 고장 주입 시 끝까지 답한 질문(답 품질은 미측정)",
           en: "Questions answered to completion with 30% injected tool failures (answer quality not measured)",
         },
       },
@@ -492,14 +492,14 @@ export const portfolioProjects = [
       {
         value: "0.8646",
         label: {
-          ko: "최종 AUC (Validation과 Test 평균, Baseline 0.7722)",
+          ko: "최종 AUC(Validation과 Test 평균, Baseline 0.7722)",
           en: "Final AUC (mean of validation and test; baseline 0.7722)",
         },
       },
       {
         value: "15",
         label: {
-          ko: "모델 선택에 쓴 CV 점수 (5-Fold 3회 반복)",
+          ko: "모델 선택에 쓴 CV 점수(5-Fold 3회 반복)",
           en: "CV scores used for selection (5-Fold × 3 repeats)",
         },
       },
@@ -553,7 +553,7 @@ export const portfolioProjects = [
     sortDate: "2026-08-13",
     stack: ["Qwen2.5-1.5B", "LoRA", "SFT"],
     period: {
-      ko: "2026.08.12 - 08.13",
+      ko: "2026.08.12 - 2026.08.13",
       en: "Aug 12 - 13, 2026",
     },
     category: {
@@ -640,14 +640,14 @@ export const portfolioProjects = [
       {
         value: "25.4%",
         label: {
-          ko: "내 설정으로 정답이 잘린 학습 샘플 (582건 중 148건)",
+          ko: "내 설정으로 정답이 잘린 학습 샘플(582건 중 148건)",
           en: "Training samples truncated by my setting (148 of 582)",
         },
       },
       {
         value: "4.5×",
         label: {
-          ko: "점수 상승 (0.0862 → 0.3852, 환각 검사 공백이 있는 지표 기준)",
+          ko: "점수 상승(0.0862 → 0.3852, 환각 검사 공백이 있는 지표 기준)",
           en: "Score gain (0.0862 → 0.3852, on a metric with a hallucination-check gap)",
         },
       },
@@ -728,7 +728,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "6명 팀 (도메인별 분업)",
+      ko: "6명 팀(도메인별 분업)",
       en: "Six-person team (split by domain)",
     },
     role: {
@@ -783,7 +783,7 @@ export const portfolioProjects = [
       {
         value: { ko: "6명", en: "6" },
         label: {
-          ko: "팀 인원 (도메인별 분업)",
+          ko: "팀 인원(도메인별 분업)",
           en: "Team members (split by domain)",
         },
       },
@@ -905,7 +905,7 @@ export const portfolioProjects = [
       {
         value: { ko: "100점", en: "100" },
         label: {
-          ko: "강사 개별 평가 피드백 종합 (S+등급)",
+          ko: "강사 개별 평가 피드백 종합(S+등급)",
           en: "Instructor's individual evaluation feedback (grade S+)",
         },
       },
@@ -919,7 +919,7 @@ export const portfolioProjects = [
       {
         value: "10.13%",
         label: {
-          ko: "정정한 30일 내 재구매율 (초안 10.10%)",
+          ko: "정정한 30일 내 재구매율(초안 10.10%)",
           en: "Corrected 30-day repurchase rate (draft 10.10%)",
         },
       },
@@ -959,7 +959,7 @@ export const portfolioProjects = [
     status: "completed",
     sortDate: "2026-09-04",
     period: {
-      ko: "2026.09.02 - 09.04 (3일)",
+      ko: "2026.09.02 - 2026.09.04(3일)",
       en: "Sep 2 - 4, 2026 (3 days)",
     },
     category: {
@@ -971,7 +971,7 @@ export const portfolioProjects = [
       en: "ARGUS | An On-Premise AI Agent for Semiconductor Fab Part-Replacement Approval",
     },
     summary: {
-      ko: "반도체 fab 설비의 부품 교체 요청이 들어오면 AI 에이전트가 규격과 호환, 법령과 조문, 안전서류를 검토해 근거를 붙입니다. **승인 여부는 안전관리자가 결정**하는 온프레미스 승인 워크플로우 서비스입니다.",
+      ko: "반도체 공장(fab) 설비의 부품 교체 요청이 들어오면 AI 에이전트가 규격과 호환, 법령과 조문, 안전서류를 검토해 근거를 붙입니다. **승인 여부는 안전관리자가 결정**하며, 외부 전송을 기본으로 막고 사내에 설치해 쓰는(온프레미스) 승인 워크플로우 서비스입니다.",
       en: "An on-premise approval workflow for semiconductor fab part replacements: AI agents review spec compatibility, applicable regulations, and safety documents and attach the evidence, while the safety manager makes the approval decision.",
     },
     notice: {
@@ -1008,7 +1008,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "5인 팀 (SKALA 4기)",
+      ko: "5인 팀(SKALA 4기)",
       en: "Five-person team (SKALA Cohort 4)",
     },
     role: {
@@ -1051,14 +1051,14 @@ export const portfolioProjects = [
       {
         value: "On-prem",
         label: {
-          ko: "외부 전송 차단 기본값 (egress_allowed=false)",
+          ko: "외부 전송 차단 기본값(egress_allowed=false)",
           en: "Egress disabled by default (egress_allowed=false)",
         },
       },
       {
         value: "72 / 0",
         label: {
-          ko: "라이브 E2E 통과 / 실패 (개인 저장소 실행 로그 기준)",
+          ko: "라이브 E2E 통과 / 실패(개인 저장소 실행 로그 기준)",
           en: "Live E2E passed / failed (run log of my personal repository)",
         },
       },
@@ -1118,21 +1118,21 @@ export const portfolioProjects = [
       {
         src: "/projects/argus/agent-run-polling.webp",
         alt: {
-          ko: "AI 검증 진행 화면: 규격과 호환, 법령과 조문, 안전서류 에이전트의 진행 상태를 폴링으로 표시 (개인 저장소 구현 화면)",
+          ko: "AI 검증 진행 화면: 규격과 호환, 법령과 조문, 안전서류 에이전트의 진행 상태를 폴링으로 표시(개인 저장소 구현 화면)",
           en: "AI review progress: polling the status of spec, regulation, and safety-document agents (personal-repository build)",
         },
       },
       {
         src: "/projects/argus/approval-panel.webp",
         alt: {
-          ko: "안전관리자 요청 상세: AI 결과물(읽기 전용)과 승인, 거절 처리 패널 (개인 저장소 구현 화면)",
+          ko: "안전관리자 요청 상세: AI 결과물(읽기 전용)과 승인, 거절 처리 패널(개인 저장소 구현 화면)",
           en: "Safety manager request detail: read-only AI output and the approve/reject panel (personal-repository build)",
         },
       },
       {
         src: "/projects/argus/request-form.webp",
         alt: {
-          ko: "엔지니어 교체 요청 등록 화면 (개인 저장소 구현 화면)",
+          ko: "엔지니어 교체 요청 등록 화면(개인 저장소 구현 화면)",
           en: "Engineer replacement request form (personal-repository build)",
         },
       },
@@ -1368,7 +1368,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "3인 팀 (팀장, 공식 대표자)",
+      ko: "3인 팀(팀장, 공식 대표자)",
       en: "Three-person team (team lead, official representative)",
     },
     role: {
@@ -1456,7 +1456,7 @@ export const portfolioProjects = [
     status: "completed",
     sortDate: "2026-08-20",
     period: {
-      ko: "2026.08 (수상 2026.08.20)",
+      ko: "2026.08(수상 2026.08.20)",
       en: "Aug 2026 (awarded Aug 20, 2026)",
     },
     category: {
@@ -1479,11 +1479,11 @@ export const portfolioProjects = [
       effect: { ko: "Life AX 부문 최우수상 수상(개인)", en: "Won the Top Excellence Award, Life AX category (individual)" },
     },
     cardRole: {
-      ko: "문제 정의, 서비스 기획 (개인 출품)",
+      ko: "문제 정의, 서비스 기획(개인 출품)",
       en: "Problem framing, service planning (solo entry)",
     },
     cardResult: {
-      ko: "Life AX 부문 최우수상 (2026.08.20)",
+      ko: "Life AX 부문 최우수상(2026.08.20)",
       en: "Top Excellence Award, Life AX (Aug 20, 2026)",
     },
     context: {
@@ -1540,7 +1540,7 @@ export const portfolioProjects = [
       {
         value: { ko: "최우수상", en: "Top Excellence Award" },
         label: {
-          ko: "Life AX 부문 (개인 수상)",
+          ko: "Life AX 부문(개인 수상)",
           en: "Top Excellence Award, Life AX (individual)",
         },
       },
@@ -1602,7 +1602,7 @@ export const portfolioProjects = [
       {
         src: "/projects/skt-prompt/card-award.webp",
         alt: {
-          ko: "수상 발표 포스터 중 Life AX 부문 최우수상 부분 (출처: SKT 뉴스룸)",
+          ko: "수상 발표 포스터 중 Life AX 부문 최우수상 부분(출처: SKT 뉴스룸)",
           en: "Life AX Top Excellence Award section of the award announcement poster (source: SKT Newsroom)",
         },
       },
@@ -1802,7 +1802,7 @@ export const portfolioProjects = [
         en: "Submission Report",
       },
       presentationLabel: {
-        ko: "제출 리포트 보기 (PDF, 87KB)",
+        ko: "제출 리포트 보기(PDF, 87KB)",
         en: "View submission report (PDF, 87KB)",
       },
     },
@@ -1830,7 +1830,7 @@ export const portfolioProjects = [
     status: "completed",
     sortDate: "2026-06-26",
     period: {
-      ko: "2026.06.24 - 06.26 (3일)",
+      ko: "2026.06.24 - 2026.06.26(3일)",
       en: "Jun 24 - 26, 2026 (3 days)",
     },
     category: {
@@ -1871,7 +1871,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "팀 No Problem (5인: CEO, CTO, 학원 강사, 마케팅, 인프라)",
+      ko: "팀 No Problem(5인: CEO, CTO, 학원 강사, 마케팅, 인프라)",
       en: "Team No Problem (5: CEO, CTO, instructor, marketing, infra)",
     },
     role: {
@@ -1919,14 +1919,14 @@ export const portfolioProjects = [
       {
         value: "3 days",
         label: {
-          ko: "캠프 기간 (2026.06.24 - 06.26)",
+          ko: "캠프 기간(2026.06.24 - 2026.06.26)",
           en: "Camp duration (Jun 24 - 26, 2026)",
         },
       },
       {
         value: "Demo",
         label: {
-          ko: "팀 시연 서비스 링크 (noproblem.ssafy.live)",
+          ko: "팀 시연 서비스 링크(noproblem.ssafy.live)",
           en: "Team demo service link (noproblem.ssafy.live)",
         },
       },
@@ -1945,7 +1945,7 @@ export const portfolioProjects = [
       },
     ],
     artifacts: {
-      ko: ["사업 소개 덱 (15p)", "팀 시연 서비스 링크", "수상 사진"],
+      ko: ["사업 소개 덱(15p)", "팀 시연 서비스 링크", "수상 사진"],
       en: ["Business deck (15p)", "Team demo service link", "Award photo"],
     },
     interviewQuestions: {
@@ -1968,7 +1968,7 @@ export const portfolioProjects = [
         en: "Business Deck",
       },
       presentationLabel: {
-        ko: "소개 덱 보기 (PDF, 15쪽, 7.3MB)",
+        ko: "소개 덱 보기(PDF, 15쪽, 7.3MB)",
         en: "View business deck (PDF, 15 pages, 7.3MB)",
       },
     },
@@ -1983,7 +1983,7 @@ export const portfolioProjects = [
       {
         src: "/projects/easyexam/best-team-placard-20260626.webp",
         alt: {
-          ko: "창업관심팀 최우수팀 현판 (2026.06.26 촬영)",
+          ko: "창업관심팀 최우수팀 현판(2026.06.26 촬영)",
           en: "Best Team placard among the startup-interest teams (photo taken Jun 26, 2026)",
         },
       },
@@ -1998,7 +1998,7 @@ export const portfolioProjects = [
     status: "completed",
     sortDate: "2026-07-05",
     period: {
-      ko: "2026.07.03 - 07.05 (24시간 개발)",
+      ko: "2026.07.03 - 2026.07.05(24시간 개발)",
       en: "Jul 3 - 5, 2026 (24-hour build)",
     },
     category: {
@@ -2006,7 +2006,7 @@ export const portfolioProjects = [
       en: "Defense Tech / Hackathon",
     },
     title: {
-      ko: "SUPPORTY | AI 코파일럿 기반 무인자산 작전지속지원 통제 시스템",
+      ko: "SUPPORTY | AI 코파일럿이 돕는 무인자산 작전지속지원 통제 시스템",
       en: "SUPPORTY | AI-Copilot Operator Console for Contested Logistics",
     },
     summary: {
@@ -2039,7 +2039,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "SUPPORTY 2인 팀 (하드웨어, 운용 리드 / 기획, 소프트웨어)",
+      ko: "SUPPORTY 2인 팀(하드웨어, 운용 리드 / 기획, 소프트웨어)",
       en: "SUPPORTY, two-person team (hardware & operations lead / planning & software)",
     },
     role: {
@@ -2167,7 +2167,7 @@ export const portfolioProjects = [
       {
         src: "/projects/supporty/vtol-heewing-t2.webp",
         alt: {
-          ko: "공중 자산: Heewing T2 VTOL 수직이착륙기 (ArduPlane)",
+          ko: "공중 자산: Heewing T2 VTOL 수직이착륙기(ArduPlane)",
           en: "Aerial asset: Heewing T2 VTOL (ArduPlane)",
         },
       },
@@ -2181,7 +2181,7 @@ export const portfolioProjects = [
       {
         src: "/projects/supporty/hardware-vtol-ugv-20260704.webp",
         alt: {
-          ko: "시연에 쓴 VTOL과 UGV 장비 (2026.07.04 촬영)",
+          ko: "시연에 쓴 VTOL과 UGV 장비(2026.07.04 촬영)",
           en: "VTOL and UGV hardware used in the demo (photo taken Jul 4, 2026)",
         },
       },
@@ -2205,7 +2205,7 @@ export const portfolioProjects = [
       en: "AI / Hackathon / Prototype",
     },
     title: {
-      ko: "GenWing Live | AI 기반 이벤트 네트워킹 앱",
+      ko: "GenWing Live | 행사 참가자의 첫 대화를 돕는 AI 네트워킹 앱",
       en: "GenWing Live | AI-Driven Event Networking App",
     },
     summary: {
@@ -2317,7 +2317,7 @@ export const portfolioProjects = [
       {
         src: "/projects/genwing/host-room.webp",
         alt: {
-          ko: "호스트 방 화면 (저장소를 다시 실행해 찍은 화면, 참가자는 가상 인물)",
+          ko: "호스트 방 화면(저장소를 다시 실행해 찍은 화면, 참가자는 가상 인물)",
           en: "Host room screen (re-run from the repository; participants are fictional)",
         },
       },
@@ -2355,7 +2355,7 @@ export const portfolioProjects = [
       en: "SSAFY specialized project",
     },
     title: {
-      ko: "DailyLog | AI 기반 회고 및 의사결정 지원 서비스",
+      ko: "DailyLog | AI가 먼저 질문하고 다음 행동을 추천하는 회고 서비스",
       en: "DailyLog | AI-Driven Reflection & Decision Support",
     },
     summary: {
@@ -2370,7 +2370,7 @@ export const portfolioProjects = [
       effect: { ko: "SSAFY 14기 특화프로젝트 발표회 광주1반 3등\n목표: 기록 완료 3분(질문 최대 7번)", en: "3rd place in Gwangju Class 1 at the SSAFY Cohort 14 showcase\nTarget: finishing an entry in 3 minutes (up to 7 questions)" },
     },
     cardResult: {
-      ko: "SSAFY 14기 특화프로젝트 발표회 광주1반 3등 (8개 팀)",
+      ko: "SSAFY 14기 특화프로젝트 발표회 광주1반 3등(8개 팀)",
       en: "3rd place in Gwangju Class 1 at the SSAFY Cohort 14 showcase (8 teams)",
     },
     context: {
@@ -2392,7 +2392,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "SSAFY 특화 프로젝트 팀 (6인)",
+      ko: "SSAFY 특화 프로젝트 팀(6인)",
       en: "SSAFY specialized-project team (6 members)",
     },
     role: {
@@ -2433,7 +2433,7 @@ export const portfolioProjects = [
       {
         value: { ko: "3등", en: "3rd" },
         label: {
-          ko: "특화프로젝트 발표회 광주1반 (8개 팀)",
+          ko: "특화프로젝트 발표회 광주1반(8개 팀)",
           en: "Specialized Project showcase, Gwangju Class 1 (8 teams)",
         },
       },
@@ -2447,7 +2447,7 @@ export const portfolioProjects = [
       {
         value: { ko: "목표 3분", en: "3 min target" },
         label: {
-          ko: "기록 완료 목표 시간 (질문 최대 7번)",
+          ko: "기록 완료 목표 시간(질문 최대 7번)",
           en: "Target time to finish an entry (up to 7 questions)",
         },
       },
@@ -2516,7 +2516,7 @@ export const portfolioProjects = [
         en: "Presentation",
       },
       presentationLabel: {
-        ko: "최종 발표자료 다운로드 (PPTX, 43KB)",
+        ko: "최종 발표자료 다운로드(PPTX, 43KB)",
         en: "Download final presentation (PPTX, 43KB)",
       },
     },
@@ -2524,21 +2524,21 @@ export const portfolioProjects = [
       {
         src: "/projects/dailylog/app-home.webp",
         alt: {
-          ko: "로그인 화면 (실제 앱)",
+          ko: "로그인 화면(실제 앱)",
           en: "Login screen (actual app)",
         },
       },
       {
         src: "/projects/dailylog/design-reco-rating.webp",
         alt: {
-          ko: "Figma 시안: 어제 추천받은 활동을 별점으로 평가 (추천 피드백 루프 입력)",
+          ko: "Figma 시안: 어제 추천받은 활동을 별점으로 평가(추천 피드백 루프 입력)",
           en: "Figma design: rating yesterday's recommended activity (feedback input for the recommendation loop)",
         },
       },
       {
         src: "/projects/dailylog/design-diary-result.webp",
         alt: {
-          ko: "Figma 시안: 일기 결과 페이지 (다이어리 감성 컨셉)",
+          ko: "Figma 시안: 일기 결과 페이지(다이어리 감성 컨셉)",
           en: "Figma design: diary result page (journal-inspired visual concept)",
         },
       },
@@ -2562,7 +2562,7 @@ export const portfolioProjects = [
       en: "SSAFY project",
     },
     title: {
-      ko: "Loggy | 의사결정 기록 및 협업 플랫폼",
+      ko: "Loggy | 논의, 승인, 기록으로 의사결정의 맥락을 남기는 협업 플랫폼",
       en: "Loggy | Decision Recording & Collaboration Platform",
     },
     summary: {
@@ -2714,7 +2714,7 @@ export const portfolioProjects = [
         en: "Watch demo video",
       },
       presentationLabel: {
-        ko: "최종 발표자료 다운로드 (PDF, 7.3MB)",
+        ko: "최종 발표자료 다운로드(PDF, 7.3MB)",
         en: "Download final presentation (PDF, 7.3MB)",
       },
     },
@@ -2723,7 +2723,7 @@ export const portfolioProjects = [
       {
         src: "/projects/loggy/decision-tree-wireframe.webp",
         alt: {
-          ko: "회의 내용을 안건과 의견 구조로 정리한 와이어프레임 (예시 데이터)",
+          ko: "회의 내용을 안건과 의견 구조로 정리한 와이어프레임(예시 데이터)",
           en: "Wireframe organizing a meeting into agenda items and opinions (sample data)",
         },
       },
@@ -2750,7 +2750,7 @@ export const portfolioProjects = [
       en: "Jeju AWS Global Space Challenge hackathon",
     },
     title: {
-      ko: "Tamna-AI | 재생에너지 기반 분산 데이터센터 입지 분석",
+      ko: "Tamna-AI | 제주 재생에너지 출력 제한에 대응하는 분산 데이터센터 입지 분석 기획",
       en: "Tamna-AI | Distributed Data Center Location Analysis",
     },
     summary: {
@@ -2758,7 +2758,7 @@ export const portfolioProjects = [
       en: "A service that reframes Jeju's energy curtailment as a grid mismatch issue and analyzes optimal locations for data centers to absorb surplus power.",
     },
     brief: {
-      what: { ko: "제주 재생에너지 출력 제한을 풀 데이터센터 입지 분석 서비스 기획, 제주 AWS Global Space Challenge 해커톤 팀(기획 담당)", en: "Plan for a data-center siting service on Jeju's renewable curtailment; Jeju AWS Global Space Challenge hackathon team (planning)" },
+      what: { ko: "제주 재생에너지 출력 제한에 대응하는 데이터센터 입지 분석 서비스 기획, 제주 AWS Global Space Challenge 해커톤 팀(기획 담당)", en: "Plan for a data-center siting service on Jeju's renewable curtailment; Jeju AWS Global Space Challenge hackathon team (planning)" },
       pain: { ko: "제주는 재생에너지 과잉으로 출력 제한이 잦은데 전력을 흡수할 수요처가 부족", en: "Jeju often curtails renewable output from oversupply and lacks demand to absorb it" },
       solution: { ko: "출력 제한이 잦은 지역에 데이터센터를 분산 배치하는 입지 분석 서비스", en: "A siting-analysis service distributing data centers to areas with frequent curtailment" },
       how: { ko: "지역별 전력 수급 데이터와 지리 정보를 연동해 입지 효율을 시각화하는 구조 기획", en: "Planned a structure linking regional power data and geographic information to visualize siting efficiency" },
@@ -2824,7 +2824,7 @@ export const portfolioProjects = [
       {
         value: "Finalist",
         label: {
-          ko: "해커톤 결선 진출 (기획 리드)",
+          ko: "해커톤 결선 진출(기획 리드)",
           en: "Hackathon Finalist",
         },
       },
@@ -2905,7 +2905,7 @@ export const portfolioProjects = [
       en: "Shinhan Bank X SSAFY hackathon",
     },
     title: {
-      ko: "Campus Chronicle | 대학생 성장 데이터 기반 금융 서비스",
+      ko: "Campus Chronicle | 대학생의 성장 데이터를 금융 가치로 잇는 서비스",
       en: "Campus Chronicle | Growth Data-Driven Financial Service",
     },
     summary: {
@@ -2938,7 +2938,7 @@ export const portfolioProjects = [
       },
     },
     team: {
-      ko: "팀 언더독 (5인)",
+      ko: "팀 언더독(5인)",
       en: "Team Underdog (5 members)",
     },
     role: {
@@ -2989,13 +2989,13 @@ export const portfolioProjects = [
       },
       {
         label: {
-          ko: "팀 기획서에 금융 API 연동 포함 (본인 역할은 디자인)",
+          ko: "팀 기획서에 금융 API 연동 포함(본인 역할은 디자인)",
           en: "Financial API integration in the team proposal (my role: design)",
         },
       },
     ],
     artifacts: {
-      ko: ["개발 기획서 (11p)", "서비스 흐름도", "ERD, 시스템 아키텍처"],
+      ko: ["개발 기획서(11p)", "서비스 흐름도", "ERD, 시스템 아키텍처"],
       en: ["Development proposal (11p)", "Service flow diagram", "ERD & system architecture"],
     },
     media: {
@@ -3005,7 +3005,7 @@ export const portfolioProjects = [
         en: "Development Proposal",
       },
       presentationLabel: {
-        ko: "팀 언더독 개발 기획서 보기 (PDF, 11p)",
+        ko: "팀 언더독 개발 기획서 보기(PDF, 11p)",
         en: "View team proposal (PDF, 11p)",
       },
     },
@@ -3014,14 +3014,14 @@ export const portfolioProjects = [
       {
         src: "/projects/chronicle/home-benefit-screens.webp",
         alt: {
-          ko: "홈 화면과 맞춤형 혜택 화면 (팀 발표 자료)",
+          ko: "홈 화면과 맞춤형 혜택 화면(팀 발표 자료)",
           en: "Home and personalized benefits screens (team deck)",
         },
       },
       {
         src: "/projects/chronicle/skilltree-ai-analysis.webp",
         alt: {
-          ko: "스킬 트리와 분석 결과 화면 (팀 발표 자료)",
+          ko: "스킬 트리와 분석 결과 화면(팀 발표 자료)",
           en: "Skill tree and analysis result screens (team deck)",
         },
       },
@@ -3035,7 +3035,7 @@ export const portfolioProjects = [
       {
         src: "/projects/chronicle/expo-login-screen-20250829.webp",
         alt: {
-          ko: "실기기에서 실행한 로그인 화면 (2025.08.29 캡처)",
+          ko: "실기기에서 실행한 로그인 화면(2025.08.29 캡처)",
           en: "Login screen running on a real device (captured Aug 29, 2025)",
         },
       },
@@ -3223,7 +3223,7 @@ export const portfolioProjects = [
         en: "Watch demo video",
       },
       presentationLabel: {
-        ko: "최종 발표자료 다운로드 (PPTX, 6.2MB)",
+        ko: "최종 발표자료 다운로드(PPTX, 6.2MB)",
         en: "Download final presentation (PPTX, 6.2MB)",
       },
     },
@@ -3378,7 +3378,7 @@ export const portfolioProjects = [
       en: "SSAFY integrated project",
     },
     title: {
-      ko: "S.A.L.E.S | 고객 기반 CRM 프로젝트",
+      ko: "S.A.L.E.S | 영업 리드를 고객 여정 5단계로 정리한 CRM",
       en: "S.A.L.E.S | Customer-Centered CRM Project",
     },
     summary: {
