@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import HeroStage from "../hero/HeroStage";
+import BrandMark from "../layout/BrandMark";
 import { getResumeAsset } from "../../utils/resumeAssets";
 import { scrollToSectionId } from "../../utils/scrollTarget";
 import { renderLines } from "../../utils/emphasis";
@@ -33,6 +34,11 @@ const Hero = ({ theme }) => {
       </div>
 
       <div className="wrap hero-inner">
+        {/* Paper has no top bar, so the first page carries the monogram. */}
+        <div className="hero-print-brand" aria-hidden="true">
+          <BrandMark className="hero-print-mark" />
+          <span className="hero-print-dot" />
+        </div>
         <div className="hero-main">
           <div className={`hero-identity ${showPortrait ? "has-portrait" : ""}`}>
             {showPortrait && (

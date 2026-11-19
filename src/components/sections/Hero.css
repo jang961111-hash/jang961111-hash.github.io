@@ -444,8 +444,39 @@
   }
 }
 
+.hero-print-brand {
+  display: none;
+}
+
 @media print {
   .hero-portrait {
     display: none;
+  }
+
+  /* Sits in the empty band above the name on page one */
+  .hero-print-brand {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    top: 14mm;
+    left: var(--gutter);
+    color: var(--w1);
+  }
+
+  .hero-print-mark {
+    width: auto;
+    height: 15mm;
+    flex: none;
+    transform: rotate(-6deg);
+  }
+
+  .hero-print-dot {
+    width: 2.6mm;
+    height: 2.6mm;
+    margin: 0 0 2.4mm 1.2mm;
+    flex: none;
+    background: var(--o);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
