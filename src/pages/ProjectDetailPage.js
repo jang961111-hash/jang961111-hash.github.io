@@ -352,7 +352,13 @@ const ProjectDetailPage = ({ project, lang, pager }) => {
                   </a>
                 )}
                 {project.media.presentationHref && (
-                  <a href={project.media.presentationHref} className="btn" download>
+                  <a
+                    href={project.media.presentationHref}
+                    className="btn"
+                    {...(/^https?:/.test(project.media.presentationHref)
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : { download: true })}
+                  >
                     {project.media.presentationLabel}
                   </a>
                 )}

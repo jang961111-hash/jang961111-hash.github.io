@@ -1,7 +1,15 @@
 export const portfolioProjects = [
   {
     slug: "ansim-ieum",
-    featured: false,
+    featured: true,
+    cardRole: {
+      ko: "기획, 판별 기준과 검증 절차 설계, 실증 진행(개인 과제)",
+      en: "Planning, detection criteria and evaluation design, field session (individual project)",
+    },
+    cardResult: {
+      ko: "검증셋 200건에서 사기 문자 100건 중 놓친 것 0건(2026.11.16 내부 측정), 어르신 20명 현장 실증 1회",
+      en: "0 of 100 scam texts missed on a 200-item validation set (internal measurement, Nov 16, 2026); one field session with 20 seniors",
+    },
     status: "in_progress",
     sortDate: "2026-11-16",
     period: {
@@ -955,7 +963,7 @@ export const portfolioProjects = [
   {
     slug: "argus",
     stack: ["FastAPI", "Vue 3", "PostgreSQL", "OpenAPI"],
-    featured: true,
+    featured: false,
     status: "completed",
     sortDate: "2026-09-04",
     period: {
@@ -1923,13 +1931,6 @@ export const portfolioProjects = [
           en: "Camp duration (Jun 24 - 26, 2026)",
         },
       },
-      {
-        value: "Demo",
-        label: {
-          ko: "팀 시연 서비스 링크(noproblem.ssafy.live)",
-          en: "Team demo service link (noproblem.ssafy.live)",
-        },
-      },
     ],
     sections: [
       {
@@ -1988,9 +1989,6 @@ export const portfolioProjects = [
         },
       },
     ],
-    links: {
-      demo: "https://noproblem.ssafy.live",
-    },
   },
   {
     slug: "supporty",
