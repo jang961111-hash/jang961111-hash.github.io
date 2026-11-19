@@ -5,6 +5,26 @@ import "./AskPortfolio.css";
 
 const MAX_INPUT = 300;
 const MAX_TURNS = 8;
+// The worker rejects any message longer than this, replies included.
+const MAX_SENT_CHARS = 600;
+
+// What goes back to the worker: no error notices, replies trimmed to the
+// worker's limit, at most MAX_TURNS messages, starting with a user turn.
+export const buildPayload = (history) => {
+  const sent = history
+    .filter((message) => !message.error)
+    .map(({ role, content }) => ({
+      role,
+      content: content.slice(0, MAX_SENT_CHARS),
+    }))
+    .slice(-MAX_TURNS);
+
+  while (sent.length > 0 && sent[0].role !== "user") {
+    sent.shift();
+  }
+
+  return sent;
+};
 
 const AskPortfolio = () => {
   const { t } = useTranslation();
@@ -44,20 +64,23 @@ const AskPortfolio = () => {
       const res = await fetch(ASK_PORTFOLIO_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: nextMessages.slice(-MAX_TURNS) }),
+        body: JSON.stringify({ messages: buildPayload(nextMessages) }),
       });
       const data = await res.json();
-      const reply =
-        res.ok && data.reply
-          ? data.reply
-          : res.status === 429
-            ? t("ask.rateLimited")
-            : t("ask.error");
-      setMessages([...nextMessages, { role: "assistant", content: reply }]);
+      const answered = res.ok && data.reply;
+      const reply = answered
+        ? data.reply
+        : res.status === 429
+          ? t("ask.rateLimited")
+          : t("ask.error");
+      setMessages([
+        ...nextMessages,
+        { role: "assistant", content: reply, error: !answered },
+      ]);
     } catch {
       setMessages([
         ...nextMessages,
-        { role: "assistant", content: t("ask.error") },
+        { role: "assistant", content: t("ask.error"), error: true },
       ]);
     } finally {
       setLoading(false);
@@ -86,7 +109,7 @@ const AskPortfolio = () => {
             <div className="ask-bubble assistant">{t("ask.greeting")}</div>
             {messages.map((m, i) => (
               <div key={i} className={`ask-bubble ${m.role}`}>
-                {m.content}
+                {m.content.replace(/\*\*/g, "")}
               </div>
             ))}
             {loading && (

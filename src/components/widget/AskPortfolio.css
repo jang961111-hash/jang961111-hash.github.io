@@ -42,7 +42,9 @@
 
 .ask-panel {
   width: min(360px, calc(100vw - 32px));
-  max-height: min(520px, calc(100vh - 120px));
+  /* Leave room for the button below it so the close button stays on screen */
+  max-height: min(520px, calc(100vh - 170px));
+  max-height: min(520px, calc(100dvh - 170px));
   display: flex;
   flex-direction: column;
   background: var(--bg-primary);
