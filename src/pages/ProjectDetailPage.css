@@ -612,6 +612,67 @@ a.detail-pager-cell:hover {
   .detail-media {
     display: none !important;
   }
+
+  /* The download buttons are hidden on paper, so their label goes too */
+  .detail-block:has(> .detail-media) {
+    display: none;
+  }
+
+  /* Page breaks: keep a label with its block, and never split a row, cell or figure */
+  .detail-label,
+  .detail-story-head,
+  .detail-case-title,
+  .detail-case-summary {
+    break-after: avoid;
+  }
+
+  .detail-head,
+  .detail-summary,
+  .detail-notice,
+  .detail-fact,
+  .detail-brief-row,
+  .detail-metrics,
+  .detail-story-cell,
+  .detail-highlights li,
+  .detail-figure,
+  .detail-diagram,
+  .detail-table tr {
+    break-inside: avoid;
+  }
+
+  .detail-block {
+    margin-top: 9mm;
+  }
+
+  /* The brief sits closer to the head on screen as well */
+  .detail-brief-block {
+    margin-top: 5mm;
+  }
+
+  /* break-after: avoid alone still strands some labels at the foot of a page.
+     An unbreakable, invisible 45mm box at the start of each block forces the
+     label onto the next page unless that much of the block fits under it.
+     45mm is about a label plus the first rows of its block. A block shorter
+     than that also moves when less than 45mm is left, which only costs a
+     little blank space at the foot of a page. */
+  .detail-block::before {
+    content: "";
+    display: block;
+    height: 45mm;
+    margin-bottom: -45mm;
+    break-inside: avoid;
+  }
+
+  /* A figure taller than a page cannot stay whole, so cap its height on paper:
+     under half of the 277mm printable page, and less for the opening image so
+     the story starts on the first page. The image keeps its ratio (contain). */
+  .detail-figure-frame {
+    max-height: 120mm;
+  }
+
+  .detail-hero-image .detail-figure-frame {
+    max-height: 95mm;
+  }
 }
 
 /* Long single-word titles on very narrow phones */

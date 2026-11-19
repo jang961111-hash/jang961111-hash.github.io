@@ -511,6 +511,56 @@
   .history-row {
     break-inside: avoid;
   }
+
+  /* A heading stays on the page of the block it introduces */
+  .section-head,
+  .section-label,
+  .sub-head,
+  .stack-group-head,
+  .label-box {
+    break-after: avoid;
+  }
+
+  .section-statement,
+  .section-caption {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  /* break-after only applies to block-level boxes, and the label is inline-flex on screen */
+  .label-box {
+    display: flex;
+    width: fit-content;
+  }
+
+  /* The closing block is short: keep the statement and its links on one page */
+  .contact-section {
+    break-inside: avoid;
+  }
+
+  .contact-links {
+    break-inside: avoid;
+  }
+
+  /* break-inside: avoid alone still split this block in Chrome print output
+     (statement on one page, links on the next), so it gets the same invisible
+     guard as the detail blocks. 125mm is about the printed height of the label,
+     statement and two rows of links; the printable page is 277mm. */
+  .contact-section::before {
+    content: "";
+    display: block;
+    height: 125mm;
+    margin-bottom: -125mm;
+    break-inside: avoid;
+  }
+
+  /* Paper has room: print the whole summary instead of the clamped preview */
+  .card-summary,
+  .core-card .card-summary {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
 }
 
 /* ---------- Records: lab notes, awards and competitions, training ---------- */
