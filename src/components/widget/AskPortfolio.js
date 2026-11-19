@@ -164,9 +164,29 @@ const AskPortfolio = () => {
         className={`ask-fab ${open ? "open" : ""}`}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        aria-label={t("ask.title")}
+        aria-label={open ? t("ask.close") : t("ask.fab")}
+        title={open ? undefined : t("ask.fab")}
       >
-        {open ? "×" : t("ask.fab")}
+        {open ? (
+          "×"
+        ) : (
+          // Icon only: a labelled pill covered the content behind it.
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path
+              d="M4 5.5h16v10.5H9.5L5.5 19.5V16H4z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M8.2 10.75h.01M12 10.75h.01M15.8 10.75h.01"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+            />
+          </svg>
+        )}
       </button>
     </div>
   );

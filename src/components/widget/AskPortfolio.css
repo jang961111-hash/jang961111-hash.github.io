@@ -1,7 +1,8 @@
 .ask-widget {
   /* ScrollToTop 버튼(right/bottom 1.8rem)과 겹치지 않도록 그 위에 배치 */
   position: fixed;
-  right: 24px;
+  /* Centred over the 3.2rem scroll-to-top button below it */
+  right: calc(1.8rem + 1.6rem - 24px);
   bottom: 92px;
   z-index: 1200;
   display: flex;
@@ -13,8 +14,10 @@
 .ask-fab {
   display: inline-flex;
   align-items: center;
-  min-height: 48px;
-  padding: 0.7rem 1.25rem;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
   border-radius: 999px;
   border: none;
   background: var(--cta-bg);
@@ -35,7 +38,6 @@
 }
 
 .ask-fab.open {
-  padding: 0.7rem 1rem;
   font-size: 1.1rem;
   line-height: 1;
 }
