@@ -37,3 +37,6 @@ HANDOFF.md
 PROJECT_LOG.md
 PORTFOLIO_PLAN.md
 ASSET_WISHLIST.md
+
+# worker dependencies
+/workers/ask-portfolio/node_modules
