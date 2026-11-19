@@ -19,7 +19,8 @@
     "menuOpenAria": "Open navigation menu",
     "menuCloseAria": "Close navigation menu",
     "stack": "Tech Stack",
-    "history": "Experience"
+    "history": "Experience",
+    "skipToContent": "Skip to content"
   },
   "hero": {
     "portraitAlt": "Portrait of Jang Byeong Heon",
@@ -36,8 +37,8 @@
       "execution": "Implemented Loggy's real-time WebSocket review screens in React myself"
     },
     "viewProjects": "See Flagship Work",
-    "getInTouch": "Start a Conversation",
-    "downloadResume": "PORTFOLIO PDF",
+    "getInTouch": "Contact Me",
+    "downloadResume": "Portfolio PDF",
     "downloadResumeAria": "Download portfolio PDF",
     "visualCaption": "A live service: Ansim-Ieum",
     "visualAlt": "Three screens of the Ansim-Ieum service",
@@ -477,7 +478,7 @@
     "subtitle": "CONTACT",
     "description": "Questions about AI service planning and development roles, or about any project here, are welcome by email.",
     "button": "Send Email",
-    "github": "Visit GitHub",
+    "github": "View GitHub",
     "linkedin": "LinkedIn",
     "email": "Send Email",
     "resume": "View Portfolio PDF",

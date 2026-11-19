@@ -19,7 +19,8 @@
     "menuOpenAria": "탐색 메뉴 열기",
     "menuCloseAria": "탐색 메뉴 닫기",
     "stack": "기술 스택",
-    "history": "이력"
+    "history": "이력",
+    "skipToContent": "본문으로 건너뛰기"
   },
   "hero": {
     "portraitAlt": "장병헌 프로필 사진",
@@ -36,8 +37,8 @@
       "execution": "Loggy에서 WebSocket 기반 **실시간 검토 화면**을 React로 구현"
     },
     "viewProjects": "대표 프로젝트 보기",
-    "getInTouch": "이야기 나누기",
-    "downloadResume": "PORTFOLIO PDF",
+    "getInTouch": "연락하기",
+    "downloadResume": "포트폴리오 PDF",
     "downloadResumeAria": "포트폴리오 PDF 다운로드",
     "visualCaption": "운영 중인 서비스, 안심이음",
     "visualAlt": "안심이음 서비스 화면 세 장",
@@ -477,7 +478,7 @@
     "subtitle": "CONTACT",
     "description": "AI 서비스 기획과 개발 직무, 프로젝트에 대한 질문 모두 메일로 받습니다.",
     "button": "이메일 보내기",
-    "github": "GitHub 방문",
+    "github": "GitHub 보기",
     "linkedin": "LinkedIn",
     "email": "이메일 보내기",
     "resume": "포트폴리오 PDF 보기",

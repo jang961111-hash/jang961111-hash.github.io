@@ -59,6 +59,13 @@
   color: var(--w1);
 }
 
+/* Titles longer than eight characters would fill two giant lines */
+.detail-title-main.is-long {
+  font-size: clamp(2.3rem, 6vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
 .detail-title-sub {
   max-width: 30em;
   font-size: clamp(1.15rem, 2.2vw, 1.9rem);
@@ -609,7 +616,8 @@ a.detail-pager-cell:hover {
 
 /* Long single-word titles on very narrow phones */
 @media (max-width: 380px) {
-  .detail-title-main {
+  .detail-title-main,
+  .detail-title-main.is-long {
     font-size: clamp(1.7rem, 10.5vw, 2.4rem);
     overflow-wrap: anywhere;
   }

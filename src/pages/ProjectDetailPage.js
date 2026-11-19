@@ -169,7 +169,11 @@ const ProjectDetailPage = ({ project, lang, pager }) => {
 
         <header className="frame detail-head">
           <h1 className="detail-title">
-            <span className="detail-title-main">{mainTitle}</span>
+            <span
+              className={`detail-title-main ${mainTitle.length > 8 ? "is-long" : ""}`.trim()}
+            >
+              {mainTitle}
+            </span>
             {subTitle ? <span className="detail-title-sub">{subTitle}</span> : null}
           </h1>
         </header>

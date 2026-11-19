@@ -1464,12 +1464,12 @@ export const portfolioProjects = [
       en: "SKT 'Promp.T for Everyone' Contest, Life AX",
     },
     title: {
-      ko: "SKT Promp.T 최우수상작 | 부모님이 사기 문자를 스스로 알아보시게 만드는 훈련 코치 프롬프트",
+      ko: "SKT Promp.T 최우수상작 | 부모님이 사기 문자를 스스로 알아보도록 돕는 훈련 코치 프롬프트",
       en: "SKT Promp.T Top Excellence Award Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
     },
     summary: {
-      ko: "부모님이 **사기 문자를 스스로 알아보시도록** 돕는 훈련 코치 프롬프트입니다. SKT 「모두의 Promp.T」 공모전 Life AX 부문에서 최우수상을 받은 개인 출품작입니다.",
-      en: "A solo entry: a training-coach prompt that helps parents learn to spot scam texts on their own, winner of the Top Excellence Award (Life AX category) in SKT's 'Promp.T for Everyone' contest.",
+      ko: "SKT 「모두의 Promp.T」 공모전 Life AX 부문에서 **최우수상을 받은 개인 출품작**입니다. AI가 판별해 주지 않고 질문으로 이끌어, 부모님이 문자에서 이상한 곳을 직접 찾게 합니다.",
+      en: "A solo entry that **won the Top Excellence Award** (Life AX category) in SKT's 'Promp.T for Everyone' contest. Instead of judging for them, the AI guides with questions so parents find what looks wrong in a text themselves.",
     },
     brief: {
       what: { ko: "부모님이 사기 문자를 스스로 알아보게 돕는 훈련 코치 프롬프트, SKT 모두의 Promp.T Life AX 부문 개인 출품", en: "Training-coach prompt helping parents spot scam texts themselves; solo entry in SKT 'Promp.T for Everyone' (Life AX)" },
@@ -1802,8 +1802,8 @@ export const portfolioProjects = [
         en: "Submission Report",
       },
       presentationLabel: {
-        ko: "제출 리포트 PDF 보기",
-        en: "View submission report (PDF)",
+        ko: "제출 리포트 보기 (PDF, 87KB)",
+        en: "View submission report (PDF, 87KB)",
       },
     },
     screenshots: [
@@ -1968,8 +1968,8 @@ export const portfolioProjects = [
         en: "Business Deck",
       },
       presentationLabel: {
-        ko: "소개 덱 PDF 보기 (15p)",
-        en: "View business deck (PDF, 15p)",
+        ko: "소개 덱 보기 (PDF, 15쪽, 7.3MB)",
+        en: "View business deck (PDF, 15 pages, 7.3MB)",
       },
     },
     screenshots: [
@@ -2516,8 +2516,8 @@ export const portfolioProjects = [
         en: "Presentation",
       },
       presentationLabel: {
-        ko: "최종 발표자료 다운로드",
-        en: "Download final presentation",
+        ko: "최종 발표자료 다운로드 (PPTX, 43KB)",
+        en: "Download final presentation (PPTX, 43KB)",
       },
     },
     screenshots: [
@@ -2714,8 +2714,8 @@ export const portfolioProjects = [
         en: "Watch demo video",
       },
       presentationLabel: {
-        ko: "최종 발표자료 다운로드 (PDF)",
-        en: "Download final presentation (PDF)",
+        ko: "최종 발표자료 다운로드 (PDF, 7.3MB)",
+        en: "Download final presentation (PDF, 7.3MB)",
       },
     },
     heroImage: "/projects/loggy/git-structure-mapping.webp",
@@ -3223,8 +3223,8 @@ export const portfolioProjects = [
         en: "Watch demo video",
       },
       presentationLabel: {
-        ko: "최종 발표자료 다운로드",
-        en: "Download final presentation",
+        ko: "최종 발표자료 다운로드 (PPTX, 6.2MB)",
+        en: "Download final presentation (PPTX, 6.2MB)",
       },
     },
     sections: [

@@ -71,6 +71,28 @@ const Navbar = ({ theme, onToggleTheme }) => {
   const activeTab = getNavTabId(activeSection);
 
   const closeMenu = () => setIsMenuOpen(false);
+  const drawerRef = useRef(null);
+  const menuBtnRef = useRef(null);
+  // Closing without choosing a link hands focus back to the menu button.
+  const closeMenuAndReturnFocus = () => {
+    setIsMenuOpen(false);
+    menuBtnRef.current?.focus();
+  };
+
+  // Opening the drawer moves keyboard focus into it.
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return undefined;
+    }
+
+    // The drawer is still visibility:hidden on this frame, and a hidden
+    // element cannot take focus, so wait for the open transition to start.
+    const timer = window.setTimeout(() => {
+      drawerRef.current?.querySelector(".nav-drawer-links a")?.focus();
+    }, 60);
+
+    return () => window.clearTimeout(timer);
+  }, [isMenuOpen]);
 
   const switchLanguage = (lang, event) => {
     event.preventDefault();
@@ -178,6 +200,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         closeMenu();
+        menuBtnRef.current?.focus();
       }
     };
 
@@ -290,6 +313,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
             <div className="nav-tools-wide">{pdfLink("nav-pdf mono")}</div>
             <button
               type="button"
+              ref={menuBtnRef}
               className={`nav-icon-btn nav-menu-btn ${isMenuOpen ? "is-open" : ""}`}
               onClick={() => setIsMenuOpen((open) => !open)}
               aria-label={isMenuOpen ? t("nav.menuCloseAria") : t("nav.menuOpenAria")}
@@ -306,13 +330,14 @@ const Navbar = ({ theme, onToggleTheme }) => {
       <button
         type="button"
         className={`nav-scrim ${isMenuOpen ? "is-open" : ""}`}
-        onClick={closeMenu}
+        onClick={closeMenuAndReturnFocus}
         aria-label={t("nav.menuCloseAria")}
         tabIndex={-1}
       />
 
       <div
         id="nav-drawer"
+        ref={drawerRef}
         className={`nav-drawer ${isMenuOpen ? "is-open" : ""}`}
         inert={!isMenuOpen}
         aria-hidden={!isMenuOpen}

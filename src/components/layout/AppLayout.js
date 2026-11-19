@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Navbar from "./Navbar";
 import Contact from "./Contact";
 import ScrollToTop from "./ScrollToTop";
@@ -14,14 +15,36 @@ const PageGrid = () => (
   </div>
 );
 
-const AppLayout = ({ theme, onToggleTheme, onPrint, children }) => (
-  <div className="layout">
-    <PageGrid />
-    <Navbar theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint} />
-    <main>{children}</main>
-    <Contact />
-    <ScrollToTop />
-  </div>
-);
+const AppLayout = ({ theme, onToggleTheme, onPrint, children }) => {
+  const { t } = useTranslation();
+
+  // Moves focus instead of changing the URL hash, which the router would
+  // treat as a navigation.
+  const skipToContent = (event) => {
+    event.preventDefault();
+
+    const main = document.getElementById("main");
+
+    if (main) {
+      main.focus({ preventScroll: true });
+      main.scrollIntoView({ block: "start" });
+    }
+  };
+
+  return (
+    <div className="layout">
+      <a href="#main" className="skip-link" onClick={skipToContent}>
+        {t("nav.skipToContent")}
+      </a>
+      <PageGrid />
+      <Navbar theme={theme} onToggleTheme={onToggleTheme} onPrint={onPrint} />
+      <main id="main" tabIndex={-1}>
+        {children}
+      </main>
+      <Contact />
+      <ScrollToTop />
+    </div>
+  );
+};
 
 export default AppLayout;

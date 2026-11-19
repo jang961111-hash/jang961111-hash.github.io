@@ -27,13 +27,20 @@
   color: var(--w1);
 }
 
-/* Bordered cell grid: top/left lines on the grid, right/bottom on each cell,
-   so a short last row leaves clean empty space. */
+/* Bordered cell grid: top/left lines on the grid, right/bottom on each cell.
+   Leftover slots in a short last row show the grid's own hatch, closed by an
+   inset line, so they read as intentionally empty. */
 .stack-cells {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   border-top: 1px solid var(--line-strong);
   border-left: 1px solid var(--line-strong);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--hatch) 0 1px,
+    transparent 1px 9px
+  );
+  box-shadow: inset -1px -1px 0 var(--line-strong);
 }
 
 .stack-cell {

@@ -292,7 +292,7 @@ h4 {
   align-items: center;
   min-height: 24px;
   padding: 2px 8px;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   border-radius: 3px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -354,6 +354,39 @@ h4 {
     var(--hatch) 0 1px,
     transparent 1px 9px
   );
+}
+
+/* Keyboard users can jump past the navigation; visible only on focus */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2000;
+  padding: 10px 14px;
+  background: var(--w1);
+  color: var(--k);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* Keeps the skip target clear of the fixed navigation bar */
+main {
+  scroll-margin-top: var(--nav-height, 76px);
+}
+
+main:focus {
+  outline: none;
+}
+
+@media print {
+  .skip-link {
+    display: none;
+  }
 }
 
 /* ---------- Copy rendering ---------- */

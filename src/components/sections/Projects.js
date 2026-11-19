@@ -47,6 +47,8 @@ const StackChips = ({ stack }) => {
 };
 
 // Whole card is clickable: the title link stretches over the card.
+// Small cards clamp the summary to three lines, which cuts highlights in half,
+// so only the core cards (showFacts) keep the highlighted phrase.
 const CardText = ({ project, copy, index, level = "h3", showFacts = false }) => {
   const { main, sub } = splitTitle(project.title);
   const Heading = level;
@@ -72,7 +74,9 @@ const CardText = ({ project, copy, index, level = "h3", showFacts = false }) => 
           {sub ? <span className="card-title-sub">{sub}</span> : null}
         </Link>
       </Heading>
-      <p className="card-summary">{renderEmphasis(project.summary)}</p>
+      <p className="card-summary">
+        {showFacts ? renderEmphasis(project.summary) : stripEmphasis(project.summary)}
+      </p>
       {facts.length > 0 ? (
         <dl className="card-facts">
           {facts.map((fact) => (
