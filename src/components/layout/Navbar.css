@@ -51,11 +51,29 @@
   flex: none;
 }
 
+/* Brush monogram, tilted the way it is written */
+.nav-brand-mark {
+  width: auto;
+  height: 26px;
+  flex: none;
+  transform: rotate(-6deg);
+}
+
 .nav-brand-dot {
   width: 5px;
   height: 5px;
-  margin-top: 8px;
+  margin: 8px 7px 0 1px;
+  flex: none;
   background: var(--o);
+}
+
+/* The romanised name is three times as wide as the Korean one. On narrow
+   phones it would push the theme and menu buttons out of the bar, so the
+   monogram stands alone there. */
+@media (max-width: 420px) {
+  :lang(en) .nav-brand-name {
+    display: none;
+  }
 }
 
 .nav-tabs {

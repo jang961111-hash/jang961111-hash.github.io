@@ -10,6 +10,7 @@ import {
 import { queueScrollTarget, scrollToSectionId } from "../../utils/scrollTarget";
 import { getResumeAsset } from "../../utils/resumeAssets";
 import { getNavTabId, homeSections } from "../../config/sections";
+import BrandMark from "./BrandMark";
 import "./Navbar.css";
 
 const navItems = homeSections.filter((section) => section.nav !== false);
@@ -291,8 +292,9 @@ const Navbar = ({ theme, onToggleTheme }) => {
             onClick={(event) => scrollToSection(event, "hero")}
             aria-label={t("navExtra.homeAria")}
           >
-            <span className="nav-brand-name">{t("hero.name")}</span>
+            <BrandMark className="nav-brand-mark" />
             <span className="nav-brand-dot" aria-hidden="true" />
+            <span className="nav-brand-name">{t("hero.name")}</span>
           </a>
 
           <ul className="nav-tabs">{tabLinks("nav-tab")}</ul>
