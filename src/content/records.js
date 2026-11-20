@@ -168,8 +168,8 @@ export const training = [
     period: "2025.07 - 2026.06",
     name: { ko: "삼성청년SW·AI아카데미(SSAFY) 14기", en: "Samsung SW·AI Academy for Youth (SSAFY), Cohort 14" },
     lines: {
-      ko: ["1,628시간(1학기 828시간, 2학기 800시간)", "Certificate 등급 수료", "광주 1반 반대표(2026.02.19 - 2026.04.01)"],
-      en: ["1,628 hours (828 in term 1, 800 in term 2)", "Completed with Certificate grade", "Class representative, Gwangju Class 1 (Feb 19 - Apr 1, 2026)"],
+      ko: ["1,628시간(1학기 828시간, 2학기 800시간)", "수료(2026.06.30 수료증 발급)", "광주 1반 반대표(2026.02.19 - 2026.04.01)"],
+      en: ["1,628 hours (828 in term 1, 800 in term 2)", "Completed (certificate issued Jun 30, 2026)", "Class representative, Gwangju Class 1 (Feb 19 - Apr 1, 2026)"],
     },
   },
   {
