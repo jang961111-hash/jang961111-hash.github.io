@@ -160,8 +160,8 @@ export const training = [
     period: "2026.07 - 2026.12",
     name: { ko: "SKALA(SK AI Leader Academy) 4기", en: "SKALA (SK AI Leader Academy), Cohort 4" },
     lines: {
-      ko: ["SK AX 운영, 2026.12 수료 예정", "DB/SQL 종합실습 강사 개별 평가 피드백 100점(S+등급)"],
-      en: ["Run by SK AX; completion expected Dec 2026", "DB/SQL capstone lab: 100 points (grade S+) in the instructor's individual evaluation feedback"],
+      ko: ["SK AX 운영, 2026.12 수료 예정", "DB/SQL 종합실습 강사 개별 평가 피드백 100점(S+등급, 최고 등급)"],
+      en: ["Run by SK AX; completion expected Dec 2026", "DB/SQL capstone lab: 100 points (grade S+, the top grade) in the instructor's individual evaluation feedback"],
     },
   },
   {

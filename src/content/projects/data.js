@@ -843,15 +843,15 @@ export const portfolioProjects = [
       en: "DB/SQL Capstone Lab | Re-verifying After a Review and Correcting Two Offsetting Errors in a Metric That Looked Correct",
     },
     summary: {
-      ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 개인 종합실습입니다. 재구매율 지표의 오류 두 개가 서로 상쇄돼 정상처럼 보이던 것을 정정했고, 강사 개별 평가 피드백에서 **100점(S+등급)**을 받았습니다.",
-      en: "An individual capstone lab covering schema design, advanced SQL, and performance tuning. I corrected a repurchase-rate metric in which two errors had been cancelling each other out, and received **100 points (grade S+)** in the instructor's individual evaluation feedback.",
+      ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 개인 종합실습입니다. 재구매율 지표의 오류 두 개가 서로 상쇄돼 정상처럼 보이던 것을 정정했고, 강사 개별 평가 피드백에서 **100점(S+등급, 최고 등급)**을 받았습니다.",
+      en: "An individual capstone lab covering schema design, advanced SQL, and performance tuning. I corrected a repurchase-rate metric in which two errors had been cancelling each other out, and received **100 points (grade S+, the top grade)** in the instructor's individual evaluation feedback.",
     },
     brief: {
       what: { ko: "학사관리 DB 설계부터 고급 SQL, 성능 튜닝까지 다룬 SKALA 4기 개인 종합실습", en: "SKALA Cohort 4 individual capstone lab covering database design, advanced SQL, and performance tuning" },
       pain: { ko: "재구매율이 오류 두 개가 서로 상쇄돼 정상처럼 보임(초안 10.10%)", en: "The repurchase rate looked normal (draft 10.10%) because two errors offset each other" },
       solution: { ko: "분자와 분모 정의를 따로 검증해 바로잡은 지표와 SQL", en: "A corrected metric and queries, with numerator and denominator definitions verified separately" },
       how: { ko: "외부 리뷰 지적 뒤 자체 검증으로 두 오류를 함께 수정하고 EXCEPT로 집합 검증, 순차 스캔을 끈 조건에서 5회 반복 실측", en: "After an outside review, verified on my own and fixed both errors together, checked sets with EXCEPT, and measured 5 repeated runs with sequential scans disabled" },
-      effect: { ko: "30일 내 재구매율 10.13%로 정정, 오분류 902건 교정, 강사 개별 평가 100점(S+등급)", en: "30-day repurchase rate corrected to 10.13%, 902 misclassified rows fixed; instructor's individual evaluation 100 points (grade S+)" },
+      effect: { ko: "30일 내 재구매율 10.13%로 정정, 오분류 902건 교정, 강사 개별 평가 100점(S+등급, 최고 등급)", en: "30-day repurchase rate corrected to 10.13%, 902 misclassified rows fixed; instructor's individual evaluation 100 points (grade S+, the top grade)" },
     },
     context: {
       ko: "SKALA 4기 DB/SQL 종합실습(개인), 실습 세 개가 각각 100점(S)\n완성된 SQL을 받아 적지 않고 직접 쓴다는 규칙을 세우고 진행\n주석은 가이드 문구를 옮기지 않고 이해한 내용을 내 표현으로 다시 정리한다는 원칙으로 진행",
@@ -889,14 +889,14 @@ export const portfolioProjects = [
         "SQL 삼값 논리(NULL 처리) 결함을 규명해 오분류 902건 교정",
         "학사관리 DB를 엔티티 5개, 3NF로 설계하고 RESTRICT와 CASCADE 옵션 구분",
         "순차 스캔을 끈 조건에서 5회 반복 실측으로 실행 계획 비교",
-        "강사 개별 평가 피드백 기준 100점(S+등급), 세부 실습 3개 각 100점(S)",
+        "강사 개별 평가 피드백 기준 100점(S+등급, 최고 등급), 세부 실습 3개 각 100점(S)",
       ],
       en: [
         "Corrected the repurchase rate from 10.10% to 10.13%, confirming **two offsetting errors** through my own verification after an outside review",
         "Traced an SQL three-valued-logic (NULL handling) flaw and corrected 902 misclassified rows",
         "Designed an academic database with 5 entities in 3NF, distinguishing RESTRICT from CASCADE",
         "Compared execution plans with 5 repeated runs under sequential scans disabled",
-        "Instructor's individual evaluation feedback: 100 points (grade S+), with 100 (S) on each of the three labs",
+        "Instructor's individual evaluation feedback: 100 points (grade S+, the top grade), with 100 (S) on each of the three labs",
       ],
     },
     proof: {
@@ -913,8 +913,8 @@ export const portfolioProjects = [
       {
         value: { ko: "100점", en: "100" },
         label: {
-          ko: "강사 개별 평가 피드백 종합(S+등급)",
-          en: "Instructor's individual evaluation feedback (grade S+)",
+          ko: "강사 개별 평가 피드백 종합(S+등급, 최고 등급)",
+          en: "Instructor's individual evaluation feedback (grade S+, the top grade)",
         },
       },
       {
