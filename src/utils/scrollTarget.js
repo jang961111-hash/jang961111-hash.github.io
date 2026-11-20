@@ -50,6 +50,9 @@ export const consumeQueuedScrollTarget = () => {
   return targetId;
 };
 
+// Space kept above a section so its heading clears the fixed nav bar.
+export const SECTION_NAV_OFFSET = 92;
+
 export const scrollToSectionId = (targetId) => {
   if (typeof window === "undefined") {
     return false;
@@ -61,7 +64,7 @@ export const scrollToSectionId = (targetId) => {
     return false;
   }
 
-  const navHeight = 92;
+  const navHeight = SECTION_NAV_OFFSET;
   const elementPosition = targetElement.getBoundingClientRect().top;
   const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -140,7 +143,7 @@ export const scrollToProjectCard = (slug, { focus = false } = {}) => {
   }
 
   const rect = card.getBoundingClientRect();
-  const navHeight = 92;
+  const navHeight = SECTION_NAV_OFFSET;
   const room = window.innerHeight - navHeight;
   // Center the card when it fits, otherwise pin its top under the nav bar.
   const offset = rect.height < room ? (room - rect.height) / 2 : 12;
