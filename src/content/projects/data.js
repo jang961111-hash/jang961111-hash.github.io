@@ -25,8 +25,8 @@ export const portfolioProjects = [
       en: "Ansim-Ieum | A Scam-Prevention Training Service Where Seniors Rehearse Scam Texts and Calls",
     },
     summary: {
-      ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 검증셋 200건(사기 100, 정상 100)에서 규칙과 AI를 함께 썼을 때 **사기 문자 100건을 모두 잡았습니다**(유효 2회 측정, 정답 표시 1인). 그 대신 정상 문자의 8.0%에 '조심' 경고가 붙었습니다.",
-      en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set (100 scam, 100 normal), rules plus AI **caught all 100 scam texts** (two valid runs, labels by one person). In exchange, 8.0% of normal texts received a 'caution' warning.",
+      ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 시험용으로 따로 떼어 둔 검증셋 200건(사기 100, 정상 100)에서 규칙과 AI를 함께 썼을 때 **사기 문자 100건을 모두 잡았습니다**(유효 2회 측정, 정답 표시 1인). 그 대신 정상 문자의 8.0%에 '조심' 경고가 붙었습니다.",
+      en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set kept apart for testing (100 scam, 100 normal), rules plus AI **caught all 100 scam texts** (two valid runs, labels by one person). In exchange, 8.0% of normal texts received a 'caution' warning.",
     },
     brief: {
       what: { ko: "어르신이 사기 문자와 전화를 미리 연습하는 예방 교육 웹 서비스, 마이AI랩 선정 개인 과제", en: "Web service where seniors rehearse scam texts and calls beforehand; individual project selected for My AI Lab" },
@@ -432,8 +432,8 @@ export const portfolioProjects = [
       en: "Churn Modeling | Selecting Models by Cross-Validation Only, Keeping the Test Set as a Record",
     },
     summary: {
-      ko: "저축은행 고객 이탈을 예측하는 가상 시나리오 실습입니다. Test 점수로는 고르지 않는다는 기준을 세우고 **AUC 0.7722를 0.8646으로** 올렸습니다(Validation과 Test 평균).",
-      en: "A capstone lab on predicting customer churn for a fictional savings bank. I set the rule of never selecting on test scores and raised **AUC from 0.7722 to 0.8646** (mean of validation and test).",
+      ko: "가상 저축은행의 고객 이탈 예측 실습에서 예측 성능 지표 **AUC를 0.7722에서 0.8646으로** 올렸습니다(Validation과 Test 평균). Test 점수로는 모델을 고르지 않는다는 기준을 지켰습니다.",
+      en: "In a churn-prediction lab for a fictional savings bank, I raised the prediction-quality score **AUC from 0.7722 to 0.8646** (mean of validation and test), keeping the rule of never selecting a model on test scores.",
     },
     brief: {
       what: { ko: "가상 저축은행 고객 이탈을 예측하는 SKALA 4기 개인 종합실습", en: "SKALA Cohort 4 individual capstone lab predicting customer churn for a fictional savings bank" },
@@ -573,8 +573,8 @@ export const portfolioProjects = [
       en: "sLLM LoRA Evaluation Audit | Checking the Evaluation Code Before Trusting a 4.5× Score Gain",
     },
     summary: {
-      ko: "Qwen2.5-1.5B를 LoRA로 파인튜닝한 뒤 점수가 0.0862에서 0.3852로 올랐습니다. 평가 코드와 제 설정을 점검해 **\"형식은 배웠지만 사실은 못 배웠다\"**는 결론을 냈습니다.",
-      en: "After LoRA fine-tuning Qwen2.5-1.5B, the score rose from 0.0862 to 0.3852. Auditing the evaluation code and my own settings led to the conclusion: **\"it learned the format, not the facts.\"**",
+      ko: "추가 학습(파인튜닝)으로 점수가 0.0862에서 0.3852로 올랐지만, 평가 코드와 제 설정을 점검해 **\"형식은 배웠지만 사실은 못 배웠다\"**는 결론을 냈습니다. 모델은 공개 모델 Qwen2.5-1.5B, 학습 방식은 LoRA입니다.",
+      en: "Further training (fine-tuning) raised the score from 0.0862 to 0.3852, but auditing the evaluation code and my own settings led to the conclusion: **\"it learned the format, not the facts.\"** The model was the open Qwen2.5-1.5B, trained with LoRA.",
     },
     brief: {
       what: { ko: "Qwen2.5-1.5B LoRA 파인튜닝 점수의 평가 코드를 점검한 SKALA 4기 개인 과제", en: "SKALA Cohort 4 individual task auditing the evaluation code behind a Qwen2.5-1.5B LoRA fine-tuning score" },
@@ -1476,8 +1476,8 @@ export const portfolioProjects = [
       en: "SKT Promp.T Top Excellence Award Entry | A Training-Coach Prompt That Helps Parents Spot Scam Texts on Their Own",
     },
     summary: {
-      ko: "SKT 「모두의 Promp.T」 공모전 Life AX 부문에서 **최우수상을 받은 개인 출품작**입니다. AI가 판별해 주지 않고 질문으로 이끌어, 부모님이 문자에서 이상한 곳을 직접 찾게 합니다.",
-      en: "A solo entry that **won the Top Excellence Award** (Life AX category) in SKT's 'Promp.T for Everyone' contest. Instead of judging for them, the AI guides with questions so parents find what looks wrong in a text themselves.",
+      ko: "SKT 「모두의 Promp.T」 공모전 Life AX 부문에서 **최우수상을 받은 개인 출품작**입니다. AI에게 주는 지시문(프롬프트)으로, AI가 판별해 주지 않고 질문으로 이끌어 부모님이 문자에서 이상한 곳을 직접 찾게 합니다.",
+      en: "A solo entry that **won the Top Excellence Award** (Life AX category) in SKT's 'Promp.T for Everyone' contest. It is a prompt, the written instructions given to an AI: instead of judging for them, the AI guides with questions so parents find what looks wrong in a text themselves.",
     },
     brief: {
       what: { ko: "부모님이 사기 문자를 스스로 알아보게 돕는 훈련 코치 프롬프트, SKT 모두의 Promp.T Life AX 부문 개인 출품", en: "Training-coach prompt helping parents spot scam texts themselves; solo entry in SKT 'Promp.T for Everyone' (Life AX)" },

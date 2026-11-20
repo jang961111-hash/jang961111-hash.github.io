@@ -220,12 +220,12 @@ export const principles = [
     sub: "I don't claim what I didn't measure.",
     cases: {
       ko: [
-        "안심이음: 규칙 보강 뒤 나온 99.0%를 \"낙관적 수치\"로 적고, 2026.10 당시 새 100건 블라인드 재측정 86.0%(규칙 전용, 내부 측정)를 공식 수치로 기록. 프로젝트 상세의 96.0%는 그 뒤 2026.11.16에 200건으로 규칙과 AI를 함께 다시 잰 값",
+        "안심이음: 규칙 보강 뒤 나온 99.0%를 \"낙관적 수치\"로 적고, 2026.10 당시 처음 보는 새 문장 100건으로 다시 잰 86.0%(AI 없이 규칙만, 내부 측정)를 공식 수치로 기록. 프로젝트 상세의 96.0%는 그 뒤 2026.11.16에 200건으로 규칙과 AI를 함께 다시 잰 값",
         "안심이음: 놓친 사기 문자 11건을 보고도 규칙을 고치지 않기로 결정, 검증 문장을 보고 고치면 그 뒤 수치는 \"튜닝 후\"가 되기 때문",
         "LoRA 과제: 점수가 0.0862에서 0.3852로 올랐지만 평가 코드가 20문항 중 15문항의 환각 검사를 하지 않는다는 점을 보고서에 기록",
       ],
       en: [
-        "Ansim-Ieum: logged a 99.0% result after a rule update as \"optimistic\" and recorded the 86.0% blind re-test on 100 new cases (rules only, internal measurement, Oct 2026) as the official number at the time. The 96.0% on the project page is a later re-measurement (Nov 16, 2026, 200 cases, rules plus AI)",
+        "Ansim-Ieum: logged a 99.0% result after a rule update as \"optimistic\" and recorded the 86.0% re-test on 100 unseen texts (rules only, no AI; internal measurement, Oct 2026) as the official number at the time. The 96.0% on the project page is a later re-measurement (Nov 16, 2026, 200 cases, rules plus AI)",
         "Ansim-Ieum: left the rules alone after seeing 11 missed scam texts, because tuning on validation sentences would make every later number \"post-tuning\"",
         "LoRA assignment: the score rose from 0.0862 to 0.3852, and I reported that the evaluation code skipped the hallucination check on 15 of 20 questions",
       ],
