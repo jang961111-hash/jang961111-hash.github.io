@@ -54,6 +54,26 @@ const primePageForPdf = async (page) => {
 
     window.scrollTo({ top: 0, behavior: 'auto' });
     await sleep(150);
+
+    // Scrolling alone left some lazy card images unloaded, so the image count
+    // (and the page count) changed from run to run. Load and decode them all.
+    const images = [...document.images];
+    images.forEach((img) => {
+      img.loading = 'eager';
+    });
+    await Promise.all(
+      images.map((img) =>
+        Promise.race([
+          img.complete
+            ? Promise.resolve()
+            : new Promise((resolve) => {
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+              }),
+          sleep(10000),
+        ]).then(() => (img.decode ? img.decode().catch(() => {}) : undefined))
+      )
+    );
   });
 };
 
