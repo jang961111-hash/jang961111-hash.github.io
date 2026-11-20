@@ -262,7 +262,7 @@ export const portfolioProjects = [
       what: { ko: "강사 제공 장애 대응 에이전트에 개선을 스위치로 붙여 효과를 가린 SKALA 4기 개인 평가 과제", en: "SKALA Cohort 4 individual task: added improvements to an instructor-provided incident agent as switches and isolated each effect" },
       pain: { ko: "원본이 질문과 다른 매뉴얼로 답했고, 개선을 한꺼번에 붙이면 효과를 알 수 없음", en: "The original answered with a runbook unrelated to the question, and stacking fixes together would hide which one worked" },
       solution: { ko: "RAG(문서 검색 기반 답변), Judge, 비용 최적화를 설정 스위치로 붙인 7개 구성 비교", en: "Comparison of seven configurations adding RAG (document-search answers), a judge, and cost optimization as config switches" },
-      how: { ko: "질문 60개 x 3회, 실제 AI 모델 호출(API) 1,260회, 따로 떼어 둔 시험 문제(holdout) 36개는 v2 구현 전에 고정, 신뢰구간(결과가 우연이 아닌지 가늠하는 범위)으로 개선별 기여 분리", en: "60 questions x 3 runs, 1,260 real AI model calls (API); 36 holdout questions fixed before the v2 work; confidence intervals (a range that shows whether a result could be chance) separate each gain" },
+      how: { ko: "질문 60개 x 3회, 실제 API(AI 기능을 불러 쓰는 통로) 1,260회 실행, 따로 떼어 둔 시험 문제(holdout) 36개는 v2 구현 전에 고정, 신뢰구간(측정값이 흔들릴 수 있는 폭을 보여 주는 범위)으로 개선별 기여 분리", en: "60 questions x 3 runs, 1,260 real API runs (the API is the interface for calling the AI model); 36 holdout questions fixed before the v2 work; confidence intervals (a range showing how much a measured value could vary) separate each gain" },
       effect: { ko: "정답 매뉴얼이 있는 holdout 질문에서 필수 매뉴얼 누락 56%에서 9%\n한계: 다른 AI가 쓴 외부 문항 15개에서는 누락 58%", en: "Missed required runbooks fell from 56% to 9% on holdout questions with a matching runbook\nLimit: 58% missed on 15 external questions written by another AI" },
     },
     context: {
@@ -2386,7 +2386,7 @@ export const portfolioProjects = [
       },
       solution: {
         ko: "SenseVoice(말소리를 글로 바꾸는 모델) 음성 입력, Thompson Sampling(사용자 반응을 보며 추천을 고쳐 가는 방법) 추천, pgvector(뜻이 비슷한 글을 찾는 데이터베이스 기능) 벡터 검색 결합\n**회고에서 행동 추천까지** 이어지는 흐름 설계",
-        en: "Combined SenseVoice voice input (a speech-to-text model), Thompson Sampling recommendation (a method that adjusts recommendations as users respond), and pgvector vector search (a database feature for finding similar text)\nDesigned a flow that runs **from reflection to action recommendation**",
+        en: "Combined SenseVoice voice input (a speech-to-text model), Thompson Sampling recommendation (a method that adjusts recommendations as users respond), and pgvector vector search (a database feature for finding text with similar meaning)\nDesigned a flow that runs **from reflection to action recommendation**",
       },
     },
     team: {
