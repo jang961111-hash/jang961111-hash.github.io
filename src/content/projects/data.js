@@ -219,8 +219,8 @@ export const portfolioProjects = [
           en: "Architecture",
         },
         body: {
-          ko: "Python, FastAPI 백엔드, 규칙 엔진 뒤에 Anthropic Claude API가 붙는 판별 구조\nHTML, CSS, JavaScript 화면(빌드 도구 없음), 설치 없이 홈 화면에 추가 가능\nSQLite에는 개인을 알아볼 수 없는 통계 값만 저장\nDocker 이미지를 AWS EC2 서버 1대에 배포, Caddy로 HTTPS 처리\nGitHub Actions에서 테스트 실행",
-          en: "Python and FastAPI backend; detection runs a rule engine followed by the Anthropic Claude API\nHTML, CSS, and JavaScript interface with no build tool; can be added to the home screen without installation\nSQLite holds only non-identifying statistics\nDocker image deployed to a single AWS EC2 server, HTTPS handled by Caddy\nTests run in GitHub Actions",
+          ko: "Python, FastAPI 백엔드, 규칙 엔진 뒤에 Anthropic Claude API(AI 기능을 불러 쓰는 통로)가 붙는 판별 구조\nHTML, CSS, JavaScript 화면(빌드 도구 없음), 설치 없이 홈 화면에 추가 가능\nSQLite에는 개인을 알아볼 수 없는 통계 값만 저장\nDocker 이미지를 AWS EC2 서버 1대에 배포, Caddy로 HTTPS 처리\nGitHub Actions에서 테스트 실행",
+          en: "Python and FastAPI backend; detection runs a rule engine followed by the Anthropic Claude API (the interface for calling the AI model)\nHTML, CSS, and JavaScript interface with no build tool; can be added to the home screen without installation\nSQLite holds only non-identifying statistics\nDocker image deployed to a single AWS EC2 server, HTTPS handled by Caddy\nTests run in GitHub Actions",
         },
       },
     ],
@@ -262,7 +262,7 @@ export const portfolioProjects = [
       what: { ko: "강사 제공 장애 대응 에이전트에 개선을 스위치로 붙여 효과를 가린 SKALA 4기 개인 평가 과제", en: "SKALA Cohort 4 individual task: added improvements to an instructor-provided incident agent as switches and isolated each effect" },
       pain: { ko: "원본이 질문과 다른 매뉴얼로 답했고, 개선을 한꺼번에 붙이면 효과를 알 수 없음", en: "The original answered with a runbook unrelated to the question, and stacking fixes together would hide which one worked" },
       solution: { ko: "RAG(문서 검색 기반 답변), Judge, 비용 최적화를 설정 스위치로 붙인 7개 구성 비교", en: "Comparison of seven configurations adding RAG (document-search answers), a judge, and cost optimization as config switches" },
-      how: { ko: "질문 60개 x 3회, 실제 API 1,260회 실행, 따로 떼어 둔 시험 문제(holdout) 36개는 v2 구현 전에 고정, 신뢰구간으로 개선별 기여 분리", en: "60 questions x 3 runs, 1,260 real API runs; 36 holdout questions fixed before the v2 work; confidence intervals separate each gain" },
+      how: { ko: "질문 60개 x 3회, 실제 AI 모델 호출(API) 1,260회, 따로 떼어 둔 시험 문제(holdout) 36개는 v2 구현 전에 고정, 신뢰구간(결과가 우연이 아닌지 가늠하는 범위)으로 개선별 기여 분리", en: "60 questions x 3 runs, 1,260 real AI model calls (API); 36 holdout questions fixed before the v2 work; confidence intervals (a range that shows whether a result could be chance) separate each gain" },
       effect: { ko: "정답 매뉴얼이 있는 holdout 질문에서 필수 매뉴얼 누락 56%에서 9%\n한계: 다른 AI가 쓴 외부 문항 15개에서는 누락 58%", en: "Missed required runbooks fell from 56% to 9% on holdout questions with a matching runbook\nLimit: 58% missed on 15 external questions written by another AI" },
     },
     context: {
@@ -438,7 +438,7 @@ export const portfolioProjects = [
     brief: {
       what: { ko: "가상 저축은행 고객 이탈을 예측하는 SKALA 4기 개인 종합실습", en: "SKALA Cohort 4 individual capstone lab predicting customer churn for a fictional savings bank" },
       pain: { ko: "저축은행은 떠날 고객을 미리 알아야 하는데, 학습 데이터가 1,260건뿐이라 Test 점수로 고르면 실력이 아닌 운을 고르게 되는 조건", en: "A savings bank needs to know in advance which customers will leave, but with only 1,260 training rows, choosing by test score selects luck rather than skill" },
-      solution: { ko: "Test는 기록만 하고 교차검증으로만 고른 모델, EDA와 SHAP에서 설계한 파생변수", en: "A model chosen by cross-validation only (test set recorded, not used) with features designed from EDA and SHAP" },
+      solution: { ko: "Test는 기록만 하고 교차검증으로만 고른 모델, EDA(데이터 탐색)와 SHAP(예측 이유를 항목별로 보여 주는 방법)에서 설계한 파생변수", en: "A model chosen by cross-validation only (test set recorded, not used) with features designed from EDA (data exploration) and SHAP (a method that shows which factors drove each prediction)" },
       how: { ko: "5-Fold 3회 반복 CV 점수 15개 평균으로만 선택, 계열이 다른 세 모델을 순위 평균으로 결합", en: "Selected only by the mean of 15 CV scores (5-Fold x 3); three different model families combined by rank averaging" },
       effect: { ko: "AUC 0.7722에서 0.8646으로 상승(Validation과 Test 평균)", en: "AUC rose from 0.7722 to 0.8646 (mean of validation and test)" },
     },
@@ -867,8 +867,8 @@ export const portfolioProjects = [
         en: "One error let future orders into the numerator; the other let customers without a full 30-day window into the denominator\nThe lesson: even when a number looks plausible, verify the numerator and denominator definitions separately",
       },
       solution: {
-        ko: "두 오류를 함께 고쳐 10.13%로 정정(분모 1,698명, 분자 172명)\nNULL이 끼어든 삼값 논리 결함을 규명해 **오분류 902건 교정**, EXCEPT로 집합 검증\n순차 스캔을 끈 조건에서 5회 반복 실측, Materialized View 갱신 비용과 잠금 영향 분석\n종합실습 2는 psql 실행 화면 87장으로 기록",
-        en: "Fixed both errors together and corrected the rate to 10.13% (1,698 customers in the denominator, 172 in the numerator)\nTraced a three-valued-logic flaw involving NULL and **corrected 902 misclassified rows**, verified with EXCEPT\nMeasured 5 repeated runs with sequential scans disabled, and analyzed materialized-view refresh cost and locking\nRecorded capstone lab 2 in 87 psql captures",
+        ko: "두 오류를 함께 고쳐 10.13%로 정정(분모 1,698명, 분자 172명)\nNULL이 끼어든 삼값 논리 결함을 규명해 **오분류 902건 교정**, EXCEPT로 집합 검증\n순차 스캔을 끈 조건에서 5회 반복 실측, Materialized View(미리 계산해 저장해 둔 집계표) 갱신 비용과 잠금 영향 분석\n종합실습 2는 psql 실행 화면 87장으로 기록",
+        en: "Fixed both errors together and corrected the rate to 10.13% (1,698 customers in the denominator, 172 in the numerator)\nTraced a three-valued-logic flaw involving NULL and **corrected 902 misclassified rows**, verified with EXCEPT\nMeasured 5 repeated runs with sequential scans disabled, and analyzed the refresh cost and locking of a materialized view (a stored, precomputed summary table)\nRecorded capstone lab 2 in 87 psql captures",
       },
     },
     team: {
@@ -1066,8 +1066,8 @@ export const portfolioProjects = [
       {
         value: "72 / 0",
         label: {
-          ko: "라이브 E2E 통과 / 실패(개인 저장소 실행 로그 기준)",
-          en: "Live E2E passed / failed (run log of my personal repository)",
+          ko: "라이브 E2E(처음부터 끝까지 실제로 돌려 본 시험) 통과 / 실패(개인 저장소 실행 로그 기준)",
+          en: "Live E2E tests (run end to end for real) passed / failed (run log of my personal repository)",
         },
       },
       {
@@ -2385,8 +2385,8 @@ export const portfolioProjects = [
         en: "The bottleneck is **'not knowing what to write'**\nJudged it could be solved if AI asks structured questions at the right moment",
       },
       solution: {
-        ko: "SenseVoice 음성 입력, Thompson Sampling 추천, pgvector 벡터 검색 결합\n**회고에서 행동 추천까지** 이어지는 흐름 설계",
-        en: "Combined SenseVoice voice input, Thompson Sampling recommendation, and pgvector vector search\nDesigned a flow that runs **from reflection to action recommendation**",
+        ko: "SenseVoice(말소리를 글로 바꾸는 모델) 음성 입력, Thompson Sampling(사용자 반응을 보며 추천을 고쳐 가는 방법) 추천, pgvector(뜻이 비슷한 글을 찾는 데이터베이스 기능) 벡터 검색 결합\n**회고에서 행동 추천까지** 이어지는 흐름 설계",
+        en: "Combined SenseVoice voice input (a speech-to-text model), Thompson Sampling recommendation (a method that adjusts recommendations as users respond), and pgvector vector search (a database feature for finding similar text)\nDesigned a flow that runs **from reflection to action recommendation**",
       },
     },
     team: {
@@ -3266,8 +3266,8 @@ export const portfolioProjects = [
           en: "Technical and Product Considerations",
         },
         body: {
-          ko: "기술 과제는 멀티모델 API 연동, 슬롯 기반 실행 구조, 문서 편집 경험, 사용자 이탈 분석\n사업 과제는 고품질 템플릿 확보, 공급자와 소비자 양면시장 형성\n크리에이터 노하우 보호와 실행 기반 수익모델 설계도 사업 과제",
-          en: "Technical challenges: multi-model API integration, slot-based execution, document editing experience, user drop-off analysis\nBusiness challenges: securing high-quality templates, forming a two-sided market of suppliers and consumers\nProtecting creator know-how and designing an execution-based revenue model are also business challenges",
+          ko: "기술 과제는 여러 AI 모델을 API로 연동, 슬롯 기반 실행 구조, 문서 편집 경험, 사용자 이탈 분석\n사업 과제는 고품질 템플릿 확보, 공급자와 소비자 양면시장 형성\n크리에이터 노하우 보호와 실행 기반 수익모델 설계도 사업 과제",
+          en: "Technical challenges: connecting several AI models through their APIs, slot-based execution, document editing experience, user drop-off analysis\nBusiness challenges: securing high-quality templates, forming a two-sided market of suppliers and consumers\nProtecting creator know-how and designing an execution-based revenue model are also business challenges",
         },
       },
       {
