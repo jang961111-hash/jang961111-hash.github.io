@@ -25,8 +25,8 @@ export const portfolioProjects = [
       en: "Ansim-Ieum | A Scam-Prevention Training Service Where Seniors Rehearse Scam Texts and Calls",
     },
     summary: {
-      ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 시험용으로 따로 떼어 둔 검증셋 200건(사기 100, 정상 100)에서 규칙과 AI를 함께 썼을 때 **사기 문자 100건을 모두 잡았습니다**(유효 2회 측정, 정답 표시 1인). 그 대신 정상 문자의 8.0%에 '조심' 경고가 붙었습니다.",
-      en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set kept apart for testing (100 scam, 100 normal), rules plus AI **caught all 100 scam texts** (two valid runs, labels by one person). In exchange, 8.0% of normal texts received a 'caution' warning.",
+      ko: "어르신이 문자와 전화 사기를 실제로 겪기 전에 미리 연습하는 웹 서비스입니다. 의심 문자를 확인하는 기능이 함께 있고, 성능을 재는 시험용 문장 모음인 검증셋 200건(사기 100, 정상 100)에서 규칙과 AI를 함께 썼을 때 **사기 문자 100건을 모두 잡았습니다**(유효 2회 측정, 정답 표시 1인). 그 대신 정상 문자의 8.0%에 '조심' 경고가 붙었습니다.",
+      en: "A web service where seniors practice handling scam texts and calls before they meet a real one, with a companion feature for checking suspicious texts. On a 200-item validation set, a set of test texts used to measure performance (100 scam, 100 normal), rules plus AI **caught all 100 scam texts** (two valid runs, labels by one person). In exchange, 8.0% of normal texts received a 'caution' warning.",
     },
     brief: {
       what: { ko: "어르신이 사기 문자와 전화를 미리 연습하는 예방 교육 웹 서비스, 마이AI랩 선정 개인 과제", en: "Web service where seniors rehearse scam texts and calls beforehand; individual project selected for My AI Lab" },
